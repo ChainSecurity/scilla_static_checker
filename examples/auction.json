@@ -1,0 +1,4224 @@
+{
+  "scilla_major_version": 0,
+  "name": {
+    "loc": {
+      "source_file": "./scilla_checker/examples/auction.scilla",
+      "line": 42,
+      "column": 10,
+      "node_type": "Location"
+    },
+    "identifier": "OpenAuction",
+    "node_type": "Identifier"
+  },
+  "library": {
+    "library_name": {
+      "loc": {
+        "source_file": "./scilla_checker/examples/auction.scilla",
+        "line": 9,
+        "column": 1,
+        "node_type": "Location"
+      },
+      "identifier": "OpenAuction",
+      "node_type": "Identifier"
+    },
+    "library_entries": [
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 11,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "blk_leq",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 12,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "./scilla_checker/examples/auction.scilla",
+              "line": 12,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "blk1",
+            "node_type": "Identifier"
+          },
+          "rhs": {
+            "loc": {
+              "source_file": "./scilla_checker/examples/auction.scilla",
+              "line": 13,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 13,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "blk2",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 14,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "LetExpression",
+              "variable": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/auction.scilla",
+                  "line": 14,
+                  "column": 5,
+                  "node_type": "Location"
+                },
+                "identifier": "bc1",
+                "node_type": "Identifier"
+              },
+              "variable_type": null,
+              "expression": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/auction.scilla",
+                  "line": 14,
+                  "column": 15,
+                  "node_type": "Location"
+                },
+                "node_type": "BuiltinExpression",
+                "arguments": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 14,
+                      "column": 27,
+                      "node_type": "Location"
+                    },
+                    "identifier": "blk1",
+                    "node_type": "Identifier"
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 14,
+                      "column": 32,
+                      "node_type": "Location"
+                    },
+                    "identifier": "blk2",
+                    "node_type": "Identifier"
+                  }
+                ],
+                "builtin_function": {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 14,
+                    "column": 23,
+                    "node_type": "Location"
+                  },
+                  "builtin_type": "blt",
+                  "node_type": "Builtin"
+                }
+              },
+              "body": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/auction.scilla",
+                  "line": 15,
+                  "column": 5,
+                  "node_type": "Location"
+                },
+                "node_type": "LetExpression",
+                "variable": {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 15,
+                    "column": 5,
+                    "node_type": "Location"
+                  },
+                  "identifier": "bc2",
+                  "node_type": "Identifier"
+                },
+                "variable_type": null,
+                "expression": {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 15,
+                    "column": 15,
+                    "node_type": "Location"
+                  },
+                  "node_type": "BuiltinExpression",
+                  "arguments": [
+                    {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 15,
+                        "column": 26,
+                        "node_type": "Location"
+                      },
+                      "identifier": "blk1",
+                      "node_type": "Identifier"
+                    },
+                    {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 15,
+                        "column": 31,
+                        "node_type": "Location"
+                      },
+                      "identifier": "blk2",
+                      "node_type": "Identifier"
+                    }
+                  ],
+                  "builtin_function": {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 15,
+                      "column": 23,
+                      "node_type": "Location"
+                    },
+                    "builtin_type": "eq",
+                    "node_type": "Builtin"
+                  }
+                },
+                "body": {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 16,
+                    "column": 5,
+                    "node_type": "Location"
+                  },
+                  "node_type": "AppExpression",
+                  "lhs": {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 16,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "identifier": "orb",
+                    "node_type": "Identifier"
+                  },
+                  "rhs": [
+                    {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 16,
+                        "column": 9,
+                        "node_type": "Location"
+                      },
+                      "identifier": "bc1",
+                      "node_type": "Identifier"
+                    },
+                    {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 16,
+                        "column": 13,
+                        "node_type": "Location"
+                      },
+                      "identifier": "bc2",
+                      "node_type": "Identifier"
+                    }
+                  ]
+                }
+              }
+            },
+            "fun_type": "BNum"
+          },
+          "fun_type": "BNum"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 19,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "one_msg",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 20,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "./scilla_checker/examples/auction.scilla",
+              "line": 20,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "msg",
+            "node_type": "Identifier"
+          },
+          "rhs": {
+            "loc": {
+              "source_file": "./scilla_checker/examples/auction.scilla",
+              "line": 21,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "LetExpression",
+            "variable": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 21,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "nil_msg",
+              "node_type": "Identifier"
+            },
+            "variable_type": null,
+            "expression": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 21,
+                "column": 19,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "Nil",
+              "types": [ "Message" ],
+              "arguments": []
+            },
+            "body": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 22,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "Cons",
+              "types": [ "Message" ],
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 22,
+                    "column": 20,
+                    "node_type": "Location"
+                  },
+                  "identifier": "msg",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 22,
+                    "column": 24,
+                    "node_type": "Location"
+                  },
+                  "identifier": "nil_msg",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          "fun_type": "Message"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 25,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "late_to_bid_code",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 25,
+            "column": 24,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "1" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 26,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "too_early_to_bid_code",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 26,
+            "column": 29,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "2" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 27,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "bid_too_low_code",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 27,
+            "column": 24,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "3" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 28,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "first_bid_accepted_code",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 28,
+            "column": 32,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "4" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 29,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "bid_accepted_code",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 29,
+            "column": 26,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "5" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 30,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "money_sent_code",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 30,
+            "column": 24,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "6" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 31,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "nothing_to_withdraw_code",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 31,
+            "column": 33,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "7" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 32,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "auction_is_still_on_code",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 32,
+            "column": 33,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "8" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 33,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "auction_end_code",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 33,
+            "column": 25,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "9" }
+        }
+      }
+    ],
+    "node_type": "Library"
+  },
+  "external_libraries": [
+    {
+      "name": {
+        "loc": {
+          "source_file": "./scilla_checker/examples/auction.scilla",
+          "line": 7,
+          "column": 8,
+          "node_type": "Location"
+        },
+        "identifier": "BoolUtils",
+        "node_type": "Identifier"
+      },
+      "alias": null,
+      "node_type": "ExternalLibrary"
+    }
+  ],
+  "contract": {
+    "name": {
+      "loc": {
+        "source_file": "./scilla_checker/examples/auction.scilla",
+        "line": 42,
+        "column": 10,
+        "node_type": "Location"
+      },
+      "identifier": "OpenAuction",
+      "node_type": "Identifier"
+    },
+    "params": [
+      {
+        "parameter_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 44,
+            "column": 2,
+            "node_type": "Location"
+          },
+          "identifier": "auctionStart",
+          "node_type": "Identifier"
+        },
+        "parameter_type": "BNum",
+        "node_type": "Parameter"
+      },
+      {
+        "parameter_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 45,
+            "column": 2,
+            "node_type": "Location"
+          },
+          "identifier": "biddingTime",
+          "node_type": "Identifier"
+        },
+        "parameter_type": "Uint128",
+        "node_type": "Parameter"
+      },
+      {
+        "parameter_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 46,
+            "column": 2,
+            "node_type": "Location"
+          },
+          "identifier": "beneficiary",
+          "node_type": "Identifier"
+        },
+        "parameter_type": "ByStr20",
+        "node_type": "Parameter"
+      }
+    ],
+    "fields": [
+      {
+        "field_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 51,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "ended",
+          "node_type": "Identifier"
+        },
+        "field_type": "Bool",
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 51,
+            "column": 22,
+            "node_type": "Location"
+          },
+          "node_type": "ConstrExpression",
+          "constructor_name": "False",
+          "types": [],
+          "arguments": []
+        },
+        "node_type": "Field"
+      },
+      {
+        "field_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 52,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "highestBidder",
+          "node_type": "Identifier"
+        },
+        "field_type": "Option (ByStr20)",
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 52,
+            "column": 42,
+            "node_type": "Location"
+          },
+          "node_type": "ConstrExpression",
+          "constructor_name": "None",
+          "types": [ "ByStr20" ],
+          "arguments": []
+        },
+        "node_type": "Field"
+      },
+      {
+        "field_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 53,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "highestBid",
+          "node_type": "Identifier"
+        },
+        "field_type": "Uint128",
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 53,
+            "column": 34,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "0" }
+        },
+        "node_type": "Field"
+      },
+      {
+        "field_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 54,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "pendingReturns",
+          "node_type": "Identifier"
+        },
+        "field_type": "Map (ByStr20) (Uint128)",
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 54,
+            "column": 46,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": {
+            "key_type": "ByStr20",
+            "value_type": "Uint128",
+            "node_type": "MapLiteral",
+            "value": []
+          }
+        },
+        "node_type": "Field"
+      }
+    ],
+    "components": [
+      {
+        "params": [],
+        "component_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 58,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "Bid",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/auction.scilla",
+              "line": 59,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 59,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "blk",
+              "node_type": "Identifier"
+            },
+            "rhs": "BLOCKNUMBER",
+            "node_type": "ReadFromBCStatement"
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/auction.scilla",
+              "line": 60,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 60,
+                "column": 11,
+                "node_type": "Location"
+              },
+              "identifier": "endtime",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 60,
+                "column": 13,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 60,
+                    "column": 26,
+                    "node_type": "Location"
+                  },
+                  "identifier": "auctionStart",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 60,
+                    "column": 39,
+                    "node_type": "Location"
+                  },
+                  "identifier": "biddingTime",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/auction.scilla",
+                  "line": 60,
+                  "column": 21,
+                  "node_type": "Location"
+                },
+                "builtin_type": "badd",
+                "node_type": "Builtin"
+              }
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/auction.scilla",
+              "line": 61,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 61,
+                "column": 13,
+                "node_type": "Location"
+              },
+              "identifier": "after_end",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 61,
+                "column": 15,
+                "node_type": "Location"
+              },
+              "node_type": "LetExpression",
+              "variable": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/auction.scilla",
+                  "line": 61,
+                  "column": 15,
+                  "node_type": "Location"
+                },
+                "identifier": "one",
+                "node_type": "Identifier"
+              },
+              "variable_type": null,
+              "expression": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/auction.scilla",
+                  "line": 61,
+                  "column": 25,
+                  "node_type": "Location"
+                },
+                "node_type": "LiteralExpression",
+                "value": { "node_type": "UintLiteral", "value": "1" }
+              },
+              "body": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/auction.scilla",
+                  "line": 62,
+                  "column": 8,
+                  "node_type": "Location"
+                },
+                "node_type": "BuiltinExpression",
+                "arguments": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 62,
+                      "column": 21,
+                      "node_type": "Location"
+                    },
+                    "identifier": "endtime",
+                    "node_type": "Identifier"
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 62,
+                      "column": 29,
+                      "node_type": "Location"
+                    },
+                    "identifier": "one",
+                    "node_type": "Identifier"
+                  }
+                ],
+                "builtin_function": {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 62,
+                    "column": 16,
+                    "node_type": "Location"
+                  },
+                  "builtin_type": "badd",
+                  "node_type": "Builtin"
+                }
+              }
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/auction.scilla",
+              "line": 63,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 63,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "e",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 63,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "identifier": "ended",
+              "node_type": "Identifier"
+            },
+            "node_type": "LoadStatement"
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/auction.scilla",
+              "line": 64,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 64,
+                "column": 11,
+                "node_type": "Location"
+              },
+              "identifier": "in_time",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 64,
+                "column": 13,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/auction.scilla",
+                  "line": 64,
+                  "column": 13,
+                  "node_type": "Location"
+                },
+                "identifier": "blk_leq",
+                "node_type": "Identifier"
+              },
+              "rhs": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 64,
+                    "column": 21,
+                    "node_type": "Location"
+                  },
+                  "identifier": "after_end",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 64,
+                    "column": 31,
+                    "node_type": "Location"
+                  },
+                  "identifier": "blk",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/auction.scilla",
+              "line": 65,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 65,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "flag1",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 65,
+                "column": 11,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/auction.scilla",
+                  "line": 65,
+                  "column": 11,
+                  "node_type": "Location"
+                },
+                "identifier": "orb",
+                "node_type": "Identifier"
+              },
+              "rhs": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 65,
+                    "column": 15,
+                    "node_type": "Location"
+                  },
+                  "identifier": "in_time",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 65,
+                    "column": 23,
+                    "node_type": "Location"
+                  },
+                  "identifier": "e",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/auction.scilla",
+              "line": 66,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 66,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "early",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 66,
+                "column": 11,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/auction.scilla",
+                  "line": 66,
+                  "column": 11,
+                  "node_type": "Location"
+                },
+                "identifier": "blk_leq",
+                "node_type": "Identifier"
+              },
+              "rhs": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 66,
+                    "column": 19,
+                    "node_type": "Location"
+                  },
+                  "identifier": "blk",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 66,
+                    "column": 23,
+                    "node_type": "Location"
+                  },
+                  "identifier": "auctionStart",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/auction.scilla",
+              "line": 67,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 67,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "early",
+              "node_type": "Identifier"
+            },
+            "cases": [
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 69,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 69,
+                        "column": 10,
+                        "node_type": "Location"
+                      },
+                      "identifier": "msg",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 69,
+                        "column": 12,
+                        "node_type": "Location"
+                      },
+                      "node_type": "MessageExpression",
+                      "arguments": [
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "_tag",
+                          "payload": {
+                            "node_type": "PayloadLitral",
+                            "literal": {
+                              "node_type": "StringLiteral",
+                              "value": ""
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "_recipient",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 69,
+                                "column": 37,
+                                "node_type": "Location"
+                              },
+                              "identifier": "_sender",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "_amount",
+                          "payload": {
+                            "node_type": "PayloadLitral",
+                            "literal": {
+                              "node_type": "UintLiteral",
+                              "value": "0"
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "code",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 69,
+                                "column": 74,
+                                "node_type": "Location"
+                              },
+                              "identifier": "too_early_to_bid_code",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 70,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 70,
+                        "column": 10,
+                        "node_type": "Location"
+                      },
+                      "identifier": "msgs",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 70,
+                        "column": 12,
+                        "node_type": "Location"
+                      },
+                      "node_type": "AppExpression",
+                      "lhs": {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/auction.scilla",
+                          "line": 70,
+                          "column": 12,
+                          "node_type": "Location"
+                        },
+                        "identifier": "one_msg",
+                        "node_type": "Identifier"
+                      },
+                      "rhs": [
+                        {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/auction.scilla",
+                            "line": 70,
+                            "column": 20,
+                            "node_type": "Location"
+                          },
+                          "identifier": "msg",
+                          "node_type": "Identifier"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 71,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 71,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "msgs",
+                      "node_type": "Identifier"
+                    },
+                    "node_type": "SendMsgsStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "True",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              },
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 73,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 73,
+                        "column": 11,
+                        "node_type": "Location"
+                      },
+                      "identifier": "flag1",
+                      "node_type": "Identifier"
+                    },
+                    "cases": [
+                      {
+                        "pattern_body": [
+                          {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/auction.scilla",
+                              "line": 75,
+                              "column": 7,
+                              "node_type": "Location"
+                            },
+                            "node_type": "BindStatement",
+                            "lhs": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 75,
+                                "column": 12,
+                                "node_type": "Location"
+                              },
+                              "identifier": "msg",
+                              "node_type": "Identifier"
+                            },
+                            "rhs": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 75,
+                                "column": 14,
+                                "node_type": "Location"
+                              },
+                              "node_type": "MessageExpression",
+                              "arguments": [
+                                {
+                                  "node_type": "MessageArgument",
+                                  "variable": "_tag",
+                                  "payload": {
+                                    "node_type": "PayloadLitral",
+                                    "literal": {
+                                      "node_type": "StringLiteral",
+                                      "value": ""
+                                    }
+                                  }
+                                },
+                                {
+                                  "node_type": "MessageArgument",
+                                  "variable": "_recipient",
+                                  "payload": {
+                                    "node_type": "PayloadVariable",
+                                    "value": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/auction.scilla",
+                                        "line": 75,
+                                        "column": 39,
+                                        "node_type": "Location"
+                                      },
+                                      "identifier": "_sender",
+                                      "node_type": "Identifier"
+                                    }
+                                  }
+                                },
+                                {
+                                  "node_type": "MessageArgument",
+                                  "variable": "_amount",
+                                  "payload": {
+                                    "node_type": "PayloadLitral",
+                                    "literal": {
+                                      "node_type": "UintLiteral",
+                                      "value": "0"
+                                    }
+                                  }
+                                },
+                                {
+                                  "node_type": "MessageArgument",
+                                  "variable": "code",
+                                  "payload": {
+                                    "node_type": "PayloadVariable",
+                                    "value": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/auction.scilla",
+                                        "line": 75,
+                                        "column": 76,
+                                        "node_type": "Location"
+                                      },
+                                      "identifier": "late_to_bid_code",
+                                      "node_type": "Identifier"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/auction.scilla",
+                              "line": 76,
+                              "column": 7,
+                              "node_type": "Location"
+                            },
+                            "node_type": "BindStatement",
+                            "lhs": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 76,
+                                "column": 12,
+                                "node_type": "Location"
+                              },
+                              "identifier": "msgs",
+                              "node_type": "Identifier"
+                            },
+                            "rhs": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 76,
+                                "column": 14,
+                                "node_type": "Location"
+                              },
+                              "node_type": "AppExpression",
+                              "lhs": {
+                                "loc": {
+                                  "source_file":
+                                    "./scilla_checker/examples/auction.scilla",
+                                  "line": 76,
+                                  "column": 14,
+                                  "node_type": "Location"
+                                },
+                                "identifier": "one_msg",
+                                "node_type": "Identifier"
+                              },
+                              "rhs": [
+                                {
+                                  "loc": {
+                                    "source_file":
+                                      "./scilla_checker/examples/auction.scilla",
+                                    "line": 76,
+                                    "column": 22,
+                                    "node_type": "Location"
+                                  },
+                                  "identifier": "msg",
+                                  "node_type": "Identifier"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/auction.scilla",
+                              "line": 77,
+                              "column": 7,
+                              "node_type": "Location"
+                            },
+                            "arg": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 77,
+                                "column": 7,
+                                "node_type": "Location"
+                              },
+                              "identifier": "msgs",
+                              "node_type": "Identifier"
+                            },
+                            "node_type": "SendMsgsStatement"
+                          }
+                        ],
+                        "pattern": {
+                          "node_type": "ConstructorPattern",
+                          "constructor_name": "True",
+                          "patterns": []
+                        },
+                        "node_type": "MatchStatementCase"
+                      },
+                      {
+                        "pattern_body": [
+                          {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/auction.scilla",
+                              "line": 79,
+                              "column": 7,
+                              "node_type": "Location"
+                            },
+                            "lhs": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 79,
+                                "column": 10,
+                                "node_type": "Location"
+                              },
+                              "identifier": "hb",
+                              "node_type": "Identifier"
+                            },
+                            "rhs": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 79,
+                                "column": 13,
+                                "node_type": "Location"
+                              },
+                              "identifier": "highestBid",
+                              "node_type": "Identifier"
+                            },
+                            "node_type": "LoadStatement"
+                          },
+                          {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/auction.scilla",
+                              "line": 82,
+                              "column": 7,
+                              "node_type": "Location"
+                            },
+                            "node_type": "BindStatement",
+                            "lhs": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 82,
+                                "column": 21,
+                                "node_type": "Location"
+                              },
+                              "identifier": "sufficientBid",
+                              "node_type": "Identifier"
+                            },
+                            "rhs": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 82,
+                                "column": 23,
+                                "node_type": "Location"
+                              },
+                              "node_type": "BuiltinExpression",
+                              "arguments": [
+                                {
+                                  "loc": {
+                                    "source_file":
+                                      "./scilla_checker/examples/auction.scilla",
+                                    "line": 82,
+                                    "column": 34,
+                                    "node_type": "Location"
+                                  },
+                                  "identifier": "hb",
+                                  "node_type": "Identifier"
+                                },
+                                {
+                                  "loc": {
+                                    "source_file":
+                                      "./scilla_checker/examples/auction.scilla",
+                                    "line": 82,
+                                    "column": 37,
+                                    "node_type": "Location"
+                                  },
+                                  "identifier": "_amount",
+                                  "node_type": "Identifier"
+                                }
+                              ],
+                              "builtin_function": {
+                                "loc": {
+                                  "source_file":
+                                    "./scilla_checker/examples/auction.scilla",
+                                  "line": 82,
+                                  "column": 31,
+                                  "node_type": "Location"
+                                },
+                                "builtin_type": "lt",
+                                "node_type": "Builtin"
+                              }
+                            }
+                          },
+                          {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/auction.scilla",
+                              "line": 83,
+                              "column": 7,
+                              "node_type": "Location"
+                            },
+                            "arg": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 83,
+                                "column": 13,
+                                "node_type": "Location"
+                              },
+                              "identifier": "sufficientBid",
+                              "node_type": "Identifier"
+                            },
+                            "cases": [
+                              {
+                                "pattern_body": [
+                                  {
+                                    "loc": {
+                                      "source_file":
+                                        "./scilla_checker/examples/auction.scilla",
+                                      "line": 85,
+                                      "column": 9,
+                                      "node_type": "Location"
+                                    },
+                                    "node_type": "BindStatement",
+                                    "lhs": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/auction.scilla",
+                                        "line": 85,
+                                        "column": 14,
+                                        "node_type": "Location"
+                                      },
+                                      "identifier": "msg",
+                                      "node_type": "Identifier"
+                                    },
+                                    "rhs": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/auction.scilla",
+                                        "line": 85,
+                                        "column": 16,
+                                        "node_type": "Location"
+                                      },
+                                      "node_type": "MessageExpression",
+                                      "arguments": [
+                                        {
+                                          "node_type": "MessageArgument",
+                                          "variable": "_tag",
+                                          "payload": {
+                                            "node_type": "PayloadLitral",
+                                            "literal": {
+                                              "node_type": "StringLiteral",
+                                              "value": ""
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "node_type": "MessageArgument",
+                                          "variable": "_recipient",
+                                          "payload": {
+                                            "node_type": "PayloadVariable",
+                                            "value": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 85,
+                                                "column": 41,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier": "_sender",
+                                              "node_type": "Identifier"
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "node_type": "MessageArgument",
+                                          "variable": "_amount",
+                                          "payload": {
+                                            "node_type": "PayloadLitral",
+                                            "literal": {
+                                              "node_type": "UintLiteral",
+                                              "value": "0"
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "node_type": "MessageArgument",
+                                          "variable": "code",
+                                          "payload": {
+                                            "node_type": "PayloadVariable",
+                                            "value": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 85,
+                                                "column": 78,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier":
+                                                "bid_too_low_code",
+                                              "node_type": "Identifier"
+                                            }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "loc": {
+                                      "source_file":
+                                        "./scilla_checker/examples/auction.scilla",
+                                      "line": 86,
+                                      "column": 9,
+                                      "node_type": "Location"
+                                    },
+                                    "node_type": "BindStatement",
+                                    "lhs": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/auction.scilla",
+                                        "line": 86,
+                                        "column": 14,
+                                        "node_type": "Location"
+                                      },
+                                      "identifier": "msgs",
+                                      "node_type": "Identifier"
+                                    },
+                                    "rhs": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/auction.scilla",
+                                        "line": 86,
+                                        "column": 16,
+                                        "node_type": "Location"
+                                      },
+                                      "node_type": "AppExpression",
+                                      "lhs": {
+                                        "loc": {
+                                          "source_file":
+                                            "./scilla_checker/examples/auction.scilla",
+                                          "line": 86,
+                                          "column": 16,
+                                          "node_type": "Location"
+                                        },
+                                        "identifier": "one_msg",
+                                        "node_type": "Identifier"
+                                      },
+                                      "rhs": [
+                                        {
+                                          "loc": {
+                                            "source_file":
+                                              "./scilla_checker/examples/auction.scilla",
+                                            "line": 86,
+                                            "column": 24,
+                                            "node_type": "Location"
+                                          },
+                                          "identifier": "msg",
+                                          "node_type": "Identifier"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "loc": {
+                                      "source_file":
+                                        "./scilla_checker/examples/auction.scilla",
+                                      "line": 87,
+                                      "column": 9,
+                                      "node_type": "Location"
+                                    },
+                                    "arg": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/auction.scilla",
+                                        "line": 87,
+                                        "column": 9,
+                                        "node_type": "Location"
+                                      },
+                                      "identifier": "msgs",
+                                      "node_type": "Identifier"
+                                    },
+                                    "node_type": "SendMsgsStatement"
+                                  }
+                                ],
+                                "pattern": {
+                                  "node_type": "ConstructorPattern",
+                                  "constructor_name": "False",
+                                  "patterns": []
+                                },
+                                "node_type": "MatchStatementCase"
+                              },
+                              {
+                                "pattern_body": [
+                                  {
+                                    "loc": {
+                                      "source_file":
+                                        "./scilla_checker/examples/auction.scilla",
+                                      "line": 89,
+                                      "column": 9,
+                                      "node_type": "Location"
+                                    },
+                                    "node_type": "AcceptPaymentStatement"
+                                  },
+                                  {
+                                    "loc": {
+                                      "source_file":
+                                        "./scilla_checker/examples/auction.scilla",
+                                      "line": 90,
+                                      "column": 9,
+                                      "node_type": "Location"
+                                    },
+                                    "lhs": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/auction.scilla",
+                                        "line": 90,
+                                        "column": 16,
+                                        "node_type": "Location"
+                                      },
+                                      "identifier": "hbPrev",
+                                      "node_type": "Identifier"
+                                    },
+                                    "rhs": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/auction.scilla",
+                                        "line": 90,
+                                        "column": 19,
+                                        "node_type": "Location"
+                                      },
+                                      "identifier": "highestBidder",
+                                      "node_type": "Identifier"
+                                    },
+                                    "node_type": "LoadStatement"
+                                  },
+                                  {
+                                    "loc": {
+                                      "source_file":
+                                        "./scilla_checker/examples/auction.scilla",
+                                      "line": 92,
+                                      "column": 9,
+                                      "node_type": "Location"
+                                    },
+                                    "arg": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/auction.scilla",
+                                        "line": 92,
+                                        "column": 15,
+                                        "node_type": "Location"
+                                      },
+                                      "identifier": "hbPrev",
+                                      "node_type": "Identifier"
+                                    },
+                                    "cases": [
+                                      {
+                                        "pattern_body": [
+                                          {
+                                            "loc": {
+                                              "source_file":
+                                                "./scilla_checker/examples/auction.scilla",
+                                              "line": 95,
+                                              "column": 11,
+                                              "node_type": "Location"
+                                            },
+                                            "node_type": "MapGetStatement",
+                                            "map_name": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 95,
+                                                "column": 45,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier": "pendingReturns",
+                                              "node_type": "Identifier"
+                                            },
+                                            "lhs": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 95,
+                                                "column": 11,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier":
+                                                "option_pendingReturnsForPrevHB",
+                                              "node_type": "Identifier"
+                                            },
+                                            "keys": [
+                                              {
+                                                "loc": {
+                                                  "source_file":
+                                                    "./scilla_checker/examples/auction.scilla",
+                                                  "line": 95,
+                                                  "column": 60,
+                                                  "node_type": "Location"
+                                                },
+                                                "identifier":
+                                                  "prevHighestBidder",
+                                                "node_type": "Identifier"
+                                              }
+                                            ],
+                                            "is_value_retrieve": true
+                                          },
+                                          {
+                                            "loc": {
+                                              "source_file":
+                                                "./scilla_checker/examples/auction.scilla",
+                                              "line": 97,
+                                              "column": 11,
+                                              "node_type": "Location"
+                                            },
+                                            "node_type": "BindStatement",
+                                            "lhs": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 97,
+                                                "column": 37,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier":
+                                                "getPRForPrevHighestBidder",
+                                              "node_type": "Identifier"
+                                            },
+                                            "rhs": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 97,
+                                                "column": 39,
+                                                "node_type": "Location"
+                                              },
+                                              "node_type": "MatchExpression",
+                                              "lhs": {
+                                                "loc": {
+                                                  "source_file":
+                                                    "./scilla_checker/examples/auction.scilla",
+                                                  "line": 97,
+                                                  "column": 45,
+                                                  "node_type": "Location"
+                                                },
+                                                "identifier":
+                                                  "option_pendingReturnsForPrevHB",
+                                                "node_type": "Identifier"
+                                              },
+                                              "rhs": [
+                                                {
+                                                  "node_type":
+                                                    "MatchExpressionCase",
+                                                  "pattern": {
+                                                    "node_type":
+                                                      "ConstructorPattern",
+                                                    "constructor_name":
+                                                      "Some",
+                                                    "patterns": [
+                                                      {
+                                                        "node_type":
+                                                          "BinderPattern",
+                                                        "variable": {
+                                                          "loc": {
+                                                            "source_file":
+                                                              "./scilla_checker/examples/auction.scilla",
+                                                            "line": 98,
+                                                            "column": 16,
+                                                            "node_type":
+                                                              "Location"
+                                                          },
+                                                          "identifier":
+                                                            "pendingReturnsForPrevHB",
+                                                          "node_type":
+                                                            "Identifier"
+                                                        }
+                                                      }
+                                                    ]
+                                                  },
+                                                  "expression": {
+                                                    "loc": {
+                                                      "source_file":
+                                                        "./scilla_checker/examples/auction.scilla",
+                                                      "line": 100,
+                                                      "column": 11,
+                                                      "node_type": "Location"
+                                                    },
+                                                    "node_type":
+                                                      "BuiltinExpression",
+                                                    "arguments": [
+                                                      {
+                                                        "loc": {
+                                                          "source_file":
+                                                            "./scilla_checker/examples/auction.scilla",
+                                                          "line": 100,
+                                                          "column": 23,
+                                                          "node_type":
+                                                            "Location"
+                                                        },
+                                                        "identifier": "hb",
+                                                        "node_type":
+                                                          "Identifier"
+                                                      },
+                                                      {
+                                                        "loc": {
+                                                          "source_file":
+                                                            "./scilla_checker/examples/auction.scilla",
+                                                          "line": 100,
+                                                          "column": 26,
+                                                          "node_type":
+                                                            "Location"
+                                                        },
+                                                        "identifier":
+                                                          "pendingReturnsForPrevHB",
+                                                        "node_type":
+                                                          "Identifier"
+                                                      }
+                                                    ],
+                                                    "builtin_function": {
+                                                      "loc": {
+                                                        "source_file":
+                                                          "./scilla_checker/examples/auction.scilla",
+                                                        "line": 100,
+                                                        "column": 19,
+                                                        "node_type":
+                                                          "Location"
+                                                      },
+                                                      "builtin_type": "add",
+                                                      "node_type": "Builtin"
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "node_type":
+                                                    "MatchExpressionCase",
+                                                  "pattern": {
+                                                    "node_type":
+                                                      "ConstructorPattern",
+                                                    "constructor_name":
+                                                      "None",
+                                                    "patterns": []
+                                                  },
+                                                  "expression": {
+                                                    "loc": {
+                                                      "source_file":
+                                                        "./scilla_checker/examples/auction.scilla",
+                                                      "line": 101,
+                                                      "column": 19,
+                                                      "node_type": "Location"
+                                                    },
+                                                    "node_type":
+                                                      "VarExpression",
+                                                    "variable": {
+                                                      "loc": {
+                                                        "source_file":
+                                                          "./scilla_checker/examples/auction.scilla",
+                                                        "line": 101,
+                                                        "column": 19,
+                                                        "node_type":
+                                                          "Location"
+                                                      },
+                                                      "identifier": "hb",
+                                                      "node_type":
+                                                        "Identifier"
+                                                    }
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          {
+                                            "loc": {
+                                              "source_file":
+                                                "./scilla_checker/examples/auction.scilla",
+                                              "line": 104,
+                                              "column": 7,
+                                              "node_type": "Location"
+                                            },
+                                            "node_type": "MapUpdateStatement",
+                                            "map_name": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 104,
+                                                "column": 7,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier": "pendingReturns",
+                                              "node_type": "Identifier"
+                                            },
+                                            "rhs": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 104,
+                                                "column": 44,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier":
+                                                "getPRForPrevHighestBidder",
+                                              "node_type": "Identifier"
+                                            },
+                                            "keys": [
+                                              {
+                                                "loc": {
+                                                  "source_file":
+                                                    "./scilla_checker/examples/auction.scilla",
+                                                  "line": 104,
+                                                  "column": 22,
+                                                  "node_type": "Location"
+                                                },
+                                                "identifier":
+                                                  "prevHighestBidder",
+                                                "node_type": "Identifier"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "loc": {
+                                              "source_file":
+                                                "./scilla_checker/examples/auction.scilla",
+                                              "line": 107,
+                                              "column": 7,
+                                              "node_type": "Location"
+                                            },
+                                            "node_type": "BindStatement",
+                                            "lhs": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 107,
+                                                "column": 14,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier": "bidder",
+                                              "node_type": "Identifier"
+                                            },
+                                            "rhs": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 107,
+                                                "column": 16,
+                                                "node_type": "Location"
+                                              },
+                                              "node_type": "ConstrExpression",
+                                              "constructor_name": "Some",
+                                              "types": [ "ByStr20" ],
+                                              "arguments": [
+                                                {
+                                                  "loc": {
+                                                    "source_file":
+                                                      "./scilla_checker/examples/auction.scilla",
+                                                    "line": 107,
+                                                    "column": 31,
+                                                    "node_type": "Location"
+                                                  },
+                                                  "identifier": "_sender",
+                                                  "node_type": "Identifier"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          {
+                                            "loc": {
+                                              "source_file":
+                                                "./scilla_checker/examples/auction.scilla",
+                                              "line": 108,
+                                              "column": 7,
+                                              "node_type": "Location"
+                                            },
+                                            "lhs": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 108,
+                                                "column": 21,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier": "highestBidder",
+                                              "node_type": "Identifier"
+                                            },
+                                            "rhs": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 108,
+                                                "column": 24,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier": "bidder",
+                                              "node_type": "Identifier"
+                                            },
+                                            "node_type": "StoreStatement"
+                                          },
+                                          {
+                                            "loc": {
+                                              "source_file":
+                                                "./scilla_checker/examples/auction.scilla",
+                                              "line": 109,
+                                              "column": 7,
+                                              "node_type": "Location"
+                                            },
+                                            "lhs": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 109,
+                                                "column": 18,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier": "highestBid",
+                                              "node_type": "Identifier"
+                                            },
+                                            "rhs": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 109,
+                                                "column": 21,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier": "_amount",
+                                              "node_type": "Identifier"
+                                            },
+                                            "node_type": "StoreStatement"
+                                          },
+                                          {
+                                            "loc": {
+                                              "source_file":
+                                                "./scilla_checker/examples/auction.scilla",
+                                              "line": 110,
+                                              "column": 7,
+                                              "node_type": "Location"
+                                            },
+                                            "node_type": "BindStatement",
+                                            "lhs": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 110,
+                                                "column": 9,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier": "e",
+                                              "node_type": "Identifier"
+                                            },
+                                            "rhs": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 110,
+                                                "column": 11,
+                                                "node_type": "Location"
+                                              },
+                                              "node_type":
+                                                "MessageExpression",
+                                              "arguments": [
+                                                {
+                                                  "node_type":
+                                                    "MessageArgument",
+                                                  "variable": "_eventname",
+                                                  "payload": {
+                                                    "node_type":
+                                                      "PayloadLitral",
+                                                    "literal": {
+                                                      "node_type":
+                                                        "StringLiteral",
+                                                      "value": "Bid"
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "node_type":
+                                                    "MessageArgument",
+                                                  "variable": "code",
+                                                  "payload": {
+                                                    "node_type":
+                                                      "PayloadVariable",
+                                                    "value": {
+                                                      "loc": {
+                                                        "source_file":
+                                                          "./scilla_checker/examples/auction.scilla",
+                                                        "line": 110,
+                                                        "column": 37,
+                                                        "node_type":
+                                                          "Location"
+                                                      },
+                                                      "identifier":
+                                                        "bid_accepted_code",
+                                                      "node_type":
+                                                        "Identifier"
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "node_type":
+                                                    "MessageArgument",
+                                                  "variable": "addr",
+                                                  "payload": {
+                                                    "node_type":
+                                                      "PayloadVariable",
+                                                    "value": {
+                                                      "loc": {
+                                                        "source_file":
+                                                          "./scilla_checker/examples/auction.scilla",
+                                                        "line": 110,
+                                                        "column": 62,
+                                                        "node_type":
+                                                          "Location"
+                                                      },
+                                                      "identifier": "_sender",
+                                                      "node_type":
+                                                        "Identifier"
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "node_type":
+                                                    "MessageArgument",
+                                                  "variable": "amount",
+                                                  "payload": {
+                                                    "node_type":
+                                                      "PayloadVariable",
+                                                    "value": {
+                                                      "loc": {
+                                                        "source_file":
+                                                          "./scilla_checker/examples/auction.scilla",
+                                                        "line": 110,
+                                                        "column": 79,
+                                                        "node_type":
+                                                          "Location"
+                                                      },
+                                                      "identifier": "_amount",
+                                                      "node_type":
+                                                        "Identifier"
+                                                    }
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          {
+                                            "loc": {
+                                              "source_file":
+                                                "./scilla_checker/examples/auction.scilla",
+                                              "line": 111,
+                                              "column": 7,
+                                              "node_type": "Location"
+                                            },
+                                            "arg": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 111,
+                                                "column": 7,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier": "e",
+                                              "node_type": "Identifier"
+                                            },
+                                            "node_type":
+                                              "CreateEvntStatement"
+                                          }
+                                        ],
+                                        "pattern": {
+                                          "node_type": "ConstructorPattern",
+                                          "constructor_name": "Some",
+                                          "patterns": [
+                                            {
+                                              "node_type": "BinderPattern",
+                                              "variable": {
+                                                "loc": {
+                                                  "source_file":
+                                                    "./scilla_checker/examples/auction.scilla",
+                                                  "line": 93,
+                                                  "column": 16,
+                                                  "node_type": "Location"
+                                                },
+                                                "identifier":
+                                                  "prevHighestBidder",
+                                                "node_type": "Identifier"
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        "node_type": "MatchStatementCase"
+                                      },
+                                      {
+                                        "pattern_body": [
+                                          {
+                                            "loc": {
+                                              "source_file":
+                                                "./scilla_checker/examples/auction.scilla",
+                                              "line": 114,
+                                              "column": 9,
+                                              "node_type": "Location"
+                                            },
+                                            "node_type": "BindStatement",
+                                            "lhs": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 114,
+                                                "column": 22,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier": "first_bidder",
+                                              "node_type": "Identifier"
+                                            },
+                                            "rhs": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 114,
+                                                "column": 24,
+                                                "node_type": "Location"
+                                              },
+                                              "node_type": "ConstrExpression",
+                                              "constructor_name": "Some",
+                                              "types": [ "ByStr20" ],
+                                              "arguments": [
+                                                {
+                                                  "loc": {
+                                                    "source_file":
+                                                      "./scilla_checker/examples/auction.scilla",
+                                                    "line": 114,
+                                                    "column": 39,
+                                                    "node_type": "Location"
+                                                  },
+                                                  "identifier": "_sender",
+                                                  "node_type": "Identifier"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          {
+                                            "loc": {
+                                              "source_file":
+                                                "./scilla_checker/examples/auction.scilla",
+                                              "line": 115,
+                                              "column": 9,
+                                              "node_type": "Location"
+                                            },
+                                            "lhs": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 115,
+                                                "column": 23,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier": "highestBidder",
+                                              "node_type": "Identifier"
+                                            },
+                                            "rhs": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 115,
+                                                "column": 26,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier": "first_bidder",
+                                              "node_type": "Identifier"
+                                            },
+                                            "node_type": "StoreStatement"
+                                          },
+                                          {
+                                            "loc": {
+                                              "source_file":
+                                                "./scilla_checker/examples/auction.scilla",
+                                              "line": 116,
+                                              "column": 9,
+                                              "node_type": "Location"
+                                            },
+                                            "lhs": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 116,
+                                                "column": 20,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier": "highestBid",
+                                              "node_type": "Identifier"
+                                            },
+                                            "rhs": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 116,
+                                                "column": 23,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier": "_amount",
+                                              "node_type": "Identifier"
+                                            },
+                                            "node_type": "StoreStatement"
+                                          },
+                                          {
+                                            "loc": {
+                                              "source_file":
+                                                "./scilla_checker/examples/auction.scilla",
+                                              "line": 117,
+                                              "column": 9,
+                                              "node_type": "Location"
+                                            },
+                                            "node_type": "BindStatement",
+                                            "lhs": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 117,
+                                                "column": 11,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier": "e",
+                                              "node_type": "Identifier"
+                                            },
+                                            "rhs": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 117,
+                                                "column": 13,
+                                                "node_type": "Location"
+                                              },
+                                              "node_type":
+                                                "MessageExpression",
+                                              "arguments": [
+                                                {
+                                                  "node_type":
+                                                    "MessageArgument",
+                                                  "variable": "_eventname",
+                                                  "payload": {
+                                                    "node_type":
+                                                      "PayloadLitral",
+                                                    "literal": {
+                                                      "node_type":
+                                                        "StringLiteral",
+                                                      "value": "Bid"
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "node_type":
+                                                    "MessageArgument",
+                                                  "variable": "code",
+                                                  "payload": {
+                                                    "node_type":
+                                                      "PayloadVariable",
+                                                    "value": {
+                                                      "loc": {
+                                                        "source_file":
+                                                          "./scilla_checker/examples/auction.scilla",
+                                                        "line": 117,
+                                                        "column": 39,
+                                                        "node_type":
+                                                          "Location"
+                                                      },
+                                                      "identifier":
+                                                        "first_bid_accepted_code",
+                                                      "node_type":
+                                                        "Identifier"
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "node_type":
+                                                    "MessageArgument",
+                                                  "variable": "addr",
+                                                  "payload": {
+                                                    "node_type":
+                                                      "PayloadVariable",
+                                                    "value": {
+                                                      "loc": {
+                                                        "source_file":
+                                                          "./scilla_checker/examples/auction.scilla",
+                                                        "line": 117,
+                                                        "column": 70,
+                                                        "node_type":
+                                                          "Location"
+                                                      },
+                                                      "identifier": "_sender",
+                                                      "node_type":
+                                                        "Identifier"
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "node_type":
+                                                    "MessageArgument",
+                                                  "variable": "amount",
+                                                  "payload": {
+                                                    "node_type":
+                                                      "PayloadVariable",
+                                                    "value": {
+                                                      "loc": {
+                                                        "source_file":
+                                                          "./scilla_checker/examples/auction.scilla",
+                                                        "line": 117,
+                                                        "column": 87,
+                                                        "node_type":
+                                                          "Location"
+                                                      },
+                                                      "identifier": "_amount",
+                                                      "node_type":
+                                                        "Identifier"
+                                                    }
+                                                  }
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          {
+                                            "loc": {
+                                              "source_file":
+                                                "./scilla_checker/examples/auction.scilla",
+                                              "line": 118,
+                                              "column": 9,
+                                              "node_type": "Location"
+                                            },
+                                            "arg": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/auction.scilla",
+                                                "line": 118,
+                                                "column": 9,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier": "e",
+                                              "node_type": "Identifier"
+                                            },
+                                            "node_type":
+                                              "CreateEvntStatement"
+                                          }
+                                        ],
+                                        "pattern": {
+                                          "node_type": "ConstructorPattern",
+                                          "constructor_name": "None",
+                                          "patterns": []
+                                        },
+                                        "node_type": "MatchStatementCase"
+                                      }
+                                    ],
+                                    "node_type": "MatchStatement"
+                                  }
+                                ],
+                                "pattern": {
+                                  "node_type": "ConstructorPattern",
+                                  "constructor_name": "True",
+                                  "patterns": []
+                                },
+                                "node_type": "MatchStatementCase"
+                              }
+                            ],
+                            "node_type": "MatchStatement"
+                          }
+                        ],
+                        "pattern": {
+                          "node_type": "ConstructorPattern",
+                          "constructor_name": "False",
+                          "patterns": []
+                        },
+                        "node_type": "MatchStatementCase"
+                      }
+                    ],
+                    "node_type": "MatchStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "False",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              }
+            ],
+            "node_type": "MatchStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [],
+        "component_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 127,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "Withdraw",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/auction.scilla",
+              "line": 128,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 128,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "prs",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 128,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "identifier": "pendingReturns",
+              "node_type": "Identifier"
+            },
+            "node_type": "LoadStatement"
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/auction.scilla",
+              "line": 129,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 129,
+                "column": 6,
+                "node_type": "Location"
+              },
+              "identifier": "pr",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 129,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 129,
+                    "column": 20,
+                    "node_type": "Location"
+                  },
+                  "identifier": "prs",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 129,
+                    "column": 24,
+                    "node_type": "Location"
+                  },
+                  "identifier": "_sender",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/auction.scilla",
+                  "line": 129,
+                  "column": 16,
+                  "node_type": "Location"
+                },
+                "builtin_type": "get",
+                "node_type": "Builtin"
+              }
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/auction.scilla",
+              "line": 130,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 130,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "pr",
+              "node_type": "Identifier"
+            },
+            "cases": [
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 132,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 132,
+                        "column": 10,
+                        "node_type": "Location"
+                      },
+                      "identifier": "msg",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 132,
+                        "column": 12,
+                        "node_type": "Location"
+                      },
+                      "node_type": "MessageExpression",
+                      "arguments": [
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "_tag",
+                          "payload": {
+                            "node_type": "PayloadLitral",
+                            "literal": {
+                              "node_type": "StringLiteral",
+                              "value": ""
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "_recipient",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 132,
+                                "column": 37,
+                                "node_type": "Location"
+                              },
+                              "identifier": "_sender",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "_amount",
+                          "payload": {
+                            "node_type": "PayloadLitral",
+                            "literal": {
+                              "node_type": "UintLiteral",
+                              "value": "0"
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "code",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 132,
+                                "column": 74,
+                                "node_type": "Location"
+                              },
+                              "identifier": "nothing_to_withdraw_code",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 133,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 133,
+                        "column": 10,
+                        "node_type": "Location"
+                      },
+                      "identifier": "msgs",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 133,
+                        "column": 12,
+                        "node_type": "Location"
+                      },
+                      "node_type": "AppExpression",
+                      "lhs": {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/auction.scilla",
+                          "line": 133,
+                          "column": 12,
+                          "node_type": "Location"
+                        },
+                        "identifier": "one_msg",
+                        "node_type": "Identifier"
+                      },
+                      "rhs": [
+                        {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/auction.scilla",
+                            "line": 133,
+                            "column": 20,
+                            "node_type": "Location"
+                          },
+                          "identifier": "msg",
+                          "node_type": "Identifier"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 134,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 134,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "msgs",
+                      "node_type": "Identifier"
+                    },
+                    "node_type": "SendMsgsStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "None",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              },
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 136,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "MapUpdateStatement",
+                    "map_name": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 136,
+                        "column": 12,
+                        "node_type": "Location"
+                      },
+                      "identifier": "pendingReturns",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": null,
+                    "keys": [
+                      {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/auction.scilla",
+                          "line": 136,
+                          "column": 27,
+                          "node_type": "Location"
+                        },
+                        "identifier": "_sender",
+                        "node_type": "Identifier"
+                      }
+                    ]
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 137,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 137,
+                        "column": 7,
+                        "node_type": "Location"
+                      },
+                      "identifier": "e",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 137,
+                        "column": 9,
+                        "node_type": "Location"
+                      },
+                      "node_type": "MessageExpression",
+                      "arguments": [
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "_eventname",
+                          "payload": {
+                            "node_type": "PayloadLitral",
+                            "literal": {
+                              "node_type": "StringLiteral",
+                              "value": "Withdraw Successful"
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "addr",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 137,
+                                "column": 51,
+                                "node_type": "Location"
+                              },
+                              "identifier": "_sender",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 138,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 138,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "e",
+                      "node_type": "Identifier"
+                    },
+                    "node_type": "CreateEvntStatement"
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 139,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 139,
+                        "column": 10,
+                        "node_type": "Location"
+                      },
+                      "identifier": "msg",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 139,
+                        "column": 12,
+                        "node_type": "Location"
+                      },
+                      "node_type": "MessageExpression",
+                      "arguments": [
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "_tag",
+                          "payload": {
+                            "node_type": "PayloadLitral",
+                            "literal": {
+                              "node_type": "StringLiteral",
+                              "value": ""
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "_recipient",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 139,
+                                "column": 37,
+                                "node_type": "Location"
+                              },
+                              "identifier": "_sender",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "_amount",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 139,
+                                "column": 56,
+                                "node_type": "Location"
+                              },
+                              "identifier": "v",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "code",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 139,
+                                "column": 66,
+                                "node_type": "Location"
+                              },
+                              "identifier": "money_sent_code",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 140,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 140,
+                        "column": 10,
+                        "node_type": "Location"
+                      },
+                      "identifier": "msgs",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 140,
+                        "column": 12,
+                        "node_type": "Location"
+                      },
+                      "node_type": "AppExpression",
+                      "lhs": {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/auction.scilla",
+                          "line": 140,
+                          "column": 12,
+                          "node_type": "Location"
+                        },
+                        "identifier": "one_msg",
+                        "node_type": "Identifier"
+                      },
+                      "rhs": [
+                        {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/auction.scilla",
+                            "line": 140,
+                            "column": 20,
+                            "node_type": "Location"
+                          },
+                          "identifier": "msg",
+                          "node_type": "Identifier"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 141,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 141,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "msgs",
+                      "node_type": "Identifier"
+                    },
+                    "node_type": "SendMsgsStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "Some",
+                  "patterns": [
+                    {
+                      "node_type": "BinderPattern",
+                      "variable": {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/auction.scilla",
+                          "line": 135,
+                          "column": 10,
+                          "node_type": "Location"
+                        },
+                        "identifier": "v",
+                        "node_type": "Identifier"
+                      }
+                    }
+                  ]
+                },
+                "node_type": "MatchStatementCase"
+              }
+            ],
+            "node_type": "MatchStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [],
+        "component_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/auction.scilla",
+            "line": 147,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "AuctionEnd",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/auction.scilla",
+              "line": 148,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 148,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "blk",
+              "node_type": "Identifier"
+            },
+            "rhs": "BLOCKNUMBER",
+            "node_type": "ReadFromBCStatement"
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/auction.scilla",
+              "line": 149,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 149,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "e",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 149,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "identifier": "ended",
+              "node_type": "Identifier"
+            },
+            "node_type": "LoadStatement"
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/auction.scilla",
+              "line": 150,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 150,
+                "column": 6,
+                "node_type": "Location"
+              },
+              "identifier": "t1",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 150,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 150,
+                    "column": 21,
+                    "node_type": "Location"
+                  },
+                  "identifier": "auctionStart",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 150,
+                    "column": 34,
+                    "node_type": "Location"
+                  },
+                  "identifier": "biddingTime",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/auction.scilla",
+                  "line": 150,
+                  "column": 16,
+                  "node_type": "Location"
+                },
+                "builtin_type": "badd",
+                "node_type": "Builtin"
+              }
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/auction.scilla",
+              "line": 151,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 151,
+                "column": 6,
+                "node_type": "Location"
+              },
+              "identifier": "t2",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 151,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/auction.scilla",
+                  "line": 151,
+                  "column": 8,
+                  "node_type": "Location"
+                },
+                "identifier": "blk_leq",
+                "node_type": "Identifier"
+              },
+              "rhs": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 151,
+                    "column": 16,
+                    "node_type": "Location"
+                  },
+                  "identifier": "t1",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 151,
+                    "column": 19,
+                    "node_type": "Location"
+                  },
+                  "identifier": "blk",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/auction.scilla",
+              "line": 152,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 152,
+                "column": 6,
+                "node_type": "Location"
+              },
+              "identifier": "t3",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 152,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/auction.scilla",
+                  "line": 152,
+                  "column": 8,
+                  "node_type": "Location"
+                },
+                "identifier": "negb",
+                "node_type": "Identifier"
+              },
+              "rhs": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 152,
+                    "column": 13,
+                    "node_type": "Location"
+                  },
+                  "identifier": "e",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/auction.scilla",
+              "line": 153,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 153,
+                "column": 6,
+                "node_type": "Location"
+              },
+              "identifier": "t4",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 153,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/auction.scilla",
+                  "line": 153,
+                  "column": 8,
+                  "node_type": "Location"
+                },
+                "identifier": "andb",
+                "node_type": "Identifier"
+              },
+              "rhs": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 153,
+                    "column": 13,
+                    "node_type": "Location"
+                  },
+                  "identifier": "t2",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/auction.scilla",
+                    "line": 153,
+                    "column": 16,
+                    "node_type": "Location"
+                  },
+                  "identifier": "t3",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/auction.scilla",
+              "line": 154,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/auction.scilla",
+                "line": 154,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "t4",
+              "node_type": "Identifier"
+            },
+            "cases": [
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 156,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 156,
+                        "column": 10,
+                        "node_type": "Location"
+                      },
+                      "identifier": "msg",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 156,
+                        "column": 12,
+                        "node_type": "Location"
+                      },
+                      "node_type": "MessageExpression",
+                      "arguments": [
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "_tag",
+                          "payload": {
+                            "node_type": "PayloadLitral",
+                            "literal": {
+                              "node_type": "StringLiteral",
+                              "value": ""
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "_recipient",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 156,
+                                "column": 37,
+                                "node_type": "Location"
+                              },
+                              "identifier": "_sender",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "_amount",
+                          "payload": {
+                            "node_type": "PayloadLitral",
+                            "literal": {
+                              "node_type": "UintLiteral",
+                              "value": "0"
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "code",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 156,
+                                "column": 74,
+                                "node_type": "Location"
+                              },
+                              "identifier": "auction_is_still_on_code",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 157,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 157,
+                        "column": 10,
+                        "node_type": "Location"
+                      },
+                      "identifier": "msgs",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 157,
+                        "column": 12,
+                        "node_type": "Location"
+                      },
+                      "node_type": "AppExpression",
+                      "lhs": {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/auction.scilla",
+                          "line": 157,
+                          "column": 12,
+                          "node_type": "Location"
+                        },
+                        "identifier": "one_msg",
+                        "node_type": "Identifier"
+                      },
+                      "rhs": [
+                        {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/auction.scilla",
+                            "line": 157,
+                            "column": 20,
+                            "node_type": "Location"
+                          },
+                          "identifier": "msg",
+                          "node_type": "Identifier"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 158,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 158,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "msgs",
+                      "node_type": "Identifier"
+                    },
+                    "node_type": "SendMsgsStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "False",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              },
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 160,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 160,
+                        "column": 9,
+                        "node_type": "Location"
+                      },
+                      "identifier": "val",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 160,
+                        "column": 11,
+                        "node_type": "Location"
+                      },
+                      "node_type": "ConstrExpression",
+                      "constructor_name": "True",
+                      "types": [],
+                      "arguments": []
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 161,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 161,
+                        "column": 11,
+                        "node_type": "Location"
+                      },
+                      "identifier": "ended",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 161,
+                        "column": 14,
+                        "node_type": "Location"
+                      },
+                      "identifier": "val",
+                      "node_type": "Identifier"
+                    },
+                    "node_type": "StoreStatement"
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 162,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 162,
+                        "column": 8,
+                        "node_type": "Location"
+                      },
+                      "identifier": "hb",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 162,
+                        "column": 11,
+                        "node_type": "Location"
+                      },
+                      "identifier": "highestBid",
+                      "node_type": "Identifier"
+                    },
+                    "node_type": "LoadStatement"
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 163,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 163,
+                        "column": 7,
+                        "node_type": "Location"
+                      },
+                      "identifier": "e",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 163,
+                        "column": 9,
+                        "node_type": "Location"
+                      },
+                      "node_type": "MessageExpression",
+                      "arguments": [
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "_eventname",
+                          "payload": {
+                            "node_type": "PayloadLitral",
+                            "literal": {
+                              "node_type": "StringLiteral",
+                              "value": "Auction ended"
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "highest_bid",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 163,
+                                "column": 52,
+                                "node_type": "Location"
+                              },
+                              "identifier": "hb",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 164,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 164,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "e",
+                      "node_type": "Identifier"
+                    },
+                    "node_type": "CreateEvntStatement"
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 165,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 165,
+                        "column": 10,
+                        "node_type": "Location"
+                      },
+                      "identifier": "msg",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 165,
+                        "column": 12,
+                        "node_type": "Location"
+                      },
+                      "node_type": "MessageExpression",
+                      "arguments": [
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "_tag",
+                          "payload": {
+                            "node_type": "PayloadLitral",
+                            "literal": {
+                              "node_type": "StringLiteral",
+                              "value": ""
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "_recipient",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 165,
+                                "column": 37,
+                                "node_type": "Location"
+                              },
+                              "identifier": "beneficiary",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "_amount",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 165,
+                                "column": 60,
+                                "node_type": "Location"
+                              },
+                              "identifier": "hb",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "code",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 165,
+                                "column": 71,
+                                "node_type": "Location"
+                              },
+                              "identifier": "auction_end_code",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "highest_bid",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/auction.scilla",
+                                "line": 165,
+                                "column": 103,
+                                "node_type": "Location"
+                              },
+                              "identifier": "hb",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 166,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 166,
+                        "column": 10,
+                        "node_type": "Location"
+                      },
+                      "identifier": "msgs",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 166,
+                        "column": 12,
+                        "node_type": "Location"
+                      },
+                      "node_type": "AppExpression",
+                      "lhs": {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/auction.scilla",
+                          "line": 166,
+                          "column": 12,
+                          "node_type": "Location"
+                        },
+                        "identifier": "one_msg",
+                        "node_type": "Identifier"
+                      },
+                      "rhs": [
+                        {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/auction.scilla",
+                            "line": 166,
+                            "column": 20,
+                            "node_type": "Location"
+                          },
+                          "identifier": "msg",
+                          "node_type": "Identifier"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/auction.scilla",
+                      "line": 167,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/auction.scilla",
+                        "line": 167,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "msgs",
+                      "node_type": "Identifier"
+                    },
+                    "node_type": "SendMsgsStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "True",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              }
+            ],
+            "node_type": "MatchStatement"
+          }
+        ],
+        "node_type": "Component"
+      }
+    ],
+    "node_type": "Contract"
+  },
+  "node_type": "ContractModule"
+}

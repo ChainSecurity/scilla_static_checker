@@ -1,0 +1,1477 @@
+{
+  "scilla_major_version": 0,
+  "name": {
+    "loc": {
+      "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+      "line": 14,
+      "column": 10,
+      "node_type": "Location"
+    },
+    "identifier": "CrowdFundingInvoke",
+    "node_type": "Identifier"
+  },
+  "library": {
+    "library_name": {
+      "loc": {
+        "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+        "line": 3,
+        "column": 1,
+        "node_type": "Location"
+      },
+      "identifier": "CrowdFundingInvoke",
+      "node_type": "Identifier"
+    },
+    "library_entries": [
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+            "line": 5,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "one_msg",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+            "line": 6,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+              "line": 6,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "msg",
+            "node_type": "Identifier"
+          },
+          "rhs": {
+            "loc": {
+              "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+              "line": 7,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "LetExpression",
+            "variable": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+                "line": 7,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "nil_msg",
+              "node_type": "Identifier"
+            },
+            "variable_type": null,
+            "expression": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+                "line": 7,
+                "column": 19,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "Nil",
+              "types": [ "Message" ],
+              "arguments": []
+            },
+            "body": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+                "line": 8,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "Cons",
+              "types": [ "Message" ],
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/cfinvoke.scilla",
+                    "line": 8,
+                    "column": 22,
+                    "node_type": "Location"
+                  },
+                  "identifier": "msg",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/cfinvoke.scilla",
+                    "line": 8,
+                    "column": 26,
+                    "node_type": "Location"
+                  },
+                  "identifier": "nil_msg",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          "fun_type": "Message"
+        }
+      }
+    ],
+    "node_type": "Library"
+  },
+  "external_libraries": [],
+  "contract": {
+    "name": {
+      "loc": {
+        "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+        "line": 14,
+        "column": 10,
+        "node_type": "Location"
+      },
+      "identifier": "CrowdFundingInvoke",
+      "node_type": "Identifier"
+    },
+    "params": [
+      {
+        "parameter_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+            "line": 17,
+            "column": 2,
+            "node_type": "Location"
+          },
+          "identifier": "cfaddr",
+          "node_type": "Identifier"
+        },
+        "parameter_type": "ByStr20",
+        "node_type": "Parameter"
+      },
+      {
+        "parameter_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+            "line": 18,
+            "column": 2,
+            "node_type": "Location"
+          },
+          "identifier": "owner",
+          "node_type": "Identifier"
+        },
+        "parameter_type": "ByStr20",
+        "node_type": "Parameter"
+      }
+    ],
+    "fields": [],
+    "components": [
+      {
+        "params": [],
+        "component_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+            "line": 20,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "Main",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+              "line": 21,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "AcceptPaymentStatement"
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+              "line": 22,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+                "line": 22,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "msg",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+                "line": 22,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "node_type": "MessageExpression",
+              "arguments": [
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_tag",
+                  "payload": {
+                    "node_type": "PayloadLitral",
+                    "literal": { "node_type": "StringLiteral", "value": "" }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_recipient",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/cfinvoke.scilla",
+                        "line": 22,
+                        "column": 34,
+                        "node_type": "Location"
+                      },
+                      "identifier": "owner",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_amount",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/cfinvoke.scilla",
+                        "line": 22,
+                        "column": 51,
+                        "node_type": "Location"
+                      },
+                      "identifier": "_amount",
+                      "node_type": "Identifier"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+              "line": 23,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+                "line": 23,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "identifier": "msgs",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+                "line": 23,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+                  "line": 23,
+                  "column": 10,
+                  "node_type": "Location"
+                },
+                "identifier": "one_msg",
+                "node_type": "Identifier"
+              },
+              "rhs": [
+                {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/cfinvoke.scilla",
+                    "line": 23,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "msg",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+              "line": 24,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+                "line": 24,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "msgs",
+              "node_type": "Identifier"
+            },
+            "node_type": "SendMsgsStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+                "line": 27,
+                "column": 20,
+                "node_type": "Location"
+              },
+              "identifier": "trans",
+              "node_type": "Identifier"
+            },
+            "parameter_type": "String",
+            "node_type": "Parameter"
+          }
+        ],
+        "component_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+            "line": 27,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "Invoke",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+              "line": 28,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+                "line": 28,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "bal",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+                "line": 28,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "identifier": "_balance",
+              "node_type": "Identifier"
+            },
+            "node_type": "LoadStatement"
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+              "line": 29,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+                "line": 29,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "s",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+                "line": 29,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "node_type": "VarExpression",
+              "variable": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+                  "line": 29,
+                  "column": 7,
+                  "node_type": "Location"
+                },
+                "identifier": "_sender",
+                "node_type": "Identifier"
+              }
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+              "line": 30,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+                "line": 30,
+                "column": 12,
+                "node_type": "Location"
+              },
+              "identifier": "donate_s",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+                "line": 30,
+                "column": 21,
+                "node_type": "Location"
+              },
+              "node_type": "LiteralExpression",
+              "value": { "node_type": "StringLiteral", "value": "Donate" }
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+              "line": 31,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+                "line": 31,
+                "column": 13,
+                "node_type": "Location"
+              },
+              "identifier": "is_donate",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+                "line": 31,
+                "column": 15,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/cfinvoke.scilla",
+                    "line": 31,
+                    "column": 26,
+                    "node_type": "Location"
+                  },
+                  "identifier": "trans",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/cfinvoke.scilla",
+                    "line": 31,
+                    "column": 32,
+                    "node_type": "Location"
+                  },
+                  "identifier": "donate_s",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+                  "line": 31,
+                  "column": 23,
+                  "node_type": "Location"
+                },
+                "builtin_type": "eq",
+                "node_type": "Builtin"
+              }
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+              "line": 32,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/cfinvoke.scilla",
+                "line": 32,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "is_donate",
+              "node_type": "Identifier"
+            },
+            "cases": [
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/cfinvoke.scilla",
+                      "line": 34,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "AcceptPaymentStatement"
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/cfinvoke.scilla",
+                      "line": 35,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/cfinvoke.scilla",
+                        "line": 35,
+                        "column": 9,
+                        "node_type": "Location"
+                      },
+                      "identifier": "msg",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/cfinvoke.scilla",
+                        "line": 35,
+                        "column": 11,
+                        "node_type": "Location"
+                      },
+                      "node_type": "MessageExpression",
+                      "arguments": [
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "_tag",
+                          "payload": {
+                            "node_type": "PayloadLitral",
+                            "literal": {
+                              "node_type": "StringLiteral",
+                              "value": "Donate"
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "_recipient",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/cfinvoke.scilla",
+                                "line": 35,
+                                "column": 42,
+                                "node_type": "Location"
+                              },
+                              "identifier": "cfaddr",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "_amount",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/cfinvoke.scilla",
+                                "line": 35,
+                                "column": 60,
+                                "node_type": "Location"
+                              },
+                              "identifier": "_amount",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/cfinvoke.scilla",
+                      "line": 36,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/cfinvoke.scilla",
+                        "line": 36,
+                        "column": 10,
+                        "node_type": "Location"
+                      },
+                      "identifier": "msgs",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/cfinvoke.scilla",
+                        "line": 36,
+                        "column": 12,
+                        "node_type": "Location"
+                      },
+                      "node_type": "AppExpression",
+                      "lhs": {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/cfinvoke.scilla",
+                          "line": 36,
+                          "column": 12,
+                          "node_type": "Location"
+                        },
+                        "identifier": "one_msg",
+                        "node_type": "Identifier"
+                      },
+                      "rhs": [
+                        {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/cfinvoke.scilla",
+                            "line": 36,
+                            "column": 20,
+                            "node_type": "Location"
+                          },
+                          "identifier": "msg",
+                          "node_type": "Identifier"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/cfinvoke.scilla",
+                      "line": 37,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/cfinvoke.scilla",
+                        "line": 37,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "msgs",
+                      "node_type": "Identifier"
+                    },
+                    "node_type": "SendMsgsStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "True",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              },
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/cfinvoke.scilla",
+                      "line": 39,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/cfinvoke.scilla",
+                        "line": 39,
+                        "column": 17,
+                        "node_type": "Location"
+                      },
+                      "identifier": "claimback_s",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/cfinvoke.scilla",
+                        "line": 39,
+                        "column": 29,
+                        "node_type": "Location"
+                      },
+                      "node_type": "LiteralExpression",
+                      "value": {
+                        "node_type": "StringLiteral",
+                        "value": "ClaimBack"
+                      }
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/cfinvoke.scilla",
+                      "line": 40,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/cfinvoke.scilla",
+                        "line": 40,
+                        "column": 18,
+                        "node_type": "Location"
+                      },
+                      "identifier": "is_claimback",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/cfinvoke.scilla",
+                        "line": 40,
+                        "column": 20,
+                        "node_type": "Location"
+                      },
+                      "node_type": "BuiltinExpression",
+                      "arguments": [
+                        {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/cfinvoke.scilla",
+                            "line": 40,
+                            "column": 31,
+                            "node_type": "Location"
+                          },
+                          "identifier": "trans",
+                          "node_type": "Identifier"
+                        },
+                        {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/cfinvoke.scilla",
+                            "line": 40,
+                            "column": 37,
+                            "node_type": "Location"
+                          },
+                          "identifier": "claimback_s",
+                          "node_type": "Identifier"
+                        }
+                      ],
+                      "builtin_function": {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/cfinvoke.scilla",
+                          "line": 40,
+                          "column": 28,
+                          "node_type": "Location"
+                        },
+                        "builtin_type": "eq",
+                        "node_type": "Builtin"
+                      }
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/cfinvoke.scilla",
+                      "line": 41,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/cfinvoke.scilla",
+                        "line": 41,
+                        "column": 11,
+                        "node_type": "Location"
+                      },
+                      "identifier": "is_claimback",
+                      "node_type": "Identifier"
+                    },
+                    "cases": [
+                      {
+                        "pattern_body": [
+                          {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/cfinvoke.scilla",
+                              "line": 43,
+                              "column": 7,
+                              "node_type": "Location"
+                            },
+                            "node_type": "BindStatement",
+                            "lhs": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/cfinvoke.scilla",
+                                "line": 43,
+                                "column": 11,
+                                "node_type": "Location"
+                              },
+                              "identifier": "msg",
+                              "node_type": "Identifier"
+                            },
+                            "rhs": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/cfinvoke.scilla",
+                                "line": 43,
+                                "column": 13,
+                                "node_type": "Location"
+                              },
+                              "node_type": "MessageExpression",
+                              "arguments": [
+                                {
+                                  "node_type": "MessageArgument",
+                                  "variable": "_tag",
+                                  "payload": {
+                                    "node_type": "PayloadLitral",
+                                    "literal": {
+                                      "node_type": "StringLiteral",
+                                      "value": "ClaimBack"
+                                    }
+                                  }
+                                },
+                                {
+                                  "node_type": "MessageArgument",
+                                  "variable": "_recipient",
+                                  "payload": {
+                                    "node_type": "PayloadVariable",
+                                    "value": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/cfinvoke.scilla",
+                                        "line": 43,
+                                        "column": 47,
+                                        "node_type": "Location"
+                                      },
+                                      "identifier": "cfaddr",
+                                      "node_type": "Identifier"
+                                    }
+                                  }
+                                },
+                                {
+                                  "node_type": "MessageArgument",
+                                  "variable": "_amount",
+                                  "payload": {
+                                    "node_type": "PayloadLitral",
+                                    "literal": {
+                                      "node_type": "UintLiteral",
+                                      "value": "0"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/cfinvoke.scilla",
+                              "line": 44,
+                              "column": 7,
+                              "node_type": "Location"
+                            },
+                            "node_type": "BindStatement",
+                            "lhs": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/cfinvoke.scilla",
+                                "line": 44,
+                                "column": 12,
+                                "node_type": "Location"
+                              },
+                              "identifier": "msgs",
+                              "node_type": "Identifier"
+                            },
+                            "rhs": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/cfinvoke.scilla",
+                                "line": 44,
+                                "column": 14,
+                                "node_type": "Location"
+                              },
+                              "node_type": "AppExpression",
+                              "lhs": {
+                                "loc": {
+                                  "source_file":
+                                    "./scilla_checker/examples/cfinvoke.scilla",
+                                  "line": 44,
+                                  "column": 14,
+                                  "node_type": "Location"
+                                },
+                                "identifier": "one_msg",
+                                "node_type": "Identifier"
+                              },
+                              "rhs": [
+                                {
+                                  "loc": {
+                                    "source_file":
+                                      "./scilla_checker/examples/cfinvoke.scilla",
+                                    "line": 44,
+                                    "column": 22,
+                                    "node_type": "Location"
+                                  },
+                                  "identifier": "msg",
+                                  "node_type": "Identifier"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/cfinvoke.scilla",
+                              "line": 45,
+                              "column": 7,
+                              "node_type": "Location"
+                            },
+                            "arg": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/cfinvoke.scilla",
+                                "line": 45,
+                                "column": 7,
+                                "node_type": "Location"
+                              },
+                              "identifier": "msgs",
+                              "node_type": "Identifier"
+                            },
+                            "node_type": "SendMsgsStatement"
+                          }
+                        ],
+                        "pattern": {
+                          "node_type": "ConstructorPattern",
+                          "constructor_name": "True",
+                          "patterns": []
+                        },
+                        "node_type": "MatchStatementCase"
+                      },
+                      {
+                        "pattern_body": [
+                          {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/cfinvoke.scilla",
+                              "line": 47,
+                              "column": 7,
+                              "node_type": "Location"
+                            },
+                            "node_type": "BindStatement",
+                            "lhs": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/cfinvoke.scilla",
+                                "line": 47,
+                                "column": 18,
+                                "node_type": "Location"
+                              },
+                              "identifier": "getfunds_s",
+                              "node_type": "Identifier"
+                            },
+                            "rhs": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/cfinvoke.scilla",
+                                "line": 47,
+                                "column": 29,
+                                "node_type": "Location"
+                              },
+                              "node_type": "LiteralExpression",
+                              "value": {
+                                "node_type": "StringLiteral",
+                                "value": "GetFunds"
+                              }
+                            }
+                          },
+                          {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/cfinvoke.scilla",
+                              "line": 48,
+                              "column": 7,
+                              "node_type": "Location"
+                            },
+                            "node_type": "BindStatement",
+                            "lhs": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/cfinvoke.scilla",
+                                "line": 48,
+                                "column": 19,
+                                "node_type": "Location"
+                              },
+                              "identifier": "is_getfunds",
+                              "node_type": "Identifier"
+                            },
+                            "rhs": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/cfinvoke.scilla",
+                                "line": 48,
+                                "column": 21,
+                                "node_type": "Location"
+                              },
+                              "node_type": "BuiltinExpression",
+                              "arguments": [
+                                {
+                                  "loc": {
+                                    "source_file":
+                                      "./scilla_checker/examples/cfinvoke.scilla",
+                                    "line": 48,
+                                    "column": 32,
+                                    "node_type": "Location"
+                                  },
+                                  "identifier": "trans",
+                                  "node_type": "Identifier"
+                                },
+                                {
+                                  "loc": {
+                                    "source_file":
+                                      "./scilla_checker/examples/cfinvoke.scilla",
+                                    "line": 48,
+                                    "column": 38,
+                                    "node_type": "Location"
+                                  },
+                                  "identifier": "getfunds_s",
+                                  "node_type": "Identifier"
+                                }
+                              ],
+                              "builtin_function": {
+                                "loc": {
+                                  "source_file":
+                                    "./scilla_checker/examples/cfinvoke.scilla",
+                                  "line": 48,
+                                  "column": 29,
+                                  "node_type": "Location"
+                                },
+                                "builtin_type": "eq",
+                                "node_type": "Builtin"
+                              }
+                            }
+                          },
+                          {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/cfinvoke.scilla",
+                              "line": 49,
+                              "column": 7,
+                              "node_type": "Location"
+                            },
+                            "arg": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/cfinvoke.scilla",
+                                "line": 49,
+                                "column": 13,
+                                "node_type": "Location"
+                              },
+                              "identifier": "is_getfunds",
+                              "node_type": "Identifier"
+                            },
+                            "cases": [
+                              {
+                                "pattern_body": [
+                                  {
+                                    "loc": {
+                                      "source_file":
+                                        "./scilla_checker/examples/cfinvoke.scilla",
+                                      "line": 51,
+                                      "column": 9,
+                                      "node_type": "Location"
+                                    },
+                                    "node_type": "BindStatement",
+                                    "lhs": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/cfinvoke.scilla",
+                                        "line": 51,
+                                        "column": 13,
+                                        "node_type": "Location"
+                                      },
+                                      "identifier": "msg",
+                                      "node_type": "Identifier"
+                                    },
+                                    "rhs": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/cfinvoke.scilla",
+                                        "line": 51,
+                                        "column": 15,
+                                        "node_type": "Location"
+                                      },
+                                      "node_type": "MessageExpression",
+                                      "arguments": [
+                                        {
+                                          "node_type": "MessageArgument",
+                                          "variable": "_tag",
+                                          "payload": {
+                                            "node_type": "PayloadLitral",
+                                            "literal": {
+                                              "node_type": "StringLiteral",
+                                              "value": "GetFunds"
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "node_type": "MessageArgument",
+                                          "variable": "_recipient",
+                                          "payload": {
+                                            "node_type": "PayloadVariable",
+                                            "value": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/cfinvoke.scilla",
+                                                "line": 51,
+                                                "column": 48,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier": "cfaddr",
+                                              "node_type": "Identifier"
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "node_type": "MessageArgument",
+                                          "variable": "_amount",
+                                          "payload": {
+                                            "node_type": "PayloadLitral",
+                                            "literal": {
+                                              "node_type": "UintLiteral",
+                                              "value": "0"
+                                            }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "loc": {
+                                      "source_file":
+                                        "./scilla_checker/examples/cfinvoke.scilla",
+                                      "line": 52,
+                                      "column": 9,
+                                      "node_type": "Location"
+                                    },
+                                    "node_type": "BindStatement",
+                                    "lhs": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/cfinvoke.scilla",
+                                        "line": 52,
+                                        "column": 14,
+                                        "node_type": "Location"
+                                      },
+                                      "identifier": "msgs",
+                                      "node_type": "Identifier"
+                                    },
+                                    "rhs": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/cfinvoke.scilla",
+                                        "line": 52,
+                                        "column": 16,
+                                        "node_type": "Location"
+                                      },
+                                      "node_type": "AppExpression",
+                                      "lhs": {
+                                        "loc": {
+                                          "source_file":
+                                            "./scilla_checker/examples/cfinvoke.scilla",
+                                          "line": 52,
+                                          "column": 16,
+                                          "node_type": "Location"
+                                        },
+                                        "identifier": "one_msg",
+                                        "node_type": "Identifier"
+                                      },
+                                      "rhs": [
+                                        {
+                                          "loc": {
+                                            "source_file":
+                                              "./scilla_checker/examples/cfinvoke.scilla",
+                                            "line": 52,
+                                            "column": 24,
+                                            "node_type": "Location"
+                                          },
+                                          "identifier": "msg",
+                                          "node_type": "Identifier"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "loc": {
+                                      "source_file":
+                                        "./scilla_checker/examples/cfinvoke.scilla",
+                                      "line": 53,
+                                      "column": 9,
+                                      "node_type": "Location"
+                                    },
+                                    "arg": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/cfinvoke.scilla",
+                                        "line": 53,
+                                        "column": 9,
+                                        "node_type": "Location"
+                                      },
+                                      "identifier": "msgs",
+                                      "node_type": "Identifier"
+                                    },
+                                    "node_type": "SendMsgsStatement"
+                                  }
+                                ],
+                                "pattern": {
+                                  "node_type": "ConstructorPattern",
+                                  "constructor_name": "True",
+                                  "patterns": []
+                                },
+                                "node_type": "MatchStatementCase"
+                              },
+                              {
+                                "pattern_body": [
+                                  {
+                                    "loc": {
+                                      "source_file":
+                                        "./scilla_checker/examples/cfinvoke.scilla",
+                                      "line": 55,
+                                      "column": 9,
+                                      "node_type": "Location"
+                                    },
+                                    "node_type": "BindStatement",
+                                    "lhs": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/cfinvoke.scilla",
+                                        "line": 55,
+                                        "column": 13,
+                                        "node_type": "Location"
+                                      },
+                                      "identifier": "msg",
+                                      "node_type": "Identifier"
+                                    },
+                                    "rhs": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/cfinvoke.scilla",
+                                        "line": 55,
+                                        "column": 15,
+                                        "node_type": "Location"
+                                      },
+                                      "node_type": "MessageExpression",
+                                      "arguments": [
+                                        {
+                                          "node_type": "MessageArgument",
+                                          "variable": "_tag",
+                                          "payload": {
+                                            "node_type": "PayloadLitral",
+                                            "literal": {
+                                              "node_type": "StringLiteral",
+                                              "value": ""
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "node_type": "MessageArgument",
+                                          "variable": "_recipient",
+                                          "payload": {
+                                            "node_type": "PayloadVariable",
+                                            "value": {
+                                              "loc": {
+                                                "source_file":
+                                                  "./scilla_checker/examples/cfinvoke.scilla",
+                                                "line": 55,
+                                                "column": 40,
+                                                "node_type": "Location"
+                                              },
+                                              "identifier": "_sender",
+                                              "node_type": "Identifier"
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "node_type": "MessageArgument",
+                                          "variable": "_amount",
+                                          "payload": {
+                                            "node_type": "PayloadLitral",
+                                            "literal": {
+                                              "node_type": "UintLiteral",
+                                              "value": "0"
+                                            }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "loc": {
+                                      "source_file":
+                                        "./scilla_checker/examples/cfinvoke.scilla",
+                                      "line": 56,
+                                      "column": 9,
+                                      "node_type": "Location"
+                                    },
+                                    "node_type": "BindStatement",
+                                    "lhs": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/cfinvoke.scilla",
+                                        "line": 56,
+                                        "column": 14,
+                                        "node_type": "Location"
+                                      },
+                                      "identifier": "msgs",
+                                      "node_type": "Identifier"
+                                    },
+                                    "rhs": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/cfinvoke.scilla",
+                                        "line": 56,
+                                        "column": 16,
+                                        "node_type": "Location"
+                                      },
+                                      "node_type": "AppExpression",
+                                      "lhs": {
+                                        "loc": {
+                                          "source_file":
+                                            "./scilla_checker/examples/cfinvoke.scilla",
+                                          "line": 56,
+                                          "column": 16,
+                                          "node_type": "Location"
+                                        },
+                                        "identifier": "one_msg",
+                                        "node_type": "Identifier"
+                                      },
+                                      "rhs": [
+                                        {
+                                          "loc": {
+                                            "source_file":
+                                              "./scilla_checker/examples/cfinvoke.scilla",
+                                            "line": 56,
+                                            "column": 24,
+                                            "node_type": "Location"
+                                          },
+                                          "identifier": "msg",
+                                          "node_type": "Identifier"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "loc": {
+                                      "source_file":
+                                        "./scilla_checker/examples/cfinvoke.scilla",
+                                      "line": 57,
+                                      "column": 9,
+                                      "node_type": "Location"
+                                    },
+                                    "arg": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/cfinvoke.scilla",
+                                        "line": 57,
+                                        "column": 9,
+                                        "node_type": "Location"
+                                      },
+                                      "identifier": "msgs",
+                                      "node_type": "Identifier"
+                                    },
+                                    "node_type": "SendMsgsStatement"
+                                  }
+                                ],
+                                "pattern": {
+                                  "node_type": "ConstructorPattern",
+                                  "constructor_name": "False",
+                                  "patterns": []
+                                },
+                                "node_type": "MatchStatementCase"
+                              }
+                            ],
+                            "node_type": "MatchStatement"
+                          }
+                        ],
+                        "pattern": {
+                          "node_type": "ConstructorPattern",
+                          "constructor_name": "False",
+                          "patterns": []
+                        },
+                        "node_type": "MatchStatementCase"
+                      }
+                    ],
+                    "node_type": "MatchStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "False",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              }
+            ],
+            "node_type": "MatchStatement"
+          }
+        ],
+        "node_type": "Component"
+      }
+    ],
+    "node_type": "Contract"
+  },
+  "node_type": "ContractModule"
+}

@@ -1,0 +1,2771 @@
+{
+  "scilla_major_version": 0,
+  "name": {
+    "loc": {
+      "source_file": "./scilla_checker/examples/mappair.scilla",
+      "line": 30,
+      "column": 10,
+      "node_type": "Location"
+    },
+    "identifier": "Test",
+    "node_type": "Identifier"
+  },
+  "library": {
+    "library_name": {
+      "loc": {
+        "source_file": "./scilla_checker/examples/mappair.scilla",
+        "line": 5,
+        "column": 1,
+        "node_type": "Location"
+      },
+      "identifier": "Test",
+      "node_type": "Identifier"
+    },
+    "library_entries": [
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 7,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "no_msg",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 7,
+            "column": 14,
+            "node_type": "Location"
+          },
+          "node_type": "ConstrExpression",
+          "constructor_name": "Nil",
+          "types": [ "Message" ],
+          "arguments": []
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 9,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "one_msg",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 10,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 10,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "msg",
+            "node_type": "Identifier"
+          },
+          "rhs": {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 11,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "LetExpression",
+            "variable": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 11,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "nil_msg",
+              "node_type": "Identifier"
+            },
+            "variable_type": null,
+            "expression": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 11,
+                "column": 19,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "Nil",
+              "types": [ "Message" ],
+              "arguments": []
+            },
+            "body": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 12,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "Cons",
+              "types": [ "Message" ],
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 12,
+                    "column": 20,
+                    "node_type": "Location"
+                  },
+                  "identifier": "msg",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 12,
+                    "column": 24,
+                    "node_type": "Location"
+                  },
+                  "identifier": "nil_msg",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          "fun_type": "Message"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 14,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "flip_obool",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 15,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 15,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "ob",
+            "node_type": "Identifier"
+          },
+          "rhs": {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 16,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "LetExpression",
+            "variable": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 16,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "variable_type": null,
+            "expression": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 16,
+                "column": 13,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "True",
+              "types": [],
+              "arguments": []
+            },
+            "body": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 17,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "LetExpression",
+              "variable": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/mappair.scilla",
+                  "line": 17,
+                  "column": 5,
+                  "node_type": "Location"
+                },
+                "identifier": "f",
+                "node_type": "Identifier"
+              },
+              "variable_type": null,
+              "expression": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/mappair.scilla",
+                  "line": 17,
+                  "column": 13,
+                  "node_type": "Location"
+                },
+                "node_type": "ConstrExpression",
+                "constructor_name": "False",
+                "types": [],
+                "arguments": []
+              },
+              "body": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/mappair.scilla",
+                  "line": 18,
+                  "column": 5,
+                  "node_type": "Location"
+                },
+                "node_type": "MatchExpression",
+                "lhs": {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 18,
+                    "column": 11,
+                    "node_type": "Location"
+                  },
+                  "identifier": "ob",
+                  "node_type": "Identifier"
+                },
+                "rhs": [
+                  {
+                    "node_type": "MatchExpressionCase",
+                    "pattern": {
+                      "node_type": "ConstructorPattern",
+                      "constructor_name": "None",
+                      "patterns": []
+                    },
+                    "expression": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 19,
+                        "column": 15,
+                        "node_type": "Location"
+                      },
+                      "node_type": "ConstrExpression",
+                      "constructor_name": "Some",
+                      "types": [ "Bool" ],
+                      "arguments": [
+                        {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/mappair.scilla",
+                            "line": 19,
+                            "column": 27,
+                            "node_type": "Location"
+                          },
+                          "identifier": "t",
+                          "node_type": "Identifier"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "node_type": "MatchExpressionCase",
+                    "pattern": {
+                      "node_type": "ConstructorPattern",
+                      "constructor_name": "Some",
+                      "patterns": [
+                        {
+                          "node_type": "BinderPattern",
+                          "variable": {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/mappair.scilla",
+                              "line": 20,
+                              "column": 12,
+                              "node_type": "Location"
+                            },
+                            "identifier": "b",
+                            "node_type": "Identifier"
+                          }
+                        }
+                      ]
+                    },
+                    "expression": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 21,
+                        "column": 7,
+                        "node_type": "Location"
+                      },
+                      "node_type": "MatchExpression",
+                      "lhs": {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/mappair.scilla",
+                          "line": 21,
+                          "column": 13,
+                          "node_type": "Location"
+                        },
+                        "identifier": "b",
+                        "node_type": "Identifier"
+                      },
+                      "rhs": [
+                        {
+                          "node_type": "MatchExpressionCase",
+                          "pattern": {
+                            "node_type": "ConstructorPattern",
+                            "constructor_name": "True",
+                            "patterns": []
+                          },
+                          "expression": {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/mappair.scilla",
+                              "line": 22,
+                              "column": 17,
+                              "node_type": "Location"
+                            },
+                            "node_type": "ConstrExpression",
+                            "constructor_name": "Some",
+                            "types": [ "Bool" ],
+                            "arguments": [
+                              {
+                                "loc": {
+                                  "source_file":
+                                    "./scilla_checker/examples/mappair.scilla",
+                                  "line": 22,
+                                  "column": 29,
+                                  "node_type": "Location"
+                                },
+                                "identifier": "f",
+                                "node_type": "Identifier"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "node_type": "MatchExpressionCase",
+                          "pattern": {
+                            "node_type": "ConstructorPattern",
+                            "constructor_name": "False",
+                            "patterns": []
+                          },
+                          "expression": {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/mappair.scilla",
+                              "line": 23,
+                              "column": 18,
+                              "node_type": "Location"
+                            },
+                            "node_type": "ConstrExpression",
+                            "constructor_name": "Some",
+                            "types": [ "Bool" ],
+                            "arguments": [
+                              {
+                                "loc": {
+                                  "source_file":
+                                    "./scilla_checker/examples/mappair.scilla",
+                                  "line": 23,
+                                  "column": 30,
+                                  "node_type": "Location"
+                                },
+                                "identifier": "t",
+                                "node_type": "Identifier"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "fun_type": "Option (Bool)"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 27,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "fst_f",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 27,
+            "column": 13,
+            "node_type": "Location"
+          },
+          "node_type": "TAppExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 28,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "snd_f",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 28,
+            "column": 13,
+            "node_type": "Location"
+          },
+          "node_type": "TAppExpression"
+        }
+      }
+    ],
+    "node_type": "Library"
+  },
+  "external_libraries": [
+    {
+      "name": {
+        "loc": {
+          "source_file": "./scilla_checker/examples/mappair.scilla",
+          "line": 3,
+          "column": 8,
+          "node_type": "Location"
+        },
+        "identifier": "ListUtils",
+        "node_type": "Identifier"
+      },
+      "alias": null,
+      "node_type": "ExternalLibrary"
+    },
+    {
+      "name": {
+        "loc": {
+          "source_file": "./scilla_checker/examples/mappair.scilla",
+          "line": 3,
+          "column": 18,
+          "node_type": "Location"
+        },
+        "identifier": "PairUtils",
+        "node_type": "Identifier"
+      },
+      "alias": null,
+      "node_type": "ExternalLibrary"
+    },
+    {
+      "name": {
+        "loc": {
+          "source_file": "./scilla_checker/examples/mappair.scilla",
+          "line": 3,
+          "column": 28,
+          "node_type": "Location"
+        },
+        "identifier": "NatUtils",
+        "node_type": "Identifier"
+      },
+      "alias": null,
+      "node_type": "ExternalLibrary"
+    }
+  ],
+  "contract": {
+    "name": {
+      "loc": {
+        "source_file": "./scilla_checker/examples/mappair.scilla",
+        "line": 30,
+        "column": 10,
+        "node_type": "Location"
+      },
+      "identifier": "Test",
+      "node_type": "Identifier"
+    },
+    "params": [
+      {
+        "parameter_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 31,
+            "column": 2,
+            "node_type": "Location"
+          },
+          "identifier": "owner",
+          "node_type": "Identifier"
+        },
+        "parameter_type": "ByStr20",
+        "node_type": "Parameter"
+      }
+    ],
+    "fields": [
+      {
+        "field_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 33,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "gmap",
+          "node_type": "Identifier"
+        },
+        "field_type": "Map (ByStr20) (Pair (Int32) (Int32))",
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 33,
+            "column": 52,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": {
+            "key_type": "ByStr20",
+            "value_type": "Pair (Int32) (Int32)",
+            "node_type": "MapLiteral",
+            "value": []
+          }
+        },
+        "node_type": "Field"
+      },
+      {
+        "field_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 34,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "gpair",
+          "node_type": "Identifier"
+        },
+        "field_type": "Pair (List (Int64)) (Option (Bool))",
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 35,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 35,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "identifier": "el",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 35,
+              "column": 14,
+              "node_type": "Location"
+            },
+            "node_type": "ConstrExpression",
+            "constructor_name": "Nil",
+            "types": [ "Int64" ],
+            "arguments": []
+          },
+          "body": {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 36,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "LetExpression",
+            "variable": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 36,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "n",
+              "node_type": "Identifier"
+            },
+            "variable_type": null,
+            "expression": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 36,
+                "column": 13,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "None",
+              "types": [ "Bool" ],
+              "arguments": []
+            },
+            "body": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 37,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "Pair",
+              "types": [ "List (Int64)", "Option (Bool)" ],
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 37,
+                    "column": 41,
+                    "node_type": "Location"
+                  },
+                  "identifier": "el",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 37,
+                    "column": 44,
+                    "node_type": "Location"
+                  },
+                  "identifier": "n",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          }
+        },
+        "node_type": "Field"
+      },
+      {
+        "field_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 39,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "llist",
+          "node_type": "Identifier"
+        },
+        "field_type": "List (List (Int64))",
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 39,
+            "column": 36,
+            "node_type": "Location"
+          },
+          "node_type": "ConstrExpression",
+          "constructor_name": "Nil",
+          "types": [ "List (Int64)" ],
+          "arguments": []
+        },
+        "node_type": "Field"
+      },
+      {
+        "field_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 40,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "plist",
+          "node_type": "Identifier"
+        },
+        "field_type": "List (Option (Int32))",
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 40,
+            "column": 37,
+            "node_type": "Location"
+          },
+          "node_type": "ConstrExpression",
+          "constructor_name": "Nil",
+          "types": [ "Option (Int32)" ],
+          "arguments": []
+        },
+        "node_type": "Field"
+      },
+      {
+        "field_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 42,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "gnat",
+          "node_type": "Identifier"
+        },
+        "field_type": "Nat",
+        "expression": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 42,
+            "column": 20,
+            "node_type": "Location"
+          },
+          "node_type": "ConstrExpression",
+          "constructor_name": "Zero",
+          "types": [],
+          "arguments": []
+        },
+        "node_type": "Field"
+      }
+    ],
+    "components": [
+      {
+        "params": [],
+        "component_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 44,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "testMapPair",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 45,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 45,
+                "column": 12,
+                "node_type": "Location"
+              },
+              "identifier": "is_owner",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 45,
+                "column": 14,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 45,
+                    "column": 25,
+                    "node_type": "Location"
+                  },
+                  "identifier": "owner",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 45,
+                    "column": 31,
+                    "node_type": "Location"
+                  },
+                  "identifier": "_sender",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/mappair.scilla",
+                  "line": 45,
+                  "column": 22,
+                  "node_type": "Location"
+                },
+                "builtin_type": "eq",
+                "node_type": "Builtin"
+              }
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 46,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 46,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "is_owner",
+              "node_type": "Identifier"
+            },
+            "cases": [
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/mappair.scilla",
+                      "line": 48,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 48,
+                        "column": 9,
+                        "node_type": "Location"
+                      },
+                      "identifier": "one",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 48,
+                        "column": 11,
+                        "node_type": "Location"
+                      },
+                      "node_type": "LiteralExpression",
+                      "value": { "node_type": "IntLiteral", "value": "1" }
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/mappair.scilla",
+                      "line": 49,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 49,
+                        "column": 9,
+                        "node_type": "Location"
+                      },
+                      "identifier": "two",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 49,
+                        "column": 11,
+                        "node_type": "Location"
+                      },
+                      "node_type": "LiteralExpression",
+                      "value": { "node_type": "IntLiteral", "value": "2" }
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/mappair.scilla",
+                      "line": 50,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 50,
+                        "column": 7,
+                        "node_type": "Location"
+                      },
+                      "identifier": "p",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 50,
+                        "column": 9,
+                        "node_type": "Location"
+                      },
+                      "node_type": "ConstrExpression",
+                      "constructor_name": "Pair",
+                      "types": [ "Int32", "Int32" ],
+                      "arguments": [
+                        {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/mappair.scilla",
+                            "line": 50,
+                            "column": 32,
+                            "node_type": "Location"
+                          },
+                          "identifier": "one",
+                          "node_type": "Identifier"
+                        },
+                        {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/mappair.scilla",
+                            "line": 50,
+                            "column": 36,
+                            "node_type": "Location"
+                          },
+                          "identifier": "two",
+                          "node_type": "Identifier"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/mappair.scilla",
+                      "line": 51,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "MapUpdateStatement",
+                    "map_name": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 51,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "gmap",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 51,
+                        "column": 22,
+                        "node_type": "Location"
+                      },
+                      "identifier": "p",
+                      "node_type": "Identifier"
+                    },
+                    "keys": [
+                      {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/mappair.scilla",
+                          "line": 51,
+                          "column": 10,
+                          "node_type": "Location"
+                        },
+                        "identifier": "_sender",
+                        "node_type": "Identifier"
+                      }
+                    ]
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/mappair.scilla",
+                      "line": 52,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 52,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "no_msg",
+                      "node_type": "Identifier"
+                    },
+                    "node_type": "SendMsgsStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "False",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              },
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/mappair.scilla",
+                      "line": 54,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 54,
+                        "column": 11,
+                        "node_type": "Location"
+                      },
+                      "identifier": "three",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 54,
+                        "column": 13,
+                        "node_type": "Location"
+                      },
+                      "node_type": "LiteralExpression",
+                      "value": { "node_type": "IntLiteral", "value": "3" }
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/mappair.scilla",
+                      "line": 55,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 55,
+                        "column": 10,
+                        "node_type": "Location"
+                      },
+                      "identifier": "four",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 55,
+                        "column": 12,
+                        "node_type": "Location"
+                      },
+                      "node_type": "LiteralExpression",
+                      "value": { "node_type": "IntLiteral", "value": "4" }
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/mappair.scilla",
+                      "line": 56,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 56,
+                        "column": 7,
+                        "node_type": "Location"
+                      },
+                      "identifier": "p",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 56,
+                        "column": 9,
+                        "node_type": "Location"
+                      },
+                      "node_type": "ConstrExpression",
+                      "constructor_name": "Pair",
+                      "types": [ "Int32", "Int32" ],
+                      "arguments": [
+                        {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/mappair.scilla",
+                            "line": 56,
+                            "column": 32,
+                            "node_type": "Location"
+                          },
+                          "identifier": "three",
+                          "node_type": "Identifier"
+                        },
+                        {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/mappair.scilla",
+                            "line": 56,
+                            "column": 38,
+                            "node_type": "Location"
+                          },
+                          "identifier": "four",
+                          "node_type": "Identifier"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/mappair.scilla",
+                      "line": 57,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "MapUpdateStatement",
+                    "map_name": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 57,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "gmap",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 57,
+                        "column": 22,
+                        "node_type": "Location"
+                      },
+                      "identifier": "p",
+                      "node_type": "Identifier"
+                    },
+                    "keys": [
+                      {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/mappair.scilla",
+                          "line": 57,
+                          "column": 10,
+                          "node_type": "Location"
+                        },
+                        "identifier": "_sender",
+                        "node_type": "Identifier"
+                      }
+                    ]
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/mappair.scilla",
+                      "line": 58,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 58,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "no_msg",
+                      "node_type": "Identifier"
+                    },
+                    "node_type": "SendMsgsStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "True",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              }
+            ],
+            "node_type": "MatchStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 62,
+                "column": 25,
+                "node_type": "Location"
+              },
+              "identifier": "num",
+              "node_type": "Identifier"
+            },
+            "parameter_type": "Int64",
+            "node_type": "Parameter"
+          }
+        ],
+        "component_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 62,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "addNumToList",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 63,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 63,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "p",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 63,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "identifier": "gpair",
+              "node_type": "Identifier"
+            },
+            "node_type": "LoadStatement"
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 65,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 65,
+                "column": 6,
+                "node_type": "Location"
+              },
+              "identifier": "l1",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 65,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/mappair.scilla",
+                  "line": 65,
+                  "column": 8,
+                  "node_type": "Location"
+                },
+                "identifier": "fst_f",
+                "node_type": "Identifier"
+              },
+              "rhs": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 65,
+                    "column": 14,
+                    "node_type": "Location"
+                  },
+                  "identifier": "p",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 67,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 67,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 67,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/mappair.scilla",
+                  "line": 67,
+                  "column": 7,
+                  "node_type": "Location"
+                },
+                "identifier": "snd_f",
+                "node_type": "Identifier"
+              },
+              "rhs": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 67,
+                    "column": 13,
+                    "node_type": "Location"
+                  },
+                  "identifier": "p",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 69,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 69,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "bflip",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 69,
+                "column": 11,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/mappair.scilla",
+                  "line": 69,
+                  "column": 11,
+                  "node_type": "Location"
+                },
+                "identifier": "flip_obool",
+                "node_type": "Identifier"
+              },
+              "rhs": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 69,
+                    "column": 22,
+                    "node_type": "Location"
+                  },
+                  "identifier": "b",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 71,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 71,
+                "column": 6,
+                "node_type": "Location"
+              },
+              "identifier": "l2",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 71,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "Cons",
+              "types": [ "Int64" ],
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 71,
+                    "column": 20,
+                    "node_type": "Location"
+                  },
+                  "identifier": "num",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 71,
+                    "column": 24,
+                    "node_type": "Location"
+                  },
+                  "identifier": "l1",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 73,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 73,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "new_p",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 73,
+                "column": 11,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "Pair",
+              "types": [ "List (Int64)", "Option (Bool)" ],
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 73,
+                    "column": 47,
+                    "node_type": "Location"
+                  },
+                  "identifier": "l2",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 73,
+                    "column": 50,
+                    "node_type": "Location"
+                  },
+                  "identifier": "bflip",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 74,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 74,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "gpair",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 74,
+                "column": 12,
+                "node_type": "Location"
+              },
+              "identifier": "new_p",
+              "node_type": "Identifier"
+            },
+            "node_type": "StoreStatement"
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 75,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 75,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "len",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 75,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "node_type": "LetExpression",
+              "variable": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/mappair.scilla",
+                  "line": 75,
+                  "column": 9,
+                  "node_type": "Location"
+                },
+                "identifier": "my_list_length",
+                "node_type": "Identifier"
+              },
+              "variable_type": null,
+              "expression": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/mappair.scilla",
+                  "line": 75,
+                  "column": 30,
+                  "node_type": "Location"
+                },
+                "node_type": "TAppExpression"
+              },
+              "body": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/mappair.scilla",
+                  "line": 75,
+                  "column": 52,
+                  "node_type": "Location"
+                },
+                "node_type": "AppExpression",
+                "lhs": {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 75,
+                    "column": 52,
+                    "node_type": "Location"
+                  },
+                  "identifier": "my_list_length",
+                  "node_type": "Identifier"
+                },
+                "rhs": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/mappair.scilla",
+                      "line": 75,
+                      "column": 67,
+                      "node_type": "Location"
+                    },
+                    "identifier": "l2",
+                    "node_type": "Identifier"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 76,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 76,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "msg",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 76,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "node_type": "MessageExpression",
+              "arguments": [
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_tag",
+                  "payload": {
+                    "node_type": "PayloadLitral",
+                    "literal": { "node_type": "StringLiteral", "value": "" }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_recipient",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 76,
+                        "column": 34,
+                        "node_type": "Location"
+                      },
+                      "identifier": "_sender",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_amount",
+                  "payload": {
+                    "node_type": "PayloadLitral",
+                    "literal": { "node_type": "UintLiteral", "value": "0" }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "listLength",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 76,
+                        "column": 77,
+                        "node_type": "Location"
+                      },
+                      "identifier": "len",
+                      "node_type": "Identifier"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 77,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 77,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "identifier": "msgs",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 77,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/mappair.scilla",
+                  "line": 77,
+                  "column": 10,
+                  "node_type": "Location"
+                },
+                "identifier": "one_msg",
+                "node_type": "Identifier"
+              },
+              "rhs": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 77,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "msg",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 78,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 78,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "msgs",
+              "node_type": "Identifier"
+            },
+            "node_type": "SendMsgsStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [],
+        "component_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 81,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "incNat",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 82,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 82,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "n",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 82,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "identifier": "gnat",
+              "node_type": "Identifier"
+            },
+            "node_type": "LoadStatement"
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 83,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 83,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "m",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 83,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "Succ",
+              "types": [],
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 83,
+                    "column": 12,
+                    "node_type": "Location"
+                  },
+                  "identifier": "n",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 84,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 84,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "identifier": "gnat",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 84,
+                "column": 11,
+                "node_type": "Location"
+              },
+              "identifier": "m",
+              "node_type": "Identifier"
+            },
+            "node_type": "StoreStatement"
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 85,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 85,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "i",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 85,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/mappair.scilla",
+                  "line": 85,
+                  "column": 7,
+                  "node_type": "Location"
+                },
+                "identifier": "nat_to_int",
+                "node_type": "Identifier"
+              },
+              "rhs": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 85,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "m",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 86,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 86,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "msg",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 86,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "node_type": "MessageExpression",
+              "arguments": [
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_tag",
+                  "payload": {
+                    "node_type": "PayloadLitral",
+                    "literal": { "node_type": "StringLiteral", "value": "" }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_recipient",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 86,
+                        "column": 34,
+                        "node_type": "Location"
+                      },
+                      "identifier": "_sender",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_amount",
+                  "payload": {
+                    "node_type": "PayloadLitral",
+                    "literal": { "node_type": "UintLiteral", "value": "0" }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "nat",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 86,
+                        "column": 70,
+                        "node_type": "Location"
+                      },
+                      "identifier": "i",
+                      "node_type": "Identifier"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 87,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 87,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "identifier": "msgs",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 87,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/mappair.scilla",
+                  "line": 87,
+                  "column": 10,
+                  "node_type": "Location"
+                },
+                "identifier": "one_msg",
+                "node_type": "Identifier"
+              },
+              "rhs": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 87,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "msg",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 88,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 88,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "msgs",
+              "node_type": "Identifier"
+            },
+            "node_type": "SendMsgsStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [],
+        "component_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 91,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "lflatten",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 92,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 92,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "n",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 92,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "identifier": "llist",
+              "node_type": "Identifier"
+            },
+            "node_type": "LoadStatement"
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 93,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 93,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "lfl",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 93,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "node_type": "TAppExpression"
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 94,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 94,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "m",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 94,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/mappair.scilla",
+                  "line": 94,
+                  "column": 7,
+                  "node_type": "Location"
+                },
+                "identifier": "lfl",
+                "node_type": "Identifier"
+              },
+              "rhs": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 94,
+                    "column": 11,
+                    "node_type": "Location"
+                  },
+                  "identifier": "n",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 95,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 95,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "len",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 95,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "node_type": "LetExpression",
+              "variable": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/mappair.scilla",
+                  "line": 95,
+                  "column": 9,
+                  "node_type": "Location"
+                },
+                "identifier": "my_list_length",
+                "node_type": "Identifier"
+              },
+              "variable_type": null,
+              "expression": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/mappair.scilla",
+                  "line": 95,
+                  "column": 30,
+                  "node_type": "Location"
+                },
+                "node_type": "TAppExpression"
+              },
+              "body": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/mappair.scilla",
+                  "line": 95,
+                  "column": 52,
+                  "node_type": "Location"
+                },
+                "node_type": "AppExpression",
+                "lhs": {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 95,
+                    "column": 52,
+                    "node_type": "Location"
+                  },
+                  "identifier": "my_list_length",
+                  "node_type": "Identifier"
+                },
+                "rhs": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/mappair.scilla",
+                      "line": 95,
+                      "column": 67,
+                      "node_type": "Location"
+                    },
+                    "identifier": "m",
+                    "node_type": "Identifier"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 96,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 96,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "msg",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 96,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "node_type": "MessageExpression",
+              "arguments": [
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_tag",
+                  "payload": {
+                    "node_type": "PayloadLitral",
+                    "literal": { "node_type": "StringLiteral", "value": "" }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_recipient",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 96,
+                        "column": 34,
+                        "node_type": "Location"
+                      },
+                      "identifier": "_sender",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_amount",
+                  "payload": {
+                    "node_type": "PayloadLitral",
+                    "literal": { "node_type": "UintLiteral", "value": "0" }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "listLength",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 96,
+                        "column": 77,
+                        "node_type": "Location"
+                      },
+                      "identifier": "len",
+                      "node_type": "Identifier"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 97,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 97,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "identifier": "msgs",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 97,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/mappair.scilla",
+                  "line": 97,
+                  "column": 10,
+                  "node_type": "Location"
+                },
+                "identifier": "one_msg",
+                "node_type": "Identifier"
+              },
+              "rhs": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 97,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "msg",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 98,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 98,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "msgs",
+              "node_type": "Identifier"
+            },
+            "node_type": "SendMsgsStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [],
+        "component_name": {
+          "loc": {
+            "source_file": "./scilla_checker/examples/mappair.scilla",
+            "line": 101,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "optlist",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 102,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 102,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "n",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 102,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "identifier": "plist",
+              "node_type": "Identifier"
+            },
+            "node_type": "LoadStatement"
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 103,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 103,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "len",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 103,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "node_type": "LetExpression",
+              "variable": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/mappair.scilla",
+                  "line": 103,
+                  "column": 9,
+                  "node_type": "Location"
+                },
+                "identifier": "my_list_length",
+                "node_type": "Identifier"
+              },
+              "variable_type": null,
+              "expression": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/mappair.scilla",
+                  "line": 103,
+                  "column": 30,
+                  "node_type": "Location"
+                },
+                "node_type": "TAppExpression"
+              },
+              "body": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/mappair.scilla",
+                  "line": 103,
+                  "column": 62,
+                  "node_type": "Location"
+                },
+                "node_type": "AppExpression",
+                "lhs": {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 103,
+                    "column": 62,
+                    "node_type": "Location"
+                  },
+                  "identifier": "my_list_length",
+                  "node_type": "Identifier"
+                },
+                "rhs": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/mappair.scilla",
+                      "line": 103,
+                      "column": 77,
+                      "node_type": "Location"
+                    },
+                    "identifier": "n",
+                    "node_type": "Identifier"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 104,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 104,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "msg",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 104,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "node_type": "MessageExpression",
+              "arguments": [
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_tag",
+                  "payload": {
+                    "node_type": "PayloadLitral",
+                    "literal": { "node_type": "StringLiteral", "value": "" }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_recipient",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 104,
+                        "column": 34,
+                        "node_type": "Location"
+                      },
+                      "identifier": "_sender",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_amount",
+                  "payload": {
+                    "node_type": "PayloadLitral",
+                    "literal": { "node_type": "UintLiteral", "value": "0" }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "listLength",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/mappair.scilla",
+                        "line": 104,
+                        "column": 77,
+                        "node_type": "Location"
+                      },
+                      "identifier": "len",
+                      "node_type": "Identifier"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 105,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 105,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "identifier": "msgs",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 105,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "./scilla_checker/examples/mappair.scilla",
+                  "line": 105,
+                  "column": 10,
+                  "node_type": "Location"
+                },
+                "identifier": "one_msg",
+                "node_type": "Identifier"
+              },
+              "rhs": [
+                {
+                  "loc": {
+                    "source_file": "./scilla_checker/examples/mappair.scilla",
+                    "line": 105,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "msg",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "./scilla_checker/examples/mappair.scilla",
+              "line": 106,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file": "./scilla_checker/examples/mappair.scilla",
+                "line": 106,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "msgs",
+              "node_type": "Identifier"
+            },
+            "node_type": "SendMsgsStatement"
+          }
+        ],
+        "node_type": "Component"
+      }
+    ],
+    "node_type": "Contract"
+  },
+  "node_type": "ContractModule"
+}

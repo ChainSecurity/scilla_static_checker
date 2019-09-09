@@ -1,0 +1,4141 @@
+{
+  "scilla_major_version": 0,
+  "name": {
+    "loc": {
+      "source_file": "./scilla_checker/examples/crowdfunding_proc.scilla",
+      "line": 58,
+      "column": 10,
+      "node_type": "Location"
+    },
+    "identifier": "Crowdfunding",
+    "node_type": "Identifier"
+  },
+  "library": {
+    "library_name": {
+      "loc": {
+        "source_file": "./scilla_checker/examples/crowdfunding_proc.scilla",
+        "line": 12,
+        "column": 1,
+        "node_type": "Location"
+      },
+      "identifier": "Crowdfunding",
+      "node_type": "Identifier"
+    },
+    "library_entries": [
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 14,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "one_msg",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 15,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 15,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "msg",
+            "node_type": "Identifier"
+          },
+          "rhs": {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 16,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "LetExpression",
+            "variable": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 16,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "nil_msg",
+              "node_type": "Identifier"
+            },
+            "variable_type": null,
+            "expression": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 16,
+                "column": 19,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "Nil",
+              "types": [ "Message" ],
+              "arguments": []
+            },
+            "body": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 17,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "Cons",
+              "types": [ "Message" ],
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/crowdfunding_proc.scilla",
+                    "line": 17,
+                    "column": 20,
+                    "node_type": "Location"
+                  },
+                  "identifier": "msg",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/crowdfunding_proc.scilla",
+                    "line": 17,
+                    "column": 24,
+                    "node_type": "Location"
+                  },
+                  "identifier": "nil_msg",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          "fun_type": "Message"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 19,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "blk_leq",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 20,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 20,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "blk1",
+            "node_type": "Identifier"
+          },
+          "rhs": {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 21,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 21,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "blk2",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 22,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "LetExpression",
+              "variable": {
+                "loc": {
+                  "source_file":
+                    "./scilla_checker/examples/crowdfunding_proc.scilla",
+                  "line": 22,
+                  "column": 5,
+                  "node_type": "Location"
+                },
+                "identifier": "bc1",
+                "node_type": "Identifier"
+              },
+              "variable_type": null,
+              "expression": {
+                "loc": {
+                  "source_file":
+                    "./scilla_checker/examples/crowdfunding_proc.scilla",
+                  "line": 22,
+                  "column": 15,
+                  "node_type": "Location"
+                },
+                "node_type": "BuiltinExpression",
+                "arguments": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 22,
+                      "column": 27,
+                      "node_type": "Location"
+                    },
+                    "identifier": "blk1",
+                    "node_type": "Identifier"
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 22,
+                      "column": 32,
+                      "node_type": "Location"
+                    },
+                    "identifier": "blk2",
+                    "node_type": "Identifier"
+                  }
+                ],
+                "builtin_function": {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/crowdfunding_proc.scilla",
+                    "line": 22,
+                    "column": 23,
+                    "node_type": "Location"
+                  },
+                  "builtin_type": "blt",
+                  "node_type": "Builtin"
+                }
+              },
+              "body": {
+                "loc": {
+                  "source_file":
+                    "./scilla_checker/examples/crowdfunding_proc.scilla",
+                  "line": 23,
+                  "column": 5,
+                  "node_type": "Location"
+                },
+                "node_type": "LetExpression",
+                "variable": {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/crowdfunding_proc.scilla",
+                    "line": 23,
+                    "column": 5,
+                    "node_type": "Location"
+                  },
+                  "identifier": "bc2",
+                  "node_type": "Identifier"
+                },
+                "variable_type": null,
+                "expression": {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/crowdfunding_proc.scilla",
+                    "line": 23,
+                    "column": 15,
+                    "node_type": "Location"
+                  },
+                  "node_type": "BuiltinExpression",
+                  "arguments": [
+                    {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 23,
+                        "column": 26,
+                        "node_type": "Location"
+                      },
+                      "identifier": "blk1",
+                      "node_type": "Identifier"
+                    },
+                    {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 23,
+                        "column": 31,
+                        "node_type": "Location"
+                      },
+                      "identifier": "blk2",
+                      "node_type": "Identifier"
+                    }
+                  ],
+                  "builtin_function": {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 23,
+                      "column": 23,
+                      "node_type": "Location"
+                    },
+                    "builtin_type": "eq",
+                    "node_type": "Builtin"
+                  }
+                },
+                "body": {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/crowdfunding_proc.scilla",
+                    "line": 24,
+                    "column": 5,
+                    "node_type": "Location"
+                  },
+                  "node_type": "AppExpression",
+                  "lhs": {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 24,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "identifier": "orb",
+                    "node_type": "Identifier"
+                  },
+                  "rhs": [
+                    {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 24,
+                        "column": 9,
+                        "node_type": "Location"
+                      },
+                      "identifier": "bc1",
+                      "node_type": "Identifier"
+                    },
+                    {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 24,
+                        "column": 13,
+                        "node_type": "Location"
+                      },
+                      "identifier": "bc2",
+                      "node_type": "Identifier"
+                    }
+                  ]
+                }
+              }
+            },
+            "fun_type": "BNum"
+          },
+          "fun_type": "BNum"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 26,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "get_funds_allowed",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 27,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 27,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "cur_block",
+            "node_type": "Identifier"
+          },
+          "rhs": {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 28,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 28,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "max_block",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 29,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "node_type": "FunExpression",
+              "lhs": {
+                "loc": {
+                  "source_file":
+                    "./scilla_checker/examples/crowdfunding_proc.scilla",
+                  "line": 29,
+                  "column": 3,
+                  "node_type": "Location"
+                },
+                "identifier": "balance",
+                "node_type": "Identifier"
+              },
+              "rhs": {
+                "loc": {
+                  "source_file":
+                    "./scilla_checker/examples/crowdfunding_proc.scilla",
+                  "line": 30,
+                  "column": 3,
+                  "node_type": "Location"
+                },
+                "node_type": "FunExpression",
+                "lhs": {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/crowdfunding_proc.scilla",
+                    "line": 30,
+                    "column": 3,
+                    "node_type": "Location"
+                  },
+                  "identifier": "goal",
+                  "node_type": "Identifier"
+                },
+                "rhs": {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/crowdfunding_proc.scilla",
+                    "line": 31,
+                    "column": 5,
+                    "node_type": "Location"
+                  },
+                  "node_type": "LetExpression",
+                  "variable": {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 31,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "identifier": "in_time",
+                    "node_type": "Identifier"
+                  },
+                  "variable_type": null,
+                  "expression": {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 31,
+                      "column": 19,
+                      "node_type": "Location"
+                    },
+                    "node_type": "AppExpression",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 31,
+                        "column": 19,
+                        "node_type": "Location"
+                      },
+                      "identifier": "blk_leq",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": [
+                      {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                          "line": 31,
+                          "column": 27,
+                          "node_type": "Location"
+                        },
+                        "identifier": "cur_block",
+                        "node_type": "Identifier"
+                      },
+                      {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                          "line": 31,
+                          "column": 37,
+                          "node_type": "Location"
+                        },
+                        "identifier": "max_block",
+                        "node_type": "Identifier"
+                      }
+                    ]
+                  },
+                  "body": {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 32,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "LetExpression",
+                    "variable": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 32,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "deadline_passed",
+                      "node_type": "Identifier"
+                    },
+                    "variable_type": null,
+                    "expression": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 32,
+                        "column": 27,
+                        "node_type": "Location"
+                      },
+                      "node_type": "AppExpression",
+                      "lhs": {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                          "line": 32,
+                          "column": 27,
+                          "node_type": "Location"
+                        },
+                        "identifier": "negb",
+                        "node_type": "Identifier"
+                      },
+                      "rhs": [
+                        {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/crowdfunding_proc.scilla",
+                            "line": 32,
+                            "column": 32,
+                            "node_type": "Location"
+                          },
+                          "identifier": "in_time",
+                          "node_type": "Identifier"
+                        }
+                      ]
+                    },
+                    "body": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 33,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "node_type": "LetExpression",
+                      "variable": {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                          "line": 33,
+                          "column": 5,
+                          "node_type": "Location"
+                        },
+                        "identifier": "target_not_reached",
+                        "node_type": "Identifier"
+                      },
+                      "variable_type": null,
+                      "expression": {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                          "line": 33,
+                          "column": 30,
+                          "node_type": "Location"
+                        },
+                        "node_type": "BuiltinExpression",
+                        "arguments": [
+                          {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/crowdfunding_proc.scilla",
+                              "line": 33,
+                              "column": 41,
+                              "node_type": "Location"
+                            },
+                            "identifier": "balance",
+                            "node_type": "Identifier"
+                          },
+                          {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/crowdfunding_proc.scilla",
+                              "line": 33,
+                              "column": 49,
+                              "node_type": "Location"
+                            },
+                            "identifier": "goal",
+                            "node_type": "Identifier"
+                          }
+                        ],
+                        "builtin_function": {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/crowdfunding_proc.scilla",
+                            "line": 33,
+                            "column": 38,
+                            "node_type": "Location"
+                          },
+                          "builtin_type": "lt",
+                          "node_type": "Builtin"
+                        }
+                      },
+                      "body": {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                          "line": 34,
+                          "column": 5,
+                          "node_type": "Location"
+                        },
+                        "node_type": "LetExpression",
+                        "variable": {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/crowdfunding_proc.scilla",
+                            "line": 34,
+                            "column": 5,
+                            "node_type": "Location"
+                          },
+                          "identifier": "target_reached",
+                          "node_type": "Identifier"
+                        },
+                        "variable_type": null,
+                        "expression": {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/crowdfunding_proc.scilla",
+                            "line": 34,
+                            "column": 26,
+                            "node_type": "Location"
+                          },
+                          "node_type": "AppExpression",
+                          "lhs": {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/crowdfunding_proc.scilla",
+                              "line": 34,
+                              "column": 26,
+                              "node_type": "Location"
+                            },
+                            "identifier": "negb",
+                            "node_type": "Identifier"
+                          },
+                          "rhs": [
+                            {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                "line": 34,
+                                "column": 31,
+                                "node_type": "Location"
+                              },
+                              "identifier": "target_not_reached",
+                              "node_type": "Identifier"
+                            }
+                          ]
+                        },
+                        "body": {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/crowdfunding_proc.scilla",
+                            "line": 35,
+                            "column": 5,
+                            "node_type": "Location"
+                          },
+                          "node_type": "AppExpression",
+                          "lhs": {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/crowdfunding_proc.scilla",
+                              "line": 35,
+                              "column": 5,
+                              "node_type": "Location"
+                            },
+                            "identifier": "andb",
+                            "node_type": "Identifier"
+                          },
+                          "rhs": [
+                            {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                "line": 35,
+                                "column": 10,
+                                "node_type": "Location"
+                              },
+                              "identifier": "deadline_passed",
+                              "node_type": "Identifier"
+                            },
+                            {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                "line": 35,
+                                "column": 26,
+                                "node_type": "Location"
+                              },
+                              "identifier": "target_reached",
+                              "node_type": "Identifier"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
+                },
+                "fun_type": "Uint128"
+              },
+              "fun_type": "Uint128"
+            },
+            "fun_type": "BNum"
+          },
+          "fun_type": "BNum"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 37,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "claimback_allowed",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 38,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 38,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "balance",
+            "node_type": "Identifier"
+          },
+          "rhs": {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 39,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 39,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "goal",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 40,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "node_type": "FunExpression",
+              "lhs": {
+                "loc": {
+                  "source_file":
+                    "./scilla_checker/examples/crowdfunding_proc.scilla",
+                  "line": 40,
+                  "column": 3,
+                  "node_type": "Location"
+                },
+                "identifier": "already_funded",
+                "node_type": "Identifier"
+              },
+              "rhs": {
+                "loc": {
+                  "source_file":
+                    "./scilla_checker/examples/crowdfunding_proc.scilla",
+                  "line": 41,
+                  "column": 5,
+                  "node_type": "Location"
+                },
+                "node_type": "LetExpression",
+                "variable": {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/crowdfunding_proc.scilla",
+                    "line": 41,
+                    "column": 5,
+                    "node_type": "Location"
+                  },
+                  "identifier": "target_not_reached",
+                  "node_type": "Identifier"
+                },
+                "variable_type": null,
+                "expression": {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/crowdfunding_proc.scilla",
+                    "line": 41,
+                    "column": 30,
+                    "node_type": "Location"
+                  },
+                  "node_type": "BuiltinExpression",
+                  "arguments": [
+                    {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 41,
+                        "column": 41,
+                        "node_type": "Location"
+                      },
+                      "identifier": "balance",
+                      "node_type": "Identifier"
+                    },
+                    {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 41,
+                        "column": 49,
+                        "node_type": "Location"
+                      },
+                      "identifier": "goal",
+                      "node_type": "Identifier"
+                    }
+                  ],
+                  "builtin_function": {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 41,
+                      "column": 38,
+                      "node_type": "Location"
+                    },
+                    "builtin_type": "lt",
+                    "node_type": "Builtin"
+                  }
+                },
+                "body": {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/crowdfunding_proc.scilla",
+                    "line": 42,
+                    "column": 5,
+                    "node_type": "Location"
+                  },
+                  "node_type": "LetExpression",
+                  "variable": {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 42,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "identifier": "not_already_funded",
+                    "node_type": "Identifier"
+                  },
+                  "variable_type": null,
+                  "expression": {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 42,
+                      "column": 30,
+                      "node_type": "Location"
+                    },
+                    "node_type": "AppExpression",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 42,
+                        "column": 30,
+                        "node_type": "Location"
+                      },
+                      "identifier": "negb",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": [
+                      {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                          "line": 42,
+                          "column": 35,
+                          "node_type": "Location"
+                        },
+                        "identifier": "already_funded",
+                        "node_type": "Identifier"
+                      }
+                    ]
+                  },
+                  "body": {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 43,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "AppExpression",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 43,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "andb",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": [
+                      {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                          "line": 43,
+                          "column": 10,
+                          "node_type": "Location"
+                        },
+                        "identifier": "target_not_reached",
+                        "node_type": "Identifier"
+                      },
+                      {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                          "line": 43,
+                          "column": 29,
+                          "node_type": "Location"
+                        },
+                        "identifier": "not_already_funded",
+                        "node_type": "Identifier"
+                      }
+                    ]
+                  }
+                }
+              },
+              "fun_type": "Bool"
+            },
+            "fun_type": "Uint128"
+          },
+          "fun_type": "Uint128"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 45,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "accepted_code",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 45,
+            "column": 21,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "1" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 46,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "missed_deadline_code",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 46,
+            "column": 28,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "2" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 47,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "already_backed_code",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 47,
+            "column": 28,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "3" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 48,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "not_owner_code",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 48,
+            "column": 23,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "4" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 49,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "too_early_code",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 49,
+            "column": 23,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "5" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 50,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "got_funds_code",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 50,
+            "column": 23,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "6" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 51,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "cannot_get_funds",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 51,
+            "column": 25,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "7" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 52,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "cannot_reclaim_code",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 52,
+            "column": 27,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "8" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 53,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "reclaimed_code",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 53,
+            "column": 22,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "9" }
+        }
+      }
+    ],
+    "node_type": "Library"
+  },
+  "external_libraries": [
+    {
+      "name": {
+        "loc": {
+          "source_file": "./scilla_checker/examples/crowdfunding_proc.scilla",
+          "line": 10,
+          "column": 8,
+          "node_type": "Location"
+        },
+        "identifier": "BoolUtils",
+        "node_type": "Identifier"
+      },
+      "alias": null,
+      "node_type": "ExternalLibrary"
+    }
+  ],
+  "contract": {
+    "name": {
+      "loc": {
+        "source_file": "./scilla_checker/examples/crowdfunding_proc.scilla",
+        "line": 58,
+        "column": 10,
+        "node_type": "Location"
+      },
+      "identifier": "Crowdfunding",
+      "node_type": "Identifier"
+    },
+    "params": [
+      {
+        "parameter_name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 61,
+            "column": 2,
+            "node_type": "Location"
+          },
+          "identifier": "owner",
+          "node_type": "Identifier"
+        },
+        "parameter_type": "ByStr20",
+        "node_type": "Parameter"
+      },
+      {
+        "parameter_name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 62,
+            "column": 1,
+            "node_type": "Location"
+          },
+          "identifier": "max_block",
+          "node_type": "Identifier"
+        },
+        "parameter_type": "BNum",
+        "node_type": "Parameter"
+      },
+      {
+        "parameter_name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 63,
+            "column": 1,
+            "node_type": "Location"
+          },
+          "identifier": "goal",
+          "node_type": "Identifier"
+        },
+        "parameter_type": "Uint128",
+        "node_type": "Parameter"
+      }
+    ],
+    "fields": [
+      {
+        "field_name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 66,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "backers",
+          "node_type": "Identifier"
+        },
+        "field_type": "Map (ByStr20) (Uint128)",
+        "expression": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 66,
+            "column": 39,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": {
+            "key_type": "ByStr20",
+            "value_type": "Uint128",
+            "node_type": "MapLiteral",
+            "value": []
+          }
+        },
+        "node_type": "Field"
+      },
+      {
+        "field_name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 67,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "funded",
+          "node_type": "Identifier"
+        },
+        "field_type": "Bool",
+        "expression": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 67,
+            "column": 23,
+            "node_type": "Location"
+          },
+          "node_type": "ConstrExpression",
+          "constructor_name": "False",
+          "types": [],
+          "arguments": []
+        },
+        "node_type": "Field"
+      }
+    ],
+    "components": [
+      {
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 69,
+                "column": 26,
+                "node_type": "Location"
+              },
+              "identifier": "failure",
+              "node_type": "Identifier"
+            },
+            "parameter_type": "Bool",
+            "node_type": "Parameter"
+          },
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 69,
+                "column": 42,
+                "node_type": "Location"
+              },
+              "identifier": "error_code",
+              "node_type": "Identifier"
+            },
+            "parameter_type": "Int32",
+            "node_type": "Parameter"
+          }
+        ],
+        "component_name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 69,
+            "column": 11,
+            "node_type": "Location"
+          },
+          "identifier": "DonationEvent",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 70,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 70,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "failure",
+              "node_type": "Identifier"
+            },
+            "cases": [
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 72,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 72,
+                        "column": 7,
+                        "node_type": "Location"
+                      },
+                      "identifier": "e",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 72,
+                        "column": 9,
+                        "node_type": "Location"
+                      },
+                      "node_type": "MessageExpression",
+                      "arguments": [
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "_eventname",
+                          "payload": {
+                            "node_type": "PayloadLitral",
+                            "literal": {
+                              "node_type": "StringLiteral",
+                              "value": "DonationSuccess"
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "donor",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                "line": 72,
+                                "column": 50,
+                                "node_type": "Location"
+                              },
+                              "identifier": "_sender",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "amount",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                "line": 73,
+                                "column": 19,
+                                "node_type": "Location"
+                              },
+                              "identifier": "_amount",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "code",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                "line": 73,
+                                "column": 35,
+                                "node_type": "Location"
+                              },
+                              "identifier": "accepted_code",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 74,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 74,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "e",
+                      "node_type": "Identifier"
+                    },
+                    "node_type": "CreateEvntStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "False",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              },
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 76,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 76,
+                        "column": 7,
+                        "node_type": "Location"
+                      },
+                      "identifier": "e",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 76,
+                        "column": 9,
+                        "node_type": "Location"
+                      },
+                      "node_type": "MessageExpression",
+                      "arguments": [
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "_eventname",
+                          "payload": {
+                            "node_type": "PayloadLitral",
+                            "literal": {
+                              "node_type": "StringLiteral",
+                              "value": "DonationFailure"
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "donor",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                "line": 76,
+                                "column": 50,
+                                "node_type": "Location"
+                              },
+                              "identifier": "_sender",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "amount",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                "line": 77,
+                                "column": 19,
+                                "node_type": "Location"
+                              },
+                              "identifier": "_amount",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        },
+                        {
+                          "node_type": "MessageArgument",
+                          "variable": "code",
+                          "payload": {
+                            "node_type": "PayloadVariable",
+                            "value": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                "line": 77,
+                                "column": 35,
+                                "node_type": "Location"
+                              },
+                              "identifier": "error_code",
+                              "node_type": "Identifier"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 78,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 78,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "e",
+                      "node_type": "Identifier"
+                    },
+                    "node_type": "CreateEvntStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "True",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              }
+            ],
+            "node_type": "MatchStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [],
+        "component_name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 82,
+            "column": 11,
+            "node_type": "Location"
+          },
+          "identifier": "PerformDonate",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 83,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "MapGetStatement",
+            "map_name": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 83,
+                "column": 15,
+                "node_type": "Location"
+              },
+              "identifier": "backers",
+              "node_type": "Identifier"
+            },
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 83,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "c",
+              "node_type": "Identifier"
+            },
+            "keys": [
+              {
+                "loc": {
+                  "source_file":
+                    "./scilla_checker/examples/crowdfunding_proc.scilla",
+                  "line": 83,
+                  "column": 23,
+                  "node_type": "Location"
+                },
+                "identifier": "_sender",
+                "node_type": "Identifier"
+              }
+            ],
+            "is_value_retrieve": false
+          },
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 84,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 84,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "c",
+              "node_type": "Identifier"
+            },
+            "cases": [
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 86,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "AcceptPaymentStatement"
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 87,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "MapUpdateStatement",
+                    "map_name": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 87,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "backers",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 87,
+                        "column": 25,
+                        "node_type": "Location"
+                      },
+                      "identifier": "_amount",
+                      "node_type": "Identifier"
+                    },
+                    "keys": [
+                      {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                          "line": 87,
+                          "column": 13,
+                          "node_type": "Location"
+                        },
+                        "identifier": "_sender",
+                        "node_type": "Identifier"
+                      }
+                    ]
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 88,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 88,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "DonationEvent",
+                      "node_type": "Identifier"
+                    },
+                    "messages": [
+                      {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                          "line": 88,
+                          "column": 19,
+                          "node_type": "Location"
+                        },
+                        "identifier": "c",
+                        "node_type": "Identifier"
+                      },
+                      {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                          "line": 88,
+                          "column": 21,
+                          "node_type": "Location"
+                        },
+                        "identifier": "accepted_code",
+                        "node_type": "Identifier"
+                      }
+                    ],
+                    "node_type": "CallProcStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "False",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              },
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 90,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 90,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "DonationEvent",
+                      "node_type": "Identifier"
+                    },
+                    "messages": [
+                      {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                          "line": 90,
+                          "column": 19,
+                          "node_type": "Location"
+                        },
+                        "identifier": "c",
+                        "node_type": "Identifier"
+                      },
+                      {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                          "line": 90,
+                          "column": 21,
+                          "node_type": "Location"
+                        },
+                        "identifier": "already_backed_code",
+                        "node_type": "Identifier"
+                      }
+                    ],
+                    "node_type": "CallProcStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "True",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              }
+            ],
+            "node_type": "MatchStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [],
+        "component_name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 94,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "Donate",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 95,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 95,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "blk",
+              "node_type": "Identifier"
+            },
+            "rhs": "BLOCKNUMBER",
+            "node_type": "ReadFromBCStatement"
+          },
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 96,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 96,
+                "column": 11,
+                "node_type": "Location"
+              },
+              "identifier": "in_time",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 96,
+                "column": 13,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file":
+                    "./scilla_checker/examples/crowdfunding_proc.scilla",
+                  "line": 96,
+                  "column": 13,
+                  "node_type": "Location"
+                },
+                "identifier": "blk_leq",
+                "node_type": "Identifier"
+              },
+              "rhs": [
+                {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/crowdfunding_proc.scilla",
+                    "line": 96,
+                    "column": 21,
+                    "node_type": "Location"
+                  },
+                  "identifier": "blk",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/crowdfunding_proc.scilla",
+                    "line": 96,
+                    "column": 25,
+                    "node_type": "Location"
+                  },
+                  "identifier": "max_block",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 97,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 97,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "in_time",
+              "node_type": "Identifier"
+            },
+            "cases": [
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 99,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 99,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "PerformDonate",
+                      "node_type": "Identifier"
+                    },
+                    "messages": [],
+                    "node_type": "CallProcStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "True",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              },
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 101,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 101,
+                        "column": 7,
+                        "node_type": "Location"
+                      },
+                      "identifier": "t",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 101,
+                        "column": 9,
+                        "node_type": "Location"
+                      },
+                      "node_type": "ConstrExpression",
+                      "constructor_name": "True",
+                      "types": [],
+                      "arguments": []
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 102,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 102,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "DonationEvent",
+                      "node_type": "Identifier"
+                    },
+                    "messages": [
+                      {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                          "line": 102,
+                          "column": 19,
+                          "node_type": "Location"
+                        },
+                        "identifier": "t",
+                        "node_type": "Identifier"
+                      },
+                      {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                          "line": 102,
+                          "column": 21,
+                          "node_type": "Location"
+                        },
+                        "identifier": "missed_deadline_code",
+                        "node_type": "Identifier"
+                      }
+                    ],
+                    "node_type": "CallProcStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "False",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              }
+            ],
+            "node_type": "MatchStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 106,
+                "column": 28,
+                "node_type": "Location"
+              },
+              "identifier": "error_code",
+              "node_type": "Identifier"
+            },
+            "parameter_type": "Int32",
+            "node_type": "Parameter"
+          }
+        ],
+        "component_name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 106,
+            "column": 11,
+            "node_type": "Location"
+          },
+          "identifier": "GetFundsFailure",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 107,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 107,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "e",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 107,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "node_type": "MessageExpression",
+              "arguments": [
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_eventname",
+                  "payload": {
+                    "node_type": "PayloadLitral",
+                    "literal": {
+                      "node_type": "StringLiteral",
+                      "value": "GetFundsFailure"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "caller",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 107,
+                        "column": 49,
+                        "node_type": "Location"
+                      },
+                      "identifier": "_sender",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "amount",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 108,
+                        "column": 17,
+                        "node_type": "Location"
+                      },
+                      "identifier": "_amount",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "code",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 108,
+                        "column": 33,
+                        "node_type": "Location"
+                      },
+                      "identifier": "error_code",
+                      "node_type": "Identifier"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 109,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 109,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "e",
+              "node_type": "Identifier"
+            },
+            "node_type": "CreateEvntStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [],
+        "component_name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 112,
+            "column": 11,
+            "node_type": "Location"
+          },
+          "identifier": "PerformGetFunds",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 113,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 113,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "bal",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 113,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "identifier": "_balance",
+              "node_type": "Identifier"
+            },
+            "node_type": "LoadStatement"
+          },
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 114,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 114,
+                "column": 6,
+                "node_type": "Location"
+              },
+              "identifier": "tt",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 114,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "True",
+              "types": [],
+              "arguments": []
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 115,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 115,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "identifier": "funded",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 115,
+                "column": 13,
+                "node_type": "Location"
+              },
+              "identifier": "tt",
+              "node_type": "Identifier"
+            },
+            "node_type": "StoreStatement"
+          },
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 116,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 116,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "msg",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 116,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "node_type": "MessageExpression",
+              "arguments": [
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_tag",
+                  "payload": {
+                    "node_type": "PayloadLitral",
+                    "literal": { "node_type": "StringLiteral", "value": "" }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_recipient",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 116,
+                        "column": 34,
+                        "node_type": "Location"
+                      },
+                      "identifier": "owner",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_amount",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 116,
+                        "column": 51,
+                        "node_type": "Location"
+                      },
+                      "identifier": "bal",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "code",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 116,
+                        "column": 63,
+                        "node_type": "Location"
+                      },
+                      "identifier": "got_funds_code",
+                      "node_type": "Identifier"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 117,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 117,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "identifier": "msgs",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 117,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file":
+                    "./scilla_checker/examples/crowdfunding_proc.scilla",
+                  "line": 117,
+                  "column": 10,
+                  "node_type": "Location"
+                },
+                "identifier": "one_msg",
+                "node_type": "Identifier"
+              },
+              "rhs": [
+                {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/crowdfunding_proc.scilla",
+                    "line": 117,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "msg",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 118,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 118,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "msgs",
+              "node_type": "Identifier"
+            },
+            "node_type": "SendMsgsStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [],
+        "component_name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 121,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "GetFunds",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 122,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 122,
+                "column": 12,
+                "node_type": "Location"
+              },
+              "identifier": "is_owner",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 122,
+                "column": 14,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/crowdfunding_proc.scilla",
+                    "line": 122,
+                    "column": 25,
+                    "node_type": "Location"
+                  },
+                  "identifier": "owner",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/crowdfunding_proc.scilla",
+                    "line": 122,
+                    "column": 31,
+                    "node_type": "Location"
+                  },
+                  "identifier": "_sender",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file":
+                    "./scilla_checker/examples/crowdfunding_proc.scilla",
+                  "line": 122,
+                  "column": 22,
+                  "node_type": "Location"
+                },
+                "builtin_type": "eq",
+                "node_type": "Builtin"
+              }
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 123,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 123,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "is_owner",
+              "node_type": "Identifier"
+            },
+            "cases": [
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 125,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 125,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "GetFundsFailure",
+                      "node_type": "Identifier"
+                    },
+                    "messages": [
+                      {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                          "line": 125,
+                          "column": 21,
+                          "node_type": "Location"
+                        },
+                        "identifier": "not_owner_code",
+                        "node_type": "Identifier"
+                      }
+                    ],
+                    "node_type": "CallProcStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "False",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              },
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 127,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 127,
+                        "column": 9,
+                        "node_type": "Location"
+                      },
+                      "identifier": "blk",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": "BLOCKNUMBER",
+                    "node_type": "ReadFromBCStatement"
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 128,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 128,
+                        "column": 9,
+                        "node_type": "Location"
+                      },
+                      "identifier": "bal",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 128,
+                        "column": 12,
+                        "node_type": "Location"
+                      },
+                      "identifier": "_balance",
+                      "node_type": "Identifier"
+                    },
+                    "node_type": "LoadStatement"
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 129,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 129,
+                        "column": 13,
+                        "node_type": "Location"
+                      },
+                      "identifier": "allowed",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 129,
+                        "column": 15,
+                        "node_type": "Location"
+                      },
+                      "node_type": "AppExpression",
+                      "lhs": {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                          "line": 129,
+                          "column": 15,
+                          "node_type": "Location"
+                        },
+                        "identifier": "get_funds_allowed",
+                        "node_type": "Identifier"
+                      },
+                      "rhs": [
+                        {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/crowdfunding_proc.scilla",
+                            "line": 129,
+                            "column": 33,
+                            "node_type": "Location"
+                          },
+                          "identifier": "blk",
+                          "node_type": "Identifier"
+                        },
+                        {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/crowdfunding_proc.scilla",
+                            "line": 129,
+                            "column": 37,
+                            "node_type": "Location"
+                          },
+                          "identifier": "max_block",
+                          "node_type": "Identifier"
+                        },
+                        {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/crowdfunding_proc.scilla",
+                            "line": 129,
+                            "column": 47,
+                            "node_type": "Location"
+                          },
+                          "identifier": "bal",
+                          "node_type": "Identifier"
+                        },
+                        {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/crowdfunding_proc.scilla",
+                            "line": 129,
+                            "column": 51,
+                            "node_type": "Location"
+                          },
+                          "identifier": "goal",
+                          "node_type": "Identifier"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 130,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 130,
+                        "column": 11,
+                        "node_type": "Location"
+                      },
+                      "identifier": "allowed",
+                      "node_type": "Identifier"
+                    },
+                    "cases": [
+                      {
+                        "pattern_body": [
+                          {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/crowdfunding_proc.scilla",
+                              "line": 132,
+                              "column": 7,
+                              "node_type": "Location"
+                            },
+                            "arg": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                "line": 132,
+                                "column": 7,
+                                "node_type": "Location"
+                              },
+                              "identifier": "GetFundsFailure",
+                              "node_type": "Identifier"
+                            },
+                            "messages": [
+                              {
+                                "loc": {
+                                  "source_file":
+                                    "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                  "line": 132,
+                                  "column": 23,
+                                  "node_type": "Location"
+                                },
+                                "identifier": "cannot_get_funds",
+                                "node_type": "Identifier"
+                              }
+                            ],
+                            "node_type": "CallProcStatement"
+                          }
+                        ],
+                        "pattern": {
+                          "node_type": "ConstructorPattern",
+                          "constructor_name": "False",
+                          "patterns": []
+                        },
+                        "node_type": "MatchStatementCase"
+                      },
+                      {
+                        "pattern_body": [
+                          {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/crowdfunding_proc.scilla",
+                              "line": 134,
+                              "column": 7,
+                              "node_type": "Location"
+                            },
+                            "arg": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                "line": 134,
+                                "column": 7,
+                                "node_type": "Location"
+                              },
+                              "identifier": "PerformGetFunds",
+                              "node_type": "Identifier"
+                            },
+                            "messages": [],
+                            "node_type": "CallProcStatement"
+                          }
+                        ],
+                        "pattern": {
+                          "node_type": "ConstructorPattern",
+                          "constructor_name": "True",
+                          "patterns": []
+                        },
+                        "node_type": "MatchStatementCase"
+                      }
+                    ],
+                    "node_type": "MatchStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "True",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              }
+            ],
+            "node_type": "MatchStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 139,
+                "column": 29,
+                "node_type": "Location"
+              },
+              "identifier": "error_code",
+              "node_type": "Identifier"
+            },
+            "parameter_type": "Int32",
+            "node_type": "Parameter"
+          }
+        ],
+        "component_name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 139,
+            "column": 11,
+            "node_type": "Location"
+          },
+          "identifier": "ClaimBackFailure",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 140,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 140,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "e",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 140,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "node_type": "MessageExpression",
+              "arguments": [
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_eventname",
+                  "payload": {
+                    "node_type": "PayloadLitral",
+                    "literal": {
+                      "node_type": "StringLiteral",
+                      "value": "ClaimBackFailure"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "caller",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 140,
+                        "column": 50,
+                        "node_type": "Location"
+                      },
+                      "identifier": "_sender",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "amount",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 141,
+                        "column": 17,
+                        "node_type": "Location"
+                      },
+                      "identifier": "_amount",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "code",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 141,
+                        "column": 33,
+                        "node_type": "Location"
+                      },
+                      "identifier": "error_code",
+                      "node_type": "Identifier"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 142,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 142,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "e",
+              "node_type": "Identifier"
+            },
+            "node_type": "CreateEvntStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 145,
+                "column": 29,
+                "node_type": "Location"
+              },
+              "identifier": "amount",
+              "node_type": "Identifier"
+            },
+            "parameter_type": "Uint128",
+            "node_type": "Parameter"
+          }
+        ],
+        "component_name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 145,
+            "column": 11,
+            "node_type": "Location"
+          },
+          "identifier": "PerformClaimBack",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 146,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "MapUpdateStatement",
+            "map_name": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 146,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "identifier": "backers",
+              "node_type": "Identifier"
+            },
+            "rhs": null,
+            "keys": [
+              {
+                "loc": {
+                  "source_file":
+                    "./scilla_checker/examples/crowdfunding_proc.scilla",
+                  "line": 146,
+                  "column": 18,
+                  "node_type": "Location"
+                },
+                "identifier": "_sender",
+                "node_type": "Identifier"
+              }
+            ]
+          },
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 147,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 147,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "msg",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 147,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "node_type": "MessageExpression",
+              "arguments": [
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_tag",
+                  "payload": {
+                    "node_type": "PayloadLitral",
+                    "literal": { "node_type": "StringLiteral", "value": "" }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_recipient",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 147,
+                        "column": 34,
+                        "node_type": "Location"
+                      },
+                      "identifier": "_sender",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_amount",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 147,
+                        "column": 53,
+                        "node_type": "Location"
+                      },
+                      "identifier": "amount",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "code",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 147,
+                        "column": 68,
+                        "node_type": "Location"
+                      },
+                      "identifier": "reclaimed_code",
+                      "node_type": "Identifier"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 148,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 148,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "identifier": "msgs",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 148,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file":
+                    "./scilla_checker/examples/crowdfunding_proc.scilla",
+                  "line": 148,
+                  "column": 10,
+                  "node_type": "Location"
+                },
+                "identifier": "one_msg",
+                "node_type": "Identifier"
+              },
+              "rhs": [
+                {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/crowdfunding_proc.scilla",
+                    "line": 148,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "msg",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 149,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 149,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "e",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 149,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "node_type": "MessageExpression",
+              "arguments": [
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_eventname",
+                  "payload": {
+                    "node_type": "PayloadLitral",
+                    "literal": {
+                      "node_type": "StringLiteral",
+                      "value": "ClaimBackSuccess"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "caller",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 149,
+                        "column": 51,
+                        "node_type": "Location"
+                      },
+                      "identifier": "_sender",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "amount",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 149,
+                        "column": 69,
+                        "node_type": "Location"
+                      },
+                      "identifier": "amount",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "code",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 149,
+                        "column": 84,
+                        "node_type": "Location"
+                      },
+                      "identifier": "reclaimed_code",
+                      "node_type": "Identifier"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 150,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 150,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "e",
+              "node_type": "Identifier"
+            },
+            "node_type": "CreateEvntStatement"
+          },
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 151,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 151,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "msgs",
+              "node_type": "Identifier"
+            },
+            "node_type": "SendMsgsStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [],
+        "component_name": {
+          "loc": {
+            "source_file":
+              "./scilla_checker/examples/crowdfunding_proc.scilla",
+            "line": 155,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "ClaimBack",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 156,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 156,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "blk",
+              "node_type": "Identifier"
+            },
+            "rhs": "BLOCKNUMBER",
+            "node_type": "ReadFromBCStatement"
+          },
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 157,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 157,
+                "column": 18,
+                "node_type": "Location"
+              },
+              "identifier": "after_deadline",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 157,
+                "column": 20,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/crowdfunding_proc.scilla",
+                    "line": 157,
+                    "column": 32,
+                    "node_type": "Location"
+                  },
+                  "identifier": "max_block",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file":
+                      "./scilla_checker/examples/crowdfunding_proc.scilla",
+                    "line": 157,
+                    "column": 42,
+                    "node_type": "Location"
+                  },
+                  "identifier": "blk",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file":
+                    "./scilla_checker/examples/crowdfunding_proc.scilla",
+                  "line": 157,
+                  "column": 28,
+                  "node_type": "Location"
+                },
+                "builtin_type": "blt",
+                "node_type": "Builtin"
+              }
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "./scilla_checker/examples/crowdfunding_proc.scilla",
+              "line": 158,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file":
+                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                "line": 158,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "after_deadline",
+              "node_type": "Identifier"
+            },
+            "cases": [
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 160,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 160,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "ClaimBackFailure",
+                      "node_type": "Identifier"
+                    },
+                    "messages": [
+                      {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                          "line": 160,
+                          "column": 22,
+                          "node_type": "Location"
+                        },
+                        "identifier": "too_early_code",
+                        "node_type": "Identifier"
+                      }
+                    ],
+                    "node_type": "CallProcStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "False",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              },
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 162,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 162,
+                        "column": 9,
+                        "node_type": "Location"
+                      },
+                      "identifier": "bal",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 162,
+                        "column": 12,
+                        "node_type": "Location"
+                      },
+                      "identifier": "_balance",
+                      "node_type": "Identifier"
+                    },
+                    "node_type": "LoadStatement"
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 163,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 163,
+                        "column": 7,
+                        "node_type": "Location"
+                      },
+                      "identifier": "f",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 163,
+                        "column": 10,
+                        "node_type": "Location"
+                      },
+                      "identifier": "funded",
+                      "node_type": "Identifier"
+                    },
+                    "node_type": "LoadStatement"
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 164,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 164,
+                        "column": 13,
+                        "node_type": "Location"
+                      },
+                      "identifier": "allowed",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 164,
+                        "column": 15,
+                        "node_type": "Location"
+                      },
+                      "node_type": "AppExpression",
+                      "lhs": {
+                        "loc": {
+                          "source_file":
+                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                          "line": 164,
+                          "column": 15,
+                          "node_type": "Location"
+                        },
+                        "identifier": "claimback_allowed",
+                        "node_type": "Identifier"
+                      },
+                      "rhs": [
+                        {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/crowdfunding_proc.scilla",
+                            "line": 164,
+                            "column": 33,
+                            "node_type": "Location"
+                          },
+                          "identifier": "bal",
+                          "node_type": "Identifier"
+                        },
+                        {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/crowdfunding_proc.scilla",
+                            "line": 164,
+                            "column": 37,
+                            "node_type": "Location"
+                          },
+                          "identifier": "goal",
+                          "node_type": "Identifier"
+                        },
+                        {
+                          "loc": {
+                            "source_file":
+                              "./scilla_checker/examples/crowdfunding_proc.scilla",
+                            "line": 164,
+                            "column": 42,
+                            "node_type": "Location"
+                          },
+                          "identifier": "f",
+                          "node_type": "Identifier"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                      "line": 165,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                        "line": 165,
+                        "column": 11,
+                        "node_type": "Location"
+                      },
+                      "identifier": "allowed",
+                      "node_type": "Identifier"
+                    },
+                    "cases": [
+                      {
+                        "pattern_body": [
+                          {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/crowdfunding_proc.scilla",
+                              "line": 167,
+                              "column": 7,
+                              "node_type": "Location"
+                            },
+                            "arg": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                "line": 167,
+                                "column": 7,
+                                "node_type": "Location"
+                              },
+                              "identifier": "ClaimBackFailure",
+                              "node_type": "Identifier"
+                            },
+                            "messages": [
+                              {
+                                "loc": {
+                                  "source_file":
+                                    "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                  "line": 167,
+                                  "column": 24,
+                                  "node_type": "Location"
+                                },
+                                "identifier": "cannot_reclaim_code",
+                                "node_type": "Identifier"
+                              }
+                            ],
+                            "node_type": "CallProcStatement"
+                          }
+                        ],
+                        "pattern": {
+                          "node_type": "ConstructorPattern",
+                          "constructor_name": "False",
+                          "patterns": []
+                        },
+                        "node_type": "MatchStatementCase"
+                      },
+                      {
+                        "pattern_body": [
+                          {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/crowdfunding_proc.scilla",
+                              "line": 169,
+                              "column": 7,
+                              "node_type": "Location"
+                            },
+                            "node_type": "MapGetStatement",
+                            "map_name": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                "line": 169,
+                                "column": 14,
+                                "node_type": "Location"
+                              },
+                              "identifier": "backers",
+                              "node_type": "Identifier"
+                            },
+                            "lhs": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                "line": 169,
+                                "column": 7,
+                                "node_type": "Location"
+                              },
+                              "identifier": "res",
+                              "node_type": "Identifier"
+                            },
+                            "keys": [
+                              {
+                                "loc": {
+                                  "source_file":
+                                    "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                  "line": 169,
+                                  "column": 22,
+                                  "node_type": "Location"
+                                },
+                                "identifier": "_sender",
+                                "node_type": "Identifier"
+                              }
+                            ],
+                            "is_value_retrieve": true
+                          },
+                          {
+                            "loc": {
+                              "source_file":
+                                "./scilla_checker/examples/crowdfunding_proc.scilla",
+                              "line": 170,
+                              "column": 7,
+                              "node_type": "Location"
+                            },
+                            "arg": {
+                              "loc": {
+                                "source_file":
+                                  "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                "line": 170,
+                                "column": 13,
+                                "node_type": "Location"
+                              },
+                              "identifier": "res",
+                              "node_type": "Identifier"
+                            },
+                            "cases": [
+                              {
+                                "pattern_body": [
+                                  {
+                                    "loc": {
+                                      "source_file":
+                                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                      "line": 173,
+                                      "column": 9,
+                                      "node_type": "Location"
+                                    },
+                                    "arg": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                        "line": 173,
+                                        "column": 9,
+                                        "node_type": "Location"
+                                      },
+                                      "identifier": "ClaimBackFailure",
+                                      "node_type": "Identifier"
+                                    },
+                                    "messages": [
+                                      {
+                                        "loc": {
+                                          "source_file":
+                                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                          "line": 173,
+                                          "column": 26,
+                                          "node_type": "Location"
+                                        },
+                                        "identifier": "cannot_reclaim_code",
+                                        "node_type": "Identifier"
+                                      }
+                                    ],
+                                    "node_type": "CallProcStatement"
+                                  }
+                                ],
+                                "pattern": {
+                                  "node_type": "ConstructorPattern",
+                                  "constructor_name": "None",
+                                  "patterns": []
+                                },
+                                "node_type": "MatchStatementCase"
+                              },
+                              {
+                                "pattern_body": [
+                                  {
+                                    "loc": {
+                                      "source_file":
+                                        "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                      "line": 175,
+                                      "column": 9,
+                                      "node_type": "Location"
+                                    },
+                                    "arg": {
+                                      "loc": {
+                                        "source_file":
+                                          "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                        "line": 175,
+                                        "column": 9,
+                                        "node_type": "Location"
+                                      },
+                                      "identifier": "PerformClaimBack",
+                                      "node_type": "Identifier"
+                                    },
+                                    "messages": [
+                                      {
+                                        "loc": {
+                                          "source_file":
+                                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                          "line": 175,
+                                          "column": 26,
+                                          "node_type": "Location"
+                                        },
+                                        "identifier": "v",
+                                        "node_type": "Identifier"
+                                      }
+                                    ],
+                                    "node_type": "CallProcStatement"
+                                  }
+                                ],
+                                "pattern": {
+                                  "node_type": "ConstructorPattern",
+                                  "constructor_name": "Some",
+                                  "patterns": [
+                                    {
+                                      "node_type": "BinderPattern",
+                                      "variable": {
+                                        "loc": {
+                                          "source_file":
+                                            "./scilla_checker/examples/crowdfunding_proc.scilla",
+                                          "line": 174,
+                                          "column": 14,
+                                          "node_type": "Location"
+                                        },
+                                        "identifier": "v",
+                                        "node_type": "Identifier"
+                                      }
+                                    }
+                                  ]
+                                },
+                                "node_type": "MatchStatementCase"
+                              }
+                            ],
+                            "node_type": "MatchStatement"
+                          }
+                        ],
+                        "pattern": {
+                          "node_type": "ConstructorPattern",
+                          "constructor_name": "True",
+                          "patterns": []
+                        },
+                        "node_type": "MatchStatementCase"
+                      }
+                    ],
+                    "node_type": "MatchStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "True",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              }
+            ],
+            "node_type": "MatchStatement"
+          }
+        ],
+        "node_type": "Component"
+      }
+    ],
+    "node_type": "Contract"
+  },
+  "node_type": "ContractModule"
+}
