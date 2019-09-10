@@ -1,7 +1,6 @@
 package main
 
 import (
-    "encoding/json"
     "fmt"
     "os"
     "io/ioutil"
@@ -17,10 +16,7 @@ func main() {
     defer jsonFile.Close()
 
     byteValue, _ := ioutil.ReadAll(jsonFile)
-    var res  map[string]interface{}
-
-    json.Unmarshal([]byte(byteValue), &res)
-    ast.Visit(res)
+    ast.Visit(byteValue)
     //fmt.Println(res["node_type"])
 
     //fmt.Println(res.Fruits[0])
