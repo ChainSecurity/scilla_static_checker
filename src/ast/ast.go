@@ -1,10 +1,7 @@
 package ast
 
 import (
-    "fmt"
 )
-
-
 
 type AstNode interface {
 }
@@ -40,74 +37,91 @@ type LibraryEntry interface {
 }
 
 type Location struct{
-    SourceFile string
-    Line int
-    Column int
+    SourceFile string `json:"source_file"`
+    Line int `json:"line"`
+    Column int `json:"column"`
 }
 
 type Identifier struct{
-    Loc Location
-    Id string
+    Loc Location `json:"loc"`
+    Id string `json:"identifier"`
 }
 
 type MapValue struct{
-    Key Literal
-    Value Literal
+    Key GeneralLiteral
+    Value GeneralLiteral
 }
 
 type CtrDef struct {
-    CrtDefName Identifier
-    CArgTypes []string
+    CrtDefName Identifier `json:"crt_def_name"`
+    CArgTypes []string `json:"c_arg_types"`
+}
+
+type GeneralLiteral struct{
+    Value string `json:"value"`
+    String string `json:"string"`
+    KeyType string `json:"key_type"`
+    ValueType string `json:"value_type"`
+    MValues []MapValue `json:"mvalues"`
 }
 
 type StringLiteral struct{
-    Value string
+    Value string `json:"value"`
 }
 
 type BNumLiteral struct{
-    Value string
+    Value string `json:"value"`
 
 }
 type ByStrLiteral struct{
-    Value string
-    String string
+    Value string `json:"value"`
+    String string `json:"string"`
 
 }
 type ByStrXLiteral struct{
-    Value string
-    value string
+    Value string `json:"value"`
 
 }
 type IntLiteral struct{
-    Value string
+    Value string `json:"value"`
 
 }
 type UintLiteral struct{
-    Value string
-    value string
+    Value string `json:"value"`
 }
 
 type MapLiteral struct{
-    KeyType string
-    ValueType string
-    NodeType string
-    Value []MapValue
+    KeyType string `json:"key_type"`
+    ValueType string `json:"value_type"`
+    MValues []MapValue `json:"mvalues"`
 }
 
 type ADTValueLiteral struct {
 }
 
-func (*StringLiteral) literalNode() {}
-func (*BNumLiteral) literalNode() {}
-func (*ByStrXLiteral) literalNode() {}
-func (*IntLiteral) literalNode() {}
-func (*UintLiteral) literalNode() {}
-func (*MapLiteral) literalNode() {}
-func (*ADTValueLiteral) literalNode() {}
-
 
 type AnnotatedNode struct{
-    Loc Location
+    Loc Location `json:"loc"`
+}
+
+type GeneralExpression struct{
+    AnnotatedNode
+    Value GeneralLiteral `json:"value"`
+    Variable Identifier `json:"variable"`
+    VariableType string `json:"variable_type"` //Optional 
+    Expr *GeneralExpression `json:"expression"`
+    Body *GeneralExpression `json:"body"`
+    MArgs []MessageArgument `json:"margs"`
+    Lhs Identifier `json:"lhs"`
+    RhsExpr *GeneralExpression `json:"rhs_expr"`
+    FunType string `json:"fun_type"`
+    RhsList []Identifier `json:"rhs_list"`
+    Types []string `json:"types"`
+    ConstructorName string `json:"constructor_name"`
+    Args []Identifier `json:"args"`
+    Cases []MatchExpressionCase `json:"cases"`
+    BuiltintFunction Builtin `json:"builtin_function"`
+    NodeType string `json:"node_type"`
 }
 
 type LiteralExpression struct{
@@ -130,13 +144,13 @@ type LetExpression struct{
 
 type MessageExpression struct{
     AnnotatedNode
-    arguments []MessageArgument
+    Arguments []MessageArgument
 }
 
 type FunExpression struct{
     AnnotatedNode
     Lhs Identifier
-    Rhs Expression
+    RhsExpr Expression
     FunType string
 }
 
@@ -177,18 +191,6 @@ type FixpointExpression struct{
     AnnotatedNode
 }
 
-func (*LiteralExpression) expressionNode() {}
-func (*VarExpression) expressionNode() {}
-func (*LetExpression) expressionNode() {}
-func (*MessageExpression) expressionNode() {}
-func (*FunExpression) expressionNode() {}
-func (*AppExpression) expressionNode() {}
-func (*ConstrExpression) expressionNode() {}
-func (*MatchExpression) expressionNode() {}
-func (*BuiltinExpression) expressionNode() {}
-func (*TFunExpression) expressionNode() {}
-func (*TAppExpression) expressionNode() {}
-func (*FixpointExpression) expressionNode() {}
 
 type PayloadLitral struct{
     Lit Literal
@@ -198,9 +200,6 @@ type PayloadVariable struct{
     Value Identifier
 }
 
-
-func (*PayloadLitral) payloadNode() {}
-func (*PayloadVariable) payloadNode() {}
 
 type MessageArgument struct{
     Var string
@@ -221,24 +220,34 @@ type ConstructorPattern struct{
     Pats []Pattern
 }
 
-func (*WildcardPattern) patternNode() {}
-func (*BinderPattern) patternNode() {}
-func (*ConstructorPattern) patternNode() {}
-
 type MatchExpressionCase struct{
     Pat Pattern
     Expr Expression
 }
 
+type GenericStatement struct{
+    AnnotatedNode
+    Lhs Identifier `json:"lhs"`
+    Rhs Identifier `json:"rhs"`
+    RhsExpr GeneralExpression `json:"rhs_expr"`
+    Name Identifier `json:"name"`
+    Keys []Identifier `json:"keys"`
+    IsValueRetrieve bool `json:"is_value_retrieve"`
+    Arg Identifier `json:"arg"`
+    Cases []MatchStatementCase `json:"cases"`
+    RhsStr string `json:"rhs_str"`
+    Messages []Identifier `json:"messages"`
+    NodeType string `json:"node_type"`
+}
+
 type MatchStatementCase struct{
     Pat Pattern
-    PatternBody []Statement
+    PatternBody []GenericStatement
 }
 type Builtin struct{
     Loc Location
     Type string
 }
-
 
 type LoadStatement struct{
     AnnotatedNode
@@ -255,7 +264,7 @@ type StoreStatement struct{
 type BindStatement struct{
     AnnotatedNode
     Lhs Identifier
-    Rhs Expression
+    RhsExpr Expression
 
 }
 type MapUpdateStatement struct{
@@ -271,8 +280,8 @@ type MapGetStatement struct{
     Lhs Identifier
     Keys []Identifier
     IsValueRetrieve bool
-
 }
+
 type MatchStatement struct{
     AnnotatedNode
     Arg Identifier
@@ -282,7 +291,7 @@ type MatchStatement struct{
 type ReadFromBCStatement struct{
     AnnotatedNode
     Lhs Identifier
-    Rhs string
+    RhsStr string
 
 }
 type AcceptPaymentStatement struct{
@@ -297,8 +306,8 @@ type SendMsgsStatement struct{
 type CreateEvntStatement struct{
     AnnotatedNode
     Arg Identifier
-
 }
+
 type CallProcStatement struct{
     AnnotatedNode
     Arg Identifier
@@ -310,18 +319,6 @@ type ThrowStatement struct{
     Arg Identifier // Optional
 }
 
-func (*LoadStatement) statementNode() {}
-func (*StoreStatement) statementNode() {}
-func (*BindStatement) statementNode() {}
-func (*MapUpdateStatement) statementNode() {}
-func (*MapGetStatement) statementNode() {}
-func (*MatchStatement) statementNode() {}
-func (*ReadFromBCStatement) statementNode() {}
-func (*AcceptPaymentStatement) statementNode() {}
-func (*SendMsgsStatement) statementNode() {}
-func (*CreateEvntStatement) statementNode() {}
-func (*CallProcStatement) statementNode() {}
-func (*ThrowStatement) statementNode() {}
 
 type LibraryVariable struct{
     VariableType string // Optional
@@ -331,9 +328,6 @@ type LibraryVariable struct{
 type LibraryType struct{
     CtrDefs []CtrDef
 }
-
-func (*LibraryVariable) libraryEntryNode() {}
-func (*LibraryType) libraryEntryNode() {}
 
 type Library struct{
     Name Identifier
@@ -346,12 +340,12 @@ type ExternalLibrary struct{
 
 }
 type ContractModule struct{
-    ScillaMajorVersion int
-    Name Identifier
-    Library Library // Optional
-    ExternalLibraries []ExternalLibrary
+    ScillaMajorVersion int `json:"scilla_major_version"`
+    Name Identifier `json:"name"`
+    Library Library `json:"library"`
+    ExternalLibraries []ExternalLibrary `json:"external_libraries"`
     //TODO name
-    C Contract
+    C Contract `json:"contract"`
 }
 
 type Field struct{
@@ -366,14 +360,61 @@ type Parameter struct{
 }
 
 type Component struct{
-    Name Identifier
-    Params []Parameter
-    Body []Statement
+    Name Identifier `json:"name"`
+    Params []Parameter `json:"params"`
+    Body []GenericStatement `json:"body"`
 
 }
 type Contract struct{
-    Name Identifier
-    Params []Parameter
-    Fields []Field
-    Components []Component
+    Name Identifier `json:"name"`
+    Params []Parameter `json:"params"`
+    Fields []Field `json:"fields"`
+    Components []Component `json:"components"`
 }
+
+func (*GeneralLiteral) literalNode() {}
+func (*StringLiteral) literalNode() {}
+func (*BNumLiteral) literalNode() {}
+func (*ByStrXLiteral) literalNode() {}
+func (*IntLiteral) literalNode() {}
+func (*UintLiteral) literalNode() {}
+func (*MapLiteral) literalNode() {}
+func (*ADTValueLiteral) literalNode() {}
+
+func (*GeneralExpression) expressionNode() {}
+func (*LiteralExpression) expressionNode() {}
+func (*VarExpression) expressionNode() {}
+func (*LetExpression) expressionNode() {}
+func (*MessageExpression) expressionNode() {}
+func (*FunExpression) expressionNode() {}
+func (*AppExpression) expressionNode() {}
+func (*ConstrExpression) expressionNode() {}
+func (*MatchExpression) expressionNode() {}
+func (*BuiltinExpression) expressionNode() {}
+func (*TFunExpression) expressionNode() {}
+func (*TAppExpression) expressionNode() {}
+func (*FixpointExpression) expressionNode() {}
+
+func (*PayloadLitral) payloadNode() {}
+func (*PayloadVariable) payloadNode() {}
+
+func (*WildcardPattern) patternNode() {}
+func (*BinderPattern) patternNode() {}
+func (*ConstructorPattern) patternNode() {}
+
+func (*GenericStatement) statementNode() {}
+func (*LoadStatement) statementNode() {}
+func (*StoreStatement) statementNode() {}
+func (*BindStatement) statementNode() {}
+func (*MapUpdateStatement) statementNode() {}
+func (*MapGetStatement) statementNode() {}
+func (*MatchStatement) statementNode() {}
+func (*ReadFromBCStatement) statementNode() {}
+func (*AcceptPaymentStatement) statementNode() {}
+func (*SendMsgsStatement) statementNode() {}
+func (*CreateEvntStatement) statementNode() {}
+func (*CallProcStatement) statementNode() {}
+func (*ThrowStatement) statementNode() {}
+
+func (*LibraryVariable) libraryEntryNode() {}
+func (*LibraryType) libraryEntryNode() {}

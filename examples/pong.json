@@ -2,7 +2,7 @@
   "scilla_major_version": 0,
   "name": {
     "loc": {
-      "source_file": "./scilla_checker/examples/pong.scilla",
+      "source_file": "../scilla_checker/examples/pong.scilla",
       "line": 13,
       "column": 10,
       "node_type": "Location"
@@ -13,7 +13,7 @@
   "library": {
     "library_name": {
       "loc": {
-        "source_file": "./scilla_checker/examples/pong.scilla",
+        "source_file": "../scilla_checker/examples/pong.scilla",
         "line": 3,
         "column": 1,
         "node_type": "Location"
@@ -26,7 +26,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "./scilla_checker/examples/pong.scilla",
+            "source_file": "../scilla_checker/examples/pong.scilla",
             "line": 5,
             "column": 5,
             "node_type": "Location"
@@ -37,7 +37,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "./scilla_checker/examples/pong.scilla",
+            "source_file": "../scilla_checker/examples/pong.scilla",
             "line": 6,
             "column": 3,
             "node_type": "Location"
@@ -45,7 +45,7 @@
           "node_type": "FunExpression",
           "lhs": {
             "loc": {
-              "source_file": "./scilla_checker/examples/pong.scilla",
+              "source_file": "../scilla_checker/examples/pong.scilla",
               "line": 6,
               "column": 3,
               "node_type": "Location"
@@ -53,9 +53,9 @@
             "identifier": "msg",
             "node_type": "Identifier"
           },
-          "rhs": {
+          "rhs_expr": {
             "loc": {
-              "source_file": "./scilla_checker/examples/pong.scilla",
+              "source_file": "../scilla_checker/examples/pong.scilla",
               "line": 7,
               "column": 5,
               "node_type": "Location"
@@ -63,7 +63,7 @@
             "node_type": "LetExpression",
             "variable": {
               "loc": {
-                "source_file": "./scilla_checker/examples/pong.scilla",
+                "source_file": "../scilla_checker/examples/pong.scilla",
                 "line": 7,
                 "column": 5,
                 "node_type": "Location"
@@ -74,7 +74,7 @@
             "variable_type": null,
             "expression": {
               "loc": {
-                "source_file": "./scilla_checker/examples/pong.scilla",
+                "source_file": "../scilla_checker/examples/pong.scilla",
                 "line": 7,
                 "column": 19,
                 "node_type": "Location"
@@ -82,11 +82,11 @@
               "node_type": "ConstrExpression",
               "constructor_name": "Nil",
               "types": [ "Message" ],
-              "arguments": []
+              "args": []
             },
             "body": {
               "loc": {
-                "source_file": "./scilla_checker/examples/pong.scilla",
+                "source_file": "../scilla_checker/examples/pong.scilla",
                 "line": 8,
                 "column": 7,
                 "node_type": "Location"
@@ -94,10 +94,10 @@
               "node_type": "ConstrExpression",
               "constructor_name": "Cons",
               "types": [ "Message" ],
-              "arguments": [
+              "args": [
                 {
                   "loc": {
-                    "source_file": "./scilla_checker/examples/pong.scilla",
+                    "source_file": "../scilla_checker/examples/pong.scilla",
                     "line": 8,
                     "column": 22,
                     "node_type": "Location"
@@ -107,7 +107,7 @@
                 },
                 {
                   "loc": {
-                    "source_file": "./scilla_checker/examples/pong.scilla",
+                    "source_file": "../scilla_checker/examples/pong.scilla",
                     "line": 8,
                     "column": 26,
                     "node_type": "Location"
@@ -128,7 +128,7 @@
   "contract": {
     "name": {
       "loc": {
-        "source_file": "./scilla_checker/examples/pong.scilla",
+        "source_file": "../scilla_checker/examples/pong.scilla",
         "line": 13,
         "column": 10,
         "node_type": "Location"
@@ -141,7 +141,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "./scilla_checker/examples/pong.scilla",
+            "source_file": "../scilla_checker/examples/pong.scilla",
             "line": 19,
             "column": 7,
             "node_type": "Location"
@@ -152,7 +152,7 @@
         "field_type": "Int32",
         "expression": {
           "loc": {
-            "source_file": "./scilla_checker/examples/pong.scilla",
+            "source_file": "../scilla_checker/examples/pong.scilla",
             "line": 19,
             "column": 23,
             "node_type": "Location"
@@ -165,7 +165,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "./scilla_checker/examples/pong.scilla",
+            "source_file": "../scilla_checker/examples/pong.scilla",
             "line": 20,
             "column": 7,
             "node_type": "Location"
@@ -176,7 +176,7 @@
         "field_type": "Option (ByStr20)",
         "expression": {
           "loc": {
-            "source_file": "./scilla_checker/examples/pong.scilla",
+            "source_file": "../scilla_checker/examples/pong.scilla",
             "line": 20,
             "column": 36,
             "node_type": "Location"
@@ -184,7 +184,7 @@
           "node_type": "ConstrExpression",
           "constructor_name": "None",
           "types": [ "ByStr20" ],
-          "arguments": []
+          "args": []
         },
         "node_type": "Field"
       }
@@ -192,9 +192,9 @@
     "components": [
       {
         "params": [],
-        "component_name": {
+        "name": {
           "loc": {
-            "source_file": "./scilla_checker/examples/pong.scilla",
+            "source_file": "../scilla_checker/examples/pong.scilla",
             "line": 22,
             "column": 12,
             "node_type": "Location"
@@ -205,7 +205,7 @@
         "body": [
           {
             "loc": {
-              "source_file": "./scilla_checker/examples/pong.scilla",
+              "source_file": "../scilla_checker/examples/pong.scilla",
               "line": 23,
               "column": 3,
               "node_type": "Location"
@@ -213,7 +213,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "./scilla_checker/examples/pong.scilla",
+                "source_file": "../scilla_checker/examples/pong.scilla",
                 "line": 23,
                 "column": 7,
                 "node_type": "Location"
@@ -221,9 +221,9 @@
               "identifier": "one",
               "node_type": "Identifier"
             },
-            "rhs": {
+            "rhs_expr": {
               "loc": {
-                "source_file": "./scilla_checker/examples/pong.scilla",
+                "source_file": "../scilla_checker/examples/pong.scilla",
                 "line": 23,
                 "column": 9,
                 "node_type": "Location"
@@ -234,14 +234,14 @@
           },
           {
             "loc": {
-              "source_file": "./scilla_checker/examples/pong.scilla",
+              "source_file": "../scilla_checker/examples/pong.scilla",
               "line": 24,
               "column": 3,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file": "./scilla_checker/examples/pong.scilla",
+                "source_file": "../scilla_checker/examples/pong.scilla",
                 "line": 24,
                 "column": 9,
                 "node_type": "Location"
@@ -251,7 +251,7 @@
             },
             "rhs": {
               "loc": {
-                "source_file": "./scilla_checker/examples/pong.scilla",
+                "source_file": "../scilla_checker/examples/pong.scilla",
                 "line": 24,
                 "column": 12,
                 "node_type": "Location"
@@ -263,14 +263,14 @@
           },
           {
             "loc": {
-              "source_file": "./scilla_checker/examples/pong.scilla",
+              "source_file": "../scilla_checker/examples/pong.scilla",
               "line": 25,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file": "./scilla_checker/examples/pong.scilla",
+                "source_file": "../scilla_checker/examples/pong.scilla",
                 "line": 25,
                 "column": 9,
                 "node_type": "Location"
@@ -283,7 +283,7 @@
                 "pattern_body": [
                   {
                     "loc": {
-                      "source_file": "./scilla_checker/examples/pong.scilla",
+                      "source_file": "../scilla_checker/examples/pong.scilla",
                       "line": 27,
                       "column": 5,
                       "node_type": "Location"
@@ -291,7 +291,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "./scilla_checker/examples/pong.scilla",
+                          "../scilla_checker/examples/pong.scilla",
                         "line": 27,
                         "column": 9,
                         "node_type": "Location"
@@ -302,7 +302,7 @@
                     "rhs": {
                       "loc": {
                         "source_file":
-                          "./scilla_checker/examples/pong.scilla",
+                          "../scilla_checker/examples/pong.scilla",
                         "line": 27,
                         "column": 12,
                         "node_type": "Location"
@@ -314,7 +314,7 @@
                   },
                   {
                     "loc": {
-                      "source_file": "./scilla_checker/examples/pong.scilla",
+                      "source_file": "../scilla_checker/examples/pong.scilla",
                       "line": 28,
                       "column": 5,
                       "node_type": "Location"
@@ -323,7 +323,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "./scilla_checker/examples/pong.scilla",
+                          "../scilla_checker/examples/pong.scilla",
                         "line": 28,
                         "column": 18,
                         "node_type": "Location"
@@ -331,10 +331,10 @@
                       "identifier": "is_game_over",
                       "node_type": "Identifier"
                     },
-                    "rhs": {
+                    "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "./scilla_checker/examples/pong.scilla",
+                          "../scilla_checker/examples/pong.scilla",
                         "line": 28,
                         "column": 20,
                         "node_type": "Location"
@@ -344,7 +344,7 @@
                         {
                           "loc": {
                             "source_file":
-                              "./scilla_checker/examples/pong.scilla",
+                              "../scilla_checker/examples/pong.scilla",
                             "line": 28,
                             "column": 31,
                             "node_type": "Location"
@@ -355,7 +355,7 @@
                         {
                           "loc": {
                             "source_file":
-                              "./scilla_checker/examples/pong.scilla",
+                              "../scilla_checker/examples/pong.scilla",
                             "line": 28,
                             "column": 35,
                             "node_type": "Location"
@@ -367,7 +367,7 @@
                       "builtin_function": {
                         "loc": {
                           "source_file":
-                            "./scilla_checker/examples/pong.scilla",
+                            "../scilla_checker/examples/pong.scilla",
                           "line": 28,
                           "column": 28,
                           "node_type": "Location"
@@ -379,7 +379,7 @@
                   },
                   {
                     "loc": {
-                      "source_file": "./scilla_checker/examples/pong.scilla",
+                      "source_file": "../scilla_checker/examples/pong.scilla",
                       "line": 29,
                       "column": 5,
                       "node_type": "Location"
@@ -387,7 +387,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "./scilla_checker/examples/pong.scilla",
+                          "../scilla_checker/examples/pong.scilla",
                         "line": 29,
                         "column": 11,
                         "node_type": "Location"
@@ -401,7 +401,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "./scilla_checker/examples/pong.scilla",
+                                "../scilla_checker/examples/pong.scilla",
                               "line": 31,
                               "column": 7,
                               "node_type": "Location"
@@ -410,7 +410,7 @@
                             "lhs": {
                               "loc": {
                                 "source_file":
-                                  "./scilla_checker/examples/pong.scilla",
+                                  "../scilla_checker/examples/pong.scilla",
                                 "line": 31,
                                 "column": 11,
                                 "node_type": "Location"
@@ -418,16 +418,16 @@
                               "identifier": "msg",
                               "node_type": "Identifier"
                             },
-                            "rhs": {
+                            "rhs_expr": {
                               "loc": {
                                 "source_file":
-                                  "./scilla_checker/examples/pong.scilla",
+                                  "../scilla_checker/examples/pong.scilla",
                                 "line": 31,
                                 "column": 13,
                                 "node_type": "Location"
                               },
                               "node_type": "MessageExpression",
-                              "arguments": [
+                              "margs": [
                                 {
                                   "node_type": "MessageArgument",
                                   "variable": "_eventname",
@@ -445,7 +445,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "./scilla_checker/examples/pong.scilla",
+                                "../scilla_checker/examples/pong.scilla",
                               "line": 32,
                               "column": 7,
                               "node_type": "Location"
@@ -453,7 +453,7 @@
                             "arg": {
                               "loc": {
                                 "source_file":
-                                  "./scilla_checker/examples/pong.scilla",
+                                  "../scilla_checker/examples/pong.scilla",
                                 "line": 32,
                                 "column": 7,
                                 "node_type": "Location"
@@ -476,7 +476,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "./scilla_checker/examples/pong.scilla",
+                                "../scilla_checker/examples/pong.scilla",
                               "line": 34,
                               "column": 7,
                               "node_type": "Location"
@@ -485,7 +485,7 @@
                             "lhs": {
                               "loc": {
                                 "source_file":
-                                  "./scilla_checker/examples/pong.scilla",
+                                  "../scilla_checker/examples/pong.scilla",
                                 "line": 34,
                                 "column": 16,
                                 "node_type": "Location"
@@ -493,10 +493,10 @@
                               "identifier": "deccount",
                               "node_type": "Identifier"
                             },
-                            "rhs": {
+                            "rhs_expr": {
                               "loc": {
                                 "source_file":
-                                  "./scilla_checker/examples/pong.scilla",
+                                  "../scilla_checker/examples/pong.scilla",
                                 "line": 34,
                                 "column": 18,
                                 "node_type": "Location"
@@ -506,7 +506,7 @@
                                 {
                                   "loc": {
                                     "source_file":
-                                      "./scilla_checker/examples/pong.scilla",
+                                      "../scilla_checker/examples/pong.scilla",
                                     "line": 34,
                                     "column": 30,
                                     "node_type": "Location"
@@ -517,7 +517,7 @@
                                 {
                                   "loc": {
                                     "source_file":
-                                      "./scilla_checker/examples/pong.scilla",
+                                      "../scilla_checker/examples/pong.scilla",
                                     "line": 34,
                                     "column": 34,
                                     "node_type": "Location"
@@ -529,7 +529,7 @@
                               "builtin_function": {
                                 "loc": {
                                   "source_file":
-                                    "./scilla_checker/examples/pong.scilla",
+                                    "../scilla_checker/examples/pong.scilla",
                                   "line": 34,
                                   "column": 26,
                                   "node_type": "Location"
@@ -542,7 +542,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "./scilla_checker/examples/pong.scilla",
+                                "../scilla_checker/examples/pong.scilla",
                               "line": 35,
                               "column": 7,
                               "node_type": "Location"
@@ -550,7 +550,7 @@
                             "lhs": {
                               "loc": {
                                 "source_file":
-                                  "./scilla_checker/examples/pong.scilla",
+                                  "../scilla_checker/examples/pong.scilla",
                                 "line": 35,
                                 "column": 13,
                                 "node_type": "Location"
@@ -561,7 +561,7 @@
                             "rhs": {
                               "loc": {
                                 "source_file":
-                                  "./scilla_checker/examples/pong.scilla",
+                                  "../scilla_checker/examples/pong.scilla",
                                 "line": 35,
                                 "column": 16,
                                 "node_type": "Location"
@@ -574,7 +574,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "./scilla_checker/examples/pong.scilla",
+                                "../scilla_checker/examples/pong.scilla",
                               "line": 36,
                               "column": 7,
                               "node_type": "Location"
@@ -583,7 +583,7 @@
                             "lhs": {
                               "loc": {
                                 "source_file":
-                                  "./scilla_checker/examples/pong.scilla",
+                                  "../scilla_checker/examples/pong.scilla",
                                 "line": 36,
                                 "column": 11,
                                 "node_type": "Location"
@@ -591,16 +591,16 @@
                               "identifier": "msg",
                               "node_type": "Identifier"
                             },
-                            "rhs": {
+                            "rhs_expr": {
                               "loc": {
                                 "source_file":
-                                  "./scilla_checker/examples/pong.scilla",
+                                  "../scilla_checker/examples/pong.scilla",
                                 "line": 36,
                                 "column": 13,
                                 "node_type": "Location"
                               },
                               "node_type": "MessageExpression",
-                              "arguments": [
+                              "margs": [
                                 {
                                   "node_type": "MessageArgument",
                                   "variable": "_tag",
@@ -620,7 +620,7 @@
                                     "value": {
                                       "loc": {
                                         "source_file":
-                                          "./scilla_checker/examples/pong.scilla",
+                                          "../scilla_checker/examples/pong.scilla",
                                         "line": 36,
                                         "column": 42,
                                         "node_type": "Location"
@@ -647,7 +647,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "./scilla_checker/examples/pong.scilla",
+                                "../scilla_checker/examples/pong.scilla",
                               "line": 37,
                               "column": 7,
                               "node_type": "Location"
@@ -656,7 +656,7 @@
                             "lhs": {
                               "loc": {
                                 "source_file":
-                                  "./scilla_checker/examples/pong.scilla",
+                                  "../scilla_checker/examples/pong.scilla",
                                 "line": 37,
                                 "column": 12,
                                 "node_type": "Location"
@@ -664,10 +664,10 @@
                               "identifier": "msgs",
                               "node_type": "Identifier"
                             },
-                            "rhs": {
+                            "rhs_expr": {
                               "loc": {
                                 "source_file":
-                                  "./scilla_checker/examples/pong.scilla",
+                                  "../scilla_checker/examples/pong.scilla",
                                 "line": 37,
                                 "column": 14,
                                 "node_type": "Location"
@@ -676,7 +676,7 @@
                               "lhs": {
                                 "loc": {
                                   "source_file":
-                                    "./scilla_checker/examples/pong.scilla",
+                                    "../scilla_checker/examples/pong.scilla",
                                   "line": 37,
                                   "column": 14,
                                   "node_type": "Location"
@@ -684,11 +684,11 @@
                                 "identifier": "one_msg",
                                 "node_type": "Identifier"
                               },
-                              "rhs": [
+                              "rhs_list": [
                                 {
                                   "loc": {
                                     "source_file":
-                                      "./scilla_checker/examples/pong.scilla",
+                                      "../scilla_checker/examples/pong.scilla",
                                     "line": 37,
                                     "column": 22,
                                     "node_type": "Location"
@@ -702,7 +702,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "./scilla_checker/examples/pong.scilla",
+                                "../scilla_checker/examples/pong.scilla",
                               "line": 38,
                               "column": 7,
                               "node_type": "Location"
@@ -710,7 +710,7 @@
                             "arg": {
                               "loc": {
                                 "source_file":
-                                  "./scilla_checker/examples/pong.scilla",
+                                  "../scilla_checker/examples/pong.scilla",
                                 "line": 38,
                                 "column": 7,
                                 "node_type": "Location"
@@ -723,7 +723,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "./scilla_checker/examples/pong.scilla",
+                                "../scilla_checker/examples/pong.scilla",
                               "line": 39,
                               "column": 7,
                               "node_type": "Location"
@@ -732,7 +732,7 @@
                             "lhs": {
                               "loc": {
                                 "source_file":
-                                  "./scilla_checker/examples/pong.scilla",
+                                  "../scilla_checker/examples/pong.scilla",
                                 "line": 39,
                                 "column": 9,
                                 "node_type": "Location"
@@ -740,16 +740,16 @@
                               "identifier": "e",
                               "node_type": "Identifier"
                             },
-                            "rhs": {
+                            "rhs_expr": {
                               "loc": {
                                 "source_file":
-                                  "./scilla_checker/examples/pong.scilla",
+                                  "../scilla_checker/examples/pong.scilla",
                                 "line": 39,
                                 "column": 11,
                                 "node_type": "Location"
                               },
                               "node_type": "MessageExpression",
-                              "arguments": [
+                              "margs": [
                                 {
                                   "node_type": "MessageArgument",
                                   "variable": "_eventname",
@@ -767,7 +767,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "./scilla_checker/examples/pong.scilla",
+                                "../scilla_checker/examples/pong.scilla",
                               "line": 40,
                               "column": 7,
                               "node_type": "Location"
@@ -775,7 +775,7 @@
                             "arg": {
                               "loc": {
                                 "source_file":
-                                  "./scilla_checker/examples/pong.scilla",
+                                  "../scilla_checker/examples/pong.scilla",
                                 "line": 40,
                                 "column": 7,
                                 "node_type": "Location"
@@ -806,7 +806,7 @@
                       "variable": {
                         "loc": {
                           "source_file":
-                            "./scilla_checker/examples/pong.scilla",
+                            "../scilla_checker/examples/pong.scilla",
                           "line": 26,
                           "column": 10,
                           "node_type": "Location"
@@ -823,7 +823,7 @@
                 "pattern_body": [
                   {
                     "loc": {
-                      "source_file": "./scilla_checker/examples/pong.scilla",
+                      "source_file": "../scilla_checker/examples/pong.scilla",
                       "line": 43,
                       "column": 5,
                       "node_type": "Location"
@@ -832,7 +832,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "./scilla_checker/examples/pong.scilla",
+                          "../scilla_checker/examples/pong.scilla",
                         "line": 43,
                         "column": 9,
                         "node_type": "Location"
@@ -840,16 +840,16 @@
                       "identifier": "msg",
                       "node_type": "Identifier"
                     },
-                    "rhs": {
+                    "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "./scilla_checker/examples/pong.scilla",
+                          "../scilla_checker/examples/pong.scilla",
                         "line": 43,
                         "column": 11,
                         "node_type": "Location"
                       },
                       "node_type": "MessageExpression",
-                      "arguments": [
+                      "margs": [
                         {
                           "node_type": "MessageArgument",
                           "variable": "_eventname",
@@ -866,7 +866,7 @@
                   },
                   {
                     "loc": {
-                      "source_file": "./scilla_checker/examples/pong.scilla",
+                      "source_file": "../scilla_checker/examples/pong.scilla",
                       "line": 44,
                       "column": 5,
                       "node_type": "Location"
@@ -874,7 +874,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "./scilla_checker/examples/pong.scilla",
+                          "../scilla_checker/examples/pong.scilla",
                         "line": 44,
                         "column": 5,
                         "node_type": "Location"
@@ -903,7 +903,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "./scilla_checker/examples/pong.scilla",
+                "source_file": "../scilla_checker/examples/pong.scilla",
                 "line": 48,
                 "column": 25,
                 "node_type": "Location"
@@ -915,9 +915,9 @@
             "node_type": "Parameter"
           }
         ],
-        "component_name": {
+        "name": {
           "loc": {
-            "source_file": "./scilla_checker/examples/pong.scilla",
+            "source_file": "../scilla_checker/examples/pong.scilla",
             "line": 48,
             "column": 12,
             "node_type": "Location"
@@ -928,7 +928,7 @@
         "body": [
           {
             "loc": {
-              "source_file": "./scilla_checker/examples/pong.scilla",
+              "source_file": "../scilla_checker/examples/pong.scilla",
               "line": 49,
               "column": 3,
               "node_type": "Location"
@@ -936,7 +936,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "./scilla_checker/examples/pong.scilla",
+                "source_file": "../scilla_checker/examples/pong.scilla",
                 "line": 49,
                 "column": 9,
                 "node_type": "Location"
@@ -944,9 +944,9 @@
               "identifier": "paOpt",
               "node_type": "Identifier"
             },
-            "rhs": {
+            "rhs_expr": {
               "loc": {
-                "source_file": "./scilla_checker/examples/pong.scilla",
+                "source_file": "../scilla_checker/examples/pong.scilla",
                 "line": 49,
                 "column": 11,
                 "node_type": "Location"
@@ -954,10 +954,10 @@
               "node_type": "ConstrExpression",
               "constructor_name": "Some",
               "types": [ "ByStr20" ],
-              "arguments": [
+              "args": [
                 {
                   "loc": {
-                    "source_file": "./scilla_checker/examples/pong.scilla",
+                    "source_file": "../scilla_checker/examples/pong.scilla",
                     "line": 49,
                     "column": 26,
                     "node_type": "Location"
@@ -970,14 +970,14 @@
           },
           {
             "loc": {
-              "source_file": "./scilla_checker/examples/pong.scilla",
+              "source_file": "../scilla_checker/examples/pong.scilla",
               "line": 50,
               "column": 3,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file": "./scilla_checker/examples/pong.scilla",
+                "source_file": "../scilla_checker/examples/pong.scilla",
                 "line": 50,
                 "column": 13,
                 "node_type": "Location"
@@ -987,7 +987,7 @@
             },
             "rhs": {
               "loc": {
-                "source_file": "./scilla_checker/examples/pong.scilla",
+                "source_file": "../scilla_checker/examples/pong.scilla",
                 "line": 50,
                 "column": 16,
                 "node_type": "Location"

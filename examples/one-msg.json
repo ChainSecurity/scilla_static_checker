@@ -2,7 +2,7 @@
   "scilla_major_version": 0,
   "name": {
     "loc": {
-      "source_file": "./scilla_checker/examples/one-msg.scilla",
+      "source_file": "../scilla_checker/examples/one-msg.scilla",
       "line": 21,
       "column": 10,
       "node_type": "Location"
@@ -13,7 +13,7 @@
   "library": {
     "library_name": {
       "loc": {
-        "source_file": "./scilla_checker/examples/one-msg.scilla",
+        "source_file": "../scilla_checker/examples/one-msg.scilla",
         "line": 10,
         "column": 1,
         "node_type": "Location"
@@ -26,7 +26,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "./scilla_checker/examples/one-msg.scilla",
+            "source_file": "../scilla_checker/examples/one-msg.scilla",
             "line": 12,
             "column": 5,
             "node_type": "Location"
@@ -37,7 +37,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "./scilla_checker/examples/one-msg.scilla",
+            "source_file": "../scilla_checker/examples/one-msg.scilla",
             "line": 13,
             "column": 3,
             "node_type": "Location"
@@ -45,7 +45,7 @@
           "node_type": "FunExpression",
           "lhs": {
             "loc": {
-              "source_file": "./scilla_checker/examples/one-msg.scilla",
+              "source_file": "../scilla_checker/examples/one-msg.scilla",
               "line": 13,
               "column": 3,
               "node_type": "Location"
@@ -53,9 +53,9 @@
             "identifier": "msg",
             "node_type": "Identifier"
           },
-          "rhs": {
+          "rhs_expr": {
             "loc": {
-              "source_file": "./scilla_checker/examples/one-msg.scilla",
+              "source_file": "../scilla_checker/examples/one-msg.scilla",
               "line": 14,
               "column": 3,
               "node_type": "Location"
@@ -63,7 +63,7 @@
             "node_type": "LetExpression",
             "variable": {
               "loc": {
-                "source_file": "./scilla_checker/examples/one-msg.scilla",
+                "source_file": "../scilla_checker/examples/one-msg.scilla",
                 "line": 14,
                 "column": 3,
                 "node_type": "Location"
@@ -74,7 +74,7 @@
             "variable_type": null,
             "expression": {
               "loc": {
-                "source_file": "./scilla_checker/examples/one-msg.scilla",
+                "source_file": "../scilla_checker/examples/one-msg.scilla",
                 "line": 14,
                 "column": 17,
                 "node_type": "Location"
@@ -82,11 +82,11 @@
               "node_type": "ConstrExpression",
               "constructor_name": "Nil",
               "types": [ "Message" ],
-              "arguments": []
+              "args": []
             },
             "body": {
               "loc": {
-                "source_file": "./scilla_checker/examples/one-msg.scilla",
+                "source_file": "../scilla_checker/examples/one-msg.scilla",
                 "line": 15,
                 "column": 3,
                 "node_type": "Location"
@@ -94,10 +94,11 @@
               "node_type": "ConstrExpression",
               "constructor_name": "Cons",
               "types": [ "Message" ],
-              "arguments": [
+              "args": [
                 {
                   "loc": {
-                    "source_file": "./scilla_checker/examples/one-msg.scilla",
+                    "source_file":
+                      "../scilla_checker/examples/one-msg.scilla",
                     "line": 15,
                     "column": 18,
                     "node_type": "Location"
@@ -107,7 +108,8 @@
                 },
                 {
                   "loc": {
-                    "source_file": "./scilla_checker/examples/one-msg.scilla",
+                    "source_file":
+                      "../scilla_checker/examples/one-msg.scilla",
                     "line": 15,
                     "column": 22,
                     "node_type": "Location"
@@ -128,7 +130,7 @@
     {
       "name": {
         "loc": {
-          "source_file": "./scilla_checker/examples/one-msg.scilla",
+          "source_file": "../scilla_checker/examples/one-msg.scilla",
           "line": 5,
           "column": 8,
           "node_type": "Location"
@@ -143,7 +145,7 @@
   "contract": {
     "name": {
       "loc": {
-        "source_file": "./scilla_checker/examples/one-msg.scilla",
+        "source_file": "../scilla_checker/examples/one-msg.scilla",
         "line": 21,
         "column": 10,
         "node_type": "Location"
@@ -156,9 +158,9 @@
     "components": [
       {
         "params": [],
-        "component_name": {
+        "name": {
           "loc": {
-            "source_file": "./scilla_checker/examples/one-msg.scilla",
+            "source_file": "../scilla_checker/examples/one-msg.scilla",
             "line": 25,
             "column": 12,
             "node_type": "Location"
@@ -169,7 +171,7 @@
         "body": [
           {
             "loc": {
-              "source_file": "./scilla_checker/examples/one-msg.scilla",
+              "source_file": "../scilla_checker/examples/one-msg.scilla",
               "line": 26,
               "column": 3,
               "node_type": "Location"
@@ -177,7 +179,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "./scilla_checker/examples/one-msg.scilla",
+                "source_file": "../scilla_checker/examples/one-msg.scilla",
                 "line": 26,
                 "column": 8,
                 "node_type": "Location"
@@ -185,15 +187,15 @@
               "identifier": "msg1",
               "node_type": "Identifier"
             },
-            "rhs": {
+            "rhs_expr": {
               "loc": {
-                "source_file": "./scilla_checker/examples/one-msg.scilla",
+                "source_file": "../scilla_checker/examples/one-msg.scilla",
                 "line": 26,
                 "column": 10,
                 "node_type": "Location"
               },
               "node_type": "MessageExpression",
-              "arguments": [
+              "margs": [
                 {
                   "node_type": "MessageArgument",
                   "variable": "_tag",
@@ -210,7 +212,7 @@
                     "value": {
                       "loc": {
                         "source_file":
-                          "./scilla_checker/examples/one-msg.scilla",
+                          "../scilla_checker/examples/one-msg.scilla",
                         "line": 26,
                         "column": 35,
                         "node_type": "Location"
@@ -233,7 +235,7 @@
           },
           {
             "loc": {
-              "source_file": "./scilla_checker/examples/one-msg.scilla",
+              "source_file": "../scilla_checker/examples/one-msg.scilla",
               "line": 27,
               "column": 3,
               "node_type": "Location"
@@ -241,7 +243,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "./scilla_checker/examples/one-msg.scilla",
+                "source_file": "../scilla_checker/examples/one-msg.scilla",
                 "line": 27,
                 "column": 8,
                 "node_type": "Location"
@@ -249,15 +251,15 @@
               "identifier": "msg2",
               "node_type": "Identifier"
             },
-            "rhs": {
+            "rhs_expr": {
               "loc": {
-                "source_file": "./scilla_checker/examples/one-msg.scilla",
+                "source_file": "../scilla_checker/examples/one-msg.scilla",
                 "line": 27,
                 "column": 10,
                 "node_type": "Location"
               },
               "node_type": "MessageExpression",
-              "arguments": [
+              "margs": [
                 {
                   "node_type": "MessageArgument",
                   "variable": "_tag",
@@ -274,7 +276,7 @@
                     "value": {
                       "loc": {
                         "source_file":
-                          "./scilla_checker/examples/one-msg.scilla",
+                          "../scilla_checker/examples/one-msg.scilla",
                         "line": 27,
                         "column": 35,
                         "node_type": "Location"
@@ -297,7 +299,7 @@
           },
           {
             "loc": {
-              "source_file": "./scilla_checker/examples/one-msg.scilla",
+              "source_file": "../scilla_checker/examples/one-msg.scilla",
               "line": 28,
               "column": 3,
               "node_type": "Location"
@@ -305,7 +307,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "./scilla_checker/examples/one-msg.scilla",
+                "source_file": "../scilla_checker/examples/one-msg.scilla",
                 "line": 28,
                 "column": 9,
                 "node_type": "Location"
@@ -313,9 +315,9 @@
               "identifier": "msgs1",
               "node_type": "Identifier"
             },
-            "rhs": {
+            "rhs_expr": {
               "loc": {
-                "source_file": "./scilla_checker/examples/one-msg.scilla",
+                "source_file": "../scilla_checker/examples/one-msg.scilla",
                 "line": 28,
                 "column": 11,
                 "node_type": "Location"
@@ -323,7 +325,7 @@
               "node_type": "AppExpression",
               "lhs": {
                 "loc": {
-                  "source_file": "./scilla_checker/examples/one-msg.scilla",
+                  "source_file": "../scilla_checker/examples/one-msg.scilla",
                   "line": 28,
                   "column": 11,
                   "node_type": "Location"
@@ -331,10 +333,11 @@
                 "identifier": "one_msg",
                 "node_type": "Identifier"
               },
-              "rhs": [
+              "rhs_list": [
                 {
                   "loc": {
-                    "source_file": "./scilla_checker/examples/one-msg.scilla",
+                    "source_file":
+                      "../scilla_checker/examples/one-msg.scilla",
                     "line": 28,
                     "column": 19,
                     "node_type": "Location"
@@ -347,7 +350,7 @@
           },
           {
             "loc": {
-              "source_file": "./scilla_checker/examples/one-msg.scilla",
+              "source_file": "../scilla_checker/examples/one-msg.scilla",
               "line": 29,
               "column": 3,
               "node_type": "Location"
@@ -355,7 +358,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "./scilla_checker/examples/one-msg.scilla",
+                "source_file": "../scilla_checker/examples/one-msg.scilla",
                 "line": 29,
                 "column": 9,
                 "node_type": "Location"
@@ -363,9 +366,9 @@
               "identifier": "msgs2",
               "node_type": "Identifier"
             },
-            "rhs": {
+            "rhs_expr": {
               "loc": {
-                "source_file": "./scilla_checker/examples/one-msg.scilla",
+                "source_file": "../scilla_checker/examples/one-msg.scilla",
                 "line": 29,
                 "column": 11,
                 "node_type": "Location"
@@ -373,10 +376,11 @@
               "node_type": "ConstrExpression",
               "constructor_name": "Cons",
               "types": [ "Message" ],
-              "arguments": [
+              "args": [
                 {
                   "loc": {
-                    "source_file": "./scilla_checker/examples/one-msg.scilla",
+                    "source_file":
+                      "../scilla_checker/examples/one-msg.scilla",
                     "line": 29,
                     "column": 26,
                     "node_type": "Location"
@@ -386,7 +390,8 @@
                 },
                 {
                   "loc": {
-                    "source_file": "./scilla_checker/examples/one-msg.scilla",
+                    "source_file":
+                      "../scilla_checker/examples/one-msg.scilla",
                     "line": 29,
                     "column": 31,
                     "node_type": "Location"
@@ -399,14 +404,14 @@
           },
           {
             "loc": {
-              "source_file": "./scilla_checker/examples/one-msg.scilla",
+              "source_file": "../scilla_checker/examples/one-msg.scilla",
               "line": 30,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file": "./scilla_checker/examples/one-msg.scilla",
+                "source_file": "../scilla_checker/examples/one-msg.scilla",
                 "line": 30,
                 "column": 9,
                 "node_type": "Location"
@@ -420,7 +425,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "./scilla_checker/examples/one-msg.scilla",
+                        "../scilla_checker/examples/one-msg.scilla",
                       "line": 32,
                       "column": 5,
                       "node_type": "Location"
@@ -428,7 +433,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "./scilla_checker/examples/one-msg.scilla",
+                          "../scilla_checker/examples/one-msg.scilla",
                         "line": 32,
                         "column": 5,
                         "node_type": "Location"
@@ -449,7 +454,7 @@
                       "variable": {
                         "loc": {
                           "source_file":
-                            "./scilla_checker/examples/one-msg.scilla",
+                            "../scilla_checker/examples/one-msg.scilla",
                           "line": 31,
                           "column": 12,
                           "node_type": "Location"
@@ -467,7 +472,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "./scilla_checker/examples/one-msg.scilla",
+                        "../scilla_checker/examples/one-msg.scilla",
                       "line": 34,
                       "column": 5,
                       "node_type": "Location"
@@ -475,7 +480,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "./scilla_checker/examples/one-msg.scilla",
+                          "../scilla_checker/examples/one-msg.scilla",
                         "line": 34,
                         "column": 5,
                         "node_type": "Location"

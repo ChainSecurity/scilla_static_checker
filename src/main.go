@@ -5,16 +5,8 @@ import (
     "fmt"
     "os"
     "io/ioutil"
+    "./ast"
 )
-type response1 struct {
-    Page   int
-    Fruits []string
-}
-
-type response2 struct {
-    Page   int      `json:"page"`
-    Fruits []string `json:"fruits"`
-}
 
 func main() {
     jsonPath := os.Args[1]
@@ -28,7 +20,8 @@ func main() {
     var res  map[string]interface{}
 
     json.Unmarshal([]byte(byteValue), &res)
-    fmt.Println(res["data"])
+    ast.Visit(res)
+    //fmt.Println(res["node_type"])
 
     //fmt.Println(res.Fruits[0])
 }

@@ -2,7 +2,7 @@
   "scilla_major_version": 0,
   "name": {
     "loc": {
-      "source_file": "./scilla_checker/examples/empty.scilla",
+      "source_file": "../scilla_checker/examples/empty.scilla",
       "line": 6,
       "column": 10,
       "node_type": "Location"
@@ -15,7 +15,7 @@
     {
       "name": {
         "loc": {
-          "source_file": "./scilla_checker/examples/empty.scilla",
+          "source_file": "../scilla_checker/examples/empty.scilla",
           "line": 4,
           "column": 8,
           "node_type": "Location"
@@ -29,7 +29,7 @@
     {
       "name": {
         "loc": {
-          "source_file": "./scilla_checker/examples/empty.scilla",
+          "source_file": "../scilla_checker/examples/empty.scilla",
           "line": 4,
           "column": 19,
           "node_type": "Location"
@@ -43,7 +43,7 @@
     {
       "name": {
         "loc": {
-          "source_file": "./scilla_checker/examples/empty.scilla",
+          "source_file": "../scilla_checker/examples/empty.scilla",
           "line": 4,
           "column": 29,
           "node_type": "Location"
@@ -57,7 +57,7 @@
     {
       "name": {
         "loc": {
-          "source_file": "./scilla_checker/examples/empty.scilla",
+          "source_file": "../scilla_checker/examples/empty.scilla",
           "line": 4,
           "column": 40,
           "node_type": "Location"
@@ -71,7 +71,7 @@
     {
       "name": {
         "loc": {
-          "source_file": "./scilla_checker/examples/empty.scilla",
+          "source_file": "../scilla_checker/examples/empty.scilla",
           "line": 4,
           "column": 50,
           "node_type": "Location"
@@ -86,7 +86,7 @@
   "contract": {
     "name": {
       "loc": {
-        "source_file": "./scilla_checker/examples/empty.scilla",
+        "source_file": "../scilla_checker/examples/empty.scilla",
         "line": 6,
         "column": 10,
         "node_type": "Location"
@@ -99,9 +99,9 @@
     "components": [
       {
         "params": [],
-        "component_name": {
+        "name": {
           "loc": {
-            "source_file": "./scilla_checker/examples/empty.scilla",
+            "source_file": "../scilla_checker/examples/empty.scilla",
             "line": 9,
             "column": 12,
             "node_type": "Location"
