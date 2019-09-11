@@ -14,8 +14,8 @@ type Identifier struct{
 }
 
 type MapValue struct{
-    Key GenericLiteral
-    Value GenericLiteral
+    Key GenericLiteral `json:"key"`
+    Value GenericLiteral `json:"value"`
 }
 
 type CtrDef struct {
@@ -32,39 +32,39 @@ type GenericLiteral struct{
     NodeType string `json:"node_type"`
 }
 
-type StringLiteral struct{
-    Value string `json:"value"`
-}
+//type StringLiteral struct{
+    //Value string `json:"value"`
+//}
 
-type BNumLiteral struct{
-    Value string `json:"value"`
+//type BNumLiteral struct{
+    //Value string `json:"value"`
 
-}
-type ByStrLiteral struct{
-    Value string `json:"value"`
-    String string `json:"string"`
+//}
+//type ByStrLiteral struct{
+    //Value string `json:"value"`
+    //String string `json:"string"`
 
-}
-type ByStrXLiteral struct{
-    Value string `json:"value"`
+//}
+//type ByStrXLiteral struct{
+    //Value string `json:"value"`
 
-}
-type IntLiteral struct{
-    Value string `json:"value"`
+//}
+//type IntLiteral struct{
+    //Value string `json:"value"`
 
-}
-type UintLiteral struct{
-    Value string `json:"value"`
-}
+//}
+//type UintLiteral struct{
+    //Value string `json:"value"`
+//}
 
-type MapLiteral struct{
-    KeyType string `json:"key_type"`
-    ValueType string `json:"value_type"`
-    MValues []MapValue `json:"mvalues"`
-}
+//type MapLiteral struct{
+    //KeyType string `json:"key_type"`
+    //ValueType string `json:"value_type"`
+    //MValues []MapValue `json:"mvalues"`
+//}
 
-type ADTValueLiteral struct {
-}
+//type ADTValueLiteral struct {
+//}
 
 
 type AnnotatedNode struct{
@@ -91,72 +91,72 @@ type GenericExpression struct{
     NodeType string `json:"node_type"`
 }
 
-type LiteralExpression struct{
-    AnnotatedNode
-    Value GenericLiteral
-}
+//type LiteralExpression struct{
+    //AnnotatedNode
+    //Value GenericLiteral
+//}
 
-type VarExpression struct{
-    AnnotatedNode
-    Variable Identifier
-}
+//type VarExpression struct{
+    //AnnotatedNode
+    //Variable Identifier
+//}
 
-type LetExpression struct{
-    AnnotatedNode
-    Variable Identifier
-    VariableType string //Optional
-    Expr GenericExpression
-    Body GenericExpression
-}
+//type LetExpression struct{
+    //AnnotatedNode
+    //Variable Identifier
+    //VariableType string //Optional
+    //Expr GenericExpression
+    //Body GenericExpression
+//}
 
-type MessageExpression struct{
-    AnnotatedNode
-    Arguments []MessageArgument
-}
+//type MessageExpression struct{
+    //AnnotatedNode
+    //Arguments []MessageArgument
+//}
 
-type FunExpression struct{
-    AnnotatedNode
-    Lhs Identifier
-    RhsExpr GenericExpression
-    FunType string
-}
+//type FunExpression struct{
+    //AnnotatedNode
+    //Lhs Identifier
+    //RhsExpr GenericExpression
+    //FunType string
+//}
 
-type AppExpression struct{
-    AnnotatedNode
-    Lhs Identifier
-    Rhs []Identifier
-}
+//type AppExpression struct{
+    //AnnotatedNode
+    //Lhs Identifier
+    //Rhs []Identifier
+//}
 
-type ConstrExpression struct{
-    AnnotatedNode
-    Types []string
-    ConstructorName string
-    Arguments []Identifier
-}
+//type ConstrExpression struct{
+    //AnnotatedNode
+    //Types []string
+    //ConstructorName string
+    //Arguments []Identifier
+//}
 
-type MatchExpression struct{
-    AnnotatedNode
-    Lhs Identifier
-    Rhs []MatchExpressionCase
-}
+//type MatchExpression struct{
+    //AnnotatedNode
+    //Lhs Identifier
+    //Rhs []MatchExpressionCase
+//}
 
-type BuiltinExpression struct{
-    AnnotatedNode
-    Arguments []Identifier
-    BuiltintFunction Builtin
-}
+//type BuiltinExpression struct{
+    //AnnotatedNode
+    //Arguments []Identifier
+    //BuiltintFunction Builtin
+//}
 
-type TFunExpression struct{
-    AnnotatedNode
-}
+//type TFunExpression struct{
+    //AnnotatedNode
+//}
 
-type TAppExpression struct{
-    AnnotatedNode
-}
+//type TAppExpression struct{
+    //AnnotatedNode
+//}
 
-type FixpointExpression struct{
-    AnnotatedNode
-}
+//type FixpointExpression struct{
+    //AnnotatedNode
+//}
 
 type GenericPayload struct{
     Lit GenericLiteral `json:"literal"`
@@ -164,13 +164,13 @@ type GenericPayload struct{
     NodeType string `json:"node_type"`
 }
 
-type PayloadLitral struct{
-    Lit GenericLiteral
-}
+//type PayloadLitral struct{
+    //Lit GenericLiteral
+//}
 
-type PayloadVariable struct{
-    Value Identifier
-}
+//type PayloadVariable struct{
+    //Value Identifier
+//}
 
 
 type MessageArgument struct{
@@ -186,17 +186,17 @@ type GenericPattern struct{
     NodeType string `json:"node_type"`
 }
 
-type WildcardPattern struct{
-}
+//type WildcardPattern struct{
+//}
 
-type BinderPattern struct{
-    Variable Identifier `json:"variable"`
-}
+//type BinderPattern struct{
+    //Variable Identifier `json:"variable"`
+//}
 
-type ConstructorPattern struct{
-    ConstructorName string `json:"constructor_name"`
-    Pats []GenericPattern `json:"patterns"`
-}
+//type ConstructorPattern struct{
+    //ConstructorName string `json:"constructor_name"`
+    //Pats []GenericPattern `json:"patterns"`
+//}
 
 type MatchExpressionCase struct{
     Pat GenericPattern `json:"pattern"`
@@ -227,75 +227,75 @@ type Builtin struct{
     Type string
 }
 
-type LoadStatement struct{
-    AnnotatedNode
-    Lhs Identifier
-    Rhs Identifier
+//type LoadStatement struct{
+    //AnnotatedNode
+    //Lhs Identifier
+    //Rhs Identifier
 
-}
-type StoreStatement struct{
-    AnnotatedNode
-    Lhs Identifier
-    Rhs Identifier
+//}
+//type StoreStatement struct{
+    //AnnotatedNode
+    //Lhs Identifier
+    //Rhs Identifier
 
-}
-type BindStatement struct{
-    AnnotatedNode
-    Lhs Identifier
-    RhsExpr GenericExpression
+//}
+//type BindStatement struct{
+    //AnnotatedNode
+    //Lhs Identifier
+    //RhsExpr GenericExpression
 
-}
-type MapUpdateStatement struct{
-    AnnotatedNode
-    Name Identifier
-    Rhs Identifier //Optional
-    Keys []Identifier
+//}
+//type MapUpdateStatement struct{
+    //AnnotatedNode
+    //Name Identifier
+    //Rhs Identifier //Optional
+    //Keys []Identifier
 
-}
-type MapGetStatement struct{
-    AnnotatedNode
-    Name Identifier
-    Lhs Identifier
-    Keys []Identifier
-    IsValueRetrieve bool
-}
+//}
+//type MapGetStatement struct{
+    //AnnotatedNode
+    //Name Identifier
+    //Lhs Identifier
+    //Keys []Identifier
+    //IsValueRetrieve bool
+//}
 
-type MatchStatement struct{
-    AnnotatedNode
-    Arg Identifier
-    Cases []MatchStatementCase
+//type MatchStatement struct{
+    //AnnotatedNode
+    //Arg Identifier
+    //Cases []MatchStatementCase
 
-}
-type ReadFromBCStatement struct{
-    AnnotatedNode
-    Lhs Identifier
-    RhsStr string
+//}
+//type ReadFromBCStatement struct{
+    //AnnotatedNode
+    //Lhs Identifier
+    //RhsStr string
 
-}
-type AcceptPaymentStatement struct{
-    AnnotatedNode
-}
+//}
+//type AcceptPaymentStatement struct{
+    //AnnotatedNode
+//}
 
-type SendMsgsStatement struct{
-    AnnotatedNode
-    Arg Identifier
+//type SendMsgsStatement struct{
+    //AnnotatedNode
+    //Arg Identifier
 
-}
-type CreateEvntStatement struct{
-    AnnotatedNode
-    Arg Identifier
-}
+//}
+//type CreateEvntStatement struct{
+    //AnnotatedNode
+    //Arg Identifier
+//}
 
-type CallProcStatement struct{
-    AnnotatedNode
-    Arg Identifier
-    Messages []Identifier
+//type CallProcStatement struct{
+    //AnnotatedNode
+    //Arg Identifier
+    //Messages []Identifier
 
-}
-type ThrowStatement struct{
-    AnnotatedNode
-    Arg Identifier // Optional
-}
+//}
+//type ThrowStatement struct{
+    //AnnotatedNode
+    //Arg Identifier // Optional
+//}
 
 type GenericLibEntry struct {
     VariableType string `json:"variable_type"`
