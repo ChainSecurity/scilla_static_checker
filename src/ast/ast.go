@@ -2,98 +2,139 @@ package ast
 
 import (
 )
+
+
+type AstNode interface {
+}
+
+type Literal interface {
+    AstNode
+    litNode()
+}
+
+type Expression interface {
+    AstNode
+    exprNode()
+}
+
+type Statement interface {
+    AstNode
+    stmtNode()
+}
+
+type Payload interface {
+    AstNode
+    payloadNode()
+}
+
+type LibEntry interface {
+    AstNode
+    libEntryNode()
+}
+
+type Pattern interface {
+    AstNode
+    patternNode()
+}
+
 type Location struct{
     SourceFile string `json:"source_file"`
     Line int `json:"line"`
     Column int `json:"column"`
 }
 
+
+
 type Identifier struct{
-    Loc Location `json:"loc"`
+    Loc *Location `json:"loc"`
     Id string `json:"identifier"`
 }
 
-type MapValue struct{
-    Key GenericLiteral `json:"key"`
-    Value GenericLiteral `json:"value"`
+type MapVal struct{
+    Key *GenericLiteral `json:"key"`
+    Val *GenericLiteral `json:"value"`
 }
 
 type CtrDef struct {
-    CrtDefName Identifier `json:"crt_def_name"`
+    CDName *Identifier `json:"ctr_def_name"`
     CArgTypes []string `json:"c_arg_types"`
 }
 
 type GenericLiteral struct{
-    Value string `json:"value"`
+    Val string `json:"value"`
     String string `json:"string"`
     KeyType string `json:"key_type"`
-    ValueType string `json:"value_type"`
-    MValues []MapValue `json:"mvalues"`
+    ValType string `json:"value_type"`
+    MVals []MapVal `json:"mvalues"`
     NodeType string `json:"node_type"`
 }
 
+func (*GenericLiteral) litNode() {}
+
 //type StringLiteral struct{
-    //Value string `json:"value"`
+    //Val string `json:"value"`
 //}
 
 //type BNumLiteral struct{
-    //Value string `json:"value"`
+    //Val string `json:"value"`
 
 //}
 //type ByStrLiteral struct{
-    //Value string `json:"value"`
+    //Val string `json:"value"`
     //String string `json:"string"`
 
 //}
 //type ByStrXLiteral struct{
-    //Value string `json:"value"`
+    //Val string `json:"value"`
 
 //}
 //type IntLiteral struct{
-    //Value string `json:"value"`
+    //Val string `json:"value"`
 
 //}
 //type UintLiteral struct{
-    //Value string `json:"value"`
+    //Val string `json:"value"`
 //}
 
 //type MapLiteral struct{
     //KeyType string `json:"key_type"`
-    //ValueType string `json:"value_type"`
-    //MValues []MapValue `json:"mvalues"`
+    //ValType string `json:"value_type"`
+    //MVals []MapVal `json:"mvalues"`
 //}
 
-//type ADTValueLiteral struct {
+//type ADTValLiteral struct {
 //}
 
 
 type AnnotatedNode struct{
-    Loc Location `json:"loc"`
+    Loc *Location `json:"loc"`
 }
 
 type GenericExpression struct{
     AnnotatedNode
-    Value GenericLiteral `json:"value"`
-    Variable Identifier `json:"variable"`
+    Val *GenericLiteral `json:"value"`
+    Variable *Identifier `json:"variable"`
     VariableType string `json:"variable_type"` //Optional 
     Expr *GenericExpression `json:"expression"`
     Body *GenericExpression `json:"body"`
-    MArgs []MessageArgument `json:"margs"`
-    Lhs Identifier `json:"lhs"`
+    MArgs []*MessageArgument `json:"margs"`
+    Lhs *Identifier `json:"lhs"`
     RhsExpr *GenericExpression `json:"rhs_expr"`
     FunType string `json:"fun_type"`
-    RhsList []Identifier `json:"rhs_list"`
+    RhsList []*Identifier `json:"rhs_list"`
     Types []string `json:"types"`
     ConstructorName string `json:"constructor_name"`
-    Args []Identifier `json:"args"`
-    Cases []MatchExpressionCase `json:"cases"`
-    BuiltintFunction Builtin `json:"builtin_function"`
+    Args []*Identifier `json:"args"`
+    Cases []*MatchExpressionCase `json:"cases"`
+    Bf *Builtin `json:"builtin_function"`
     NodeType string `json:"node_type"`
 }
 
+func (*GenericExpression) exprNode() {}
+
 //type LiteralExpression struct{
     //AnnotatedNode
-    //Value GenericLiteral
+    //Val GenericLiteral
 //}
 
 //type VarExpression struct{
@@ -111,7 +152,7 @@ type GenericExpression struct{
 
 //type MessageExpression struct{
     //AnnotatedNode
-    //Arguments []MessageArgument
+    //Margs []MessageArgument
 //}
 
 //type FunExpression struct{
@@ -124,26 +165,26 @@ type GenericExpression struct{
 //type AppExpression struct{
     //AnnotatedNode
     //Lhs Identifier
-    //Rhs []Identifier
+    //RhsList []Identifier
 //}
 
 //type ConstrExpression struct{
     //AnnotatedNode
     //Types []string
     //ConstructorName string
-    //Arguments []Identifier
+    //Args []Identifier
 //}
 
 //type MatchExpression struct{
     //AnnotatedNode
     //Lhs Identifier
-    //Rhs []MatchExpressionCase
+    //Cases []MatchExpressionCase
 //}
 
 //type BuiltinExpression struct{
     //AnnotatedNode
-    //Arguments []Identifier
-    //BuiltintFunction Builtin
+    //Args []Identifier
+    //Bf Builtin
 //}
 
 //type TFunExpression struct{
@@ -159,33 +200,35 @@ type GenericExpression struct{
 //}
 
 type GenericPayload struct{
-    Lit GenericLiteral `json:"literal"`
-    Value Identifier `json:"value"`
+    Lit *GenericLiteral `json:"literal"`
+    Val *Identifier `json:"value"`
     NodeType string `json:"node_type"`
 }
 
+func (*GenericPayload) payloadNode() {}
 //type PayloadLitral struct{
     //Lit GenericLiteral
 //}
 
 //type PayloadVariable struct{
-    //Value Identifier
+    //Val Identifier
 //}
 
 
 type MessageArgument struct{
     Var string `json:"variable"`
     // TODO fix name
-    P GenericPayload `json:"payload"`
+    P *GenericPayload `json:"payload"`
 }
 
 type GenericPattern struct{
-    Variable Identifier `json:"variable"`
+    Variable *Identifier `json:"variable"`
     ConstructorName string `json:"constructor_name"`
-    Pats []GenericPattern `json:"patterns"`
+    Pats []*GenericPattern `json:"patterns"`
     NodeType string `json:"node_type"`
 }
 
+func (*GenericPattern) patternNode() {}
 //type WildcardPattern struct{
 //}
 
@@ -199,31 +242,33 @@ type GenericPattern struct{
 //}
 
 type MatchExpressionCase struct{
-    Pat GenericPattern `json:"pattern"`
-    Expr GenericExpression `json:"expression"`
+    Pat *GenericPattern `json:"pattern"`
+    Expr *GenericExpression `json:"expression"`
 }
 
 type GenericStatement struct{
     AnnotatedNode
-    Lhs Identifier `json:"lhs"`
-    Rhs Identifier `json:"rhs"`
-    RhsExpr GenericExpression `json:"rhs_expr"`
+    Lhs *Identifier `json:"lhs"`
+    Rhs *Identifier `json:"rhs"`
+    RhsExpr *GenericExpression `json:"rhs_expr"`
     RhsStr string `json:"rhs_str"`
-    Name Identifier `json:"name"`
-    Keys []Identifier `json:"keys"`
-    IsValueRetrieve bool `json:"is_value_retrieve"`
-    Arg Identifier `json:"arg"`
-    Cases []MatchStatementCase `json:"cases"`
-    Messages []Identifier `json:"messages"`
+    Name *Identifier `json:"map_name"`
+    Keys []*Identifier `json:"keys"`
+    IsValRetrieve bool `json:"is_value_retrieve"`
+    Arg *Identifier `json:"arg"`
+    Cases []*MatchStatementCase `json:"cases"`
+    Messages []*Identifier `json:"messages"`
     NodeType string `json:"node_type"`
 }
 
+func (*GenericStatement) stmtNode() {}
+
 type MatchStatementCase struct{
-    Pat GenericPattern `json:"pattern"`
-    Body []GenericStatement `json:"pattern_body"`
+    Pat *GenericPattern `json:"pattern"`
+    Body []*GenericStatement `json:"pattern_body"`
 }
 type Builtin struct{
-    Loc Location
+    Loc *Location
     Type string
 }
 
@@ -257,7 +302,7 @@ type Builtin struct{
     //Name Identifier
     //Lhs Identifier
     //Keys []Identifier
-    //IsValueRetrieve bool
+    //IsValRetrieve bool
 //}
 
 //type MatchStatement struct{
@@ -299,59 +344,61 @@ type Builtin struct{
 
 type GenericLibEntry struct {
     VariableType string `json:"variable_type"`
-    Expr GenericExpression `json:"expression"`
-    CtrDefs []CtrDef `json:"ctr_defs"`
+    Expr *GenericExpression `json:"expression"`
+    CtrDefs []*CtrDef `json:"ctr_defs"`
     NodeType string `json:"node_type"`
 }
 
-type LibraryVariable struct{
-    VariableType string `json:"variable_type"` // Optional
-    Expr GenericExpression `json:"expression"`
-}
+func (*GenericLibEntry) libEntryNode() {}
 
-type LibraryType struct{
-    CtrDefs []CtrDef `json:"ctr_defs"`
-}
+//type LibraryVariable struct{
+    //VariableType string `json:"variable_type"` // Optional
+    //Expr GenericExpression `json:"expression"`
+//}
+
+//type LibraryType struct{
+    //CtrDefs []*CtrDef `json:"ctr_defs"`
+//}
 
 type Library struct{
-    Name Identifier  `json:"library_name"`
-    Entries []GenericLibEntry `json:"library_entries"`
+    Name *Identifier  `json:"library_name"`
+    Entries []*GenericLibEntry `json:"library_entries"`
 }
 
 type ExternalLibrary struct{
-    Name Identifier `json:"name"`
-    Alias Identifier `json:"alias"` // Optional
+    Name *Identifier `json:"name"`
+    Alias *Identifier `json:"alias"` // Optional
 
 }
 type ContractModule struct{
     ScillaMajorVersion int `json:"scilla_major_version"`
-    Name Identifier `json:"name"`
-    Library Library `json:"library"`
-    ExternalLibraries []ExternalLibrary `json:"external_libraries"`
+    Name *Identifier `json:"name"`
+    Library *Library `json:"library"` // Optional
+    ELibs []*ExternalLibrary `json:"external_libraries"`
     //TODO name
-    C Contract `json:"contract"`
+    C *Contract `json:"contract"`
 }
 
 type Field struct{
-    Name Identifier `json:"field_name"`
+    Name *Identifier `json:"field_name"`
     Type string `json:"field_type"`
-    Expr GenericExpression `json:"expression"`
+    Expr *GenericExpression `json:"expression"`
 }
 
 type Parameter struct{
-    Name Identifier `json:"parameter_name"`
+    Name *Identifier `json:"parameter_name"`
     Type string `json:"parameter_type"`
 }
 
 type Component struct{
-    Name Identifier `json:"name"`
-    Params []Parameter `json:"params"`
-    Body []GenericStatement `json:"body"`
+    Name *Identifier `json:"name"`
+    Params []*Parameter `json:"params"`
+    Body []*GenericStatement `json:"body"`
 
 }
 type Contract struct{
-    Name Identifier `json:"name"`
-    Params []Parameter `json:"params"`
-    Fields []Field `json:"fields"`
-    Components []Component `json:"components"`
+    Name *Identifier `json:"name"`
+    Params []*Parameter `json:"params"`
+    Fields []*Field `json:"fields"`
+    Components []*Component `json:"components"`
 }
