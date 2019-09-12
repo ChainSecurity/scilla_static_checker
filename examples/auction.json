@@ -34,7 +34,7 @@
           "identifier": "blk_leq",
           "node_type": "Identifier"
         },
-        "variable_type": null,
+        "variable_type": "asd",
         "expression": {
           "loc": {
             "source_file": "../scilla_checker/examples/auction.scilla",
@@ -89,7 +89,7 @@
                 "identifier": "bc1",
                 "node_type": "Identifier"
               },
-              "variable_type": null,
+              "variable_type": "asd",
               "expression": {
                 "loc": {
                   "source_file": "../scilla_checker/examples/auction.scilla",
@@ -263,7 +263,7 @@
           "identifier": "one_msg",
           "node_type": "Identifier"
         },
-        "variable_type": null,
+        "variable_type": "dsa",
         "expression": {
           "loc": {
             "source_file": "../scilla_checker/examples/auction.scilla",
