@@ -330,7 +330,7 @@ func (*LibraryType) libEntryNode() {}
 
 type Library struct{
     Name *Identifier  `json:"library_name"`
-    Entries []LibEntry `json:"library_entries"`
+    Entries []*LibEntry `json:"library_entries"`
 }
 
 type ExternalLibrary struct{
@@ -342,8 +342,8 @@ type ContractModule struct{
     ScillaMajorVersion int `json:"scilla_major_version"`
     Name *Identifier `json:"name"`
     Library *Library `json:"library"` // Optional
-    //ELibs []*ExternalLibrary `json:"external_libraries"`
-    //C *Contract `json:"contract"`
+    ELibs []*ExternalLibrary `json:"external_libraries"`
+    C *Contract `json:"contract"`
 }
 
 type Field struct{
