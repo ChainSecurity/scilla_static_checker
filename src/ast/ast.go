@@ -317,8 +317,8 @@ func (*CallProcStatement) stmtNode() {}
 func (*ThrowStatement) stmtNode() {}
 
 type LibraryVariable struct{
-    VariableType string `json:"variable_type"` // Optional
-    //Expr *Expression `json:"expression"`
+    VarType string `json:"variable_type"` // Optional
+    Expr *Expression `json:"expression"`
 }
 
 type LibraryType struct{
