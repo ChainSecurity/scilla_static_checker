@@ -4,7 +4,7 @@ import (
     "fmt"
     "os"
     "io/ioutil"
-    "./ast"
+    "gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ast"
 )
 
 func main() {
