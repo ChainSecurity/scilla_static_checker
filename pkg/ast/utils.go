@@ -3,7 +3,7 @@ package ast
 import (
 	"encoding/json"
 	"errors"
-	"fmt"
+	//"fmt"
 )
 
 func getNodeType(rawMsg *json.RawMessage) (string, error) {
@@ -24,7 +24,6 @@ func ExpressionUnmarshal(rawMsg *json.RawMessage) (Expression, error) {
 		return nil, err
 	}
 
-	fmt.Println(ntype)
 	switch ntype {
 	case "LiteralExpression":
 		var m LiteralExpression
@@ -84,7 +83,6 @@ func LiteralUnmarshal(rawMsg *json.RawMessage) (Literal, error) {
 	if err != nil {
 		return nil, err
 	}
-	fmt.Println(ntype)
 	switch ntype {
 	case "StringLiteral":
 		var m StringLiteral
@@ -128,7 +126,6 @@ func StatementUnmarshal(rawMsg *json.RawMessage) (Statement, error) {
 	if err != nil {
 		return nil, err
 	}
-	fmt.Println(ntype)
 	switch ntype {
 	case "LoadStatement":
 		var m LoadStatement
@@ -188,7 +185,6 @@ func PatternUnmarshal(rawMsg *json.RawMessage) (Pattern, error) {
 	if err != nil {
 		return nil, err
 	}
-	fmt.Println(ntype)
 	switch ntype {
 	case "WildcardPattern":
 		var m WildcardPattern
@@ -212,7 +208,6 @@ func PayloadUnmarshal(rawMsg *json.RawMessage) (Payload, error) {
 	if err != nil {
 		return nil, err
 	}
-	fmt.Println(ntype)
 	switch ntype {
 	case "PayloadLitral":
 		var m PayloadLitral
@@ -232,7 +227,6 @@ func LibEntryUnmarshal(rawMsg *json.RawMessage) (LibEntry, error) {
 	if err != nil {
 		return nil, err
 	}
-	fmt.Println(ntype)
 	switch ntype {
 	case "LibraryVariable":
 		var m LibraryVariable
@@ -658,11 +652,12 @@ func (l *Library) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-func Parse_cmod(b []byte) {
+func Parse_cmod(b []byte) *ContractModule {
 	var c ContractModule
 	if err := json.Unmarshal(b, &c); err != nil {
-		fmt.Println(err)
+		//fmt.Println(err)
 		panic(err)
 	}
-	fmt.Println(c)
+	//fmt.Println(c)
+	return &c
 }
