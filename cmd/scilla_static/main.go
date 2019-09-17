@@ -1,38 +1,38 @@
 package main
 
 import (
-    "fmt"
-    "os"
-    "io/ioutil"
-    "gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ast"
+	"fmt"
+	"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ast"
+	"io/ioutil"
+	"os"
 )
 
 func main() {
-    jsonPath := os.Args[1]
-    jsonFile, err := os.Open(jsonPath)
-    if err != nil {
-        fmt.Println(err)
-    }
-    defer jsonFile.Close()
+	jsonPath := os.Args[1]
+	jsonFile, err := os.Open(jsonPath)
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer jsonFile.Close()
 
-    byteValue, _ := ioutil.ReadAll(jsonFile)
-    ast.Parse_cmod(byteValue)
-    //ast.Inspect(cm, func(n ast.AstNode) bool {
-        //var s string
-        //switch x := n.(type) {
-        //case *ast.Identifier:
-            //s = x.Id
-        //case *ast.GenericLiteral:
-            //s = x.Val
-        //default:
-            //s = fmt.Sprintf("inspecting %T", x)
-        //}
-        //if s != "" {
-            //fmt.Println(s)
-        //}
-        //return true
-    //})
-    //fmt.Println(res["node_type"])
+	byteValue, _ := ioutil.ReadAll(jsonFile)
+	ast.Parse_cmod(byteValue)
+	//ast.Inspect(cm, func(n ast.AstNode) bool {
+	//var s string
+	//switch x := n.(type) {
+	//case *ast.Identifier:
+	//s = x.Id
+	//case *ast.GenericLiteral:
+	//s = x.Val
+	//default:
+	//s = fmt.Sprintf("inspecting %T", x)
+	//}
+	//if s != "" {
+	//fmt.Println(s)
+	//}
+	//return true
+	//})
+	//fmt.Println(res["node_type"])
 
-    //fmt.Println(res.Fruits[0])
+	//fmt.Println(res.Fruits[0])
 }
