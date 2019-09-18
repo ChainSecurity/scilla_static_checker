@@ -3,7 +3,6 @@ package ast
 import (
 	"encoding/json"
 	"errors"
-	//"fmt"
 )
 
 func getNodeType(rawMsg *json.RawMessage) (string, error) {
@@ -18,7 +17,7 @@ func getNodeType(rawMsg *json.RawMessage) (string, error) {
 	return n.NodeType, nil
 }
 
-func ExpressionUnmarshal(rawMsg *json.RawMessage) (Expression, error) {
+func unmarshalExpression(rawMsg *json.RawMessage) (Expression, error) {
 	ntype, err := getNodeType(rawMsg)
 	if err != nil {
 		return nil, err
@@ -78,7 +77,7 @@ func ExpressionUnmarshal(rawMsg *json.RawMessage) (Expression, error) {
 	}
 }
 
-func LiteralUnmarshal(rawMsg *json.RawMessage) (Literal, error) {
+func unmarshalLiteral(rawMsg *json.RawMessage) (Literal, error) {
 	ntype, err := getNodeType(rawMsg)
 	if err != nil {
 		return nil, err
@@ -121,7 +120,7 @@ func LiteralUnmarshal(rawMsg *json.RawMessage) (Literal, error) {
 	}
 }
 
-func StatementUnmarshal(rawMsg *json.RawMessage) (Statement, error) {
+func unmarshalStatement(rawMsg *json.RawMessage) (Statement, error) {
 	ntype, err := getNodeType(rawMsg)
 	if err != nil {
 		return nil, err
@@ -180,7 +179,7 @@ func StatementUnmarshal(rawMsg *json.RawMessage) (Statement, error) {
 	}
 }
 
-func PatternUnmarshal(rawMsg *json.RawMessage) (Pattern, error) {
+func unmarshalPattern(rawMsg *json.RawMessage) (Pattern, error) {
 	ntype, err := getNodeType(rawMsg)
 	if err != nil {
 		return nil, err
@@ -203,7 +202,7 @@ func PatternUnmarshal(rawMsg *json.RawMessage) (Pattern, error) {
 	}
 }
 
-func PayloadUnmarshal(rawMsg *json.RawMessage) (Payload, error) {
+func unmarshalPayload(rawMsg *json.RawMessage) (Payload, error) {
 	ntype, err := getNodeType(rawMsg)
 	if err != nil {
 		return nil, err
@@ -222,7 +221,7 @@ func PayloadUnmarshal(rawMsg *json.RawMessage) (Payload, error) {
 	}
 }
 
-func LibEntryUnmarshal(rawMsg *json.RawMessage) (LibEntry, error) {
+func unmarshalLibEntry(rawMsg *json.RawMessage) (LibEntry, error) {
 	ntype, err := getNodeType(rawMsg)
 	if err != nil {
 		return nil, err
@@ -250,13 +249,13 @@ func (le *LetExpression) UnmarshalJSON(b []byte) error {
 
 	var rawMsg *json.RawMessage
 	rawMsg = objMap["expression"]
-	e, err := ExpressionUnmarshal(rawMsg)
+	e, err := unmarshalExpression(rawMsg)
 	if err != nil {
 		return err
 	}
 
 	rawMsg = objMap["body"]
-	bd, err := ExpressionUnmarshal(rawMsg)
+	bd, err := unmarshalExpression(rawMsg)
 	if err != nil {
 		return err
 	}
@@ -290,7 +289,7 @@ func (le *LiteralExpression) UnmarshalJSON(b []byte) error {
 
 	var rawMsg *json.RawMessage
 	rawMsg = objMap["value"]
-	v, err := LiteralUnmarshal(rawMsg)
+	v, err := unmarshalLiteral(rawMsg)
 	if err != nil {
 		return err
 	}
@@ -319,7 +318,7 @@ func (f *Field) UnmarshalJSON(b []byte) error {
 
 	var rawMsg *json.RawMessage
 	rawMsg = objMap["expression"]
-	e, err := ExpressionUnmarshal(rawMsg)
+	e, err := unmarshalExpression(rawMsg)
 	if err != nil {
 		return err
 	}
@@ -350,13 +349,13 @@ func (mec *MatchExpressionCase) UnmarshalJSON(b []byte) error {
 
 	var rawMsg *json.RawMessage
 	rawMsg = objMap["pattern"]
-	p, err := PatternUnmarshal(rawMsg)
+	p, err := unmarshalPattern(rawMsg)
 	if err != nil {
 		return err
 	}
 
 	rawMsg = objMap["expression"]
-	e, err := ExpressionUnmarshal(rawMsg)
+	e, err := unmarshalExpression(rawMsg)
 	if err != nil {
 		return err
 	}
@@ -375,7 +374,7 @@ func (bs *BindStatement) UnmarshalJSON(b []byte) error {
 
 	var rawMsg *json.RawMessage
 	rawMsg = objMap["rhs_expr"]
-	e, err := ExpressionUnmarshal(rawMsg)
+	e, err := unmarshalExpression(rawMsg)
 	if err != nil {
 		return err
 	}
@@ -406,7 +405,7 @@ func (fe *FunExpression) UnmarshalJSON(b []byte) error {
 
 	var rawMsg *json.RawMessage
 	rawMsg = objMap["rhs_expr"]
-	e, err := ExpressionUnmarshal(rawMsg)
+	e, err := unmarshalExpression(rawMsg)
 	if err != nil {
 		return err
 	}
@@ -439,7 +438,7 @@ func (ma *MessageArgument) UnmarshalJSON(b []byte) error {
 
 	var rawMsg *json.RawMessage
 	rawMsg = objMap["payload"]
-	p, err := PayloadUnmarshal(rawMsg)
+	p, err := unmarshalPayload(rawMsg)
 	if err != nil {
 		return err
 	}
@@ -469,7 +468,7 @@ func (pll *PayloadLitral) UnmarshalJSON(b []byte) error {
 
 	var rawMsg *json.RawMessage
 	rawMsg = objMap["literal"]
-	l, err := LiteralUnmarshal(rawMsg)
+	l, err := unmarshalLiteral(rawMsg)
 	if err != nil {
 		return err
 	}
@@ -488,7 +487,7 @@ func (l *LibraryVariable) UnmarshalJSON(b []byte) error {
 
 	var rawMsg *json.RawMessage
 	rawMsg = objMap["expression"]
-	e, err := ExpressionUnmarshal(rawMsg)
+	e, err := unmarshalExpression(rawMsg)
 	if err != nil {
 		return err
 	}
@@ -524,7 +523,7 @@ func (comp *Component) UnmarshalJSON(b []byte) error {
 
 	comp.Body = make([]*Statement, len(rawMsgs))
 	for index, rawMsg := range rawMsgs {
-		s, err := StatementUnmarshal(rawMsg)
+		s, err := unmarshalStatement(rawMsg)
 		if err != nil {
 			return err
 		}
@@ -561,7 +560,7 @@ func (msc *MatchStatementCase) UnmarshalJSON(b []byte) error {
 
 	msc.Body = make([]*Statement, len(rawMsgs))
 	for index, rawMsg := range rawMsgs {
-		e, err := StatementUnmarshal(rawMsg)
+		e, err := unmarshalStatement(rawMsg)
 		if err != nil {
 			return err
 		}
@@ -570,7 +569,7 @@ func (msc *MatchStatementCase) UnmarshalJSON(b []byte) error {
 
 	var rawMsg *json.RawMessage
 	rawMsg = objMap["pattern"]
-	p, err := PatternUnmarshal(rawMsg)
+	p, err := unmarshalPattern(rawMsg)
 	if err != nil {
 		return err
 	}
@@ -595,7 +594,7 @@ func (cp *ConstructorPattern) UnmarshalJSON(b []byte) error {
 
 	cp.Pats = make([]*Pattern, len(rawMsgs))
 	for index, rawMsg := range rawMsgs {
-		p, err := PatternUnmarshal(rawMsg)
+		p, err := unmarshalPattern(rawMsg)
 		if err != nil {
 			return err
 		}
@@ -631,7 +630,7 @@ func (l *Library) UnmarshalJSON(b []byte) error {
 
 	l.Entries = make([]*LibEntry, len(rawMsgs))
 	for index, rawMsg := range rawMsgs {
-		e, err := LibEntryUnmarshal(rawMsg)
+		e, err := unmarshalLibEntry(rawMsg)
 		if err != nil {
 			return err
 		}

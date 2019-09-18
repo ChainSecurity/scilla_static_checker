@@ -18,16 +18,12 @@ func main() {
 	byteValue, _ := ioutil.ReadAll(jsonFile)
 	cm := ast.Parse_cmod(byteValue)
 	ast.Inspect(cm, func(n ast.AstNode) bool {
-		var s string
-		switch x := n.(type) {
-		case *ast.Identifier:
-			s = x.Id
-		default:
-			s = fmt.Sprintf("inspecting %T", x)
-		}
-		if s != "" {
-			fmt.Println(s)
-		}
+		//switch x := n.(type) {
+		//case *ast.Identifier:
+		//s = x.Id
+		//default:
+		////s = fmt.Sprintf("inspecting %T", x)
+		//}
 		return true
 	})
 	//fmt.Println(res["node_type"])
