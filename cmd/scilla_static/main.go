@@ -16,14 +16,8 @@ func main() {
 	defer jsonFile.Close()
 
 	byteValue, _ := ioutil.ReadAll(jsonFile)
-	cm := ast.Parse_cmod(byteValue)
+	cm := ast.Parse_lmod(byteValue)
 	ast.Inspect(cm, func(n ast.AstNode) bool {
-		//switch x := n.(type) {
-		//case *ast.Identifier:
-		//s = x.Id
-		//default:
-		////s = fmt.Sprintf("inspecting %T", x)
-		//}
 		return true
 	})
 	//fmt.Println(res["node_type"])

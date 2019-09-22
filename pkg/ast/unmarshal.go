@@ -5,6 +5,11 @@ import (
 	"errors"
 )
 
+func getNodeTypeBytes(b []byte) (string, error) {
+	data := json.RawMessage(b)
+	return getNodeType(&data)
+}
+
 func getNodeType(rawMsg *json.RawMessage) (string, error) {
 	type ntype struct {
 		NodeType string `json:"node_type"`
@@ -651,12 +656,18 @@ func (l *Library) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-func Parse_cmod(b []byte) *ContractModule {
-	var c ContractModule
-	if err := json.Unmarshal(b, &c); err != nil {
-		//fmt.Println(err)
+func Parse_lmod(b []byte) *LibraryModule {
+	var m LibraryModule
+	if err := json.Unmarshal(b, &m); err != nil {
 		panic(err)
 	}
-	//fmt.Println(c)
-	return &c
+	return &m
+}
+
+func Parse_cmod(b []byte) *ContractModule {
+	var m ContractModule
+	if err := json.Unmarshal(b, &m); err != nil {
+		panic(err)
+	}
+	return &m
 }

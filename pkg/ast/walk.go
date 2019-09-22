@@ -185,6 +185,7 @@ func walkLibEntry(v Visitor, p *LibEntry) {
 	case *LibraryVariable:
 		Walk(v, n.Expr)
 	case *LibraryType:
+		fmt.Printf("Library %s\n", n.Name.Id)
 		for _, x := range n.CtrDefs {
 			Walk(v, x)
 		}
@@ -228,6 +229,11 @@ func Walk(v Visitor, node AstNode) {
 		for _, x := range n.Entries {
 			Walk(v, x)
 		}
+	case *LibraryModule:
+		Walk(v, n.Library)
+		for _, x := range n.ELibs {
+			Walk(v, x)
+		}
 	case *ContractModule:
 		Walk(v, n.Name)
 		if n.Library != nil {
@@ -248,6 +254,7 @@ func Walk(v Visitor, node AstNode) {
 	case *MessageArgument:
 		Walk(v, n.Pl)
 	case *CtrDef:
+		fmt.Printf("\tCtrDef %s\n", n.CDName.Id)
 		Walk(v, n.CDName)
 	case *Builtin:
 		Walk(v, n.Loc)

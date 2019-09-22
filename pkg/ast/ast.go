@@ -307,7 +307,8 @@ type LibraryVariable struct {
 }
 
 type LibraryType struct {
-	CtrDefs []*CtrDef `json:"ctr_defs"`
+	Name    *Identifier `json:"name"`
+	CtrDefs []*CtrDef   `json:"ctr_defs"`
 }
 
 func (*LibraryVariable) libEntryNode() {}
@@ -323,6 +324,12 @@ type ExternalLibrary struct {
 	Alias *Identifier `json:"alias"` // Optional
 
 }
+
+type LibraryModule struct {
+	Library *Library           `json:"library"` // Optional
+	ELibs   []*ExternalLibrary `json:"external_libraries"`
+}
+
 type ContractModule struct {
 	ScillaMajorVersion int                `json:"scilla_major_version"`
 	Name               *Identifier        `json:"name"`
