@@ -255,6 +255,9 @@ func Walk(v Visitor, node AstNode) {
 		Walk(v, n.Pl)
 	case *CtrDef:
 		fmt.Printf("\tCtrDef %s\n", n.CDName.Id)
+		for _, x := range n.CArgTypes {
+			fmt.Printf("\t\t %s\n", x)
+		}
 		Walk(v, n.CDName)
 	case *Builtin:
 		Walk(v, n.Loc)
