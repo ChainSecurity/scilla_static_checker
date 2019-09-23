@@ -3,7 +3,6 @@ package ast
 import (
 	"errors"
 	"fmt"
-	"log"
 	//"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ast"
 )
 
@@ -18,7 +17,7 @@ func walkPayload(v Visitor, p *Payload) {
 	case *PayloadVariable:
 		Walk(v, n.Val)
 	default:
-		log.Fatal(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
+		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
 	}
 }
 
@@ -74,7 +73,7 @@ func walkExpression(v Visitor, p *Expression) {
 	case *FixpointExpression:
 		Walk(v, n.Loc)
 	default:
-		log.Fatal(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
+		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
 	}
 }
 
@@ -99,7 +98,7 @@ func walkLiteral(v Visitor, p *Literal) {
 	case *ADTValLiteral:
 		// do nothing
 	default:
-		log.Fatal(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
+		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
 	}
 }
 
@@ -114,7 +113,7 @@ func walkPattern(v Visitor, p *Pattern) {
 			Walk(v, x)
 		}
 	default:
-		log.Fatal(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
+		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
 	}
 }
 
@@ -177,7 +176,7 @@ func walkStatement(v Visitor, p *Statement) {
 			Walk(v, n.Arg)
 		}
 	default:
-		log.Fatal(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
+		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
 	}
 }
 func walkLibEntry(v Visitor, p *LibEntry) {
@@ -185,12 +184,11 @@ func walkLibEntry(v Visitor, p *LibEntry) {
 	case *LibraryVariable:
 		Walk(v, n.Expr)
 	case *LibraryType:
-		fmt.Printf("Library %s\n", n.Name.Id)
 		for _, x := range n.CtrDefs {
 			Walk(v, x)
 		}
 	default:
-		log.Fatal(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
+		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
 	}
 }
 
@@ -254,10 +252,6 @@ func Walk(v Visitor, node AstNode) {
 	case *MessageArgument:
 		Walk(v, n.Pl)
 	case *CtrDef:
-		fmt.Printf("\tCtrDef %s\n", n.CDName.Id)
-		for _, x := range n.CArgTypes {
-			fmt.Printf("\t\t %s\n", x)
-		}
 		Walk(v, n.CDName)
 	case *Builtin:
 		Walk(v, n.Loc)
@@ -282,7 +276,7 @@ func Walk(v Visitor, node AstNode) {
 			Walk(v, x)
 		}
 	default:
-		log.Fatal(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
+		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
 	}
 }
 

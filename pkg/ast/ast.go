@@ -5,6 +5,11 @@ import ()
 type AstNode interface {
 }
 
+type Module interface {
+	AstNode
+	moduleNode()
+}
+
 type Literal interface {
 	AstNode
 	litNode()
@@ -337,6 +342,9 @@ type ContractModule struct {
 	ELibs              []*ExternalLibrary `json:"external_libraries"`
 	C                  *Contract          `json:"contract"`
 }
+
+func (*ContractModule) moduleNode() {}
+func (*LibraryModule) moduleNode()  {}
 
 type Field struct {
 	Name *Identifier `json:"field_name"`

@@ -16,8 +16,19 @@ func main() {
 	defer jsonFile.Close()
 
 	byteValue, _ := ioutil.ReadAll(jsonFile)
-	cm := ast.Parse_lmod(byteValue)
+	fmt.Println("Parsing")
+	cm, err := ast.Parse_mod(byteValue)
+	fmt.Println("Finished parsing")
 	ast.Inspect(cm, func(n ast.AstNode) bool {
+		if e, ok := n.(*ast.LibEntry); ok {
+			d := *e
+			if lt, ok := d.(*ast.LibraryType); ok {
+				fmt.Printf("%T %s \n", lt, lt.Name.Id)
+				for _, c := range lt.CtrDefs {
+					fmt.Printf("\t %s %s\n", c.CDName.Id, c.CArgTypes)
+				}
+			}
+		}
 		return true
 	})
 	//fmt.Println(res["node_type"])

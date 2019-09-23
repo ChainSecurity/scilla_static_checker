@@ -656,18 +656,34 @@ func (l *Library) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-func Parse_lmod(b []byte) *LibraryModule {
+func parse_lmod(b []byte) (*LibraryModule, error) {
 	var m LibraryModule
 	if err := json.Unmarshal(b, &m); err != nil {
-		panic(err)
+		return nil, err
 	}
-	return &m
+	return &m, nil
 }
 
-func Parse_cmod(b []byte) *ContractModule {
+func parse_cmod(b []byte) (*ContractModule, error) {
 	var m ContractModule
 	if err := json.Unmarshal(b, &m); err != nil {
-		panic(err)
+		return nil, err
 	}
-	return &m
+	return &m, nil
+}
+
+func Parse_mod(b []byte) (Module, error) {
+	rawMsg := json.RawMessage(b)
+	ntype, err := getNodeType(&rawMsg)
+	if err != nil {
+		return nil, err
+	}
+	switch ntype {
+	case "LibraryModule":
+		return parse_lmod(b)
+	case "ContractModule":
+		return parse_cmod(b)
+	default:
+		return nil, errors.New("Unsupported type found!")
+	}
 }
