@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ast"
+	"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ir"
 	"io/ioutil"
 	"os"
 )
@@ -19,18 +20,7 @@ func main() {
 	fmt.Println("Parsing")
 	cm, err := ast.Parse_mod(byteValue)
 	fmt.Println("Finished parsing")
-	ast.Inspect(cm, func(n ast.AstNode) bool {
-		if e, ok := n.(*ast.LibEntry); ok {
-			d := *e
-			if lt, ok := d.(*ast.LibraryType); ok {
-				fmt.Printf("%T %s \n", lt, lt.Name.Id)
-				for _, c := range lt.CtrDefs {
-					fmt.Printf("\t %s %s\n", c.CDName.Id, c.CArgTypes)
-				}
-			}
-		}
-		return true
-	})
+	ir.BuildCFG(cm)
 	//fmt.Println(res["node_type"])
 
 	//fmt.Println(res.Fruits[0])
