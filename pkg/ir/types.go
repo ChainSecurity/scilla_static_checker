@@ -222,8 +222,8 @@ func StdLib() BuiltinADTs {
 
 	pairAbsDD = AbsDD{
 		Vars: []DataVar{
-			DataVar{Type: &stack.Vars[0]},
-			DataVar{Type: &stack.Vars[1]},
+			DataVar{Type: &pair.Vars[0]},
+			DataVar{Type: &pair.Vars[1]},
 		},
 	}
 	pairAbsDD.Term = &Enum{

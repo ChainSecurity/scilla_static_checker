@@ -102,13 +102,13 @@ func (*AbsTT) isType() {}
 
 // Scilla
 type (
-	// IntType :
+	// Int
 	IntType struct{ Size int }
 
-	// NatType :
+	// Uint
 	NatType struct{ Size int }
 
-	// RawType :
+	// ByStr
 	RawType struct{ Size int }
 
 	// StrType :

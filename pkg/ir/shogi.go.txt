@@ -1,0 +1,71 @@
+package ir
+
+func ShogiLib() {
+	var (
+		Piece         EnumType
+		King          Enum
+		GoldGeneral   Enum
+		SilverGeneral Enum
+		Knight        Enum
+		Lance         Enum
+		Pawn          Enum
+		Rook          Enum
+		Bishop        Enum
+
+		Square   EnumType
+		Square_c Enum
+	)
+	Piece = EnumType{
+		"lance ": {},
+		"knight": {},
+		"silver": {},
+		"gold":   {},
+		"king":   {},
+		"rook":   {},
+		"bishop": {},
+		"pawn":   {},
+	}
+	Lance = Enum{
+		Type: &Piece,
+		Case: "lance",
+	}
+
+	Knight = Enum{
+		Type: &Piece,
+		Case: "knight",
+	}
+	SilverGeneral = Enum{
+		Type: &Piece,
+		Case: "silver",
+	}
+	GoldGeneral = Enum{
+		Type: &Piece,
+		Case: "gold",
+	}
+	King = Enum{
+		Type: &Piece,
+		Case: "king",
+	}
+	Rook = Enum{
+		Type: &Piece,
+		Case: "rook",
+	}
+	Bishop = Enum{
+		Type: &Piece,
+		Case: "bishop",
+	}
+	Pawn = Enum{
+		Type: &Piece,
+		Case: "pawn",
+	}
+
+	Square = EnumType{
+		"square": {&IntType{32}, &IntType{32}},
+	}
+
+	Square_c = Enum{
+		Type: &Square,
+		Case: "square",
+		Data: []Data{&Int{&IntType{32}, "123"}, &Int{&IntType{32}, "32"}},
+	}
+}
