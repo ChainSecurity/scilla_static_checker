@@ -2,7 +2,7 @@
   "scilla_major_version": 0,
   "name": {
     "loc": {
-      "source_file": "../scilla_checker/examples/chain-call-balance-3.scilla",
+      "source_file": "../scilla_static/examples/chain-call-balance-3.scilla",
       "line": 10,
       "column": 10,
       "node_type": "Location"
@@ -14,7 +14,7 @@
     "library_name": {
       "loc": {
         "source_file":
-          "../scilla_checker/examples/chain-call-balance-3.scilla",
+          "../scilla_static/examples/chain-call-balance-3.scilla",
         "line": 3,
         "column": 1,
         "node_type": "Location"
@@ -28,7 +28,7 @@
         "name": {
           "loc": {
             "source_file":
-              "../scilla_checker/examples/chain-call-balance-3.scilla",
+              "../scilla_static/examples/chain-call-balance-3.scilla",
             "line": 5,
             "column": 5,
             "node_type": "Location"
@@ -40,7 +40,7 @@
         "expression": {
           "loc": {
             "source_file":
-              "../scilla_checker/examples/chain-call-balance-3.scilla",
+              "../scilla_static/examples/chain-call-balance-3.scilla",
             "line": 6,
             "column": 3,
             "node_type": "Location"
@@ -49,7 +49,7 @@
           "lhs": {
             "loc": {
               "source_file":
-                "../scilla_checker/examples/chain-call-balance-3.scilla",
+                "../scilla_static/examples/chain-call-balance-3.scilla",
               "line": 6,
               "column": 3,
               "node_type": "Location"
@@ -60,7 +60,7 @@
           "rhs_expr": {
             "loc": {
               "source_file":
-                "../scilla_checker/examples/chain-call-balance-3.scilla",
+                "../scilla_static/examples/chain-call-balance-3.scilla",
               "line": 7,
               "column": 5,
               "node_type": "Location"
@@ -69,7 +69,7 @@
             "variable": {
               "loc": {
                 "source_file":
-                  "../scilla_checker/examples/chain-call-balance-3.scilla",
+                  "../scilla_static/examples/chain-call-balance-3.scilla",
                 "line": 7,
                 "column": 5,
                 "node_type": "Location"
@@ -81,7 +81,7 @@
             "expression": {
               "loc": {
                 "source_file":
-                  "../scilla_checker/examples/chain-call-balance-3.scilla",
+                  "../scilla_static/examples/chain-call-balance-3.scilla",
                 "line": 7,
                 "column": 19,
                 "node_type": "Location"
@@ -94,7 +94,7 @@
             "body": {
               "loc": {
                 "source_file":
-                  "../scilla_checker/examples/chain-call-balance-3.scilla",
+                  "../scilla_static/examples/chain-call-balance-3.scilla",
                 "line": 8,
                 "column": 5,
                 "node_type": "Location"
@@ -106,7 +106,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_checker/examples/chain-call-balance-3.scilla",
+                      "../scilla_static/examples/chain-call-balance-3.scilla",
                     "line": 8,
                     "column": 20,
                     "node_type": "Location"
@@ -117,7 +117,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_checker/examples/chain-call-balance-3.scilla",
+                      "../scilla_static/examples/chain-call-balance-3.scilla",
                     "line": 8,
                     "column": 24,
                     "node_type": "Location"
@@ -128,7 +128,7 @@
               ]
             }
           },
-          "fun_type": "Message"
+          "lhs_type": "Message"
         }
       }
     ],
@@ -139,7 +139,7 @@
     "name": {
       "loc": {
         "source_file":
-          "../scilla_checker/examples/chain-call-balance-3.scilla",
+          "../scilla_static/examples/chain-call-balance-3.scilla",
         "line": 10,
         "column": 10,
         "node_type": "Location"
@@ -155,7 +155,7 @@
         "name": {
           "loc": {
             "source_file":
-              "../scilla_checker/examples/chain-call-balance-3.scilla",
+              "../scilla_static/examples/chain-call-balance-3.scilla",
             "line": 14,
             "column": 12,
             "node_type": "Location"
@@ -167,7 +167,7 @@
           {
             "loc": {
               "source_file":
-                "../scilla_checker/examples/chain-call-balance-3.scilla",
+                "../scilla_static/examples/chain-call-balance-3.scilla",
               "line": 15,
               "column": 3,
               "node_type": "Location"
@@ -176,7 +176,7 @@
             "lhs": {
               "loc": {
                 "source_file":
-                  "../scilla_checker/examples/chain-call-balance-3.scilla",
+                  "../scilla_static/examples/chain-call-balance-3.scilla",
                 "line": 15,
                 "column": 5,
                 "node_type": "Location"
@@ -187,7 +187,7 @@
             "rhs_expr": {
               "loc": {
                 "source_file":
-                  "../scilla_checker/examples/chain-call-balance-3.scilla",
+                  "../scilla_static/examples/chain-call-balance-3.scilla",
                 "line": 15,
                 "column": 7,
                 "node_type": "Location"
@@ -198,7 +198,7 @@
                   "node_type": "MessageArgument",
                   "variable": "_tag",
                   "payload": {
-                    "node_type": "PayloadLitral",
+                    "node_type": "PayloadLiteral",
                     "literal": { "node_type": "StringLiteral", "value": "" }
                   }
                 },
@@ -206,8 +206,12 @@
                   "node_type": "MessageArgument",
                   "variable": "_amount",
                   "payload": {
-                    "node_type": "PayloadLitral",
-                    "literal": { "node_type": "UintLiteral", "value": "0" }
+                    "node_type": "PayloadLiteral",
+                    "literal": {
+                      "node_type": "UintLiteral",
+                      "value": "0",
+                      "width": 128
+                    }
                   }
                 },
                 {
@@ -218,7 +222,7 @@
                     "value": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/chain-call-balance-3.scilla",
+                          "../scilla_static/examples/chain-call-balance-3.scilla",
                         "line": 15,
                         "column": 55,
                         "node_type": "Location"
@@ -234,7 +238,7 @@
           {
             "loc": {
               "source_file":
-                "../scilla_checker/examples/chain-call-balance-3.scilla",
+                "../scilla_static/examples/chain-call-balance-3.scilla",
               "line": 16,
               "column": 3,
               "node_type": "Location"
@@ -243,7 +247,7 @@
             "lhs": {
               "loc": {
                 "source_file":
-                  "../scilla_checker/examples/chain-call-balance-3.scilla",
+                  "../scilla_static/examples/chain-call-balance-3.scilla",
                 "line": 16,
                 "column": 6,
                 "node_type": "Location"
@@ -254,7 +258,7 @@
             "rhs_expr": {
               "loc": {
                 "source_file":
-                  "../scilla_checker/examples/chain-call-balance-3.scilla",
+                  "../scilla_static/examples/chain-call-balance-3.scilla",
                 "line": 16,
                 "column": 8,
                 "node_type": "Location"
@@ -263,7 +267,7 @@
               "lhs": {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/chain-call-balance-3.scilla",
+                    "../scilla_static/examples/chain-call-balance-3.scilla",
                   "line": 16,
                   "column": 8,
                   "node_type": "Location"
@@ -275,7 +279,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_checker/examples/chain-call-balance-3.scilla",
+                      "../scilla_static/examples/chain-call-balance-3.scilla",
                     "line": 16,
                     "column": 16,
                     "node_type": "Location"
@@ -289,7 +293,7 @@
           {
             "loc": {
               "source_file":
-                "../scilla_checker/examples/chain-call-balance-3.scilla",
+                "../scilla_static/examples/chain-call-balance-3.scilla",
               "line": 17,
               "column": 3,
               "node_type": "Location"
@@ -297,7 +301,7 @@
             "arg": {
               "loc": {
                 "source_file":
-                  "../scilla_checker/examples/chain-call-balance-3.scilla",
+                  "../scilla_static/examples/chain-call-balance-3.scilla",
                 "line": 17,
                 "column": 3,
                 "node_type": "Location"
@@ -315,7 +319,7 @@
         "name": {
           "loc": {
             "source_file":
-              "../scilla_checker/examples/chain-call-balance-3.scilla",
+              "../scilla_static/examples/chain-call-balance-3.scilla",
             "line": 20,
             "column": 12,
             "node_type": "Location"
@@ -327,7 +331,7 @@
           {
             "loc": {
               "source_file":
-                "../scilla_checker/examples/chain-call-balance-3.scilla",
+                "../scilla_static/examples/chain-call-balance-3.scilla",
               "line": 21,
               "column": 3,
               "node_type": "Location"

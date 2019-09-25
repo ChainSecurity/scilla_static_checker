@@ -3,6 +3,7 @@ package ast
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
 )
 
 func getNodeTypeBytes(b []byte) (string, error) {
@@ -78,7 +79,7 @@ func unmarshalExpression(rawMsg *json.RawMessage) (Expression, error) {
 		err = json.Unmarshal(*rawMsg, &m)
 		return &m, err
 	default:
-		return nil, errors.New("Unsupported type found!")
+		return nil, errors.New(fmt.Sprintf("Unsupported type found! %s\n", ntype))
 	}
 }
 
@@ -121,7 +122,7 @@ func unmarshalLiteral(rawMsg *json.RawMessage) (Literal, error) {
 		err := json.Unmarshal(*rawMsg, &m)
 		return &m, err
 	default:
-		return nil, errors.New("Unsupported type found!")
+		return nil, errors.New(fmt.Sprintf("Unsupported type found! %s\n", ntype))
 	}
 }
 
@@ -180,7 +181,7 @@ func unmarshalStatement(rawMsg *json.RawMessage) (Statement, error) {
 		err = json.Unmarshal(*rawMsg, &m)
 		return &m, err
 	default:
-		return nil, errors.New("Unsupported type found!")
+		return nil, errors.New(fmt.Sprintf("Unsupported type found! %s\n", ntype))
 	}
 }
 
@@ -203,7 +204,7 @@ func unmarshalPattern(rawMsg *json.RawMessage) (Pattern, error) {
 		err := json.Unmarshal(*rawMsg, &m)
 		return &m, err
 	default:
-		return nil, errors.New("Unsupported type found!")
+		return nil, errors.New(fmt.Sprintf("Unsupported type found! %s\n", ntype))
 	}
 }
 
@@ -213,8 +214,8 @@ func unmarshalPayload(rawMsg *json.RawMessage) (Payload, error) {
 		return nil, err
 	}
 	switch ntype {
-	case "PayloadLitral":
-		var m PayloadLitral
+	case "PayloadLiteral":
+		var m PayloadLiteral
 		err := json.Unmarshal(*rawMsg, &m)
 		return &m, err
 	case "PayloadVariable":
@@ -222,7 +223,7 @@ func unmarshalPayload(rawMsg *json.RawMessage) (Payload, error) {
 		err := json.Unmarshal(*rawMsg, &m)
 		return &m, err
 	default:
-		return nil, errors.New("Unsupported type found!")
+		return nil, errors.New(fmt.Sprintf("Unsupported type found! %s\n", ntype))
 	}
 }
 
@@ -241,7 +242,7 @@ func unmarshalLibEntry(rawMsg *json.RawMessage) (LibEntry, error) {
 		err = json.Unmarshal(*rawMsg, &m)
 		return &m, err
 	default:
-		return nil, errors.New("Unsupported type found!")
+		return nil, errors.New(fmt.Sprintf("Unsupported type found! %s\n", ntype))
 	}
 }
 
@@ -417,7 +418,7 @@ func (fe *FunExpression) UnmarshalJSON(b []byte) error {
 
 	type core struct {
 		AnnotatedNode
-		FunType string      `json:"fun_type"`
+		LhsType string      `json:"lhs_type"`
 		Lhs     *Identifier `json:"lhs"`
 	}
 
@@ -430,7 +431,7 @@ func (fe *FunExpression) UnmarshalJSON(b []byte) error {
 	fe.RhsExpr = &e
 	fe.AnnotatedNode = c.AnnotatedNode
 	fe.Lhs = c.Lhs
-	fe.FunType = c.FunType
+	fe.LhsType = c.LhsType
 	return nil
 }
 
@@ -464,7 +465,7 @@ func (ma *MessageArgument) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-func (pll *PayloadLitral) UnmarshalJSON(b []byte) error {
+func (pll *PayloadLiteral) UnmarshalJSON(b []byte) error {
 	var objMap map[string]*json.RawMessage
 	err := json.Unmarshal(b, &objMap)
 	if err != nil {
@@ -500,7 +501,8 @@ func (l *LibraryVariable) UnmarshalJSON(b []byte) error {
 	l.Expr = &e
 
 	type core struct {
-		VarType string `json:"variable_type"`
+		Name    *Identifier `json:"name"`
+		VarType string      `json:"variable_type"`
 	}
 
 	var c core
@@ -510,6 +512,7 @@ func (l *LibraryVariable) UnmarshalJSON(b []byte) error {
 	}
 
 	l.VarType = c.VarType
+	l.Name = c.Name
 	return nil
 }
 
@@ -684,6 +687,6 @@ func Parse_mod(b []byte) (Module, error) {
 	case "ContractModule":
 		return parse_cmod(b)
 	default:
-		return nil, errors.New("Unsupported type found!")
+		return nil, errors.New(fmt.Sprintf("Unsupported type found! %s\n", ntype))
 	}
 }

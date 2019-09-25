@@ -2,7 +2,7 @@
   "scilla_major_version": 0,
   "name": {
     "loc": {
-      "source_file": "../scilla_checker/examples/inplace-map.scilla",
+      "source_file": "../scilla_static/examples/inplace-map.scilla",
       "line": 7,
       "column": 10,
       "node_type": "Location"
@@ -13,7 +13,7 @@
   "library": {
     "library_name": {
       "loc": {
-        "source_file": "../scilla_checker/examples/inplace-map.scilla",
+        "source_file": "../scilla_static/examples/inplace-map.scilla",
         "line": 5,
         "column": 1,
         "node_type": "Location"
@@ -28,7 +28,7 @@
     {
       "name": {
         "loc": {
-          "source_file": "../scilla_checker/examples/inplace-map.scilla",
+          "source_file": "../scilla_static/examples/inplace-map.scilla",
           "line": 3,
           "column": 8,
           "node_type": "Location"
@@ -42,7 +42,7 @@
     {
       "name": {
         "loc": {
-          "source_file": "../scilla_checker/examples/inplace-map.scilla",
+          "source_file": "../scilla_static/examples/inplace-map.scilla",
           "line": 3,
           "column": 18,
           "node_type": "Location"
@@ -56,7 +56,7 @@
     {
       "name": {
         "loc": {
-          "source_file": "../scilla_checker/examples/inplace-map.scilla",
+          "source_file": "../scilla_static/examples/inplace-map.scilla",
           "line": 3,
           "column": 28,
           "node_type": "Location"
@@ -71,7 +71,7 @@
   "contract": {
     "name": {
       "loc": {
-        "source_file": "../scilla_checker/examples/inplace-map.scilla",
+        "source_file": "../scilla_static/examples/inplace-map.scilla",
         "line": 7,
         "column": 10,
         "node_type": "Location"
@@ -83,7 +83,7 @@
       {
         "parameter_name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/inplace-map.scilla",
+            "source_file": "../scilla_static/examples/inplace-map.scilla",
             "line": 8,
             "column": 2,
             "node_type": "Location"
@@ -99,7 +99,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/inplace-map.scilla",
+            "source_file": "../scilla_static/examples/inplace-map.scilla",
             "line": 10,
             "column": 7,
             "node_type": "Location"
@@ -110,7 +110,7 @@
         "field_type": "Map (String) (Int32)",
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/inplace-map.scilla",
+            "source_file": "../scilla_static/examples/inplace-map.scilla",
             "line": 10,
             "column": 33,
             "node_type": "Location"
@@ -128,7 +128,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/inplace-map.scilla",
+            "source_file": "../scilla_static/examples/inplace-map.scilla",
             "line": 11,
             "column": 7,
             "node_type": "Location"
@@ -139,7 +139,7 @@
         "field_type": "Map (String) (Map (Int32) (Map (Int64) (String)))",
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/inplace-map.scilla",
+            "source_file": "../scilla_static/examples/inplace-map.scilla",
             "line": 11,
             "column": 63,
             "node_type": "Location"
@@ -160,7 +160,7 @@
         "params": [],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/inplace-map.scilla",
+            "source_file": "../scilla_static/examples/inplace-map.scilla",
             "line": 13,
             "column": 12,
             "node_type": "Location"
@@ -171,7 +171,7 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 14,
               "column": 3,
               "node_type": "Location"
@@ -179,8 +179,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 14,
                 "column": 12,
                 "node_type": "Location"
@@ -190,8 +189,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 14,
                 "column": 14,
                 "node_type": "Location"
@@ -201,7 +199,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_checker/examples/inplace-map.scilla",
+                      "../scilla_static/examples/inplace-map.scilla",
                     "line": 14,
                     "column": 25,
                     "node_type": "Location"
@@ -212,7 +210,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_checker/examples/inplace-map.scilla",
+                      "../scilla_static/examples/inplace-map.scilla",
                     "line": 14,
                     "column": 31,
                     "node_type": "Location"
@@ -224,7 +222,7 @@
               "builtin_function": {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/inplace-map.scilla",
+                    "../scilla_static/examples/inplace-map.scilla",
                   "line": 14,
                   "column": 22,
                   "node_type": "Location"
@@ -236,15 +234,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 15,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 15,
                 "column": 9,
                 "node_type": "Location"
@@ -258,7 +255,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/inplace-map.scilla",
+                        "../scilla_static/examples/inplace-map.scilla",
                       "line": 17,
                       "column": 5,
                       "node_type": "Location"
@@ -267,7 +264,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 17,
                         "column": 9,
                         "node_type": "Location"
@@ -278,19 +275,23 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 17,
                         "column": 11,
                         "node_type": "Location"
                       },
                       "node_type": "LiteralExpression",
-                      "value": { "node_type": "IntLiteral", "value": "1" }
+                      "value": {
+                        "node_type": "IntLiteral",
+                        "value": "1",
+                        "width": 32
+                      }
                     }
                   },
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/inplace-map.scilla",
+                        "../scilla_static/examples/inplace-map.scilla",
                       "line": 18,
                       "column": 5,
                       "node_type": "Location"
@@ -299,7 +300,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 18,
                         "column": 7,
                         "node_type": "Location"
@@ -310,7 +311,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 18,
                         "column": 15,
                         "node_type": "Location"
@@ -325,7 +326,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/inplace-map.scilla",
+                        "../scilla_static/examples/inplace-map.scilla",
                       "line": 19,
                       "column": 5,
                       "node_type": "Location"
@@ -334,7 +335,7 @@
                     "map_name": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 19,
                         "column": 5,
                         "node_type": "Location"
@@ -345,7 +346,7 @@
                     "rhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 19,
                         "column": 16,
                         "node_type": "Location"
@@ -357,7 +358,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/inplace-map.scilla",
+                            "../scilla_static/examples/inplace-map.scilla",
                           "line": 19,
                           "column": 10,
                           "node_type": "Location"
@@ -380,7 +381,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/inplace-map.scilla",
+                        "../scilla_static/examples/inplace-map.scilla",
                       "line": 21,
                       "column": 5,
                       "node_type": "Location"
@@ -389,7 +390,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 21,
                         "column": 7,
                         "node_type": "Location"
@@ -400,7 +401,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 21,
                         "column": 15,
                         "node_type": "Location"
@@ -415,7 +416,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/inplace-map.scilla",
+                        "../scilla_static/examples/inplace-map.scilla",
                       "line": 22,
                       "column": 5,
                       "node_type": "Location"
@@ -424,7 +425,7 @@
                     "map_name": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 22,
                         "column": 10,
                         "node_type": "Location"
@@ -435,7 +436,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 22,
                         "column": 5,
                         "node_type": "Location"
@@ -447,7 +448,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/inplace-map.scilla",
+                            "../scilla_static/examples/inplace-map.scilla",
                           "line": 22,
                           "column": 15,
                           "node_type": "Location"
@@ -461,7 +462,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/inplace-map.scilla",
+                        "../scilla_static/examples/inplace-map.scilla",
                       "line": 23,
                       "column": 5,
                       "node_type": "Location"
@@ -470,7 +471,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 23,
                         "column": 7,
                         "node_type": "Location"
@@ -481,7 +482,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 23,
                         "column": 15,
                         "node_type": "Location"
@@ -496,7 +497,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/inplace-map.scilla",
+                        "../scilla_static/examples/inplace-map.scilla",
                       "line": 24,
                       "column": 5,
                       "node_type": "Location"
@@ -504,7 +505,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 24,
                         "column": 11,
                         "node_type": "Location"
@@ -518,7 +519,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/inplace-map.scilla",
+                                "../scilla_static/examples/inplace-map.scilla",
                               "line": 26,
                               "column": 7,
                               "node_type": "Location"
@@ -527,7 +528,7 @@
                             "map_name": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/inplace-map.scilla",
+                                  "../scilla_static/examples/inplace-map.scilla",
                                 "line": 26,
                                 "column": 7,
                                 "node_type": "Location"
@@ -538,7 +539,7 @@
                             "rhs": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/inplace-map.scilla",
+                                  "../scilla_static/examples/inplace-map.scilla",
                                 "line": 26,
                                 "column": 18,
                                 "node_type": "Location"
@@ -550,7 +551,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/inplace-map.scilla",
+                                    "../scilla_static/examples/inplace-map.scilla",
                                   "line": 26,
                                   "column": 12,
                                   "node_type": "Location"
@@ -570,7 +571,7 @@
                               "variable": {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/inplace-map.scilla",
+                                    "../scilla_static/examples/inplace-map.scilla",
                                   "line": 25,
                                   "column": 12,
                                   "node_type": "Location"
@@ -588,7 +589,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/inplace-map.scilla",
+                                "../scilla_static/examples/inplace-map.scilla",
                               "line": 28,
                               "column": 7,
                               "node_type": "Location"
@@ -597,7 +598,7 @@
                             "lhs": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/inplace-map.scilla",
+                                  "../scilla_static/examples/inplace-map.scilla",
                                 "line": 28,
                                 "column": 12,
                                 "node_type": "Location"
@@ -608,7 +609,7 @@
                             "rhs_expr": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/inplace-map.scilla",
+                                  "../scilla_static/examples/inplace-map.scilla",
                                 "line": 28,
                                 "column": 14,
                                 "node_type": "Location"
@@ -616,14 +617,15 @@
                               "node_type": "LiteralExpression",
                               "value": {
                                 "node_type": "IntLiteral",
-                                "value": "0"
+                                "value": "0",
+                                "width": 32
                               }
                             }
                           },
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/inplace-map.scilla",
+                                "../scilla_static/examples/inplace-map.scilla",
                               "line": 29,
                               "column": 7,
                               "node_type": "Location"
@@ -632,7 +634,7 @@
                             "map_name": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/inplace-map.scilla",
+                                  "../scilla_static/examples/inplace-map.scilla",
                                 "line": 29,
                                 "column": 7,
                                 "node_type": "Location"
@@ -643,7 +645,7 @@
                             "rhs": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/inplace-map.scilla",
+                                  "../scilla_static/examples/inplace-map.scilla",
                                 "line": 29,
                                 "column": 18,
                                 "node_type": "Location"
@@ -655,7 +657,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/inplace-map.scilla",
+                                    "../scilla_static/examples/inplace-map.scilla",
                                   "line": 29,
                                   "column": 12,
                                   "node_type": "Location"
@@ -694,7 +696,7 @@
         "params": [],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/inplace-map.scilla",
+            "source_file": "../scilla_static/examples/inplace-map.scilla",
             "line": 34,
             "column": 12,
             "node_type": "Location"
@@ -705,7 +707,7 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 35,
               "column": 3,
               "node_type": "Location"
@@ -713,8 +715,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 35,
                 "column": 5,
                 "node_type": "Location"
@@ -724,8 +725,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 35,
                 "column": 9,
                 "node_type": "Location"
@@ -736,7 +736,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 36,
               "column": 3,
               "node_type": "Location"
@@ -744,8 +744,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 36,
                 "column": 5,
                 "node_type": "Location"
@@ -755,19 +754,22 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 36,
                 "column": 7,
                 "node_type": "Location"
               },
               "node_type": "LiteralExpression",
-              "value": { "node_type": "IntLiteral", "value": "1" }
+              "value": {
+                "node_type": "IntLiteral",
+                "value": "1",
+                "width": 32
+              }
             }
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 37,
               "column": 3,
               "node_type": "Location"
@@ -775,8 +777,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 37,
                 "column": 5,
                 "node_type": "Location"
@@ -786,19 +787,22 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 37,
                 "column": 7,
                 "node_type": "Location"
               },
               "node_type": "LiteralExpression",
-              "value": { "node_type": "IntLiteral", "value": "2" }
+              "value": {
+                "node_type": "IntLiteral",
+                "value": "2",
+                "width": 64
+              }
             }
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 38,
               "column": 3,
               "node_type": "Location"
@@ -806,8 +810,7 @@
             "node_type": "MapUpdateStatement",
             "map_name": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 38,
                 "column": 3,
                 "node_type": "Location"
@@ -817,8 +820,7 @@
             },
             "rhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 38,
                 "column": 21,
                 "node_type": "Location"
@@ -830,7 +832,7 @@
               {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/inplace-map.scilla",
+                    "../scilla_static/examples/inplace-map.scilla",
                   "line": 38,
                   "column": 9,
                   "node_type": "Location"
@@ -841,7 +843,7 @@
               {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/inplace-map.scilla",
+                    "../scilla_static/examples/inplace-map.scilla",
                   "line": 38,
                   "column": 12,
                   "node_type": "Location"
@@ -852,7 +854,7 @@
               {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/inplace-map.scilla",
+                    "../scilla_static/examples/inplace-map.scilla",
                   "line": 38,
                   "column": 15,
                   "node_type": "Location"
@@ -869,7 +871,7 @@
         "params": [],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/inplace-map.scilla",
+            "source_file": "../scilla_static/examples/inplace-map.scilla",
             "line": 41,
             "column": 12,
             "node_type": "Location"
@@ -880,7 +882,7 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 42,
               "column": 3,
               "node_type": "Location"
@@ -888,8 +890,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 42,
                 "column": 5,
                 "node_type": "Location"
@@ -899,8 +900,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 42,
                 "column": 9,
                 "node_type": "Location"
@@ -911,7 +911,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 43,
               "column": 3,
               "node_type": "Location"
@@ -919,8 +919,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 43,
                 "column": 5,
                 "node_type": "Location"
@@ -930,19 +929,22 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 43,
                 "column": 7,
                 "node_type": "Location"
               },
               "node_type": "LiteralExpression",
-              "value": { "node_type": "IntLiteral", "value": "1" }
+              "value": {
+                "node_type": "IntLiteral",
+                "value": "1",
+                "width": 32
+              }
             }
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 44,
               "column": 3,
               "node_type": "Location"
@@ -950,8 +952,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 44,
                 "column": 5,
                 "node_type": "Location"
@@ -961,19 +962,22 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 44,
                 "column": 7,
                 "node_type": "Location"
               },
               "node_type": "LiteralExpression",
-              "value": { "node_type": "IntLiteral", "value": "2" }
+              "value": {
+                "node_type": "IntLiteral",
+                "value": "2",
+                "width": 64
+              }
             }
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 45,
               "column": 3,
               "node_type": "Location"
@@ -981,8 +985,7 @@
             "node_type": "MapGetStatement",
             "map_name": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 45,
                 "column": 8,
                 "node_type": "Location"
@@ -992,8 +995,7 @@
             },
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 45,
                 "column": 3,
                 "node_type": "Location"
@@ -1005,7 +1007,7 @@
               {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/inplace-map.scilla",
+                    "../scilla_static/examples/inplace-map.scilla",
                   "line": 45,
                   "column": 14,
                   "node_type": "Location"
@@ -1016,7 +1018,7 @@
               {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/inplace-map.scilla",
+                    "../scilla_static/examples/inplace-map.scilla",
                   "line": 45,
                   "column": 17,
                   "node_type": "Location"
@@ -1027,7 +1029,7 @@
               {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/inplace-map.scilla",
+                    "../scilla_static/examples/inplace-map.scilla",
                   "line": 45,
                   "column": 20,
                   "node_type": "Location"
@@ -1040,15 +1042,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 46,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 46,
                 "column": 9,
                 "node_type": "Location"
@@ -1062,7 +1063,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/inplace-map.scilla",
+                        "../scilla_static/examples/inplace-map.scilla",
                       "line": 48,
                       "column": 5,
                       "node_type": "Location"
@@ -1071,7 +1072,7 @@
                     "map_name": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 48,
                         "column": 5,
                         "node_type": "Location"
@@ -1082,7 +1083,7 @@
                     "rhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 48,
                         "column": 17,
                         "node_type": "Location"
@@ -1094,7 +1095,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/inplace-map.scilla",
+                            "../scilla_static/examples/inplace-map.scilla",
                           "line": 48,
                           "column": 10,
                           "node_type": "Location"
@@ -1114,7 +1115,7 @@
                       "variable": {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/inplace-map.scilla",
+                            "../scilla_static/examples/inplace-map.scilla",
                           "line": 47,
                           "column": 10,
                           "node_type": "Location"
@@ -1132,7 +1133,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/inplace-map.scilla",
+                        "../scilla_static/examples/inplace-map.scilla",
                       "line": 50,
                       "column": 5,
                       "node_type": "Location"
@@ -1141,7 +1142,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 50,
                         "column": 15,
                         "node_type": "Location"
@@ -1152,7 +1153,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 50,
                         "column": 26,
                         "node_type": "Location"
@@ -1167,7 +1168,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/inplace-map.scilla",
+                        "../scilla_static/examples/inplace-map.scilla",
                       "line": 51,
                       "column": 5,
                       "node_type": "Location"
@@ -1176,7 +1177,7 @@
                     "map_name": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 51,
                         "column": 5,
                         "node_type": "Location"
@@ -1187,7 +1188,7 @@
                     "rhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 51,
                         "column": 24,
                         "node_type": "Location"
@@ -1199,7 +1200,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/inplace-map.scilla",
+                            "../scilla_static/examples/inplace-map.scilla",
                           "line": 51,
                           "column": 10,
                           "node_type": "Location"
@@ -1227,7 +1228,7 @@
         "params": [],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/inplace-map.scilla",
+            "source_file": "../scilla_static/examples/inplace-map.scilla",
             "line": 55,
             "column": 12,
             "node_type": "Location"
@@ -1238,7 +1239,7 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 56,
               "column": 3,
               "node_type": "Location"
@@ -1246,8 +1247,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 56,
                 "column": 5,
                 "node_type": "Location"
@@ -1257,8 +1257,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 56,
                 "column": 10,
                 "node_type": "Location"
@@ -1269,7 +1268,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 57,
               "column": 3,
               "node_type": "Location"
@@ -1277,8 +1276,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 57,
                 "column": 5,
                 "node_type": "Location"
@@ -1288,19 +1286,22 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 57,
                 "column": 7,
                 "node_type": "Location"
               },
               "node_type": "LiteralExpression",
-              "value": { "node_type": "IntLiteral", "value": "1" }
+              "value": {
+                "node_type": "IntLiteral",
+                "value": "1",
+                "width": 32
+              }
             }
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 58,
               "column": 3,
               "node_type": "Location"
@@ -1308,8 +1309,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 58,
                 "column": 5,
                 "node_type": "Location"
@@ -1319,19 +1319,22 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 58,
                 "column": 7,
                 "node_type": "Location"
               },
               "node_type": "LiteralExpression",
-              "value": { "node_type": "IntLiteral", "value": "2" }
+              "value": {
+                "node_type": "IntLiteral",
+                "value": "2",
+                "width": 64
+              }
             }
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 59,
               "column": 3,
               "node_type": "Location"
@@ -1339,8 +1342,7 @@
             "node_type": "MapGetStatement",
             "map_name": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 59,
                 "column": 8,
                 "node_type": "Location"
@@ -1350,8 +1352,7 @@
             },
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 59,
                 "column": 3,
                 "node_type": "Location"
@@ -1363,7 +1364,7 @@
               {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/inplace-map.scilla",
+                    "../scilla_static/examples/inplace-map.scilla",
                   "line": 59,
                   "column": 14,
                   "node_type": "Location"
@@ -1374,7 +1375,7 @@
               {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/inplace-map.scilla",
+                    "../scilla_static/examples/inplace-map.scilla",
                   "line": 59,
                   "column": 17,
                   "node_type": "Location"
@@ -1385,7 +1386,7 @@
               {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/inplace-map.scilla",
+                    "../scilla_static/examples/inplace-map.scilla",
                   "line": 59,
                   "column": 20,
                   "node_type": "Location"
@@ -1398,15 +1399,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 60,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 60,
                 "column": 9,
                 "node_type": "Location"
@@ -1420,7 +1420,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/inplace-map.scilla",
+                        "../scilla_static/examples/inplace-map.scilla",
                       "line": 62,
                       "column": 5,
                       "node_type": "Location"
@@ -1429,7 +1429,7 @@
                     "map_name": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 62,
                         "column": 5,
                         "node_type": "Location"
@@ -1440,7 +1440,7 @@
                     "rhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 62,
                         "column": 17,
                         "node_type": "Location"
@@ -1452,7 +1452,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/inplace-map.scilla",
+                            "../scilla_static/examples/inplace-map.scilla",
                           "line": 62,
                           "column": 10,
                           "node_type": "Location"
@@ -1472,7 +1472,7 @@
                       "variable": {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/inplace-map.scilla",
+                            "../scilla_static/examples/inplace-map.scilla",
                           "line": 61,
                           "column": 10,
                           "node_type": "Location"
@@ -1490,7 +1490,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/inplace-map.scilla",
+                        "../scilla_static/examples/inplace-map.scilla",
                       "line": 64,
                       "column": 5,
                       "node_type": "Location"
@@ -1499,7 +1499,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 64,
                         "column": 15,
                         "node_type": "Location"
@@ -1510,7 +1510,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 64,
                         "column": 26,
                         "node_type": "Location"
@@ -1525,7 +1525,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/inplace-map.scilla",
+                        "../scilla_static/examples/inplace-map.scilla",
                       "line": 65,
                       "column": 5,
                       "node_type": "Location"
@@ -1534,7 +1534,7 @@
                     "map_name": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 65,
                         "column": 5,
                         "node_type": "Location"
@@ -1545,7 +1545,7 @@
                     "rhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 65,
                         "column": 24,
                         "node_type": "Location"
@@ -1557,7 +1557,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/inplace-map.scilla",
+                            "../scilla_static/examples/inplace-map.scilla",
                           "line": 65,
                           "column": 10,
                           "node_type": "Location"
@@ -1585,7 +1585,7 @@
         "params": [],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/inplace-map.scilla",
+            "source_file": "../scilla_static/examples/inplace-map.scilla",
             "line": 69,
             "column": 12,
             "node_type": "Location"
@@ -1596,7 +1596,7 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 70,
               "column": 3,
               "node_type": "Location"
@@ -1604,8 +1604,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 70,
                 "column": 5,
                 "node_type": "Location"
@@ -1615,8 +1614,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 70,
                 "column": 9,
                 "node_type": "Location"
@@ -1627,7 +1625,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 71,
               "column": 3,
               "node_type": "Location"
@@ -1635,8 +1633,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 71,
                 "column": 5,
                 "node_type": "Location"
@@ -1646,19 +1643,22 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 71,
                 "column": 7,
                 "node_type": "Location"
               },
               "node_type": "LiteralExpression",
-              "value": { "node_type": "IntLiteral", "value": "1" }
+              "value": {
+                "node_type": "IntLiteral",
+                "value": "1",
+                "width": 32
+              }
             }
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 72,
               "column": 3,
               "node_type": "Location"
@@ -1666,8 +1666,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 72,
                 "column": 5,
                 "node_type": "Location"
@@ -1677,19 +1676,22 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 72,
                 "column": 7,
                 "node_type": "Location"
               },
               "node_type": "LiteralExpression",
-              "value": { "node_type": "IntLiteral", "value": "2" }
+              "value": {
+                "node_type": "IntLiteral",
+                "value": "2",
+                "width": 64
+              }
             }
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 73,
               "column": 3,
               "node_type": "Location"
@@ -1697,8 +1699,7 @@
             "node_type": "MapUpdateStatement",
             "map_name": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 73,
                 "column": 10,
                 "node_type": "Location"
@@ -1711,7 +1712,7 @@
               {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/inplace-map.scilla",
+                    "../scilla_static/examples/inplace-map.scilla",
                   "line": 73,
                   "column": 16,
                   "node_type": "Location"
@@ -1722,7 +1723,7 @@
               {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/inplace-map.scilla",
+                    "../scilla_static/examples/inplace-map.scilla",
                   "line": 73,
                   "column": 19,
                   "node_type": "Location"
@@ -1733,7 +1734,7 @@
               {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/inplace-map.scilla",
+                    "../scilla_static/examples/inplace-map.scilla",
                   "line": 73,
                   "column": 22,
                   "node_type": "Location"
@@ -1750,7 +1751,7 @@
         "params": [],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/inplace-map.scilla",
+            "source_file": "../scilla_static/examples/inplace-map.scilla",
             "line": 76,
             "column": 12,
             "node_type": "Location"
@@ -1761,7 +1762,7 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 77,
               "column": 3,
               "node_type": "Location"
@@ -1769,8 +1770,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 77,
                 "column": 5,
                 "node_type": "Location"
@@ -1780,8 +1780,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 77,
                 "column": 10,
                 "node_type": "Location"
@@ -1792,7 +1791,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 78,
               "column": 3,
               "node_type": "Location"
@@ -1800,8 +1799,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 78,
                 "column": 5,
                 "node_type": "Location"
@@ -1811,19 +1809,22 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 78,
                 "column": 7,
                 "node_type": "Location"
               },
               "node_type": "LiteralExpression",
-              "value": { "node_type": "IntLiteral", "value": "1" }
+              "value": {
+                "node_type": "IntLiteral",
+                "value": "1",
+                "width": 32
+              }
             }
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 79,
               "column": 3,
               "node_type": "Location"
@@ -1831,8 +1832,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 79,
                 "column": 5,
                 "node_type": "Location"
@@ -1842,19 +1842,22 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 79,
                 "column": 7,
                 "node_type": "Location"
               },
               "node_type": "LiteralExpression",
-              "value": { "node_type": "IntLiteral", "value": "2" }
+              "value": {
+                "node_type": "IntLiteral",
+                "value": "2",
+                "width": 64
+              }
             }
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 80,
               "column": 3,
               "node_type": "Location"
@@ -1862,8 +1865,7 @@
             "node_type": "MapUpdateStatement",
             "map_name": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 80,
                 "column": 10,
                 "node_type": "Location"
@@ -1876,7 +1878,7 @@
               {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/inplace-map.scilla",
+                    "../scilla_static/examples/inplace-map.scilla",
                   "line": 80,
                   "column": 16,
                   "node_type": "Location"
@@ -1887,7 +1889,7 @@
               {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/inplace-map.scilla",
+                    "../scilla_static/examples/inplace-map.scilla",
                   "line": 80,
                   "column": 19,
                   "node_type": "Location"
@@ -1898,7 +1900,7 @@
               {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/inplace-map.scilla",
+                    "../scilla_static/examples/inplace-map.scilla",
                   "line": 80,
                   "column": 22,
                   "node_type": "Location"
@@ -1915,7 +1917,7 @@
         "params": [],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/inplace-map.scilla",
+            "source_file": "../scilla_static/examples/inplace-map.scilla",
             "line": 83,
             "column": 12,
             "node_type": "Location"
@@ -1926,7 +1928,7 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 84,
               "column": 3,
               "node_type": "Location"
@@ -1934,8 +1936,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 84,
                 "column": 5,
                 "node_type": "Location"
@@ -1945,8 +1946,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 84,
                 "column": 9,
                 "node_type": "Location"
@@ -1957,7 +1957,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 85,
               "column": 3,
               "node_type": "Location"
@@ -1965,8 +1965,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 85,
                 "column": 5,
                 "node_type": "Location"
@@ -1976,19 +1975,22 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 85,
                 "column": 7,
                 "node_type": "Location"
               },
               "node_type": "LiteralExpression",
-              "value": { "node_type": "IntLiteral", "value": "1" }
+              "value": {
+                "node_type": "IntLiteral",
+                "value": "1",
+                "width": 32
+              }
             }
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 86,
               "column": 3,
               "node_type": "Location"
@@ -1996,8 +1998,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 86,
                 "column": 5,
                 "node_type": "Location"
@@ -2007,19 +2008,22 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 86,
                 "column": 7,
                 "node_type": "Location"
               },
               "node_type": "LiteralExpression",
-              "value": { "node_type": "IntLiteral", "value": "2" }
+              "value": {
+                "node_type": "IntLiteral",
+                "value": "2",
+                "width": 64
+              }
             }
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 87,
               "column": 3,
               "node_type": "Location"
@@ -2027,8 +2031,7 @@
             "node_type": "MapUpdateStatement",
             "map_name": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 87,
                 "column": 10,
                 "node_type": "Location"
@@ -2041,7 +2044,7 @@
               {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/inplace-map.scilla",
+                    "../scilla_static/examples/inplace-map.scilla",
                   "line": 87,
                   "column": 16,
                   "node_type": "Location"
@@ -2058,7 +2061,7 @@
         "params": [],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/inplace-map.scilla",
+            "source_file": "../scilla_static/examples/inplace-map.scilla",
             "line": 90,
             "column": 12,
             "node_type": "Location"
@@ -2069,7 +2072,7 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 91,
               "column": 3,
               "node_type": "Location"
@@ -2077,8 +2080,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 91,
                 "column": 5,
                 "node_type": "Location"
@@ -2088,8 +2090,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 91,
                 "column": 9,
                 "node_type": "Location"
@@ -2100,7 +2101,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 92,
               "column": 3,
               "node_type": "Location"
@@ -2108,8 +2109,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 92,
                 "column": 5,
                 "node_type": "Location"
@@ -2119,19 +2119,22 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 92,
                 "column": 7,
                 "node_type": "Location"
               },
               "node_type": "LiteralExpression",
-              "value": { "node_type": "IntLiteral", "value": "1" }
+              "value": {
+                "node_type": "IntLiteral",
+                "value": "1",
+                "width": 32
+              }
             }
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 93,
               "column": 3,
               "node_type": "Location"
@@ -2139,8 +2142,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 93,
                 "column": 5,
                 "node_type": "Location"
@@ -2150,19 +2152,22 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 93,
                 "column": 7,
                 "node_type": "Location"
               },
               "node_type": "LiteralExpression",
-              "value": { "node_type": "IntLiteral", "value": "2" }
+              "value": {
+                "node_type": "IntLiteral",
+                "value": "2",
+                "width": 64
+              }
             }
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 94,
               "column": 3,
               "node_type": "Location"
@@ -2170,8 +2175,7 @@
             "node_type": "MapGetStatement",
             "map_name": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 94,
                 "column": 16,
                 "node_type": "Location"
@@ -2181,8 +2185,7 @@
             },
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 94,
                 "column": 3,
                 "node_type": "Location"
@@ -2194,7 +2197,7 @@
               {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/inplace-map.scilla",
+                    "../scilla_static/examples/inplace-map.scilla",
                   "line": 94,
                   "column": 22,
                   "node_type": "Location"
@@ -2205,7 +2208,7 @@
               {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/inplace-map.scilla",
+                    "../scilla_static/examples/inplace-map.scilla",
                   "line": 94,
                   "column": 25,
                   "node_type": "Location"
@@ -2216,7 +2219,7 @@
               {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/inplace-map.scilla",
+                    "../scilla_static/examples/inplace-map.scilla",
                   "line": 94,
                   "column": 28,
                   "node_type": "Location"
@@ -2229,15 +2232,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 95,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 95,
                 "column": 9,
                 "node_type": "Location"
@@ -2251,7 +2253,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/inplace-map.scilla",
+                        "../scilla_static/examples/inplace-map.scilla",
                       "line": 97,
                       "column": 5,
                       "node_type": "Location"
@@ -2260,7 +2262,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 97,
                         "column": 8,
                         "node_type": "Location"
@@ -2271,7 +2273,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 97,
                         "column": 17,
                         "node_type": "Location"
@@ -2286,7 +2288,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/inplace-map.scilla",
+                        "../scilla_static/examples/inplace-map.scilla",
                       "line": 98,
                       "column": 5,
                       "node_type": "Location"
@@ -2295,7 +2297,7 @@
                     "map_name": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 98,
                         "column": 5,
                         "node_type": "Location"
@@ -2306,7 +2308,7 @@
                     "rhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 98,
                         "column": 17,
                         "node_type": "Location"
@@ -2318,7 +2320,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/inplace-map.scilla",
+                            "../scilla_static/examples/inplace-map.scilla",
                           "line": 98,
                           "column": 10,
                           "node_type": "Location"
@@ -2341,7 +2343,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/inplace-map.scilla",
+                        "../scilla_static/examples/inplace-map.scilla",
                       "line": 100,
                       "column": 5,
                       "node_type": "Location"
@@ -2350,7 +2352,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 100,
                         "column": 8,
                         "node_type": "Location"
@@ -2361,7 +2363,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 100,
                         "column": 24,
                         "node_type": "Location"
@@ -2376,7 +2378,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/inplace-map.scilla",
+                        "../scilla_static/examples/inplace-map.scilla",
                       "line": 101,
                       "column": 5,
                       "node_type": "Location"
@@ -2385,7 +2387,7 @@
                     "map_name": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 101,
                         "column": 5,
                         "node_type": "Location"
@@ -2396,7 +2398,7 @@
                     "rhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 101,
                         "column": 17,
                         "node_type": "Location"
@@ -2408,7 +2410,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/inplace-map.scilla",
+                            "../scilla_static/examples/inplace-map.scilla",
                           "line": 101,
                           "column": 10,
                           "node_type": "Location"
@@ -2436,7 +2438,7 @@
         "params": [],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/inplace-map.scilla",
+            "source_file": "../scilla_static/examples/inplace-map.scilla",
             "line": 105,
             "column": 12,
             "node_type": "Location"
@@ -2447,7 +2449,7 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 106,
               "column": 3,
               "node_type": "Location"
@@ -2455,8 +2457,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 106,
                 "column": 5,
                 "node_type": "Location"
@@ -2466,8 +2467,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 106,
                 "column": 9,
                 "node_type": "Location"
@@ -2478,7 +2478,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 107,
               "column": 3,
               "node_type": "Location"
@@ -2486,8 +2486,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 107,
                 "column": 5,
                 "node_type": "Location"
@@ -2497,19 +2496,22 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 107,
                 "column": 7,
                 "node_type": "Location"
               },
               "node_type": "LiteralExpression",
-              "value": { "node_type": "IntLiteral", "value": "1" }
+              "value": {
+                "node_type": "IntLiteral",
+                "value": "1",
+                "width": 32
+              }
             }
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 108,
               "column": 3,
               "node_type": "Location"
@@ -2517,8 +2519,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 108,
                 "column": 5,
                 "node_type": "Location"
@@ -2528,19 +2529,22 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 108,
                 "column": 7,
                 "node_type": "Location"
               },
               "node_type": "LiteralExpression",
-              "value": { "node_type": "IntLiteral", "value": "2" }
+              "value": {
+                "node_type": "IntLiteral",
+                "value": "2",
+                "width": 64
+              }
             }
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 109,
               "column": 3,
               "node_type": "Location"
@@ -2548,8 +2552,7 @@
             "node_type": "MapGetStatement",
             "map_name": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 109,
                 "column": 15,
                 "node_type": "Location"
@@ -2559,8 +2562,7 @@
             },
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 109,
                 "column": 3,
                 "node_type": "Location"
@@ -2572,7 +2574,7 @@
               {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/inplace-map.scilla",
+                    "../scilla_static/examples/inplace-map.scilla",
                   "line": 109,
                   "column": 21,
                   "node_type": "Location"
@@ -2585,15 +2587,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/inplace-map.scilla",
+              "source_file": "../scilla_static/examples/inplace-map.scilla",
               "line": 110,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file":
-                  "../scilla_checker/examples/inplace-map.scilla",
+                "source_file": "../scilla_static/examples/inplace-map.scilla",
                 "line": 110,
                 "column": 9,
                 "node_type": "Location"
@@ -2607,7 +2608,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/inplace-map.scilla",
+                        "../scilla_static/examples/inplace-map.scilla",
                       "line": 112,
                       "column": 5,
                       "node_type": "Location"
@@ -2616,7 +2617,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 112,
                         "column": 8,
                         "node_type": "Location"
@@ -2627,7 +2628,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 112,
                         "column": 17,
                         "node_type": "Location"
@@ -2642,7 +2643,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/inplace-map.scilla",
+                        "../scilla_static/examples/inplace-map.scilla",
                       "line": 113,
                       "column": 5,
                       "node_type": "Location"
@@ -2651,7 +2652,7 @@
                     "map_name": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 113,
                         "column": 5,
                         "node_type": "Location"
@@ -2662,7 +2663,7 @@
                     "rhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 113,
                         "column": 17,
                         "node_type": "Location"
@@ -2674,7 +2675,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/inplace-map.scilla",
+                            "../scilla_static/examples/inplace-map.scilla",
                           "line": 113,
                           "column": 10,
                           "node_type": "Location"
@@ -2697,7 +2698,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/inplace-map.scilla",
+                        "../scilla_static/examples/inplace-map.scilla",
                       "line": 115,
                       "column": 5,
                       "node_type": "Location"
@@ -2706,7 +2707,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 115,
                         "column": 8,
                         "node_type": "Location"
@@ -2717,7 +2718,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 115,
                         "column": 24,
                         "node_type": "Location"
@@ -2732,7 +2733,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/inplace-map.scilla",
+                        "../scilla_static/examples/inplace-map.scilla",
                       "line": 116,
                       "column": 5,
                       "node_type": "Location"
@@ -2741,7 +2742,7 @@
                     "map_name": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 116,
                         "column": 5,
                         "node_type": "Location"
@@ -2752,7 +2753,7 @@
                     "rhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/inplace-map.scilla",
+                          "../scilla_static/examples/inplace-map.scilla",
                         "line": 116,
                         "column": 17,
                         "node_type": "Location"
@@ -2764,7 +2765,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/inplace-map.scilla",
+                            "../scilla_static/examples/inplace-map.scilla",
                           "line": 116,
                           "column": 10,
                           "node_type": "Location"

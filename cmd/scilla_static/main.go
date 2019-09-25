@@ -19,7 +19,11 @@ func main() {
 	byteValue, _ := ioutil.ReadAll(jsonFile)
 	fmt.Println("Parsing")
 	cm, err := ast.Parse_mod(byteValue)
+	if err != nil {
+		panic(err)
+	}
 	fmt.Println("Finished parsing")
+	fmt.Println(cm == nil)
 	ir.BuildCFG(cm)
 	//fmt.Println(res["node_type"])
 

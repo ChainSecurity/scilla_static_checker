@@ -2,7 +2,7 @@
   "scilla_major_version": 0,
   "name": {
     "loc": {
-      "source_file": "../scilla_checker/examples/bookstore.scilla",
+      "source_file": "../scilla_static/examples/bookstore.scilla",
       "line": 54,
       "column": 10,
       "node_type": "Location"
@@ -13,7 +13,7 @@
   "library": {
     "library_name": {
       "loc": {
-        "source_file": "../scilla_checker/examples/bookstore.scilla",
+        "source_file": "../scilla_static/examples/bookstore.scilla",
         "line": 21,
         "column": 1,
         "node_type": "Location"
@@ -26,7 +26,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 23,
             "column": 5,
             "node_type": "Location"
@@ -37,7 +37,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 24,
             "column": 3,
             "node_type": "Location"
@@ -45,7 +45,7 @@
           "node_type": "FunExpression",
           "lhs": {
             "loc": {
-              "source_file": "../scilla_checker/examples/bookstore.scilla",
+              "source_file": "../scilla_static/examples/bookstore.scilla",
               "line": 24,
               "column": 3,
               "node_type": "Location"
@@ -55,7 +55,7 @@
           },
           "rhs_expr": {
             "loc": {
-              "source_file": "../scilla_checker/examples/bookstore.scilla",
+              "source_file": "../scilla_static/examples/bookstore.scilla",
               "line": 25,
               "column": 3,
               "node_type": "Location"
@@ -63,7 +63,7 @@
             "node_type": "LetExpression",
             "variable": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 25,
                 "column": 3,
                 "node_type": "Location"
@@ -74,7 +74,7 @@
             "variable_type": null,
             "expression": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 25,
                 "column": 17,
                 "node_type": "Location"
@@ -86,7 +86,7 @@
             },
             "body": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 26,
                 "column": 3,
                 "node_type": "Location"
@@ -98,7 +98,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_checker/examples/bookstore.scilla",
+                      "../scilla_static/examples/bookstore.scilla",
                     "line": 26,
                     "column": 18,
                     "node_type": "Location"
@@ -109,7 +109,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_checker/examples/bookstore.scilla",
+                      "../scilla_static/examples/bookstore.scilla",
                     "line": 26,
                     "column": 22,
                     "node_type": "Location"
@@ -120,14 +120,14 @@
               ]
             }
           },
-          "fun_type": "Message"
+          "lhs_type": "Message"
         }
       },
       {
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 29,
             "column": 5,
             "node_type": "Location"
@@ -138,20 +138,20 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 29,
             "column": 20,
             "node_type": "Location"
           },
           "node_type": "LiteralExpression",
-          "value": { "node_type": "UintLiteral", "value": "0" }
+          "value": { "node_type": "UintLiteral", "value": "0", "width": 32 }
         }
       },
       {
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 30,
             "column": 5,
             "node_type": "Location"
@@ -162,20 +162,20 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 30,
             "column": 27,
             "node_type": "Location"
           },
           "node_type": "LiteralExpression",
-          "value": { "node_type": "UintLiteral", "value": "1" }
+          "value": { "node_type": "UintLiteral", "value": "1", "width": 32 }
         }
       },
       {
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 31,
             "column": 5,
             "node_type": "Location"
@@ -186,20 +186,20 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 31,
             "column": 27,
             "node_type": "Location"
           },
           "node_type": "LiteralExpression",
-          "value": { "node_type": "UintLiteral", "value": "2" }
+          "value": { "node_type": "UintLiteral", "value": "2", "width": 32 }
         }
       },
       {
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 32,
             "column": 5,
             "node_type": "Location"
@@ -210,20 +210,20 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 32,
             "column": 27,
             "node_type": "Location"
           },
           "node_type": "LiteralExpression",
-          "value": { "node_type": "UintLiteral", "value": "3" }
+          "value": { "node_type": "UintLiteral", "value": "3", "width": 32 }
         }
       },
       {
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 33,
             "column": 5,
             "node_type": "Location"
@@ -234,20 +234,20 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 33,
             "column": 25,
             "node_type": "Location"
           },
           "node_type": "LiteralExpression",
-          "value": { "node_type": "UintLiteral", "value": "4" }
+          "value": { "node_type": "UintLiteral", "value": "4", "width": 32 }
         }
       },
       {
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 34,
             "column": 5,
             "node_type": "Location"
@@ -258,19 +258,19 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 34,
             "column": 27,
             "node_type": "Location"
           },
           "node_type": "LiteralExpression",
-          "value": { "node_type": "UintLiteral", "value": "5" }
+          "value": { "node_type": "UintLiteral", "value": "5", "width": 32 }
         }
       },
       {
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 40,
             "column": 1,
             "node_type": "Location"
@@ -283,7 +283,7 @@
           {
             "ctr_def_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 41,
                 "column": 1,
                 "node_type": "Location"
@@ -299,7 +299,7 @@
       {
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 48,
             "column": 1,
             "node_type": "Location"
@@ -312,7 +312,7 @@
           {
             "ctr_def_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 49,
                 "column": 1,
                 "node_type": "Location"
@@ -332,7 +332,7 @@
   "contract": {
     "name": {
       "loc": {
-        "source_file": "../scilla_checker/examples/bookstore.scilla",
+        "source_file": "../scilla_static/examples/bookstore.scilla",
         "line": 54,
         "column": 10,
         "node_type": "Location"
@@ -344,7 +344,7 @@
       {
         "parameter_name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 55,
             "column": 2,
             "node_type": "Location"
@@ -358,7 +358,7 @@
       {
         "parameter_name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 56,
             "column": 1,
             "node_type": "Location"
@@ -374,7 +374,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 70,
             "column": 7,
             "node_type": "Location"
@@ -385,7 +385,7 @@
         "field_type": "Map (ByStr20) (Member)",
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 71,
             "column": 19,
             "node_type": "Location"
@@ -403,7 +403,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 74,
             "column": 7,
             "node_type": "Location"
@@ -414,7 +414,7 @@
         "field_type": "Bool",
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 74,
             "column": 29,
             "node_type": "Location"
@@ -429,7 +429,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 77,
             "column": 7,
             "node_type": "Location"
@@ -440,7 +440,7 @@
         "field_type": "Map (Uint32) (Book)",
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 78,
             "column": 23,
             "node_type": "Location"
@@ -462,7 +462,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 89,
                 "column": 28,
                 "node_type": "Location"
@@ -476,7 +476,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 89,
                 "column": 42,
                 "node_type": "Location"
@@ -490,7 +490,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 89,
                 "column": 64,
                 "node_type": "Location"
@@ -504,7 +504,7 @@
         ],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 89,
             "column": 11,
             "node_type": "Location"
@@ -515,14 +515,14 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/bookstore.scilla",
+              "source_file": "../scilla_static/examples/bookstore.scilla",
               "line": 90,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 90,
                 "column": 9,
                 "node_type": "Location"
@@ -536,7 +536,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 92,
                       "column": 5,
                       "node_type": "Location"
@@ -545,7 +545,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 92,
                         "column": 7,
                         "node_type": "Location"
@@ -556,7 +556,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 92,
                         "column": 9,
                         "node_type": "Location"
@@ -567,7 +567,7 @@
                           "node_type": "MessageArgument",
                           "variable": "_eventname",
                           "payload": {
-                            "node_type": "PayloadLitral",
+                            "node_type": "PayloadLiteral",
                             "literal": {
                               "node_type": "StringLiteral",
                               "value": "AddMemberSuccess"
@@ -582,7 +582,7 @@
                             "value": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 92,
                                 "column": 48,
                                 "node_type": "Location"
@@ -600,7 +600,7 @@
                             "value": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 92,
                                 "column": 71,
                                 "node_type": "Location"
@@ -616,7 +616,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 93,
                       "column": 5,
                       "node_type": "Location"
@@ -624,7 +624,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 93,
                         "column": 5,
                         "node_type": "Location"
@@ -647,7 +647,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 95,
                       "column": 5,
                       "node_type": "Location"
@@ -656,7 +656,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 95,
                         "column": 7,
                         "node_type": "Location"
@@ -667,7 +667,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 95,
                         "column": 9,
                         "node_type": "Location"
@@ -678,7 +678,7 @@
                           "node_type": "MessageArgument",
                           "variable": "_eventname",
                           "payload": {
-                            "node_type": "PayloadLitral",
+                            "node_type": "PayloadLiteral",
                             "literal": {
                               "node_type": "StringLiteral",
                               "value": "AddMemberFailure"
@@ -693,7 +693,7 @@
                             "value": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 95,
                                 "column": 48,
                                 "node_type": "Location"
@@ -711,7 +711,7 @@
                             "value": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 95,
                                 "column": 70,
                                 "node_type": "Location"
@@ -727,7 +727,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 96,
                       "column": 5,
                       "node_type": "Location"
@@ -735,7 +735,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 96,
                         "column": 5,
                         "node_type": "Location"
@@ -764,7 +764,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 102,
                 "column": 3,
                 "node_type": "Location"
@@ -778,7 +778,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 103,
                 "column": 3,
                 "node_type": "Location"
@@ -792,7 +792,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 104,
                 "column": 3,
                 "node_type": "Location"
@@ -806,7 +806,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 105,
                 "column": 3,
                 "node_type": "Location"
@@ -820,7 +820,7 @@
         ],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 101,
             "column": 11,
             "node_type": "Location"
@@ -831,14 +831,14 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/bookstore.scilla",
+              "source_file": "../scilla_static/examples/bookstore.scilla",
               "line": 107,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 107,
                 "column": 9,
                 "node_type": "Location"
@@ -852,7 +852,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 109,
                       "column": 5,
                       "node_type": "Location"
@@ -861,7 +861,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 109,
                         "column": 7,
                         "node_type": "Location"
@@ -872,7 +872,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 109,
                         "column": 9,
                         "node_type": "Location"
@@ -883,7 +883,7 @@
                           "node_type": "MessageArgument",
                           "variable": "_eventname",
                           "payload": {
-                            "node_type": "PayloadLitral",
+                            "node_type": "PayloadLiteral",
                             "literal": {
                               "node_type": "StringLiteral",
                               "value": "BookEventSuccess"
@@ -898,7 +898,7 @@
                             "value": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 111,
                                 "column": 13,
                                 "node_type": "Location"
@@ -916,7 +916,7 @@
                             "value": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 112,
                                 "column": 15,
                                 "node_type": "Location"
@@ -934,7 +934,7 @@
                             "value": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 113,
                                 "column": 11,
                                 "node_type": "Location"
@@ -950,7 +950,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 114,
                       "column": 5,
                       "node_type": "Location"
@@ -958,7 +958,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 114,
                         "column": 5,
                         "node_type": "Location"
@@ -981,7 +981,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 116,
                       "column": 5,
                       "node_type": "Location"
@@ -990,7 +990,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 116,
                         "column": 7,
                         "node_type": "Location"
@@ -1001,7 +1001,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 116,
                         "column": 9,
                         "node_type": "Location"
@@ -1012,7 +1012,7 @@
                           "node_type": "MessageArgument",
                           "variable": "_eventname",
                           "payload": {
-                            "node_type": "PayloadLitral",
+                            "node_type": "PayloadLiteral",
                             "literal": {
                               "node_type": "StringLiteral",
                               "value": "BookEventFailure"
@@ -1027,7 +1027,7 @@
                             "value": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 118,
                                 "column": 13,
                                 "node_type": "Location"
@@ -1045,7 +1045,7 @@
                             "value": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 119,
                                 "column": 15,
                                 "node_type": "Location"
@@ -1063,7 +1063,7 @@
                             "value": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 120,
                                 "column": 11,
                                 "node_type": "Location"
@@ -1079,7 +1079,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 121,
                       "column": 5,
                       "node_type": "Location"
@@ -1087,7 +1087,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 121,
                         "column": 5,
                         "node_type": "Location"
@@ -1116,7 +1116,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 135,
                 "column": 22,
                 "node_type": "Location"
@@ -1130,7 +1130,7 @@
         ],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 135,
             "column": 12,
             "node_type": "Location"
@@ -1141,7 +1141,7 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/bookstore.scilla",
+              "source_file": "../scilla_static/examples/bookstore.scilla",
               "line": 138,
               "column": 5,
               "node_type": "Location"
@@ -1149,7 +1149,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 138,
                 "column": 19,
                 "node_type": "Location"
@@ -1159,7 +1159,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 138,
                 "column": 21,
                 "node_type": "Location"
@@ -1169,7 +1169,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_checker/examples/bookstore.scilla",
+                      "../scilla_static/examples/bookstore.scilla",
                     "line": 138,
                     "column": 32,
                     "node_type": "Location"
@@ -1180,7 +1180,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_checker/examples/bookstore.scilla",
+                      "../scilla_static/examples/bookstore.scilla",
                     "line": 138,
                     "column": 40,
                     "node_type": "Location"
@@ -1191,8 +1191,7 @@
               ],
               "builtin_function": {
                 "loc": {
-                  "source_file":
-                    "../scilla_checker/examples/bookstore.scilla",
+                  "source_file": "../scilla_static/examples/bookstore.scilla",
                   "line": 138,
                   "column": 29,
                   "node_type": "Location"
@@ -1204,14 +1203,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/bookstore.scilla",
+              "source_file": "../scilla_static/examples/bookstore.scilla",
               "line": 139,
               "column": 5,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 139,
                 "column": 11,
                 "node_type": "Location"
@@ -1225,7 +1224,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 141,
                       "column": 7,
                       "node_type": "Location"
@@ -1233,7 +1232,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 141,
                         "column": 21,
                         "node_type": "Location"
@@ -1244,7 +1243,7 @@
                     "rhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 141,
                         "column": 24,
                         "node_type": "Location"
@@ -1257,7 +1256,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 142,
                       "column": 7,
                       "node_type": "Location"
@@ -1266,7 +1265,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 142,
                         "column": 9,
                         "node_type": "Location"
@@ -1277,7 +1276,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 142,
                         "column": 11,
                         "node_type": "Location"
@@ -1288,7 +1287,7 @@
                           "node_type": "MessageArgument",
                           "variable": "_eventname",
                           "payload": {
-                            "node_type": "PayloadLitral",
+                            "node_type": "PayloadLiteral",
                             "literal": {
                               "node_type": "StringLiteral",
                               "value": "OpenStore"
@@ -1303,7 +1302,7 @@
                             "value": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 142,
                                 "column": 45,
                                 "node_type": "Location"
@@ -1319,7 +1318,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 143,
                       "column": 7,
                       "node_type": "Location"
@@ -1327,7 +1326,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 143,
                         "column": 7,
                         "node_type": "Location"
@@ -1350,7 +1349,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 146,
                       "column": 7,
                       "node_type": "Location"
@@ -1359,7 +1358,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 146,
                         "column": 14,
                         "node_type": "Location"
@@ -1370,7 +1369,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 146,
                         "column": 16,
                         "node_type": "Location"
@@ -1384,7 +1383,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 147,
                       "column": 7,
                       "node_type": "Location"
@@ -1393,7 +1392,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 147,
                         "column": 11,
                         "node_type": "Location"
@@ -1404,7 +1403,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 147,
                         "column": 38,
                         "node_type": "Location"
@@ -1419,7 +1418,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 148,
                       "column": 7,
                       "node_type": "Location"
@@ -1427,7 +1426,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 148,
                         "column": 7,
                         "node_type": "Location"
@@ -1439,7 +1438,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 148,
                           "column": 23,
                           "node_type": "Location"
@@ -1450,7 +1449,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 148,
                           "column": 30,
                           "node_type": "Location"
@@ -1461,7 +1460,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 148,
                           "column": 50,
                           "node_type": "Location"
@@ -1491,7 +1490,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 159,
                 "column": 22,
                 "node_type": "Location"
@@ -1505,7 +1504,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 159,
                 "column": 36,
                 "node_type": "Location"
@@ -1519,7 +1518,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 159,
                 "column": 61,
                 "node_type": "Location"
@@ -1533,7 +1532,7 @@
         ],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 159,
             "column": 12,
             "node_type": "Location"
@@ -1544,7 +1543,7 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/bookstore.scilla",
+              "source_file": "../scilla_static/examples/bookstore.scilla",
               "line": 162,
               "column": 5,
               "node_type": "Location"
@@ -1552,7 +1551,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 162,
                 "column": 19,
                 "node_type": "Location"
@@ -1562,7 +1561,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 162,
                 "column": 21,
                 "node_type": "Location"
@@ -1572,7 +1571,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_checker/examples/bookstore.scilla",
+                      "../scilla_static/examples/bookstore.scilla",
                     "line": 162,
                     "column": 32,
                     "node_type": "Location"
@@ -1583,7 +1582,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_checker/examples/bookstore.scilla",
+                      "../scilla_static/examples/bookstore.scilla",
                     "line": 162,
                     "column": 40,
                     "node_type": "Location"
@@ -1594,8 +1593,7 @@
               ],
               "builtin_function": {
                 "loc": {
-                  "source_file":
-                    "../scilla_checker/examples/bookstore.scilla",
+                  "source_file": "../scilla_static/examples/bookstore.scilla",
                   "line": 162,
                   "column": 29,
                   "node_type": "Location"
@@ -1607,14 +1605,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/bookstore.scilla",
+              "source_file": "../scilla_static/examples/bookstore.scilla",
               "line": 163,
               "column": 5,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 163,
                 "column": 11,
                 "node_type": "Location"
@@ -1628,7 +1626,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 167,
                       "column": 9,
                       "node_type": "Location"
@@ -1637,7 +1635,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 167,
                         "column": 20,
                         "node_type": "Location"
@@ -1648,7 +1646,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 167,
                         "column": 22,
                         "node_type": "Location"
@@ -1657,7 +1655,7 @@
                       "variable": {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 167,
                           "column": 22,
                           "node_type": "Location"
@@ -1669,18 +1667,22 @@
                       "expression": {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 167,
                           "column": 34,
                           "node_type": "Location"
                         },
                         "node_type": "LiteralExpression",
-                        "value": { "node_type": "UintLiteral", "value": "3" }
+                        "value": {
+                          "node_type": "UintLiteral",
+                          "value": "3",
+                          "width": 32
+                        }
                       },
                       "body": {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 168,
                           "column": 25,
                           "node_type": "Location"
@@ -1690,7 +1692,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 168,
                               "column": 36,
                               "node_type": "Location"
@@ -1701,7 +1703,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 168,
                               "column": 48,
                               "node_type": "Location"
@@ -1713,7 +1715,7 @@
                         "builtin_function": {
                           "loc": {
                             "source_file":
-                              "../scilla_checker/examples/bookstore.scilla",
+                              "../scilla_static/examples/bookstore.scilla",
                             "line": 168,
                             "column": 33,
                             "node_type": "Location"
@@ -1727,7 +1729,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 169,
                       "column": 9,
                       "node_type": "Location"
@@ -1735,7 +1737,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 169,
                         "column": 15,
                         "node_type": "Location"
@@ -1749,7 +1751,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 172,
                               "column": 13,
                               "node_type": "Location"
@@ -1758,7 +1760,7 @@
                             "lhs": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 172,
                                 "column": 24,
                                 "node_type": "Location"
@@ -1769,7 +1771,7 @@
                             "rhs_expr": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 172,
                                 "column": 26,
                                 "node_type": "Location"
@@ -1781,7 +1783,7 @@
                                 {
                                   "loc": {
                                     "source_file":
-                                      "../scilla_checker/examples/bookstore.scilla",
+                                      "../scilla_static/examples/bookstore.scilla",
                                     "line": 172,
                                     "column": 33,
                                     "node_type": "Location"
@@ -1792,7 +1794,7 @@
                                 {
                                   "loc": {
                                     "source_file":
-                                      "../scilla_checker/examples/bookstore.scilla",
+                                      "../scilla_static/examples/bookstore.scilla",
                                     "line": 172,
                                     "column": 38,
                                     "node_type": "Location"
@@ -1806,7 +1808,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 173,
                               "column": 13,
                               "node_type": "Location"
@@ -1815,7 +1817,7 @@
                             "map_name": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 173,
                                 "column": 13,
                                 "node_type": "Location"
@@ -1826,7 +1828,7 @@
                             "rhs": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 173,
                                 "column": 40,
                                 "node_type": "Location"
@@ -1838,7 +1840,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 173,
                                   "column": 21,
                                   "node_type": "Location"
@@ -1851,7 +1853,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 174,
                               "column": 13,
                               "node_type": "Location"
@@ -1860,7 +1862,7 @@
                             "lhs": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 174,
                                 "column": 20,
                                 "node_type": "Location"
@@ -1871,7 +1873,7 @@
                             "rhs_expr": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 174,
                                 "column": 22,
                                 "node_type": "Location"
@@ -1885,7 +1887,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 175,
                               "column": 13,
                               "node_type": "Location"
@@ -1893,7 +1895,7 @@
                             "arg": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 175,
                                 "column": 13,
                                 "node_type": "Location"
@@ -1905,7 +1907,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 175,
                                   "column": 29,
                                   "node_type": "Location"
@@ -1916,7 +1918,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 175,
                                   "column": 36,
                                   "node_type": "Location"
@@ -1927,7 +1929,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 175,
                                   "column": 49,
                                   "node_type": "Location"
@@ -1951,7 +1953,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 178,
                               "column": 13,
                               "node_type": "Location"
@@ -1960,7 +1962,7 @@
                             "lhs": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 178,
                                 "column": 20,
                                 "node_type": "Location"
@@ -1971,7 +1973,7 @@
                             "rhs_expr": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 178,
                                 "column": 22,
                                 "node_type": "Location"
@@ -1985,7 +1987,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 179,
                               "column": 13,
                               "node_type": "Location"
@@ -1994,7 +1996,7 @@
                             "lhs": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 179,
                                 "column": 17,
                                 "node_type": "Location"
@@ -2005,7 +2007,7 @@
                             "rhs_expr": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 179,
                                 "column": 43,
                                 "node_type": "Location"
@@ -2020,7 +2022,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 180,
                               "column": 13,
                               "node_type": "Location"
@@ -2028,7 +2030,7 @@
                             "arg": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 180,
                                 "column": 13,
                                 "node_type": "Location"
@@ -2040,7 +2042,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 180,
                                   "column": 29,
                                   "node_type": "Location"
@@ -2051,7 +2053,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 180,
                                   "column": 36,
                                   "node_type": "Location"
@@ -2062,7 +2064,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 180,
                                   "column": 56,
                                   "node_type": "Location"
@@ -2097,7 +2099,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 184,
                       "column": 11,
                       "node_type": "Location"
@@ -2106,7 +2108,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 184,
                         "column": 18,
                         "node_type": "Location"
@@ -2117,7 +2119,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 184,
                         "column": 20,
                         "node_type": "Location"
@@ -2131,7 +2133,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 185,
                       "column": 11,
                       "node_type": "Location"
@@ -2140,7 +2142,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 185,
                         "column": 15,
                         "node_type": "Location"
@@ -2151,7 +2153,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 185,
                         "column": 42,
                         "node_type": "Location"
@@ -2166,7 +2168,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 186,
                       "column": 11,
                       "node_type": "Location"
@@ -2174,7 +2176,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 186,
                         "column": 11,
                         "node_type": "Location"
@@ -2186,7 +2188,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 186,
                           "column": 27,
                           "node_type": "Location"
@@ -2197,7 +2199,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 186,
                           "column": 34,
                           "node_type": "Location"
@@ -2208,7 +2210,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 186,
                           "column": 54,
                           "node_type": "Location"
@@ -2238,7 +2240,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 195,
                 "column": 20,
                 "node_type": "Location"
@@ -2252,7 +2254,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 195,
                 "column": 40,
                 "node_type": "Location"
@@ -2266,7 +2268,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 195,
                 "column": 56,
                 "node_type": "Location"
@@ -2280,7 +2282,7 @@
         ],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 195,
             "column": 12,
             "node_type": "Location"
@@ -2291,14 +2293,14 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/bookstore.scilla",
+              "source_file": "../scilla_static/examples/bookstore.scilla",
               "line": 200,
               "column": 5,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 200,
                 "column": 13,
                 "node_type": "Location"
@@ -2308,7 +2310,7 @@
             },
             "rhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 200,
                 "column": 16,
                 "node_type": "Location"
@@ -2320,14 +2322,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/bookstore.scilla",
+              "source_file": "../scilla_static/examples/bookstore.scilla",
               "line": 201,
               "column": 5,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 201,
                 "column": 11,
                 "node_type": "Location"
@@ -2341,7 +2343,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 203,
                       "column": 7,
                       "node_type": "Location"
@@ -2350,7 +2352,7 @@
                     "map_name": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 203,
                         "column": 33,
                         "node_type": "Location"
@@ -2361,7 +2363,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 203,
                         "column": 7,
                         "node_type": "Location"
@@ -2373,7 +2375,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 203,
                           "column": 47,
                           "node_type": "Location"
@@ -2387,7 +2389,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 204,
                       "column": 7,
                       "node_type": "Location"
@@ -2395,7 +2397,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 204,
                         "column": 13,
                         "node_type": "Location"
@@ -2409,7 +2411,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 206,
                               "column": 9,
                               "node_type": "Location"
@@ -2418,7 +2420,7 @@
                             "lhs": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 206,
                                 "column": 16,
                                 "node_type": "Location"
@@ -2429,7 +2431,7 @@
                             "rhs_expr": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 206,
                                 "column": 22,
                                 "node_type": "Location"
@@ -2444,7 +2446,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 207,
                               "column": 9,
                               "node_type": "Location"
@@ -2453,7 +2455,7 @@
                             "lhs": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 207,
                                 "column": 16,
                                 "node_type": "Location"
@@ -2464,7 +2466,7 @@
                             "rhs_expr": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 207,
                                 "column": 18,
                                 "node_type": "Location"
@@ -2478,7 +2480,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 208,
                               "column": 9,
                               "node_type": "Location"
@@ -2486,7 +2488,7 @@
                             "arg": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 208,
                                 "column": 9,
                                 "node_type": "Location"
@@ -2498,7 +2500,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 208,
                                   "column": 23,
                                   "node_type": "Location"
@@ -2509,7 +2511,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 208,
                                   "column": 30,
                                   "node_type": "Location"
@@ -2520,7 +2522,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 208,
                                   "column": 48,
                                   "node_type": "Location"
@@ -2531,7 +2533,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 208,
                                   "column": 55,
                                   "node_type": "Location"
@@ -2555,7 +2557,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 213,
                               "column": 9,
                               "node_type": "Location"
@@ -2564,7 +2566,7 @@
                             "lhs": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 213,
                                 "column": 18,
                                 "node_type": "Location"
@@ -2575,7 +2577,7 @@
                             "rhs_expr": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 213,
                                 "column": 20,
                                 "node_type": "Location"
@@ -2587,7 +2589,7 @@
                                 {
                                   "loc": {
                                     "source_file":
-                                      "../scilla_checker/examples/bookstore.scilla",
+                                      "../scilla_static/examples/bookstore.scilla",
                                     "line": 213,
                                     "column": 25,
                                     "node_type": "Location"
@@ -2598,7 +2600,7 @@
                                 {
                                   "loc": {
                                     "source_file":
-                                      "../scilla_checker/examples/bookstore.scilla",
+                                      "../scilla_static/examples/bookstore.scilla",
                                     "line": 213,
                                     "column": 36,
                                     "node_type": "Location"
@@ -2612,7 +2614,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 216,
                               "column": 9,
                               "node_type": "Location"
@@ -2621,7 +2623,7 @@
                             "map_name": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 216,
                                 "column": 9,
                                 "node_type": "Location"
@@ -2632,7 +2634,7 @@
                             "rhs": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 216,
                                 "column": 35,
                                 "node_type": "Location"
@@ -2644,7 +2646,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 216,
                                   "column": 23,
                                   "node_type": "Location"
@@ -2657,7 +2659,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 218,
                               "column": 9,
                               "node_type": "Location"
@@ -2666,7 +2668,7 @@
                             "lhs": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 218,
                                 "column": 16,
                                 "node_type": "Location"
@@ -2677,7 +2679,7 @@
                             "rhs_expr": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 218,
                                 "column": 22,
                                 "node_type": "Location"
@@ -2692,7 +2694,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 219,
                               "column": 9,
                               "node_type": "Location"
@@ -2701,7 +2703,7 @@
                             "lhs": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 219,
                                 "column": 16,
                                 "node_type": "Location"
@@ -2712,7 +2714,7 @@
                             "rhs_expr": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 219,
                                 "column": 18,
                                 "node_type": "Location"
@@ -2726,7 +2728,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 220,
                               "column": 9,
                               "node_type": "Location"
@@ -2734,7 +2736,7 @@
                             "arg": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 220,
                                 "column": 9,
                                 "node_type": "Location"
@@ -2746,7 +2748,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 220,
                                   "column": 23,
                                   "node_type": "Location"
@@ -2757,7 +2759,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 220,
                                   "column": 30,
                                   "node_type": "Location"
@@ -2768,7 +2770,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 220,
                                   "column": 43,
                                   "node_type": "Location"
@@ -2779,7 +2781,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 220,
                                   "column": 50,
                                   "node_type": "Location"
@@ -2814,7 +2816,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 224,
                       "column": 7,
                       "node_type": "Location"
@@ -2823,7 +2825,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 224,
                         "column": 14,
                         "node_type": "Location"
@@ -2834,7 +2836,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 224,
                         "column": 20,
                         "node_type": "Location"
@@ -2849,7 +2851,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 225,
                       "column": 7,
                       "node_type": "Location"
@@ -2858,7 +2860,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 225,
                         "column": 14,
                         "node_type": "Location"
@@ -2869,7 +2871,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 225,
                         "column": 16,
                         "node_type": "Location"
@@ -2883,7 +2885,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 226,
                       "column": 7,
                       "node_type": "Location"
@@ -2891,7 +2893,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 226,
                         "column": 7,
                         "node_type": "Location"
@@ -2903,7 +2905,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 226,
                           "column": 21,
                           "node_type": "Location"
@@ -2914,7 +2916,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 226,
                           "column": 28,
                           "node_type": "Location"
@@ -2925,7 +2927,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 226,
                           "column": 48,
                           "node_type": "Location"
@@ -2936,7 +2938,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 226,
                           "column": 55,
                           "node_type": "Location"
@@ -2966,7 +2968,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 235,
                 "column": 23,
                 "node_type": "Location"
@@ -2980,7 +2982,7 @@
         ],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 235,
             "column": 12,
             "node_type": "Location"
@@ -2991,14 +2993,14 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/bookstore.scilla",
+              "source_file": "../scilla_static/examples/bookstore.scilla",
               "line": 239,
               "column": 5,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 239,
                 "column": 13,
                 "node_type": "Location"
@@ -3008,7 +3010,7 @@
             },
             "rhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 239,
                 "column": 16,
                 "node_type": "Location"
@@ -3020,14 +3022,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/bookstore.scilla",
+              "source_file": "../scilla_static/examples/bookstore.scilla",
               "line": 240,
               "column": 5,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 240,
                 "column": 11,
                 "node_type": "Location"
@@ -3041,7 +3043,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 242,
                       "column": 7,
                       "node_type": "Location"
@@ -3050,7 +3052,7 @@
                     "map_name": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 242,
                         "column": 19,
                         "node_type": "Location"
@@ -3061,7 +3063,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 242,
                         "column": 7,
                         "node_type": "Location"
@@ -3073,7 +3075,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 242,
                           "column": 33,
                           "node_type": "Location"
@@ -3087,7 +3089,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 243,
                       "column": 7,
                       "node_type": "Location"
@@ -3095,7 +3097,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 243,
                         "column": 13,
                         "node_type": "Location"
@@ -3109,7 +3111,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 245,
                               "column": 9,
                               "node_type": "Location"
@@ -3118,7 +3120,7 @@
                             "lhs": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 245,
                                 "column": 16,
                                 "node_type": "Location"
@@ -3129,7 +3131,7 @@
                             "rhs_expr": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 245,
                                 "column": 25,
                                 "node_type": "Location"
@@ -3144,7 +3146,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 246,
                               "column": 9,
                               "node_type": "Location"
@@ -3153,7 +3155,7 @@
                             "lhs": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 246,
                                 "column": 16,
                                 "node_type": "Location"
@@ -3164,7 +3166,7 @@
                             "rhs_expr": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 246,
                                 "column": 18,
                                 "node_type": "Location"
@@ -3178,7 +3180,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 247,
                               "column": 9,
                               "node_type": "Location"
@@ -3186,7 +3188,7 @@
                             "arg": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 247,
                                 "column": 9,
                                 "node_type": "Location"
@@ -3198,7 +3200,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 247,
                                   "column": 23,
                                   "node_type": "Location"
@@ -3209,7 +3211,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 247,
                                   "column": 30,
                                   "node_type": "Location"
@@ -3220,7 +3222,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 247,
                                   "column": 43,
                                   "node_type": "Location"
@@ -3231,7 +3233,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 247,
                                   "column": 50,
                                   "node_type": "Location"
@@ -3245,7 +3247,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 248,
                               "column": 9,
                               "node_type": "Location"
@@ -3254,7 +3256,7 @@
                             "map_name": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 248,
                                 "column": 16,
                                 "node_type": "Location"
@@ -3267,7 +3269,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 248,
                                   "column": 30,
                                   "node_type": "Location"
@@ -3291,7 +3293,7 @@
                                   "variable": {
                                     "loc": {
                                       "source_file":
-                                        "../scilla_checker/examples/bookstore.scilla",
+                                        "../scilla_static/examples/bookstore.scilla",
                                       "line": 244,
                                       "column": 20,
                                       "node_type": "Location"
@@ -3312,7 +3314,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 250,
                               "column": 9,
                               "node_type": "Location"
@@ -3321,7 +3323,7 @@
                             "lhs": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 250,
                                 "column": 20,
                                 "node_type": "Location"
@@ -3332,7 +3334,7 @@
                             "rhs_expr": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 250,
                                 "column": 39,
                                 "node_type": "Location"
@@ -3347,7 +3349,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 251,
                               "column": 9,
                               "node_type": "Location"
@@ -3356,7 +3358,7 @@
                             "lhs": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 251,
                                 "column": 16,
                                 "node_type": "Location"
@@ -3367,7 +3369,7 @@
                             "rhs_expr": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 251,
                                 "column": 25,
                                 "node_type": "Location"
@@ -3382,7 +3384,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 252,
                               "column": 9,
                               "node_type": "Location"
@@ -3391,7 +3393,7 @@
                             "lhs": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 252,
                                 "column": 16,
                                 "node_type": "Location"
@@ -3402,7 +3404,7 @@
                             "rhs_expr": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 252,
                                 "column": 18,
                                 "node_type": "Location"
@@ -3416,7 +3418,7 @@
                           {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/bookstore.scilla",
+                                "../scilla_static/examples/bookstore.scilla",
                               "line": 253,
                               "column": 9,
                               "node_type": "Location"
@@ -3424,7 +3426,7 @@
                             "arg": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/bookstore.scilla",
+                                  "../scilla_static/examples/bookstore.scilla",
                                 "line": 253,
                                 "column": 9,
                                 "node_type": "Location"
@@ -3436,7 +3438,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 253,
                                   "column": 23,
                                   "node_type": "Location"
@@ -3447,7 +3449,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 253,
                                   "column": 30,
                                   "node_type": "Location"
@@ -3458,7 +3460,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 253,
                                   "column": 50,
                                   "node_type": "Location"
@@ -3469,7 +3471,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/bookstore.scilla",
+                                    "../scilla_static/examples/bookstore.scilla",
                                   "line": 253,
                                   "column": 57,
                                   "node_type": "Location"
@@ -3504,7 +3506,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 257,
                       "column": 7,
                       "node_type": "Location"
@@ -3513,7 +3515,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 257,
                         "column": 14,
                         "node_type": "Location"
@@ -3524,7 +3526,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 257,
                         "column": 20,
                         "node_type": "Location"
@@ -3539,7 +3541,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 258,
                       "column": 7,
                       "node_type": "Location"
@@ -3548,7 +3550,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 258,
                         "column": 14,
                         "node_type": "Location"
@@ -3559,7 +3561,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 258,
                         "column": 16,
                         "node_type": "Location"
@@ -3573,7 +3575,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 259,
                       "column": 7,
                       "node_type": "Location"
@@ -3581,7 +3583,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 259,
                         "column": 7,
                         "node_type": "Location"
@@ -3593,7 +3595,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 259,
                           "column": 21,
                           "node_type": "Location"
@@ -3604,7 +3606,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 259,
                           "column": 28,
                           "node_type": "Location"
@@ -3615,7 +3617,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 259,
                           "column": 48,
                           "node_type": "Location"
@@ -3626,7 +3628,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 259,
                           "column": 55,
                           "node_type": "Location"
@@ -3656,7 +3658,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 268,
                 "column": 23,
                 "node_type": "Location"
@@ -3670,7 +3672,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 268,
                 "column": 40,
                 "node_type": "Location"
@@ -3684,7 +3686,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 268,
                 "column": 60,
                 "node_type": "Location"
@@ -3698,7 +3700,7 @@
         ],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/bookstore.scilla",
+            "source_file": "../scilla_static/examples/bookstore.scilla",
             "line": 268,
             "column": 12,
             "node_type": "Location"
@@ -3709,7 +3711,7 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/bookstore.scilla",
+              "source_file": "../scilla_static/examples/bookstore.scilla",
               "line": 273,
               "column": 5,
               "node_type": "Location"
@@ -3717,7 +3719,7 @@
             "node_type": "MapGetStatement",
             "map_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 273,
                 "column": 31,
                 "node_type": "Location"
@@ -3727,7 +3729,7 @@
             },
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 273,
                 "column": 5,
                 "node_type": "Location"
@@ -3738,8 +3740,7 @@
             "keys": [
               {
                 "loc": {
-                  "source_file":
-                    "../scilla_checker/examples/bookstore.scilla",
+                  "source_file": "../scilla_static/examples/bookstore.scilla",
                   "line": 273,
                   "column": 45,
                   "node_type": "Location"
@@ -3752,14 +3753,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/bookstore.scilla",
+              "source_file": "../scilla_static/examples/bookstore.scilla",
               "line": 274,
               "column": 5,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file": "../scilla_checker/examples/bookstore.scilla",
+                "source_file": "../scilla_static/examples/bookstore.scilla",
                 "line": 274,
                 "column": 11,
                 "node_type": "Location"
@@ -3773,7 +3774,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 277,
                       "column": 9,
                       "node_type": "Location"
@@ -3782,7 +3783,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 277,
                         "column": 16,
                         "node_type": "Location"
@@ -3793,7 +3794,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 277,
                         "column": 25,
                         "node_type": "Location"
@@ -3808,7 +3809,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 278,
                       "column": 9,
                       "node_type": "Location"
@@ -3817,7 +3818,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 278,
                         "column": 16,
                         "node_type": "Location"
@@ -3828,7 +3829,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 278,
                         "column": 18,
                         "node_type": "Location"
@@ -3842,7 +3843,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 279,
                       "column": 9,
                       "node_type": "Location"
@@ -3850,7 +3851,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 279,
                         "column": 9,
                         "node_type": "Location"
@@ -3862,7 +3863,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 279,
                           "column": 23,
                           "node_type": "Location"
@@ -3873,7 +3874,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 279,
                           "column": 30,
                           "node_type": "Location"
@@ -3884,7 +3885,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 279,
                           "column": 50,
                           "node_type": "Location"
@@ -3895,7 +3896,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 279,
                           "column": 57,
                           "node_type": "Location"
@@ -3919,7 +3920,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 284,
                       "column": 9,
                       "node_type": "Location"
@@ -3928,7 +3929,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 284,
                         "column": 18,
                         "node_type": "Location"
@@ -3939,7 +3940,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 284,
                         "column": 20,
                         "node_type": "Location"
@@ -3951,7 +3952,7 @@
                         {
                           "loc": {
                             "source_file":
-                              "../scilla_checker/examples/bookstore.scilla",
+                              "../scilla_static/examples/bookstore.scilla",
                             "line": 284,
                             "column": 25,
                             "node_type": "Location"
@@ -3962,7 +3963,7 @@
                         {
                           "loc": {
                             "source_file":
-                              "../scilla_checker/examples/bookstore.scilla",
+                              "../scilla_static/examples/bookstore.scilla",
                             "line": 284,
                             "column": 36,
                             "node_type": "Location"
@@ -3976,7 +3977,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 286,
                       "column": 9,
                       "node_type": "Location"
@@ -3985,7 +3986,7 @@
                     "map_name": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 286,
                         "column": 9,
                         "node_type": "Location"
@@ -3996,7 +3997,7 @@
                     "rhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 286,
                         "column": 35,
                         "node_type": "Location"
@@ -4008,7 +4009,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 286,
                           "column": 23,
                           "node_type": "Location"
@@ -4021,7 +4022,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 288,
                       "column": 9,
                       "node_type": "Location"
@@ -4030,7 +4031,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 288,
                         "column": 16,
                         "node_type": "Location"
@@ -4041,7 +4042,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 288,
                         "column": 25,
                         "node_type": "Location"
@@ -4056,7 +4057,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 289,
                       "column": 9,
                       "node_type": "Location"
@@ -4065,7 +4066,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 289,
                         "column": 16,
                         "node_type": "Location"
@@ -4076,7 +4077,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 289,
                         "column": 18,
                         "node_type": "Location"
@@ -4090,7 +4091,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/bookstore.scilla",
+                        "../scilla_static/examples/bookstore.scilla",
                       "line": 290,
                       "column": 9,
                       "node_type": "Location"
@@ -4098,7 +4099,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/bookstore.scilla",
+                          "../scilla_static/examples/bookstore.scilla",
                         "line": 290,
                         "column": 9,
                         "node_type": "Location"
@@ -4110,7 +4111,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 290,
                           "column": 23,
                           "node_type": "Location"
@@ -4121,7 +4122,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 290,
                           "column": 30,
                           "node_type": "Location"
@@ -4132,7 +4133,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 290,
                           "column": 43,
                           "node_type": "Location"
@@ -4143,7 +4144,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/bookstore.scilla",
+                            "../scilla_static/examples/bookstore.scilla",
                           "line": 290,
                           "column": 50,
                           "node_type": "Location"

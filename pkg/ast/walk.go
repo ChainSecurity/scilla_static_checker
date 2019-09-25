@@ -12,7 +12,7 @@ type Visitor interface {
 
 func walkPayload(v Visitor, p *Payload) {
 	switch n := (*p).(type) {
-	case *PayloadLitral:
+	case *PayloadLiteral:
 		Walk(v, n.Lit)
 	case *PayloadVariable:
 		Walk(v, n.Val)

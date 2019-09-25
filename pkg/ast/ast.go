@@ -77,10 +77,12 @@ type ByStrXLiteral struct {
 	Val string `json:"value"`
 }
 type IntLiteral struct {
-	Val string `json:"value"`
+	Width int    `json:"width"`
+	Val   string `json:"value"`
 }
 type UintLiteral struct {
-	Val string `json:"value"`
+	Width int    `json:"width"`
+	Val   string `json:"value"`
 }
 
 type MapLiteral struct {
@@ -132,7 +134,7 @@ type FunExpression struct {
 	AnnotatedNode
 	Lhs     *Identifier `json:"lhs"`
 	RhsExpr *Expression `json:"rhs_expr"`
-	FunType string      `json:"fun_type"`
+	LhsType string      `json:"lhs_type"`
 }
 
 type AppExpression struct {
@@ -185,7 +187,7 @@ func (*TFunExpression) exprNode()     {}
 func (*TAppExpression) exprNode()     {}
 func (*FixpointExpression) exprNode() {}
 
-type PayloadLitral struct {
+type PayloadLiteral struct {
 	Lit *Literal `json:"literal"`
 }
 
@@ -193,7 +195,7 @@ type PayloadVariable struct {
 	Val *Identifier `json:"value"`
 }
 
-func (*PayloadLitral) payloadNode()   {}
+func (*PayloadLiteral) payloadNode()  {}
 func (*PayloadVariable) payloadNode() {}
 
 type MessageArgument struct {
@@ -307,6 +309,7 @@ func (*CallProcStatement) stmtNode()      {}
 func (*ThrowStatement) stmtNode()         {}
 
 type LibraryVariable struct {
+	Name    *Identifier `json:"name"`
 	VarType string      `json:"variable_type"` // Optional
 	Expr    *Expression `json:"expression"`
 }
