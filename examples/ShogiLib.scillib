@@ -255,3 +255,4 @@ let init_captured_pieces =
     let res = builtin put res player1 pieces in
     let res = builtin put res player2 pieces in
     res
+

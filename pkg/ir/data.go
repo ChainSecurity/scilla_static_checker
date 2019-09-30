@@ -3,11 +3,14 @@ package ir
 // Typed λ-calculus
 
 type (
-	// Data :
-	Data interface{ isData() }
-
 	// Type :
 	Type interface{ isType() }
+
+	// Data :
+	Data interface {
+		isData()
+		Type() Type
+	}
 
 	// Kind :
 	Kind interface{ isKind() }
@@ -15,7 +18,7 @@ type (
 
 type (
 	// DataVar :
-	DataVar struct{ Type Type }
+	DataVar struct{ DataType Type }
 
 	// TypeVar :
 	TypeVar struct{ Kind Kind }
@@ -24,7 +27,9 @@ type (
 	SetKind struct{}
 )
 
-func (*DataVar) isData() {}
+func (*DataVar) isData()      {}
+func (x *DataVar) Type() Type { return x.DataType }
+
 func (*TypeVar) isType() {}
 func (*SetKind) isKind() {}
 
@@ -72,14 +77,16 @@ type (
 	}
 )
 
-func (*AppDD) isData() {}
-func (*AppTD) isData() {}
-func (*AppTT) isType() {}
+func (*AppDD) isData()      {}
+func (a *AppDD) Type() Type { return a.To.Type() }
+func (*AppTD) isData()      {}
+func (a *AppTD) Type() Type { return a.To.Type() }
+func (*AppTT) isType()      {}
 
 type (
 	// AbsDD :
 	AbsDD struct {
-		Vars []DataVar
+		Vars []*DataVar
 		Term Data
 	}
 
@@ -96,9 +103,11 @@ type (
 	}
 )
 
-func (*AbsDD) isData() {}
-func (*AbsTD) isData() {}
-func (*AbsTT) isType() {}
+func (*AbsDD) isData()      {}
+func (a *AbsDD) Type() Type { return a.Term.Type() }
+func (*AbsTD) isData()      {}
+func (a *AbsTD) Type() Type { return a.Term.Type() }
+func (*AbsTT) isType()      {}
 
 // Scilla
 type (
@@ -139,58 +148,66 @@ func (*MapType) isType() {}
 type (
 	// Int :
 	Int struct {
-		Type *IntType
-		Data string
+		IntType *IntType
+		Data    string
 	}
 
 	// Nat :
 	Nat struct {
-		Type *NatType
-		Data string
+		NatType *NatType
+		Data    string
 	}
 
 	// Raw :
 	Raw struct {
-		Type *RawType
-		Data string
+		RawType *RawType
+		Data    string
 	}
 
 	// Str :
 	Str struct {
-		Type *StrType
-		Data string
+		StrType *StrType
+		Data    string
 	}
 
 	// Bnr :
 	Bnr struct {
-		Type *BnrType
-		Data string
+		BnrType *BnrType
+		Data    string
 	}
 
 	// Exc :
 	Exc struct {
-		Type *ExcType
-		Data string
+		ExcType *ExcType
+		Data    string
 	}
 
 	// Msg :
 	Msg struct {
-		Type *MsgType
-		Data map[string]string
+		MsgType *MsgType
+		Data    map[string]string
 	}
 
 	// Map :
 	Map struct {
-		Type *MapType
-		Data map[string]string
+		MapType *MapType
+		Data    map[string]string
 	}
 )
 
-func (*Int) isData() {}
-func (*Nat) isData() {}
-func (*Raw) isData() {}
-func (*Str) isData() {}
-func (*Bnr) isData() {}
-func (*Exc) isData() {}
-func (*Msg) isData() {}
-func (*Map) isData() {}
+func (*Int) isData()      {}
+func (*Nat) isData()      {}
+func (*Raw) isData()      {}
+func (*Str) isData()      {}
+func (*Bnr) isData()      {}
+func (*Exc) isData()      {}
+func (*Msg) isData()      {}
+func (*Map) isData()      {}
+func (x *Int) Type() Type { return x.IntType }
+func (x *Nat) Type() Type { return x.NatType }
+func (x *Raw) Type() Type { return x.RawType }
+func (x *Str) Type() Type { return x.StrType }
+func (x *Bnr) Type() Type { return x.BnrType }
+func (x *Exc) Type() Type { return x.ExcType }
+func (x *Msg) Type() Type { return x.MsgType }
+func (x *Map) Type() Type { return x.MapType }

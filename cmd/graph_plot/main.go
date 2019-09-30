@@ -17,14 +17,13 @@ func main() {
 	defer jsonFile.Close()
 
 	byteValue, _ := ioutil.ReadAll(jsonFile)
-	fmt.Println("Parsing")
 	cm, err := ast.Parse_mod(byteValue)
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println("Finished parsing")
 	b := ir.BuildCFG(cm)
-	_ = b
+	ir.Plot(b)
+
 	//fmt.Println(res["node_type"])
 
 	//fmt.Println(res.Fruits[0])

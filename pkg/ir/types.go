@@ -60,12 +60,12 @@ func StdLib() BuiltinADTs {
 		"ff": {},
 	}
 	tt = Enum{
-		Type: &boolean,
-		Case: "tt",
+		EnumType: &boolean,
+		Case:     "tt",
 	}
 	ff = Enum{
-		Type: &boolean,
-		Case: "ff",
+		EnumType: &boolean,
+		Case:     "ff",
 	}
 
 	list = AbsTT{
@@ -85,7 +85,7 @@ func StdLib() BuiltinADTs {
 		},
 	}
 	empty.Term = &Enum{
-		Type: &AppTT{
+		EnumType: &AppTT{
 			Args: []Type{&empty.Vars[0]},
 			To:   &list,
 		},
@@ -100,10 +100,10 @@ func StdLib() BuiltinADTs {
 		Term: &stackAbsDD,
 	}
 	stackAbsDD = AbsDD{
-		Vars: []DataVar{
-			DataVar{Type: &stack.Vars[0]},
-			DataVar{
-				Type: &AppTT{
+		Vars: []*DataVar{
+			&DataVar{DataType: &stack.Vars[0]},
+			&DataVar{
+				DataType: &AppTT{
 					Args: []Type{&stack.Vars[0]},
 					To:   &list,
 				},
@@ -111,12 +111,12 @@ func StdLib() BuiltinADTs {
 		},
 	}
 	stackAbsDD.Term = &Enum{
-		Type: &AppTT{
+		EnumType: &AppTT{
 			Args: []Type{&stack.Vars[0]},
 			To:   &list,
 		},
 		Case: "stack",
-		Data: []Data{&stackAbsDD.Vars[0], &stackAbsDD.Vars[1]},
+		Data: []Data{stackAbsDD.Vars[0], stackAbsDD.Vars[1]},
 	}
 
 	isEmpty = AbsTD{
@@ -126,9 +126,9 @@ func StdLib() BuiltinADTs {
 		Term: &isEmptyAbsDD,
 	}
 	isEmptyAbsDD = AbsDD{
-		Vars: []DataVar{
-			DataVar{
-				Type: &AppTT{
+		Vars: []*DataVar{
+			&DataVar{
+				DataType: &AppTT{
 					Args: []Type{&isEmpty.Vars[0]},
 					To:   &list,
 				},
@@ -136,21 +136,21 @@ func StdLib() BuiltinADTs {
 		},
 	}
 	isEmptyAbsDD.Term = &PickData{
-		From: &isEmptyAbsDD.Vars[0],
+		From: isEmptyAbsDD.Vars[0],
 		With: []DataCase{
 			DataCase{
-				Bind: Bind{
-					Type: isEmptyAbsDD.Vars[0].Type,
-					When: &When{Case: "empty", Data: []Bind{}},
+				Bind: &Bind{
+					BindType: isEmptyAbsDD.Vars[0].Type(),
+					When:     &When{Case: "empty", Data: []*Bind{}},
 				},
 				Body: &tt,
 			},
 			DataCase{
-				Bind: Bind{
-					Type: isEmptyAbsDD.Vars[0].Type,
-					When: &When{Case: "stack", Data: []Bind{
-						Bind{Type: &isEmpty.Vars[0]},
-						Bind{Type: isEmptyAbsDD.Vars[0].Type},
+				Bind: &Bind{
+					BindType: isEmptyAbsDD.Vars[0].Type(),
+					When: &When{Case: "stack", Data: []*Bind{
+						&Bind{BindType: &isEmpty.Vars[0]},
+						&Bind{BindType: isEmptyAbsDD.Vars[0].Type()},
 					}},
 				},
 				Body: &ff,
@@ -175,7 +175,7 @@ func StdLib() BuiltinADTs {
 		},
 	}
 	none.Term = &Enum{
-		Type: &AppTT{
+		EnumType: &AppTT{
 			Args: []Type{&none.Vars[0]},
 			To:   &option,
 		},
@@ -190,15 +190,15 @@ func StdLib() BuiltinADTs {
 		Term: &someAbsDD,
 	}
 	someAbsDD = AbsDD{
-		Vars: []DataVar{DataVar{Type: &some.Vars[0]}},
+		Vars: []*DataVar{&DataVar{DataType: &some.Vars[0]}},
 	}
 	someAbsDD.Term = &Enum{
-		Type: &AppTT{
+		EnumType: &AppTT{
 			Args: []Type{&some.Vars[0]},
 			To:   &option,
 		},
 		Case: "some",
-		Data: []Data{&someAbsDD.Vars[0]},
+		Data: []Data{someAbsDD.Vars[0]},
 	}
 
 	pair = AbsTT{
@@ -221,18 +221,18 @@ func StdLib() BuiltinADTs {
 	}
 
 	pairAbsDD = AbsDD{
-		Vars: []DataVar{
-			DataVar{Type: &pair.Vars[0]},
-			DataVar{Type: &pair.Vars[1]},
+		Vars: []*DataVar{
+			&DataVar{DataType: &pair.Vars[0]},
+			&DataVar{DataType: &pair.Vars[1]},
 		},
 	}
 	pairAbsDD.Term = &Enum{
-		Type: &AppTT{
+		EnumType: &AppTT{
 			Args: []Type{&pair.Vars[0], &pair.Vars[1]},
 			To:   &pair,
 		},
 		Case: "pair",
-		Data: []Data{&pairAbsDD.Vars[0], &pairAbsDD.Vars[1]},
+		Data: []Data{pairAbsDD.Vars[0], pairAbsDD.Vars[1]},
 	}
 
 	return BuiltinADTs{

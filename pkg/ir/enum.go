@@ -7,24 +7,25 @@ func (*EnumType) isType() {}
 
 // Enum :
 type Enum struct {
-	Type Type
-	Case string
-	Data []Data
+	EnumType Type
+	Case     string
+	Data     []Data
 }
 
-func (*Enum) isData() {}
+func (*Enum) isData()      {}
+func (x *Enum) Type() Type { return x.EnumType }
 
 type (
 	// Bind :
 	Bind struct {
-		Type Type
-		When *When
+		BindType Type
+		When     *When
 	}
 
 	// When :
 	When struct {
 		Case string
-		Data []Bind
+		Data []*Bind
 	}
 )
 
@@ -37,9 +38,10 @@ type (
 
 	// DataCase :
 	DataCase struct {
-		Bind Bind
+		Bind *Bind
 		Body Data
 	}
 )
 
-func (*PickData) isData() {}
+func (*PickData) isData()       {}
+func (pd *PickData) Type() Type { return pd.With[0].Body.Type() }

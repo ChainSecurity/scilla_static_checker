@@ -9,7 +9,7 @@ import (
 func TestExample(t *testing.T) {
 	void := ir.EnumType{}
 	term := ir.DataVar{&void}
-	got, ok := term.Type.(*ir.EnumType)
+	got, ok := term.DataType.(*ir.EnumType)
 	if !ok {
 		t.Fatalf("DataVar.Type not a ConsType")
 	}

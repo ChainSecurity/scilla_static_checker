@@ -1,0 +1,167 @@
+{
+  "library": {
+    "library_name": {
+      "loc": {
+        "source_file": "../scilla_static/examples/a.scillib",
+        "line": 1,
+        "column": 1,
+        "node_type": "Location"
+      },
+      "identifier": "ALib",
+      "node_type": "Identifier"
+    },
+    "library_entries": [
+      {
+        "name": {
+          "loc": {
+            "source_file": "../scilla_static/examples/a.scillib",
+            "line": 3,
+            "column": 1,
+            "node_type": "Location"
+          },
+          "identifier": "Shape",
+          "node_type": "Identifier"
+        },
+        "node_type": "LibraryType",
+        "ctr_defs": [
+          {
+            "ctr_def_name": {
+              "loc": {
+                "source_file": "../scilla_static/examples/a.scillib",
+                "line": 4,
+                "column": 1,
+                "node_type": "Location"
+              },
+              "identifier": "Square",
+              "node_type": "Identifier"
+            },
+            "c_arg_types": [ "Uint32", "Uint32" ],
+            "node_type": "CtrDef"
+          },
+          {
+            "ctr_def_name": {
+              "loc": {
+                "source_file": "../scilla_static/examples/a.scillib",
+                "line": 5,
+                "column": 1,
+                "node_type": "Location"
+              },
+              "identifier": "Circle",
+              "node_type": "Identifier"
+            },
+            "c_arg_types": [ "Uint32", "Uint32" ],
+            "node_type": "CtrDef"
+          }
+        ]
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "../scilla_static/examples/a.scillib",
+            "line": 7,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "shape_to_int",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "../scilla_static/examples/a.scillib",
+            "line": 8,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "../scilla_static/examples/a.scillib",
+              "line": 8,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "shape",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "../scilla_static/examples/a.scillib",
+              "line": 9,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "MatchExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "../scilla_static/examples/a.scillib",
+                "line": 9,
+                "column": 11,
+                "node_type": "Location"
+              },
+              "identifier": "shape",
+              "node_type": "Identifier"
+            },
+            "cases": [
+              {
+                "node_type": "MatchExpressionCase",
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "Square",
+                  "patterns": [
+                    { "node_type": "WildcardPattern" },
+                    { "node_type": "WildcardPattern" }
+                  ]
+                },
+                "expression": {
+                  "loc": {
+                    "source_file": "../scilla_static/examples/a.scillib",
+                    "line": 10,
+                    "column": 21,
+                    "node_type": "Location"
+                  },
+                  "node_type": "LiteralExpression",
+                  "value": {
+                    "node_type": "UintLiteral",
+                    "value": "1",
+                    "width": 32
+                  }
+                }
+              },
+              {
+                "node_type": "MatchExpressionCase",
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "Circle",
+                  "patterns": [
+                    { "node_type": "WildcardPattern" },
+                    { "node_type": "WildcardPattern" }
+                  ]
+                },
+                "expression": {
+                  "loc": {
+                    "source_file": "../scilla_static/examples/a.scillib",
+                    "line": 11,
+                    "column": 22,
+                    "node_type": "Location"
+                  },
+                  "node_type": "LiteralExpression",
+                  "value": {
+                    "node_type": "UintLiteral",
+                    "value": "2",
+                    "width": 32
+                  }
+                }
+              }
+            ]
+          },
+          "lhs_type": "Shape"
+        }
+      }
+    ],
+    "node_type": "Library"
+  },
+  "external_libraries": [],
+  "node_type": "LibraryModule"
+}
