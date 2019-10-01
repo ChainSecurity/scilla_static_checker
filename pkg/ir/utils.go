@@ -185,8 +185,12 @@ func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
 	switch n := node.(type) {
 	case *ast.LibEntry:
 		builder.visitLibEntry(n)
+	case *ast.LibraryModule:
+		// do nothing
+	case *ast.Library, *ast.Identifier, *ast.Location:
+		// do nothing
 	default:
-		//fmt.Printf("%T\n", n)
+		fmt.Printf("Unhandled type: %T\n", n)
 		// do nothing
 	}
 	return builder

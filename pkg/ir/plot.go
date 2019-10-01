@@ -306,7 +306,7 @@ func directedPortedAttrGraphFrom(b *dotBuilder) graph.Multigraph {
 	return dg
 }
 
-func Plot(b *CFGBuilder) {
+func GetDot(b *CFGBuilder) string {
 	keys := make([]string, 0, len(b.GlobalVarMap))
 	for key := range b.GlobalVarMap {
 		keys = append(keys, key)
@@ -319,6 +319,6 @@ func Plot(b *CFGBuilder) {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf(string(got))
+	return string(got)
 
 }

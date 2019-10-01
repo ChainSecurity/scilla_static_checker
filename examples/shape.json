@@ -2,19 +2,19 @@
   "library": {
     "library_name": {
       "loc": {
-        "source_file": "../scilla_static/examples/a.scillib",
+        "source_file": "../scilla_static/examples/shape.scillib",
         "line": 1,
         "column": 1,
         "node_type": "Location"
       },
-      "identifier": "ALib",
+      "identifier": "ShapeLib",
       "node_type": "Identifier"
     },
     "library_entries": [
       {
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/a.scillib",
+            "source_file": "../scilla_static/examples/shape.scillib",
             "line": 3,
             "column": 1,
             "node_type": "Location"
@@ -27,7 +27,7 @@
           {
             "ctr_def_name": {
               "loc": {
-                "source_file": "../scilla_static/examples/a.scillib",
+                "source_file": "../scilla_static/examples/shape.scillib",
                 "line": 4,
                 "column": 1,
                 "node_type": "Location"
@@ -41,7 +41,7 @@
           {
             "ctr_def_name": {
               "loc": {
-                "source_file": "../scilla_static/examples/a.scillib",
+                "source_file": "../scilla_static/examples/shape.scillib",
                 "line": 5,
                 "column": 1,
                 "node_type": "Location"
@@ -58,7 +58,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/a.scillib",
+            "source_file": "../scilla_static/examples/shape.scillib",
             "line": 7,
             "column": 5,
             "node_type": "Location"
@@ -69,7 +69,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/a.scillib",
+            "source_file": "../scilla_static/examples/shape.scillib",
             "line": 8,
             "column": 3,
             "node_type": "Location"
@@ -77,7 +77,7 @@
           "node_type": "FunExpression",
           "lhs": {
             "loc": {
-              "source_file": "../scilla_static/examples/a.scillib",
+              "source_file": "../scilla_static/examples/shape.scillib",
               "line": 8,
               "column": 3,
               "node_type": "Location"
@@ -87,7 +87,7 @@
           },
           "rhs_expr": {
             "loc": {
-              "source_file": "../scilla_static/examples/a.scillib",
+              "source_file": "../scilla_static/examples/shape.scillib",
               "line": 9,
               "column": 5,
               "node_type": "Location"
@@ -95,7 +95,7 @@
             "node_type": "MatchExpression",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_static/examples/a.scillib",
+                "source_file": "../scilla_static/examples/shape.scillib",
                 "line": 9,
                 "column": 11,
                 "node_type": "Location"
@@ -116,7 +116,7 @@
                 },
                 "expression": {
                   "loc": {
-                    "source_file": "../scilla_static/examples/a.scillib",
+                    "source_file": "../scilla_static/examples/shape.scillib",
                     "line": 10,
                     "column": 21,
                     "node_type": "Location"
@@ -141,9 +141,9 @@
                 },
                 "expression": {
                   "loc": {
-                    "source_file": "../scilla_static/examples/a.scillib",
+                    "source_file": "../scilla_static/examples/shape.scillib",
                     "line": 11,
-                    "column": 22,
+                    "column": 21,
                     "node_type": "Location"
                   },
                   "node_type": "LiteralExpression",

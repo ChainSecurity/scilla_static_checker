@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ast"
 	"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ir"
@@ -21,10 +22,16 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
+	dotPath := os.Args[2]
 	b := ir.BuildCFG(cm)
-	ir.Plot(b)
-
-	//fmt.Println(res["node_type"])
-
-	//fmt.Println(res.Fruits[0])
+	dot := ir.GetDot(b)
+	f, err := os.Create(dotPath)
+	if err != nil {
+		panic(err)
+	}
+	defer f.Close()
+	w := bufio.NewWriter(f)
+	fmt.Fprint(w, dot)
+	w.Flush()
 }
