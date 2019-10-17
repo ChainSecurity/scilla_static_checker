@@ -32,30 +32,51 @@ func unmarshalASTType(rawMsg *json.RawMessage) (ASTType, error) {
 	case "PrimType":
 		var t PrimType
 		err = json.Unmarshal(*rawMsg, &t)
+		if err != nil {
+			panic(err)
+		}
 		return &t, err
 	case "MapType":
 		var t MapType
 		err = json.Unmarshal(*rawMsg, &t)
+		if err != nil {
+			panic(err)
+		}
 		return &t, err
 	case "ADT":
 		var t ADT
 		err = json.Unmarshal(*rawMsg, &t)
+		if err != nil {
+			panic(err)
+		}
 		return &t, err
 	case "FunType":
 		var t FunType
 		err = json.Unmarshal(*rawMsg, &t)
+		if err != nil {
+			panic(err)
+		}
 		return &t, err
 	case "TypeVar":
 		var t TypeVar
 		err = json.Unmarshal(*rawMsg, &t)
+		if err != nil {
+			panic(err)
+		}
 		return &t, err
 	case "PolyFun":
 		var t PolyFun
 		err = json.Unmarshal(*rawMsg, &t)
+		if err != nil {
+			panic(err)
+		}
 		return &t, err
 	case "Unit":
 		var t Unit
 		err = json.Unmarshal(*rawMsg, &t)
+		if err != nil {
+			panic(err)
+		}
 		return &t, err
 	default:
 		return nil, errors.New(fmt.Sprintf("Unsupported type found! %s\n", ntype))
@@ -286,6 +307,46 @@ func unmarshalLibEntry(rawMsg *json.RawMessage) (LibEntry, error) {
 	}
 }
 
+func (ce *ConstrExpression) UnmarshalJSON(b []byte) error {
+	var objMap map[string]*json.RawMessage
+	err := json.Unmarshal(b, &objMap)
+	if err != nil {
+		return err
+	}
+
+	var rawMsgs []*json.RawMessage
+	err = json.Unmarshal(*objMap["types"], &rawMsgs)
+	if err != nil {
+		return err
+	}
+
+	ce.Types = make([]ASTType, len(rawMsgs))
+	for index, rawMsg := range rawMsgs {
+		s, err := unmarshalASTType(rawMsg)
+		if err != nil {
+			return err
+		}
+		ce.Types[index] = s
+	}
+
+	type core struct {
+		AnnotatedNode
+		ConstructorName string        `json:"constructor_name"`
+		Args            []*Identifier `json:"args"`
+	}
+
+	var c core
+	err = json.Unmarshal(b, &c)
+	if err != nil {
+		return err
+	}
+
+	ce.AnnotatedNode = c.AnnotatedNode
+	ce.ConstructorName = c.ConstructorName
+	ce.Args = c.Args
+	return nil
+}
+
 func (le *LetExpression) UnmarshalJSON(b []byte) error {
 	var objMap map[string]*json.RawMessage
 	err := json.Unmarshal(b, &objMap)
@@ -318,9 +379,12 @@ func (le *LetExpression) UnmarshalJSON(b []byte) error {
 	}
 
 	rawMsg = objMap["variable_type"]
-	vt, err := unmarshalASTType(rawMsg)
-	if err != nil {
-		return err
+	var vt ASTType
+	if rawMsg != nil {
+		vt, err = unmarshalASTType(rawMsg)
+		if err != nil {
+			return err
+		}
 	}
 
 	le.Expr = e
@@ -371,7 +435,8 @@ func (f *Field) UnmarshalJSON(b []byte) error {
 	rawMsg = objMap["expression"]
 	e, err := unmarshalExpression(rawMsg)
 	if err != nil {
-		return err
+		//return err
+		panic(err)
 	}
 
 	type core struct {
@@ -381,13 +446,15 @@ func (f *Field) UnmarshalJSON(b []byte) error {
 	var c core
 	err = json.Unmarshal(b, &c)
 	if err != nil {
-		return err
+		//return err
+		panic(err)
 	}
 
 	rawMsg = objMap["field_type"]
 	ft, err := unmarshalASTType(rawMsg)
 	if err != nil {
-		return err
+		//return err
+		panic(err)
 	}
 
 	f.Name = c.Name
@@ -578,14 +645,14 @@ func (l *LibraryVariable) UnmarshalJSON(b []byte) error {
 	var objMap map[string]*json.RawMessage
 	err := json.Unmarshal(b, &objMap)
 	if err != nil {
-		return err
+		panic(err)
 	}
 
 	var rawMsg *json.RawMessage
 	rawMsg = objMap["expression"]
 	e, err := unmarshalExpression(rawMsg)
 	if err != nil {
-		return err
+		panic(err)
 	}
 
 	l.Expr = e
@@ -597,7 +664,7 @@ func (l *LibraryVariable) UnmarshalJSON(b []byte) error {
 	var c core
 	err = json.Unmarshal(b, &c)
 	if err != nil {
-		return err
+		panic(err)
 	}
 
 	rawMsg = objMap["variable_type"]
@@ -605,7 +672,7 @@ func (l *LibraryVariable) UnmarshalJSON(b []byte) error {
 	if rawMsg != nil {
 		vt, err = unmarshalASTType(rawMsg)
 		if err != nil {
-			return err
+			panic(err)
 		}
 	}
 
@@ -614,24 +681,28 @@ func (l *LibraryVariable) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
+func (comp *MapType) UnmarshalJSON(b []byte) error {
+	return nil
+}
+
 func (comp *Component) UnmarshalJSON(b []byte) error {
 	var objMap map[string]*json.RawMessage
 	err := json.Unmarshal(b, &objMap)
 	if err != nil {
-		return err
+		panic(err)
 	}
 
 	var rawMsgs []*json.RawMessage
 	err = json.Unmarshal(*objMap["body"], &rawMsgs)
 	if err != nil {
-		return err
+		panic(err)
 	}
 
 	comp.Body = make([]Statement, len(rawMsgs))
 	for index, rawMsg := range rawMsgs {
 		s, err := unmarshalStatement(rawMsg)
 		if err != nil {
-			return err
+			panic(err)
 		}
 		comp.Body[index] = s
 	}
@@ -644,10 +715,42 @@ func (comp *Component) UnmarshalJSON(b []byte) error {
 	var c core
 	err = json.Unmarshal(b, &c)
 	if err != nil {
-		return err
+		panic(err)
 	}
 
 	comp.Name = c.Name
+	return nil
+}
+
+func (p *Parameter) UnmarshalJSON(b []byte) error {
+	var objMap map[string]*json.RawMessage
+	err := json.Unmarshal(b, &objMap)
+	if err != nil {
+		return err
+	}
+
+	var rawMsg *json.RawMessage
+	rawMsg = objMap["parameter_type"]
+	var pt ASTType
+	if rawMsg != nil {
+		pt, err = unmarshalASTType(rawMsg)
+		if err != nil {
+			return err
+		}
+	}
+
+	type core struct {
+		Name *Identifier `json:"parameter_name"`
+	}
+
+	var c core
+	err = json.Unmarshal(b, &c)
+	if err != nil {
+		return err
+	}
+
+	p.Name = c.Name
+	p.Type = pt
 	return nil
 }
 
@@ -718,6 +821,16 @@ func (cp *ConstructorPattern) UnmarshalJSON(b []byte) error {
 	}
 
 	cp.ConstrName = c.ConstrName
+	return nil
+}
+
+func (ml *MapLiteral) UnmarshalJSON(b []byte) error {
+	var objMap map[string]*json.RawMessage
+	err := json.Unmarshal(b, &objMap)
+	if err != nil {
+		return err
+	}
+
 	return nil
 }
 
