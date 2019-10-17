@@ -81,7 +81,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Nil",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": []
             },
             "body": {
@@ -93,7 +93,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Cons",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": [
                 {
                   "loc": {
@@ -120,7 +120,7 @@
               ]
             }
           },
-          "lhs_type": "Message"
+          "lhs_type": { "node_type": "PrimType", "name": "Message" }
         }
       },
       {
@@ -213,7 +213,7 @@
           "identifier": "owner",
           "node_type": "Identifier"
         },
-        "parameter_type": "ByStr20",
+        "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
         "node_type": "Parameter"
       }
     ],
@@ -229,7 +229,7 @@
           "identifier": "welcome_msg",
           "node_type": "Identifier"
         },
-        "field_type": "String",
+        "field_type": { "node_type": "PrimType", "name": "String" },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/helloWorld.scilla",
@@ -257,7 +257,7 @@
               "identifier": "msg",
               "node_type": "Identifier"
             },
-            "parameter_type": "String",
+            "parameter_type": { "node_type": "PrimType", "name": "String" },
             "node_type": "Parameter"
           }
         ],
@@ -945,7 +945,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Cons",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": [
                 {
                   "loc": {

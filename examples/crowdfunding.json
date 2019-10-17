@@ -83,7 +83,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Nil",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": []
             },
             "body": {
@@ -96,7 +96,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Cons",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": [
                 {
                   "loc": {
@@ -123,7 +123,7 @@
               ]
             }
           },
-          "lhs_type": "Message"
+          "lhs_type": { "node_type": "PrimType", "name": "Message" }
         }
       },
       {
@@ -377,7 +377,19 @@
                           },
                           "node_type": "ConstrExpression",
                           "constructor_name": "Some",
-                          "types": [ "Map (ByStr20) (Uint128)" ],
+                          "types": [
+                            {
+                              "node_type": "MapType",
+                              "keyType": {
+                                "node_type": "PrimType",
+                                "name": "ByStr20"
+                              },
+                              "valType": {
+                                "node_type": "PrimType",
+                                "name": "Uint128"
+                              }
+                            }
+                          ],
                           "args": [
                             {
                               "loc": {
@@ -411,18 +423,34 @@
                         },
                         "node_type": "ConstrExpression",
                         "constructor_name": "None",
-                        "types": [ "Map (ByStr20) (Uint128)" ],
+                        "types": [
+                          {
+                            "node_type": "MapType",
+                            "keyType": {
+                              "node_type": "PrimType",
+                              "name": "ByStr20"
+                            },
+                            "valType": {
+                              "node_type": "PrimType",
+                              "name": "Uint128"
+                            }
+                          }
+                        ],
                         "args": []
                       }
                     }
                   ]
                 }
               },
-              "lhs_type": "Uint128"
+              "lhs_type": { "node_type": "PrimType", "name": "Uint128" }
             },
-            "lhs_type": "ByStr20"
+            "lhs_type": { "node_type": "PrimType", "name": "ByStr20" }
           },
-          "lhs_type": "Map (ByStr20) (Uint128)"
+          "lhs_type": {
+            "node_type": "MapType",
+            "keyType": { "node_type": "PrimType", "name": "ByStr20" },
+            "valType": { "node_type": "PrimType", "name": "Uint128" }
+          }
         }
       },
       {
@@ -654,9 +682,9 @@
                 }
               }
             },
-            "lhs_type": "BNum"
+            "lhs_type": { "node_type": "PrimType", "name": "BNum" }
           },
-          "lhs_type": "BNum"
+          "lhs_type": { "node_type": "PrimType", "name": "BNum" }
         }
       },
       {
@@ -917,7 +945,7 @@
           "identifier": "owner",
           "node_type": "Identifier"
         },
-        "parameter_type": "ByStr20",
+        "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
         "node_type": "Parameter"
       },
       {
@@ -931,7 +959,7 @@
           "identifier": "max_block",
           "node_type": "Identifier"
         },
-        "parameter_type": "BNum",
+        "parameter_type": { "node_type": "PrimType", "name": "BNum" },
         "node_type": "Parameter"
       },
       {
@@ -945,7 +973,7 @@
           "identifier": "goal",
           "node_type": "Identifier"
         },
-        "parameter_type": "Uint128",
+        "parameter_type": { "node_type": "PrimType", "name": "Uint128" },
         "node_type": "Parameter"
       }
     ],
@@ -961,7 +989,11 @@
           "identifier": "backers",
           "node_type": "Identifier"
         },
-        "field_type": "Map (ByStr20) (Uint128)",
+        "field_type": {
+          "node_type": "MapType",
+          "keyType": { "node_type": "PrimType", "name": "ByStr20" },
+          "valType": { "node_type": "PrimType", "name": "Uint128" }
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/crowdfunding.scilla",
@@ -971,8 +1003,8 @@
           },
           "node_type": "LiteralExpression",
           "value": {
-            "key_type": "ByStr20",
-            "value_type": "Uint128",
+            "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "value_type": { "node_type": "PrimType", "name": "Uint128" },
             "node_type": "MapLiteral",
             "mvalues": []
           }
@@ -990,7 +1022,7 @@
           "identifier": "funded",
           "node_type": "Identifier"
         },
-        "field_type": "Bool",
+        "field_type": { "node_type": "ADT", "name": "Bool", "typeArgs": [] },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/crowdfunding.scilla",

@@ -91,7 +91,7 @@
           "identifier": "owner",
           "node_type": "Identifier"
         },
-        "parameter_type": "ByStr20",
+        "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
         "node_type": "Parameter"
       }
     ],
@@ -107,7 +107,11 @@
           "identifier": "gmap",
           "node_type": "Identifier"
         },
-        "field_type": "Map (String) (Int32)",
+        "field_type": {
+          "node_type": "MapType",
+          "keyType": { "node_type": "PrimType", "name": "String" },
+          "valType": { "node_type": "PrimType", "name": "Int32" }
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/inplace-map.scilla",
@@ -117,8 +121,8 @@
           },
           "node_type": "LiteralExpression",
           "value": {
-            "key_type": "String",
-            "value_type": "Int32",
+            "key_type": { "node_type": "PrimType", "name": "String" },
+            "value_type": { "node_type": "PrimType", "name": "Int32" },
             "node_type": "MapLiteral",
             "mvalues": []
           }
@@ -136,7 +140,19 @@
           "identifier": "gmap3",
           "node_type": "Identifier"
         },
-        "field_type": "Map (String) (Map (Int32) (Map (Int64) (String)))",
+        "field_type": {
+          "node_type": "MapType",
+          "keyType": { "node_type": "PrimType", "name": "String" },
+          "valType": {
+            "node_type": "MapType",
+            "keyType": { "node_type": "PrimType", "name": "Int32" },
+            "valType": {
+              "node_type": "MapType",
+              "keyType": { "node_type": "PrimType", "name": "Int64" },
+              "valType": { "node_type": "PrimType", "name": "String" }
+            }
+          }
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/inplace-map.scilla",
@@ -146,8 +162,16 @@
           },
           "node_type": "LiteralExpression",
           "value": {
-            "key_type": "String",
-            "value_type": "Map (Int32) (Map (Int64) (String))",
+            "key_type": { "node_type": "PrimType", "name": "String" },
+            "value_type": {
+              "node_type": "MapType",
+              "keyType": { "node_type": "PrimType", "name": "Int32" },
+              "valType": {
+                "node_type": "MapType",
+                "keyType": { "node_type": "PrimType", "name": "Int64" },
+                "valType": { "node_type": "PrimType", "name": "String" }
+              }
+            },
             "node_type": "MapLiteral",
             "mvalues": []
           }

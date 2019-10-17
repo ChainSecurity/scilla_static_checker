@@ -25,7 +25,5 @@ func main() {
 	fmt.Println("Finished parsing")
 	b := ir.BuildCFG(cm)
 	_ = b
-	//fmt.Println(res["node_type"])
 
-	//fmt.Println(res.Fruits[0])
 }

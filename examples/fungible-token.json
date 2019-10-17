@@ -270,9 +270,9 @@
                 ]
               }
             },
-            "lhs_type": "Uint128"
+            "lhs_type": { "node_type": "PrimType", "name": "Uint128" }
           },
-          "lhs_type": "Uint128"
+          "lhs_type": { "node_type": "PrimType", "name": "Uint128" }
         }
       },
       {
@@ -578,9 +578,9 @@
                 ]
               }
             },
-            "lhs_type": "Uint128"
+            "lhs_type": { "node_type": "PrimType", "name": "Uint128" }
           },
-          "lhs_type": "Uint128"
+          "lhs_type": { "node_type": "PrimType", "name": "Uint128" }
         }
       },
       {
@@ -646,7 +646,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Nil",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": []
             },
             "body": {
@@ -659,7 +659,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Cons",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": [
                 {
                   "loc": {
@@ -686,7 +686,7 @@
               ]
             }
           },
-          "lhs_type": "Message"
+          "lhs_type": { "node_type": "PrimType", "name": "Message" }
         }
       }
     ],
@@ -716,7 +716,7 @@
           "identifier": "owner",
           "node_type": "Identifier"
         },
-        "parameter_type": "ByStr20",
+        "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
         "node_type": "Parameter"
       },
       {
@@ -730,7 +730,7 @@
           "identifier": "total_tokens",
           "node_type": "Identifier"
         },
-        "parameter_type": "Uint128",
+        "parameter_type": { "node_type": "PrimType", "name": "Uint128" },
         "node_type": "Parameter"
       },
       {
@@ -744,7 +744,7 @@
           "identifier": "decimals",
           "node_type": "Identifier"
         },
-        "parameter_type": "Uint32",
+        "parameter_type": { "node_type": "PrimType", "name": "Uint32" },
         "node_type": "Parameter"
       },
       {
@@ -758,7 +758,7 @@
           "identifier": "name",
           "node_type": "Identifier"
         },
-        "parameter_type": "String",
+        "parameter_type": { "node_type": "PrimType", "name": "String" },
         "node_type": "Parameter"
       },
       {
@@ -772,7 +772,7 @@
           "identifier": "symbol",
           "node_type": "Identifier"
         },
-        "parameter_type": "String",
+        "parameter_type": { "node_type": "PrimType", "name": "String" },
         "node_type": "Parameter"
       }
     ],
@@ -788,7 +788,11 @@
           "identifier": "balances",
           "node_type": "Identifier"
         },
-        "field_type": "Map (ByStr20) (Uint128)",
+        "field_type": {
+          "node_type": "MapType",
+          "keyType": { "node_type": "PrimType", "name": "ByStr20" },
+          "valType": { "node_type": "PrimType", "name": "Uint128" }
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/fungible-token.scilla",
@@ -819,8 +823,8 @@
             },
             "node_type": "LiteralExpression",
             "value": {
-              "key_type": "ByStr20",
-              "value_type": "Uint128",
+              "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+              "value_type": { "node_type": "PrimType", "name": "Uint128" },
               "node_type": "MapLiteral",
               "mvalues": []
             }
@@ -895,7 +899,15 @@
           "identifier": "allowed",
           "node_type": "Identifier"
         },
-        "field_type": "Map (ByStr20) (Map (ByStr20) (Uint128))",
+        "field_type": {
+          "node_type": "MapType",
+          "keyType": { "node_type": "PrimType", "name": "ByStr20" },
+          "valType": {
+            "node_type": "MapType",
+            "keyType": { "node_type": "PrimType", "name": "ByStr20" },
+            "valType": { "node_type": "PrimType", "name": "Uint128" }
+          }
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/fungible-token.scilla",
@@ -905,8 +917,12 @@
           },
           "node_type": "LiteralExpression",
           "value": {
-            "key_type": "ByStr20",
-            "value_type": "Map (ByStr20) (Uint128)",
+            "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "value_type": {
+              "node_type": "MapType",
+              "keyType": { "node_type": "PrimType", "name": "ByStr20" },
+              "valType": { "node_type": "PrimType", "name": "Uint128" }
+            },
             "node_type": "MapLiteral",
             "mvalues": []
           }
@@ -929,7 +945,7 @@
               "identifier": "tokenOwner",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           }
         ],
@@ -1657,7 +1673,7 @@
               "identifier": "to",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           },
           {
@@ -1672,7 +1688,7 @@
               "identifier": "tokens",
               "node_type": "Identifier"
             },
-            "parameter_type": "Uint128",
+            "parameter_type": { "node_type": "PrimType", "name": "Uint128" },
             "node_type": "Parameter"
           }
         ],
@@ -2890,7 +2906,7 @@
               "identifier": "from",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           },
           {
@@ -2905,7 +2921,7 @@
               "identifier": "to",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           },
           {
@@ -2920,7 +2936,7 @@
               "identifier": "tokens",
               "node_type": "Identifier"
             },
-            "parameter_type": "Uint128",
+            "parameter_type": { "node_type": "PrimType", "name": "Uint128" },
             "node_type": "Parameter"
           }
         ],
@@ -4680,7 +4696,7 @@
               "identifier": "spender",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           },
           {
@@ -4695,7 +4711,7 @@
               "identifier": "tokens",
               "node_type": "Identifier"
             },
-            "parameter_type": "Uint128",
+            "parameter_type": { "node_type": "PrimType", "name": "Uint128" },
             "node_type": "Parameter"
           }
         ],
@@ -4993,7 +5009,7 @@
               "identifier": "tokenOwner",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           },
           {
@@ -5008,7 +5024,7 @@
               "identifier": "spender",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           }
         ],

@@ -126,6 +126,28 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 		}
 		b.typeCache[t] = n
 		return n
+	case *MapType:
+		n := &dotNode{
+			b.getNodeId(),
+			[]string{"Key", "Val"},
+			"MapType",
+		}
+		kNode := dotWalkType(b, x.Key)
+		ke := dotPortedEdge{
+			id:       b.getEdgeId(),
+			from:     n,
+			to:       kNode,
+			fromPort: "Key"}
+		b.edges = append(b.edges, &ke)
+		vNode := dotWalkType(b, x.Val)
+		ve := dotPortedEdge{
+			id:       b.getEdgeId(),
+			from:     n,
+			to:       vNode,
+			fromPort: "Val"}
+		b.edges = append(b.edges, &ve)
+		b.typeCache[t] = n
+		return n
 	default:
 		panic(errors.New(fmt.Sprintf("unhandeled type: %T", x)))
 	}
@@ -266,6 +288,21 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 			fromPort: "From"}
 		b.edges = append(b.edges, &e)
 		return &n
+	case *Int:
+		n := dotNode{
+			b.getNodeId(),
+			[]string{"IntType", fmt.Sprintf("Data: %s", x.Data)},
+			"Int",
+		}
+		b.nodes = append(b.nodes, &n)
+		tNode := dotWalkType(b, x.IntType)
+		e := dotPortedEdge{
+			id:       b.getEdgeId(),
+			from:     n,
+			to:       tNode,
+			fromPort: "IntType"}
+		b.edges = append(b.edges, &e)
+		return &n
 	case *Nat:
 		n := dotNode{
 			b.getNodeId(),
@@ -279,6 +316,21 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 			from:     n,
 			to:       tNode,
 			fromPort: "NatType"}
+		b.edges = append(b.edges, &e)
+		return &n
+	case *Map:
+		n := dotNode{
+			b.getNodeId(),
+			[]string{"MapType", fmt.Sprintf("Data: %s", x.Data)},
+			"Map",
+		}
+		b.nodes = append(b.nodes, &n)
+		tNode := dotWalkType(b, x.MapType)
+		e := dotPortedEdge{
+			id:       b.getEdgeId(),
+			from:     n,
+			to:       tNode,
+			fromPort: "MapType"}
 		b.edges = append(b.edges, &e)
 		return &n
 	default:
@@ -307,12 +359,13 @@ func directedPortedAttrGraphFrom(b *dotBuilder) graph.Multigraph {
 }
 
 func GetDot(b *CFGBuilder) string {
-	keys := make([]string, 0, len(b.GlobalVarMap))
-	for key := range b.GlobalVarMap {
-		keys = append(keys, key)
-	}
+	//keys := make([]string, 0, len(b.GlobalVarMap))
+	//for key := range b.GlobalVarMap {
+	//keys = append(keys, key)
+	//}
 	d := dotBuilder{0, 0, []*dotNode{}, []*dotPortedEdge{}, map[Type]*dotNode{}}
-	dotWalkData(&d, b.GlobalVarMap[keys[0]])
+	fmt.Println(len(b.GlobalVarMap), b.GlobalVarMap)
+	dotWalkData(&d, b.GlobalVarMap["shape_to_int"])
 	g := directedPortedAttrGraphFrom(&d)
 	got, err := dot.MarshalMulti(g, "asd", "", "\t")
 	_ = got

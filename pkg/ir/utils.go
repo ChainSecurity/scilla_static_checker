@@ -8,31 +8,44 @@ import (
 )
 
 type CFGBuilder struct {
-	//Names []string
-	typeMap            map[string]Type
-	GlobalVarMap       map[string]Data
-	constructorTypeMap map[string]string
-	intWidthTypeMap    map[int]*IntType
-	natWidthTypeMap    map[int]*NatType
+	GlobalVarMap map[string]Data
 
-	varMap map[string]Data
+	constrTypeMap   map[string]string
+	intWidthTypeMap map[int]*IntType
+	natWidthTypeMap map[int]*NatType
+	typeMap         map[string]Type
+	varStack        map[string][]Data
+}
+
+func stackMapPush(s map[string][]Data, k string, v Data) {
+	s[k] = append(s[k], v)
+}
+
+func stackMapPop(s map[string][]Data, k string) {
+	n := len(s[k]) - 1
+	s[k] = s[k][:n]
+}
+
+func stackMapPeek(s map[string][]Data, k string) (Data, bool) {
+	l := len(s[k])
+	if l == 0 {
+		return nil, false
+	}
+	return s[k][l-1], true
 }
 
 func (builder *CFGBuilder) visitCtr(ctr *ast.CtrDef) (string, []Type) {
 	name := ctr.CDName.Id
 	var types []Type
-	for _, typName := range ctr.CArgTypes {
-		typ, ok := builder.typeMap[typName]
-		if !ok {
-			panic(errors.New(fmt.Sprintf("Unknown type: %s", typName)))
-		}
+	for _, typ := range ctr.CArgTypes {
+		typ := builder.visitASTType(typ)
 		types = append(types, typ)
 	}
 	return name, types
 }
 
-func (builder *CFGBuilder) visitPattern(p *ast.Pattern, t Type) *Bind {
-	switch pat := (*p).(type) {
+func (builder *CFGBuilder) visitPattern(p ast.Pattern, t Type) *Bind {
+	switch pat := p.(type) {
 	case *ast.WildcardPattern:
 		return &Bind{BindType: t}
 	case *ast.BinderPattern:
@@ -64,8 +77,8 @@ func (builder *CFGBuilder) visitPattern(p *ast.Pattern, t Type) *Bind {
 	}
 }
 
-func (builder *CFGBuilder) visitLiteral(l *ast.Literal) Data {
-	switch lit := (*l).(type) {
+func (builder *CFGBuilder) visitLiteral(l ast.Literal) Data {
+	switch lit := l.(type) {
 	case *ast.StringLiteral:
 		panic(errors.New(fmt.Sprintf("Not implemented: %T", lit)))
 	case *ast.BNumLiteral:
@@ -91,21 +104,63 @@ func (builder *CFGBuilder) visitLiteral(l *ast.Literal) Data {
 			NatType: typ, Data: lit.Val,
 		}
 	case *ast.MapLiteral:
-		panic(errors.New(fmt.Sprintf("Not implemented: %T", lit)))
+		ktyp := builder.visitASTType(lit.KeyType)
+		vtyp := builder.visitASTType(lit.ValType)
+		maptyp := MapType{ktyp, vtyp}
+		return &Map{
+			MapType: &maptyp,
+			Data:    map[string]string{},
+		}
+
 	case *ast.ADTValLiteral:
 		panic(errors.New(fmt.Sprintf("Not implemented: %T", lit)))
 	}
 	return nil
 }
 
-func (builder *CFGBuilder) visitExpression(e *ast.Expression) Data {
-	switch n := (*e).(type) {
-	case *ast.ConstrExpression:
-		constructorName := n.ConstructorName
-		typeName, ok := builder.constructorTypeMap[constructorName]
+func (builder *CFGBuilder) visitASTType(e ast.ASTType) Type {
+
+	switch n := e.(type) {
+	case *ast.PrimType:
+		t, ok := builder.typeMap[n.Name]
 		if !ok {
-			panic(errors.New(fmt.Sprintf("Unknown constructor: %s", constructorName)))
+			panic(errors.New(fmt.Sprintf("PrimType not found : %s", n.Name)))
 		}
+		return t
+	//case *ast.MapType:
+	//fmt.Printf("%T", n)
+	case *ast.ADT:
+		typ, ok := builder.typeMap[n.Name]
+		if !ok {
+			panic(errors.New(fmt.Sprintf("Unknown type: %s", n.Name)))
+		}
+		return typ
+	//case *ast.FunType:
+	//fmt.Printf("%T", n)
+	//case *ast.TypeVar:
+	//fmt.Printf("%T", n)
+	//case *ast.PolyFun:
+	//fmt.Printf("%T", n)
+	//case *ast.Unit:
+	//fmt.Printf("%T", n)
+	default:
+		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
+	}
+}
+
+func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
+	switch n := e.(type) {
+	case *ast.ConstrExpression:
+		constrName := n.ConstructorName
+		typeName, ok := builder.constrTypeMap[constrName]
+		if !ok {
+			panic(errors.New(fmt.Sprintf("Unknown constructor: %s", constrName)))
+		}
+
+		for k := range builder.constrTypeMap {
+			fmt.Println("->", k, builder.constrTypeMap[k])
+		}
+		fmt.Println("____")
 		typ, ok := builder.typeMap[typeName]
 		if !ok {
 			panic(errors.New(fmt.Sprintf("Unknown type: %s", typeName)))
@@ -119,26 +174,24 @@ func (builder *CFGBuilder) visitExpression(e *ast.Expression) Data {
 		//}
 		res := Enum{
 			EnumType: typ,
-			Case:     constructorName,
+			Case:     constrName,
 			Data:     d,
 		}
 		return &res
 	case *ast.FunExpression:
 		lhs := n.Lhs.Id
-		typeName := n.LhsType
-		lhsTyp, ok := builder.typeMap[typeName]
-		if !ok {
-			panic(errors.New(fmt.Sprintf("Unknown type: %s", typeName)))
-		}
+		lhsTyp := builder.visitASTType(n.LhsType)
 		dataVar := DataVar{lhsTyp}
-		builder.varMap[lhs] = &dataVar
-		//fmt.Printf("FunExp:{ var:%s\n\ttypeName:%s}\n", lhs, typeName)
+		stackMapPush(builder.varStack, lhs, &dataVar)
+		defer stackMapPop(builder.varStack, lhs)
+
 		rhs := builder.visitExpression(n.RhsExpr)
-		//fmt.Printf("%T\n", rhs)
+
 		return &AbsDD{Vars: []*DataVar{&dataVar}, Term: rhs}
 	case *ast.MatchExpression:
 		lhs := n.Lhs.Id
-		data, ok := builder.varMap[lhs]
+
+		data, ok := stackMapPeek(builder.varStack, lhs)
 		if !ok {
 			panic(errors.New(fmt.Sprintf("variable not found: %s", lhs)))
 		}
@@ -154,6 +207,29 @@ func (builder *CFGBuilder) visitExpression(e *ast.Expression) Data {
 		}
 	case *ast.LiteralExpression:
 		return builder.visitLiteral(n.Val)
+	case *ast.VarExpression:
+		data, ok := stackMapPeek(builder.varStack, n.Var.Id)
+		if !ok {
+			panic(errors.New(fmt.Sprintf("variable not found: %s", n.Var.Id)))
+		}
+		return data
+	case *ast.BuiltinExpression:
+		vars := make([]Data, len(n.Args))
+		for i, a := range n.Args {
+			v, ok := stackMapPeek(builder.varStack, a.Id)
+			if !ok {
+				panic(errors.New(fmt.Sprintf("variable not found: %s", a.Id)))
+			}
+			vars[i] = v
+		}
+		return nil
+	case *ast.LetExpression:
+		var_name := n.Var.Id
+		expr := builder.visitExpression(n.Expr)
+		stackMapPush(builder.varStack, var_name, expr)
+		defer stackMapPop(builder.varStack, var_name)
+		body := builder.visitExpression(n.Body)
+		return body
 	default:
 		fmt.Printf("Unhandled Expression type: %T\n", n)
 		//panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
@@ -161,8 +237,8 @@ func (builder *CFGBuilder) visitExpression(e *ast.Expression) Data {
 	}
 }
 
-func (builder *CFGBuilder) visitLibEntry(le *ast.LibEntry) {
-	switch n := (*le).(type) {
+func (builder *CFGBuilder) visitLibEntry(le ast.LibEntry) {
+	switch n := le.(type) {
 	case *ast.LibraryVariable:
 		name := n.Name.Id
 		v := builder.visitExpression(n.Expr)
@@ -171,9 +247,9 @@ func (builder *CFGBuilder) visitLibEntry(le *ast.LibEntry) {
 		typeName := n.Name.Id
 		typ := EnumType{}
 		for _, ctr := range n.CtrDefs {
-			constructorName, types := builder.visitCtr(ctr)
-			typ[constructorName] = types
-			builder.constructorTypeMap[constructorName] = typeName
+			constrName, types := builder.visitCtr(ctr)
+			typ[constrName] = types
+			builder.constrTypeMap[constrName] = typeName
 		}
 		builder.typeMap[typeName] = &typ
 	default:
@@ -181,16 +257,50 @@ func (builder *CFGBuilder) visitLibEntry(le *ast.LibEntry) {
 	}
 }
 
+func visitParams(b *CFGBuilder, p *ast.Parameter) (string, Type) {
+	name := p.Name.Id
+	t := b.visitASTType(p.Type)
+	return name, t
+}
+
+func visitField(builder *CFGBuilder, f *ast.Field) (string, Data) {
+	name := f.Name.Id
+	//t := builder.typeMap[f.Type]
+	data := builder.visitExpression(f.Expr)
+	return name, data
+}
+
 func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
 	switch n := node.(type) {
-	case *ast.LibEntry:
+	case ast.LibEntry:
 		builder.visitLibEntry(n)
-	case *ast.LibraryModule:
-		// do nothing
-	case *ast.Library, *ast.Identifier, *ast.Location:
-		// do nothing
+	case *ast.Contract:
+		//name := n.Name.Id
+		vars := make([]string, len(n.Params))
+		params := map[string]Type{}
+		for i, p := range n.Params {
+			pName, pType := visitParams(builder, p)
+			params[pName] = pType
+			vars[i] = pName
+			dataVar := DataVar{pType}
+			stackMapPush(builder.varStack, pName, &dataVar)
+		}
+
+		for _, f := range n.Fields {
+			n, d := visitField(builder, f)
+			stackMapPush(builder.varStack, n, d)
+		}
+
+		for _, pName := range vars {
+			stackMapPop(builder.varStack, pName)
+		}
+
+		//t := n.Type
+		//expr := builder.visitExpression(n.Expr)
+		//builder.Field[name] = Save{}
+		//builder.visitLibEntry(n)
 	default:
-		fmt.Printf("Unhandled type: %T\n", n)
+		//fmt.Printf("Unhandled type: %T\n", n)
 		// do nothing
 	}
 	return builder
@@ -210,22 +320,29 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	}
 	builder.typeMap["ByStr20"] = &RawType{20}
 	builder.typeMap["ByStr32"] = &RawType{32}
+	builder.typeMap["BNum"] = &BnrType{}
+	builder.typeMap["Message"] = &MsgType{}
 
 	stdLib := StdLib()
 	builder.typeMap["Bool"] = stdLib.Boolean
+	//builder.constructorTypeMap["Bool"] = stdLib.Boolean
 
 }
 
 func BuildCFG(n ast.AstNode) *CFGBuilder {
 	builder := CFGBuilder{
-		typeMap:            map[string]Type{},
-		GlobalVarMap:       map[string]Data{},
-		constructorTypeMap: map[string]string{},
-		intWidthTypeMap:    map[int]*IntType{},
-		natWidthTypeMap:    map[int]*NatType{},
-		varMap:             map[string]Data{},
+		GlobalVarMap:    map[string]Data{},
+		typeMap:         map[string]Type{},
+		constrTypeMap:   map[string]string{},
+		intWidthTypeMap: map[int]*IntType{},
+		natWidthTypeMap: map[int]*NatType{},
+		varStack:        map[string][]Data{},
 	}
 	builder.initPrimitiveTypes()
+
+	//stdlib := StdLib()
+	//builder.typeMap[] =
+
 	ast.Walk(&builder, n)
 
 	//a := builder.typeMap["Piece"]

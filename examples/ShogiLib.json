@@ -582,7 +582,7 @@
               }
             ]
           },
-          "lhs_type": "Piece"
+          "lhs_type": { "node_type": "ADT", "name": "Piece", "typeArgs": [] }
         }
       },
       {
@@ -704,7 +704,15 @@
               "identifier": "Occupied",
               "node_type": "Identifier"
             },
-            "c_arg_types": [ "Piece", "PromotionStatus", "ByStr20" ],
+            "c_arg_types": [
+              { "node_type": "ADT", "name": "Piece", "typeArgs": [] },
+              {
+                "node_type": "ADT",
+                "name": "PromotionStatus",
+                "typeArgs": []
+              },
+              { "node_type": "PrimType", "name": "ByStr20" }
+            ],
             "node_type": "CtrDef"
           },
           {
@@ -900,7 +908,10 @@
               "identifier": "Square",
               "node_type": "Identifier"
             },
-            "c_arg_types": [ "Uint32", "Uint32" ],
+            "c_arg_types": [
+              { "node_type": "PrimType", "name": "Uint32" },
+              { "node_type": "PrimType", "name": "Uint32" }
+            ],
             "node_type": "CtrDef"
           }
         ]
@@ -929,7 +940,12 @@
               "identifier": "Move",
               "node_type": "Identifier"
             },
-            "c_arg_types": [ "Square", "Direction", "Uint32", "Bool" ],
+            "c_arg_types": [
+              { "node_type": "ADT", "name": "Square", "typeArgs": [] },
+              { "node_type": "ADT", "name": "Direction", "typeArgs": [] },
+              { "node_type": "PrimType", "name": "Uint32" },
+              { "node_type": "ADT", "name": "Bool", "typeArgs": [] }
+            ],
             "node_type": "CtrDef"
           },
           {
@@ -943,7 +959,10 @@
               "identifier": "Place",
               "node_type": "Identifier"
             },
-            "c_arg_types": [ "Piece", "Square" ],
+            "c_arg_types": [
+              { "node_type": "ADT", "name": "Piece", "typeArgs": [] },
+              { "node_type": "ADT", "name": "Square", "typeArgs": [] }
+            ],
             "node_type": "CtrDef"
           },
           {
@@ -3198,10 +3217,20 @@
                                                                     "node_type":
                                                                     "LiteralExpression",
                                                                     "value": {
-                                                                    "key_type":
-                                                                    "Uint32",
-                                                                    "value_type":
+                                                                    "key_type": {
+                                                                    "node_type":
+                                                                    "PrimType",
+                                                                    "name":
+                                                                    "Uint32"
+                                                                    },
+                                                                    "value_type": {
+                                                                    "node_type":
+                                                                    "ADT",
+                                                                    "name":
                                                                     "SquareContents",
+                                                                    "typeArgs":
+                                                                    []
+                                                                    },
                                                                     "node_type":
                                                                     "MapLiteral",
                                                                     "mvalues":
@@ -4252,10 +4281,20 @@
                                                                     "node_type":
                                                                     "LiteralExpression",
                                                                     "value": {
-                                                                    "key_type":
-                                                                    "Uint32",
-                                                                    "value_type":
+                                                                    "key_type": {
+                                                                    "node_type":
+                                                                    "PrimType",
+                                                                    "name":
+                                                                    "Uint32"
+                                                                    },
+                                                                    "value_type": {
+                                                                    "node_type":
+                                                                    "ADT",
+                                                                    "name":
                                                                     "SquareContents",
+                                                                    "typeArgs":
+                                                                    []
+                                                                    },
                                                                     "node_type":
                                                                     "MapLiteral",
                                                                     "mvalues":
@@ -5306,10 +5345,20 @@
                                                                     "node_type":
                                                                     "LiteralExpression",
                                                                     "value": {
-                                                                    "key_type":
-                                                                    "Uint32",
-                                                                    "value_type":
+                                                                    "key_type": {
+                                                                    "node_type":
+                                                                    "PrimType",
+                                                                    "name":
+                                                                    "Uint32"
+                                                                    },
+                                                                    "value_type": {
+                                                                    "node_type":
+                                                                    "ADT",
+                                                                    "name":
                                                                     "SquareContents",
+                                                                    "typeArgs":
+                                                                    []
+                                                                    },
                                                                     "node_type":
                                                                     "MapLiteral",
                                                                     "mvalues":
@@ -6360,10 +6409,20 @@
                                                                     "node_type":
                                                                     "LiteralExpression",
                                                                     "value": {
-                                                                    "key_type":
-                                                                    "Uint32",
-                                                                    "value_type":
+                                                                    "key_type": {
+                                                                    "node_type":
+                                                                    "PrimType",
+                                                                    "name":
+                                                                    "Uint32"
+                                                                    },
+                                                                    "value_type": {
+                                                                    "node_type":
+                                                                    "ADT",
+                                                                    "name":
                                                                     "SquareContents",
+                                                                    "typeArgs":
+                                                                    []
+                                                                    },
                                                                     "node_type":
                                                                     "MapLiteral",
                                                                     "mvalues":
@@ -7414,10 +7473,20 @@
                                                                     "node_type":
                                                                     "LiteralExpression",
                                                                     "value": {
-                                                                    "key_type":
-                                                                    "Uint32",
-                                                                    "value_type":
+                                                                    "key_type": {
+                                                                    "node_type":
+                                                                    "PrimType",
+                                                                    "name":
+                                                                    "Uint32"
+                                                                    },
+                                                                    "value_type": {
+                                                                    "node_type":
+                                                                    "ADT",
+                                                                    "name":
                                                                     "SquareContents",
+                                                                    "typeArgs":
+                                                                    []
+                                                                    },
                                                                     "node_type":
                                                                     "MapLiteral",
                                                                     "mvalues":
@@ -8468,10 +8537,20 @@
                                                                     "node_type":
                                                                     "LiteralExpression",
                                                                     "value": {
-                                                                    "key_type":
-                                                                    "Uint32",
-                                                                    "value_type":
+                                                                    "key_type": {
+                                                                    "node_type":
+                                                                    "PrimType",
+                                                                    "name":
+                                                                    "Uint32"
+                                                                    },
+                                                                    "value_type": {
+                                                                    "node_type":
+                                                                    "ADT",
+                                                                    "name":
                                                                     "SquareContents",
+                                                                    "typeArgs":
+                                                                    []
+                                                                    },
                                                                     "node_type":
                                                                     "MapLiteral",
                                                                     "mvalues":
@@ -9522,10 +9601,20 @@
                                                                     "node_type":
                                                                     "LiteralExpression",
                                                                     "value": {
-                                                                    "key_type":
-                                                                    "Uint32",
-                                                                    "value_type":
+                                                                    "key_type": {
+                                                                    "node_type":
+                                                                    "PrimType",
+                                                                    "name":
+                                                                    "Uint32"
+                                                                    },
+                                                                    "value_type": {
+                                                                    "node_type":
+                                                                    "ADT",
+                                                                    "name":
                                                                     "SquareContents",
+                                                                    "typeArgs":
+                                                                    []
+                                                                    },
                                                                     "node_type":
                                                                     "MapLiteral",
                                                                     "mvalues":
@@ -10576,10 +10665,20 @@
                                                                     "node_type":
                                                                     "LiteralExpression",
                                                                     "value": {
-                                                                    "key_type":
-                                                                    "Uint32",
-                                                                    "value_type":
+                                                                    "key_type": {
+                                                                    "node_type":
+                                                                    "PrimType",
+                                                                    "name":
+                                                                    "Uint32"
+                                                                    },
+                                                                    "value_type": {
+                                                                    "node_type":
+                                                                    "ADT",
+                                                                    "name":
                                                                     "SquareContents",
+                                                                    "typeArgs":
+                                                                    []
+                                                                    },
                                                                     "node_type":
                                                                     "MapLiteral",
                                                                     "mvalues":
@@ -11630,10 +11729,20 @@
                                                                     "node_type":
                                                                     "LiteralExpression",
                                                                     "value": {
-                                                                    "key_type":
-                                                                    "Uint32",
-                                                                    "value_type":
+                                                                    "key_type": {
+                                                                    "node_type":
+                                                                    "PrimType",
+                                                                    "name":
+                                                                    "Uint32"
+                                                                    },
+                                                                    "value_type": {
+                                                                    "node_type":
+                                                                    "ADT",
+                                                                    "name":
                                                                     "SquareContents",
+                                                                    "typeArgs":
+                                                                    []
+                                                                    },
                                                                     "node_type":
                                                                     "MapLiteral",
                                                                     "mvalues":
@@ -12684,10 +12793,30 @@
                                                                     "node_type":
                                                                     "LiteralExpression",
                                                                     "value": {
-                                                                    "key_type":
-                                                                    "Uint32",
-                                                                    "value_type":
-                                                                    "Map (Uint32) (SquareContents)",
+                                                                    "key_type": {
+                                                                    "node_type":
+                                                                    "PrimType",
+                                                                    "name":
+                                                                    "Uint32"
+                                                                    },
+                                                                    "value_type": {
+                                                                    "node_type":
+                                                                    "MapType",
+                                                                    "keyType": {
+                                                                    "node_type":
+                                                                    "PrimType",
+                                                                    "name":
+                                                                    "Uint32"
+                                                                    },
+                                                                    "valType": {
+                                                                    "node_type":
+                                                                    "ADT",
+                                                                    "name":
+                                                                    "SquareContents",
+                                                                    "typeArgs":
+                                                                    []
+                                                                    }
+                                                                    },
                                                                     "node_type":
                                                                     "MapLiteral",
                                                                     "mvalues":
@@ -13857,9 +13986,9 @@
                 }
               }
             },
-            "lhs_type": "ByStr20"
+            "lhs_type": { "node_type": "PrimType", "name": "ByStr20" }
           },
-          "lhs_type": "ByStr20"
+          "lhs_type": { "node_type": "PrimType", "name": "ByStr20" }
         }
       },
       {
@@ -13974,8 +14103,11 @@
                   },
                   "node_type": "LiteralExpression",
                   "value": {
-                    "key_type": "Uint32",
-                    "value_type": "Uint32",
+                    "key_type": { "node_type": "PrimType", "name": "Uint32" },
+                    "value_type": {
+                      "node_type": "PrimType",
+                      "name": "Uint32"
+                    },
                     "node_type": "MapLiteral",
                     "mvalues": []
                   }
@@ -14937,9 +15069,21 @@
                                                 "node_type":
                                                   "LiteralExpression",
                                                 "value": {
-                                                  "key_type": "ByStr20",
-                                                  "value_type":
-                                                    "Map (Uint32) (Uint32)",
+                                                  "key_type": {
+                                                    "node_type": "PrimType",
+                                                    "name": "ByStr20"
+                                                  },
+                                                  "value_type": {
+                                                    "node_type": "MapType",
+                                                    "keyType": {
+                                                      "node_type": "PrimType",
+                                                      "name": "Uint32"
+                                                    },
+                                                    "valType": {
+                                                      "node_type": "PrimType",
+                                                      "name": "Uint32"
+                                                    }
+                                                  },
                                                   "node_type": "MapLiteral",
                                                   "mvalues": []
                                                 }
@@ -15159,9 +15303,9 @@
                 }
               }
             },
-            "lhs_type": "ByStr20"
+            "lhs_type": { "node_type": "PrimType", "name": "ByStr20" }
           },
-          "lhs_type": "ByStr20"
+          "lhs_type": { "node_type": "PrimType", "name": "ByStr20" }
         }
       }
     ],

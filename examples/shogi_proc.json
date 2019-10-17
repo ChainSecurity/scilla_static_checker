@@ -249,7 +249,11 @@
               ]
             }
           },
-          "lhs_type": "Square"
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Square",
+            "typeArgs": []
+          }
         }
       },
       {
@@ -546,7 +550,11 @@
               ]
             }
           },
-          "lhs_type": "Square"
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Square",
+            "typeArgs": []
+          }
         }
       },
       {
@@ -776,7 +784,11 @@
               ]
             }
           },
-          "lhs_type": "Square"
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Square",
+            "typeArgs": []
+          }
         }
       },
       {
@@ -1073,7 +1085,11 @@
               ]
             }
           },
-          "lhs_type": "Square"
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Square",
+            "typeArgs": []
+          }
         }
       },
       {
@@ -1303,7 +1319,11 @@
               ]
             }
           },
-          "lhs_type": "Square"
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Square",
+            "typeArgs": []
+          }
         }
       },
       {
@@ -1600,7 +1620,11 @@
               ]
             }
           },
-          "lhs_type": "Square"
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Square",
+            "typeArgs": []
+          }
         }
       },
       {
@@ -1830,7 +1854,11 @@
               ]
             }
           },
-          "lhs_type": "Square"
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Square",
+            "typeArgs": []
+          }
         }
       },
       {
@@ -2127,7 +2155,11 @@
               ]
             }
           },
-          "lhs_type": "Square"
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Square",
+            "typeArgs": []
+          }
         }
       },
       {
@@ -2537,9 +2569,17 @@
                 }
               ]
             },
-            "lhs_type": "Direction"
+            "lhs_type": {
+              "node_type": "ADT",
+              "name": "Direction",
+              "typeArgs": []
+            }
           },
-          "lhs_type": "Square"
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Square",
+            "typeArgs": []
+          }
         }
       },
       {
@@ -2696,7 +2736,13 @@
                     },
                     "node_type": "ConstrExpression",
                     "constructor_name": "Nil",
-                    "types": [ "Square" ],
+                    "types": [
+                      {
+                        "node_type": "ADT",
+                        "name": "Square",
+                        "typeArgs": []
+                      }
+                    ],
                     "args": []
                   },
                   "body": {
@@ -3687,7 +3733,13 @@
                                         },
                                         "node_type": "ConstrExpression",
                                         "constructor_name": "Cons",
-                                        "types": [ "Square" ],
+                                        "types": [
+                                          {
+                                            "node_type": "ADT",
+                                            "name": "Square",
+                                            "typeArgs": []
+                                          }
+                                        ],
                                         "args": [
                                           {
                                             "loc": {
@@ -3719,9 +3771,23 @@
                               }
                             }
                           },
-                          "lhs_type": "Nat"
+                          "lhs_type": {
+                            "node_type": "ADT",
+                            "name": "Nat",
+                            "typeArgs": []
+                          }
                         },
-                        "lhs_type": "List (Square)"
+                        "lhs_type": {
+                          "node_type": "ADT",
+                          "name": "List",
+                          "typeArgs": [
+                            {
+                              "node_type": "ADT",
+                              "name": "Square",
+                              "typeArgs": []
+                            }
+                          ]
+                        }
                       },
                       "body": {
                         "loc": {
@@ -3783,11 +3849,19 @@
                   }
                 }
               },
-              "lhs_type": "Uint32"
+              "lhs_type": { "node_type": "PrimType", "name": "Uint32" }
             },
-            "lhs_type": "Direction"
+            "lhs_type": {
+              "node_type": "ADT",
+              "name": "Direction",
+              "typeArgs": []
+            }
           },
-          "lhs_type": "Square"
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Square",
+            "typeArgs": []
+          }
         }
       },
       {
@@ -3931,9 +4005,17 @@
                 ]
               }
             },
-            "lhs_type": "Direction"
+            "lhs_type": {
+              "node_type": "ADT",
+              "name": "Direction",
+              "typeArgs": []
+            }
           },
-          "lhs_type": "Square"
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Square",
+            "typeArgs": []
+          }
         }
       },
       {
@@ -4070,7 +4152,13 @@
                             },
                             "node_type": "ConstrExpression",
                             "constructor_name": "Nil",
-                            "types": [ "Square" ],
+                            "types": [
+                              {
+                                "node_type": "ADT",
+                                "name": "Square",
+                                "typeArgs": []
+                              }
+                            ],
                             "args": []
                           }
                         },
@@ -4091,7 +4179,13 @@
                             },
                             "node_type": "ConstrExpression",
                             "constructor_name": "Nil",
-                            "types": [ "Square" ],
+                            "types": [
+                              {
+                                "node_type": "ADT",
+                                "name": "Square",
+                                "typeArgs": []
+                              }
+                            ],
                             "args": []
                           }
                         },
@@ -4240,7 +4334,13 @@
                             },
                             "node_type": "ConstrExpression",
                             "constructor_name": "Nil",
-                            "types": [ "Square" ],
+                            "types": [
+                              {
+                                "node_type": "ADT",
+                                "name": "Square",
+                                "typeArgs": []
+                              }
+                            ],
                             "args": []
                           }
                         },
@@ -4261,7 +4361,13 @@
                             },
                             "node_type": "ConstrExpression",
                             "constructor_name": "Nil",
-                            "types": [ "Square" ],
+                            "types": [
+                              {
+                                "node_type": "ADT",
+                                "name": "Square",
+                                "typeArgs": []
+                              }
+                            ],
                             "args": []
                           }
                         },
@@ -4367,11 +4473,23 @@
                   }
                 ]
               },
-              "lhs_type": "Bool"
+              "lhs_type": {
+                "node_type": "ADT",
+                "name": "Bool",
+                "typeArgs": []
+              }
             },
-            "lhs_type": "Direction"
+            "lhs_type": {
+              "node_type": "ADT",
+              "name": "Direction",
+              "typeArgs": []
+            }
           },
-          "lhs_type": "Square"
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Square",
+            "typeArgs": []
+          }
         }
       },
       {
@@ -4508,7 +4626,13 @@
                             },
                             "node_type": "ConstrExpression",
                             "constructor_name": "Nil",
-                            "types": [ "Square" ],
+                            "types": [
+                              {
+                                "node_type": "ADT",
+                                "name": "Square",
+                                "typeArgs": []
+                              }
+                            ],
                             "args": []
                           }
                         },
@@ -4529,7 +4653,13 @@
                             },
                             "node_type": "ConstrExpression",
                             "constructor_name": "Nil",
-                            "types": [ "Square" ],
+                            "types": [
+                              {
+                                "node_type": "ADT",
+                                "name": "Square",
+                                "typeArgs": []
+                              }
+                            ],
                             "args": []
                           }
                         },
@@ -4550,7 +4680,13 @@
                             },
                             "node_type": "ConstrExpression",
                             "constructor_name": "Nil",
-                            "types": [ "Square" ],
+                            "types": [
+                              {
+                                "node_type": "ADT",
+                                "name": "Square",
+                                "typeArgs": []
+                              }
+                            ],
                             "args": []
                           }
                         },
@@ -4699,7 +4835,13 @@
                             },
                             "node_type": "ConstrExpression",
                             "constructor_name": "Nil",
-                            "types": [ "Square" ],
+                            "types": [
+                              {
+                                "node_type": "ADT",
+                                "name": "Square",
+                                "typeArgs": []
+                              }
+                            ],
                             "args": []
                           }
                         },
@@ -4720,7 +4862,13 @@
                             },
                             "node_type": "ConstrExpression",
                             "constructor_name": "Nil",
-                            "types": [ "Square" ],
+                            "types": [
+                              {
+                                "node_type": "ADT",
+                                "name": "Square",
+                                "typeArgs": []
+                              }
+                            ],
                             "args": []
                           }
                         },
@@ -4741,7 +4889,13 @@
                             },
                             "node_type": "ConstrExpression",
                             "constructor_name": "Nil",
-                            "types": [ "Square" ],
+                            "types": [
+                              {
+                                "node_type": "ADT",
+                                "name": "Square",
+                                "typeArgs": []
+                              }
+                            ],
                             "args": []
                           }
                         },
@@ -4847,11 +5001,23 @@
                   }
                 ]
               },
-              "lhs_type": "Bool"
+              "lhs_type": {
+                "node_type": "ADT",
+                "name": "Bool",
+                "typeArgs": []
+              }
             },
-            "lhs_type": "Direction"
+            "lhs_type": {
+              "node_type": "ADT",
+              "name": "Direction",
+              "typeArgs": []
+            }
           },
-          "lhs_type": "Square"
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Square",
+            "typeArgs": []
+          }
         }
       },
       {
@@ -5043,7 +5209,13 @@
                                 },
                                 "node_type": "ConstrExpression",
                                 "constructor_name": "Nil",
-                                "types": [ "Square" ],
+                                "types": [
+                                  {
+                                    "node_type": "ADT",
+                                    "name": "Square",
+                                    "typeArgs": []
+                                  }
+                                ],
                                 "args": []
                               },
                               "body": {
@@ -5188,7 +5360,13 @@
                                     },
                                     "node_type": "ConstrExpression",
                                     "constructor_name": "Cons",
-                                    "types": [ "Square" ],
+                                    "types": [
+                                      {
+                                        "node_type": "ADT",
+                                        "name": "Square",
+                                        "typeArgs": []
+                                      }
+                                    ],
                                     "args": [
                                       {
                                         "loc": {
@@ -5256,7 +5434,13 @@
                                 },
                                 "node_type": "ConstrExpression",
                                 "constructor_name": "Nil",
-                                "types": [ "Square" ],
+                                "types": [
+                                  {
+                                    "node_type": "ADT",
+                                    "name": "Square",
+                                    "typeArgs": []
+                                  }
+                                ],
                                 "args": []
                               },
                               "body": {
@@ -5401,7 +5585,13 @@
                                     },
                                     "node_type": "ConstrExpression",
                                     "constructor_name": "Cons",
-                                    "types": [ "Square" ],
+                                    "types": [
+                                      {
+                                        "node_type": "ADT",
+                                        "name": "Square",
+                                        "typeArgs": []
+                                      }
+                                    ],
                                     "args": [
                                       {
                                         "loc": {
@@ -5444,7 +5634,13 @@
                               },
                               "node_type": "ConstrExpression",
                               "constructor_name": "Nil",
-                              "types": [ "Square" ],
+                              "types": [
+                                {
+                                  "node_type": "ADT",
+                                  "name": "Square",
+                                  "typeArgs": []
+                                }
+                              ],
                               "args": []
                             }
                           }
@@ -5552,7 +5748,13 @@
                                 },
                                 "node_type": "ConstrExpression",
                                 "constructor_name": "Nil",
-                                "types": [ "Square" ],
+                                "types": [
+                                  {
+                                    "node_type": "ADT",
+                                    "name": "Square",
+                                    "typeArgs": []
+                                  }
+                                ],
                                 "args": []
                               },
                               "body": {
@@ -5697,7 +5899,13 @@
                                     },
                                     "node_type": "ConstrExpression",
                                     "constructor_name": "Cons",
-                                    "types": [ "Square" ],
+                                    "types": [
+                                      {
+                                        "node_type": "ADT",
+                                        "name": "Square",
+                                        "typeArgs": []
+                                      }
+                                    ],
                                     "args": [
                                       {
                                         "loc": {
@@ -5765,7 +5973,13 @@
                                 },
                                 "node_type": "ConstrExpression",
                                 "constructor_name": "Nil",
-                                "types": [ "Square" ],
+                                "types": [
+                                  {
+                                    "node_type": "ADT",
+                                    "name": "Square",
+                                    "typeArgs": []
+                                  }
+                                ],
                                 "args": []
                               },
                               "body": {
@@ -5910,7 +6124,13 @@
                                     },
                                     "node_type": "ConstrExpression",
                                     "constructor_name": "Cons",
-                                    "types": [ "Square" ],
+                                    "types": [
+                                      {
+                                        "node_type": "ADT",
+                                        "name": "Square",
+                                        "typeArgs": []
+                                      }
+                                    ],
                                     "args": [
                                       {
                                         "loc": {
@@ -5953,7 +6173,13 @@
                               },
                               "node_type": "ConstrExpression",
                               "constructor_name": "Nil",
-                              "types": [ "Square" ],
+                              "types": [
+                                {
+                                  "node_type": "ADT",
+                                  "name": "Square",
+                                  "typeArgs": []
+                                }
+                              ],
                               "args": []
                             }
                           }
@@ -5963,11 +6189,23 @@
                   }
                 ]
               },
-              "lhs_type": "Bool"
+              "lhs_type": {
+                "node_type": "ADT",
+                "name": "Bool",
+                "typeArgs": []
+              }
             },
-            "lhs_type": "Direction"
+            "lhs_type": {
+              "node_type": "ADT",
+              "name": "Direction",
+              "typeArgs": []
+            }
           },
-          "lhs_type": "Square"
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Square",
+            "typeArgs": []
+          }
         }
       },
       {
@@ -6201,7 +6439,13 @@
                             },
                             "node_type": "ConstrExpression",
                             "constructor_name": "Nil",
-                            "types": [ "Square" ],
+                            "types": [
+                              {
+                                "node_type": "ADT",
+                                "name": "Square",
+                                "typeArgs": []
+                              }
+                            ],
                             "args": []
                           }
                         }
@@ -6350,7 +6594,13 @@
                             },
                             "node_type": "ConstrExpression",
                             "constructor_name": "Nil",
-                            "types": [ "Square" ],
+                            "types": [
+                              {
+                                "node_type": "ADT",
+                                "name": "Square",
+                                "typeArgs": []
+                              }
+                            ],
                             "args": []
                           }
                         }
@@ -6359,11 +6609,23 @@
                   }
                 ]
               },
-              "lhs_type": "Bool"
+              "lhs_type": {
+                "node_type": "ADT",
+                "name": "Bool",
+                "typeArgs": []
+              }
             },
-            "lhs_type": "Direction"
+            "lhs_type": {
+              "node_type": "ADT",
+              "name": "Direction",
+              "typeArgs": []
+            }
           },
-          "lhs_type": "Square"
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Square",
+            "typeArgs": []
+          }
         }
       },
       {
@@ -6580,7 +6842,13 @@
                               },
                               "node_type": "ConstrExpression",
                               "constructor_name": "Nil",
-                              "types": [ "Square" ],
+                              "types": [
+                                {
+                                  "node_type": "ADT",
+                                  "name": "Square",
+                                  "typeArgs": []
+                                }
+                              ],
                               "args": []
                             }
                           }
@@ -6692,7 +6960,13 @@
                               },
                               "node_type": "ConstrExpression",
                               "constructor_name": "Nil",
-                              "types": [ "Square" ],
+                              "types": [
+                                {
+                                  "node_type": "ADT",
+                                  "name": "Square",
+                                  "typeArgs": []
+                                }
+                              ],
                               "args": []
                             }
                           }
@@ -6701,13 +6975,25 @@
                     }
                   ]
                 },
-                "lhs_type": "Bool"
+                "lhs_type": {
+                  "node_type": "ADT",
+                  "name": "Bool",
+                  "typeArgs": []
+                }
               },
-              "lhs_type": "Uint32"
+              "lhs_type": { "node_type": "PrimType", "name": "Uint32" }
             },
-            "lhs_type": "Direction"
+            "lhs_type": {
+              "node_type": "ADT",
+              "name": "Direction",
+              "typeArgs": []
+            }
           },
-          "lhs_type": "Square"
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Square",
+            "typeArgs": []
+          }
         }
       },
       {
@@ -6834,11 +7120,19 @@
                   }
                 ]
               },
-              "lhs_type": "Uint32"
+              "lhs_type": { "node_type": "PrimType", "name": "Uint32" }
             },
-            "lhs_type": "Direction"
+            "lhs_type": {
+              "node_type": "ADT",
+              "name": "Direction",
+              "typeArgs": []
+            }
           },
-          "lhs_type": "Square"
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Square",
+            "typeArgs": []
+          }
         }
       },
       {
@@ -7190,7 +7484,13 @@
                                       },
                                       "node_type": "ConstrExpression",
                                       "constructor_name": "Nil",
-                                      "types": [ "Square" ],
+                                      "types": [
+                                        {
+                                          "node_type": "ADT",
+                                          "name": "Square",
+                                          "typeArgs": []
+                                        }
+                                      ],
                                       "args": []
                                     }
                                   }
@@ -7410,7 +7710,13 @@
                                       },
                                       "node_type": "ConstrExpression",
                                       "constructor_name": "Nil",
-                                      "types": [ "Square" ],
+                                      "types": [
+                                        {
+                                          "node_type": "ADT",
+                                          "name": "Square",
+                                          "typeArgs": []
+                                        }
+                                      ],
                                       "args": []
                                     }
                                   }
@@ -7727,7 +8033,13 @@
                                       },
                                       "node_type": "ConstrExpression",
                                       "constructor_name": "Nil",
-                                      "types": [ "Square" ],
+                                      "types": [
+                                        {
+                                          "node_type": "ADT",
+                                          "name": "Square",
+                                          "typeArgs": []
+                                        }
+                                      ],
                                       "args": []
                                     }
                                   }
@@ -7976,7 +8288,13 @@
                                             },
                                             "node_type": "ConstrExpression",
                                             "constructor_name": "Nil",
-                                            "types": [ "Square" ],
+                                            "types": [
+                                              {
+                                                "node_type": "ADT",
+                                                "name": "Square",
+                                                "typeArgs": []
+                                              }
+                                            ],
                                             "args": []
                                           }
                                         }
@@ -8197,7 +8515,13 @@
                                             },
                                             "node_type": "ConstrExpression",
                                             "constructor_name": "Nil",
-                                            "types": [ "Square" ],
+                                            "types": [
+                                              {
+                                                "node_type": "ADT",
+                                                "name": "Square",
+                                                "typeArgs": []
+                                              }
+                                            ],
                                             "args": []
                                           }
                                         }
@@ -8517,7 +8841,13 @@
                                       },
                                       "node_type": "ConstrExpression",
                                       "constructor_name": "Nil",
-                                      "types": [ "Square" ],
+                                      "types": [
+                                        {
+                                          "node_type": "ADT",
+                                          "name": "Square",
+                                          "typeArgs": []
+                                        }
+                                      ],
                                       "args": []
                                     }
                                   }
@@ -8766,7 +9096,13 @@
                                             },
                                             "node_type": "ConstrExpression",
                                             "constructor_name": "Nil",
-                                            "types": [ "Square" ],
+                                            "types": [
+                                              {
+                                                "node_type": "ADT",
+                                                "name": "Square",
+                                                "typeArgs": []
+                                              }
+                                            ],
                                             "args": []
                                           }
                                         }
@@ -9000,7 +9336,13 @@
                                             },
                                             "node_type": "ConstrExpression",
                                             "constructor_name": "Nil",
-                                            "types": [ "Square" ],
+                                            "types": [
+                                              {
+                                                "node_type": "ADT",
+                                                "name": "Square",
+                                                "typeArgs": []
+                                              }
+                                            ],
                                             "args": []
                                           }
                                         }
@@ -9337,7 +9679,13 @@
                                         },
                                         "node_type": "ConstrExpression",
                                         "constructor_name": "Nil",
-                                        "types": [ "Square" ],
+                                        "types": [
+                                          {
+                                            "node_type": "ADT",
+                                            "name": "Square",
+                                            "typeArgs": []
+                                          }
+                                        ],
                                         "args": []
                                       }
                                     },
@@ -9566,7 +9914,13 @@
                                                   "node_type":
                                                     "ConstrExpression",
                                                   "constructor_name": "Nil",
-                                                  "types": [ "Square" ],
+                                                  "types": [
+                                                    {
+                                                      "node_type": "ADT",
+                                                      "name": "Square",
+                                                      "typeArgs": []
+                                                    }
+                                                  ],
                                                   "args": []
                                                 }
                                               }
@@ -9906,7 +10260,13 @@
                                         },
                                         "node_type": "ConstrExpression",
                                         "constructor_name": "Nil",
-                                        "types": [ "Square" ],
+                                        "types": [
+                                          {
+                                            "node_type": "ADT",
+                                            "name": "Square",
+                                            "typeArgs": []
+                                          }
+                                        ],
                                         "args": []
                                       }
                                     },
@@ -10135,7 +10495,13 @@
                                                   "node_type":
                                                     "ConstrExpression",
                                                   "constructor_name": "Nil",
-                                                  "types": [ "Square" ],
+                                                  "types": [
+                                                    {
+                                                      "node_type": "ADT",
+                                                      "name": "Square",
+                                                      "typeArgs": []
+                                                    }
+                                                  ],
                                                   "args": []
                                                 }
                                               }
@@ -10152,17 +10518,37 @@
                         }
                       ]
                     },
-                    "lhs_type": "Bool"
+                    "lhs_type": {
+                      "node_type": "ADT",
+                      "name": "Bool",
+                      "typeArgs": []
+                    }
                   },
-                  "lhs_type": "Uint32"
+                  "lhs_type": { "node_type": "PrimType", "name": "Uint32" }
                 },
-                "lhs_type": "Direction"
+                "lhs_type": {
+                  "node_type": "ADT",
+                  "name": "Direction",
+                  "typeArgs": []
+                }
               },
-              "lhs_type": "PromotionStatus"
+              "lhs_type": {
+                "node_type": "ADT",
+                "name": "PromotionStatus",
+                "typeArgs": []
+              }
             },
-            "lhs_type": "Piece"
+            "lhs_type": {
+              "node_type": "ADT",
+              "name": "Piece",
+              "typeArgs": []
+            }
           },
-          "lhs_type": "Square"
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Square",
+            "typeArgs": []
+          }
         }
       },
       {
@@ -10311,7 +10697,13 @@
                           },
                           "node_type": "ConstrExpression",
                           "constructor_name": "Some",
-                          "types": [ "PromotionStatus" ],
+                          "types": [
+                            {
+                              "node_type": "ADT",
+                              "name": "PromotionStatus",
+                              "typeArgs": []
+                            }
+                          ],
                           "args": [
                             {
                               "loc": {
@@ -10372,7 +10764,13 @@
                                 },
                                 "node_type": "ConstrExpression",
                                 "constructor_name": "None",
-                                "types": [ "PromotionStatus" ],
+                                "types": [
+                                  {
+                                    "node_type": "ADT",
+                                    "name": "PromotionStatus",
+                                    "typeArgs": []
+                                  }
+                                ],
                                 "args": []
                               }
                             },
@@ -10695,7 +11093,12 @@
                                                     "constructor_name":
                                                       "None",
                                                     "types": [
-                                                      "PromotionStatus"
+                                                      {
+                                                        "node_type": "ADT",
+                                                        "name":
+                                                          "PromotionStatus",
+                                                        "typeArgs": []
+                                                      }
                                                     ],
                                                     "args": []
                                                   }
@@ -10723,7 +11126,12 @@
                                                     "constructor_name":
                                                       "Some",
                                                     "types": [
-                                                      "PromotionStatus"
+                                                      {
+                                                        "node_type": "ADT",
+                                                        "name":
+                                                          "PromotionStatus",
+                                                        "typeArgs": []
+                                                      }
                                                     ],
                                                     "args": [
                                                       {
@@ -11041,7 +11449,12 @@
                                                     "constructor_name":
                                                       "None",
                                                     "types": [
-                                                      "PromotionStatus"
+                                                      {
+                                                        "node_type": "ADT",
+                                                        "name":
+                                                          "PromotionStatus",
+                                                        "typeArgs": []
+                                                      }
                                                     ],
                                                     "args": []
                                                   }
@@ -11069,7 +11482,12 @@
                                                     "constructor_name":
                                                       "Some",
                                                     "types": [
-                                                      "PromotionStatus"
+                                                      {
+                                                        "node_type": "ADT",
+                                                        "name":
+                                                          "PromotionStatus",
+                                                        "typeArgs": []
+                                                      }
                                                     ],
                                                     "args": [
                                                       {
@@ -11104,15 +11522,23 @@
                       }
                     ]
                   },
-                  "lhs_type": "Bool"
+                  "lhs_type": {
+                    "node_type": "ADT",
+                    "name": "Bool",
+                    "typeArgs": []
+                  }
                 },
-                "lhs_type": "Uint32"
+                "lhs_type": { "node_type": "PrimType", "name": "Uint32" }
               },
-              "lhs_type": "Uint32"
+              "lhs_type": { "node_type": "PrimType", "name": "Uint32" }
             },
-            "lhs_type": "PromotionStatus"
+            "lhs_type": {
+              "node_type": "ADT",
+              "name": "PromotionStatus",
+              "typeArgs": []
+            }
           },
-          "lhs_type": "Bool"
+          "lhs_type": { "node_type": "ADT", "name": "Bool", "typeArgs": [] }
         }
       },
       {
@@ -11495,7 +11921,7 @@
               ]
             }
           },
-          "lhs_type": "Error"
+          "lhs_type": { "node_type": "ADT", "name": "Error", "typeArgs": [] }
         }
       },
       {
@@ -11765,11 +12191,11 @@
                   }
                 }
               },
-              "lhs_type": "ByStr20"
+              "lhs_type": { "node_type": "PrimType", "name": "ByStr20" }
             },
-            "lhs_type": "ByStr20"
+            "lhs_type": { "node_type": "PrimType", "name": "ByStr20" }
           },
-          "lhs_type": "ByStr20"
+          "lhs_type": { "node_type": "PrimType", "name": "ByStr20" }
         }
       },
       {
@@ -11988,11 +12414,11 @@
                   ]
                 }
               },
-              "lhs_type": "ByStr20"
+              "lhs_type": { "node_type": "PrimType", "name": "ByStr20" }
             },
-            "lhs_type": "ByStr20"
+            "lhs_type": { "node_type": "PrimType", "name": "ByStr20" }
           },
-          "lhs_type": "ByStr20"
+          "lhs_type": { "node_type": "PrimType", "name": "ByStr20" }
         }
       }
     ],
@@ -12065,7 +12491,7 @@
           "identifier": "player1",
           "node_type": "Identifier"
         },
-        "parameter_type": "ByStr20",
+        "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
         "node_type": "Parameter"
       },
       {
@@ -12079,7 +12505,7 @@
           "identifier": "player2",
           "node_type": "Identifier"
         },
-        "parameter_type": "ByStr20",
+        "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
         "node_type": "Parameter"
       }
     ],
@@ -12095,7 +12521,19 @@
           "identifier": "board",
           "node_type": "Identifier"
         },
-        "field_type": "Map (Uint32) (Map (Uint32) (SquareContents))",
+        "field_type": {
+          "node_type": "MapType",
+          "keyType": { "node_type": "PrimType", "name": "Uint32" },
+          "valType": {
+            "node_type": "MapType",
+            "keyType": { "node_type": "PrimType", "name": "Uint32" },
+            "valType": {
+              "node_type": "ADT",
+              "name": "SquareContents",
+              "typeArgs": []
+            }
+          }
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/shogi_proc.scilla",
@@ -12150,7 +12588,15 @@
           "identifier": "captured_pieces",
           "node_type": "Identifier"
         },
-        "field_type": "Map (ByStr20) (Map (Uint32) (Uint32))",
+        "field_type": {
+          "node_type": "MapType",
+          "keyType": { "node_type": "PrimType", "name": "ByStr20" },
+          "valType": {
+            "node_type": "MapType",
+            "keyType": { "node_type": "PrimType", "name": "Uint32" },
+            "valType": { "node_type": "PrimType", "name": "Uint32" }
+          }
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/shogi_proc.scilla",
@@ -12205,7 +12651,11 @@
           "identifier": "player_in_turn",
           "node_type": "Identifier"
         },
-        "field_type": "Option (ByStr20)",
+        "field_type": {
+          "node_type": "ADT",
+          "name": "Option",
+          "typeArgs": [ { "node_type": "PrimType", "name": "ByStr20" } ]
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/shogi_proc.scilla",
@@ -12215,7 +12665,7 @@
           },
           "node_type": "ConstrExpression",
           "constructor_name": "Some",
-          "types": [ "ByStr20" ],
+          "types": [ { "node_type": "PrimType", "name": "ByStr20" } ],
           "args": [
             {
               "loc": {
@@ -12242,7 +12692,11 @@
           "identifier": "winner",
           "node_type": "Identifier"
         },
-        "field_type": "Option (ByStr20)",
+        "field_type": {
+          "node_type": "ADT",
+          "name": "Option",
+          "typeArgs": [ { "node_type": "PrimType", "name": "ByStr20" } ]
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/shogi_proc.scilla",
@@ -12252,7 +12706,7 @@
           },
           "node_type": "ConstrExpression",
           "constructor_name": "None",
-          "types": [ "ByStr20" ],
+          "types": [ { "node_type": "PrimType", "name": "ByStr20" } ],
           "args": []
         },
         "node_type": "Field"
@@ -12299,7 +12753,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "None",
-              "types": [ "ByStr20" ],
+              "types": [ { "node_type": "PrimType", "name": "ByStr20" } ],
               "args": []
             }
           },
@@ -12584,7 +13038,7 @@
               "identifier": "winning_player",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           }
         ],
@@ -12626,7 +13080,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "None",
-              "types": [ "ByStr20" ],
+              "types": [ { "node_type": "PrimType", "name": "ByStr20" } ],
               "args": []
             }
           },
@@ -12686,7 +13140,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Some",
-              "types": [ "ByStr20" ],
+              "types": [ { "node_type": "PrimType", "name": "ByStr20" } ],
               "args": [
                 {
                   "loc": {
@@ -12747,7 +13201,7 @@
               "identifier": "current_player",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           }
         ],
@@ -12884,7 +13338,11 @@
               "identifier": "piece",
               "node_type": "Identifier"
             },
-            "parameter_type": "Piece",
+            "parameter_type": {
+              "node_type": "ADT",
+              "name": "Piece",
+              "typeArgs": []
+            },
             "node_type": "Parameter"
           },
           {
@@ -12898,7 +13356,11 @@
               "identifier": "square",
               "node_type": "Identifier"
             },
-            "parameter_type": "Square",
+            "parameter_type": {
+              "node_type": "ADT",
+              "name": "Square",
+              "typeArgs": []
+            },
             "node_type": "Parameter"
           }
         ],
@@ -13755,7 +14217,7 @@
               "identifier": "current_player",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           },
           {
@@ -13769,7 +14231,11 @@
               "identifier": "piece",
               "node_type": "Identifier"
             },
-            "parameter_type": "Piece",
+            "parameter_type": {
+              "node_type": "ADT",
+              "name": "Piece",
+              "typeArgs": []
+            },
             "node_type": "Parameter"
           },
           {
@@ -13783,7 +14249,11 @@
               "identifier": "promote",
               "node_type": "Identifier"
             },
-            "parameter_type": "Bool",
+            "parameter_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "typeArgs": []
+            },
             "node_type": "Parameter"
           },
           {
@@ -13797,7 +14267,11 @@
               "identifier": "promotion_status",
               "node_type": "Identifier"
             },
-            "parameter_type": "PromotionStatus",
+            "parameter_type": {
+              "node_type": "ADT",
+              "name": "PromotionStatus",
+              "typeArgs": []
+            },
             "node_type": "Parameter"
           },
           {
@@ -13811,7 +14285,7 @@
               "identifier": "row",
               "node_type": "Identifier"
             },
-            "parameter_type": "Uint32",
+            "parameter_type": { "node_type": "PrimType", "name": "Uint32" },
             "node_type": "Parameter"
           },
           {
@@ -13825,7 +14299,7 @@
               "identifier": "column",
               "node_type": "Identifier"
             },
-            "parameter_type": "Uint32",
+            "parameter_type": { "node_type": "PrimType", "name": "Uint32" },
             "node_type": "Parameter"
           },
           {
@@ -13839,7 +14313,7 @@
               "identifier": "target_row",
               "node_type": "Identifier"
             },
-            "parameter_type": "Uint32",
+            "parameter_type": { "node_type": "PrimType", "name": "Uint32" },
             "node_type": "Parameter"
           },
           {
@@ -13853,7 +14327,7 @@
               "identifier": "target_column",
               "node_type": "Identifier"
             },
-            "parameter_type": "Uint32",
+            "parameter_type": { "node_type": "PrimType", "name": "Uint32" },
             "node_type": "Parameter"
           },
           {
@@ -13867,7 +14341,11 @@
               "identifier": "player_1_moves",
               "node_type": "Identifier"
             },
-            "parameter_type": "Bool",
+            "parameter_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "typeArgs": []
+            },
             "node_type": "Parameter"
           }
         ],
@@ -14252,7 +14730,7 @@
               "identifier": "current_player",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           },
           {
@@ -14266,7 +14744,11 @@
               "identifier": "square",
               "node_type": "Identifier"
             },
-            "parameter_type": "Square",
+            "parameter_type": {
+              "node_type": "ADT",
+              "name": "Square",
+              "typeArgs": []
+            },
             "node_type": "Parameter"
           },
           {
@@ -14280,7 +14762,11 @@
               "identifier": "direction",
               "node_type": "Identifier"
             },
-            "parameter_type": "Direction",
+            "parameter_type": {
+              "node_type": "ADT",
+              "name": "Direction",
+              "typeArgs": []
+            },
             "node_type": "Parameter"
           },
           {
@@ -14294,7 +14780,7 @@
               "identifier": "distance",
               "node_type": "Identifier"
             },
-            "parameter_type": "Uint32",
+            "parameter_type": { "node_type": "PrimType", "name": "Uint32" },
             "node_type": "Parameter"
           },
           {
@@ -14308,7 +14794,11 @@
               "identifier": "promote",
               "node_type": "Identifier"
             },
-            "parameter_type": "Bool",
+            "parameter_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "typeArgs": []
+            },
             "node_type": "Parameter"
           }
         ],
@@ -15403,7 +15893,11 @@
                                                       }
                                                     ]
                                                   },
-                                                  "lhs_type": "Square"
+                                                  "lhs_type": {
+                                                    "node_type": "ADT",
+                                                    "name": "Square",
+                                                    "typeArgs": []
+                                                  }
                                                 },
                                                 "body": {
                                                   "loc": {
@@ -17093,7 +17587,7 @@
               "identifier": "row",
               "node_type": "Identifier"
             },
-            "parameter_type": "Uint32",
+            "parameter_type": { "node_type": "PrimType", "name": "Uint32" },
             "node_type": "Parameter"
           },
           {
@@ -17107,7 +17601,7 @@
               "identifier": "column",
               "node_type": "Identifier"
             },
-            "parameter_type": "Uint32",
+            "parameter_type": { "node_type": "PrimType", "name": "Uint32" },
             "node_type": "Parameter"
           },
           {
@@ -17121,7 +17615,11 @@
               "identifier": "direction",
               "node_type": "Identifier"
             },
-            "parameter_type": "Direction",
+            "parameter_type": {
+              "node_type": "ADT",
+              "name": "Direction",
+              "typeArgs": []
+            },
             "node_type": "Parameter"
           },
           {
@@ -17135,7 +17633,7 @@
               "identifier": "distance",
               "node_type": "Identifier"
             },
-            "parameter_type": "Uint32",
+            "parameter_type": { "node_type": "PrimType", "name": "Uint32" },
             "node_type": "Parameter"
           },
           {
@@ -17149,7 +17647,11 @@
               "identifier": "promote",
               "node_type": "Identifier"
             },
-            "parameter_type": "Bool",
+            "parameter_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "typeArgs": []
+            },
             "node_type": "Parameter"
           }
         ],
@@ -17449,7 +17951,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Nil",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": []
             }
           },
@@ -17480,7 +17982,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Cons",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": [
                 {
                   "loc": {
@@ -17542,7 +18044,11 @@
               "identifier": "action",
               "node_type": "Identifier"
             },
-            "parameter_type": "Action",
+            "parameter_type": {
+              "node_type": "ADT",
+              "name": "Action",
+              "typeArgs": []
+            },
             "node_type": "Parameter"
           }
         ],
@@ -18603,7 +19109,12 @@
                               },
                               "node_type": "ConstrExpression",
                               "constructor_name": "Some",
-                              "types": [ "ByStr20" ],
+                              "types": [
+                                {
+                                  "node_type": "PrimType",
+                                  "name": "ByStr20"
+                                }
+                              ],
                               "args": [
                                 {
                                   "loc": {

@@ -81,7 +81,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Nil",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": []
             },
             "body": {
@@ -93,7 +93,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Cons",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": [
                 {
                   "loc": {
@@ -118,7 +118,7 @@
               ]
             }
           },
-          "lhs_type": "Message"
+          "lhs_type": { "node_type": "PrimType", "name": "Message" }
         }
       },
       {
@@ -210,7 +210,11 @@
           "identifier": "pub_key",
           "node_type": "Identifier"
         },
-        "field_type": "Option (ByStr33)",
+        "field_type": {
+          "node_type": "ADT",
+          "name": "Option",
+          "typeArgs": [ { "node_type": "PrimType", "name": "ByStr33" } ]
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/schnorr.scilla",
@@ -220,7 +224,7 @@
           },
           "node_type": "ConstrExpression",
           "constructor_name": "None",
-          "types": [ "ByStr33" ],
+          "types": [ { "node_type": "PrimType", "name": "ByStr33" } ],
           "args": []
         },
         "node_type": "Field"
@@ -240,7 +244,7 @@
               "identifier": "msg",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr" },
             "node_type": "Parameter"
           },
           {
@@ -254,7 +258,7 @@
               "identifier": "sig",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr64",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr64" },
             "node_type": "Parameter"
           }
         ],

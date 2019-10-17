@@ -36,7 +36,7 @@
           "identifier": "is_owner",
           "node_type": "Identifier"
         },
-        "field_type": "ByStr20",
+        "field_type": { "node_type": "PrimType", "name": "ByStr20" },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/creationtest.scilla",
@@ -63,7 +63,7 @@
           "identifier": "a",
           "node_type": "Identifier"
         },
-        "field_type": "BNum",
+        "field_type": { "node_type": "PrimType", "name": "BNum" },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/creationtest.scilla",

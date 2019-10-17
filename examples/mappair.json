@@ -44,7 +44,7 @@
           },
           "node_type": "ConstrExpression",
           "constructor_name": "Nil",
-          "types": [ "Message" ],
+          "types": [ { "node_type": "PrimType", "name": "Message" } ],
           "args": []
         }
       },
@@ -107,7 +107,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Nil",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": []
             },
             "body": {
@@ -119,7 +119,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Cons",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": [
                 {
                   "loc": {
@@ -144,7 +144,7 @@
               ]
             }
           },
-          "lhs_type": "Message"
+          "lhs_type": { "node_type": "PrimType", "name": "Message" }
         }
       },
       {
@@ -276,7 +276,13 @@
                       },
                       "node_type": "ConstrExpression",
                       "constructor_name": "Some",
-                      "types": [ "Bool" ],
+                      "types": [
+                        {
+                          "node_type": "ADT",
+                          "name": "Bool",
+                          "typeArgs": []
+                        }
+                      ],
                       "args": [
                         {
                           "loc": {
@@ -352,7 +358,13 @@
                             },
                             "node_type": "ConstrExpression",
                             "constructor_name": "Some",
-                            "types": [ "Bool" ],
+                            "types": [
+                              {
+                                "node_type": "ADT",
+                                "name": "Bool",
+                                "typeArgs": []
+                              }
+                            ],
                             "args": [
                               {
                                 "loc": {
@@ -385,7 +397,13 @@
                             },
                             "node_type": "ConstrExpression",
                             "constructor_name": "Some",
-                            "types": [ "Bool" ],
+                            "types": [
+                              {
+                                "node_type": "ADT",
+                                "name": "Bool",
+                                "typeArgs": []
+                              }
+                            ],
                             "args": [
                               {
                                 "loc": {
@@ -408,7 +426,13 @@
               }
             }
           },
-          "lhs_type": "Option (Bool)"
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Option",
+            "typeArgs": [
+              { "node_type": "ADT", "name": "Bool", "typeArgs": [] }
+            ]
+          }
         }
       },
       {
@@ -527,7 +551,7 @@
           "identifier": "owner",
           "node_type": "Identifier"
         },
-        "parameter_type": "ByStr20",
+        "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
         "node_type": "Parameter"
       }
     ],
@@ -543,7 +567,18 @@
           "identifier": "gmap",
           "node_type": "Identifier"
         },
-        "field_type": "Map (ByStr20) (Pair (Int32) (Int32))",
+        "field_type": {
+          "node_type": "MapType",
+          "keyType": { "node_type": "PrimType", "name": "ByStr20" },
+          "valType": {
+            "node_type": "ADT",
+            "name": "Pair",
+            "typeArgs": [
+              { "node_type": "PrimType", "name": "Int32" },
+              { "node_type": "PrimType", "name": "Int32" }
+            ]
+          }
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/mappair.scilla",
@@ -553,8 +588,15 @@
           },
           "node_type": "LiteralExpression",
           "value": {
-            "key_type": "ByStr20",
-            "value_type": "Pair (Int32) (Int32)",
+            "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "value_type": {
+              "node_type": "ADT",
+              "name": "Pair",
+              "typeArgs": [
+                { "node_type": "PrimType", "name": "Int32" },
+                { "node_type": "PrimType", "name": "Int32" }
+              ]
+            },
             "node_type": "MapLiteral",
             "mvalues": []
           }
@@ -572,7 +614,24 @@
           "identifier": "gpair",
           "node_type": "Identifier"
         },
-        "field_type": "Pair (List (Int64)) (Option (Bool))",
+        "field_type": {
+          "node_type": "ADT",
+          "name": "Pair",
+          "typeArgs": [
+            {
+              "node_type": "ADT",
+              "name": "List",
+              "typeArgs": [ { "node_type": "PrimType", "name": "Int64" } ]
+            },
+            {
+              "node_type": "ADT",
+              "name": "Option",
+              "typeArgs": [
+                { "node_type": "ADT", "name": "Bool", "typeArgs": [] }
+              ]
+            }
+          ]
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/mappair.scilla",
@@ -601,7 +660,7 @@
             },
             "node_type": "ConstrExpression",
             "constructor_name": "Nil",
-            "types": [ "Int64" ],
+            "types": [ { "node_type": "PrimType", "name": "Int64" } ],
             "args": []
           },
           "body": {
@@ -632,7 +691,9 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "None",
-              "types": [ "Bool" ],
+              "types": [
+                { "node_type": "ADT", "name": "Bool", "typeArgs": [] }
+              ],
               "args": []
             },
             "body": {
@@ -644,7 +705,22 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Pair",
-              "types": [ "List (Int64)", "Option (Bool)" ],
+              "types": [
+                {
+                  "node_type": "ADT",
+                  "name": "List",
+                  "typeArgs": [
+                    { "node_type": "PrimType", "name": "Int64" }
+                  ]
+                },
+                {
+                  "node_type": "ADT",
+                  "name": "Option",
+                  "typeArgs": [
+                    { "node_type": "ADT", "name": "Bool", "typeArgs": [] }
+                  ]
+                }
+              ],
               "args": [
                 {
                   "loc": {
@@ -683,7 +759,17 @@
           "identifier": "llist",
           "node_type": "Identifier"
         },
-        "field_type": "List (List (Int64))",
+        "field_type": {
+          "node_type": "ADT",
+          "name": "List",
+          "typeArgs": [
+            {
+              "node_type": "ADT",
+              "name": "List",
+              "typeArgs": [ { "node_type": "PrimType", "name": "Int64" } ]
+            }
+          ]
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/mappair.scilla",
@@ -693,7 +779,13 @@
           },
           "node_type": "ConstrExpression",
           "constructor_name": "Nil",
-          "types": [ "List (Int64)" ],
+          "types": [
+            {
+              "node_type": "ADT",
+              "name": "List",
+              "typeArgs": [ { "node_type": "PrimType", "name": "Int64" } ]
+            }
+          ],
           "args": []
         },
         "node_type": "Field"
@@ -709,7 +801,17 @@
           "identifier": "plist",
           "node_type": "Identifier"
         },
-        "field_type": "List (Option (Int32))",
+        "field_type": {
+          "node_type": "ADT",
+          "name": "List",
+          "typeArgs": [
+            {
+              "node_type": "ADT",
+              "name": "Option",
+              "typeArgs": [ { "node_type": "PrimType", "name": "Int32" } ]
+            }
+          ]
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/mappair.scilla",
@@ -719,7 +821,13 @@
           },
           "node_type": "ConstrExpression",
           "constructor_name": "Nil",
-          "types": [ "Option (Int32)" ],
+          "types": [
+            {
+              "node_type": "ADT",
+              "name": "Option",
+              "typeArgs": [ { "node_type": "PrimType", "name": "Int32" } ]
+            }
+          ],
           "args": []
         },
         "node_type": "Field"
@@ -735,7 +843,7 @@
           "identifier": "gnat",
           "node_type": "Identifier"
         },
-        "field_type": "Nat",
+        "field_type": { "node_type": "ADT", "name": "Nat", "typeArgs": [] },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/mappair.scilla",
@@ -947,7 +1055,10 @@
                       },
                       "node_type": "ConstrExpression",
                       "constructor_name": "Pair",
-                      "types": [ "Int32", "Int32" ],
+                      "types": [
+                        { "node_type": "PrimType", "name": "Int32" },
+                        { "node_type": "PrimType", "name": "Int32" }
+                      ],
                       "args": [
                         {
                           "loc": {
@@ -1152,7 +1263,10 @@
                       },
                       "node_type": "ConstrExpression",
                       "constructor_name": "Pair",
-                      "types": [ "Int32", "Int32" ],
+                      "types": [
+                        { "node_type": "PrimType", "name": "Int32" },
+                        { "node_type": "PrimType", "name": "Int32" }
+                      ],
                       "args": [
                         {
                           "loc": {
@@ -1272,7 +1386,7 @@
               "identifier": "num",
               "node_type": "Identifier"
             },
-            "parameter_type": "Int64",
+            "parameter_type": { "node_type": "PrimType", "name": "Int64" },
             "node_type": "Parameter"
           }
         ],
@@ -1493,7 +1607,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Cons",
-              "types": [ "Int64" ],
+              "types": [ { "node_type": "PrimType", "name": "Int64" } ],
               "args": [
                 {
                   "loc": {
@@ -1545,7 +1659,22 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Pair",
-              "types": [ "List (Int64)", "Option (Bool)" ],
+              "types": [
+                {
+                  "node_type": "ADT",
+                  "name": "List",
+                  "typeArgs": [
+                    { "node_type": "PrimType", "name": "Int64" }
+                  ]
+                },
+                {
+                  "node_type": "ADT",
+                  "name": "Option",
+                  "typeArgs": [
+                    { "node_type": "ADT", "name": "Bool", "typeArgs": [] }
+                  ]
+                }
+              ],
               "args": [
                 {
                   "loc": {

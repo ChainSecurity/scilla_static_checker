@@ -47,7 +47,10 @@
               "identifier": "EarmarkedCoin",
               "node_type": "Identifier"
             },
-            "c_arg_types": [ "Uint128", "ByStr20" ],
+            "c_arg_types": [
+              { "node_type": "PrimType", "name": "Uint128" },
+              { "node_type": "PrimType", "name": "ByStr20" }
+            ],
             "node_type": "CtrDef"
           }
         ]
@@ -115,7 +118,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Nil",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": []
             },
             "body": {
@@ -128,7 +131,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Cons",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": [
                 {
                   "loc": {
@@ -155,7 +158,7 @@
               ]
             }
           },
-          "lhs_type": "Message"
+          "lhs_type": { "node_type": "PrimType", "name": "Message" }
         }
       },
       {
@@ -297,7 +300,15 @@
           "identifier": "earmarked_coins",
           "node_type": "Identifier"
         },
-        "field_type": "Map (ByStr20) (EarmarkedCoin)",
+        "field_type": {
+          "node_type": "MapType",
+          "keyType": { "node_type": "PrimType", "name": "ByStr20" },
+          "valType": {
+            "node_type": "ADT",
+            "name": "EarmarkedCoin",
+            "typeArgs": []
+          }
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/earmarked-coin.scilla",
@@ -307,8 +318,12 @@
           },
           "node_type": "LiteralExpression",
           "value": {
-            "key_type": "ByStr20",
-            "value_type": "EarmarkedCoin",
+            "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "value_type": {
+              "node_type": "ADT",
+              "name": "EarmarkedCoin",
+              "typeArgs": []
+            },
             "node_type": "MapLiteral",
             "mvalues": []
           }
@@ -331,7 +346,7 @@
               "identifier": "amount",
               "node_type": "Identifier"
             },
-            "parameter_type": "Uint128",
+            "parameter_type": { "node_type": "PrimType", "name": "Uint128" },
             "node_type": "Parameter"
           },
           {
@@ -346,7 +361,7 @@
               "identifier": "recipient",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           }
         ],
@@ -531,7 +546,7 @@
               "identifier": "from",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           },
           {
@@ -546,7 +561,7 @@
               "identifier": "to",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           }
         ],
@@ -697,7 +712,7 @@
               "identifier": "from",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           },
           {
@@ -712,7 +727,7 @@
               "identifier": "to",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           },
           {
@@ -727,7 +742,7 @@
               "identifier": "error_code",
               "node_type": "Identifier"
             },
-            "parameter_type": "Int32",
+            "parameter_type": { "node_type": "PrimType", "name": "Int32" },
             "node_type": "Parameter"
           }
         ],
@@ -878,7 +893,7 @@
               "identifier": "recip",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           }
         ],
@@ -1212,7 +1227,7 @@
               "identifier": "earmarked_coin_address",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           }
         ],

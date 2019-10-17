@@ -175,9 +175,9 @@
                 }
               ]
             },
-            "lhs_type": "String"
+            "lhs_type": { "node_type": "PrimType", "name": "String" }
           },
-          "lhs_type": "String"
+          "lhs_type": { "node_type": "PrimType", "name": "String" }
         }
       },
       {
@@ -204,7 +204,12 @@
               "identifier": "Order",
               "node_type": "Identifier"
             },
-            "c_arg_types": [ "ByStr20", "Uint128", "ByStr20", "Uint128" ],
+            "c_arg_types": [
+              { "node_type": "PrimType", "name": "ByStr20" },
+              { "node_type": "PrimType", "name": "Uint128" },
+              { "node_type": "PrimType", "name": "ByStr20" },
+              { "node_type": "PrimType", "name": "Uint128" }
+            ],
             "node_type": "CtrDef"
           }
         ]
@@ -272,7 +277,7 @@
               "node_type": "Builtin"
             }
           },
-          "lhs_type": "Order"
+          "lhs_type": { "node_type": "ADT", "name": "Order", "typeArgs": [] }
         }
       },
       {
@@ -497,15 +502,15 @@
                       }
                     ]
                   },
-                  "lhs_type": "Uint128"
+                  "lhs_type": { "node_type": "PrimType", "name": "Uint128" }
                 },
-                "lhs_type": "ByStr20"
+                "lhs_type": { "node_type": "PrimType", "name": "ByStr20" }
               },
-              "lhs_type": "ByStr20"
+              "lhs_type": { "node_type": "PrimType", "name": "ByStr20" }
             },
-            "lhs_type": "String"
+            "lhs_type": { "node_type": "PrimType", "name": "String" }
           },
-          "lhs_type": "ByStr20"
+          "lhs_type": { "node_type": "PrimType", "name": "ByStr20" }
         }
       },
       {
@@ -688,7 +693,9 @@
                           },
                           "node_type": "ConstrExpression",
                           "constructor_name": "Nil",
-                          "types": [ "Message" ],
+                          "types": [
+                            { "node_type": "PrimType", "name": "Message" }
+                          ],
                           "args": []
                         },
                         "body": {
@@ -701,7 +708,9 @@
                           },
                           "node_type": "ConstrExpression",
                           "constructor_name": "Cons",
-                          "types": [ "Message" ],
+                          "types": [
+                            { "node_type": "PrimType", "name": "Message" }
+                          ],
                           "args": [
                             {
                               "loc": {
@@ -728,7 +737,10 @@
                           ]
                         }
                       },
-                      "lhs_type": "Message"
+                      "lhs_type": {
+                        "node_type": "PrimType",
+                        "name": "Message"
+                      }
                     },
                     "body": {
                       "loc": {
@@ -865,15 +877,15 @@
                       }
                     }
                   },
-                  "lhs_type": "Uint128"
+                  "lhs_type": { "node_type": "PrimType", "name": "Uint128" }
                 },
-                "lhs_type": "ByStr20"
+                "lhs_type": { "node_type": "PrimType", "name": "ByStr20" }
               },
-              "lhs_type": "ByStr20"
+              "lhs_type": { "node_type": "PrimType", "name": "ByStr20" }
             },
-            "lhs_type": "String"
+            "lhs_type": { "node_type": "PrimType", "name": "String" }
           },
-          "lhs_type": "ByStr20"
+          "lhs_type": { "node_type": "PrimType", "name": "ByStr20" }
         }
       },
       {
@@ -1044,9 +1056,13 @@
                 }
               ]
             },
-            "lhs_type": "Uint128"
+            "lhs_type": { "node_type": "PrimType", "name": "Uint128" }
           },
-          "lhs_type": "Option (Uint128)"
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Option",
+            "typeArgs": [ { "node_type": "PrimType", "name": "Uint128" } ]
+          }
         }
       }
     ],
@@ -1091,7 +1107,7 @@
           "identifier": "contractOwner",
           "node_type": "Identifier"
         },
-        "parameter_type": "ByStr20",
+        "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
         "node_type": "Parameter"
       }
     ],
@@ -1107,7 +1123,11 @@
           "identifier": "orderbook",
           "node_type": "Identifier"
         },
-        "field_type": "Map (ByStr32) (Order)",
+        "field_type": {
+          "node_type": "MapType",
+          "keyType": { "node_type": "PrimType", "name": "ByStr32" },
+          "valType": { "node_type": "ADT", "name": "Order", "typeArgs": [] }
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/simple-dex.scilla",
@@ -1117,8 +1137,12 @@
           },
           "node_type": "LiteralExpression",
           "value": {
-            "key_type": "ByStr32",
-            "value_type": "Order",
+            "key_type": { "node_type": "PrimType", "name": "ByStr32" },
+            "value_type": {
+              "node_type": "ADT",
+              "name": "Order",
+              "typeArgs": []
+            },
             "node_type": "MapLiteral",
             "mvalues": []
           }
@@ -1136,7 +1160,18 @@
           "identifier": "orderInfo",
           "node_type": "Identifier"
         },
-        "field_type": "Map (ByStr32) (Pair (ByStr20) (BNum))",
+        "field_type": {
+          "node_type": "MapType",
+          "keyType": { "node_type": "PrimType", "name": "ByStr32" },
+          "valType": {
+            "node_type": "ADT",
+            "name": "Pair",
+            "typeArgs": [
+              { "node_type": "PrimType", "name": "ByStr20" },
+              { "node_type": "PrimType", "name": "BNum" }
+            ]
+          }
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/simple-dex.scilla",
@@ -1146,8 +1181,15 @@
           },
           "node_type": "LiteralExpression",
           "value": {
-            "key_type": "ByStr32",
-            "value_type": "Pair (ByStr20) (BNum)",
+            "key_type": { "node_type": "PrimType", "name": "ByStr32" },
+            "value_type": {
+              "node_type": "ADT",
+              "name": "Pair",
+              "typeArgs": [
+                { "node_type": "PrimType", "name": "ByStr20" },
+                { "node_type": "PrimType", "name": "BNum" }
+              ]
+            },
             "node_type": "MapLiteral",
             "mvalues": []
           }
@@ -1165,7 +1207,15 @@
           "identifier": "pendingReturns",
           "node_type": "Identifier"
         },
-        "field_type": "Map (ByStr20) (Map (ByStr20) (Uint128))",
+        "field_type": {
+          "node_type": "MapType",
+          "keyType": { "node_type": "PrimType", "name": "ByStr20" },
+          "valType": {
+            "node_type": "MapType",
+            "keyType": { "node_type": "PrimType", "name": "ByStr20" },
+            "valType": { "node_type": "PrimType", "name": "Uint128" }
+          }
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/simple-dex.scilla",
@@ -1175,8 +1225,12 @@
           },
           "node_type": "LiteralExpression",
           "value": {
-            "key_type": "ByStr20",
-            "value_type": "Map (ByStr20) (Uint128)",
+            "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "value_type": {
+              "node_type": "MapType",
+              "keyType": { "node_type": "PrimType", "name": "ByStr20" },
+              "valType": { "node_type": "PrimType", "name": "Uint128" }
+            },
             "node_type": "MapLiteral",
             "mvalues": []
           }
@@ -1198,7 +1252,7 @@
               "identifier": "tokenA",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           },
           {
@@ -1212,7 +1266,7 @@
               "identifier": "valueA",
               "node_type": "Identifier"
             },
-            "parameter_type": "Uint128",
+            "parameter_type": { "node_type": "PrimType", "name": "Uint128" },
             "node_type": "Parameter"
           },
           {
@@ -1226,7 +1280,7 @@
               "identifier": "tokenB",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           },
           {
@@ -1240,7 +1294,7 @@
               "identifier": "valueB",
               "node_type": "Identifier"
             },
-            "parameter_type": "Uint128",
+            "parameter_type": { "node_type": "PrimType", "name": "Uint128" },
             "node_type": "Parameter"
           },
           {
@@ -1254,7 +1308,7 @@
               "identifier": "expirationBlock",
               "node_type": "Identifier"
             },
-            "parameter_type": "BNum",
+            "parameter_type": { "node_type": "PrimType", "name": "BNum" },
             "node_type": "Parameter"
           }
         ],
@@ -1685,7 +1739,10 @@
                       },
                       "node_type": "ConstrExpression",
                       "constructor_name": "Pair",
-                      "types": [ "ByStr20", "BNum" ],
+                      "types": [
+                        { "node_type": "PrimType", "name": "ByStr20" },
+                        { "node_type": "PrimType", "name": "BNum" }
+                      ],
                       "args": [
                         {
                           "loc": {
@@ -2230,7 +2287,7 @@
               "identifier": "orderId",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr32",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr32" },
             "node_type": "Parameter"
           }
         ],
@@ -3966,7 +4023,7 @@
               "identifier": "token",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           }
         ],
@@ -4588,7 +4645,7 @@
               "identifier": "orderId",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr32",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr32" },
             "node_type": "Parameter"
           }
         ],

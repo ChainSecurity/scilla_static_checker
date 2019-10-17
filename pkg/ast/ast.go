@@ -20,6 +20,11 @@ type Expression interface {
 	exprNode()
 }
 
+type ASTType interface {
+	AstNode
+	astTypeNode()
+}
+
 type Statement interface {
 	AstNode
 	stmtNode()
@@ -52,13 +57,13 @@ type Identifier struct {
 }
 
 type MapVal struct {
-	Key *Literal `json:"key"`
-	Val *Literal `json:"value"`
+	Key Literal `json:"key"`
+	Val Literal `json:"value"`
 }
 
 type CtrDef struct {
 	CDName    *Identifier `json:"ctr_def_name"`
-	CArgTypes []string    `json:"c_arg_types"`
+	CArgTypes []ASTType   `json:"c_arg_types"`
 }
 
 type StringLiteral struct {
@@ -86,8 +91,8 @@ type UintLiteral struct {
 }
 
 type MapLiteral struct {
-	KeyType string   `json:"key_type"`
-	ValType string   `json:"value_type"`
+	KeyType ASTType  `json:"key_type"`
+	ValType ASTType  `json:"value_type"`
 	MVals   []MapVal `json:"mvalues"`
 }
 
@@ -109,7 +114,7 @@ type AnnotatedNode struct {
 
 type LiteralExpression struct {
 	AnnotatedNode
-	Val *Literal `json:"value"`
+	Val Literal `json:"value"`
 }
 
 type VarExpression struct {
@@ -120,9 +125,9 @@ type VarExpression struct {
 type LetExpression struct {
 	AnnotatedNode
 	Var     *Identifier `json:"variable"`
-	VarType string      `json:"variable_type"` //Optional
-	Expr    *Expression `json:"expression"`
-	Body    *Expression `json:"body"`
+	VarType ASTType     `json:"variable_type"` //Optional
+	Expr    Expression  `json:"expression"`
+	Body    Expression  `json:"body"`
 }
 
 type MessageExpression struct {
@@ -133,8 +138,8 @@ type MessageExpression struct {
 type FunExpression struct {
 	AnnotatedNode
 	Lhs     *Identifier `json:"lhs"`
-	RhsExpr *Expression `json:"rhs_expr"`
-	LhsType string      `json:"lhs_type"`
+	RhsExpr Expression  `json:"rhs_expr"`
+	LhsType ASTType     `json:"lhs_type"`
 }
 
 type AppExpression struct {
@@ -145,7 +150,7 @@ type AppExpression struct {
 
 type ConstrExpression struct {
 	AnnotatedNode
-	Types           []string      `json:"types"`
+	Types           []ASTType     `json:"types"`
 	ConstructorName string        `json:"constructor_name"`
 	Args            []*Identifier `json:"args"`
 }
@@ -174,6 +179,43 @@ type FixpointExpression struct {
 	AnnotatedNode
 }
 
+type PrimType struct {
+	Name string `json:"name"`
+}
+
+type MapType struct {
+	KeyType ASTType `json:"keyType"`
+	ValType ASTType `json:"valType"`
+}
+
+type ADT struct {
+	Name string    `json:"name"`
+	Args []ASTType `json:"typeArgs"`
+}
+
+type FunType struct {
+	ArgType ASTType `json:"argType"`
+	ValType ASTType `json:"valType"`
+}
+type TypeVar struct {
+	Name string `json:"name"`
+}
+type PolyFun struct {
+	TypeVal ASTType `json:"typeVal"`
+	Body    ASTType `json:"bodyType"`
+}
+
+type Unit struct {
+}
+
+func (*PrimType) astTypeNode() {}
+func (*MapType) astTypeNode()  {}
+func (*ADT) astTypeNode()      {}
+func (*FunType) astTypeNode()  {}
+func (*TypeVar) astTypeNode()  {}
+func (*PolyFun) astTypeNode()  {}
+func (*Unit) astTypeNode()     {}
+
 func (*LiteralExpression) exprNode()  {}
 func (*VarExpression) exprNode()      {}
 func (*LetExpression) exprNode()      {}
@@ -188,7 +230,7 @@ func (*TAppExpression) exprNode()     {}
 func (*FixpointExpression) exprNode() {}
 
 type PayloadLiteral struct {
-	Lit *Literal `json:"literal"`
+	Lit Literal `json:"literal"`
 }
 
 type PayloadVariable struct {
@@ -199,8 +241,8 @@ func (*PayloadLiteral) payloadNode()  {}
 func (*PayloadVariable) payloadNode() {}
 
 type MessageArgument struct {
-	Var string   `json:"variable"`
-	Pl  *Payload `json:"payload"`
+	Var string  `json:"variable"`
+	Pl  Payload `json:"payload"`
 }
 
 type WildcardPattern struct {
@@ -211,8 +253,8 @@ type BinderPattern struct {
 }
 
 type ConstructorPattern struct {
-	ConstrName string     `json:"constructor_name"`
-	Pats       []*Pattern `json:"patterns"`
+	ConstrName string    `json:"constructor_name"`
+	Pats       []Pattern `json:"patterns"`
 }
 
 func (*WildcardPattern) patternNode()    {}
@@ -220,17 +262,17 @@ func (*BinderPattern) patternNode()      {}
 func (*ConstructorPattern) patternNode() {}
 
 type MatchExpressionCase struct {
-	Pat  *Pattern    `json:"pattern"`
-	Expr *Expression `json:"expression"`
+	Pat  Pattern    `json:"pattern"`
+	Expr Expression `json:"expression"`
 }
 
 type MatchStatementCase struct {
-	Pat  *Pattern     `json:"pattern"`
-	Body []*Statement `json:"pattern_body"`
+	Pat  Pattern     `json:"pattern"`
+	Body []Statement `json:"pattern_body"`
 }
 type Builtin struct {
 	Loc  *Location
-	Type string
+	Type ASTType
 }
 
 type LoadStatement struct {
@@ -246,7 +288,7 @@ type StoreStatement struct {
 type BindStatement struct {
 	AnnotatedNode
 	Lhs     *Identifier `json:"lhs"`
-	RhsExpr *Expression `json:"rhs_expr"`
+	RhsExpr Expression  `json:"rhs_expr"`
 }
 type MapUpdateStatement struct {
 	AnnotatedNode
@@ -310,8 +352,8 @@ func (*ThrowStatement) stmtNode()         {}
 
 type LibraryVariable struct {
 	Name    *Identifier `json:"name"`
-	VarType string      `json:"variable_type"` // Optional
-	Expr    *Expression `json:"expression"`
+	VarType ASTType     `json:"variable_type"` // Optional
+	Expr    Expression  `json:"expression"`
 }
 
 type LibraryType struct {
@@ -324,7 +366,7 @@ func (*LibraryType) libEntryNode()     {}
 
 type Library struct {
 	Name    *Identifier `json:"library_name"`
-	Entries []*LibEntry `json:"library_entries"`
+	Entries []LibEntry  `json:"library_entries"`
 }
 
 type ExternalLibrary struct {
@@ -334,16 +376,16 @@ type ExternalLibrary struct {
 }
 
 type LibraryModule struct {
-	Library *Library           `json:"library"` // Optional
-	ELibs   []*ExternalLibrary `json:"external_libraries"`
+	Library *Library          `json:"library"` // Optional
+	ELibs   []ExternalLibrary `json:"external_libraries"`
 }
 
 type ContractModule struct {
-	ScillaMajorVersion int                `json:"scilla_major_version"`
-	Name               *Identifier        `json:"name"`
-	Library            *Library           `json:"library"` // Optional
-	ELibs              []*ExternalLibrary `json:"external_libraries"`
-	C                  *Contract          `json:"contract"`
+	ScillaMajorVersion int               `json:"scilla_major_version"`
+	Name               *Identifier       `json:"name"`
+	Library            *Library          `json:"library"` // Optional
+	ELibs              []ExternalLibrary `json:"external_libraries"`
+	C                  *Contract         `json:"contract"`
 }
 
 func (*ContractModule) moduleNode() {}
@@ -351,19 +393,19 @@ func (*LibraryModule) moduleNode()  {}
 
 type Field struct {
 	Name *Identifier `json:"field_name"`
-	Type string      `json:"field_type"`
-	Expr *Expression `json:"expression"`
+	Type ASTType     `json:"field_type"`
+	Expr Expression  `json:"expression"`
 }
 
 type Parameter struct {
 	Name *Identifier `json:"parameter_name"`
-	Type string      `json:"parameter_type"`
+	Type ASTType     `json:"parameter_type"`
 }
 
 type Component struct {
 	Name   *Identifier  `json:"name"`
 	Params []*Parameter `json:"params"`
-	Body   []*Statement `json:"body"`
+	Body   []Statement  `json:"body"`
 }
 type Contract struct {
 	Name       *Identifier  `json:"name"`

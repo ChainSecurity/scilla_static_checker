@@ -242,9 +242,9 @@
                 }
               }
             },
-            "lhs_type": "BNum"
+            "lhs_type": { "node_type": "PrimType", "name": "BNum" }
           },
-          "lhs_type": "BNum"
+          "lhs_type": { "node_type": "PrimType", "name": "BNum" }
         }
       },
       {
@@ -306,7 +306,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Nil",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": []
             },
             "body": {
@@ -318,7 +318,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Cons",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": [
                 {
                   "loc": {
@@ -343,7 +343,7 @@
               ]
             }
           },
-          "lhs_type": "Message"
+          "lhs_type": { "node_type": "PrimType", "name": "Message" }
         }
       },
       {
@@ -604,7 +604,7 @@
           "identifier": "auctionStart",
           "node_type": "Identifier"
         },
-        "parameter_type": "BNum",
+        "parameter_type": { "node_type": "PrimType", "name": "BNum" },
         "node_type": "Parameter"
       },
       {
@@ -618,7 +618,7 @@
           "identifier": "biddingTime",
           "node_type": "Identifier"
         },
-        "parameter_type": "Uint128",
+        "parameter_type": { "node_type": "PrimType", "name": "Uint128" },
         "node_type": "Parameter"
       },
       {
@@ -632,7 +632,7 @@
           "identifier": "beneficiary",
           "node_type": "Identifier"
         },
-        "parameter_type": "ByStr20",
+        "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
         "node_type": "Parameter"
       }
     ],
@@ -648,7 +648,7 @@
           "identifier": "ended",
           "node_type": "Identifier"
         },
-        "field_type": "Bool",
+        "field_type": { "node_type": "ADT", "name": "Bool", "typeArgs": [] },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/auction.scilla",
@@ -674,7 +674,11 @@
           "identifier": "highestBidder",
           "node_type": "Identifier"
         },
-        "field_type": "Option (ByStr20)",
+        "field_type": {
+          "node_type": "ADT",
+          "name": "Option",
+          "typeArgs": [ { "node_type": "PrimType", "name": "ByStr20" } ]
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/auction.scilla",
@@ -684,7 +688,7 @@
           },
           "node_type": "ConstrExpression",
           "constructor_name": "None",
-          "types": [ "ByStr20" ],
+          "types": [ { "node_type": "PrimType", "name": "ByStr20" } ],
           "args": []
         },
         "node_type": "Field"
@@ -700,7 +704,7 @@
           "identifier": "highestBid",
           "node_type": "Identifier"
         },
-        "field_type": "Uint128",
+        "field_type": { "node_type": "PrimType", "name": "Uint128" },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/auction.scilla",
@@ -724,7 +728,11 @@
           "identifier": "pendingReturns",
           "node_type": "Identifier"
         },
-        "field_type": "Map (ByStr20) (Uint128)",
+        "field_type": {
+          "node_type": "MapType",
+          "keyType": { "node_type": "PrimType", "name": "ByStr20" },
+          "valType": { "node_type": "PrimType", "name": "Uint128" }
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/auction.scilla",
@@ -734,8 +742,8 @@
           },
           "node_type": "LiteralExpression",
           "value": {
-            "key_type": "ByStr20",
-            "value_type": "Uint128",
+            "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "value_type": { "node_type": "PrimType", "name": "Uint128" },
             "node_type": "MapLiteral",
             "mvalues": []
           }
@@ -2191,7 +2199,12 @@
                                               },
                                               "node_type": "ConstrExpression",
                                               "constructor_name": "Some",
-                                              "types": [ "ByStr20" ],
+                                              "types": [
+                                                {
+                                                  "node_type": "PrimType",
+                                                  "name": "ByStr20"
+                                                }
+                                              ],
                                               "args": [
                                                 {
                                                   "loc": {
@@ -2464,7 +2477,12 @@
                                               },
                                               "node_type": "ConstrExpression",
                                               "constructor_name": "Some",
-                                              "types": [ "ByStr20" ],
+                                              "types": [
+                                                {
+                                                  "node_type": "PrimType",
+                                                  "name": "ByStr20"
+                                                }
+                                              ],
                                               "args": [
                                                 {
                                                   "loc": {

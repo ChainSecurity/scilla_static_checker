@@ -87,7 +87,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Nil",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": []
             },
             "body": {
@@ -100,7 +100,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Cons",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": [
                 {
                   "loc": {
@@ -127,7 +127,7 @@
               ]
             }
           },
-          "lhs_type": "Message"
+          "lhs_type": { "node_type": "PrimType", "name": "Message" }
         }
       },
       {
@@ -363,9 +363,9 @@
                 }
               }
             },
-            "lhs_type": "BNum"
+            "lhs_type": { "node_type": "PrimType", "name": "BNum" }
           },
-          "lhs_type": "BNum"
+          "lhs_type": { "node_type": "PrimType", "name": "BNum" }
         }
       },
       {
@@ -753,13 +753,13 @@
                     }
                   }
                 },
-                "lhs_type": "Uint128"
+                "lhs_type": { "node_type": "PrimType", "name": "Uint128" }
               },
-              "lhs_type": "Uint128"
+              "lhs_type": { "node_type": "PrimType", "name": "Uint128" }
             },
-            "lhs_type": "BNum"
+            "lhs_type": { "node_type": "PrimType", "name": "BNum" }
           },
-          "lhs_type": "BNum"
+          "lhs_type": { "node_type": "PrimType", "name": "BNum" }
         }
       },
       {
@@ -1004,11 +1004,15 @@
                   }
                 }
               },
-              "lhs_type": "Bool"
+              "lhs_type": {
+                "node_type": "ADT",
+                "name": "Bool",
+                "typeArgs": []
+              }
             },
-            "lhs_type": "Uint128"
+            "lhs_type": { "node_type": "PrimType", "name": "Uint128" }
           },
-          "lhs_type": "Uint128"
+          "lhs_type": { "node_type": "PrimType", "name": "Uint128" }
         }
       },
       {
@@ -1288,7 +1292,7 @@
           "identifier": "owner",
           "node_type": "Identifier"
         },
-        "parameter_type": "ByStr20",
+        "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
         "node_type": "Parameter"
       },
       {
@@ -1303,7 +1307,7 @@
           "identifier": "max_block",
           "node_type": "Identifier"
         },
-        "parameter_type": "BNum",
+        "parameter_type": { "node_type": "PrimType", "name": "BNum" },
         "node_type": "Parameter"
       },
       {
@@ -1318,7 +1322,7 @@
           "identifier": "goal",
           "node_type": "Identifier"
         },
-        "parameter_type": "Uint128",
+        "parameter_type": { "node_type": "PrimType", "name": "Uint128" },
         "node_type": "Parameter"
       }
     ],
@@ -1335,7 +1339,11 @@
           "identifier": "backers",
           "node_type": "Identifier"
         },
-        "field_type": "Map (ByStr20) (Uint128)",
+        "field_type": {
+          "node_type": "MapType",
+          "keyType": { "node_type": "PrimType", "name": "ByStr20" },
+          "valType": { "node_type": "PrimType", "name": "Uint128" }
+        },
         "expression": {
           "loc": {
             "source_file":
@@ -1346,8 +1354,8 @@
           },
           "node_type": "LiteralExpression",
           "value": {
-            "key_type": "ByStr20",
-            "value_type": "Uint128",
+            "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "value_type": { "node_type": "PrimType", "name": "Uint128" },
             "node_type": "MapLiteral",
             "mvalues": []
           }
@@ -1366,7 +1374,7 @@
           "identifier": "funded",
           "node_type": "Identifier"
         },
-        "field_type": "Bool",
+        "field_type": { "node_type": "ADT", "name": "Bool", "typeArgs": [] },
         "expression": {
           "loc": {
             "source_file":
@@ -1398,7 +1406,11 @@
               "identifier": "failure",
               "node_type": "Identifier"
             },
-            "parameter_type": "Bool",
+            "parameter_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "typeArgs": []
+            },
             "node_type": "Parameter"
           },
           {
@@ -1413,7 +1425,7 @@
               "identifier": "error_code",
               "node_type": "Identifier"
             },
-            "parameter_type": "Int32",
+            "parameter_type": { "node_type": "PrimType", "name": "Int32" },
             "node_type": "Parameter"
           }
         ],
@@ -2227,7 +2239,7 @@
               "identifier": "error_code",
               "node_type": "Identifier"
             },
-            "parameter_type": "Int32",
+            "parameter_type": { "node_type": "PrimType", "name": "Int32" },
             "node_type": "Parameter"
           }
         ],
@@ -3066,7 +3078,7 @@
               "identifier": "error_code",
               "node_type": "Identifier"
             },
-            "parameter_type": "Int32",
+            "parameter_type": { "node_type": "PrimType", "name": "Int32" },
             "node_type": "Parameter"
           }
         ],
@@ -3218,7 +3230,7 @@
               "identifier": "amount",
               "node_type": "Identifier"
             },
-            "parameter_type": "Uint128",
+            "parameter_type": { "node_type": "PrimType", "name": "Uint128" },
             "node_type": "Parameter"
           }
         ],

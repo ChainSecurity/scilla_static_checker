@@ -208,6 +208,7 @@ func StdLib() BuiltinADTs {
 		},
 		Term: &pairEnum,
 	}
+
 	pairEnum = EnumType{
 		"pair": {&pair.Vars[0], &pair.Vars[1]},
 	}

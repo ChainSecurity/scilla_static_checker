@@ -81,7 +81,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Nil",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": []
             },
             "body": {
@@ -93,7 +93,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Cons",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": [
                 {
                   "loc": {
@@ -120,7 +120,7 @@
               ]
             }
           },
-          "lhs_type": "Message"
+          "lhs_type": { "node_type": "PrimType", "name": "Message" }
         }
       },
       {
@@ -291,7 +291,10 @@
               "identifier": "Book",
               "node_type": "Identifier"
             },
-            "c_arg_types": [ "String", "String" ],
+            "c_arg_types": [
+              { "node_type": "PrimType", "name": "String" },
+              { "node_type": "PrimType", "name": "String" }
+            ],
             "node_type": "CtrDef"
           }
         ]
@@ -320,7 +323,10 @@
               "identifier": "Member",
               "node_type": "Identifier"
             },
-            "c_arg_types": [ "String", "Uint32" ],
+            "c_arg_types": [
+              { "node_type": "PrimType", "name": "String" },
+              { "node_type": "PrimType", "name": "Uint32" }
+            ],
             "node_type": "CtrDef"
           }
         ]
@@ -352,7 +358,7 @@
           "identifier": "owner",
           "node_type": "Identifier"
         },
-        "parameter_type": "ByStr20",
+        "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
         "node_type": "Parameter"
       },
       {
@@ -366,7 +372,7 @@
           "identifier": "store_name",
           "node_type": "Identifier"
         },
-        "parameter_type": "String",
+        "parameter_type": { "node_type": "PrimType", "name": "String" },
         "node_type": "Parameter"
       }
     ],
@@ -382,7 +388,11 @@
           "identifier": "members",
           "node_type": "Identifier"
         },
-        "field_type": "Map (ByStr20) (Member)",
+        "field_type": {
+          "node_type": "MapType",
+          "keyType": { "node_type": "PrimType", "name": "ByStr20" },
+          "valType": { "node_type": "ADT", "name": "Member", "typeArgs": [] }
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/bookstore.scilla",
@@ -392,8 +402,12 @@
           },
           "node_type": "LiteralExpression",
           "value": {
-            "key_type": "ByStr20",
-            "value_type": "Member",
+            "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "value_type": {
+              "node_type": "ADT",
+              "name": "Member",
+              "typeArgs": []
+            },
             "node_type": "MapLiteral",
             "mvalues": []
           }
@@ -411,7 +425,7 @@
           "identifier": "is_store_open",
           "node_type": "Identifier"
         },
-        "field_type": "Bool",
+        "field_type": { "node_type": "ADT", "name": "Bool", "typeArgs": [] },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/bookstore.scilla",
@@ -437,7 +451,11 @@
           "identifier": "bookInventory",
           "node_type": "Identifier"
         },
-        "field_type": "Map (Uint32) (Book)",
+        "field_type": {
+          "node_type": "MapType",
+          "keyType": { "node_type": "PrimType", "name": "Uint32" },
+          "valType": { "node_type": "ADT", "name": "Book", "typeArgs": [] }
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/bookstore.scilla",
@@ -447,8 +465,12 @@
           },
           "node_type": "LiteralExpression",
           "value": {
-            "key_type": "Uint32",
-            "value_type": "Book",
+            "key_type": { "node_type": "PrimType", "name": "Uint32" },
+            "value_type": {
+              "node_type": "ADT",
+              "name": "Book",
+              "typeArgs": []
+            },
             "node_type": "MapLiteral",
             "mvalues": []
           }
@@ -470,7 +492,11 @@
               "identifier": "status",
               "node_type": "Identifier"
             },
-            "parameter_type": "Bool",
+            "parameter_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "typeArgs": []
+            },
             "node_type": "Parameter"
           },
           {
@@ -484,7 +510,7 @@
               "identifier": "status_code",
               "node_type": "Identifier"
             },
-            "parameter_type": "Uint32",
+            "parameter_type": { "node_type": "PrimType", "name": "Uint32" },
             "node_type": "Parameter"
           },
           {
@@ -498,7 +524,7 @@
               "identifier": "msg",
               "node_type": "Identifier"
             },
-            "parameter_type": "String",
+            "parameter_type": { "node_type": "PrimType", "name": "String" },
             "node_type": "Parameter"
           }
         ],
@@ -772,7 +798,11 @@
               "identifier": "status",
               "node_type": "Identifier"
             },
-            "parameter_type": "Bool",
+            "parameter_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "typeArgs": []
+            },
             "node_type": "Parameter"
           },
           {
@@ -786,7 +816,7 @@
               "identifier": "status_code",
               "node_type": "Identifier"
             },
-            "parameter_type": "Uint32",
+            "parameter_type": { "node_type": "PrimType", "name": "Uint32" },
             "node_type": "Parameter"
           },
           {
@@ -800,7 +830,7 @@
               "identifier": "event_action",
               "node_type": "Identifier"
             },
-            "parameter_type": "String",
+            "parameter_type": { "node_type": "PrimType", "name": "String" },
             "node_type": "Parameter"
           },
           {
@@ -814,7 +844,7 @@
               "identifier": "book_id",
               "node_type": "Identifier"
             },
-            "parameter_type": "Uint32",
+            "parameter_type": { "node_type": "PrimType", "name": "Uint32" },
             "node_type": "Parameter"
           }
         ],
@@ -1124,7 +1154,11 @@
               "identifier": "is_open",
               "node_type": "Identifier"
             },
-            "parameter_type": "Bool",
+            "parameter_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "typeArgs": []
+            },
             "node_type": "Parameter"
           }
         ],
@@ -1498,7 +1532,7 @@
               "identifier": "name",
               "node_type": "Identifier"
             },
-            "parameter_type": "String",
+            "parameter_type": { "node_type": "PrimType", "name": "String" },
             "node_type": "Parameter"
           },
           {
@@ -1512,7 +1546,7 @@
               "identifier": "member_address",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           },
           {
@@ -1526,7 +1560,7 @@
               "identifier": "member_type",
               "node_type": "Identifier"
             },
-            "parameter_type": "Uint32",
+            "parameter_type": { "node_type": "PrimType", "name": "Uint32" },
             "node_type": "Parameter"
           }
         ],
@@ -2248,7 +2282,7 @@
               "identifier": "book_title",
               "node_type": "Identifier"
             },
-            "parameter_type": "String",
+            "parameter_type": { "node_type": "PrimType", "name": "String" },
             "node_type": "Parameter"
           },
           {
@@ -2262,7 +2296,7 @@
               "identifier": "author",
               "node_type": "Identifier"
             },
-            "parameter_type": "String",
+            "parameter_type": { "node_type": "PrimType", "name": "String" },
             "node_type": "Parameter"
           },
           {
@@ -2276,7 +2310,7 @@
               "identifier": "book_id",
               "node_type": "Identifier"
             },
-            "parameter_type": "Uint32",
+            "parameter_type": { "node_type": "PrimType", "name": "Uint32" },
             "node_type": "Parameter"
           }
         ],
@@ -2976,7 +3010,7 @@
               "identifier": "book_id",
               "node_type": "Identifier"
             },
-            "parameter_type": "Uint32",
+            "parameter_type": { "node_type": "PrimType", "name": "Uint32" },
             "node_type": "Parameter"
           }
         ],
@@ -3666,7 +3700,7 @@
               "identifier": "book_id",
               "node_type": "Identifier"
             },
-            "parameter_type": "Uint32",
+            "parameter_type": { "node_type": "PrimType", "name": "Uint32" },
             "node_type": "Parameter"
           },
           {
@@ -3680,7 +3714,7 @@
               "identifier": "book_title",
               "node_type": "Identifier"
             },
-            "parameter_type": "String",
+            "parameter_type": { "node_type": "PrimType", "name": "String" },
             "node_type": "Parameter"
           },
           {
@@ -3694,7 +3728,7 @@
               "identifier": "author",
               "node_type": "Identifier"
             },
-            "parameter_type": "String",
+            "parameter_type": { "node_type": "PrimType", "name": "String" },
             "node_type": "Parameter"
           }
         ],

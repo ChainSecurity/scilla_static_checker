@@ -81,7 +81,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Nil",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": []
             },
             "body": {
@@ -93,7 +93,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Cons",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": [
                 {
                   "loc": {
@@ -118,7 +118,7 @@
               ]
             }
           },
-          "lhs_type": "Message"
+          "lhs_type": { "node_type": "PrimType", "name": "Message" }
         }
       }
     ],
@@ -149,7 +149,7 @@
           "identifier": "count",
           "node_type": "Identifier"
         },
-        "field_type": "Int32",
+        "field_type": { "node_type": "PrimType", "name": "Int32" },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/pong.scilla",
@@ -173,7 +173,11 @@
           "identifier": "ping_addr",
           "node_type": "Identifier"
         },
-        "field_type": "Option (ByStr20)",
+        "field_type": {
+          "node_type": "ADT",
+          "name": "Option",
+          "typeArgs": [ { "node_type": "PrimType", "name": "ByStr20" } ]
+        },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/pong.scilla",
@@ -183,7 +187,7 @@
           },
           "node_type": "ConstrExpression",
           "constructor_name": "None",
-          "types": [ "ByStr20" ],
+          "types": [ { "node_type": "PrimType", "name": "ByStr20" } ],
           "args": []
         },
         "node_type": "Field"
@@ -916,7 +920,7 @@
               "identifier": "pingAddr",
               "node_type": "Identifier"
             },
-            "parameter_type": "ByStr20",
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
             "node_type": "Parameter"
           }
         ],
@@ -958,7 +962,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Some",
-              "types": [ "ByStr20" ],
+              "types": [ { "node_type": "PrimType", "name": "ByStr20" } ],
               "args": [
                 {
                   "loc": {

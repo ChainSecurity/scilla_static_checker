@@ -8,7 +8,7 @@ func (*ProcType) isType() {}
 // Proc :
 type Proc struct {
 	Vars []DataVar
-	Plan []Unit
+	Plan []*Unit
 	Jump Jump
 }
 

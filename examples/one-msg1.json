@@ -81,7 +81,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Nil",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": []
             },
             "body": {
@@ -93,7 +93,7 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Cons",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": [
                 {
                   "loc": {
@@ -120,7 +120,7 @@
               ]
             }
           },
-          "lhs_type": "Message"
+          "lhs_type": { "node_type": "PrimType", "name": "Message" }
         }
       }
     ],
@@ -434,7 +434,22 @@
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Pair",
-              "types": [ "List (Message)", "List (Message)" ],
+              "types": [
+                {
+                  "node_type": "ADT",
+                  "name": "List",
+                  "typeArgs": [
+                    { "node_type": "PrimType", "name": "Message" }
+                  ]
+                },
+                {
+                  "node_type": "ADT",
+                  "name": "List",
+                  "typeArgs": [
+                    { "node_type": "PrimType", "name": "Message" }
+                  ]
+                }
+              ],
               "args": [
                 {
                   "loc": {

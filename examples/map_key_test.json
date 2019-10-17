@@ -47,7 +47,7 @@
               "identifier": "T",
               "node_type": "Identifier"
             },
-            "c_arg_types": [ "Uint128" ],
+            "c_arg_types": [ { "node_type": "PrimType", "name": "Uint128" } ],
             "node_type": "CtrDef"
           }
         ]
@@ -112,8 +112,12 @@
               },
               "node_type": "LiteralExpression",
               "value": {
-                "key_type": "String",
-                "value_type": "TestType",
+                "key_type": { "node_type": "PrimType", "name": "String" },
+                "value_type": {
+                  "node_type": "ADT",
+                  "name": "TestType",
+                  "typeArgs": []
+                },
                 "node_type": "MapLiteral",
                 "mvalues": []
               }

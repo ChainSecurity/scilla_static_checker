@@ -1,0 +1,29 @@
+scilla_version 0
+
+
+
+(***************************************************)
+(*               Associated library                *)
+(***************************************************)
+library B
+
+let tt : Bool = True
+let ff = False
+
+(***************************************************)
+(*             The contract definition             *)
+(***************************************************)
+
+contract B
+()
+
+(*field signatures       : Map Uint32 (Map ByStr20 Bool) =*)
+                           (*Emp Uint32 (Map ByStr20 Bool)*)
+field balances : Map ByStr20 Uint128 = Emp ByStr20 Uint128
+  (*let m = Emp ByStr20 Uint128 in*)
+    (*builtin put m owner one128*)
+(*field a : Uint64 = builtin addb tt ff*)
+(*field allowed : Map ByStr20 (Map ByStr20 Uint128) = Emp ByStr20 (Map ByStr20 Uint128)*)
+
+transition inc ()
+end

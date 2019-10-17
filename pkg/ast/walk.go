@@ -10,8 +10,8 @@ type Visitor interface {
 	Visit(node AstNode) (w Visitor)
 }
 
-func walkPayload(v Visitor, p *Payload) {
-	switch n := (*p).(type) {
+func walkPayload(v Visitor, p Payload) {
+	switch n := p.(type) {
 	case *PayloadLiteral:
 		Walk(v, n.Lit)
 	case *PayloadVariable:
@@ -21,8 +21,8 @@ func walkPayload(v Visitor, p *Payload) {
 	}
 }
 
-func walkExpression(v Visitor, p *Expression) {
-	switch n := (*p).(type) {
+func walkExpression(v Visitor, p Expression) {
+	switch n := p.(type) {
 	case *LiteralExpression:
 		Walk(v, n.Loc)
 		Walk(v, n.Val)
@@ -77,8 +77,8 @@ func walkExpression(v Visitor, p *Expression) {
 	}
 }
 
-func walkLiteral(v Visitor, p *Literal) {
-	switch n := (*p).(type) {
+func walkLiteral(v Visitor, p Literal) {
+	switch n := p.(type) {
 	case *StringLiteral:
 		// do nothing
 	case *BNumLiteral:
@@ -102,8 +102,8 @@ func walkLiteral(v Visitor, p *Literal) {
 	}
 }
 
-func walkPattern(v Visitor, p *Pattern) {
-	switch n := (*p).(type) {
+func walkPattern(v Visitor, p Pattern) {
+	switch n := p.(type) {
 	case *WildcardPattern:
 		// do nothing
 	case *BinderPattern:
@@ -117,8 +117,8 @@ func walkPattern(v Visitor, p *Pattern) {
 	}
 }
 
-func walkStatement(v Visitor, p *Statement) {
-	switch n := (*p).(type) {
+func walkStatement(v Visitor, p Statement) {
+	switch n := p.(type) {
 	case *LoadStatement:
 		Walk(v, n.Loc)
 		Walk(v, n.Lhs)
@@ -179,8 +179,8 @@ func walkStatement(v Visitor, p *Statement) {
 		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
 	}
 }
-func walkLibEntry(v Visitor, p *LibEntry) {
-	switch n := (*p).(type) {
+func walkLibEntry(v Visitor, p LibEntry) {
+	switch n := p.(type) {
 	case *LibraryVariable:
 		Walk(v, n.Expr)
 	case *LibraryType:
@@ -258,17 +258,17 @@ func Walk(v Visitor, node AstNode) {
 	case *MatchExpressionCase:
 		Walk(v, n.Pat)
 		Walk(v, n.Expr)
-	case *Pattern:
+	case Pattern:
 		walkPattern(v, n)
-	case *Literal:
+	case Literal:
 		walkLiteral(v, n)
-	case *Statement:
+	case Statement:
 		walkStatement(v, n)
-	case *Payload:
+	case Payload:
 		walkPayload(v, n)
-	case *Expression:
+	case Expression:
 		walkExpression(v, n)
-	case *LibEntry:
+	case LibEntry:
 		walkLibEntry(v, n)
 	case *MatchStatementCase:
 		Walk(v, n.Pat)

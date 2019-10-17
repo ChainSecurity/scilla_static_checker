@@ -35,7 +35,10 @@
               "identifier": "Square",
               "node_type": "Identifier"
             },
-            "c_arg_types": [ "Uint32", "Uint32" ],
+            "c_arg_types": [
+              { "node_type": "PrimType", "name": "Uint32" },
+              { "node_type": "PrimType", "name": "Uint32" }
+            ],
             "node_type": "CtrDef"
           },
           {
@@ -49,7 +52,10 @@
               "identifier": "Circle",
               "node_type": "Identifier"
             },
-            "c_arg_types": [ "Uint32", "Uint32" ],
+            "c_arg_types": [
+              { "node_type": "PrimType", "name": "Uint32" },
+              { "node_type": "PrimType", "name": "Uint32" }
+            ],
             "node_type": "CtrDef"
           }
         ]
@@ -156,7 +162,7 @@
               }
             ]
           },
-          "lhs_type": "Shape"
+          "lhs_type": { "node_type": "ADT", "name": "Shape", "typeArgs": [] }
         }
       }
     ],
