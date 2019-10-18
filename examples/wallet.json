@@ -924,7 +924,11 @@
               ]
             }
           },
-          "lhs_type": { "node_type": "ADT", "name": "Error", "typeArgs": [] }
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Error",
+            "type_args": []
+          }
         }
       },
       {
@@ -974,10 +978,10 @@
           "node_type": "LiteralExpression",
           "value": {
             "key_type": { "node_type": "PrimType", "name": "ByStr20" },
-            "value_type": {
+            "val_type": {
               "node_type": "ADT",
               "name": "Bool",
-              "typeArgs": []
+              "type_args": []
             },
             "node_type": "MapLiteral",
             "mvalues": []
@@ -1076,10 +1080,10 @@
               "node_type": "LiteralExpression",
               "value": {
                 "key_type": { "node_type": "PrimType", "name": "ByStr20" },
-                "value_type": {
+                "val_type": {
                   "node_type": "ADT",
                   "name": "Bool",
-                  "typeArgs": []
+                  "type_args": []
                 },
                 "node_type": "MapLiteral",
                 "mvalues": []
@@ -1365,11 +1369,11 @@
                 },
                 "lhs_type": {
                   "node_type": "MapType",
-                  "keyType": { "node_type": "PrimType", "name": "ByStr20" },
-                  "valType": {
+                  "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+                  "val_type": {
                     "node_type": "ADT",
                     "name": "Bool",
-                    "typeArgs": []
+                    "type_args": []
                   }
                 }
               },
@@ -1462,7 +1466,7 @@
           "lhs_type": {
             "node_type": "ADT",
             "name": "List",
-            "typeArgs": [ { "node_type": "PrimType", "name": "ByStr20" } ]
+            "type_args": [ { "node_type": "PrimType", "name": "ByStr20" } ]
           }
         }
       },
@@ -1627,8 +1631,12 @@
           },
           "lhs_type": {
             "node_type": "MapType",
-            "keyType": { "node_type": "PrimType", "name": "ByStr20" },
-            "valType": { "node_type": "ADT", "name": "Bool", "typeArgs": [] }
+            "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "type_args": []
+            }
           }
         }
       },
@@ -2324,11 +2332,11 @@
             },
             "lhs_type": {
               "node_type": "MapType",
-              "keyType": { "node_type": "PrimType", "name": "ByStr20" },
-              "valType": {
+              "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+              "val_type": {
                 "node_type": "ADT",
                 "name": "Bool",
-                "typeArgs": []
+                "type_args": []
               }
             }
           },
@@ -2394,7 +2402,7 @@
         "parameter_type": {
           "node_type": "ADT",
           "name": "List",
-          "typeArgs": [ { "node_type": "PrimType", "name": "ByStr20" } ]
+          "type_args": [ { "node_type": "PrimType", "name": "ByStr20" } ]
         },
         "node_type": "Parameter"
       },
@@ -2425,7 +2433,7 @@
           "identifier": "validity_checked",
           "node_type": "Identifier"
         },
-        "field_type": { "node_type": "ADT", "name": "Bool", "typeArgs": [] },
+        "field_type": { "node_type": "ADT", "name": "Bool", "type_args": [] },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/wallet.scilla",
@@ -2451,7 +2459,7 @@
           "identifier": "contract_valid",
           "node_type": "Identifier"
         },
-        "field_type": { "node_type": "ADT", "name": "Bool", "typeArgs": [] },
+        "field_type": { "node_type": "ADT", "name": "Bool", "type_args": [] },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/wallet.scilla",
@@ -2479,8 +2487,8 @@
         },
         "field_type": {
           "node_type": "MapType",
-          "keyType": { "node_type": "PrimType", "name": "ByStr20" },
-          "valType": { "node_type": "ADT", "name": "Bool", "typeArgs": [] }
+          "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+          "val_type": { "node_type": "ADT", "name": "Bool", "type_args": [] }
         },
         "expression": {
           "loc": {
@@ -2492,10 +2500,10 @@
           "node_type": "LiteralExpression",
           "value": {
             "key_type": { "node_type": "PrimType", "name": "ByStr20" },
-            "value_type": {
+            "val_type": {
               "node_type": "ADT",
               "name": "Bool",
-              "typeArgs": []
+              "type_args": []
             },
             "node_type": "MapLiteral",
             "mvalues": []
@@ -2540,11 +2548,15 @@
         },
         "field_type": {
           "node_type": "MapType",
-          "keyType": { "node_type": "PrimType", "name": "Uint32" },
-          "valType": {
+          "key_type": { "node_type": "PrimType", "name": "Uint32" },
+          "val_type": {
             "node_type": "MapType",
-            "keyType": { "node_type": "PrimType", "name": "ByStr20" },
-            "valType": { "node_type": "ADT", "name": "Bool", "typeArgs": [] }
+            "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "type_args": []
+            }
           }
         },
         "expression": {
@@ -2557,13 +2569,13 @@
           "node_type": "LiteralExpression",
           "value": {
             "key_type": { "node_type": "PrimType", "name": "Uint32" },
-            "value_type": {
+            "val_type": {
               "node_type": "MapType",
-              "keyType": { "node_type": "PrimType", "name": "ByStr20" },
-              "valType": {
+              "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+              "val_type": {
                 "node_type": "ADT",
                 "name": "Bool",
-                "typeArgs": []
+                "type_args": []
               }
             },
             "node_type": "MapLiteral",
@@ -2585,11 +2597,11 @@
         },
         "field_type": {
           "node_type": "MapType",
-          "keyType": { "node_type": "PrimType", "name": "Uint32" },
-          "valType": {
+          "key_type": { "node_type": "PrimType", "name": "Uint32" },
+          "val_type": {
             "node_type": "ADT",
             "name": "Transaction",
-            "typeArgs": []
+            "type_args": []
           }
         },
         "expression": {
@@ -2602,10 +2614,10 @@
           "node_type": "LiteralExpression",
           "value": {
             "key_type": { "node_type": "PrimType", "name": "Uint32" },
-            "value_type": {
+            "val_type": {
               "node_type": "ADT",
               "name": "Transaction",
-              "typeArgs": []
+              "type_args": []
             },
             "node_type": "MapLiteral",
             "mvalues": []
@@ -2626,11 +2638,15 @@
         },
         "field_type": {
           "node_type": "MapType",
-          "keyType": { "node_type": "PrimType", "name": "ByStr20" },
-          "valType": {
+          "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+          "val_type": {
             "node_type": "MapType",
-            "keyType": { "node_type": "PrimType", "name": "ByStr20" },
-            "valType": { "node_type": "ADT", "name": "Bool", "typeArgs": [] }
+            "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "type_args": []
+            }
           }
         },
         "expression": {
@@ -2643,13 +2659,13 @@
           "node_type": "LiteralExpression",
           "value": {
             "key_type": { "node_type": "PrimType", "name": "ByStr20" },
-            "value_type": {
+            "val_type": {
               "node_type": "MapType",
-              "keyType": { "node_type": "PrimType", "name": "ByStr20" },
-              "valType": {
+              "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+              "val_type": {
                 "node_type": "ADT",
                 "name": "Bool",
-                "typeArgs": []
+                "type_args": []
               }
             },
             "node_type": "MapLiteral",
@@ -8890,10 +8906,10 @@
                                           "node_type": "PrimType",
                                           "name": "ByStr20"
                                         },
-                                        "value_type": {
+                                        "val_type": {
                                           "node_type": "ADT",
                                           "name": "Bool",
-                                          "typeArgs": []
+                                          "type_args": []
                                         },
                                         "node_type": "MapLiteral",
                                         "mvalues": []

@@ -582,7 +582,11 @@
               }
             ]
           },
-          "lhs_type": { "node_type": "ADT", "name": "Piece", "typeArgs": [] }
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Piece",
+            "type_args": []
+          }
         }
       },
       {
@@ -705,11 +709,11 @@
               "node_type": "Identifier"
             },
             "c_arg_types": [
-              { "node_type": "ADT", "name": "Piece", "typeArgs": [] },
+              { "node_type": "ADT", "name": "Piece", "type_args": [] },
               {
                 "node_type": "ADT",
                 "name": "PromotionStatus",
-                "typeArgs": []
+                "type_args": []
               },
               { "node_type": "PrimType", "name": "ByStr20" }
             ],
@@ -941,10 +945,10 @@
               "node_type": "Identifier"
             },
             "c_arg_types": [
-              { "node_type": "ADT", "name": "Square", "typeArgs": [] },
-              { "node_type": "ADT", "name": "Direction", "typeArgs": [] },
+              { "node_type": "ADT", "name": "Square", "type_args": [] },
+              { "node_type": "ADT", "name": "Direction", "type_args": [] },
               { "node_type": "PrimType", "name": "Uint32" },
-              { "node_type": "ADT", "name": "Bool", "typeArgs": [] }
+              { "node_type": "ADT", "name": "Bool", "type_args": [] }
             ],
             "node_type": "CtrDef"
           },
@@ -960,8 +964,8 @@
               "node_type": "Identifier"
             },
             "c_arg_types": [
-              { "node_type": "ADT", "name": "Piece", "typeArgs": [] },
-              { "node_type": "ADT", "name": "Square", "typeArgs": [] }
+              { "node_type": "ADT", "name": "Piece", "type_args": [] },
+              { "node_type": "ADT", "name": "Square", "type_args": [] }
             ],
             "node_type": "CtrDef"
           },
@@ -3223,12 +3227,12 @@
                                                                     "name":
                                                                     "Uint32"
                                                                     },
-                                                                    "value_type": {
+                                                                    "val_type": {
                                                                     "node_type":
                                                                     "ADT",
                                                                     "name":
                                                                     "SquareContents",
-                                                                    "typeArgs":
+                                                                    "type_args":
                                                                     []
                                                                     },
                                                                     "node_type":
@@ -4287,12 +4291,12 @@
                                                                     "name":
                                                                     "Uint32"
                                                                     },
-                                                                    "value_type": {
+                                                                    "val_type": {
                                                                     "node_type":
                                                                     "ADT",
                                                                     "name":
                                                                     "SquareContents",
-                                                                    "typeArgs":
+                                                                    "type_args":
                                                                     []
                                                                     },
                                                                     "node_type":
@@ -5351,12 +5355,12 @@
                                                                     "name":
                                                                     "Uint32"
                                                                     },
-                                                                    "value_type": {
+                                                                    "val_type": {
                                                                     "node_type":
                                                                     "ADT",
                                                                     "name":
                                                                     "SquareContents",
-                                                                    "typeArgs":
+                                                                    "type_args":
                                                                     []
                                                                     },
                                                                     "node_type":
@@ -6415,12 +6419,12 @@
                                                                     "name":
                                                                     "Uint32"
                                                                     },
-                                                                    "value_type": {
+                                                                    "val_type": {
                                                                     "node_type":
                                                                     "ADT",
                                                                     "name":
                                                                     "SquareContents",
-                                                                    "typeArgs":
+                                                                    "type_args":
                                                                     []
                                                                     },
                                                                     "node_type":
@@ -7479,12 +7483,12 @@
                                                                     "name":
                                                                     "Uint32"
                                                                     },
-                                                                    "value_type": {
+                                                                    "val_type": {
                                                                     "node_type":
                                                                     "ADT",
                                                                     "name":
                                                                     "SquareContents",
-                                                                    "typeArgs":
+                                                                    "type_args":
                                                                     []
                                                                     },
                                                                     "node_type":
@@ -8543,12 +8547,12 @@
                                                                     "name":
                                                                     "Uint32"
                                                                     },
-                                                                    "value_type": {
+                                                                    "val_type": {
                                                                     "node_type":
                                                                     "ADT",
                                                                     "name":
                                                                     "SquareContents",
-                                                                    "typeArgs":
+                                                                    "type_args":
                                                                     []
                                                                     },
                                                                     "node_type":
@@ -9607,12 +9611,12 @@
                                                                     "name":
                                                                     "Uint32"
                                                                     },
-                                                                    "value_type": {
+                                                                    "val_type": {
                                                                     "node_type":
                                                                     "ADT",
                                                                     "name":
                                                                     "SquareContents",
-                                                                    "typeArgs":
+                                                                    "type_args":
                                                                     []
                                                                     },
                                                                     "node_type":
@@ -10671,12 +10675,12 @@
                                                                     "name":
                                                                     "Uint32"
                                                                     },
-                                                                    "value_type": {
+                                                                    "val_type": {
                                                                     "node_type":
                                                                     "ADT",
                                                                     "name":
                                                                     "SquareContents",
-                                                                    "typeArgs":
+                                                                    "type_args":
                                                                     []
                                                                     },
                                                                     "node_type":
@@ -11735,12 +11739,12 @@
                                                                     "name":
                                                                     "Uint32"
                                                                     },
-                                                                    "value_type": {
+                                                                    "val_type": {
                                                                     "node_type":
                                                                     "ADT",
                                                                     "name":
                                                                     "SquareContents",
-                                                                    "typeArgs":
+                                                                    "type_args":
                                                                     []
                                                                     },
                                                                     "node_type":
@@ -12799,21 +12803,21 @@
                                                                     "name":
                                                                     "Uint32"
                                                                     },
-                                                                    "value_type": {
+                                                                    "val_type": {
                                                                     "node_type":
                                                                     "MapType",
-                                                                    "keyType": {
+                                                                    "key_type": {
                                                                     "node_type":
                                                                     "PrimType",
                                                                     "name":
                                                                     "Uint32"
                                                                     },
-                                                                    "valType": {
+                                                                    "val_type": {
                                                                     "node_type":
                                                                     "ADT",
                                                                     "name":
                                                                     "SquareContents",
-                                                                    "typeArgs":
+                                                                    "type_args":
                                                                     []
                                                                     }
                                                                     },
@@ -14104,10 +14108,7 @@
                   "node_type": "LiteralExpression",
                   "value": {
                     "key_type": { "node_type": "PrimType", "name": "Uint32" },
-                    "value_type": {
-                      "node_type": "PrimType",
-                      "name": "Uint32"
-                    },
+                    "val_type": { "node_type": "PrimType", "name": "Uint32" },
                     "node_type": "MapLiteral",
                     "mvalues": []
                   }
@@ -15073,13 +15074,13 @@
                                                     "node_type": "PrimType",
                                                     "name": "ByStr20"
                                                   },
-                                                  "value_type": {
+                                                  "val_type": {
                                                     "node_type": "MapType",
-                                                    "keyType": {
+                                                    "key_type": {
                                                       "node_type": "PrimType",
                                                       "name": "Uint32"
                                                     },
-                                                    "valType": {
+                                                    "val_type": {
                                                       "node_type": "PrimType",
                                                       "name": "Uint32"
                                                     }

@@ -667,7 +667,7 @@
           "lhs_type": {
             "node_type": "ADT",
             "name": "Option",
-            "typeArgs": [ { "node_type": "PrimType", "name": "ByStr32" } ]
+            "type_args": [ { "node_type": "PrimType", "name": "ByStr32" } ]
           }
         }
       },
@@ -933,7 +933,7 @@
           "lhs_type": {
             "node_type": "ADT",
             "name": "Option",
-            "typeArgs": [ { "node_type": "PrimType", "name": "BNum" } ]
+            "type_args": [ { "node_type": "PrimType", "name": "BNum" } ]
           }
         }
       },
@@ -1101,7 +1101,7 @@
           "lhs_type": {
             "node_type": "ADT",
             "name": "Option",
-            "typeArgs": [ { "node_type": "PrimType", "name": "BNum" } ]
+            "type_args": [ { "node_type": "PrimType", "name": "BNum" } ]
           }
         }
       },
@@ -1325,7 +1325,7 @@
           "lhs_type": {
             "node_type": "ADT",
             "name": "Option",
-            "typeArgs": [ { "node_type": "PrimType", "name": "BNum" } ]
+            "type_args": [ { "node_type": "PrimType", "name": "BNum" } ]
           }
         }
       },
@@ -1622,12 +1622,12 @@
                               {
                                 "node_type": "ADT",
                                 "name": "Bool",
-                                "typeArgs": []
+                                "type_args": []
                               },
                               {
                                 "node_type": "ADT",
                                 "name": "Option",
-                                "typeArgs": [
+                                "type_args": [
                                   {
                                     "node_type": "PrimType",
                                     "name": "ByStr32"
@@ -1695,12 +1695,12 @@
                                 {
                                   "node_type": "ADT",
                                   "name": "Bool",
-                                  "typeArgs": []
+                                  "type_args": []
                                 },
                                 {
                                   "node_type": "ADT",
                                   "name": "Option",
-                                  "typeArgs": [
+                                  "type_args": [
                                     {
                                       "node_type": "PrimType",
                                       "name": "ByStr32"
@@ -2084,7 +2084,7 @@
                     "lhs_type": {
                       "node_type": "ADT",
                       "name": "Option",
-                      "typeArgs": [
+                      "type_args": [
                         { "node_type": "PrimType", "name": "ByStr32" }
                       ]
                     }
@@ -2092,7 +2092,7 @@
                   "lhs_type": {
                     "node_type": "ADT",
                     "name": "Option",
-                    "typeArgs": [
+                    "type_args": [
                       { "node_type": "PrimType", "name": "ByStr32" }
                     ]
                   }
@@ -2466,14 +2466,14 @@
                           {
                             "node_type": "ADT",
                             "name": "Option",
-                            "typeArgs": [
+                            "type_args": [
                               { "node_type": "PrimType", "name": "ByStr32" }
                             ]
                           },
                           {
                             "node_type": "ADT",
                             "name": "Option",
-                            "typeArgs": [
+                            "type_args": [
                               { "node_type": "PrimType", "name": "ByStr32" }
                             ]
                           }
@@ -3127,7 +3127,7 @@
               "lhs_type": {
                 "node_type": "ADT",
                 "name": "Option",
-                "typeArgs": [
+                "type_args": [
                   { "node_type": "PrimType", "name": "ByStr32" }
                 ]
               }
@@ -3135,7 +3135,7 @@
             "lhs_type": {
               "node_type": "ADT",
               "name": "Option",
-              "typeArgs": [ { "node_type": "PrimType", "name": "ByStr32" } ]
+              "type_args": [ { "node_type": "PrimType", "name": "ByStr32" } ]
             }
           },
           "lhs_type": { "node_type": "PrimType", "name": "ByStr32" }
@@ -3412,7 +3412,7 @@
         "field_type": {
           "node_type": "ADT",
           "name": "Option",
-          "typeArgs": [ { "node_type": "PrimType", "name": "ByStr32" } ]
+          "type_args": [ { "node_type": "PrimType", "name": "ByStr32" } ]
         },
         "expression": {
           "loc": {
@@ -3442,7 +3442,7 @@
         "field_type": {
           "node_type": "ADT",
           "name": "Option",
-          "typeArgs": [ { "node_type": "PrimType", "name": "ByStr32" } ]
+          "type_args": [ { "node_type": "PrimType", "name": "ByStr32" } ]
         },
         "expression": {
           "loc": {
@@ -3472,7 +3472,7 @@
         "field_type": {
           "node_type": "ADT",
           "name": "Option",
-          "typeArgs": [ { "node_type": "PrimType", "name": "BNum" } ]
+          "type_args": [ { "node_type": "PrimType", "name": "BNum" } ]
         },
         "expression": {
           "loc": {

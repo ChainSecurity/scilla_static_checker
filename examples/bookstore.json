@@ -390,8 +390,12 @@
         },
         "field_type": {
           "node_type": "MapType",
-          "keyType": { "node_type": "PrimType", "name": "ByStr20" },
-          "valType": { "node_type": "ADT", "name": "Member", "typeArgs": [] }
+          "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+          "val_type": {
+            "node_type": "ADT",
+            "name": "Member",
+            "type_args": []
+          }
         },
         "expression": {
           "loc": {
@@ -403,10 +407,10 @@
           "node_type": "LiteralExpression",
           "value": {
             "key_type": { "node_type": "PrimType", "name": "ByStr20" },
-            "value_type": {
+            "val_type": {
               "node_type": "ADT",
               "name": "Member",
-              "typeArgs": []
+              "type_args": []
             },
             "node_type": "MapLiteral",
             "mvalues": []
@@ -425,7 +429,7 @@
           "identifier": "is_store_open",
           "node_type": "Identifier"
         },
-        "field_type": { "node_type": "ADT", "name": "Bool", "typeArgs": [] },
+        "field_type": { "node_type": "ADT", "name": "Bool", "type_args": [] },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/bookstore.scilla",
@@ -453,8 +457,8 @@
         },
         "field_type": {
           "node_type": "MapType",
-          "keyType": { "node_type": "PrimType", "name": "Uint32" },
-          "valType": { "node_type": "ADT", "name": "Book", "typeArgs": [] }
+          "key_type": { "node_type": "PrimType", "name": "Uint32" },
+          "val_type": { "node_type": "ADT", "name": "Book", "type_args": [] }
         },
         "expression": {
           "loc": {
@@ -466,10 +470,10 @@
           "node_type": "LiteralExpression",
           "value": {
             "key_type": { "node_type": "PrimType", "name": "Uint32" },
-            "value_type": {
+            "val_type": {
               "node_type": "ADT",
               "name": "Book",
-              "typeArgs": []
+              "type_args": []
             },
             "node_type": "MapLiteral",
             "mvalues": []
@@ -495,7 +499,7 @@
             "parameter_type": {
               "node_type": "ADT",
               "name": "Bool",
-              "typeArgs": []
+              "type_args": []
             },
             "node_type": "Parameter"
           },
@@ -801,7 +805,7 @@
             "parameter_type": {
               "node_type": "ADT",
               "name": "Bool",
-              "typeArgs": []
+              "type_args": []
             },
             "node_type": "Parameter"
           },
@@ -1157,7 +1161,7 @@
             "parameter_type": {
               "node_type": "ADT",
               "name": "Bool",
-              "typeArgs": []
+              "type_args": []
             },
             "node_type": "Parameter"
           }

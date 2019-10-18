@@ -113,10 +113,10 @@
               "node_type": "LiteralExpression",
               "value": {
                 "key_type": { "node_type": "PrimType", "name": "String" },
-                "value_type": {
+                "val_type": {
                   "node_type": "ADT",
                   "name": "TestType",
-                  "typeArgs": []
+                  "type_args": []
                 },
                 "node_type": "MapLiteral",
                 "mvalues": []

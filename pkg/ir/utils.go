@@ -104,6 +104,7 @@ func (builder *CFGBuilder) visitLiteral(l ast.Literal) Data {
 			NatType: typ, Data: lit.Val,
 		}
 	case *ast.MapLiteral:
+		fmt.Println("MapLiteral", lit.KeyType, lit.ValType)
 		ktyp := builder.visitASTType(lit.KeyType)
 		vtyp := builder.visitASTType(lit.ValType)
 		maptyp := MapType{ktyp, vtyp}
@@ -222,12 +223,13 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 			}
 			vars[i] = v
 		}
-		return nil
+		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
 	case *ast.LetExpression:
-		var_name := n.Var.Id
+		varName := n.Var.Id
 		expr := builder.visitExpression(n.Expr)
-		stackMapPush(builder.varStack, var_name, expr)
-		defer stackMapPop(builder.varStack, var_name)
+		fmt.Println("LetExpression", varName, expr.Type())
+		stackMapPush(builder.varStack, varName, expr)
+		defer stackMapPop(builder.varStack, varName)
 		body := builder.visitExpression(n.Body)
 		return body
 	default:
@@ -265,6 +267,7 @@ func visitParams(b *CFGBuilder, p *ast.Parameter) (string, Type) {
 
 func visitField(builder *CFGBuilder, f *ast.Field) (string, Data) {
 	name := f.Name.Id
+	fmt.Println("visitField", name)
 	//t := builder.typeMap[f.Type]
 	data := builder.visitExpression(f.Expr)
 	return name, data

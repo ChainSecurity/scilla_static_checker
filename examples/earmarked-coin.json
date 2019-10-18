@@ -302,11 +302,11 @@
         },
         "field_type": {
           "node_type": "MapType",
-          "keyType": { "node_type": "PrimType", "name": "ByStr20" },
-          "valType": {
+          "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+          "val_type": {
             "node_type": "ADT",
             "name": "EarmarkedCoin",
-            "typeArgs": []
+            "type_args": []
           }
         },
         "expression": {
@@ -319,10 +319,10 @@
           "node_type": "LiteralExpression",
           "value": {
             "key_type": { "node_type": "PrimType", "name": "ByStr20" },
-            "value_type": {
+            "val_type": {
               "node_type": "ADT",
               "name": "EarmarkedCoin",
-              "typeArgs": []
+              "type_args": []
             },
             "node_type": "MapLiteral",
             "mvalues": []

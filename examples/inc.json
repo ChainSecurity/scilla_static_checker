@@ -153,8 +153,8 @@
         },
         "field_type": {
           "node_type": "MapType",
-          "keyType": { "node_type": "PrimType", "name": "ByStr20" },
-          "valType": { "node_type": "PrimType", "name": "Uint128" }
+          "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+          "val_type": { "node_type": "PrimType", "name": "Uint128" }
         },
         "expression": {
           "loc": {
@@ -166,7 +166,7 @@
           "node_type": "LiteralExpression",
           "value": {
             "key_type": { "node_type": "PrimType", "name": "ByStr20" },
-            "value_type": { "node_type": "PrimType", "name": "Uint128" },
+            "val_type": { "node_type": "PrimType", "name": "Uint128" },
             "node_type": "MapLiteral",
             "mvalues": []
           }

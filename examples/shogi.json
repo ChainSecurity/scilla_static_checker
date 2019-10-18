@@ -250,7 +250,7 @@
           "lhs_type": {
             "node_type": "ADT",
             "name": "Square",
-            "typeArgs": []
+            "type_args": []
           }
         }
       },
@@ -549,7 +549,7 @@
           "lhs_type": {
             "node_type": "ADT",
             "name": "Square",
-            "typeArgs": []
+            "type_args": []
           }
         }
       },
@@ -781,7 +781,7 @@
           "lhs_type": {
             "node_type": "ADT",
             "name": "Square",
-            "typeArgs": []
+            "type_args": []
           }
         }
       },
@@ -1080,7 +1080,7 @@
           "lhs_type": {
             "node_type": "ADT",
             "name": "Square",
-            "typeArgs": []
+            "type_args": []
           }
         }
       },
@@ -1312,7 +1312,7 @@
           "lhs_type": {
             "node_type": "ADT",
             "name": "Square",
-            "typeArgs": []
+            "type_args": []
           }
         }
       },
@@ -1611,7 +1611,7 @@
           "lhs_type": {
             "node_type": "ADT",
             "name": "Square",
-            "typeArgs": []
+            "type_args": []
           }
         }
       },
@@ -1843,7 +1843,7 @@
           "lhs_type": {
             "node_type": "ADT",
             "name": "Square",
-            "typeArgs": []
+            "type_args": []
           }
         }
       },
@@ -2142,7 +2142,7 @@
           "lhs_type": {
             "node_type": "ADT",
             "name": "Square",
-            "typeArgs": []
+            "type_args": []
           }
         }
       },
@@ -2547,13 +2547,13 @@
             "lhs_type": {
               "node_type": "ADT",
               "name": "Direction",
-              "typeArgs": []
+              "type_args": []
             }
           },
           "lhs_type": {
             "node_type": "ADT",
             "name": "Square",
-            "typeArgs": []
+            "type_args": []
           }
         }
       },
@@ -2707,7 +2707,7 @@
                       {
                         "node_type": "ADT",
                         "name": "Square",
-                        "typeArgs": []
+                        "type_args": []
                       }
                     ],
                     "args": []
@@ -3703,7 +3703,7 @@
                                           {
                                             "node_type": "ADT",
                                             "name": "Square",
-                                            "typeArgs": []
+                                            "type_args": []
                                           }
                                         ],
                                         "args": [
@@ -3740,17 +3740,17 @@
                           "lhs_type": {
                             "node_type": "ADT",
                             "name": "Nat",
-                            "typeArgs": []
+                            "type_args": []
                           }
                         },
                         "lhs_type": {
                           "node_type": "ADT",
                           "name": "List",
-                          "typeArgs": [
+                          "type_args": [
                             {
                               "node_type": "ADT",
                               "name": "Square",
-                              "typeArgs": []
+                              "type_args": []
                             }
                           ]
                         }
@@ -3820,13 +3820,13 @@
             "lhs_type": {
               "node_type": "ADT",
               "name": "Direction",
-              "typeArgs": []
+              "type_args": []
             }
           },
           "lhs_type": {
             "node_type": "ADT",
             "name": "Square",
-            "typeArgs": []
+            "type_args": []
           }
         }
       },
@@ -3967,13 +3967,13 @@
             "lhs_type": {
               "node_type": "ADT",
               "name": "Direction",
-              "typeArgs": []
+              "type_args": []
             }
           },
           "lhs_type": {
             "node_type": "ADT",
             "name": "Square",
-            "typeArgs": []
+            "type_args": []
           }
         }
       },
@@ -4112,7 +4112,7 @@
                               {
                                 "node_type": "ADT",
                                 "name": "Square",
-                                "typeArgs": []
+                                "type_args": []
                               }
                             ],
                             "args": []
@@ -4139,7 +4139,7 @@
                               {
                                 "node_type": "ADT",
                                 "name": "Square",
-                                "typeArgs": []
+                                "type_args": []
                               }
                             ],
                             "args": []
@@ -4294,7 +4294,7 @@
                               {
                                 "node_type": "ADT",
                                 "name": "Square",
-                                "typeArgs": []
+                                "type_args": []
                               }
                             ],
                             "args": []
@@ -4321,7 +4321,7 @@
                               {
                                 "node_type": "ADT",
                                 "name": "Square",
-                                "typeArgs": []
+                                "type_args": []
                               }
                             ],
                             "args": []
@@ -4432,19 +4432,19 @@
               "lhs_type": {
                 "node_type": "ADT",
                 "name": "Bool",
-                "typeArgs": []
+                "type_args": []
               }
             },
             "lhs_type": {
               "node_type": "ADT",
               "name": "Direction",
-              "typeArgs": []
+              "type_args": []
             }
           },
           "lhs_type": {
             "node_type": "ADT",
             "name": "Square",
-            "typeArgs": []
+            "type_args": []
           }
         }
       },
@@ -4583,7 +4583,7 @@
                               {
                                 "node_type": "ADT",
                                 "name": "Square",
-                                "typeArgs": []
+                                "type_args": []
                               }
                             ],
                             "args": []
@@ -4610,7 +4610,7 @@
                               {
                                 "node_type": "ADT",
                                 "name": "Square",
-                                "typeArgs": []
+                                "type_args": []
                               }
                             ],
                             "args": []
@@ -4637,7 +4637,7 @@
                               {
                                 "node_type": "ADT",
                                 "name": "Square",
-                                "typeArgs": []
+                                "type_args": []
                               }
                             ],
                             "args": []
@@ -4792,7 +4792,7 @@
                               {
                                 "node_type": "ADT",
                                 "name": "Square",
-                                "typeArgs": []
+                                "type_args": []
                               }
                             ],
                             "args": []
@@ -4819,7 +4819,7 @@
                               {
                                 "node_type": "ADT",
                                 "name": "Square",
-                                "typeArgs": []
+                                "type_args": []
                               }
                             ],
                             "args": []
@@ -4846,7 +4846,7 @@
                               {
                                 "node_type": "ADT",
                                 "name": "Square",
-                                "typeArgs": []
+                                "type_args": []
                               }
                             ],
                             "args": []
@@ -4957,19 +4957,19 @@
               "lhs_type": {
                 "node_type": "ADT",
                 "name": "Bool",
-                "typeArgs": []
+                "type_args": []
               }
             },
             "lhs_type": {
               "node_type": "ADT",
               "name": "Direction",
-              "typeArgs": []
+              "type_args": []
             }
           },
           "lhs_type": {
             "node_type": "ADT",
             "name": "Square",
-            "typeArgs": []
+            "type_args": []
           }
         }
       },
@@ -5163,7 +5163,7 @@
                                   {
                                     "node_type": "ADT",
                                     "name": "Square",
-                                    "typeArgs": []
+                                    "type_args": []
                                   }
                                 ],
                                 "args": []
@@ -5314,7 +5314,7 @@
                                       {
                                         "node_type": "ADT",
                                         "name": "Square",
-                                        "typeArgs": []
+                                        "type_args": []
                                       }
                                     ],
                                     "args": [
@@ -5388,7 +5388,7 @@
                                   {
                                     "node_type": "ADT",
                                     "name": "Square",
-                                    "typeArgs": []
+                                    "type_args": []
                                   }
                                 ],
                                 "args": []
@@ -5539,7 +5539,7 @@
                                       {
                                         "node_type": "ADT",
                                         "name": "Square",
-                                        "typeArgs": []
+                                        "type_args": []
                                       }
                                     ],
                                     "args": [
@@ -5588,7 +5588,7 @@
                                 {
                                   "node_type": "ADT",
                                   "name": "Square",
-                                  "typeArgs": []
+                                  "type_args": []
                                 }
                               ],
                               "args": []
@@ -5702,7 +5702,7 @@
                                   {
                                     "node_type": "ADT",
                                     "name": "Square",
-                                    "typeArgs": []
+                                    "type_args": []
                                   }
                                 ],
                                 "args": []
@@ -5853,7 +5853,7 @@
                                       {
                                         "node_type": "ADT",
                                         "name": "Square",
-                                        "typeArgs": []
+                                        "type_args": []
                                       }
                                     ],
                                     "args": [
@@ -5927,7 +5927,7 @@
                                   {
                                     "node_type": "ADT",
                                     "name": "Square",
-                                    "typeArgs": []
+                                    "type_args": []
                                   }
                                 ],
                                 "args": []
@@ -6078,7 +6078,7 @@
                                       {
                                         "node_type": "ADT",
                                         "name": "Square",
-                                        "typeArgs": []
+                                        "type_args": []
                                       }
                                     ],
                                     "args": [
@@ -6127,7 +6127,7 @@
                                 {
                                   "node_type": "ADT",
                                   "name": "Square",
-                                  "typeArgs": []
+                                  "type_args": []
                                 }
                               ],
                               "args": []
@@ -6142,19 +6142,19 @@
               "lhs_type": {
                 "node_type": "ADT",
                 "name": "Bool",
-                "typeArgs": []
+                "type_args": []
               }
             },
             "lhs_type": {
               "node_type": "ADT",
               "name": "Direction",
-              "typeArgs": []
+              "type_args": []
             }
           },
           "lhs_type": {
             "node_type": "ADT",
             "name": "Square",
-            "typeArgs": []
+            "type_args": []
           }
         }
       },
@@ -6390,7 +6390,7 @@
                               {
                                 "node_type": "ADT",
                                 "name": "Square",
-                                "typeArgs": []
+                                "type_args": []
                               }
                             ],
                             "args": []
@@ -6545,7 +6545,7 @@
                               {
                                 "node_type": "ADT",
                                 "name": "Square",
-                                "typeArgs": []
+                                "type_args": []
                               }
                             ],
                             "args": []
@@ -6559,19 +6559,19 @@
               "lhs_type": {
                 "node_type": "ADT",
                 "name": "Bool",
-                "typeArgs": []
+                "type_args": []
               }
             },
             "lhs_type": {
               "node_type": "ADT",
               "name": "Direction",
-              "typeArgs": []
+              "type_args": []
             }
           },
           "lhs_type": {
             "node_type": "ADT",
             "name": "Square",
-            "typeArgs": []
+            "type_args": []
           }
         }
       },
@@ -6788,7 +6788,7 @@
                                 {
                                   "node_type": "ADT",
                                   "name": "Square",
-                                  "typeArgs": []
+                                  "type_args": []
                                 }
                               ],
                               "args": []
@@ -6906,7 +6906,7 @@
                                 {
                                   "node_type": "ADT",
                                   "name": "Square",
-                                  "typeArgs": []
+                                  "type_args": []
                                 }
                               ],
                               "args": []
@@ -6920,7 +6920,7 @@
                 "lhs_type": {
                   "node_type": "ADT",
                   "name": "Bool",
-                  "typeArgs": []
+                  "type_args": []
                 }
               },
               "lhs_type": { "node_type": "PrimType", "name": "Uint32" }
@@ -6928,13 +6928,13 @@
             "lhs_type": {
               "node_type": "ADT",
               "name": "Direction",
-              "typeArgs": []
+              "type_args": []
             }
           },
           "lhs_type": {
             "node_type": "ADT",
             "name": "Square",
-            "typeArgs": []
+            "type_args": []
           }
         }
       },
@@ -7061,13 +7061,13 @@
             "lhs_type": {
               "node_type": "ADT",
               "name": "Direction",
-              "typeArgs": []
+              "type_args": []
             }
           },
           "lhs_type": {
             "node_type": "ADT",
             "name": "Square",
-            "typeArgs": []
+            "type_args": []
           }
         }
       },
@@ -7418,7 +7418,7 @@
                                         {
                                           "node_type": "ADT",
                                           "name": "Square",
-                                          "typeArgs": []
+                                          "type_args": []
                                         }
                                       ],
                                       "args": []
@@ -7644,7 +7644,7 @@
                                         {
                                           "node_type": "ADT",
                                           "name": "Square",
-                                          "typeArgs": []
+                                          "type_args": []
                                         }
                                       ],
                                       "args": []
@@ -7967,7 +7967,7 @@
                                         {
                                           "node_type": "ADT",
                                           "name": "Square",
-                                          "typeArgs": []
+                                          "type_args": []
                                         }
                                       ],
                                       "args": []
@@ -8222,7 +8222,7 @@
                                               {
                                                 "node_type": "ADT",
                                                 "name": "Square",
-                                                "typeArgs": []
+                                                "type_args": []
                                               }
                                             ],
                                             "args": []
@@ -8449,7 +8449,7 @@
                                               {
                                                 "node_type": "ADT",
                                                 "name": "Square",
-                                                "typeArgs": []
+                                                "type_args": []
                                               }
                                             ],
                                             "args": []
@@ -8775,7 +8775,7 @@
                                         {
                                           "node_type": "ADT",
                                           "name": "Square",
-                                          "typeArgs": []
+                                          "type_args": []
                                         }
                                       ],
                                       "args": []
@@ -9030,7 +9030,7 @@
                                               {
                                                 "node_type": "ADT",
                                                 "name": "Square",
-                                                "typeArgs": []
+                                                "type_args": []
                                               }
                                             ],
                                             "args": []
@@ -9270,7 +9270,7 @@
                                               {
                                                 "node_type": "ADT",
                                                 "name": "Square",
-                                                "typeArgs": []
+                                                "type_args": []
                                               }
                                             ],
                                             "args": []
@@ -9613,7 +9613,7 @@
                                           {
                                             "node_type": "ADT",
                                             "name": "Square",
-                                            "typeArgs": []
+                                            "type_args": []
                                           }
                                         ],
                                         "args": []
@@ -9848,7 +9848,7 @@
                                                     {
                                                       "node_type": "ADT",
                                                       "name": "Square",
-                                                      "typeArgs": []
+                                                      "type_args": []
                                                     }
                                                   ],
                                                   "args": []
@@ -10194,7 +10194,7 @@
                                           {
                                             "node_type": "ADT",
                                             "name": "Square",
-                                            "typeArgs": []
+                                            "type_args": []
                                           }
                                         ],
                                         "args": []
@@ -10429,7 +10429,7 @@
                                                     {
                                                       "node_type": "ADT",
                                                       "name": "Square",
-                                                      "typeArgs": []
+                                                      "type_args": []
                                                     }
                                                   ],
                                                   "args": []
@@ -10451,7 +10451,7 @@
                     "lhs_type": {
                       "node_type": "ADT",
                       "name": "Bool",
-                      "typeArgs": []
+                      "type_args": []
                     }
                   },
                   "lhs_type": { "node_type": "PrimType", "name": "Uint32" }
@@ -10459,25 +10459,25 @@
                 "lhs_type": {
                   "node_type": "ADT",
                   "name": "Direction",
-                  "typeArgs": []
+                  "type_args": []
                 }
               },
               "lhs_type": {
                 "node_type": "ADT",
                 "name": "PromotionStatus",
-                "typeArgs": []
+                "type_args": []
               }
             },
             "lhs_type": {
               "node_type": "ADT",
               "name": "Piece",
-              "typeArgs": []
+              "type_args": []
             }
           },
           "lhs_type": {
             "node_type": "ADT",
             "name": "Square",
-            "typeArgs": []
+            "type_args": []
           }
         }
       },
@@ -10625,7 +10625,7 @@
                             {
                               "node_type": "ADT",
                               "name": "PromotionStatus",
-                              "typeArgs": []
+                              "type_args": []
                             }
                           ],
                           "args": [
@@ -10692,7 +10692,7 @@
                                   {
                                     "node_type": "ADT",
                                     "name": "PromotionStatus",
-                                    "typeArgs": []
+                                    "type_args": []
                                   }
                                 ],
                                 "args": []
@@ -11021,7 +11021,7 @@
                                                         "node_type": "ADT",
                                                         "name":
                                                           "PromotionStatus",
-                                                        "typeArgs": []
+                                                        "type_args": []
                                                       }
                                                     ],
                                                     "args": []
@@ -11054,7 +11054,7 @@
                                                         "node_type": "ADT",
                                                         "name":
                                                           "PromotionStatus",
-                                                        "typeArgs": []
+                                                        "type_args": []
                                                       }
                                                     ],
                                                     "args": [
@@ -11377,7 +11377,7 @@
                                                         "node_type": "ADT",
                                                         "name":
                                                           "PromotionStatus",
-                                                        "typeArgs": []
+                                                        "type_args": []
                                                       }
                                                     ],
                                                     "args": []
@@ -11410,7 +11410,7 @@
                                                         "node_type": "ADT",
                                                         "name":
                                                           "PromotionStatus",
-                                                        "typeArgs": []
+                                                        "type_args": []
                                                       }
                                                     ],
                                                     "args": [
@@ -11449,7 +11449,7 @@
                   "lhs_type": {
                     "node_type": "ADT",
                     "name": "Bool",
-                    "typeArgs": []
+                    "type_args": []
                   }
                 },
                 "lhs_type": { "node_type": "PrimType", "name": "Uint32" }
@@ -11459,10 +11459,10 @@
             "lhs_type": {
               "node_type": "ADT",
               "name": "PromotionStatus",
-              "typeArgs": []
+              "type_args": []
             }
           },
-          "lhs_type": { "node_type": "ADT", "name": "Bool", "typeArgs": [] }
+          "lhs_type": { "node_type": "ADT", "name": "Bool", "type_args": [] }
         }
       },
       {
@@ -11840,7 +11840,11 @@
               ]
             }
           },
-          "lhs_type": { "node_type": "ADT", "name": "Error", "typeArgs": [] }
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Error",
+            "type_args": []
+          }
         }
       },
       {
@@ -12426,14 +12430,14 @@
         },
         "field_type": {
           "node_type": "MapType",
-          "keyType": { "node_type": "PrimType", "name": "Uint32" },
-          "valType": {
+          "key_type": { "node_type": "PrimType", "name": "Uint32" },
+          "val_type": {
             "node_type": "MapType",
-            "keyType": { "node_type": "PrimType", "name": "Uint32" },
-            "valType": {
+            "key_type": { "node_type": "PrimType", "name": "Uint32" },
+            "val_type": {
               "node_type": "ADT",
               "name": "SquareContents",
-              "typeArgs": []
+              "type_args": []
             }
           }
         },
@@ -12493,11 +12497,11 @@
         },
         "field_type": {
           "node_type": "MapType",
-          "keyType": { "node_type": "PrimType", "name": "ByStr20" },
-          "valType": {
+          "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+          "val_type": {
             "node_type": "MapType",
-            "keyType": { "node_type": "PrimType", "name": "Uint32" },
-            "valType": { "node_type": "PrimType", "name": "Uint32" }
+            "key_type": { "node_type": "PrimType", "name": "Uint32" },
+            "val_type": { "node_type": "PrimType", "name": "Uint32" }
           }
         },
         "expression": {
@@ -12557,7 +12561,7 @@
         "field_type": {
           "node_type": "ADT",
           "name": "Option",
-          "typeArgs": [ { "node_type": "PrimType", "name": "ByStr20" } ]
+          "type_args": [ { "node_type": "PrimType", "name": "ByStr20" } ]
         },
         "expression": {
           "loc": {
@@ -12598,7 +12602,7 @@
         "field_type": {
           "node_type": "ADT",
           "name": "Option",
-          "typeArgs": [ { "node_type": "PrimType", "name": "ByStr20" } ]
+          "type_args": [ { "node_type": "PrimType", "name": "ByStr20" } ]
         },
         "expression": {
           "loc": {
@@ -12660,7 +12664,7 @@
             "parameter_type": {
               "node_type": "ADT",
               "name": "Direction",
-              "typeArgs": []
+              "type_args": []
             },
             "node_type": "Parameter"
           },
@@ -12692,7 +12696,7 @@
             "parameter_type": {
               "node_type": "ADT",
               "name": "Bool",
-              "typeArgs": []
+              "type_args": []
             },
             "node_type": "Parameter"
           }
@@ -13081,7 +13085,7 @@
             "parameter_type": {
               "node_type": "ADT",
               "name": "Action",
-              "typeArgs": []
+              "type_args": []
             },
             "node_type": "Parameter"
           }
@@ -16691,7 +16695,7 @@
                                                                     "ADT",
                                                                     "name":
                                                                     "Square",
-                                                                    "typeArgs":
+                                                                    "type_args":
                                                                     []
                                                                     }
                                                                     },

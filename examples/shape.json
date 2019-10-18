@@ -162,7 +162,11 @@
               }
             ]
           },
-          "lhs_type": { "node_type": "ADT", "name": "Shape", "typeArgs": [] }
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Shape",
+            "type_args": []
+          }
         }
       }
     ],

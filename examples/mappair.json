@@ -280,7 +280,7 @@
                         {
                           "node_type": "ADT",
                           "name": "Bool",
-                          "typeArgs": []
+                          "type_args": []
                         }
                       ],
                       "args": [
@@ -362,7 +362,7 @@
                               {
                                 "node_type": "ADT",
                                 "name": "Bool",
-                                "typeArgs": []
+                                "type_args": []
                               }
                             ],
                             "args": [
@@ -401,7 +401,7 @@
                               {
                                 "node_type": "ADT",
                                 "name": "Bool",
-                                "typeArgs": []
+                                "type_args": []
                               }
                             ],
                             "args": [
@@ -429,8 +429,8 @@
           "lhs_type": {
             "node_type": "ADT",
             "name": "Option",
-            "typeArgs": [
-              { "node_type": "ADT", "name": "Bool", "typeArgs": [] }
+            "type_args": [
+              { "node_type": "ADT", "name": "Bool", "type_args": [] }
             ]
           }
         }
@@ -569,11 +569,11 @@
         },
         "field_type": {
           "node_type": "MapType",
-          "keyType": { "node_type": "PrimType", "name": "ByStr20" },
-          "valType": {
+          "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+          "val_type": {
             "node_type": "ADT",
             "name": "Pair",
-            "typeArgs": [
+            "type_args": [
               { "node_type": "PrimType", "name": "Int32" },
               { "node_type": "PrimType", "name": "Int32" }
             ]
@@ -589,10 +589,10 @@
           "node_type": "LiteralExpression",
           "value": {
             "key_type": { "node_type": "PrimType", "name": "ByStr20" },
-            "value_type": {
+            "val_type": {
               "node_type": "ADT",
               "name": "Pair",
-              "typeArgs": [
+              "type_args": [
                 { "node_type": "PrimType", "name": "Int32" },
                 { "node_type": "PrimType", "name": "Int32" }
               ]
@@ -617,17 +617,17 @@
         "field_type": {
           "node_type": "ADT",
           "name": "Pair",
-          "typeArgs": [
+          "type_args": [
             {
               "node_type": "ADT",
               "name": "List",
-              "typeArgs": [ { "node_type": "PrimType", "name": "Int64" } ]
+              "type_args": [ { "node_type": "PrimType", "name": "Int64" } ]
             },
             {
               "node_type": "ADT",
               "name": "Option",
-              "typeArgs": [
-                { "node_type": "ADT", "name": "Bool", "typeArgs": [] }
+              "type_args": [
+                { "node_type": "ADT", "name": "Bool", "type_args": [] }
               ]
             }
           ]
@@ -692,7 +692,7 @@
               "node_type": "ConstrExpression",
               "constructor_name": "None",
               "types": [
-                { "node_type": "ADT", "name": "Bool", "typeArgs": [] }
+                { "node_type": "ADT", "name": "Bool", "type_args": [] }
               ],
               "args": []
             },
@@ -709,15 +709,15 @@
                 {
                   "node_type": "ADT",
                   "name": "List",
-                  "typeArgs": [
+                  "type_args": [
                     { "node_type": "PrimType", "name": "Int64" }
                   ]
                 },
                 {
                   "node_type": "ADT",
                   "name": "Option",
-                  "typeArgs": [
-                    { "node_type": "ADT", "name": "Bool", "typeArgs": [] }
+                  "type_args": [
+                    { "node_type": "ADT", "name": "Bool", "type_args": [] }
                   ]
                 }
               ],
@@ -762,11 +762,11 @@
         "field_type": {
           "node_type": "ADT",
           "name": "List",
-          "typeArgs": [
+          "type_args": [
             {
               "node_type": "ADT",
               "name": "List",
-              "typeArgs": [ { "node_type": "PrimType", "name": "Int64" } ]
+              "type_args": [ { "node_type": "PrimType", "name": "Int64" } ]
             }
           ]
         },
@@ -783,7 +783,7 @@
             {
               "node_type": "ADT",
               "name": "List",
-              "typeArgs": [ { "node_type": "PrimType", "name": "Int64" } ]
+              "type_args": [ { "node_type": "PrimType", "name": "Int64" } ]
             }
           ],
           "args": []
@@ -804,11 +804,11 @@
         "field_type": {
           "node_type": "ADT",
           "name": "List",
-          "typeArgs": [
+          "type_args": [
             {
               "node_type": "ADT",
               "name": "Option",
-              "typeArgs": [ { "node_type": "PrimType", "name": "Int32" } ]
+              "type_args": [ { "node_type": "PrimType", "name": "Int32" } ]
             }
           ]
         },
@@ -825,7 +825,7 @@
             {
               "node_type": "ADT",
               "name": "Option",
-              "typeArgs": [ { "node_type": "PrimType", "name": "Int32" } ]
+              "type_args": [ { "node_type": "PrimType", "name": "Int32" } ]
             }
           ],
           "args": []
@@ -843,7 +843,7 @@
           "identifier": "gnat",
           "node_type": "Identifier"
         },
-        "field_type": { "node_type": "ADT", "name": "Nat", "typeArgs": [] },
+        "field_type": { "node_type": "ADT", "name": "Nat", "type_args": [] },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/mappair.scilla",
@@ -1663,15 +1663,15 @@
                 {
                   "node_type": "ADT",
                   "name": "List",
-                  "typeArgs": [
+                  "type_args": [
                     { "node_type": "PrimType", "name": "Int64" }
                   ]
                 },
                 {
                   "node_type": "ADT",
                   "name": "Option",
-                  "typeArgs": [
-                    { "node_type": "ADT", "name": "Bool", "typeArgs": [] }
+                  "type_args": [
+                    { "node_type": "ADT", "name": "Bool", "type_args": [] }
                   ]
                 }
               ],

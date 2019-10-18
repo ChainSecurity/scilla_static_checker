@@ -213,7 +213,7 @@
         "field_type": {
           "node_type": "ADT",
           "name": "Option",
-          "typeArgs": [ { "node_type": "PrimType", "name": "ByStr33" } ]
+          "type_args": [ { "node_type": "PrimType", "name": "ByStr33" } ]
         },
         "expression": {
           "loc": {

@@ -438,14 +438,14 @@
                 {
                   "node_type": "ADT",
                   "name": "List",
-                  "typeArgs": [
+                  "type_args": [
                     { "node_type": "PrimType", "name": "Message" }
                   ]
                 },
                 {
                   "node_type": "ADT",
                   "name": "List",
-                  "typeArgs": [
+                  "type_args": [
                     { "node_type": "PrimType", "name": "Message" }
                   ]
                 }

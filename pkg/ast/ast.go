@@ -184,25 +184,25 @@ type PrimType struct {
 }
 
 type MapType struct {
-	KeyType ASTType `json:"keyType"`
-	ValType ASTType `json:"valType"`
+	KeyType ASTType `json:"key_type"`
+	ValType ASTType `json:"val_type"`
 }
 
 type ADT struct {
 	Name string    `json:"name"`
-	Args []ASTType `json:"typeArgs"`
+	Args []ASTType `json:"type_args"`
 }
 
 type FunType struct {
-	ArgType ASTType `json:"argType"`
-	ValType ASTType `json:"valType"`
+	ArgType ASTType `json:"arg_type"`
+	ValType ASTType `json:"val_type"`
 }
 type TypeVar struct {
 	Name string `json:"name"`
 }
 type PolyFun struct {
-	TypeVal ASTType `json:"typeVal"`
-	Body    ASTType `json:"bodyType"`
+	TypeVal ASTType `json:"type_val"`
+	Body    ASTType `json:"body_type"`
 }
 
 type Unit struct {
@@ -271,8 +271,8 @@ type MatchStatementCase struct {
 	Body []Statement `json:"pattern_body"`
 }
 type Builtin struct {
-	Loc  *Location
-	Type ASTType
+	Loc         *Location `json:"loc"`
+	BuiltinType string    `json:"builtin_type"`
 }
 
 type LoadStatement struct {

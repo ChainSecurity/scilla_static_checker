@@ -277,7 +277,11 @@
               "node_type": "Builtin"
             }
           },
-          "lhs_type": { "node_type": "ADT", "name": "Order", "typeArgs": [] }
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Order",
+            "type_args": []
+          }
         }
       },
       {
@@ -1061,7 +1065,7 @@
           "lhs_type": {
             "node_type": "ADT",
             "name": "Option",
-            "typeArgs": [ { "node_type": "PrimType", "name": "Uint128" } ]
+            "type_args": [ { "node_type": "PrimType", "name": "Uint128" } ]
           }
         }
       }
@@ -1125,8 +1129,12 @@
         },
         "field_type": {
           "node_type": "MapType",
-          "keyType": { "node_type": "PrimType", "name": "ByStr32" },
-          "valType": { "node_type": "ADT", "name": "Order", "typeArgs": [] }
+          "key_type": { "node_type": "PrimType", "name": "ByStr32" },
+          "val_type": {
+            "node_type": "ADT",
+            "name": "Order",
+            "type_args": []
+          }
         },
         "expression": {
           "loc": {
@@ -1138,10 +1146,10 @@
           "node_type": "LiteralExpression",
           "value": {
             "key_type": { "node_type": "PrimType", "name": "ByStr32" },
-            "value_type": {
+            "val_type": {
               "node_type": "ADT",
               "name": "Order",
-              "typeArgs": []
+              "type_args": []
             },
             "node_type": "MapLiteral",
             "mvalues": []
@@ -1162,11 +1170,11 @@
         },
         "field_type": {
           "node_type": "MapType",
-          "keyType": { "node_type": "PrimType", "name": "ByStr32" },
-          "valType": {
+          "key_type": { "node_type": "PrimType", "name": "ByStr32" },
+          "val_type": {
             "node_type": "ADT",
             "name": "Pair",
-            "typeArgs": [
+            "type_args": [
               { "node_type": "PrimType", "name": "ByStr20" },
               { "node_type": "PrimType", "name": "BNum" }
             ]
@@ -1182,10 +1190,10 @@
           "node_type": "LiteralExpression",
           "value": {
             "key_type": { "node_type": "PrimType", "name": "ByStr32" },
-            "value_type": {
+            "val_type": {
               "node_type": "ADT",
               "name": "Pair",
-              "typeArgs": [
+              "type_args": [
                 { "node_type": "PrimType", "name": "ByStr20" },
                 { "node_type": "PrimType", "name": "BNum" }
               ]
@@ -1209,11 +1217,11 @@
         },
         "field_type": {
           "node_type": "MapType",
-          "keyType": { "node_type": "PrimType", "name": "ByStr20" },
-          "valType": {
+          "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+          "val_type": {
             "node_type": "MapType",
-            "keyType": { "node_type": "PrimType", "name": "ByStr20" },
-            "valType": { "node_type": "PrimType", "name": "Uint128" }
+            "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "val_type": { "node_type": "PrimType", "name": "Uint128" }
           }
         },
         "expression": {
@@ -1226,10 +1234,10 @@
           "node_type": "LiteralExpression",
           "value": {
             "key_type": { "node_type": "PrimType", "name": "ByStr20" },
-            "value_type": {
+            "val_type": {
               "node_type": "MapType",
-              "keyType": { "node_type": "PrimType", "name": "ByStr20" },
-              "valType": { "node_type": "PrimType", "name": "Uint128" }
+              "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+              "val_type": { "node_type": "PrimType", "name": "Uint128" }
             },
             "node_type": "MapLiteral",
             "mvalues": []

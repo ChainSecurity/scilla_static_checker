@@ -648,7 +648,7 @@
           "identifier": "ended",
           "node_type": "Identifier"
         },
-        "field_type": { "node_type": "ADT", "name": "Bool", "typeArgs": [] },
+        "field_type": { "node_type": "ADT", "name": "Bool", "type_args": [] },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/auction.scilla",
@@ -677,7 +677,7 @@
         "field_type": {
           "node_type": "ADT",
           "name": "Option",
-          "typeArgs": [ { "node_type": "PrimType", "name": "ByStr20" } ]
+          "type_args": [ { "node_type": "PrimType", "name": "ByStr20" } ]
         },
         "expression": {
           "loc": {
@@ -730,8 +730,8 @@
         },
         "field_type": {
           "node_type": "MapType",
-          "keyType": { "node_type": "PrimType", "name": "ByStr20" },
-          "valType": { "node_type": "PrimType", "name": "Uint128" }
+          "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+          "val_type": { "node_type": "PrimType", "name": "Uint128" }
         },
         "expression": {
           "loc": {
@@ -743,7 +743,7 @@
           "node_type": "LiteralExpression",
           "value": {
             "key_type": { "node_type": "PrimType", "name": "ByStr20" },
-            "value_type": { "node_type": "PrimType", "name": "Uint128" },
+            "val_type": { "node_type": "PrimType", "name": "Uint128" },
             "node_type": "MapLiteral",
             "mvalues": []
           }

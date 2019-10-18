@@ -681,7 +681,35 @@ func (l *LibraryVariable) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
-func (comp *MapType) UnmarshalJSON(b []byte) error {
+func (mt *MapType) UnmarshalJSON(b []byte) error {
+	var objMap map[string]*json.RawMessage
+	err := json.Unmarshal(b, &objMap)
+	if err != nil {
+		panic(err)
+	}
+
+	var rawMsg *json.RawMessage
+	rawMsg = objMap["key_type"]
+	var kt ASTType
+	if rawMsg != nil {
+		kt, err = unmarshalASTType(rawMsg)
+		if err != nil {
+			return err
+		}
+	}
+
+	rawMsg = objMap["val_type"]
+	var vt ASTType
+	if rawMsg != nil {
+		vt, err = unmarshalASTType(rawMsg)
+		if err != nil {
+			return err
+		}
+	}
+
+	mt.KeyType = kt
+	mt.ValType = vt
+
 	return nil
 }
 
@@ -830,6 +858,28 @@ func (ml *MapLiteral) UnmarshalJSON(b []byte) error {
 	if err != nil {
 		return err
 	}
+
+	var rawMsg *json.RawMessage
+	rawMsg = objMap["key_type"]
+	var kt ASTType
+	if rawMsg != nil {
+		kt, err = unmarshalASTType(rawMsg)
+		if err != nil {
+			return err
+		}
+	}
+
+	rawMsg = objMap["val_type"]
+	var vt ASTType
+	if rawMsg != nil {
+		vt, err = unmarshalASTType(rawMsg)
+		if err != nil {
+			return err
+		}
+	}
+
+	ml.KeyType = kt
+	ml.ValType = vt
 
 	return nil
 }
