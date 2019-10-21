@@ -1,2 +1,2 @@
-# scilla_checker
+# Scilla static checker
 
