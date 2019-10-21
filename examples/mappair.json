@@ -2,7 +2,7 @@
   "scilla_major_version": 0,
   "name": {
     "loc": {
-      "source_file": "../scilla_checker/examples/mappair.scilla",
+      "source_file": "../scilla_static/examples/mappair.scilla",
       "line": 30,
       "column": 10,
       "node_type": "Location"
@@ -13,7 +13,7 @@
   "library": {
     "library_name": {
       "loc": {
-        "source_file": "../scilla_checker/examples/mappair.scilla",
+        "source_file": "../scilla_static/examples/mappair.scilla",
         "line": 5,
         "column": 1,
         "node_type": "Location"
@@ -26,7 +26,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 7,
             "column": 5,
             "node_type": "Location"
@@ -37,14 +37,14 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 7,
             "column": 14,
             "node_type": "Location"
           },
           "node_type": "ConstrExpression",
           "constructor_name": "Nil",
-          "types": [ "Message" ],
+          "types": [ { "node_type": "PrimType", "name": "Message" } ],
           "args": []
         }
       },
@@ -52,7 +52,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 9,
             "column": 5,
             "node_type": "Location"
@@ -63,7 +63,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 10,
             "column": 3,
             "node_type": "Location"
@@ -71,7 +71,7 @@
           "node_type": "FunExpression",
           "lhs": {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 10,
               "column": 3,
               "node_type": "Location"
@@ -81,7 +81,7 @@
           },
           "rhs_expr": {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 11,
               "column": 5,
               "node_type": "Location"
@@ -89,7 +89,7 @@
             "node_type": "LetExpression",
             "variable": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 11,
                 "column": 5,
                 "node_type": "Location"
@@ -100,31 +100,30 @@
             "variable_type": null,
             "expression": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 11,
                 "column": 19,
                 "node_type": "Location"
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Nil",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": []
             },
             "body": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 12,
                 "column": 5,
                 "node_type": "Location"
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Cons",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 12,
                     "column": 20,
                     "node_type": "Location"
@@ -134,8 +133,7 @@
                 },
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 12,
                     "column": 24,
                     "node_type": "Location"
@@ -146,14 +144,14 @@
               ]
             }
           },
-          "fun_type": "Message"
+          "lhs_type": { "node_type": "PrimType", "name": "Message" }
         }
       },
       {
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 14,
             "column": 5,
             "node_type": "Location"
@@ -164,7 +162,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 15,
             "column": 3,
             "node_type": "Location"
@@ -172,7 +170,7 @@
           "node_type": "FunExpression",
           "lhs": {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 15,
               "column": 3,
               "node_type": "Location"
@@ -182,7 +180,7 @@
           },
           "rhs_expr": {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 16,
               "column": 5,
               "node_type": "Location"
@@ -190,7 +188,7 @@
             "node_type": "LetExpression",
             "variable": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 16,
                 "column": 5,
                 "node_type": "Location"
@@ -201,7 +199,7 @@
             "variable_type": null,
             "expression": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 16,
                 "column": 13,
                 "node_type": "Location"
@@ -213,7 +211,7 @@
             },
             "body": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 17,
                 "column": 5,
                 "node_type": "Location"
@@ -221,7 +219,7 @@
               "node_type": "LetExpression",
               "variable": {
                 "loc": {
-                  "source_file": "../scilla_checker/examples/mappair.scilla",
+                  "source_file": "../scilla_static/examples/mappair.scilla",
                   "line": 17,
                   "column": 5,
                   "node_type": "Location"
@@ -232,7 +230,7 @@
               "variable_type": null,
               "expression": {
                 "loc": {
-                  "source_file": "../scilla_checker/examples/mappair.scilla",
+                  "source_file": "../scilla_static/examples/mappair.scilla",
                   "line": 17,
                   "column": 13,
                   "node_type": "Location"
@@ -244,7 +242,7 @@
               },
               "body": {
                 "loc": {
-                  "source_file": "../scilla_checker/examples/mappair.scilla",
+                  "source_file": "../scilla_static/examples/mappair.scilla",
                   "line": 18,
                   "column": 5,
                   "node_type": "Location"
@@ -252,8 +250,7 @@
                 "node_type": "MatchExpression",
                 "lhs": {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 18,
                     "column": 11,
                     "node_type": "Location"
@@ -272,19 +269,25 @@
                     "expression": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 19,
                         "column": 15,
                         "node_type": "Location"
                       },
                       "node_type": "ConstrExpression",
                       "constructor_name": "Some",
-                      "types": [ "Bool" ],
+                      "types": [
+                        {
+                          "node_type": "ADT",
+                          "name": "Bool",
+                          "type_args": []
+                        }
+                      ],
                       "args": [
                         {
                           "loc": {
                             "source_file":
-                              "../scilla_checker/examples/mappair.scilla",
+                              "../scilla_static/examples/mappair.scilla",
                             "line": 19,
                             "column": 27,
                             "node_type": "Location"
@@ -306,7 +309,7 @@
                           "variable": {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/mappair.scilla",
+                                "../scilla_static/examples/mappair.scilla",
                               "line": 20,
                               "column": 12,
                               "node_type": "Location"
@@ -320,7 +323,7 @@
                     "expression": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 21,
                         "column": 7,
                         "node_type": "Location"
@@ -329,7 +332,7 @@
                       "lhs": {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/mappair.scilla",
+                            "../scilla_static/examples/mappair.scilla",
                           "line": 21,
                           "column": 13,
                           "node_type": "Location"
@@ -348,19 +351,25 @@
                           "expression": {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/mappair.scilla",
+                                "../scilla_static/examples/mappair.scilla",
                               "line": 22,
                               "column": 17,
                               "node_type": "Location"
                             },
                             "node_type": "ConstrExpression",
                             "constructor_name": "Some",
-                            "types": [ "Bool" ],
+                            "types": [
+                              {
+                                "node_type": "ADT",
+                                "name": "Bool",
+                                "type_args": []
+                              }
+                            ],
                             "args": [
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/mappair.scilla",
+                                    "../scilla_static/examples/mappair.scilla",
                                   "line": 22,
                                   "column": 29,
                                   "node_type": "Location"
@@ -381,19 +390,25 @@
                           "expression": {
                             "loc": {
                               "source_file":
-                                "../scilla_checker/examples/mappair.scilla",
+                                "../scilla_static/examples/mappair.scilla",
                               "line": 23,
                               "column": 18,
                               "node_type": "Location"
                             },
                             "node_type": "ConstrExpression",
                             "constructor_name": "Some",
-                            "types": [ "Bool" ],
+                            "types": [
+                              {
+                                "node_type": "ADT",
+                                "name": "Bool",
+                                "type_args": []
+                              }
+                            ],
                             "args": [
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_checker/examples/mappair.scilla",
+                                    "../scilla_static/examples/mappair.scilla",
                                   "line": 23,
                                   "column": 30,
                                   "node_type": "Location"
@@ -411,14 +426,20 @@
               }
             }
           },
-          "fun_type": "Option (Bool)"
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Option",
+            "type_args": [
+              { "node_type": "ADT", "name": "Bool", "type_args": [] }
+            ]
+          }
         }
       },
       {
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 27,
             "column": 5,
             "node_type": "Location"
@@ -429,7 +450,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 27,
             "column": 13,
             "node_type": "Location"
@@ -441,7 +462,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 28,
             "column": 5,
             "node_type": "Location"
@@ -452,7 +473,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 28,
             "column": 13,
             "node_type": "Location"
@@ -467,7 +488,7 @@
     {
       "name": {
         "loc": {
-          "source_file": "../scilla_checker/examples/mappair.scilla",
+          "source_file": "../scilla_static/examples/mappair.scilla",
           "line": 3,
           "column": 8,
           "node_type": "Location"
@@ -481,7 +502,7 @@
     {
       "name": {
         "loc": {
-          "source_file": "../scilla_checker/examples/mappair.scilla",
+          "source_file": "../scilla_static/examples/mappair.scilla",
           "line": 3,
           "column": 18,
           "node_type": "Location"
@@ -495,7 +516,7 @@
     {
       "name": {
         "loc": {
-          "source_file": "../scilla_checker/examples/mappair.scilla",
+          "source_file": "../scilla_static/examples/mappair.scilla",
           "line": 3,
           "column": 28,
           "node_type": "Location"
@@ -510,7 +531,7 @@
   "contract": {
     "name": {
       "loc": {
-        "source_file": "../scilla_checker/examples/mappair.scilla",
+        "source_file": "../scilla_static/examples/mappair.scilla",
         "line": 30,
         "column": 10,
         "node_type": "Location"
@@ -522,7 +543,7 @@
       {
         "parameter_name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 31,
             "column": 2,
             "node_type": "Location"
@@ -530,7 +551,7 @@
           "identifier": "owner",
           "node_type": "Identifier"
         },
-        "parameter_type": "ByStr20",
+        "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
         "node_type": "Parameter"
       }
     ],
@@ -538,7 +559,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 33,
             "column": 7,
             "node_type": "Location"
@@ -546,18 +567,36 @@
           "identifier": "gmap",
           "node_type": "Identifier"
         },
-        "field_type": "Map (ByStr20) (Pair (Int32) (Int32))",
+        "field_type": {
+          "node_type": "MapType",
+          "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+          "val_type": {
+            "node_type": "ADT",
+            "name": "Pair",
+            "type_args": [
+              { "node_type": "PrimType", "name": "Int32" },
+              { "node_type": "PrimType", "name": "Int32" }
+            ]
+          }
+        },
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 33,
             "column": 52,
             "node_type": "Location"
           },
           "node_type": "LiteralExpression",
           "value": {
-            "key_type": "ByStr20",
-            "value_type": "Pair (Int32) (Int32)",
+            "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Pair",
+              "type_args": [
+                { "node_type": "PrimType", "name": "Int32" },
+                { "node_type": "PrimType", "name": "Int32" }
+              ]
+            },
             "node_type": "MapLiteral",
             "mvalues": []
           }
@@ -567,7 +606,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 34,
             "column": 7,
             "node_type": "Location"
@@ -575,10 +614,27 @@
           "identifier": "gpair",
           "node_type": "Identifier"
         },
-        "field_type": "Pair (List (Int64)) (Option (Bool))",
+        "field_type": {
+          "node_type": "ADT",
+          "name": "Pair",
+          "type_args": [
+            {
+              "node_type": "ADT",
+              "name": "List",
+              "type_args": [ { "node_type": "PrimType", "name": "Int64" } ]
+            },
+            {
+              "node_type": "ADT",
+              "name": "Option",
+              "type_args": [
+                { "node_type": "ADT", "name": "Bool", "type_args": [] }
+              ]
+            }
+          ]
+        },
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 35,
             "column": 5,
             "node_type": "Location"
@@ -586,7 +642,7 @@
           "node_type": "LetExpression",
           "variable": {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 35,
               "column": 5,
               "node_type": "Location"
@@ -597,19 +653,19 @@
           "variable_type": null,
           "expression": {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 35,
               "column": 14,
               "node_type": "Location"
             },
             "node_type": "ConstrExpression",
             "constructor_name": "Nil",
-            "types": [ "Int64" ],
+            "types": [ { "node_type": "PrimType", "name": "Int64" } ],
             "args": []
           },
           "body": {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 36,
               "column": 5,
               "node_type": "Location"
@@ -617,7 +673,7 @@
             "node_type": "LetExpression",
             "variable": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 36,
                 "column": 5,
                 "node_type": "Location"
@@ -628,31 +684,47 @@
             "variable_type": null,
             "expression": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 36,
                 "column": 13,
                 "node_type": "Location"
               },
               "node_type": "ConstrExpression",
               "constructor_name": "None",
-              "types": [ "Bool" ],
+              "types": [
+                { "node_type": "ADT", "name": "Bool", "type_args": [] }
+              ],
               "args": []
             },
             "body": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 37,
                 "column": 5,
                 "node_type": "Location"
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Pair",
-              "types": [ "List (Int64)", "Option (Bool)" ],
+              "types": [
+                {
+                  "node_type": "ADT",
+                  "name": "List",
+                  "type_args": [
+                    { "node_type": "PrimType", "name": "Int64" }
+                  ]
+                },
+                {
+                  "node_type": "ADT",
+                  "name": "Option",
+                  "type_args": [
+                    { "node_type": "ADT", "name": "Bool", "type_args": [] }
+                  ]
+                }
+              ],
               "args": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 37,
                     "column": 41,
                     "node_type": "Location"
@@ -662,8 +734,7 @@
                 },
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 37,
                     "column": 44,
                     "node_type": "Location"
@@ -680,7 +751,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 39,
             "column": 7,
             "node_type": "Location"
@@ -688,17 +759,33 @@
           "identifier": "llist",
           "node_type": "Identifier"
         },
-        "field_type": "List (List (Int64))",
+        "field_type": {
+          "node_type": "ADT",
+          "name": "List",
+          "type_args": [
+            {
+              "node_type": "ADT",
+              "name": "List",
+              "type_args": [ { "node_type": "PrimType", "name": "Int64" } ]
+            }
+          ]
+        },
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 39,
             "column": 36,
             "node_type": "Location"
           },
           "node_type": "ConstrExpression",
           "constructor_name": "Nil",
-          "types": [ "List (Int64)" ],
+          "types": [
+            {
+              "node_type": "ADT",
+              "name": "List",
+              "type_args": [ { "node_type": "PrimType", "name": "Int64" } ]
+            }
+          ],
           "args": []
         },
         "node_type": "Field"
@@ -706,7 +793,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 40,
             "column": 7,
             "node_type": "Location"
@@ -714,17 +801,33 @@
           "identifier": "plist",
           "node_type": "Identifier"
         },
-        "field_type": "List (Option (Int32))",
+        "field_type": {
+          "node_type": "ADT",
+          "name": "List",
+          "type_args": [
+            {
+              "node_type": "ADT",
+              "name": "Option",
+              "type_args": [ { "node_type": "PrimType", "name": "Int32" } ]
+            }
+          ]
+        },
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 40,
             "column": 37,
             "node_type": "Location"
           },
           "node_type": "ConstrExpression",
           "constructor_name": "Nil",
-          "types": [ "Option (Int32)" ],
+          "types": [
+            {
+              "node_type": "ADT",
+              "name": "Option",
+              "type_args": [ { "node_type": "PrimType", "name": "Int32" } ]
+            }
+          ],
           "args": []
         },
         "node_type": "Field"
@@ -732,7 +835,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 42,
             "column": 7,
             "node_type": "Location"
@@ -740,10 +843,10 @@
           "identifier": "gnat",
           "node_type": "Identifier"
         },
-        "field_type": "Nat",
+        "field_type": { "node_type": "ADT", "name": "Nat", "type_args": [] },
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 42,
             "column": 20,
             "node_type": "Location"
@@ -761,7 +864,7 @@
         "params": [],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 44,
             "column": 12,
             "node_type": "Location"
@@ -772,7 +875,7 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 45,
               "column": 3,
               "node_type": "Location"
@@ -780,7 +883,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 45,
                 "column": 12,
                 "node_type": "Location"
@@ -790,7 +893,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 45,
                 "column": 14,
                 "node_type": "Location"
@@ -799,8 +902,7 @@
               "arguments": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 45,
                     "column": 25,
                     "node_type": "Location"
@@ -810,8 +912,7 @@
                 },
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 45,
                     "column": 31,
                     "node_type": "Location"
@@ -822,26 +923,26 @@
               ],
               "builtin_function": {
                 "loc": {
-                  "source_file": "../scilla_checker/examples/mappair.scilla",
+                  "source_file": "../scilla_static/examples/mappair.scilla",
                   "line": 45,
                   "column": 22,
                   "node_type": "Location"
                 },
-                "builtin_type": "eq",
+                "builtin_operator": "eq",
                 "node_type": "Builtin"
               }
             }
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 46,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 46,
                 "column": 9,
                 "node_type": "Location"
@@ -855,7 +956,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/mappair.scilla",
+                        "../scilla_static/examples/mappair.scilla",
                       "line": 48,
                       "column": 5,
                       "node_type": "Location"
@@ -864,7 +965,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 48,
                         "column": 9,
                         "node_type": "Location"
@@ -875,19 +976,23 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 48,
                         "column": 11,
                         "node_type": "Location"
                       },
                       "node_type": "LiteralExpression",
-                      "value": { "node_type": "IntLiteral", "value": "1" }
+                      "value": {
+                        "node_type": "IntLiteral",
+                        "value": "1",
+                        "width": 32
+                      }
                     }
                   },
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/mappair.scilla",
+                        "../scilla_static/examples/mappair.scilla",
                       "line": 49,
                       "column": 5,
                       "node_type": "Location"
@@ -896,7 +1001,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 49,
                         "column": 9,
                         "node_type": "Location"
@@ -907,19 +1012,23 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 49,
                         "column": 11,
                         "node_type": "Location"
                       },
                       "node_type": "LiteralExpression",
-                      "value": { "node_type": "IntLiteral", "value": "2" }
+                      "value": {
+                        "node_type": "IntLiteral",
+                        "value": "2",
+                        "width": 32
+                      }
                     }
                   },
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/mappair.scilla",
+                        "../scilla_static/examples/mappair.scilla",
                       "line": 50,
                       "column": 5,
                       "node_type": "Location"
@@ -928,7 +1037,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 50,
                         "column": 7,
                         "node_type": "Location"
@@ -939,19 +1048,22 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 50,
                         "column": 9,
                         "node_type": "Location"
                       },
                       "node_type": "ConstrExpression",
                       "constructor_name": "Pair",
-                      "types": [ "Int32", "Int32" ],
+                      "types": [
+                        { "node_type": "PrimType", "name": "Int32" },
+                        { "node_type": "PrimType", "name": "Int32" }
+                      ],
                       "args": [
                         {
                           "loc": {
                             "source_file":
-                              "../scilla_checker/examples/mappair.scilla",
+                              "../scilla_static/examples/mappair.scilla",
                             "line": 50,
                             "column": 32,
                             "node_type": "Location"
@@ -962,7 +1074,7 @@
                         {
                           "loc": {
                             "source_file":
-                              "../scilla_checker/examples/mappair.scilla",
+                              "../scilla_static/examples/mappair.scilla",
                             "line": 50,
                             "column": 36,
                             "node_type": "Location"
@@ -976,7 +1088,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/mappair.scilla",
+                        "../scilla_static/examples/mappair.scilla",
                       "line": 51,
                       "column": 5,
                       "node_type": "Location"
@@ -985,7 +1097,7 @@
                     "map_name": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 51,
                         "column": 5,
                         "node_type": "Location"
@@ -996,7 +1108,7 @@
                     "rhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 51,
                         "column": 22,
                         "node_type": "Location"
@@ -1008,7 +1120,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/mappair.scilla",
+                            "../scilla_static/examples/mappair.scilla",
                           "line": 51,
                           "column": 10,
                           "node_type": "Location"
@@ -1021,7 +1133,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/mappair.scilla",
+                        "../scilla_static/examples/mappair.scilla",
                       "line": 52,
                       "column": 5,
                       "node_type": "Location"
@@ -1029,7 +1141,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 52,
                         "column": 5,
                         "node_type": "Location"
@@ -1052,7 +1164,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/mappair.scilla",
+                        "../scilla_static/examples/mappair.scilla",
                       "line": 54,
                       "column": 5,
                       "node_type": "Location"
@@ -1061,7 +1173,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 54,
                         "column": 11,
                         "node_type": "Location"
@@ -1072,19 +1184,23 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 54,
                         "column": 13,
                         "node_type": "Location"
                       },
                       "node_type": "LiteralExpression",
-                      "value": { "node_type": "IntLiteral", "value": "3" }
+                      "value": {
+                        "node_type": "IntLiteral",
+                        "value": "3",
+                        "width": 32
+                      }
                     }
                   },
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/mappair.scilla",
+                        "../scilla_static/examples/mappair.scilla",
                       "line": 55,
                       "column": 5,
                       "node_type": "Location"
@@ -1093,7 +1209,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 55,
                         "column": 10,
                         "node_type": "Location"
@@ -1104,19 +1220,23 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 55,
                         "column": 12,
                         "node_type": "Location"
                       },
                       "node_type": "LiteralExpression",
-                      "value": { "node_type": "IntLiteral", "value": "4" }
+                      "value": {
+                        "node_type": "IntLiteral",
+                        "value": "4",
+                        "width": 32
+                      }
                     }
                   },
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/mappair.scilla",
+                        "../scilla_static/examples/mappair.scilla",
                       "line": 56,
                       "column": 5,
                       "node_type": "Location"
@@ -1125,7 +1245,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 56,
                         "column": 7,
                         "node_type": "Location"
@@ -1136,19 +1256,22 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 56,
                         "column": 9,
                         "node_type": "Location"
                       },
                       "node_type": "ConstrExpression",
                       "constructor_name": "Pair",
-                      "types": [ "Int32", "Int32" ],
+                      "types": [
+                        { "node_type": "PrimType", "name": "Int32" },
+                        { "node_type": "PrimType", "name": "Int32" }
+                      ],
                       "args": [
                         {
                           "loc": {
                             "source_file":
-                              "../scilla_checker/examples/mappair.scilla",
+                              "../scilla_static/examples/mappair.scilla",
                             "line": 56,
                             "column": 32,
                             "node_type": "Location"
@@ -1159,7 +1282,7 @@
                         {
                           "loc": {
                             "source_file":
-                              "../scilla_checker/examples/mappair.scilla",
+                              "../scilla_static/examples/mappair.scilla",
                             "line": 56,
                             "column": 38,
                             "node_type": "Location"
@@ -1173,7 +1296,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/mappair.scilla",
+                        "../scilla_static/examples/mappair.scilla",
                       "line": 57,
                       "column": 5,
                       "node_type": "Location"
@@ -1182,7 +1305,7 @@
                     "map_name": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 57,
                         "column": 5,
                         "node_type": "Location"
@@ -1193,7 +1316,7 @@
                     "rhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 57,
                         "column": 22,
                         "node_type": "Location"
@@ -1205,7 +1328,7 @@
                       {
                         "loc": {
                           "source_file":
-                            "../scilla_checker/examples/mappair.scilla",
+                            "../scilla_static/examples/mappair.scilla",
                           "line": 57,
                           "column": 10,
                           "node_type": "Location"
@@ -1218,7 +1341,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/mappair.scilla",
+                        "../scilla_static/examples/mappair.scilla",
                       "line": 58,
                       "column": 5,
                       "node_type": "Location"
@@ -1226,7 +1349,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 58,
                         "column": 5,
                         "node_type": "Location"
@@ -1255,7 +1378,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 62,
                 "column": 25,
                 "node_type": "Location"
@@ -1263,13 +1386,13 @@
               "identifier": "num",
               "node_type": "Identifier"
             },
-            "parameter_type": "Int64",
+            "parameter_type": { "node_type": "PrimType", "name": "Int64" },
             "node_type": "Parameter"
           }
         ],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 62,
             "column": 12,
             "node_type": "Location"
@@ -1280,14 +1403,14 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 63,
               "column": 3,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 63,
                 "column": 5,
                 "node_type": "Location"
@@ -1297,7 +1420,7 @@
             },
             "rhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 63,
                 "column": 8,
                 "node_type": "Location"
@@ -1309,7 +1432,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 65,
               "column": 3,
               "node_type": "Location"
@@ -1317,7 +1440,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 65,
                 "column": 6,
                 "node_type": "Location"
@@ -1327,7 +1450,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 65,
                 "column": 8,
                 "node_type": "Location"
@@ -1335,7 +1458,7 @@
               "node_type": "AppExpression",
               "lhs": {
                 "loc": {
-                  "source_file": "../scilla_checker/examples/mappair.scilla",
+                  "source_file": "../scilla_static/examples/mappair.scilla",
                   "line": 65,
                   "column": 8,
                   "node_type": "Location"
@@ -1346,8 +1469,7 @@
               "rhs_list": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 65,
                     "column": 14,
                     "node_type": "Location"
@@ -1360,7 +1482,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 67,
               "column": 3,
               "node_type": "Location"
@@ -1368,7 +1490,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 67,
                 "column": 5,
                 "node_type": "Location"
@@ -1378,7 +1500,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 67,
                 "column": 7,
                 "node_type": "Location"
@@ -1386,7 +1508,7 @@
               "node_type": "AppExpression",
               "lhs": {
                 "loc": {
-                  "source_file": "../scilla_checker/examples/mappair.scilla",
+                  "source_file": "../scilla_static/examples/mappair.scilla",
                   "line": 67,
                   "column": 7,
                   "node_type": "Location"
@@ -1397,8 +1519,7 @@
               "rhs_list": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 67,
                     "column": 13,
                     "node_type": "Location"
@@ -1411,7 +1532,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 69,
               "column": 3,
               "node_type": "Location"
@@ -1419,7 +1540,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 69,
                 "column": 9,
                 "node_type": "Location"
@@ -1429,7 +1550,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 69,
                 "column": 11,
                 "node_type": "Location"
@@ -1437,7 +1558,7 @@
               "node_type": "AppExpression",
               "lhs": {
                 "loc": {
-                  "source_file": "../scilla_checker/examples/mappair.scilla",
+                  "source_file": "../scilla_static/examples/mappair.scilla",
                   "line": 69,
                   "column": 11,
                   "node_type": "Location"
@@ -1448,8 +1569,7 @@
               "rhs_list": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 69,
                     "column": 22,
                     "node_type": "Location"
@@ -1462,7 +1582,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 71,
               "column": 3,
               "node_type": "Location"
@@ -1470,7 +1590,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 71,
                 "column": 6,
                 "node_type": "Location"
@@ -1480,19 +1600,18 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 71,
                 "column": 8,
                 "node_type": "Location"
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Cons",
-              "types": [ "Int64" ],
+              "types": [ { "node_type": "PrimType", "name": "Int64" } ],
               "args": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 71,
                     "column": 20,
                     "node_type": "Location"
@@ -1502,8 +1621,7 @@
                 },
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 71,
                     "column": 24,
                     "node_type": "Location"
@@ -1516,7 +1634,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 73,
               "column": 3,
               "node_type": "Location"
@@ -1524,7 +1642,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 73,
                 "column": 9,
                 "node_type": "Location"
@@ -1534,19 +1652,33 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 73,
                 "column": 11,
                 "node_type": "Location"
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Pair",
-              "types": [ "List (Int64)", "Option (Bool)" ],
+              "types": [
+                {
+                  "node_type": "ADT",
+                  "name": "List",
+                  "type_args": [
+                    { "node_type": "PrimType", "name": "Int64" }
+                  ]
+                },
+                {
+                  "node_type": "ADT",
+                  "name": "Option",
+                  "type_args": [
+                    { "node_type": "ADT", "name": "Bool", "type_args": [] }
+                  ]
+                }
+              ],
               "args": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 73,
                     "column": 47,
                     "node_type": "Location"
@@ -1556,8 +1688,7 @@
                 },
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 73,
                     "column": 50,
                     "node_type": "Location"
@@ -1570,14 +1701,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 74,
               "column": 3,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 74,
                 "column": 9,
                 "node_type": "Location"
@@ -1587,7 +1718,7 @@
             },
             "rhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 74,
                 "column": 12,
                 "node_type": "Location"
@@ -1599,7 +1730,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 75,
               "column": 3,
               "node_type": "Location"
@@ -1607,7 +1738,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 75,
                 "column": 7,
                 "node_type": "Location"
@@ -1617,7 +1748,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 75,
                 "column": 9,
                 "node_type": "Location"
@@ -1625,7 +1756,7 @@
               "node_type": "LetExpression",
               "variable": {
                 "loc": {
-                  "source_file": "../scilla_checker/examples/mappair.scilla",
+                  "source_file": "../scilla_static/examples/mappair.scilla",
                   "line": 75,
                   "column": 9,
                   "node_type": "Location"
@@ -1636,7 +1767,7 @@
               "variable_type": null,
               "expression": {
                 "loc": {
-                  "source_file": "../scilla_checker/examples/mappair.scilla",
+                  "source_file": "../scilla_static/examples/mappair.scilla",
                   "line": 75,
                   "column": 30,
                   "node_type": "Location"
@@ -1645,7 +1776,7 @@
               },
               "body": {
                 "loc": {
-                  "source_file": "../scilla_checker/examples/mappair.scilla",
+                  "source_file": "../scilla_static/examples/mappair.scilla",
                   "line": 75,
                   "column": 52,
                   "node_type": "Location"
@@ -1653,8 +1784,7 @@
                 "node_type": "AppExpression",
                 "lhs": {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 75,
                     "column": 52,
                     "node_type": "Location"
@@ -1666,7 +1796,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/mappair.scilla",
+                        "../scilla_static/examples/mappair.scilla",
                       "line": 75,
                       "column": 67,
                       "node_type": "Location"
@@ -1680,7 +1810,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 76,
               "column": 3,
               "node_type": "Location"
@@ -1688,7 +1818,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 76,
                 "column": 7,
                 "node_type": "Location"
@@ -1698,7 +1828,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 76,
                 "column": 9,
                 "node_type": "Location"
@@ -1709,7 +1839,7 @@
                   "node_type": "MessageArgument",
                   "variable": "_tag",
                   "payload": {
-                    "node_type": "PayloadLitral",
+                    "node_type": "PayloadLiteral",
                     "literal": { "node_type": "StringLiteral", "value": "" }
                   }
                 },
@@ -1721,7 +1851,7 @@
                     "value": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 76,
                         "column": 34,
                         "node_type": "Location"
@@ -1735,8 +1865,12 @@
                   "node_type": "MessageArgument",
                   "variable": "_amount",
                   "payload": {
-                    "node_type": "PayloadLitral",
-                    "literal": { "node_type": "UintLiteral", "value": "0" }
+                    "node_type": "PayloadLiteral",
+                    "literal": {
+                      "node_type": "UintLiteral",
+                      "value": "0",
+                      "width": 128
+                    }
                   }
                 },
                 {
@@ -1747,7 +1881,7 @@
                     "value": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 76,
                         "column": 77,
                         "node_type": "Location"
@@ -1762,7 +1896,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 77,
               "column": 3,
               "node_type": "Location"
@@ -1770,7 +1904,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 77,
                 "column": 8,
                 "node_type": "Location"
@@ -1780,7 +1914,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 77,
                 "column": 10,
                 "node_type": "Location"
@@ -1788,7 +1922,7 @@
               "node_type": "AppExpression",
               "lhs": {
                 "loc": {
-                  "source_file": "../scilla_checker/examples/mappair.scilla",
+                  "source_file": "../scilla_static/examples/mappair.scilla",
                   "line": 77,
                   "column": 10,
                   "node_type": "Location"
@@ -1799,8 +1933,7 @@
               "rhs_list": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 77,
                     "column": 18,
                     "node_type": "Location"
@@ -1813,14 +1946,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 78,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 78,
                 "column": 3,
                 "node_type": "Location"
@@ -1837,7 +1970,7 @@
         "params": [],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 81,
             "column": 12,
             "node_type": "Location"
@@ -1848,14 +1981,14 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 82,
               "column": 3,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 82,
                 "column": 5,
                 "node_type": "Location"
@@ -1865,7 +1998,7 @@
             },
             "rhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 82,
                 "column": 8,
                 "node_type": "Location"
@@ -1877,7 +2010,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 83,
               "column": 3,
               "node_type": "Location"
@@ -1885,7 +2018,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 83,
                 "column": 5,
                 "node_type": "Location"
@@ -1895,7 +2028,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 83,
                 "column": 7,
                 "node_type": "Location"
@@ -1906,8 +2039,7 @@
               "args": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 83,
                     "column": 12,
                     "node_type": "Location"
@@ -1920,14 +2052,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 84,
               "column": 3,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 84,
                 "column": 8,
                 "node_type": "Location"
@@ -1937,7 +2069,7 @@
             },
             "rhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 84,
                 "column": 11,
                 "node_type": "Location"
@@ -1949,7 +2081,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 85,
               "column": 3,
               "node_type": "Location"
@@ -1957,7 +2089,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 85,
                 "column": 5,
                 "node_type": "Location"
@@ -1967,7 +2099,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 85,
                 "column": 7,
                 "node_type": "Location"
@@ -1975,7 +2107,7 @@
               "node_type": "AppExpression",
               "lhs": {
                 "loc": {
-                  "source_file": "../scilla_checker/examples/mappair.scilla",
+                  "source_file": "../scilla_static/examples/mappair.scilla",
                   "line": 85,
                   "column": 7,
                   "node_type": "Location"
@@ -1986,8 +2118,7 @@
               "rhs_list": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 85,
                     "column": 18,
                     "node_type": "Location"
@@ -2000,7 +2131,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 86,
               "column": 3,
               "node_type": "Location"
@@ -2008,7 +2139,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 86,
                 "column": 7,
                 "node_type": "Location"
@@ -2018,7 +2149,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 86,
                 "column": 9,
                 "node_type": "Location"
@@ -2029,7 +2160,7 @@
                   "node_type": "MessageArgument",
                   "variable": "_tag",
                   "payload": {
-                    "node_type": "PayloadLitral",
+                    "node_type": "PayloadLiteral",
                     "literal": { "node_type": "StringLiteral", "value": "" }
                   }
                 },
@@ -2041,7 +2172,7 @@
                     "value": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 86,
                         "column": 34,
                         "node_type": "Location"
@@ -2055,8 +2186,12 @@
                   "node_type": "MessageArgument",
                   "variable": "_amount",
                   "payload": {
-                    "node_type": "PayloadLitral",
-                    "literal": { "node_type": "UintLiteral", "value": "0" }
+                    "node_type": "PayloadLiteral",
+                    "literal": {
+                      "node_type": "UintLiteral",
+                      "value": "0",
+                      "width": 128
+                    }
                   }
                 },
                 {
@@ -2067,7 +2202,7 @@
                     "value": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 86,
                         "column": 70,
                         "node_type": "Location"
@@ -2082,7 +2217,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 87,
               "column": 3,
               "node_type": "Location"
@@ -2090,7 +2225,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 87,
                 "column": 8,
                 "node_type": "Location"
@@ -2100,7 +2235,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 87,
                 "column": 10,
                 "node_type": "Location"
@@ -2108,7 +2243,7 @@
               "node_type": "AppExpression",
               "lhs": {
                 "loc": {
-                  "source_file": "../scilla_checker/examples/mappair.scilla",
+                  "source_file": "../scilla_static/examples/mappair.scilla",
                   "line": 87,
                   "column": 10,
                   "node_type": "Location"
@@ -2119,8 +2254,7 @@
               "rhs_list": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 87,
                     "column": 18,
                     "node_type": "Location"
@@ -2133,14 +2267,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 88,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 88,
                 "column": 3,
                 "node_type": "Location"
@@ -2157,7 +2291,7 @@
         "params": [],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 91,
             "column": 12,
             "node_type": "Location"
@@ -2168,14 +2302,14 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 92,
               "column": 3,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 92,
                 "column": 5,
                 "node_type": "Location"
@@ -2185,7 +2319,7 @@
             },
             "rhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 92,
                 "column": 8,
                 "node_type": "Location"
@@ -2197,7 +2331,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 93,
               "column": 3,
               "node_type": "Location"
@@ -2205,7 +2339,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 93,
                 "column": 7,
                 "node_type": "Location"
@@ -2215,7 +2349,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 93,
                 "column": 9,
                 "node_type": "Location"
@@ -2225,7 +2359,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 94,
               "column": 3,
               "node_type": "Location"
@@ -2233,7 +2367,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 94,
                 "column": 5,
                 "node_type": "Location"
@@ -2243,7 +2377,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 94,
                 "column": 7,
                 "node_type": "Location"
@@ -2251,7 +2385,7 @@
               "node_type": "AppExpression",
               "lhs": {
                 "loc": {
-                  "source_file": "../scilla_checker/examples/mappair.scilla",
+                  "source_file": "../scilla_static/examples/mappair.scilla",
                   "line": 94,
                   "column": 7,
                   "node_type": "Location"
@@ -2262,8 +2396,7 @@
               "rhs_list": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 94,
                     "column": 11,
                     "node_type": "Location"
@@ -2276,7 +2409,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 95,
               "column": 3,
               "node_type": "Location"
@@ -2284,7 +2417,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 95,
                 "column": 7,
                 "node_type": "Location"
@@ -2294,7 +2427,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 95,
                 "column": 9,
                 "node_type": "Location"
@@ -2302,7 +2435,7 @@
               "node_type": "LetExpression",
               "variable": {
                 "loc": {
-                  "source_file": "../scilla_checker/examples/mappair.scilla",
+                  "source_file": "../scilla_static/examples/mappair.scilla",
                   "line": 95,
                   "column": 9,
                   "node_type": "Location"
@@ -2313,7 +2446,7 @@
               "variable_type": null,
               "expression": {
                 "loc": {
-                  "source_file": "../scilla_checker/examples/mappair.scilla",
+                  "source_file": "../scilla_static/examples/mappair.scilla",
                   "line": 95,
                   "column": 30,
                   "node_type": "Location"
@@ -2322,7 +2455,7 @@
               },
               "body": {
                 "loc": {
-                  "source_file": "../scilla_checker/examples/mappair.scilla",
+                  "source_file": "../scilla_static/examples/mappair.scilla",
                   "line": 95,
                   "column": 52,
                   "node_type": "Location"
@@ -2330,8 +2463,7 @@
                 "node_type": "AppExpression",
                 "lhs": {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 95,
                     "column": 52,
                     "node_type": "Location"
@@ -2343,7 +2475,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/mappair.scilla",
+                        "../scilla_static/examples/mappair.scilla",
                       "line": 95,
                       "column": 67,
                       "node_type": "Location"
@@ -2357,7 +2489,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 96,
               "column": 3,
               "node_type": "Location"
@@ -2365,7 +2497,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 96,
                 "column": 7,
                 "node_type": "Location"
@@ -2375,7 +2507,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 96,
                 "column": 9,
                 "node_type": "Location"
@@ -2386,7 +2518,7 @@
                   "node_type": "MessageArgument",
                   "variable": "_tag",
                   "payload": {
-                    "node_type": "PayloadLitral",
+                    "node_type": "PayloadLiteral",
                     "literal": { "node_type": "StringLiteral", "value": "" }
                   }
                 },
@@ -2398,7 +2530,7 @@
                     "value": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 96,
                         "column": 34,
                         "node_type": "Location"
@@ -2412,8 +2544,12 @@
                   "node_type": "MessageArgument",
                   "variable": "_amount",
                   "payload": {
-                    "node_type": "PayloadLitral",
-                    "literal": { "node_type": "UintLiteral", "value": "0" }
+                    "node_type": "PayloadLiteral",
+                    "literal": {
+                      "node_type": "UintLiteral",
+                      "value": "0",
+                      "width": 128
+                    }
                   }
                 },
                 {
@@ -2424,7 +2560,7 @@
                     "value": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 96,
                         "column": 77,
                         "node_type": "Location"
@@ -2439,7 +2575,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 97,
               "column": 3,
               "node_type": "Location"
@@ -2447,7 +2583,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 97,
                 "column": 8,
                 "node_type": "Location"
@@ -2457,7 +2593,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 97,
                 "column": 10,
                 "node_type": "Location"
@@ -2465,7 +2601,7 @@
               "node_type": "AppExpression",
               "lhs": {
                 "loc": {
-                  "source_file": "../scilla_checker/examples/mappair.scilla",
+                  "source_file": "../scilla_static/examples/mappair.scilla",
                   "line": 97,
                   "column": 10,
                   "node_type": "Location"
@@ -2476,8 +2612,7 @@
               "rhs_list": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 97,
                     "column": 18,
                     "node_type": "Location"
@@ -2490,14 +2625,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 98,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 98,
                 "column": 3,
                 "node_type": "Location"
@@ -2514,7 +2649,7 @@
         "params": [],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/mappair.scilla",
+            "source_file": "../scilla_static/examples/mappair.scilla",
             "line": 101,
             "column": 12,
             "node_type": "Location"
@@ -2525,14 +2660,14 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 102,
               "column": 3,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 102,
                 "column": 5,
                 "node_type": "Location"
@@ -2542,7 +2677,7 @@
             },
             "rhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 102,
                 "column": 8,
                 "node_type": "Location"
@@ -2554,7 +2689,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 103,
               "column": 3,
               "node_type": "Location"
@@ -2562,7 +2697,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 103,
                 "column": 7,
                 "node_type": "Location"
@@ -2572,7 +2707,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 103,
                 "column": 9,
                 "node_type": "Location"
@@ -2580,7 +2715,7 @@
               "node_type": "LetExpression",
               "variable": {
                 "loc": {
-                  "source_file": "../scilla_checker/examples/mappair.scilla",
+                  "source_file": "../scilla_static/examples/mappair.scilla",
                   "line": 103,
                   "column": 9,
                   "node_type": "Location"
@@ -2591,7 +2726,7 @@
               "variable_type": null,
               "expression": {
                 "loc": {
-                  "source_file": "../scilla_checker/examples/mappair.scilla",
+                  "source_file": "../scilla_static/examples/mappair.scilla",
                   "line": 103,
                   "column": 30,
                   "node_type": "Location"
@@ -2600,7 +2735,7 @@
               },
               "body": {
                 "loc": {
-                  "source_file": "../scilla_checker/examples/mappair.scilla",
+                  "source_file": "../scilla_static/examples/mappair.scilla",
                   "line": 103,
                   "column": 62,
                   "node_type": "Location"
@@ -2608,8 +2743,7 @@
                 "node_type": "AppExpression",
                 "lhs": {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 103,
                     "column": 62,
                     "node_type": "Location"
@@ -2621,7 +2755,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/mappair.scilla",
+                        "../scilla_static/examples/mappair.scilla",
                       "line": 103,
                       "column": 77,
                       "node_type": "Location"
@@ -2635,7 +2769,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 104,
               "column": 3,
               "node_type": "Location"
@@ -2643,7 +2777,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 104,
                 "column": 7,
                 "node_type": "Location"
@@ -2653,7 +2787,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 104,
                 "column": 9,
                 "node_type": "Location"
@@ -2664,7 +2798,7 @@
                   "node_type": "MessageArgument",
                   "variable": "_tag",
                   "payload": {
-                    "node_type": "PayloadLitral",
+                    "node_type": "PayloadLiteral",
                     "literal": { "node_type": "StringLiteral", "value": "" }
                   }
                 },
@@ -2676,7 +2810,7 @@
                     "value": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 104,
                         "column": 34,
                         "node_type": "Location"
@@ -2690,8 +2824,12 @@
                   "node_type": "MessageArgument",
                   "variable": "_amount",
                   "payload": {
-                    "node_type": "PayloadLitral",
-                    "literal": { "node_type": "UintLiteral", "value": "0" }
+                    "node_type": "PayloadLiteral",
+                    "literal": {
+                      "node_type": "UintLiteral",
+                      "value": "0",
+                      "width": 128
+                    }
                   }
                 },
                 {
@@ -2702,7 +2840,7 @@
                     "value": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/mappair.scilla",
+                          "../scilla_static/examples/mappair.scilla",
                         "line": 104,
                         "column": 77,
                         "node_type": "Location"
@@ -2717,7 +2855,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 105,
               "column": 3,
               "node_type": "Location"
@@ -2725,7 +2863,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 105,
                 "column": 8,
                 "node_type": "Location"
@@ -2735,7 +2873,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 105,
                 "column": 10,
                 "node_type": "Location"
@@ -2743,7 +2881,7 @@
               "node_type": "AppExpression",
               "lhs": {
                 "loc": {
-                  "source_file": "../scilla_checker/examples/mappair.scilla",
+                  "source_file": "../scilla_static/examples/mappair.scilla",
                   "line": 105,
                   "column": 10,
                   "node_type": "Location"
@@ -2754,8 +2892,7 @@
               "rhs_list": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_checker/examples/mappair.scilla",
+                    "source_file": "../scilla_static/examples/mappair.scilla",
                     "line": 105,
                     "column": 18,
                     "node_type": "Location"
@@ -2768,14 +2905,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/mappair.scilla",
+              "source_file": "../scilla_static/examples/mappair.scilla",
               "line": 106,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file": "../scilla_checker/examples/mappair.scilla",
+                "source_file": "../scilla_static/examples/mappair.scilla",
                 "line": 106,
                 "column": 3,
                 "node_type": "Location"

@@ -2,7 +2,7 @@
   "scilla_major_version": 0,
   "name": {
     "loc": {
-      "source_file": "../scilla_checker/examples/creationtest.scilla",
+      "source_file": "../scilla_static/examples/creationtest.scilla",
       "line": 2,
       "column": 10,
       "node_type": "Location"
@@ -15,7 +15,7 @@
   "contract": {
     "name": {
       "loc": {
-        "source_file": "../scilla_checker/examples/creationtest.scilla",
+        "source_file": "../scilla_static/examples/creationtest.scilla",
         "line": 2,
         "column": 10,
         "node_type": "Location"
@@ -28,7 +28,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/creationtest.scilla",
+            "source_file": "../scilla_static/examples/creationtest.scilla",
             "line": 3,
             "column": 7,
             "node_type": "Location"
@@ -36,10 +36,10 @@
           "identifier": "is_owner",
           "node_type": "Identifier"
         },
-        "field_type": "ByStr20",
+        "field_type": { "node_type": "PrimType", "name": "ByStr20" },
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/creationtest.scilla",
+            "source_file": "../scilla_static/examples/creationtest.scilla",
             "line": 3,
             "column": 27,
             "node_type": "Location"
@@ -55,7 +55,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/creationtest.scilla",
+            "source_file": "../scilla_static/examples/creationtest.scilla",
             "line": 3,
             "column": 76,
             "node_type": "Location"
@@ -63,10 +63,10 @@
           "identifier": "a",
           "node_type": "Identifier"
         },
-        "field_type": "BNum",
+        "field_type": { "node_type": "PrimType", "name": "BNum" },
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/creationtest.scilla",
+            "source_file": "../scilla_static/examples/creationtest.scilla",
             "line": 3,
             "column": 86,
             "node_type": "Location"
@@ -82,7 +82,7 @@
         "params": [],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/creationtest.scilla",
+            "source_file": "../scilla_static/examples/creationtest.scilla",
             "line": 4,
             "column": 12,
             "node_type": "Location"

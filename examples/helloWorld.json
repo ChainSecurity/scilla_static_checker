@@ -2,7 +2,7 @@
   "scilla_major_version": 0,
   "name": {
     "loc": {
-      "source_file": "../scilla_checker/examples/helloWorld.scilla",
+      "source_file": "../scilla_static/examples/helloWorld.scilla",
       "line": 24,
       "column": 10,
       "node_type": "Location"
@@ -13,7 +13,7 @@
   "library": {
     "library_name": {
       "loc": {
-        "source_file": "../scilla_checker/examples/helloWorld.scilla",
+        "source_file": "../scilla_static/examples/helloWorld.scilla",
         "line": 10,
         "column": 1,
         "node_type": "Location"
@@ -26,7 +26,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/helloWorld.scilla",
+            "source_file": "../scilla_static/examples/helloWorld.scilla",
             "line": 12,
             "column": 5,
             "node_type": "Location"
@@ -37,7 +37,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/helloWorld.scilla",
+            "source_file": "../scilla_static/examples/helloWorld.scilla",
             "line": 13,
             "column": 3,
             "node_type": "Location"
@@ -45,7 +45,7 @@
           "node_type": "FunExpression",
           "lhs": {
             "loc": {
-              "source_file": "../scilla_checker/examples/helloWorld.scilla",
+              "source_file": "../scilla_static/examples/helloWorld.scilla",
               "line": 13,
               "column": 3,
               "node_type": "Location"
@@ -55,7 +55,7 @@
           },
           "rhs_expr": {
             "loc": {
-              "source_file": "../scilla_checker/examples/helloWorld.scilla",
+              "source_file": "../scilla_static/examples/helloWorld.scilla",
               "line": 14,
               "column": 3,
               "node_type": "Location"
@@ -63,7 +63,7 @@
             "node_type": "LetExpression",
             "variable": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 14,
                 "column": 3,
                 "node_type": "Location"
@@ -74,31 +74,31 @@
             "variable_type": null,
             "expression": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 14,
                 "column": 17,
                 "node_type": "Location"
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Nil",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": []
             },
             "body": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 15,
                 "column": 3,
                 "node_type": "Location"
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Cons",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": [
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_checker/examples/helloWorld.scilla",
+                      "../scilla_static/examples/helloWorld.scilla",
                     "line": 15,
                     "column": 18,
                     "node_type": "Location"
@@ -109,7 +109,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_checker/examples/helloWorld.scilla",
+                      "../scilla_static/examples/helloWorld.scilla",
                     "line": 15,
                     "column": 22,
                     "node_type": "Location"
@@ -120,14 +120,14 @@
               ]
             }
           },
-          "fun_type": "Message"
+          "lhs_type": { "node_type": "PrimType", "name": "Message" }
         }
       },
       {
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/helloWorld.scilla",
+            "source_file": "../scilla_static/examples/helloWorld.scilla",
             "line": 17,
             "column": 5,
             "node_type": "Location"
@@ -138,20 +138,20 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/helloWorld.scilla",
+            "source_file": "../scilla_static/examples/helloWorld.scilla",
             "line": 17,
             "column": 22,
             "node_type": "Location"
           },
           "node_type": "LiteralExpression",
-          "value": { "node_type": "IntLiteral", "value": "1" }
+          "value": { "node_type": "IntLiteral", "value": "1", "width": 32 }
         }
       },
       {
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/helloWorld.scilla",
+            "source_file": "../scilla_static/examples/helloWorld.scilla",
             "line": 18,
             "column": 5,
             "node_type": "Location"
@@ -162,13 +162,13 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/helloWorld.scilla",
+            "source_file": "../scilla_static/examples/helloWorld.scilla",
             "line": 18,
             "column": 22,
             "node_type": "Location"
           },
           "node_type": "LiteralExpression",
-          "value": { "node_type": "IntLiteral", "value": "2" }
+          "value": { "node_type": "IntLiteral", "value": "2", "width": 32 }
         }
       }
     ],
@@ -178,7 +178,7 @@
     {
       "name": {
         "loc": {
-          "source_file": "../scilla_checker/examples/helloWorld.scilla",
+          "source_file": "../scilla_static/examples/helloWorld.scilla",
           "line": 5,
           "column": 8,
           "node_type": "Location"
@@ -193,7 +193,7 @@
   "contract": {
     "name": {
       "loc": {
-        "source_file": "../scilla_checker/examples/helloWorld.scilla",
+        "source_file": "../scilla_static/examples/helloWorld.scilla",
         "line": 24,
         "column": 10,
         "node_type": "Location"
@@ -205,7 +205,7 @@
       {
         "parameter_name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/helloWorld.scilla",
+            "source_file": "../scilla_static/examples/helloWorld.scilla",
             "line": 25,
             "column": 2,
             "node_type": "Location"
@@ -213,7 +213,7 @@
           "identifier": "owner",
           "node_type": "Identifier"
         },
-        "parameter_type": "ByStr20",
+        "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
         "node_type": "Parameter"
       }
     ],
@@ -221,7 +221,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/helloWorld.scilla",
+            "source_file": "../scilla_static/examples/helloWorld.scilla",
             "line": 27,
             "column": 7,
             "node_type": "Location"
@@ -229,10 +229,10 @@
           "identifier": "welcome_msg",
           "node_type": "Identifier"
         },
-        "field_type": "String",
+        "field_type": { "node_type": "PrimType", "name": "String" },
         "expression": {
           "loc": {
-            "source_file": "../scilla_checker/examples/helloWorld.scilla",
+            "source_file": "../scilla_static/examples/helloWorld.scilla",
             "line": 27,
             "column": 31,
             "node_type": "Location"
@@ -249,7 +249,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 29,
                 "column": 22,
                 "node_type": "Location"
@@ -257,13 +257,13 @@
               "identifier": "msg",
               "node_type": "Identifier"
             },
-            "parameter_type": "String",
+            "parameter_type": { "node_type": "PrimType", "name": "String" },
             "node_type": "Parameter"
           }
         ],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/helloWorld.scilla",
+            "source_file": "../scilla_static/examples/helloWorld.scilla",
             "line": 29,
             "column": 12,
             "node_type": "Location"
@@ -274,7 +274,7 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/helloWorld.scilla",
+              "source_file": "../scilla_static/examples/helloWorld.scilla",
               "line": 30,
               "column": 3,
               "node_type": "Location"
@@ -282,7 +282,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 30,
                 "column": 12,
                 "node_type": "Location"
@@ -292,7 +292,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 30,
                 "column": 14,
                 "node_type": "Location"
@@ -302,7 +302,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_checker/examples/helloWorld.scilla",
+                      "../scilla_static/examples/helloWorld.scilla",
                     "line": 30,
                     "column": 25,
                     "node_type": "Location"
@@ -313,7 +313,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_checker/examples/helloWorld.scilla",
+                      "../scilla_static/examples/helloWorld.scilla",
                     "line": 30,
                     "column": 31,
                     "node_type": "Location"
@@ -325,19 +325,19 @@
               "builtin_function": {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/helloWorld.scilla",
+                    "../scilla_static/examples/helloWorld.scilla",
                   "line": 30,
                   "column": 22,
                   "node_type": "Location"
                 },
-                "builtin_type": "eq",
+                "builtin_operator": "eq",
                 "node_type": "Builtin"
               }
             }
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/helloWorld.scilla",
+              "source_file": "../scilla_static/examples/helloWorld.scilla",
               "line": 31,
               "column": 3,
               "node_type": "Location"
@@ -345,7 +345,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 31,
                 "column": 5,
                 "node_type": "Location"
@@ -355,7 +355,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 31,
                 "column": 7,
                 "node_type": "Location"
@@ -366,7 +366,7 @@
                   "node_type": "MessageArgument",
                   "variable": "_eventname",
                   "payload": {
-                    "node_type": "PayloadLitral",
+                    "node_type": "PayloadLiteral",
                     "literal": {
                       "node_type": "StringLiteral",
                       "value": "setHello()"
@@ -381,7 +381,7 @@
                     "value": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/helloWorld.scilla",
+                          "../scilla_static/examples/helloWorld.scilla",
                         "line": 31,
                         "column": 42,
                         "node_type": "Location"
@@ -396,14 +396,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/helloWorld.scilla",
+              "source_file": "../scilla_static/examples/helloWorld.scilla",
               "line": 32,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 32,
                 "column": 9,
                 "node_type": "Location"
@@ -417,7 +417,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/helloWorld.scilla",
+                        "../scilla_static/examples/helloWorld.scilla",
                       "line": 34,
                       "column": 5,
                       "node_type": "Location"
@@ -426,7 +426,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/helloWorld.scilla",
+                          "../scilla_static/examples/helloWorld.scilla",
                         "line": 34,
                         "column": 7,
                         "node_type": "Location"
@@ -437,7 +437,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/helloWorld.scilla",
+                          "../scilla_static/examples/helloWorld.scilla",
                         "line": 34,
                         "column": 9,
                         "node_type": "Location"
@@ -448,7 +448,7 @@
                           "node_type": "MessageArgument",
                           "variable": "_eventname",
                           "payload": {
-                            "node_type": "PayloadLitral",
+                            "node_type": "PayloadLiteral",
                             "literal": {
                               "node_type": "StringLiteral",
                               "value": "setHello()"
@@ -463,7 +463,7 @@
                             "value": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/helloWorld.scilla",
+                                  "../scilla_static/examples/helloWorld.scilla",
                                 "line": 34,
                                 "column": 44,
                                 "node_type": "Location"
@@ -489,7 +489,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/helloWorld.scilla",
+                        "../scilla_static/examples/helloWorld.scilla",
                       "line": 36,
                       "column": 5,
                       "node_type": "Location"
@@ -497,7 +497,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/helloWorld.scilla",
+                          "../scilla_static/examples/helloWorld.scilla",
                         "line": 36,
                         "column": 17,
                         "node_type": "Location"
@@ -508,7 +508,7 @@
                     "rhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/helloWorld.scilla",
+                          "../scilla_static/examples/helloWorld.scilla",
                         "line": 36,
                         "column": 20,
                         "node_type": "Location"
@@ -521,7 +521,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_checker/examples/helloWorld.scilla",
+                        "../scilla_static/examples/helloWorld.scilla",
                       "line": 37,
                       "column": 5,
                       "node_type": "Location"
@@ -530,7 +530,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/helloWorld.scilla",
+                          "../scilla_static/examples/helloWorld.scilla",
                         "line": 37,
                         "column": 7,
                         "node_type": "Location"
@@ -541,7 +541,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/helloWorld.scilla",
+                          "../scilla_static/examples/helloWorld.scilla",
                         "line": 37,
                         "column": 9,
                         "node_type": "Location"
@@ -552,7 +552,7 @@
                           "node_type": "MessageArgument",
                           "variable": "_eventname",
                           "payload": {
-                            "node_type": "PayloadLitral",
+                            "node_type": "PayloadLiteral",
                             "literal": {
                               "node_type": "StringLiteral",
                               "value": "setHello()"
@@ -567,7 +567,7 @@
                             "value": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_checker/examples/helloWorld.scilla",
+                                  "../scilla_static/examples/helloWorld.scilla",
                                 "line": 37,
                                 "column": 44,
                                 "node_type": "Location"
@@ -598,7 +598,7 @@
         "params": [],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/helloWorld.scilla",
+            "source_file": "../scilla_static/examples/helloWorld.scilla",
             "line": 43,
             "column": 12,
             "node_type": "Location"
@@ -609,14 +609,14 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/helloWorld.scilla",
+              "source_file": "../scilla_static/examples/helloWorld.scilla",
               "line": 44,
               "column": 5,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 44,
                 "column": 7,
                 "node_type": "Location"
@@ -626,7 +626,7 @@
             },
             "rhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 44,
                 "column": 10,
                 "node_type": "Location"
@@ -638,7 +638,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/helloWorld.scilla",
+              "source_file": "../scilla_static/examples/helloWorld.scilla",
               "line": 45,
               "column": 5,
               "node_type": "Location"
@@ -646,7 +646,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 45,
                 "column": 7,
                 "node_type": "Location"
@@ -656,7 +656,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 45,
                 "column": 9,
                 "node_type": "Location"
@@ -667,7 +667,7 @@
                   "node_type": "MessageArgument",
                   "variable": "_eventname",
                   "payload": {
-                    "node_type": "PayloadLitral",
+                    "node_type": "PayloadLiteral",
                     "literal": {
                       "node_type": "StringLiteral",
                       "value": "getHello()"
@@ -682,7 +682,7 @@
                     "value": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/helloWorld.scilla",
+                          "../scilla_static/examples/helloWorld.scilla",
                         "line": 45,
                         "column": 41,
                         "node_type": "Location"
@@ -697,14 +697,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/helloWorld.scilla",
+              "source_file": "../scilla_static/examples/helloWorld.scilla",
               "line": 46,
               "column": 5,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 46,
                 "column": 5,
                 "node_type": "Location"
@@ -721,7 +721,7 @@
         "params": [],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/helloWorld.scilla",
+            "source_file": "../scilla_static/examples/helloWorld.scilla",
             "line": 49,
             "column": 12,
             "node_type": "Location"
@@ -732,7 +732,7 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/helloWorld.scilla",
+              "source_file": "../scilla_static/examples/helloWorld.scilla",
               "line": 50,
               "column": 3,
               "node_type": "Location"
@@ -740,7 +740,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 50,
                 "column": 8,
                 "node_type": "Location"
@@ -750,7 +750,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 50,
                 "column": 10,
                 "node_type": "Location"
@@ -761,7 +761,7 @@
                   "node_type": "MessageArgument",
                   "variable": "_tag",
                   "payload": {
-                    "node_type": "PayloadLitral",
+                    "node_type": "PayloadLiteral",
                     "literal": { "node_type": "StringLiteral", "value": "" }
                   }
                 },
@@ -773,7 +773,7 @@
                     "value": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/helloWorld.scilla",
+                          "../scilla_static/examples/helloWorld.scilla",
                         "line": 50,
                         "column": 35,
                         "node_type": "Location"
@@ -787,8 +787,12 @@
                   "node_type": "MessageArgument",
                   "variable": "_amount",
                   "payload": {
-                    "node_type": "PayloadLitral",
-                    "literal": { "node_type": "UintLiteral", "value": "0" }
+                    "node_type": "PayloadLiteral",
+                    "literal": {
+                      "node_type": "UintLiteral",
+                      "value": "0",
+                      "width": 128
+                    }
                   }
                 }
               ]
@@ -796,7 +800,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/helloWorld.scilla",
+              "source_file": "../scilla_static/examples/helloWorld.scilla",
               "line": 51,
               "column": 3,
               "node_type": "Location"
@@ -804,7 +808,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 51,
                 "column": 8,
                 "node_type": "Location"
@@ -814,7 +818,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 51,
                 "column": 10,
                 "node_type": "Location"
@@ -825,7 +829,7 @@
                   "node_type": "MessageArgument",
                   "variable": "_tag",
                   "payload": {
-                    "node_type": "PayloadLitral",
+                    "node_type": "PayloadLiteral",
                     "literal": { "node_type": "StringLiteral", "value": "" }
                   }
                 },
@@ -837,7 +841,7 @@
                     "value": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/helloWorld.scilla",
+                          "../scilla_static/examples/helloWorld.scilla",
                         "line": 51,
                         "column": 35,
                         "node_type": "Location"
@@ -851,8 +855,12 @@
                   "node_type": "MessageArgument",
                   "variable": "_amount",
                   "payload": {
-                    "node_type": "PayloadLitral",
-                    "literal": { "node_type": "UintLiteral", "value": "0" }
+                    "node_type": "PayloadLiteral",
+                    "literal": {
+                      "node_type": "UintLiteral",
+                      "value": "0",
+                      "width": 128
+                    }
                   }
                 }
               ]
@@ -860,7 +868,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/helloWorld.scilla",
+              "source_file": "../scilla_static/examples/helloWorld.scilla",
               "line": 52,
               "column": 3,
               "node_type": "Location"
@@ -868,7 +876,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 52,
                 "column": 9,
                 "node_type": "Location"
@@ -878,7 +886,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 52,
                 "column": 11,
                 "node_type": "Location"
@@ -887,7 +895,7 @@
               "lhs": {
                 "loc": {
                   "source_file":
-                    "../scilla_checker/examples/helloWorld.scilla",
+                    "../scilla_static/examples/helloWorld.scilla",
                   "line": 52,
                   "column": 11,
                   "node_type": "Location"
@@ -899,7 +907,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_checker/examples/helloWorld.scilla",
+                      "../scilla_static/examples/helloWorld.scilla",
                     "line": 52,
                     "column": 19,
                     "node_type": "Location"
@@ -912,7 +920,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/helloWorld.scilla",
+              "source_file": "../scilla_static/examples/helloWorld.scilla",
               "line": 53,
               "column": 3,
               "node_type": "Location"
@@ -920,7 +928,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 53,
                 "column": 9,
                 "node_type": "Location"
@@ -930,19 +938,19 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 53,
                 "column": 11,
                 "node_type": "Location"
               },
               "node_type": "ConstrExpression",
               "constructor_name": "Cons",
-              "types": [ "Message" ],
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
               "args": [
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_checker/examples/helloWorld.scilla",
+                      "../scilla_static/examples/helloWorld.scilla",
                     "line": 53,
                     "column": 26,
                     "node_type": "Location"
@@ -953,7 +961,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_checker/examples/helloWorld.scilla",
+                      "../scilla_static/examples/helloWorld.scilla",
                     "line": 53,
                     "column": 31,
                     "node_type": "Location"
@@ -966,14 +974,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/helloWorld.scilla",
+              "source_file": "../scilla_static/examples/helloWorld.scilla",
               "line": 54,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 54,
                 "column": 3,
                 "node_type": "Location"
@@ -990,7 +998,7 @@
         "params": [],
         "name": {
           "loc": {
-            "source_file": "../scilla_checker/examples/helloWorld.scilla",
+            "source_file": "../scilla_static/examples/helloWorld.scilla",
             "line": 57,
             "column": 12,
             "node_type": "Location"
@@ -1001,7 +1009,7 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/helloWorld.scilla",
+              "source_file": "../scilla_static/examples/helloWorld.scilla",
               "line": 58,
               "column": 3,
               "node_type": "Location"
@@ -1009,7 +1017,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 58,
                 "column": 8,
                 "node_type": "Location"
@@ -1019,7 +1027,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 58,
                 "column": 10,
                 "node_type": "Location"
@@ -1030,7 +1038,7 @@
                   "node_type": "MessageArgument",
                   "variable": "_eventname",
                   "payload": {
-                    "node_type": "PayloadLitral",
+                    "node_type": "PayloadLiteral",
                     "literal": {
                       "node_type": "StringLiteral",
                       "value": "ContractAddress"
@@ -1045,7 +1053,7 @@
                     "value": {
                       "loc": {
                         "source_file":
-                          "../scilla_checker/examples/helloWorld.scilla",
+                          "../scilla_static/examples/helloWorld.scilla",
                         "line": 58,
                         "column": 50,
                         "node_type": "Location"
@@ -1060,14 +1068,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_checker/examples/helloWorld.scilla",
+              "source_file": "../scilla_static/examples/helloWorld.scilla",
               "line": 59,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file": "../scilla_checker/examples/helloWorld.scilla",
+                "source_file": "../scilla_static/examples/helloWorld.scilla",
                 "line": 59,
                 "column": 3,
                 "node_type": "Location"

@@ -1,0 +1,12 @@
+library ShapeLib
+
+type Shape =
+| Square of Uint32 Uint32
+| Circle of Uint32 Uint32
+
+let shape_to_int =
+  fun (shape : Shape) =>
+    match shape with
+    | Square _ _ => Uint32 1
+    | Circle _ _ => Uint32 2
+    end
