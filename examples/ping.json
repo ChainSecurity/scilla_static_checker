@@ -380,7 +380,7 @@
                           "column": 28,
                           "node_type": "Location"
                         },
-                        "builtin_type": "lt",
+                        "builtin_operator": "lt",
                         "node_type": "Builtin"
                       }
                     }
@@ -542,7 +542,7 @@
                                   "column": 26,
                                   "node_type": "Location"
                                 },
-                                "builtin_type": "sub",
+                                "builtin_operator": "sub",
                                 "node_type": "Builtin"
                               }
                             }

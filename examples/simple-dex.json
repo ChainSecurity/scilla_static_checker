@@ -273,7 +273,7 @@
                 "column": 13,
                 "node_type": "Location"
               },
-              "builtin_type": "sha256hash",
+              "builtin_operator": "sha256hash",
               "node_type": "Builtin"
             }
           },
@@ -1024,7 +1024,7 @@
                         "column": 15,
                         "node_type": "Location"
                       },
-                      "builtin_type": "add",
+                      "builtin_operator": "add",
                       "node_type": "Builtin"
                     }
                   }
@@ -1466,7 +1466,7 @@
                       "column": 55,
                       "node_type": "Location"
                     },
-                    "builtin_type": "badd",
+                    "builtin_operator": "badd",
                     "node_type": "Builtin"
                   }
                 },
@@ -1511,7 +1511,7 @@
                       "column": 35,
                       "node_type": "Location"
                     },
-                    "builtin_type": "blt",
+                    "builtin_operator": "blt",
                     "node_type": "Builtin"
                   }
                 }
@@ -2610,7 +2610,7 @@
                                       "column": 39,
                                       "node_type": "Location"
                                     },
-                                    "builtin_type": "blt",
+                                    "builtin_operator": "blt",
                                     "node_type": "Builtin"
                                   }
                                 }
@@ -4879,7 +4879,7 @@
                           "column": 29,
                           "node_type": "Location"
                         },
-                        "builtin_type": "eq",
+                        "builtin_operator": "eq",
                         "node_type": "Builtin"
                       }
                     }

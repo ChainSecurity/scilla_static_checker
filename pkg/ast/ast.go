@@ -163,8 +163,8 @@ type MatchExpression struct {
 
 type BuiltinExpression struct {
 	AnnotatedNode
-	Args []*Identifier `json:"args"`
-	Bf   *Builtin      `json:"builtin_function"`
+	Args        []*Identifier `json:"arguments"`
+	BuintinFunc *Builtin      `json:"builtin_function"`
 }
 
 type TFunExpression struct {
@@ -271,8 +271,8 @@ type MatchStatementCase struct {
 	Body []Statement `json:"pattern_body"`
 }
 type Builtin struct {
-	Loc         *Location `json:"loc"`
-	BuiltinType string    `json:"builtin_type"`
+	Loc       *Location `json:"loc"`
+	BuiltinOp string    `json:"builtin_operator"`
 }
 
 type LoadStatement struct {

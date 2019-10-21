@@ -184,7 +184,7 @@
                     "column": 21,
                     "node_type": "Location"
                   },
-                  "builtin_type": "lt",
+                  "builtin_operator": "lt",
                   "node_type": "Builtin"
                 }
               },
@@ -389,7 +389,7 @@
                     "column": 21,
                     "node_type": "Location"
                   },
-                  "builtin_type": "lt",
+                  "builtin_operator": "lt",
                   "node_type": "Builtin"
                 }
               },
@@ -504,7 +504,7 @@
                             "column": 23,
                             "node_type": "Location"
                           },
-                          "builtin_type": "eq",
+                          "builtin_operator": "eq",
                           "node_type": "Builtin"
                         }
                       },
@@ -881,7 +881,7 @@
                 "column": 13,
                 "node_type": "Location"
               },
-              "builtin_type": "put",
+              "builtin_operator": "put",
               "node_type": "Builtin"
             }
           }
@@ -1920,7 +1920,7 @@
                                   "column": 32,
                                   "node_type": "Location"
                                 },
-                                "builtin_type": "sub",
+                                "builtin_operator": "sub",
                                 "node_type": "Builtin"
                               }
                             }
@@ -2120,7 +2120,7 @@
                                         "column": 27,
                                         "node_type": "Location"
                                       },
-                                      "builtin_type": "add",
+                                      "builtin_operator": "add",
                                       "node_type": "Builtin"
                                     }
                                   }
@@ -3313,7 +3313,7 @@
                                           "column": 36,
                                           "node_type": "Location"
                                         },
-                                        "builtin_type": "sub",
+                                        "builtin_operator": "sub",
                                         "node_type": "Builtin"
                                       }
                                     }
@@ -3493,7 +3493,7 @@
                                                   "column": 38,
                                                   "node_type": "Location"
                                                 },
-                                                "builtin_type": "add",
+                                                "builtin_operator": "add",
                                                 "node_type": "Builtin"
                                               }
                                             }
@@ -3685,7 +3685,7 @@
                                           "column": 35,
                                           "node_type": "Location"
                                         },
-                                        "builtin_type": "sub",
+                                        "builtin_operator": "sub",
                                         "node_type": "Builtin"
                                       }
                                     }

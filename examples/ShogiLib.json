@@ -3346,7 +3346,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -3457,7 +3457,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -3568,7 +3568,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -3679,7 +3679,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -3790,7 +3790,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -3901,7 +3901,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -4012,7 +4012,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -4123,7 +4123,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -4234,7 +4234,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -4410,7 +4410,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -4521,7 +4521,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -4632,7 +4632,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -4743,7 +4743,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -4854,7 +4854,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -4965,7 +4965,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -5076,7 +5076,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -5187,7 +5187,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -5298,7 +5298,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -5474,7 +5474,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -5585,7 +5585,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -5696,7 +5696,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -5807,7 +5807,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -5918,7 +5918,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -6029,7 +6029,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -6140,7 +6140,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -6251,7 +6251,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -6362,7 +6362,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -6538,7 +6538,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -6649,7 +6649,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -6760,7 +6760,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -6871,7 +6871,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -6982,7 +6982,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -7093,7 +7093,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -7204,7 +7204,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -7315,7 +7315,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -7426,7 +7426,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -7602,7 +7602,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -7713,7 +7713,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -7824,7 +7824,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -7935,7 +7935,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -8046,7 +8046,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -8157,7 +8157,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -8268,7 +8268,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -8379,7 +8379,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -8490,7 +8490,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -8666,7 +8666,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -8777,7 +8777,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -8888,7 +8888,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -8999,7 +8999,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -9110,7 +9110,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -9221,7 +9221,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -9332,7 +9332,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -9443,7 +9443,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -9554,7 +9554,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -9730,7 +9730,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -9841,7 +9841,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -9952,7 +9952,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -10063,7 +10063,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -10174,7 +10174,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -10285,7 +10285,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -10396,7 +10396,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -10507,7 +10507,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -10618,7 +10618,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -10794,7 +10794,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -10905,7 +10905,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -11016,7 +11016,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -11127,7 +11127,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -11238,7 +11238,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -11349,7 +11349,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -11460,7 +11460,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -11571,7 +11571,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -11682,7 +11682,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -11858,7 +11858,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -11969,7 +11969,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -12080,7 +12080,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -12191,7 +12191,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -12302,7 +12302,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -12413,7 +12413,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -12524,7 +12524,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -12635,7 +12635,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -12746,7 +12746,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -12932,7 +12932,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -13043,7 +13043,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -13154,7 +13154,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -13265,7 +13265,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -13376,7 +13376,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -13487,7 +13487,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -13598,7 +13598,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -13709,7 +13709,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -13820,7 +13820,7 @@
                                                                     "node_type":
                                                                     "Location"
                                                                     },
-                                                                    "builtin_type":
+                                                                    "builtin_operator":
                                                                     "put",
                                                                     "node_type":
                                                                     "Builtin"
@@ -14241,7 +14241,7 @@
                           "column": 26,
                           "node_type": "Location"
                         },
-                        "builtin_type": "put",
+                        "builtin_operator": "put",
                         "node_type": "Builtin"
                       }
                     },
@@ -14373,7 +14373,7 @@
                               "column": 26,
                               "node_type": "Location"
                             },
-                            "builtin_type": "put",
+                            "builtin_operator": "put",
                             "node_type": "Builtin"
                           }
                         },
@@ -14505,7 +14505,7 @@
                                   "column": 26,
                                   "node_type": "Location"
                                 },
-                                "builtin_type": "put",
+                                "builtin_operator": "put",
                                 "node_type": "Builtin"
                               }
                             },
@@ -14637,7 +14637,7 @@
                                       "column": 26,
                                       "node_type": "Location"
                                     },
-                                    "builtin_type": "put",
+                                    "builtin_operator": "put",
                                     "node_type": "Builtin"
                                   }
                                 },
@@ -14769,7 +14769,7 @@
                                           "column": 26,
                                           "node_type": "Location"
                                         },
-                                        "builtin_type": "put",
+                                        "builtin_operator": "put",
                                         "node_type": "Builtin"
                                       }
                                     },
@@ -14901,7 +14901,7 @@
                                               "column": 26,
                                               "node_type": "Location"
                                             },
-                                            "builtin_type": "put",
+                                            "builtin_operator": "put",
                                             "node_type": "Builtin"
                                           }
                                         },
@@ -15034,7 +15034,7 @@
                                                   "column": 26,
                                                   "node_type": "Location"
                                                 },
-                                                "builtin_type": "put",
+                                                "builtin_operator": "put",
                                                 "node_type": "Builtin"
                                               }
                                             },
@@ -15169,7 +15169,7 @@
                                                       "column": 23,
                                                       "node_type": "Location"
                                                     },
-                                                    "builtin_type": "put",
+                                                    "builtin_operator": "put",
                                                     "node_type": "Builtin"
                                                   }
                                                 },
@@ -15257,7 +15257,8 @@
                                                         "node_type":
                                                           "Location"
                                                       },
-                                                      "builtin_type": "put",
+                                                      "builtin_operator":
+                                                        "put",
                                                       "node_type": "Builtin"
                                                     }
                                                   },

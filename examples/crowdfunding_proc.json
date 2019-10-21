@@ -246,7 +246,7 @@
                     "column": 23,
                     "node_type": "Location"
                   },
-                  "builtin_type": "blt",
+                  "builtin_operator": "blt",
                   "node_type": "Builtin"
                 }
               },
@@ -312,7 +312,7 @@
                       "column": 23,
                       "node_type": "Location"
                     },
-                    "builtin_type": "eq",
+                    "builtin_operator": "eq",
                     "node_type": "Builtin"
                   }
                 },
@@ -645,7 +645,7 @@
                             "column": 38,
                             "node_type": "Location"
                           },
-                          "builtin_type": "lt",
+                          "builtin_operator": "lt",
                           "node_type": "Builtin"
                         }
                       },
@@ -898,7 +898,7 @@
                       "column": 38,
                       "node_type": "Location"
                     },
-                    "builtin_type": "lt",
+                    "builtin_operator": "lt",
                     "node_type": "Builtin"
                   }
                 },
@@ -2738,7 +2738,7 @@
                   "column": 22,
                   "node_type": "Location"
                 },
-                "builtin_type": "eq",
+                "builtin_operator": "eq",
                 "node_type": "Builtin"
               }
             }
@@ -3671,7 +3671,7 @@
                   "column": 28,
                   "node_type": "Location"
                 },
-                "builtin_type": "blt",
+                "builtin_operator": "blt",
                 "node_type": "Builtin"
               }
             }

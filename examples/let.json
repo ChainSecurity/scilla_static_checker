@@ -289,7 +289,7 @@
               "column": 28,
               "node_type": "Location"
             },
-            "builtin_type": "add",
+            "builtin_operator": "add",
             "node_type": "Builtin"
           }
         },
@@ -427,7 +427,7 @@
                   "column": 20,
                   "node_type": "Location"
                 },
-                "builtin_type": "add",
+                "builtin_operator": "add",
                 "node_type": "Builtin"
               }
             }

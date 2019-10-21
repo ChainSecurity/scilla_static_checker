@@ -928,7 +928,7 @@
                   "column": 22,
                   "node_type": "Location"
                 },
-                "builtin_type": "eq",
+                "builtin_operator": "eq",
                 "node_type": "Builtin"
               }
             }

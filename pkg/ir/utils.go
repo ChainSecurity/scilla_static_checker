@@ -8,7 +8,7 @@ import (
 )
 
 type CFGBuilder struct {
-	GlobalVarMap map[string]Data
+	builtinOpMap map[string]Data
 
 	constrTypeMap   map[string]string
 	intWidthTypeMap map[int]*IntType
@@ -215,6 +215,8 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		}
 		return data
 	case *ast.BuiltinExpression:
+		bt := n.BuintinFunc.BuiltinOp
+		op := builder.builtinOpMap[bt]
 		vars := make([]Data, len(n.Args))
 		for i, a := range n.Args {
 			v, ok := stackMapPeek(builder.varStack, a.Id)
@@ -223,7 +225,14 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 			}
 			vars[i] = v
 		}
-		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
+		res := AppDD{
+			Args: vars,
+			To: &AppTD{
+				Args: []Type{vars[0].Type()},
+				To:   op,
+			},
+		}
+		return &res
 	case *ast.LetExpression:
 		varName := n.Var.Id
 		expr := builder.visitExpression(n.Expr)
@@ -244,7 +253,7 @@ func (builder *CFGBuilder) visitLibEntry(le ast.LibEntry) {
 	case *ast.LibraryVariable:
 		name := n.Name.Id
 		v := builder.visitExpression(n.Expr)
-		builder.GlobalVarMap[name] = v
+		stackMapPush(builder.varStack, name, v)
 	case *ast.LibraryType:
 		typeName := n.Name.Id
 		typ := EnumType{}
@@ -270,6 +279,7 @@ func visitField(builder *CFGBuilder, f *ast.Field) (string, Data) {
 	fmt.Println("visitField", name)
 	//t := builder.typeMap[f.Type]
 	data := builder.visitExpression(f.Expr)
+	stackMapPush(builder.varStack, name, data)
 	return name, data
 }
 
@@ -328,13 +338,29 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 
 	stdLib := StdLib()
 	builder.typeMap["Bool"] = stdLib.Boolean
+
+	var baddAbsDD AbsDD
+	builtin_add := AbsTD{
+		Vars: []TypeVar{
+			TypeVar{Kind: stdLib.star},
+		},
+		Term: &baddAbsDD,
+	}
+	baddAbsDD = AbsDD{
+		Vars: []*DataVar{
+			&DataVar{DataType: &builtin_add.Vars[0]},
+			&DataVar{DataType: &builtin_add.Vars[0]},
+		},
+		Term: &BuiltinVar{&builtin_add.Vars[0]},
+	}
+	builder.builtinOpMap["add"] = &builtin_add
 	//builder.constructorTypeMap["Bool"] = stdLib.Boolean
 
 }
 
 func BuildCFG(n ast.AstNode) *CFGBuilder {
 	builder := CFGBuilder{
-		GlobalVarMap:    map[string]Data{},
+		builtinOpMap:    map[string]Data{},
 		typeMap:         map[string]Type{},
 		constrTypeMap:   map[string]string{},
 		intWidthTypeMap: map[int]*IntType{},

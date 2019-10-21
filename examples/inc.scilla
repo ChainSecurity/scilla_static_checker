@@ -21,14 +21,16 @@ contract Inc
 
 (*field signatures       : Map Uint32 (Map ByStr20 Bool) =*)
                            (*Emp Uint32 (Map ByStr20 Bool)*)
-field balances : Map ByStr20 Uint128 = Emp ByStr20 Uint128
+(*field balances : Map ByStr20 Uint128 = Emp ByStr20 Uint128*)
   (*let m = Emp ByStr20 Uint128 in*)
     (*builtin put m owner one128*)
-field a : Uint64 = builtin add x one64
+field two64 : Uint64 = builtin add one64 one64
+field a : Uint64 = Uint64 0
+(*field  bbbb : Bool = builtin eq one64 one128*)
 (*field allowed : Map ByStr20 (Map ByStr20 Uint128) = Emp ByStr20 (Map ByStr20 Uint128)*)
 
 transition inc ()
-    one = Uint64 1;
+    one = one64;
     curra <- a;
     inca = builtin add curra one; 
     a := inca

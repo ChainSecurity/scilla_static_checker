@@ -25,10 +25,16 @@ type (
 
 	// SetKind :
 	SetKind struct{}
+
+	//BuiltinVar
+	BuiltinVar struct{ BuiltinType Type }
 )
 
 func (*DataVar) isData()      {}
 func (x *DataVar) Type() Type { return x.DataType }
+
+func (*BuiltinVar) isData()      {}
+func (x *BuiltinVar) Type() Type { return x.BuiltinType }
 
 func (*TypeVar) isType() {}
 func (*SetKind) isKind() {}

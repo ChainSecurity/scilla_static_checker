@@ -305,7 +305,7 @@
                   "column": 18,
                   "node_type": "Location"
                 },
-                "builtin_type": "put",
+                "builtin_operator": "put",
                 "node_type": "Builtin"
               }
             }

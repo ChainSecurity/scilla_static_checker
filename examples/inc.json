@@ -144,44 +144,11 @@
         "field_name": {
           "loc": {
             "source_file": "../scilla_static/examples/inc.scilla",
-            "line": 24,
-            "column": 7,
-            "node_type": "Location"
-          },
-          "identifier": "balances",
-          "node_type": "Identifier"
-        },
-        "field_type": {
-          "node_type": "MapType",
-          "key_type": { "node_type": "PrimType", "name": "ByStr20" },
-          "val_type": { "node_type": "PrimType", "name": "Uint128" }
-        },
-        "expression": {
-          "loc": {
-            "source_file": "../scilla_static/examples/inc.scilla",
-            "line": 24,
-            "column": 40,
-            "node_type": "Location"
-          },
-          "node_type": "LiteralExpression",
-          "value": {
-            "key_type": { "node_type": "PrimType", "name": "ByStr20" },
-            "val_type": { "node_type": "PrimType", "name": "Uint128" },
-            "node_type": "MapLiteral",
-            "mvalues": []
-          }
-        },
-        "node_type": "Field"
-      },
-      {
-        "field_name": {
-          "loc": {
-            "source_file": "../scilla_static/examples/inc.scilla",
             "line": 27,
             "column": 7,
             "node_type": "Location"
           },
-          "identifier": "a",
+          "identifier": "two64",
           "node_type": "Identifier"
         },
         "field_type": { "node_type": "PrimType", "name": "Uint64" },
@@ -189,7 +156,7 @@
           "loc": {
             "source_file": "../scilla_static/examples/inc.scilla",
             "line": 27,
-            "column": 20,
+            "column": 24,
             "node_type": "Location"
           },
           "node_type": "BuiltinExpression",
@@ -198,17 +165,17 @@
               "loc": {
                 "source_file": "../scilla_static/examples/inc.scilla",
                 "line": 27,
-                "column": 32,
+                "column": 36,
                 "node_type": "Location"
               },
-              "identifier": "x",
+              "identifier": "one64",
               "node_type": "Identifier"
             },
             {
               "loc": {
                 "source_file": "../scilla_static/examples/inc.scilla",
                 "line": 27,
-                "column": 34,
+                "column": 42,
                 "node_type": "Location"
               },
               "identifier": "one64",
@@ -219,12 +186,36 @@
             "loc": {
               "source_file": "../scilla_static/examples/inc.scilla",
               "line": 27,
-              "column": 28,
+              "column": 32,
               "node_type": "Location"
             },
-            "builtin_type": "add",
+            "builtin_operator": "add",
             "node_type": "Builtin"
           }
+        },
+        "node_type": "Field"
+      },
+      {
+        "field_name": {
+          "loc": {
+            "source_file": "../scilla_static/examples/inc.scilla",
+            "line": 28,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "a",
+          "node_type": "Identifier"
+        },
+        "field_type": { "node_type": "PrimType", "name": "Uint64" },
+        "expression": {
+          "loc": {
+            "source_file": "../scilla_static/examples/inc.scilla",
+            "line": 28,
+            "column": 20,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "0", "width": 64 }
         },
         "node_type": "Field"
       }
@@ -235,7 +226,7 @@
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/inc.scilla",
-            "line": 30,
+            "line": 32,
             "column": 12,
             "node_type": "Location"
           },
@@ -243,68 +234,6 @@
           "node_type": "Identifier"
         },
         "body": [
-          {
-            "loc": {
-              "source_file": "../scilla_static/examples/inc.scilla",
-              "line": 31,
-              "column": 5,
-              "node_type": "Location"
-            },
-            "node_type": "BindStatement",
-            "lhs": {
-              "loc": {
-                "source_file": "../scilla_static/examples/inc.scilla",
-                "line": 31,
-                "column": 9,
-                "node_type": "Location"
-              },
-              "identifier": "one",
-              "node_type": "Identifier"
-            },
-            "rhs_expr": {
-              "loc": {
-                "source_file": "../scilla_static/examples/inc.scilla",
-                "line": 31,
-                "column": 11,
-                "node_type": "Location"
-              },
-              "node_type": "LiteralExpression",
-              "value": {
-                "node_type": "UintLiteral",
-                "value": "1",
-                "width": 64
-              }
-            }
-          },
-          {
-            "loc": {
-              "source_file": "../scilla_static/examples/inc.scilla",
-              "line": 32,
-              "column": 5,
-              "node_type": "Location"
-            },
-            "lhs": {
-              "loc": {
-                "source_file": "../scilla_static/examples/inc.scilla",
-                "line": 32,
-                "column": 11,
-                "node_type": "Location"
-              },
-              "identifier": "curra",
-              "node_type": "Identifier"
-            },
-            "rhs": {
-              "loc": {
-                "source_file": "../scilla_static/examples/inc.scilla",
-                "line": 32,
-                "column": 14,
-                "node_type": "Location"
-              },
-              "identifier": "a",
-              "node_type": "Identifier"
-            },
-            "node_type": "LoadStatement"
-          },
           {
             "loc": {
               "source_file": "../scilla_static/examples/inc.scilla",
@@ -317,51 +246,29 @@
               "loc": {
                 "source_file": "../scilla_static/examples/inc.scilla",
                 "line": 33,
-                "column": 10,
+                "column": 9,
                 "node_type": "Location"
               },
-              "identifier": "inca",
+              "identifier": "one",
               "node_type": "Identifier"
             },
             "rhs_expr": {
               "loc": {
                 "source_file": "../scilla_static/examples/inc.scilla",
                 "line": 33,
-                "column": 12,
+                "column": 11,
                 "node_type": "Location"
               },
-              "node_type": "BuiltinExpression",
-              "arguments": [
-                {
-                  "loc": {
-                    "source_file": "../scilla_static/examples/inc.scilla",
-                    "line": 33,
-                    "column": 24,
-                    "node_type": "Location"
-                  },
-                  "identifier": "curra",
-                  "node_type": "Identifier"
-                },
-                {
-                  "loc": {
-                    "source_file": "../scilla_static/examples/inc.scilla",
-                    "line": 33,
-                    "column": 30,
-                    "node_type": "Location"
-                  },
-                  "identifier": "one",
-                  "node_type": "Identifier"
-                }
-              ],
-              "builtin_function": {
+              "node_type": "VarExpression",
+              "variable": {
                 "loc": {
                   "source_file": "../scilla_static/examples/inc.scilla",
                   "line": 33,
-                  "column": 20,
+                  "column": 11,
                   "node_type": "Location"
                 },
-                "builtin_type": "add",
-                "node_type": "Builtin"
+                "identifier": "one64",
+                "node_type": "Identifier"
               }
             }
           },
@@ -376,6 +283,95 @@
               "loc": {
                 "source_file": "../scilla_static/examples/inc.scilla",
                 "line": 34,
+                "column": 11,
+                "node_type": "Location"
+              },
+              "identifier": "curra",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "../scilla_static/examples/inc.scilla",
+                "line": 34,
+                "column": 14,
+                "node_type": "Location"
+              },
+              "identifier": "a",
+              "node_type": "Identifier"
+            },
+            "node_type": "LoadStatement"
+          },
+          {
+            "loc": {
+              "source_file": "../scilla_static/examples/inc.scilla",
+              "line": 35,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "../scilla_static/examples/inc.scilla",
+                "line": 35,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "identifier": "inca",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "../scilla_static/examples/inc.scilla",
+                "line": 35,
+                "column": 12,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "../scilla_static/examples/inc.scilla",
+                    "line": 35,
+                    "column": 24,
+                    "node_type": "Location"
+                  },
+                  "identifier": "curra",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "../scilla_static/examples/inc.scilla",
+                    "line": 35,
+                    "column": 30,
+                    "node_type": "Location"
+                  },
+                  "identifier": "one",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "../scilla_static/examples/inc.scilla",
+                  "line": 35,
+                  "column": 20,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "add",
+                "node_type": "Builtin"
+              }
+            }
+          },
+          {
+            "loc": {
+              "source_file": "../scilla_static/examples/inc.scilla",
+              "line": 36,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "../scilla_static/examples/inc.scilla",
+                "line": 36,
                 "column": 7,
                 "node_type": "Location"
               },
@@ -385,7 +381,7 @@
             "rhs": {
               "loc": {
                 "source_file": "../scilla_static/examples/inc.scilla",
-                "line": 34,
+                "line": 36,
                 "column": 10,
                 "node_type": "Location"
               },

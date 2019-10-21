@@ -1234,7 +1234,7 @@
                   "column": 29,
                   "node_type": "Location"
                 },
-                "builtin_type": "eq",
+                "builtin_operator": "eq",
                 "node_type": "Builtin"
               }
             }
@@ -1636,7 +1636,7 @@
                   "column": 29,
                   "node_type": "Location"
                 },
-                "builtin_type": "eq",
+                "builtin_operator": "eq",
                 "node_type": "Builtin"
               }
             }
@@ -1758,7 +1758,7 @@
                             "column": 33,
                             "node_type": "Location"
                           },
-                          "builtin_type": "lt",
+                          "builtin_operator": "lt",
                           "node_type": "Builtin"
                         }
                       }

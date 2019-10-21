@@ -129,7 +129,7 @@
                     "column": 23,
                     "node_type": "Location"
                   },
-                  "builtin_type": "blt",
+                  "builtin_operator": "blt",
                   "node_type": "Builtin"
                 }
               },
@@ -192,7 +192,7 @@
                       "column": 23,
                       "node_type": "Location"
                     },
-                    "builtin_type": "eq",
+                    "builtin_operator": "eq",
                     "node_type": "Builtin"
                   }
                 },
@@ -840,7 +840,7 @@
                   "column": 21,
                   "node_type": "Location"
                 },
-                "builtin_type": "badd",
+                "builtin_operator": "badd",
                 "node_type": "Builtin"
               }
             }
@@ -935,7 +935,7 @@
                     "column": 16,
                     "node_type": "Location"
                   },
-                  "builtin_type": "badd",
+                  "builtin_operator": "badd",
                   "node_type": "Builtin"
                 }
               }
@@ -1641,7 +1641,7 @@
                                   "column": 31,
                                   "node_type": "Location"
                                 },
-                                "builtin_type": "lt",
+                                "builtin_operator": "lt",
                                 "node_type": "Builtin"
                               }
                             }
@@ -2079,7 +2079,8 @@
                                                         "node_type":
                                                           "Location"
                                                       },
-                                                      "builtin_type": "add",
+                                                      "builtin_operator":
+                                                        "add",
                                                       "node_type": "Builtin"
                                                     }
                                                   }
@@ -2843,7 +2844,7 @@
                   "column": 16,
                   "node_type": "Location"
                 },
-                "builtin_type": "get",
+                "builtin_operator": "get",
                 "node_type": "Builtin"
               }
             }
@@ -3484,7 +3485,7 @@
                   "column": 16,
                   "node_type": "Location"
                 },
-                "builtin_type": "badd",
+                "builtin_operator": "badd",
                 "node_type": "Builtin"
               }
             }

@@ -1207,7 +1207,7 @@
                           "column": 27,
                           "node_type": "Location"
                         },
-                        "builtin_type": "get",
+                        "builtin_operator": "get",
                         "node_type": "Builtin"
                       }
                     },
@@ -1356,7 +1356,7 @@
                                   "column": 19,
                                   "node_type": "Location"
                                 },
-                                "builtin_type": "put",
+                                "builtin_operator": "put",
                                 "node_type": "Builtin"
                               }
                             }
@@ -1547,7 +1547,7 @@
                   "column": 32,
                   "node_type": "Location"
                 },
-                "builtin_type": "size",
+                "builtin_operator": "size",
                 "node_type": "Builtin"
               }
             },
@@ -1623,7 +1623,7 @@
                     "column": 13,
                     "node_type": "Location"
                   },
-                  "builtin_type": "lt",
+                  "builtin_operator": "lt",
                   "node_type": "Builtin"
                 }
               }
@@ -2229,7 +2229,7 @@
                     "column": 23,
                     "node_type": "Location"
                   },
-                  "builtin_type": "get",
+                  "builtin_operator": "get",
                   "node_type": "Builtin"
                 }
               },
@@ -2835,7 +2835,7 @@
                   "column": 28,
                   "node_type": "Location"
                 },
-                "builtin_type": "eq",
+                "builtin_operator": "eq",
                 "node_type": "Builtin"
               }
             }
@@ -3141,7 +3141,7 @@
                           "column": 22,
                           "node_type": "Location"
                         },
-                        "builtin_type": "put",
+                        "builtin_operator": "put",
                         "node_type": "Builtin"
                       }
                     }
@@ -3250,7 +3250,7 @@
                           "column": 24,
                           "node_type": "Location"
                         },
-                        "builtin_type": "put",
+                        "builtin_operator": "put",
                         "node_type": "Builtin"
                       }
                     }
@@ -3316,7 +3316,7 @@
                           "column": 22,
                           "node_type": "Location"
                         },
-                        "builtin_type": "add",
+                        "builtin_operator": "add",
                         "node_type": "Builtin"
                       }
                     }
@@ -3897,7 +3897,7 @@
                           "column": 27,
                           "node_type": "Location"
                         },
-                        "builtin_type": "get",
+                        "builtin_operator": "get",
                         "node_type": "Builtin"
                       }
                     }
@@ -4137,7 +4137,7 @@
                                   "column": 26,
                                   "node_type": "Location"
                                 },
-                                "builtin_type": "get",
+                                "builtin_operator": "get",
                                 "node_type": "Builtin"
                               }
                             }
@@ -4592,7 +4592,7 @@
                                                   "column": 30,
                                                   "node_type": "Location"
                                                 },
-                                                "builtin_type": "put",
+                                                "builtin_operator": "put",
                                                 "node_type": "Builtin"
                                               }
                                             }
@@ -4671,7 +4671,7 @@
                                                   "column": 36,
                                                   "node_type": "Location"
                                                 },
-                                                "builtin_type": "put",
+                                                "builtin_operator": "put",
                                                 "node_type": "Builtin"
                                               }
                                             }
@@ -4931,7 +4931,7 @@
                   "column": 29,
                   "node_type": "Location"
                 },
-                "builtin_type": "get",
+                "builtin_operator": "get",
                 "node_type": "Builtin"
               }
             }
@@ -5137,7 +5137,7 @@
                           "column": 35,
                           "node_type": "Location"
                         },
-                        "builtin_type": "eq",
+                        "builtin_operator": "eq",
                         "node_type": "Builtin"
                       }
                     }
@@ -5377,7 +5377,7 @@
                                   "column": 34,
                                   "node_type": "Location"
                                 },
-                                "builtin_type": "lt",
+                                "builtin_operator": "lt",
                                 "node_type": "Builtin"
                               }
                             }
@@ -5617,7 +5617,7 @@
                                           "column": 28,
                                           "node_type": "Location"
                                         },
-                                        "builtin_type": "get",
+                                        "builtin_operator": "get",
                                         "node_type": "Builtin"
                                       }
                                     }
@@ -5818,7 +5818,7 @@
                                                   "column": 32,
                                                   "node_type": "Location"
                                                 },
-                                                "builtin_type": "size",
+                                                "builtin_operator": "size",
                                                 "node_type": "Builtin"
                                               }
                                             }
@@ -5887,7 +5887,7 @@
                                                   "column": 43,
                                                   "node_type": "Location"
                                                 },
-                                                "builtin_type": "lt",
+                                                "builtin_operator": "lt",
                                                 "node_type": "Builtin"
                                               }
                                             }
@@ -6130,7 +6130,7 @@
                                                           "node_type":
                                                             "Location"
                                                         },
-                                                        "builtin_type":
+                                                        "builtin_operator":
                                                           "remove",
                                                         "node_type":
                                                           "Builtin"
@@ -6250,7 +6250,7 @@
                                                           "node_type":
                                                             "Location"
                                                         },
-                                                        "builtin_type":
+                                                        "builtin_operator":
                                                           "remove",
                                                         "node_type":
                                                           "Builtin"
@@ -6635,7 +6635,7 @@
                   "column": 22,
                   "node_type": "Location"
                 },
-                "builtin_type": "get",
+                "builtin_operator": "get",
                 "node_type": "Builtin"
               }
             }
@@ -7049,7 +7049,7 @@
                                   "column": 26,
                                   "node_type": "Location"
                                 },
-                                "builtin_type": "remove",
+                                "builtin_operator": "remove",
                                 "node_type": "Builtin"
                               }
                             }
@@ -7126,7 +7126,7 @@
                                   "column": 32,
                                   "node_type": "Location"
                                 },
-                                "builtin_type": "put",
+                                "builtin_operator": "put",
                                 "node_type": "Builtin"
                               }
                             }
@@ -7315,7 +7315,7 @@
                   "column": 22,
                   "node_type": "Location"
                 },
-                "builtin_type": "get",
+                "builtin_operator": "get",
                 "node_type": "Builtin"
               }
             }
@@ -7729,7 +7729,7 @@
                                   "column": 26,
                                   "node_type": "Location"
                                 },
-                                "builtin_type": "remove",
+                                "builtin_operator": "remove",
                                 "node_type": "Builtin"
                               }
                             }
@@ -7806,7 +7806,7 @@
                                   "column": 32,
                                   "node_type": "Location"
                                 },
-                                "builtin_type": "put",
+                                "builtin_operator": "put",
                                 "node_type": "Builtin"
                               }
                             }
@@ -8482,7 +8482,7 @@
                           "column": 27,
                           "node_type": "Location"
                         },
-                        "builtin_type": "get",
+                        "builtin_operator": "get",
                         "node_type": "Builtin"
                       }
                     }
@@ -8722,7 +8722,7 @@
                                   "column": 30,
                                   "node_type": "Location"
                                 },
-                                "builtin_type": "get",
+                                "builtin_operator": "get",
                                 "node_type": "Builtin"
                               }
                             }
@@ -8989,7 +8989,7 @@
                                           "column": 40,
                                           "node_type": "Location"
                                         },
-                                        "builtin_type": "put",
+                                        "builtin_operator": "put",
                                         "node_type": "Builtin"
                                       }
                                     }
@@ -9483,7 +9483,7 @@
                           "column": 27,
                           "node_type": "Location"
                         },
-                        "builtin_type": "get",
+                        "builtin_operator": "get",
                         "node_type": "Builtin"
                       }
                     }
@@ -9899,7 +9899,7 @@
                                           "column": 28,
                                           "node_type": "Location"
                                         },
-                                        "builtin_type": "put",
+                                        "builtin_operator": "put",
                                         "node_type": "Builtin"
                                       }
                                     }
@@ -9977,7 +9977,7 @@
                                           "column": 40,
                                           "node_type": "Location"
                                         },
-                                        "builtin_type": "put",
+                                        "builtin_operator": "put",
                                         "node_type": "Builtin"
                                       }
                                     }
@@ -10064,7 +10064,7 @@
                                           "column": 30,
                                           "node_type": "Location"
                                         },
-                                        "builtin_type": "size",
+                                        "builtin_operator": "size",
                                         "node_type": "Builtin"
                                       }
                                     }
@@ -10293,7 +10293,7 @@
                   "column": 25,
                   "node_type": "Location"
                 },
-                "builtin_type": "get",
+                "builtin_operator": "get",
                 "node_type": "Builtin"
               }
             }
@@ -10520,7 +10520,7 @@
                           "column": 28,
                           "node_type": "Location"
                         },
-                        "builtin_type": "size",
+                        "builtin_operator": "size",
                         "node_type": "Builtin"
                       }
                     }
@@ -10575,7 +10575,7 @@
                           "column": 26,
                           "node_type": "Location"
                         },
-                        "builtin_type": "size",
+                        "builtin_operator": "size",
                         "node_type": "Builtin"
                       }
                     }
@@ -10849,7 +10849,7 @@
                                   "column": 38,
                                   "node_type": "Location"
                                 },
-                                "builtin_type": "remove",
+                                "builtin_operator": "remove",
                                 "node_type": "Builtin"
                               }
                             }
@@ -10992,7 +10992,7 @@
                                   "column": 28,
                                   "node_type": "Location"
                                 },
-                                "builtin_type": "put",
+                                "builtin_operator": "put",
                                 "node_type": "Builtin"
                               }
                             }

@@ -65,7 +65,7 @@ func walkExpression(v Visitor, p Expression) {
 		for _, x := range n.Args {
 			Walk(v, x)
 		}
-		Walk(v, n.Bf)
+		Walk(v, n.BuintinFunc)
 	case *TFunExpression:
 		Walk(v, n.Loc)
 	case *TAppExpression:

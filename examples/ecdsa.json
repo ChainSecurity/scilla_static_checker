@@ -393,7 +393,7 @@
                           "column": 19,
                           "node_type": "Location"
                         },
-                        "builtin_type": "ecdsa_verify",
+                        "builtin_operator": "ecdsa_verify",
                         "node_type": "Builtin"
                       }
                     }
