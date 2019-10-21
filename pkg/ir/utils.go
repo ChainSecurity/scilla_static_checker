@@ -17,6 +17,15 @@ type CFGBuilder struct {
 	varStack        map[string][]Data
 }
 
+func setDefaultType(h map[string]Type, k string, t Type) (set bool, r Type) {
+	if r, set = h[k]; !set {
+		h[k] = t
+		r = t
+		set = true
+	}
+	return
+}
+
 func stackMapPush(s map[string][]Data, k string, v Data) {
 	s[k] = append(s[k], v)
 }
@@ -320,6 +329,8 @@ func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
 }
 
 func (builder *CFGBuilder) initPrimitiveTypes() {
+	stdLib := StdLib()
+
 	sizes := []int{32, 64, 128, 256}
 	for _, s := range sizes {
 		intName := "Int" + strconv.Itoa(s)
@@ -330,31 +341,259 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		builder.natWidthTypeMap[s] = &uintTyp
 		builder.typeMap[intName] = &intTyp
 		builder.typeMap[uintName] = &uintTyp
+
+		// Conversion functions
+		var intAbsDD AbsDD
+		intAbsTD := AbsTD{
+			Vars: []TypeVar{
+				TypeVar{Kind: stdLib.star},
+			},
+			Term: &intAbsDD,
+		}
+		intAbsDD = AbsDD{
+			Vars: []*DataVar{
+				&DataVar{DataType: &intAbsTD.Vars[0]},
+			},
+			Term: &Builtin{
+				&AppTT{
+					Args: []Type{&intTyp},
+					To:   stdLib.Option,
+				},
+			},
+		}
+		intOpName := fmt.Sprintf("to_int%d", s)
+		builder.builtinOpMap[intOpName] = &intAbsTD
+
+		var uintAbsDD AbsDD
+		uintAbsTD := AbsTD{
+			Vars: []TypeVar{
+				TypeVar{Kind: stdLib.star},
+			},
+			Term: &uintAbsDD,
+		}
+		uintAbsDD = AbsDD{
+			Vars: []*DataVar{
+				&DataVar{DataType: &uintAbsTD.Vars[0]},
+			},
+			Term: &Builtin{
+				&AppTT{
+					Args: []Type{&uintTyp},
+					To:   stdLib.Option,
+				},
+			},
+		}
+		uintOpName := fmt.Sprintf("to_uint%d", s)
+		builder.builtinOpMap[uintOpName] = &uintAbsTD
+
 	}
+
 	builder.typeMap["ByStr20"] = &RawType{20}
 	builder.typeMap["ByStr32"] = &RawType{32}
+	builder.typeMap["ByStr"] = &RawType{-1}
 	builder.typeMap["BNum"] = &BnrType{}
 	builder.typeMap["Message"] = &MsgType{}
+	builder.typeMap["String"] = &StrType{}
 
-	stdLib := StdLib()
 	builder.typeMap["Bool"] = stdLib.Boolean
 
-	var baddAbsDD AbsDD
-	builtin_add := AbsTD{
+	intIntOps := []string{"add", "sub", "mul", "div", "rem"}
+	intBoolOps := []string{"eq", "lt"}
+
+	for _, bOp := range intIntOps {
+		var bAbsDD AbsDD
+		bAbsTD := AbsTD{
+			Vars: []TypeVar{
+				TypeVar{Kind: stdLib.star},
+			},
+			Term: &bAbsDD,
+		}
+		bAbsDD = AbsDD{
+			Vars: []*DataVar{
+				&DataVar{DataType: &bAbsTD.Vars[0]},
+				&DataVar{DataType: &bAbsTD.Vars[0]},
+			},
+			Term: &Builtin{&bAbsTD.Vars[0]},
+		}
+		builder.builtinOpMap[bOp] = &bAbsTD
+	}
+
+	for _, bOp := range intBoolOps {
+		var bAbsDD AbsDD
+		bAbsTD := AbsTD{
+			Vars: []TypeVar{
+				TypeVar{Kind: stdLib.star},
+			},
+			Term: &bAbsDD,
+		}
+		bAbsDD = AbsDD{
+			Vars: []*DataVar{
+				&DataVar{DataType: &bAbsTD.Vars[0]},
+				&DataVar{DataType: &bAbsTD.Vars[0]},
+			},
+			Term: &Builtin{stdLib.Boolean},
+		}
+		builder.builtinOpMap[bOp] = &bAbsTD
+	}
+
+	// builtin pow
+	var powAbsDD AbsDD
+	powAbsTD := AbsTD{
+		Vars: []TypeVar{
+			TypeVar{Kind: stdLib.star},
+			TypeVar{Kind: stdLib.star},
+		},
+		Term: &powAbsDD,
+	}
+	powAbsDD = AbsDD{
+		Vars: []*DataVar{
+			&DataVar{DataType: &powAbsTD.Vars[0]},
+			&DataVar{DataType: &powAbsTD.Vars[1]},
+		},
+		Term: &Builtin{&powAbsTD.Vars[0]},
+	}
+	builder.builtinOpMap["pow"] = &powAbsTD
+
+	// builtin concat
+	strConcatOp := AbsDD{
+		Vars: []*DataVar{
+			&DataVar{
+				DataType: builder.typeMap["String"],
+			},
+			&DataVar{
+				DataType: builder.typeMap["String"],
+			},
+		},
+		Term: &Builtin{builder.typeMap["String"]},
+	}
+	builder.builtinOpMap["concat"] = &strConcatOp
+
+	//builtin substr
+	strSubstrOp := AbsDD{
+		Vars: []*DataVar{
+			&DataVar{
+				DataType: builder.typeMap["String"],
+			},
+			&DataVar{
+				DataType: builder.natWidthTypeMap[32],
+			},
+			&DataVar{
+				DataType: builder.natWidthTypeMap[32],
+			},
+		},
+		Term: &Builtin{builder.typeMap["String"]},
+	}
+	builder.builtinOpMap["substr"] = &strSubstrOp
+
+	// builtin to_string
+	var toStrAbsDD AbsDD
+	toStrAbsTD := AbsTD{
 		Vars: []TypeVar{
 			TypeVar{Kind: stdLib.star},
 		},
-		Term: &baddAbsDD,
+		Term: &toStrAbsDD,
 	}
-	baddAbsDD = AbsDD{
+	toStrAbsDD = AbsDD{
 		Vars: []*DataVar{
-			&DataVar{DataType: &builtin_add.Vars[0]},
-			&DataVar{DataType: &builtin_add.Vars[0]},
+			&DataVar{DataType: &toStrAbsTD.Vars[0]},
 		},
-		Term: &BuiltinVar{&builtin_add.Vars[0]},
+		Term: &Builtin{builder.typeMap["String"]},
 	}
-	builder.builtinOpMap["add"] = &builtin_add
-	//builder.constructorTypeMap["Bool"] = stdLib.Boolean
+	builder.builtinOpMap["to_string"] = &toStrAbsTD
+
+	//builtin strlen
+
+	strlenOp := AbsDD{
+		Vars: []*DataVar{
+			&DataVar{
+				DataType: builder.typeMap["String"],
+			},
+		},
+		Term: &Builtin{builder.natWidthTypeMap[32]},
+	}
+	builder.builtinOpMap["strlen"] = &strlenOp
+
+	// builtin sha256hash
+	var shaAbsDD AbsDD
+	shaAbsTD := AbsTD{
+		Vars: []TypeVar{
+			TypeVar{Kind: stdLib.star},
+		},
+		Term: &shaAbsDD,
+	}
+	shaAbsDD = AbsDD{
+		Vars: []*DataVar{
+			&DataVar{DataType: &shaAbsTD.Vars[0]},
+		},
+		Term: &Builtin{builder.typeMap["ByStr32"]},
+	}
+	builder.builtinOpMap["sha256hash"] = &shaAbsTD
+
+	// builtin keccak256hash
+	var keccakAbsDD AbsDD
+	keccakAbsTD := AbsTD{
+		Vars: []TypeVar{
+			TypeVar{Kind: stdLib.star},
+		},
+		Term: &keccakAbsDD,
+	}
+	keccakAbsDD = AbsDD{
+		Vars: []*DataVar{
+			&DataVar{DataType: &keccakAbsTD.Vars[0]},
+		},
+		Term: &Builtin{builder.typeMap["ByStr32"]},
+	}
+	builder.builtinOpMap["keccak256hash"] = &keccakAbsTD
+
+	// builtin ripemd160hash
+	var ripemdAbsDD AbsDD
+	ripemdAbsTD := AbsTD{
+		Vars: []TypeVar{
+			TypeVar{Kind: stdLib.star},
+		},
+		Term: &ripemdAbsDD,
+	}
+	ripemdAbsDD = AbsDD{
+		Vars: []*DataVar{
+			&DataVar{DataType: &ripemdAbsTD.Vars[0]},
+		},
+		Term: &Builtin{builder.typeMap["ByStr20"]},
+	}
+	builder.builtinOpMap["ripemd160hash"] = &ripemdAbsTD
+
+	// builtin to_bystr
+	var toBystrAbsDD AbsDD
+	toBystrAbsTD := AbsTD{
+		Vars: []TypeVar{
+			TypeVar{Kind: stdLib.star},
+		},
+		Term: &toBystrAbsDD,
+	}
+	toBystrAbsDD = AbsDD{
+		Vars: []*DataVar{
+			&DataVar{DataType: &toBystrAbsTD.Vars[0]},
+		},
+		Term: &Builtin{builder.typeMap["ByStr"]},
+	}
+	builder.builtinOpMap["to_bystr"] = &toBystrAbsTD
+
+	// builtin to_uint256
+	var touint256AbsDD AbsDD
+	touint256AbsTD := AbsTD{
+		Vars: []TypeVar{
+			TypeVar{Kind: stdLib.star},
+		},
+		Term: &touint256AbsDD,
+	}
+	touint256AbsDD = AbsDD{
+		Vars: []*DataVar{
+			&DataVar{DataType: &touint256AbsTD.Vars[0]},
+		},
+		Term: &Builtin{builder.natWidthTypeMap[256]},
+	}
+	builder.builtinOpMap["to_uint256"] = &touint256AbsTD
+	for k := range builder.builtinOpMap {
+		fmt.Println("\t", k)
+	}
 
 }
 

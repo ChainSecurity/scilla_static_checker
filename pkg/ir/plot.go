@@ -70,6 +70,8 @@ type dotBuilder struct {
 	nodes       []*dotNode
 	edges       []*dotPortedEdge
 	typeCache   map[Type]*dotNode
+	dataCache   map[Data]*dotNode
+	kindCache   map[Kind]*dotNode
 }
 
 func dotWalkType(b *dotBuilder, t Type) graph.Node {
@@ -100,34 +102,27 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 				b.edges = append(b.edges, e)
 			}
 		}
-		b.typeCache[t] = n
-		return n
 	case *IntType:
-		n := &dotNode{
+		n = &dotNode{
 			b.getNodeId(),
 			[]string{fmt.Sprintf("Size: %d", x.Size)},
 			"IntType",
 		}
-		b.typeCache[t] = n
-		return n
 	case *RawType:
-		n := &dotNode{
+		n = &dotNode{
 			b.getNodeId(),
 			[]string{fmt.Sprintf("Size: %d", x.Size)},
 			"RawType",
 		}
-		b.typeCache[t] = n
-		return n
 	case *NatType:
-		n := &dotNode{
+		n = &dotNode{
 			b.getNodeId(),
 			[]string{fmt.Sprintf("Size: %d", x.Size)},
 			"NatType",
 		}
 		b.typeCache[t] = n
-		return n
 	case *MapType:
-		n := &dotNode{
+		n = &dotNode{
 			b.getNodeId(),
 			[]string{"Key", "Val"},
 			"MapType",
@@ -147,14 +142,13 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 			fromPort: "Val"}
 		b.edges = append(b.edges, &ve)
 		b.typeCache[t] = n
-		return n
 	case *AbsTT:
-		n := dotNode{
+		n = &dotNode{
 			b.getNodeId(),
 			[]string{"Vars", "Term"},
 			"AbsTT",
 		}
-		b.nodes = append(b.nodes, &n)
+		b.nodes = append(b.nodes, n)
 		for _, a := range x.Vars {
 			e := dotPortedEdge{
 				id:       b.getEdgeId(),
@@ -164,20 +158,19 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 			b.edges = append(b.edges, &e)
 
 		}
-		e := dotPortedEdge{
+		e := &dotPortedEdge{
 			id:       b.getEdgeId(),
 			from:     n,
 			to:       dotWalkType(b, x.Term),
 			fromPort: "Term"}
-		b.edges = append(b.edges, &e)
-		return &n
+		b.edges = append(b.edges, e)
 	case *AppTT:
-		n := dotNode{
+		n = &dotNode{
 			b.getNodeId(),
 			[]string{"Args", "To"},
 			"AppTT",
 		}
-		b.nodes = append(b.nodes, &n)
+		b.nodes = append(b.nodes, n)
 		for _, a := range x.Args {
 			e := dotPortedEdge{
 				id:       b.getEdgeId(),
@@ -187,42 +180,47 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 			b.edges = append(b.edges, &e)
 
 		}
-		e := dotPortedEdge{
+		e := &dotPortedEdge{
 			id:       b.getEdgeId(),
 			from:     n,
 			to:       dotWalkType(b, x.To),
 			fromPort: "To"}
-		b.edges = append(b.edges, &e)
-		return &n
+		b.edges = append(b.edges, e)
 	case *TypeVar:
-		n := dotNode{
+		n = &dotNode{
 			b.getNodeId(),
 			[]string{"Kind"},
 			"TypeVar",
 		}
-		b.nodes = append(b.nodes, &n)
+		b.nodes = append(b.nodes, n)
 		tNode := dotWalkKind(b, x.Kind)
-		e := dotPortedEdge{
+		e := &dotPortedEdge{
 			id:       b.getEdgeId(),
 			from:     n,
 			to:       tNode,
 			fromPort: "Kind"}
-		b.edges = append(b.edges, &e)
-		return &n
+		b.edges = append(b.edges, e)
 	default:
 		panic(errors.New(fmt.Sprintf("unhandeled type: %T", x)))
 	}
 
+	b.typeCache[t] = n
+	return n
 }
 
-func dotWalkKind(b *dotBuilder, w Kind) graph.Node {
-	n := dotNode{
+func dotWalkKind(b *dotBuilder, k Kind) graph.Node {
+	n, ok := b.kindCache[k]
+	if ok {
+		return n
+	}
+	n = &dotNode{
 		b.getNodeId(),
 		[]string{},
 		"Kind",
 	}
-	b.nodes = append(b.nodes, &n)
-	return &n
+	b.nodes = append(b.nodes, n)
+	b.kindCache[k] = n
+	return n
 }
 
 func dotWalkWhen(b *dotBuilder, w *When) graph.Node {
@@ -471,11 +469,11 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 			fromPort: "To"}
 		b.edges = append(b.edges, &e)
 		return &n
-	case *BuiltinVar:
+	case *Builtin:
 		n := dotNode{
 			b.getNodeId(),
 			[]string{"BuiltinType"},
-			"BuiltinVar",
+			"Builtin",
 		}
 		b.nodes = append(b.nodes, &n)
 		tNode := dotWalkType(b, x.BuiltinType)
@@ -516,7 +514,7 @@ func GetDot(b *CFGBuilder) string {
 	//for key := range b.GlobalVarMap {
 	//keys = append(keys, key)
 	//}
-	d := dotBuilder{0, 0, []*dotNode{}, []*dotPortedEdge{}, map[Type]*dotNode{}}
+	d := dotBuilder{0, 0, []*dotNode{}, []*dotPortedEdge{}, map[Type]*dotNode{}, map[Data]*dotNode{}, map[Kind]*dotNode{}}
 	fmt.Println(len(b.varStack), b.varStack)
 	v, ok := stackMapPeek(b.varStack, "two64")
 	if !ok {

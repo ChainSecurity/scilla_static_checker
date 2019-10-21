@@ -8,9 +8,16 @@ scilla_version 0
 library Inc
 
 let one = Uint32 1
+let one32 = Uint32 1
 let one64 = Uint64 1
 
 let one128 = Uint128 1
+
+let y : ByStr32 = builtin sha256hash one
+let yy : ByStr64 = builtin concat y y
+let yyy : ByStr128 = builtin concat yy yy
+let yyyy : ByStr256 = builtin concat yyy yyy
+let yyyy : ByStr512 = builtin concat yyyy yyyy
 
 (***************************************************)
 (*             The contract definition             *)
@@ -26,6 +33,8 @@ contract Inc
     (*builtin put m owner one128*)
 field two64 : Uint64 = builtin add one64 one64
 field a : Uint64 = Uint64 0
+field b : ByStr32 = builtin sha256hash one
+field bb : ByStr64 = builtin concat y y
 (*field  bbbb : Bool = builtin eq one64 one128*)
 (*field allowed : Map ByStr20 (Map ByStr20 Uint128) = Emp ByStr20 (Map ByStr20 Uint128)*)
 
