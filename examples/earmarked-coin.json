@@ -1,0 +1,2030 @@
+{
+  "scilla_major_version": 0,
+  "name": {
+    "loc": {
+      "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+      "line": 31,
+      "column": 10,
+      "node_type": "Location"
+    },
+    "identifier": "EarmarkedCoin",
+    "node_type": "Identifier"
+  },
+  "library": {
+    "library_name": {
+      "loc": {
+        "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+        "line": 15,
+        "column": 1,
+        "node_type": "Location"
+      },
+      "identifier": "EarmarkedCoin",
+      "node_type": "Identifier"
+    },
+    "library_entries": [
+      {
+        "name": {
+          "loc": {
+            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "line": 18,
+            "column": 1,
+            "node_type": "Location"
+          },
+          "identifier": "EarmarkedCoin",
+          "node_type": "Identifier"
+        },
+        "node_type": "LibraryType",
+        "ctr_defs": [
+          {
+            "ctr_def_name": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 19,
+                "column": 1,
+                "node_type": "Location"
+              },
+              "identifier": "EarmarkedCoin",
+              "node_type": "Identifier"
+            },
+            "c_arg_types": [
+              { "node_type": "PrimType", "name": "Uint128" },
+              { "node_type": "PrimType", "name": "ByStr20" }
+            ],
+            "node_type": "CtrDef"
+          }
+        ]
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "line": 21,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "one_msg",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "line": 22,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/earmarked-coin.scilla",
+              "line": 22,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "msg",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/earmarked-coin.scilla",
+              "line": 23,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "LetExpression",
+            "variable": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 23,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "nil_msg",
+              "node_type": "Identifier"
+            },
+            "variable_type": null,
+            "expression": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 23,
+                "column": 19,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "Nil",
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
+              "args": []
+            },
+            "body": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 24,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "Cons",
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
+              "args": [
+                {
+                  "loc": {
+                    "source_file":
+                      "../scilla_static/examples/earmarked-coin.scilla",
+                    "line": 24,
+                    "column": 20,
+                    "node_type": "Location"
+                  },
+                  "identifier": "msg",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file":
+                      "../scilla_static/examples/earmarked-coin.scilla",
+                    "line": 24,
+                    "column": 24,
+                    "node_type": "Location"
+                  },
+                  "identifier": "nil_msg",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Message" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "line": 26,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "success_code",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "line": 26,
+            "column": 20,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "1", "width": 32 }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "line": 27,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "already_earmarked_code",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "line": 27,
+            "column": 30,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "2", "width": 32 }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "line": 28,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "not_authorized_code",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "line": 28,
+            "column": 27,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "3", "width": 32 }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "line": 29,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "did_not_earmark_code",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "line": 29,
+            "column": 28,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "4", "width": 32 }
+        }
+      }
+    ],
+    "node_type": "Library"
+  },
+  "external_libraries": [
+    {
+      "name": {
+        "loc": {
+          "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+          "line": 13,
+          "column": 8,
+          "node_type": "Location"
+        },
+        "identifier": "BoolUtils",
+        "node_type": "Identifier"
+      },
+      "alias": null,
+      "node_type": "ExternalLibrary"
+    }
+  ],
+  "contract": {
+    "name": {
+      "loc": {
+        "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+        "line": 31,
+        "column": 10,
+        "node_type": "Location"
+      },
+      "identifier": "EarmarkedCoin",
+      "node_type": "Identifier"
+    },
+    "params": [],
+    "fields": [
+      {
+        "field_name": {
+          "loc": {
+            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "line": 34,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "earmarked_coins",
+          "node_type": "Identifier"
+        },
+        "field_type": {
+          "node_type": "MapType",
+          "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+          "val_type": {
+            "node_type": "ADT",
+            "name": "EarmarkedCoin",
+            "type_args": []
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "line": 34,
+            "column": 53,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": {
+            "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "EarmarkedCoin",
+              "type_args": []
+            },
+            "node_type": "MapLiteral",
+            "mvalues": []
+          }
+        },
+        "node_type": "Field"
+      }
+    ],
+    "components": [
+      {
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 38,
+                "column": 26,
+                "node_type": "Location"
+              },
+              "identifier": "amount",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "Uint128" },
+            "node_type": "Parameter"
+          },
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 38,
+                "column": 44,
+                "node_type": "Location"
+              },
+              "identifier": "recipient",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "node_type": "Parameter"
+          }
+        ],
+        "name": {
+          "loc": {
+            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "line": 38,
+            "column": 11,
+            "node_type": "Location"
+          },
+          "identifier": "TransferFunds",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/earmarked-coin.scilla",
+              "line": 39,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 39,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "msg",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 39,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "node_type": "MessageExpression",
+              "margs": [
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_tag",
+                  "payload": {
+                    "node_type": "PayloadLiteral",
+                    "literal": { "node_type": "StringLiteral", "value": "" }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_recipient",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "line": 39,
+                        "column": 34,
+                        "node_type": "Location"
+                      },
+                      "identifier": "recipient",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_amount",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "line": 39,
+                        "column": 55,
+                        "node_type": "Location"
+                      },
+                      "identifier": "amount",
+                      "node_type": "Identifier"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/earmarked-coin.scilla",
+              "line": 40,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 40,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "identifier": "msgs",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 40,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file":
+                    "../scilla_static/examples/earmarked-coin.scilla",
+                  "line": 40,
+                  "column": 10,
+                  "node_type": "Location"
+                },
+                "identifier": "one_msg",
+                "node_type": "Identifier"
+              },
+              "rhs_list": [
+                {
+                  "loc": {
+                    "source_file":
+                      "../scilla_static/examples/earmarked-coin.scilla",
+                    "line": 40,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "msg",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/earmarked-coin.scilla",
+              "line": 41,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 41,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "msgs",
+              "node_type": "Identifier"
+            },
+            "node_type": "SendMsgsStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 44,
+                "column": 38,
+                "node_type": "Location"
+              },
+              "identifier": "from",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "node_type": "Parameter"
+          },
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 44,
+                "column": 54,
+                "node_type": "Location"
+              },
+              "identifier": "to",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "node_type": "Parameter"
+          }
+        ],
+        "name": {
+          "loc": {
+            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "line": 44,
+            "column": 11,
+            "node_type": "Location"
+          },
+          "identifier": "SuccessfulTransferOfFunds",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/earmarked-coin.scilla",
+              "line": 45,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 45,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "e",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 45,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "node_type": "MessageExpression",
+              "margs": [
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_eventname",
+                  "payload": {
+                    "node_type": "PayloadLiteral",
+                    "literal": {
+                      "node_type": "StringLiteral",
+                      "value": "SuccessfulTransferOfFunds"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "from",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "line": 46,
+                        "column": 14,
+                        "node_type": "Location"
+                      },
+                      "identifier": "from",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "to",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "line": 46,
+                        "column": 25,
+                        "node_type": "Location"
+                      },
+                      "identifier": "to",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "code",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "line": 46,
+                        "column": 36,
+                        "node_type": "Location"
+                      },
+                      "identifier": "success_code",
+                      "node_type": "Identifier"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/earmarked-coin.scilla",
+              "line": 47,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 47,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "e",
+              "node_type": "Identifier"
+            },
+            "node_type": "CreateEvntStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 50,
+                "column": 34,
+                "node_type": "Location"
+              },
+              "identifier": "from",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "node_type": "Parameter"
+          },
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 50,
+                "column": 50,
+                "node_type": "Location"
+              },
+              "identifier": "to",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "node_type": "Parameter"
+          },
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 50,
+                "column": 64,
+                "node_type": "Location"
+              },
+              "identifier": "error_code",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "Int32" },
+            "node_type": "Parameter"
+          }
+        ],
+        "name": {
+          "loc": {
+            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "line": 50,
+            "column": 11,
+            "node_type": "Location"
+          },
+          "identifier": "FailedToTransferFunds",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/earmarked-coin.scilla",
+              "line": 51,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 51,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "e",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 51,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "node_type": "MessageExpression",
+              "margs": [
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_eventname",
+                  "payload": {
+                    "node_type": "PayloadLiteral",
+                    "literal": {
+                      "node_type": "StringLiteral",
+                      "value": "FailedToTransferFunds"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "from",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "line": 52,
+                        "column": 14,
+                        "node_type": "Location"
+                      },
+                      "identifier": "from",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "to",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "line": 52,
+                        "column": 25,
+                        "node_type": "Location"
+                      },
+                      "identifier": "to",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "code",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "line": 52,
+                        "column": 36,
+                        "node_type": "Location"
+                      },
+                      "identifier": "error_code",
+                      "node_type": "Identifier"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/earmarked-coin.scilla",
+              "line": 53,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 53,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "e",
+              "node_type": "Identifier"
+            },
+            "node_type": "CreateEvntStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 64,
+                "column": 21,
+                "node_type": "Location"
+              },
+              "identifier": "recip",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "node_type": "Parameter"
+          }
+        ],
+        "name": {
+          "loc": {
+            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "line": 64,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "Earmark",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/earmarked-coin.scilla",
+              "line": 65,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "MapGetStatement",
+            "map_name": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 65,
+                "column": 15,
+                "node_type": "Location"
+              },
+              "identifier": "earmarked_coins",
+              "node_type": "Identifier"
+            },
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 65,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "c",
+              "node_type": "Identifier"
+            },
+            "keys": [
+              {
+                "loc": {
+                  "source_file":
+                    "../scilla_static/examples/earmarked-coin.scilla",
+                  "line": 65,
+                  "column": 31,
+                  "node_type": "Location"
+                },
+                "identifier": "_sender",
+                "node_type": "Identifier"
+              }
+            ],
+            "is_value_retrieve": false
+          },
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/earmarked-coin.scilla",
+              "line": 66,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 66,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "c",
+              "node_type": "Identifier"
+            },
+            "cases": [
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "line": 68,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "AcceptPaymentStatement"
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "line": 69,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "line": 69,
+                        "column": 12,
+                        "node_type": "Location"
+                      },
+                      "identifier": "e_coin",
+                      "node_type": "Identifier"
+                    },
+                    "rhs_expr": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "line": 69,
+                        "column": 14,
+                        "node_type": "Location"
+                      },
+                      "node_type": "ConstrExpression",
+                      "constructor_name": "EarmarkedCoin",
+                      "types": [],
+                      "args": [
+                        {
+                          "loc": {
+                            "source_file":
+                              "../scilla_static/examples/earmarked-coin.scilla",
+                            "line": 69,
+                            "column": 28,
+                            "node_type": "Location"
+                          },
+                          "identifier": "_amount",
+                          "node_type": "Identifier"
+                        },
+                        {
+                          "loc": {
+                            "source_file":
+                              "../scilla_static/examples/earmarked-coin.scilla",
+                            "line": 69,
+                            "column": 36,
+                            "node_type": "Location"
+                          },
+                          "identifier": "recip",
+                          "node_type": "Identifier"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "line": 70,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "MapUpdateStatement",
+                    "map_name": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "line": 70,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "earmarked_coins",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "line": 70,
+                        "column": 33,
+                        "node_type": "Location"
+                      },
+                      "identifier": "e_coin",
+                      "node_type": "Identifier"
+                    },
+                    "keys": [
+                      {
+                        "loc": {
+                          "source_file":
+                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "line": 70,
+                          "column": 21,
+                          "node_type": "Location"
+                        },
+                        "identifier": "_sender",
+                        "node_type": "Identifier"
+                      }
+                    ]
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "line": 71,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "line": 71,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "SuccessfulTransferOfFunds",
+                      "node_type": "Identifier"
+                    },
+                    "messages": [
+                      {
+                        "loc": {
+                          "source_file":
+                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "line": 71,
+                          "column": 31,
+                          "node_type": "Location"
+                        },
+                        "identifier": "_sender",
+                        "node_type": "Identifier"
+                      },
+                      {
+                        "loc": {
+                          "source_file":
+                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "line": 71,
+                          "column": 39,
+                          "node_type": "Location"
+                        },
+                        "identifier": "_this_address",
+                        "node_type": "Identifier"
+                      }
+                    ],
+                    "node_type": "CallProcStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "False",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              },
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "line": 73,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "line": 73,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "FailedToTransferFunds",
+                      "node_type": "Identifier"
+                    },
+                    "messages": [
+                      {
+                        "loc": {
+                          "source_file":
+                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "line": 73,
+                          "column": 27,
+                          "node_type": "Location"
+                        },
+                        "identifier": "_sender",
+                        "node_type": "Identifier"
+                      },
+                      {
+                        "loc": {
+                          "source_file":
+                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "line": 73,
+                          "column": 35,
+                          "node_type": "Location"
+                        },
+                        "identifier": "_this_address",
+                        "node_type": "Identifier"
+                      },
+                      {
+                        "loc": {
+                          "source_file":
+                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "line": 73,
+                          "column": 49,
+                          "node_type": "Location"
+                        },
+                        "identifier": "already_earmarked_code",
+                        "node_type": "Identifier"
+                      }
+                    ],
+                    "node_type": "CallProcStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "True",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              }
+            ],
+            "node_type": "MatchStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 78,
+                "column": 31,
+                "node_type": "Location"
+              },
+              "identifier": "earmarked_coin_address",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "node_type": "Parameter"
+          }
+        ],
+        "name": {
+          "loc": {
+            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "line": 78,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "ClaimForRecipient",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/earmarked-coin.scilla",
+              "line": 79,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "MapGetStatement",
+            "map_name": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 79,
+                "column": 17,
+                "node_type": "Location"
+              },
+              "identifier": "earmarked_coins",
+              "node_type": "Identifier"
+            },
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 79,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "e_coin_opt",
+              "node_type": "Identifier"
+            },
+            "keys": [
+              {
+                "loc": {
+                  "source_file":
+                    "../scilla_static/examples/earmarked-coin.scilla",
+                  "line": 79,
+                  "column": 33,
+                  "node_type": "Location"
+                },
+                "identifier": "earmarked_coin_address",
+                "node_type": "Identifier"
+              }
+            ],
+            "is_value_retrieve": true
+          },
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/earmarked-coin.scilla",
+              "line": 80,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 80,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "e_coin_opt",
+              "node_type": "Identifier"
+            },
+            "cases": [
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "line": 83,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "line": 83,
+                        "column": 25,
+                        "node_type": "Location"
+                      },
+                      "identifier": "authorized_to_claim",
+                      "node_type": "Identifier"
+                    },
+                    "rhs_expr": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "line": 83,
+                        "column": 27,
+                        "node_type": "Location"
+                      },
+                      "node_type": "BuiltinExpression",
+                      "arguments": [
+                        {
+                          "loc": {
+                            "source_file":
+                              "../scilla_static/examples/earmarked-coin.scilla",
+                            "line": 83,
+                            "column": 38,
+                            "node_type": "Location"
+                          },
+                          "identifier": "recipient",
+                          "node_type": "Identifier"
+                        },
+                        {
+                          "loc": {
+                            "source_file":
+                              "../scilla_static/examples/earmarked-coin.scilla",
+                            "line": 83,
+                            "column": 48,
+                            "node_type": "Location"
+                          },
+                          "identifier": "_sender",
+                          "node_type": "Identifier"
+                        }
+                      ],
+                      "builtin_function": {
+                        "loc": {
+                          "source_file":
+                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "line": 83,
+                          "column": 35,
+                          "node_type": "Location"
+                        },
+                        "builtin_operator": "eq",
+                        "node_type": "Builtin"
+                      }
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "line": 84,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "line": 84,
+                        "column": 11,
+                        "node_type": "Location"
+                      },
+                      "identifier": "authorized_to_claim",
+                      "node_type": "Identifier"
+                    },
+                    "cases": [
+                      {
+                        "pattern_body": [
+                          {
+                            "loc": {
+                              "source_file":
+                                "../scilla_static/examples/earmarked-coin.scilla",
+                              "line": 86,
+                              "column": 7,
+                              "node_type": "Location"
+                            },
+                            "arg": {
+                              "loc": {
+                                "source_file":
+                                  "../scilla_static/examples/earmarked-coin.scilla",
+                                "line": 86,
+                                "column": 7,
+                                "node_type": "Location"
+                              },
+                              "identifier": "TransferFunds",
+                              "node_type": "Identifier"
+                            },
+                            "messages": [
+                              {
+                                "loc": {
+                                  "source_file":
+                                    "../scilla_static/examples/earmarked-coin.scilla",
+                                  "line": 86,
+                                  "column": 21,
+                                  "node_type": "Location"
+                                },
+                                "identifier": "amount",
+                                "node_type": "Identifier"
+                              },
+                              {
+                                "loc": {
+                                  "source_file":
+                                    "../scilla_static/examples/earmarked-coin.scilla",
+                                  "line": 86,
+                                  "column": 28,
+                                  "node_type": "Location"
+                                },
+                                "identifier": "recipient",
+                                "node_type": "Identifier"
+                              }
+                            ],
+                            "node_type": "CallProcStatement"
+                          },
+                          {
+                            "loc": {
+                              "source_file":
+                                "../scilla_static/examples/earmarked-coin.scilla",
+                              "line": 87,
+                              "column": 7,
+                              "node_type": "Location"
+                            },
+                            "node_type": "MapUpdateStatement",
+                            "map_name": {
+                              "loc": {
+                                "source_file":
+                                  "../scilla_static/examples/earmarked-coin.scilla",
+                                "line": 87,
+                                "column": 14,
+                                "node_type": "Location"
+                              },
+                              "identifier": "earmarked_coins",
+                              "node_type": "Identifier"
+                            },
+                            "rhs": null,
+                            "keys": [
+                              {
+                                "loc": {
+                                  "source_file":
+                                    "../scilla_static/examples/earmarked-coin.scilla",
+                                  "line": 87,
+                                  "column": 30,
+                                  "node_type": "Location"
+                                },
+                                "identifier": "earmarked_coin_address",
+                                "node_type": "Identifier"
+                              }
+                            ]
+                          },
+                          {
+                            "loc": {
+                              "source_file":
+                                "../scilla_static/examples/earmarked-coin.scilla",
+                              "line": 88,
+                              "column": 7,
+                              "node_type": "Location"
+                            },
+                            "arg": {
+                              "loc": {
+                                "source_file":
+                                  "../scilla_static/examples/earmarked-coin.scilla",
+                                "line": 88,
+                                "column": 7,
+                                "node_type": "Location"
+                              },
+                              "identifier": "SuccessfulTransferOfFunds",
+                              "node_type": "Identifier"
+                            },
+                            "messages": [
+                              {
+                                "loc": {
+                                  "source_file":
+                                    "../scilla_static/examples/earmarked-coin.scilla",
+                                  "line": 88,
+                                  "column": 33,
+                                  "node_type": "Location"
+                                },
+                                "identifier": "_this_address",
+                                "node_type": "Identifier"
+                              },
+                              {
+                                "loc": {
+                                  "source_file":
+                                    "../scilla_static/examples/earmarked-coin.scilla",
+                                  "line": 88,
+                                  "column": 47,
+                                  "node_type": "Location"
+                                },
+                                "identifier": "_sender",
+                                "node_type": "Identifier"
+                              }
+                            ],
+                            "node_type": "CallProcStatement"
+                          }
+                        ],
+                        "pattern": {
+                          "node_type": "ConstructorPattern",
+                          "constructor_name": "True",
+                          "patterns": []
+                        },
+                        "node_type": "MatchStatementCase"
+                      },
+                      {
+                        "pattern_body": [
+                          {
+                            "loc": {
+                              "source_file":
+                                "../scilla_static/examples/earmarked-coin.scilla",
+                              "line": 90,
+                              "column": 7,
+                              "node_type": "Location"
+                            },
+                            "arg": {
+                              "loc": {
+                                "source_file":
+                                  "../scilla_static/examples/earmarked-coin.scilla",
+                                "line": 90,
+                                "column": 7,
+                                "node_type": "Location"
+                              },
+                              "identifier": "FailedToTransferFunds",
+                              "node_type": "Identifier"
+                            },
+                            "messages": [
+                              {
+                                "loc": {
+                                  "source_file":
+                                    "../scilla_static/examples/earmarked-coin.scilla",
+                                  "line": 90,
+                                  "column": 29,
+                                  "node_type": "Location"
+                                },
+                                "identifier": "_this_address",
+                                "node_type": "Identifier"
+                              },
+                              {
+                                "loc": {
+                                  "source_file":
+                                    "../scilla_static/examples/earmarked-coin.scilla",
+                                  "line": 90,
+                                  "column": 43,
+                                  "node_type": "Location"
+                                },
+                                "identifier": "_sender",
+                                "node_type": "Identifier"
+                              },
+                              {
+                                "loc": {
+                                  "source_file":
+                                    "../scilla_static/examples/earmarked-coin.scilla",
+                                  "line": 90,
+                                  "column": 51,
+                                  "node_type": "Location"
+                                },
+                                "identifier": "not_authorized_code",
+                                "node_type": "Identifier"
+                              }
+                            ],
+                            "node_type": "CallProcStatement"
+                          }
+                        ],
+                        "pattern": {
+                          "node_type": "ConstructorPattern",
+                          "constructor_name": "False",
+                          "patterns": []
+                        },
+                        "node_type": "MatchStatementCase"
+                      }
+                    ],
+                    "node_type": "MatchStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "Some",
+                  "patterns": [
+                    {
+                      "node_type": "ConstructorPattern",
+                      "constructor_name": "EarmarkedCoin",
+                      "patterns": [
+                        {
+                          "node_type": "BinderPattern",
+                          "variable": {
+                            "loc": {
+                              "source_file":
+                                "../scilla_static/examples/earmarked-coin.scilla",
+                              "line": 81,
+                              "column": 25,
+                              "node_type": "Location"
+                            },
+                            "identifier": "amount",
+                            "node_type": "Identifier"
+                          }
+                        },
+                        {
+                          "node_type": "BinderPattern",
+                          "variable": {
+                            "loc": {
+                              "source_file":
+                                "../scilla_static/examples/earmarked-coin.scilla",
+                              "line": 81,
+                              "column": 32,
+                              "node_type": "Location"
+                            },
+                            "identifier": "recipient",
+                            "node_type": "Identifier"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "node_type": "MatchStatementCase"
+              },
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "line": 94,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "line": 94,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "FailedToTransferFunds",
+                      "node_type": "Identifier"
+                    },
+                    "messages": [
+                      {
+                        "loc": {
+                          "source_file":
+                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "line": 94,
+                          "column": 27,
+                          "node_type": "Location"
+                        },
+                        "identifier": "_this_address",
+                        "node_type": "Identifier"
+                      },
+                      {
+                        "loc": {
+                          "source_file":
+                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "line": 94,
+                          "column": 41,
+                          "node_type": "Location"
+                        },
+                        "identifier": "_sender",
+                        "node_type": "Identifier"
+                      },
+                      {
+                        "loc": {
+                          "source_file":
+                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "line": 94,
+                          "column": 49,
+                          "node_type": "Location"
+                        },
+                        "identifier": "did_not_earmark_code",
+                        "node_type": "Identifier"
+                      }
+                    ],
+                    "node_type": "CallProcStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "None",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              }
+            ],
+            "node_type": "MatchStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [],
+        "name": {
+          "loc": {
+            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "line": 103,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "ClaimForCreator",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/earmarked-coin.scilla",
+              "line": 104,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "MapGetStatement",
+            "map_name": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 104,
+                "column": 17,
+                "node_type": "Location"
+              },
+              "identifier": "earmarked_coins",
+              "node_type": "Identifier"
+            },
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 104,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "e_coin_opt",
+              "node_type": "Identifier"
+            },
+            "keys": [
+              {
+                "loc": {
+                  "source_file":
+                    "../scilla_static/examples/earmarked-coin.scilla",
+                  "line": 104,
+                  "column": 33,
+                  "node_type": "Location"
+                },
+                "identifier": "_sender",
+                "node_type": "Identifier"
+              }
+            ],
+            "is_value_retrieve": true
+          },
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/earmarked-coin.scilla",
+              "line": 105,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/earmarked-coin.scilla",
+                "line": 105,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "e_coin_opt",
+              "node_type": "Identifier"
+            },
+            "cases": [
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "line": 108,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "line": 108,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "TransferFunds",
+                      "node_type": "Identifier"
+                    },
+                    "messages": [
+                      {
+                        "loc": {
+                          "source_file":
+                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "line": 108,
+                          "column": 19,
+                          "node_type": "Location"
+                        },
+                        "identifier": "amount",
+                        "node_type": "Identifier"
+                      },
+                      {
+                        "loc": {
+                          "source_file":
+                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "line": 108,
+                          "column": 26,
+                          "node_type": "Location"
+                        },
+                        "identifier": "_sender",
+                        "node_type": "Identifier"
+                      }
+                    ],
+                    "node_type": "CallProcStatement"
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "line": 109,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "MapUpdateStatement",
+                    "map_name": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "line": 109,
+                        "column": 12,
+                        "node_type": "Location"
+                      },
+                      "identifier": "earmarked_coins",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": null,
+                    "keys": [
+                      {
+                        "loc": {
+                          "source_file":
+                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "line": 109,
+                          "column": 28,
+                          "node_type": "Location"
+                        },
+                        "identifier": "_sender",
+                        "node_type": "Identifier"
+                      }
+                    ]
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "line": 110,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "line": 110,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "SuccessfulTransferOfFunds",
+                      "node_type": "Identifier"
+                    },
+                    "messages": [
+                      {
+                        "loc": {
+                          "source_file":
+                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "line": 110,
+                          "column": 31,
+                          "node_type": "Location"
+                        },
+                        "identifier": "_this_address",
+                        "node_type": "Identifier"
+                      },
+                      {
+                        "loc": {
+                          "source_file":
+                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "line": 110,
+                          "column": 45,
+                          "node_type": "Location"
+                        },
+                        "identifier": "_sender",
+                        "node_type": "Identifier"
+                      }
+                    ],
+                    "node_type": "CallProcStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "Some",
+                  "patterns": [
+                    {
+                      "node_type": "ConstructorPattern",
+                      "constructor_name": "EarmarkedCoin",
+                      "patterns": [
+                        {
+                          "node_type": "BinderPattern",
+                          "variable": {
+                            "loc": {
+                              "source_file":
+                                "../scilla_static/examples/earmarked-coin.scilla",
+                              "line": 106,
+                              "column": 25,
+                              "node_type": "Location"
+                            },
+                            "identifier": "amount",
+                            "node_type": "Identifier"
+                          }
+                        },
+                        { "node_type": "WildcardPattern" }
+                      ]
+                    }
+                  ]
+                },
+                "node_type": "MatchStatementCase"
+              },
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "line": 113,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "arg": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "line": 113,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "FailedToTransferFunds",
+                      "node_type": "Identifier"
+                    },
+                    "messages": [
+                      {
+                        "loc": {
+                          "source_file":
+                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "line": 113,
+                          "column": 27,
+                          "node_type": "Location"
+                        },
+                        "identifier": "_this_address",
+                        "node_type": "Identifier"
+                      },
+                      {
+                        "loc": {
+                          "source_file":
+                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "line": 113,
+                          "column": 41,
+                          "node_type": "Location"
+                        },
+                        "identifier": "_sender",
+                        "node_type": "Identifier"
+                      },
+                      {
+                        "loc": {
+                          "source_file":
+                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "line": 113,
+                          "column": 49,
+                          "node_type": "Location"
+                        },
+                        "identifier": "did_not_earmark_code",
+                        "node_type": "Identifier"
+                      }
+                    ],
+                    "node_type": "CallProcStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "None",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              }
+            ],
+            "node_type": "MatchStatement"
+          }
+        ],
+        "node_type": "Component"
+      }
+    ],
+    "node_type": "Contract"
+  },
+  "node_type": "ContractModule"
+}

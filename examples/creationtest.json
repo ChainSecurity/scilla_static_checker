@@ -1,0 +1,100 @@
+{
+  "scilla_major_version": 0,
+  "name": {
+    "loc": {
+      "source_file": "../scilla_static/examples/creationtest.scilla",
+      "line": 2,
+      "column": 10,
+      "node_type": "Location"
+    },
+    "identifier": "Test",
+    "node_type": "Identifier"
+  },
+  "library": null,
+  "external_libraries": [],
+  "contract": {
+    "name": {
+      "loc": {
+        "source_file": "../scilla_static/examples/creationtest.scilla",
+        "line": 2,
+        "column": 10,
+        "node_type": "Location"
+      },
+      "identifier": "Test",
+      "node_type": "Identifier"
+    },
+    "params": [],
+    "fields": [
+      {
+        "field_name": {
+          "loc": {
+            "source_file": "../scilla_static/examples/creationtest.scilla",
+            "line": 3,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "is_owner",
+          "node_type": "Identifier"
+        },
+        "field_type": { "node_type": "PrimType", "name": "ByStr20" },
+        "expression": {
+          "loc": {
+            "source_file": "../scilla_static/examples/creationtest.scilla",
+            "line": 3,
+            "column": 27,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": {
+            "node_type": "ByStrXLiteral",
+            "value": "0xabababababababababababababababababababab"
+          }
+        },
+        "node_type": "Field"
+      },
+      {
+        "field_name": {
+          "loc": {
+            "source_file": "../scilla_static/examples/creationtest.scilla",
+            "line": 3,
+            "column": 76,
+            "node_type": "Location"
+          },
+          "identifier": "a",
+          "node_type": "Identifier"
+        },
+        "field_type": { "node_type": "PrimType", "name": "BNum" },
+        "expression": {
+          "loc": {
+            "source_file": "../scilla_static/examples/creationtest.scilla",
+            "line": 3,
+            "column": 86,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "BNumLiteral", "value": "200" }
+        },
+        "node_type": "Field"
+      }
+    ],
+    "components": [
+      {
+        "params": [],
+        "name": {
+          "loc": {
+            "source_file": "../scilla_static/examples/creationtest.scilla",
+            "line": 4,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "e",
+          "node_type": "Identifier"
+        },
+        "body": [],
+        "node_type": "Component"
+      }
+    ],
+    "node_type": "Contract"
+  },
+  "node_type": "ContractModule"
+}

@@ -1,0 +1,193 @@
+{
+  "scilla_major_version": 0,
+  "name": {
+    "loc": {
+      "source_file": "../scilla_static/examples/exception-example.scilla",
+      "line": 9,
+      "column": 10,
+      "node_type": "Location"
+    },
+    "identifier": "HelloWorld",
+    "node_type": "Identifier"
+  },
+  "library": null,
+  "external_libraries": [],
+  "contract": {
+    "name": {
+      "loc": {
+        "source_file": "../scilla_static/examples/exception-example.scilla",
+        "line": 9,
+        "column": 10,
+        "node_type": "Location"
+      },
+      "identifier": "HelloWorld",
+      "node_type": "Identifier"
+    },
+    "params": [],
+    "fields": [],
+    "components": [
+      {
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/exception-example.scilla",
+                "line": 12,
+                "column": 22,
+                "node_type": "Location"
+              },
+              "identifier": "msg",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "String" },
+            "node_type": "Parameter"
+          }
+        ],
+        "name": {
+          "loc": {
+            "source_file":
+              "../scilla_static/examples/exception-example.scilla",
+            "line": 12,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "setHello",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/exception-example.scilla",
+              "line": 13,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/exception-example.scilla",
+                "line": 13,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "e",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/exception-example.scilla",
+                "line": 13,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "node_type": "MessageExpression",
+              "margs": [
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_exception",
+                  "payload": {
+                    "node_type": "PayloadLiteral",
+                    "literal": {
+                      "node_type": "StringLiteral",
+                      "value": "SetHelloError"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "msg",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/exception-example.scilla",
+                        "line": 13,
+                        "column": 45,
+                        "node_type": "Location"
+                      },
+                      "identifier": "msg",
+                      "node_type": "Identifier"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/exception-example.scilla",
+              "line": 14,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "ThrowStatement",
+            "arg": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/exception-example.scilla",
+                "line": 14,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "e",
+              "node_type": "Identifier"
+            }
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/exception-example.scilla",
+                "line": 17,
+                "column": 24,
+                "node_type": "Location"
+              },
+              "identifier": "msg",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "String" },
+            "node_type": "Parameter"
+          }
+        ],
+        "name": {
+          "loc": {
+            "source_file":
+              "../scilla_static/examples/exception-example.scilla",
+            "line": 17,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "emptyThrow",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/exception-example.scilla",
+              "line": 18,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "ThrowStatement",
+            "arg": null
+          }
+        ],
+        "node_type": "Component"
+      }
+    ],
+    "node_type": "Contract"
+  },
+  "node_type": "ContractModule"
+}

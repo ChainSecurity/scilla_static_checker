@@ -1,0 +1,119 @@
+{
+  "scilla_major_version": 0,
+  "name": {
+    "loc": {
+      "source_file": "../scilla_static/examples/empty.scilla",
+      "line": 6,
+      "column": 10,
+      "node_type": "Location"
+    },
+    "identifier": "Empty",
+    "node_type": "Identifier"
+  },
+  "library": null,
+  "external_libraries": [
+    {
+      "name": {
+        "loc": {
+          "source_file": "../scilla_static/examples/empty.scilla",
+          "line": 4,
+          "column": 8,
+          "node_type": "Location"
+        },
+        "identifier": "BoolUtils",
+        "node_type": "Identifier"
+      },
+      "alias": null,
+      "node_type": "ExternalLibrary"
+    },
+    {
+      "name": {
+        "loc": {
+          "source_file": "../scilla_static/examples/empty.scilla",
+          "line": 4,
+          "column": 19,
+          "node_type": "Location"
+        },
+        "identifier": "IntUtils",
+        "node_type": "Identifier"
+      },
+      "alias": null,
+      "node_type": "ExternalLibrary"
+    },
+    {
+      "name": {
+        "loc": {
+          "source_file": "../scilla_static/examples/empty.scilla",
+          "line": 4,
+          "column": 29,
+          "node_type": "Location"
+        },
+        "identifier": "ListUtils",
+        "node_type": "Identifier"
+      },
+      "alias": null,
+      "node_type": "ExternalLibrary"
+    },
+    {
+      "name": {
+        "loc": {
+          "source_file": "../scilla_static/examples/empty.scilla",
+          "line": 4,
+          "column": 40,
+          "node_type": "Location"
+        },
+        "identifier": "NatUtils",
+        "node_type": "Identifier"
+      },
+      "alias": null,
+      "node_type": "ExternalLibrary"
+    },
+    {
+      "name": {
+        "loc": {
+          "source_file": "../scilla_static/examples/empty.scilla",
+          "line": 4,
+          "column": 50,
+          "node_type": "Location"
+        },
+        "identifier": "PairUtils",
+        "node_type": "Identifier"
+      },
+      "alias": null,
+      "node_type": "ExternalLibrary"
+    }
+  ],
+  "contract": {
+    "name": {
+      "loc": {
+        "source_file": "../scilla_static/examples/empty.scilla",
+        "line": 6,
+        "column": 10,
+        "node_type": "Location"
+      },
+      "identifier": "Empty",
+      "node_type": "Identifier"
+    },
+    "params": [],
+    "fields": [],
+    "components": [
+      {
+        "params": [],
+        "name": {
+          "loc": {
+            "source_file": "../scilla_static/examples/empty.scilla",
+            "line": 9,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "dummy",
+          "node_type": "Identifier"
+        },
+        "body": [],
+        "node_type": "Component"
+      }
+    ],
+    "node_type": "Contract"
+  },
+  "node_type": "ContractModule"
+}

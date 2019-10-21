@@ -1,0 +1,383 @@
+{
+  "scilla_major_version": 0,
+  "name": {
+    "loc": {
+      "source_file": "../scilla_static/examples/chain-call-balance-2.scilla",
+      "line": 10,
+      "column": 10,
+      "node_type": "Location"
+    },
+    "identifier": "Test",
+    "node_type": "Identifier"
+  },
+  "library": {
+    "library_name": {
+      "loc": {
+        "source_file":
+          "../scilla_static/examples/chain-call-balance-2.scilla",
+        "line": 3,
+        "column": 1,
+        "node_type": "Location"
+      },
+      "identifier": "Test",
+      "node_type": "Identifier"
+    },
+    "library_entries": [
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file":
+              "../scilla_static/examples/chain-call-balance-2.scilla",
+            "line": 5,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "one_msg",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file":
+              "../scilla_static/examples/chain-call-balance-2.scilla",
+            "line": 6,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/chain-call-balance-2.scilla",
+              "line": 6,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "msg",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/chain-call-balance-2.scilla",
+              "line": 7,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "LetExpression",
+            "variable": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/chain-call-balance-2.scilla",
+                "line": 7,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "nil_msg",
+              "node_type": "Identifier"
+            },
+            "variable_type": null,
+            "expression": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/chain-call-balance-2.scilla",
+                "line": 7,
+                "column": 19,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "Nil",
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
+              "args": []
+            },
+            "body": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/chain-call-balance-2.scilla",
+                "line": 8,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "Cons",
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
+              "args": [
+                {
+                  "loc": {
+                    "source_file":
+                      "../scilla_static/examples/chain-call-balance-2.scilla",
+                    "line": 8,
+                    "column": 20,
+                    "node_type": "Location"
+                  },
+                  "identifier": "msg",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file":
+                      "../scilla_static/examples/chain-call-balance-2.scilla",
+                    "line": 8,
+                    "column": 24,
+                    "node_type": "Location"
+                  },
+                  "identifier": "nil_msg",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Message" }
+        }
+      }
+    ],
+    "node_type": "Library"
+  },
+  "external_libraries": [],
+  "contract": {
+    "name": {
+      "loc": {
+        "source_file":
+          "../scilla_static/examples/chain-call-balance-2.scilla",
+        "line": 10,
+        "column": 10,
+        "node_type": "Location"
+      },
+      "identifier": "Test",
+      "node_type": "Identifier"
+    },
+    "params": [],
+    "fields": [],
+    "components": [
+      {
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/chain-call-balance-2.scilla",
+                "line": 14,
+                "column": 28,
+                "node_type": "Location"
+              },
+              "identifier": "addrC",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "node_type": "Parameter"
+          }
+        ],
+        "name": {
+          "loc": {
+            "source_file":
+              "../scilla_static/examples/chain-call-balance-2.scilla",
+            "line": 14,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "b_accept_callC",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/chain-call-balance-2.scilla",
+              "line": 15,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "AcceptPaymentStatement"
+          },
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/chain-call-balance-2.scilla",
+              "line": 16,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/chain-call-balance-2.scilla",
+                "line": 16,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "m",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/chain-call-balance-2.scilla",
+                "line": 16,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "node_type": "MessageExpression",
+              "margs": [
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_tag",
+                  "payload": {
+                    "node_type": "PayloadLiteral",
+                    "literal": {
+                      "node_type": "StringLiteral",
+                      "value": "c_noaccept"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_amount",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/chain-call-balance-2.scilla",
+                        "line": 16,
+                        "column": 40,
+                        "node_type": "Location"
+                      },
+                      "identifier": "_amount",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_recipient",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/chain-call-balance-2.scilla",
+                        "line": 16,
+                        "column": 62,
+                        "node_type": "Location"
+                      },
+                      "identifier": "addrC",
+                      "node_type": "Identifier"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/chain-call-balance-2.scilla",
+              "line": 17,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/chain-call-balance-2.scilla",
+                "line": 17,
+                "column": 6,
+                "node_type": "Location"
+              },
+              "identifier": "ml",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/chain-call-balance-2.scilla",
+                "line": 17,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file":
+                    "../scilla_static/examples/chain-call-balance-2.scilla",
+                  "line": 17,
+                  "column": 8,
+                  "node_type": "Location"
+                },
+                "identifier": "one_msg",
+                "node_type": "Identifier"
+              },
+              "rhs_list": [
+                {
+                  "loc": {
+                    "source_file":
+                      "../scilla_static/examples/chain-call-balance-2.scilla",
+                    "line": 17,
+                    "column": 16,
+                    "node_type": "Location"
+                  },
+                  "identifier": "m",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/chain-call-balance-2.scilla",
+              "line": 18,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/chain-call-balance-2.scilla",
+                "line": 18,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "ml",
+              "node_type": "Identifier"
+            },
+            "node_type": "SendMsgsStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [],
+        "name": {
+          "loc": {
+            "source_file":
+              "../scilla_static/examples/chain-call-balance-2.scilla",
+            "line": 21,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "simply_accept",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/chain-call-balance-2.scilla",
+              "line": 22,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "AcceptPaymentStatement"
+          }
+        ],
+        "node_type": "Component"
+      }
+    ],
+    "node_type": "Contract"
+  },
+  "node_type": "ContractModule"
+}

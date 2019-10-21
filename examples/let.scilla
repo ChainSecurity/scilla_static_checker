@@ -1,0 +1,35 @@
+scilla_version 0
+
+
+
+(***************************************************)
+(*               Associated library                *)
+(***************************************************)
+library Inc
+
+let one : Uint32 = Uint32 1
+let one64 = Uint64 1
+let one128 = Uint128 1
+let one_let : Uint32 = let one_tmp : Uint32 = Uint32 1 in one_tmp
+
+(***************************************************)
+(*             The contract definition             *)
+(***************************************************)
+
+contract Inc
+(owner : ByStr20, x : Uint64)
+
+(*field signatures       : Map Uint32 (Map ByStr20 Bool) =*)
+                           (*Emp Uint32 (Map ByStr20 Bool)*)
+field balances : Map ByStr20 Uint128 = Emp ByStr20 Uint128
+  (*let m = Emp ByStr20 Uint128 in*)
+    (*builtin put m owner one128*)
+field a : Uint64 = builtin add x one64
+(*field allowed : Map ByStr20 (Map ByStr20 Uint128) = Emp ByStr20 (Map ByStr20 Uint128)*)
+
+transition inc ()
+    one = Uint64 1;
+    curra <- a;
+    inca = builtin add curra one; 
+    a := inca
+end
