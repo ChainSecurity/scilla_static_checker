@@ -124,22 +124,22 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 	case *MapType:
 		n = &dotNode{
 			b.getNodeId(),
-			[]string{"Key", "Val"},
+			[]string{"KeyType", "ValType"},
 			"MapType",
 		}
-		kNode := dotWalkType(b, x.Key)
+		kNode := dotWalkType(b, x.KeyType)
 		ke := dotPortedEdge{
 			id:       b.getEdgeId(),
 			from:     n,
 			to:       kNode,
-			fromPort: "Key"}
+			fromPort: "KeyType"}
 		b.edges = append(b.edges, &ke)
-		vNode := dotWalkType(b, x.Val)
+		vNode := dotWalkType(b, x.ValType)
 		ve := dotPortedEdge{
 			id:       b.getEdgeId(),
 			from:     n,
 			to:       vNode,
-			fromPort: "Val"}
+			fromPort: "ValType"}
 		b.edges = append(b.edges, &ve)
 		b.typeCache[t] = n
 	case *AbsTT:

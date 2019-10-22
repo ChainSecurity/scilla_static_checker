@@ -17,7 +17,8 @@ type CFGBuilder struct {
 	varStack        map[string][]Data
 }
 
-func setDefaultType(h map[string]Type, k string, t Type) (set bool, r Type) {
+func setDefaultType(h map[string]Type, k string, t Type) (r Type) {
+	var set bool
 	if r, set = h[k]; !set {
 		h[k] = t
 		r = t
@@ -387,12 +388,12 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 
 	}
 
-	builder.typeMap["ByStr20"] = &RawType{20}
-	builder.typeMap["ByStr32"] = &RawType{32}
-	builder.typeMap["ByStr"] = &RawType{-1}
-	builder.typeMap["BNum"] = &BnrType{}
-	builder.typeMap["Message"] = &MsgType{}
 	builder.typeMap["String"] = &StrType{}
+	builder.typeMap["ByStr"] = &RawType{-1}
+	builder.typeMap["ByStr32"] = &RawType{32}
+	builder.typeMap["ByStr33"] = &RawType{33}
+	builder.typeMap["ByStr64"] = &RawType{64}
+	builder.typeMap["ByStr20"] = &RawType{20}
 
 	builder.typeMap["Bool"] = stdLib.Boolean
 
@@ -465,7 +466,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		},
 		Term: &Builtin{builder.typeMap["String"]},
 	}
-	builder.builtinOpMap["concat"] = &strConcatOp
+	builder.builtinOpMap["str_concat"] = &strConcatOp
 
 	//builtin substr
 	strSubstrOp := AbsDD{
@@ -524,7 +525,9 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Vars: []*DataVar{
 			&DataVar{DataType: &shaAbsTD.Vars[0]},
 		},
-		Term: &Builtin{builder.typeMap["ByStr32"]},
+		Term: &Builtin{
+			BuiltinType: builder.typeMap["ByStr32"],
+		},
 	}
 	builder.builtinOpMap["sha256hash"] = &shaAbsTD
 
@@ -540,7 +543,9 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Vars: []*DataVar{
 			&DataVar{DataType: &keccakAbsTD.Vars[0]},
 		},
-		Term: &Builtin{builder.typeMap["ByStr32"]},
+		Term: &Builtin{
+			BuiltinType: builder.typeMap["ByStr32"],
+		},
 	}
 	builder.builtinOpMap["keccak256hash"] = &keccakAbsTD
 
@@ -556,7 +561,9 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Vars: []*DataVar{
 			&DataVar{DataType: &ripemdAbsTD.Vars[0]},
 		},
-		Term: &Builtin{builder.typeMap["ByStr20"]},
+		Term: &Builtin{
+			BuiltinType: builder.typeMap["ByStr20"],
+		},
 	}
 	builder.builtinOpMap["ripemd160hash"] = &ripemdAbsTD
 
@@ -572,7 +579,9 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Vars: []*DataVar{
 			&DataVar{DataType: &toBystrAbsTD.Vars[0]},
 		},
-		Term: &Builtin{builder.typeMap["ByStr"]},
+		Term: &Builtin{
+			BuiltinType: builder.typeMap["ByStr"],
+		},
 	}
 	builder.builtinOpMap["to_bystr"] = &toBystrAbsTD
 
@@ -591,6 +600,212 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &Builtin{builder.natWidthTypeMap[256]},
 	}
 	builder.builtinOpMap["to_uint256"] = &touint256AbsTD
+
+	// schnorr_verify
+	schnorrVerifyAbsDD := AbsDD{
+		Vars: []*DataVar{
+			&DataVar{
+				DataType: builder.typeMap["ByStr33"],
+			},
+			&DataVar{
+				DataType: builder.typeMap["ByStr"],
+			},
+			&DataVar{
+				DataType: builder.typeMap["ByStr64"],
+			},
+		},
+		Term: &Builtin{builder.typeMap["Bool"]},
+	}
+	builder.builtinOpMap["schnorr_verify"] = &schnorrVerifyAbsDD
+
+	// ecdsa_verify
+	ecdsaVerifyAbsDD := AbsDD{
+		Vars: []*DataVar{
+			&DataVar{
+				DataType: builder.typeMap["ByStr33"],
+			},
+			&DataVar{
+				DataType: builder.typeMap["ByStr"],
+			},
+			&DataVar{
+				DataType: builder.typeMap["ByStr64"],
+			},
+		},
+		Term: &Builtin{builder.typeMap["Bool"]},
+	}
+	builder.builtinOpMap["ecdsa_verify"] = &ecdsaVerifyAbsDD
+
+	// bech32_to_bystr20
+	bech32ToBystr20AbsDD := AbsDD{
+		Vars: []*DataVar{
+			&DataVar{
+				DataType: builder.typeMap["String"],
+			},
+			&DataVar{
+				DataType: builder.typeMap["String"],
+			},
+		},
+		Term: &Builtin{
+			&AppTT{
+				Args: []Type{builder.typeMap["ByStr20"]},
+				To:   stdLib.Option,
+			},
+		},
+	}
+	builder.builtinOpMap["bech32_to_bystr20"] = &bech32ToBystr20AbsDD
+
+	// bystr20_to_bech32
+	bystr20ToBech32AbsDD := AbsDD{
+		Vars: []*DataVar{
+			&DataVar{
+				DataType: builder.typeMap["String"],
+			},
+			&DataVar{
+				DataType: builder.typeMap["ByStr20"],
+			},
+		},
+		Term: &Builtin{
+			&AppTT{
+				Args: []Type{builder.typeMap["String"]},
+				To:   stdLib.Option,
+			},
+		},
+	}
+
+	builder.builtinOpMap["bystr20_to_bech32"] = &bystr20ToBech32AbsDD
+
+	//Maps
+
+	// put
+	var putAbsDD AbsDD
+	putAbsTD := AbsTD{
+		Vars: []TypeVar{
+			TypeVar{Kind: stdLib.star},
+			TypeVar{Kind: stdLib.star},
+		},
+		Term: &putAbsDD,
+	}
+	putAbsDD = AbsDD{
+		Vars: []*DataVar{
+			&DataVar{
+				&MapType{
+					&putAbsTD.Vars[0],
+					&putAbsTD.Vars[1],
+				},
+			},
+			&DataVar{
+				&putAbsTD.Vars[0],
+			},
+			&DataVar{
+				&putAbsTD.Vars[1],
+			},
+		},
+	}
+	putAbsDD.Term = &Builtin{putAbsDD.Vars[0].DataType}
+	builder.builtinOpMap["put"] = &putAbsTD
+
+	// get
+	var getAbsDD AbsDD
+	getAbsTD := AbsTD{
+		Vars: []TypeVar{
+			TypeVar{Kind: stdLib.star},
+			TypeVar{Kind: stdLib.star},
+		},
+		Term: &getAbsDD,
+	}
+	getAbsDD = AbsDD{
+		Vars: []*DataVar{
+			&DataVar{
+				&MapType{
+					&getAbsTD.Vars[0],
+					&getAbsTD.Vars[1],
+				},
+			},
+			&DataVar{
+				&getAbsTD.Vars[0],
+			},
+		},
+		Term: &Builtin{
+			&AppTT{
+				Args: []Type{&getAbsTD.Vars[1]},
+				To:   stdLib.Option,
+			},
+		},
+	}
+	builder.builtinOpMap["get"] = &getAbsTD
+
+	// contains
+	var containsAbsDD AbsDD
+	containsAbsTD := AbsTD{
+		Vars: []TypeVar{
+			TypeVar{Kind: stdLib.star},
+			TypeVar{Kind: stdLib.star},
+		},
+		Term: &containsAbsDD,
+	}
+	containsAbsDD = AbsDD{
+		Vars: []*DataVar{
+			&DataVar{
+				&MapType{
+					&containsAbsTD.Vars[0],
+					&containsAbsTD.Vars[1],
+				},
+			},
+			&DataVar{
+				&containsAbsTD.Vars[0],
+			},
+		},
+		Term: &Builtin{builder.typeMap["Bool"]},
+	}
+	builder.builtinOpMap["contains"] = &containsAbsTD
+
+	// remove
+	var removeAbsDD AbsDD
+	removeAbsTD := AbsTD{
+		Vars: []TypeVar{
+			TypeVar{Kind: stdLib.star},
+			TypeVar{Kind: stdLib.star},
+		},
+		Term: &removeAbsDD,
+	}
+	removeAbsDD = AbsDD{
+		Vars: []*DataVar{
+			&DataVar{
+				&MapType{
+					&removeAbsTD.Vars[0],
+					&removeAbsTD.Vars[1],
+				},
+			},
+			&DataVar{
+				&removeAbsTD.Vars[0],
+			},
+		},
+	}
+	removeAbsDD.Term = &Builtin{removeAbsDD.Vars[0].DataType}
+	builder.builtinOpMap["remove"] = &removeAbsTD
+
+	// size
+	var sizeAbsDD AbsDD
+	sizeAbsTD := AbsTD{
+		Vars: []TypeVar{
+			TypeVar{Kind: stdLib.star},
+			TypeVar{Kind: stdLib.star},
+		},
+		Term: &sizeAbsDD,
+	}
+	sizeAbsDD = AbsDD{
+		Vars: []*DataVar{
+			&DataVar{
+				&MapType{
+					&sizeAbsTD.Vars[0],
+					&sizeAbsTD.Vars[1],
+				},
+			},
+		},
+	}
+	sizeAbsDD.Term = &Builtin{builder.typeMap["Bool"]}
+	builder.builtinOpMap["size"] = &sizeAbsTD
+
 	for k := range builder.builtinOpMap {
 		fmt.Println("\t", k)
 	}

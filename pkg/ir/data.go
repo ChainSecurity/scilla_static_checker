@@ -139,7 +139,7 @@ type (
 	MsgType struct{}
 
 	// MapType :
-	MapType struct{ Key, Val Type }
+	MapType struct{ KeyType, ValType Type }
 )
 
 func (*IntType) isType() {}
