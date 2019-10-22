@@ -225,8 +225,7 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		}
 		return data
 	case *ast.BuiltinExpression:
-		bt := n.BuintinFunc.BuiltinOp
-		op := builder.builtinOpMap[bt]
+		opName := n.BuintinFunc.BuiltinOp
 		vars := make([]Data, len(n.Args))
 		for i, a := range n.Args {
 			v, ok := stackMapPeek(builder.varStack, a.Id)
@@ -234,6 +233,35 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 				panic(errors.New(fmt.Sprintf("variable not found: %s", a.Id)))
 			}
 			vars[i] = v
+		}
+		op := builder.builtinOpMap[opName]
+		if opName == "concat" {
+			v0 := vars[0].Type()
+			switch raw0 := v0.(type) {
+			case *RawType:
+				v1 := vars[1].Type()
+				raw1, ok := v1.(*RawType)
+				if !ok {
+					panic(errors.New(fmt.Sprintf("Builtin concat wrong type: %T", v1)))
+				}
+				fmt.Println("rawtype", raw0.Size, raw1.Size)
+				resType := "ByStr" + strconv.Itoa(raw0.Size+raw1.Size)
+				op = &AbsDD{
+					Vars: []*DataVar{
+						&DataVar{
+							DataType: v0,
+						},
+						&DataVar{
+							DataType: v1,
+						},
+					},
+					Term: &Builtin{setDefaultType(builder.typeMap, resType, &RawType{raw0.Size + raw1.Size})},
+				}
+			case *StrType:
+				op = builder.builtinOpMap["str_concat"]
+			default:
+				panic(errors.New(fmt.Sprintf("Builtin concat wrong type: %T", v0)))
+			}
 		}
 		res := AppDD{
 			Args: vars,
@@ -805,11 +833,6 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	}
 	sizeAbsDD.Term = &Builtin{builder.typeMap["Bool"]}
 	builder.builtinOpMap["size"] = &sizeAbsTD
-
-	for k := range builder.builtinOpMap {
-		fmt.Println("\t", k)
-	}
-
 }
 
 func BuildCFG(n ast.AstNode) *CFGBuilder {

@@ -516,7 +516,7 @@ func GetDot(b *CFGBuilder) string {
 	//}
 	d := dotBuilder{0, 0, []*dotNode{}, []*dotPortedEdge{}, map[Type]*dotNode{}, map[Data]*dotNode{}, map[Kind]*dotNode{}}
 	fmt.Println(len(b.varStack), b.varStack)
-	v, ok := stackMapPeek(b.varStack, "two64")
+	v, ok := stackMapPeek(b.varStack, "yy")
 	if !ok {
 		panic(errors.New("var not found"))
 	}
