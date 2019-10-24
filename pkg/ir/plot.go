@@ -223,11 +223,11 @@ func dotWalkKind(b *dotBuilder, k Kind) graph.Node {
 	return n
 }
 
-func dotWalkWhen(b *dotBuilder, w *When) graph.Node {
+func dotWalkCond(b *dotBuilder, w *Cond) graph.Node {
 	n := dotNode{
 		b.getNodeId(),
 		[]string{"Data", fmt.Sprintf("Case: %s", w.Case)},
-		"When",
+		"Cond",
 	}
 	b.nodes = append(b.nodes, &n)
 	for _, v := range w.Data {
@@ -246,7 +246,7 @@ func dotWalkWhen(b *dotBuilder, w *When) graph.Node {
 func dotWalkBind(b *dotBuilder, d *Bind) graph.Node {
 	n := dotNode{
 		b.getNodeId(),
-		[]string{"BindType", "When"},
+		[]string{"BindType", "Cond"},
 		"Bind",
 	}
 	var m graph.Node
@@ -258,13 +258,13 @@ func dotWalkBind(b *dotBuilder, d *Bind) graph.Node {
 		to:       m,
 		fromPort: "BindType"}
 	b.edges = append(b.edges, e)
-	if d.When != nil {
-		m = dotWalkWhen(b, d.When)
+	if d.Cond != nil {
+		m = dotWalkCond(b, d.Cond)
 		e = &dotPortedEdge{
 			id:       b.getEdgeId(),
 			from:     n,
 			to:       m,
-			fromPort: "When"}
+			fromPort: "Cond"}
 		b.edges = append(b.edges, e)
 	}
 	return &n
@@ -515,11 +515,11 @@ func GetDot(b *CFGBuilder) string {
 	//keys = append(keys, key)
 	//}
 	d := dotBuilder{0, 0, []*dotNode{}, []*dotPortedEdge{}, map[Type]*dotNode{}, map[Data]*dotNode{}, map[Kind]*dotNode{}}
-	fmt.Println(len(b.varStack), b.varStack)
-	v, ok := stackMapPeek(b.varStack, "yy")
-	if !ok {
-		panic(errors.New("var not found"))
-	}
+	//v, ok := stackMapPeek(b.fieldStack, "a")
+	//if !ok {
+	//panic(errors.New("var not found"))
+	//}
+	v := b.constructor
 	dotWalkData(&d, v)
 	g := directedPortedAttrGraphFrom(&d)
 	got, err := dot.MarshalMulti(g, "asd", "", "\t")

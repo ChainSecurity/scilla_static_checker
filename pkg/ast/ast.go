@@ -385,7 +385,7 @@ type ContractModule struct {
 	Name               *Identifier       `json:"name"`
 	Library            *Library          `json:"library"` // Optional
 	ELibs              []ExternalLibrary `json:"external_libraries"`
-	C                  *Contract         `json:"contract"`
+	Contr              *Contract         `json:"contract"`
 }
 
 func (*ContractModule) moduleNode() {}

@@ -13,11 +13,7 @@ let one64 = Uint64 1
 
 let one128 = Uint128 1
 
-let y : ByStr32 = builtin sha256hash one
-let yy : ByStr64 = builtin concat y y
-let yyy : ByStr128 = builtin concat yy yy
-let yyyy : ByStr256 = builtin concat yyy yyy
-let yyyy : ByStr512 = builtin concat yyyy yyyy
+let a : Uint64 = one64
 
 (***************************************************)
 (*             The contract definition             *)
@@ -26,17 +22,7 @@ let yyyy : ByStr512 = builtin concat yyyy yyyy
 contract Inc
 (owner : ByStr20, x : Uint64)
 
-(*field signatures       : Map Uint32 (Map ByStr20 Bool) =*)
-                           (*Emp Uint32 (Map ByStr20 Bool)*)
-(*field balances : Map ByStr20 Uint128 = Emp ByStr20 Uint128*)
-  (*let m = Emp ByStr20 Uint128 in*)
-    (*builtin put m owner one128*)
-field two64 : Uint64 = builtin add one64 one64
 field a : Uint64 = Uint64 0
-field b : ByStr32 = builtin sha256hash one
-field bb : ByStr64 = builtin concat y y
-(*field  bbbb : Bool = builtin eq one64 one128*)
-(*field allowed : Map ByStr20 (Map ByStr20 Uint128) = Emp ByStr20 (Map ByStr20 Uint128)*)
 
 transition inc ()
     one = one64;

@@ -19,11 +19,11 @@ type (
 	// Bind :
 	Bind struct {
 		BindType Type
-		When     *When
+		Cond     *Cond
 	}
 
-	// When :
-	When struct {
+	// Cond :
+	Cond struct {
 		Case string
 		Data []*Bind
 	}
