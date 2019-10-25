@@ -13,8 +13,7 @@ type Proc struct {
 	Jump    Jump
 }
 
-func (*Proc) isData()      {}
-func (x *Proc) Type() Type { return x.ProcTyp }
+func (*Proc) isData() {}
 
 type (
 	// Jump :

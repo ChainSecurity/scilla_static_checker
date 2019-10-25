@@ -201,6 +201,7 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 			fromPort: "Kind"}
 		b.edges = append(b.edges, e)
 	default:
+		//return nil
 		panic(errors.New(fmt.Sprintf("unhandeled type: %T", x)))
 	}
 
@@ -515,11 +516,11 @@ func GetDot(b *CFGBuilder) string {
 	//keys = append(keys, key)
 	//}
 	d := dotBuilder{0, 0, []*dotNode{}, []*dotPortedEdge{}, map[Type]*dotNode{}, map[Data]*dotNode{}, map[Kind]*dotNode{}}
-	//v, ok := stackMapPeek(b.fieldStack, "a")
-	//if !ok {
-	//panic(errors.New("var not found"))
-	//}
-	v := b.constructor
+	v, ok := stackMapPeek(b.fieldStack, "a")
+	if !ok {
+		panic(errors.New("var not found"))
+	}
+	//v := b.constructor
 	dotWalkData(&d, v)
 	g := directedPortedAttrGraphFrom(&d)
 	got, err := dot.MarshalMulti(g, "asd", "", "\t")

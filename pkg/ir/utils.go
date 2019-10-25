@@ -1,6 +1,8 @@
 package ir
 
-import ()
+import (
+	"fmt"
+)
 
 func setDefaultType(h map[string]Type, k string, t Type) (r Type) {
 	var set bool
@@ -27,4 +29,21 @@ func stackMapPeek(s map[string][]Data, k string) (Data, bool) {
 		return nil, false
 	}
 	return s[k][l-1], true
+}
+
+func TypeOf(d Data) Type {
+	switch x := d.(type) {
+	case *Nat:
+		return x.NatType
+	case *DataVar:
+		return x.DataType
+	default:
+		fmt.Printf("TypeOf %T\n", d)
+	}
+
+	return nil
+}
+
+func KindOf(t Type) Kind {
+	return nil
 }

@@ -22,7 +22,7 @@ let a : Uint64 = one64
 contract Inc
 (owner : ByStr20, x : Uint64)
 
-field a : Uint64 = Uint64 0
+field a : Uint64 = builtin add one64 one64
 
 transition inc ()
     one = one64;

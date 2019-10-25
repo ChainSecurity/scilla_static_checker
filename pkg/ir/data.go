@@ -9,7 +9,6 @@ type (
 	// Data :
 	Data interface {
 		isData()
-		Type() Type
 	}
 
 	// Kind :
@@ -30,11 +29,9 @@ type (
 	Builtin struct{ BuiltinType Type }
 )
 
-func (*DataVar) isData()      {}
-func (x *DataVar) Type() Type { return x.DataType }
+func (*DataVar) isData() {}
 
-func (*Builtin) isData()      {}
-func (x *Builtin) Type() Type { return x.BuiltinType }
+func (*Builtin) isData() {}
 
 func (*TypeVar) isType() {}
 func (*SetKind) isKind() {}
@@ -83,11 +80,9 @@ type (
 	}
 )
 
-func (*AppDD) isData()      {}
-func (a *AppDD) Type() Type { return a.To.Type() }
-func (*AppTD) isData()      {}
-func (a *AppTD) Type() Type { return a.To.Type() }
-func (*AppTT) isType()      {}
+func (*AppDD) isData() {}
+func (*AppTD) isData() {}
+func (*AppTT) isType() {}
 
 type (
 	// AbsDD :
@@ -109,11 +104,9 @@ type (
 	}
 )
 
-func (*AbsDD) isData()      {}
-func (a *AbsDD) Type() Type { return a.Term.Type() }
-func (*AbsTD) isData()      {}
-func (a *AbsTD) Type() Type { return a.Term.Type() }
-func (*AbsTT) isType()      {}
+func (*AbsDD) isData() {}
+func (*AbsTD) isData() {}
+func (*AbsTT) isType() {}
 
 // Scilla
 type (
@@ -201,19 +194,11 @@ type (
 	}
 )
 
-func (*Int) isData()      {}
-func (*Nat) isData()      {}
-func (*Raw) isData()      {}
-func (*Str) isData()      {}
-func (*Bnr) isData()      {}
-func (*Exc) isData()      {}
-func (*Msg) isData()      {}
-func (*Map) isData()      {}
-func (x *Int) Type() Type { return x.IntType }
-func (x *Nat) Type() Type { return x.NatType }
-func (x *Raw) Type() Type { return x.RawType }
-func (x *Str) Type() Type { return x.StrType }
-func (x *Bnr) Type() Type { return x.BnrType }
-func (x *Exc) Type() Type { return x.ExcType }
-func (x *Msg) Type() Type { return x.MsgType }
-func (x *Map) Type() Type { return x.MapType }
+func (*Int) isData() {}
+func (*Nat) isData() {}
+func (*Raw) isData() {}
+func (*Str) isData() {}
+func (*Bnr) isData() {}
+func (*Exc) isData() {}
+func (*Msg) isData() {}
+func (*Map) isData() {}

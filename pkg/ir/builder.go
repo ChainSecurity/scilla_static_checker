@@ -182,7 +182,7 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		}
 		cases := []DataCase{}
 		for _, c := range n.Cases {
-			b := builder.visitPattern(c.Pat, data.Type())
+			b := builder.visitPattern(c.Pat, TypeOf(data))
 			e := builder.visitExpression(c.Expr)
 			mec := DataCase{Bind: b, Body: e}
 			cases = append(cases, mec)
@@ -210,10 +210,10 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		}
 		op := builder.builtinOpMap[opName]
 		if opName == "concat" {
-			v0 := vars[0].Type()
+			v0 := TypeOf(vars[0])
 			switch raw0 := v0.(type) {
 			case *RawType:
-				v1 := vars[1].Type()
+				v1 := TypeOf(vars[1])
 				raw1, ok := v1.(*RawType)
 				if !ok {
 					panic(errors.New(fmt.Sprintf("Builtin concat wrong type: %T", v1)))
@@ -239,7 +239,7 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		res := AppDD{
 			Args: vars,
 			To: &AppTD{
-				Args: []Type{vars[0].Type()},
+				Args: []Type{TypeOf(vars[0])},
 				To:   op,
 			},
 		}
@@ -247,7 +247,7 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 	case *ast.LetExpression:
 		varName := n.Var.Id
 		expr := builder.visitExpression(n.Expr)
-		fmt.Println("LetExpression", varName, expr.Type())
+		fmt.Println("LetExpression", varName, TypeOf(expr))
 		stackMapPush(builder.varStack, varName, expr)
 		defer stackMapPop(builder.varStack, varName)
 		body := builder.visitExpression(n.Body)
@@ -316,18 +316,18 @@ func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
 			stackMapPush(builder.varStack, pName, &dataVar)
 		}
 
-		builder.constructor = &Proc{}
-		builder.constructor.Vars = dataVars
-		builder.constructor.Plan = make([]Unit, len(n.Params))
-		for i, f := range n.Fields {
+		//builder.constructor = &Proc{}
+		//builder.constructor.Vars = dataVars
+		//builder.constructor.Plan = make([]Unit, len(n.Params))
+		for _, f := range n.Fields {
 			n, d := builder.visitField(f)
 			stackMapPush(builder.fieldStack, n, d)
-			builder.constructor.Plan[i] = &Save{n, []Data{}, d}
+			//builder.constructor.Plan[i] = &Save{n, []Data{}, d}
 		}
 
-		for _, pName := range paramNames {
-			stackMapPop(builder.varStack, pName)
-		}
+		//for _, pName := range paramNames {
+		//stackMapPop(builder.varStack, pName)
+		//}
 
 		//for
 
@@ -335,8 +335,8 @@ func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
 		//expr := builder.visitExpression(n.Expr)
 		//builder.Field[name] = Save{}
 		//builder.visitLibEntry(n)
-	case *ast.Component:
-		builder.visitComponent(n)
+	//case *ast.Component:
+	//builder.visitComponent(n)
 	default:
 		//fmt.Printf("Unhandled type: %T\n", n)
 		// do nothing
