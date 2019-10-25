@@ -6,20 +6,19 @@ type BuiltinADTs struct {
 	star Kind
 
 	Boolean Type
-	Tt      Data
-	Ff      Data
+	TT      Data
+	FF      Data
 
-	List    Type
-	Empty   Data
-	Stack   Data
-	isEmpty Data
+	List  Type
+	Empty Data
+	Stack Data
 
 	Option Type
 	None   Data
 	Some   Data
 
-	Pair   Type
-	Pair_c Data
+	Product Type
+	Pair    Data
 }
 
 func StdLib() BuiltinADTs {
@@ -38,9 +37,6 @@ func StdLib() BuiltinADTs {
 		stack      AbsTD
 		stackAbsDD AbsDD
 
-		isEmpty      AbsTD
-		isEmptyAbsDD AbsDD
-
 		option     AbsTT
 		optionEnum EnumType
 
@@ -48,10 +44,10 @@ func StdLib() BuiltinADTs {
 		some      AbsTD
 		someAbsDD AbsDD
 
-		pair     AbsTT
+		product  AbsTT
 		pairEnum EnumType
 
-		pair_c    AbsTD
+		pair      AbsTD
 		pairAbsDD AbsDD
 	)
 
@@ -119,45 +115,6 @@ func StdLib() BuiltinADTs {
 		Data: []Data{stackAbsDD.Vars[0], stackAbsDD.Vars[1]},
 	}
 
-	isEmpty = AbsTD{
-		Vars: []TypeVar{
-			TypeVar{Kind: &star},
-		},
-		Term: &isEmptyAbsDD,
-	}
-	isEmptyAbsDD = AbsDD{
-		Vars: []*DataVar{
-			&DataVar{
-				DataType: &AppTT{
-					Args: []Type{&isEmpty.Vars[0]},
-					To:   &list,
-				},
-			},
-		},
-	}
-	isEmptyAbsDD.Term = &PickData{
-		From: isEmptyAbsDD.Vars[0],
-		With: []DataCase{
-			DataCase{
-				Bind: &Bind{
-					BindType: TypeOf(isEmptyAbsDD.Vars[0]),
-					Cond:     &Cond{Case: "empty", Data: []*Bind{}},
-				},
-				Body: &tt,
-			},
-			DataCase{
-				Bind: &Bind{
-					BindType: TypeOf(isEmptyAbsDD.Vars[0]),
-					Cond: &Cond{Case: "stack", Data: []*Bind{
-						&Bind{BindType: &isEmpty.Vars[0]},
-						&Bind{BindType: TypeOf(isEmptyAbsDD.Vars[0])},
-					}},
-				},
-				Body: &ff,
-			},
-		},
-	}
-
 	option = AbsTT{
 		Vars: []TypeVar{
 			TypeVar{Kind: &star},
@@ -201,7 +158,7 @@ func StdLib() BuiltinADTs {
 		Data: []Data{someAbsDD.Vars[0]},
 	}
 
-	pair = AbsTT{
+	product = AbsTT{
 		Vars: []TypeVar{
 			TypeVar{Kind: &star},
 			TypeVar{Kind: &star},
@@ -210,10 +167,10 @@ func StdLib() BuiltinADTs {
 	}
 
 	pairEnum = EnumType{
-		"pair": {&pair.Vars[0], &pair.Vars[1]},
+		"pair": {&product.Vars[0], &product.Vars[1]},
 	}
 
-	pair_c = AbsTD{
+	pair = AbsTD{
 		Vars: []TypeVar{
 			TypeVar{Kind: &star},
 			TypeVar{Kind: &star},
@@ -223,14 +180,14 @@ func StdLib() BuiltinADTs {
 
 	pairAbsDD = AbsDD{
 		Vars: []*DataVar{
-			&DataVar{DataType: &pair.Vars[0]},
-			&DataVar{DataType: &pair.Vars[1]},
+			&DataVar{DataType: &product.Vars[0]},
+			&DataVar{DataType: &product.Vars[1]},
 		},
 	}
 	pairAbsDD.Term = &Enum{
 		EnumType: &AppTT{
-			Args: []Type{&pair.Vars[0], &pair.Vars[1]},
-			To:   &pair,
+			Args: []Type{&product.Vars[0], &product.Vars[1]},
+			To:   &product,
 		},
 		Case: "pair",
 		Data: []Data{pairAbsDD.Vars[0], pairAbsDD.Vars[1]},
@@ -240,19 +197,18 @@ func StdLib() BuiltinADTs {
 		star: &star,
 
 		Boolean: &boolean,
-		Tt:      &tt,
-		Ff:      &ff,
+		TT:      &tt,
+		FF:      &ff,
 
-		List:    &list,
-		Empty:   &empty,
-		Stack:   &stack,
-		isEmpty: &isEmpty,
+		List:  &list,
+		Empty: &empty,
+		Stack: &stack,
 
 		Option: &option,
 		None:   &none,
 		Some:   &some,
 
-		Pair:   &pair,
-		Pair_c: &pair_c,
+		Product: &product,
+		Pair:    &pair,
 	}
 }
