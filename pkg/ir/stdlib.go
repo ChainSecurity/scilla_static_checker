@@ -140,17 +140,17 @@ func StdLib() BuiltinADTs {
 		With: []DataCase{
 			DataCase{
 				Bind: &Bind{
-					BindType: isEmptyAbsDD.Vars[0].Type(),
-					When:     &When{Case: "empty", Data: []*Bind{}},
+					BindType: TypeOf(isEmptyAbsDD.Vars[0]),
+					Cond:     &Cond{Case: "empty", Data: []*Bind{}},
 				},
 				Body: &tt,
 			},
 			DataCase{
 				Bind: &Bind{
-					BindType: isEmptyAbsDD.Vars[0].Type(),
-					When: &When{Case: "stack", Data: []*Bind{
+					BindType: TypeOf(isEmptyAbsDD.Vars[0]),
+					Cond: &Cond{Case: "stack", Data: []*Bind{
 						&Bind{BindType: &isEmpty.Vars[0]},
-						&Bind{BindType: isEmptyAbsDD.Vars[0].Type()},
+						&Bind{BindType: TypeOf(isEmptyAbsDD.Vars[0])},
 					}},
 				},
 				Body: &ff,

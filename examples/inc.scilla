@@ -8,9 +8,12 @@ scilla_version 0
 library Inc
 
 let one = Uint32 1
+let one32 = Uint32 1
 let one64 = Uint64 1
 
 let one128 = Uint128 1
+
+let a : Uint64 = one64
 
 (***************************************************)
 (*             The contract definition             *)
@@ -19,15 +22,7 @@ let one128 = Uint128 1
 contract Inc
 (owner : ByStr20, x : Uint64)
 
-(*field signatures       : Map Uint32 (Map ByStr20 Bool) =*)
-                           (*Emp Uint32 (Map ByStr20 Bool)*)
-(*field balances : Map ByStr20 Uint128 = Emp ByStr20 Uint128*)
-  (*let m = Emp ByStr20 Uint128 in*)
-    (*builtin put m owner one128*)
-field two64 : Uint64 = builtin add one64 one64
-field a : Uint64 = Uint64 0
-(*field  bbbb : Bool = builtin eq one64 one128*)
-(*field allowed : Map ByStr20 (Map ByStr20 Uint128) = Emp ByStr20 (Map ByStr20 Uint128)*)
+field a : Uint64 = builtin add one64 one64
 
 transition inc ()
     one = one64;

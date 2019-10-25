@@ -12,18 +12,17 @@ type Enum struct {
 	Data     []Data
 }
 
-func (*Enum) isData()      {}
-func (x *Enum) Type() Type { return x.EnumType }
+func (*Enum) isData() {}
 
 type (
 	// Bind :
 	Bind struct {
 		BindType Type
-		When     *When
+		Cond     *Cond
 	}
 
-	// When :
-	When struct {
+	// Cond :
+	Cond struct {
 		Case string
 		Data []*Bind
 	}
@@ -43,5 +42,4 @@ type (
 	}
 )
 
-func (*PickData) isData()       {}
-func (pd *PickData) Type() Type { return pd.With[0].Body.Type() }
+func (*PickData) isData() {}

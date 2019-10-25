@@ -240,7 +240,7 @@ func Walk(v Visitor, node AstNode) {
 		for _, x := range n.ELibs {
 			Walk(v, x)
 		}
-		Walk(v, n.C)
+		Walk(v, n.Contr)
 	case *Component:
 		Walk(v, n.Name)
 		for _, x := range n.Params {
