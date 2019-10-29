@@ -87,7 +87,7 @@ func (*AppTT) isType() {}
 type (
 	// AbsDD :
 	AbsDD struct {
-		Vars []*DataVar
+		Vars []DataVar
 		Term Data
 	}
 

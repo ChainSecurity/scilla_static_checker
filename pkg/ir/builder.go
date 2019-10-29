@@ -29,12 +29,12 @@ func (builder *CFGBuilder) visitCtr(ctr *ast.CtrDef) (string, []Type) {
 	return name, types
 }
 
-func (builder *CFGBuilder) visitPattern(p ast.Pattern, t Type) *Bind {
+func (builder *CFGBuilder) visitPattern(p ast.Pattern, t Type) Bind {
 	switch pat := p.(type) {
 	case *ast.WildcardPattern:
-		return &Bind{BindType: t}
+		return Bind{BindType: t}
 	case *ast.BinderPattern:
-		return &Bind{BindType: t}
+		return Bind{BindType: t}
 	case *ast.ConstructorPattern:
 		var typeList []Type
 		switch typ := t.(type) {
@@ -46,11 +46,11 @@ func (builder *CFGBuilder) visitPattern(p ast.Pattern, t Type) *Bind {
 		if len(typeList) != len(pat.Pats) {
 			panic(errors.New(fmt.Sprintf("Constructor pattern argument length mistmatch: %s", pat.ConstrName)))
 		}
-		whenData := []*Bind{}
+		whenData := []Bind{}
 		for i, subp := range pat.Pats {
 			whenData = append(whenData, builder.visitPattern(subp, typeList[i]))
 		}
-		return &Bind{
+		return Bind{
 			BindType: t,
 			Cond: &Cond{
 				Case: pat.ConstrName,
@@ -172,7 +172,7 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 
 		rhs := builder.visitExpression(n.RhsExpr)
 
-		return &AbsDD{Vars: []*DataVar{&dataVar}, Term: rhs}
+		return &AbsDD{Vars: []DataVar{dataVar}, Term: rhs}
 	case *ast.MatchExpression:
 		lhs := n.Lhs.Id
 
@@ -220,11 +220,11 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 				}
 				resType := "ByStr" + strconv.Itoa(raw0.Size+raw1.Size)
 				op = &AbsDD{
-					Vars: []*DataVar{
-						&DataVar{
+					Vars: []DataVar{
+						DataVar{
 							DataType: v0,
 						},
-						&DataVar{
+						DataVar{
 							DataType: v1,
 						},
 					},
@@ -306,23 +306,23 @@ func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
 		fmt.Println("Contract", name)
 		paramNames := make([]string, len(n.Params))
 		params := map[string]Type{}
-		dataVars := make([]*DataVar, len(n.Params))
+		dataVars := make([]DataVar, len(n.Params))
 		for i, p := range n.Params {
 			pName, pType := builder.visitParams(p)
 			params[pName] = pType
 			paramNames[i] = pName
 			dataVar := DataVar{pType}
-			dataVars[i] = &dataVar
+			dataVars[i] = dataVar
 			stackMapPush(builder.varStack, pName, &dataVar)
 		}
 
-		//builder.constructor = &Proc{}
-		//builder.constructor.Vars = dataVars
-		//builder.constructor.Plan = make([]Unit, len(n.Params))
-		for _, f := range n.Fields {
+		builder.constructor = &Proc{}
+		builder.constructor.Vars = dataVars
+		builder.constructor.Plan = make([]Unit, len(n.Params))
+		for i, f := range n.Fields {
 			n, d := builder.visitField(f)
 			stackMapPush(builder.fieldStack, n, d)
-			//builder.constructor.Plan[i] = &Save{n, []Data{}, d}
+			builder.constructor.Plan[i] = &Save{n, []Data{}, d}
 		}
 
 		//for _, pName := range paramNames {
@@ -335,8 +335,12 @@ func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
 		//expr := builder.visitExpression(n.Expr)
 		//builder.Field[name] = Save{}
 		//builder.visitLibEntry(n)
-	//case *ast.Component:
-	//builder.visitComponent(n)
+	case *ast.Component:
+		builder.visitComponent(n)
+	case *ast.Identifier:
+		//do nothing
+	case *ast.Location:
+		//do nothing
 	default:
 		//fmt.Printf("Unhandled type: %T\n", n)
 		// do nothing
@@ -367,8 +371,8 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 			Term: &intAbsDD,
 		}
 		intAbsDD = AbsDD{
-			Vars: []*DataVar{
-				&DataVar{DataType: &intAbsTD.Vars[0]},
+			Vars: []DataVar{
+				DataVar{DataType: &intAbsTD.Vars[0]},
 			},
 			Term: &Builtin{
 				&AppTT{
@@ -388,8 +392,8 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 			Term: &uintAbsDD,
 		}
 		uintAbsDD = AbsDD{
-			Vars: []*DataVar{
-				&DataVar{DataType: &uintAbsTD.Vars[0]},
+			Vars: []DataVar{
+				DataVar{DataType: &uintAbsTD.Vars[0]},
 			},
 			Term: &Builtin{
 				&AppTT{
@@ -425,9 +429,9 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 			Term: &bAbsDD,
 		}
 		bAbsDD = AbsDD{
-			Vars: []*DataVar{
-				&DataVar{DataType: &bAbsTD.Vars[0]},
-				&DataVar{DataType: &bAbsTD.Vars[0]},
+			Vars: []DataVar{
+				DataVar{DataType: &bAbsTD.Vars[0]},
+				DataVar{DataType: &bAbsTD.Vars[0]},
 			},
 			Term: &Builtin{&bAbsTD.Vars[0]},
 		}
@@ -443,9 +447,9 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 			Term: &bAbsDD,
 		}
 		bAbsDD = AbsDD{
-			Vars: []*DataVar{
-				&DataVar{DataType: &bAbsTD.Vars[0]},
-				&DataVar{DataType: &bAbsTD.Vars[0]},
+			Vars: []DataVar{
+				DataVar{DataType: &bAbsTD.Vars[0]},
+				DataVar{DataType: &bAbsTD.Vars[0]},
 			},
 			Term: &Builtin{stdLib.Boolean},
 		}
@@ -462,9 +466,9 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &powAbsDD,
 	}
 	powAbsDD = AbsDD{
-		Vars: []*DataVar{
-			&DataVar{DataType: &powAbsTD.Vars[0]},
-			&DataVar{DataType: &powAbsTD.Vars[1]},
+		Vars: []DataVar{
+			DataVar{DataType: &powAbsTD.Vars[0]},
+			DataVar{DataType: &powAbsTD.Vars[1]},
 		},
 		Term: &Builtin{&powAbsTD.Vars[0]},
 	}
@@ -472,11 +476,11 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 
 	// builtin concat
 	strConcatOp := AbsDD{
-		Vars: []*DataVar{
-			&DataVar{
+		Vars: []DataVar{
+			DataVar{
 				DataType: builder.typeMap["String"],
 			},
-			&DataVar{
+			DataVar{
 				DataType: builder.typeMap["String"],
 			},
 		},
@@ -486,14 +490,14 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 
 	//builtin substr
 	strSubstrOp := AbsDD{
-		Vars: []*DataVar{
-			&DataVar{
+		Vars: []DataVar{
+			DataVar{
 				DataType: builder.typeMap["String"],
 			},
-			&DataVar{
+			DataVar{
 				DataType: builder.natWidthTypeMap[32],
 			},
-			&DataVar{
+			DataVar{
 				DataType: builder.natWidthTypeMap[32],
 			},
 		},
@@ -510,8 +514,8 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &toStrAbsDD,
 	}
 	toStrAbsDD = AbsDD{
-		Vars: []*DataVar{
-			&DataVar{DataType: &toStrAbsTD.Vars[0]},
+		Vars: []DataVar{
+			DataVar{DataType: &toStrAbsTD.Vars[0]},
 		},
 		Term: &Builtin{builder.typeMap["String"]},
 	}
@@ -520,8 +524,8 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	//builtin strlen
 
 	strlenOp := AbsDD{
-		Vars: []*DataVar{
-			&DataVar{
+		Vars: []DataVar{
+			DataVar{
 				DataType: builder.typeMap["String"],
 			},
 		},
@@ -538,8 +542,8 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &shaAbsDD,
 	}
 	shaAbsDD = AbsDD{
-		Vars: []*DataVar{
-			&DataVar{DataType: &shaAbsTD.Vars[0]},
+		Vars: []DataVar{
+			DataVar{DataType: &shaAbsTD.Vars[0]},
 		},
 		Term: &Builtin{
 			BuiltinType: builder.typeMap["ByStr32"],
@@ -556,8 +560,8 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &keccakAbsDD,
 	}
 	keccakAbsDD = AbsDD{
-		Vars: []*DataVar{
-			&DataVar{DataType: &keccakAbsTD.Vars[0]},
+		Vars: []DataVar{
+			DataVar{DataType: &keccakAbsTD.Vars[0]},
 		},
 		Term: &Builtin{
 			BuiltinType: builder.typeMap["ByStr32"],
@@ -574,8 +578,8 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &ripemdAbsDD,
 	}
 	ripemdAbsDD = AbsDD{
-		Vars: []*DataVar{
-			&DataVar{DataType: &ripemdAbsTD.Vars[0]},
+		Vars: []DataVar{
+			DataVar{DataType: &ripemdAbsTD.Vars[0]},
 		},
 		Term: &Builtin{
 			BuiltinType: builder.typeMap["ByStr20"],
@@ -592,8 +596,8 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &toBystrAbsDD,
 	}
 	toBystrAbsDD = AbsDD{
-		Vars: []*DataVar{
-			&DataVar{DataType: &toBystrAbsTD.Vars[0]},
+		Vars: []DataVar{
+			DataVar{DataType: &toBystrAbsTD.Vars[0]},
 		},
 		Term: &Builtin{
 			BuiltinType: builder.typeMap["ByStr"],
@@ -610,8 +614,8 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &touint256AbsDD,
 	}
 	touint256AbsDD = AbsDD{
-		Vars: []*DataVar{
-			&DataVar{DataType: &touint256AbsTD.Vars[0]},
+		Vars: []DataVar{
+			DataVar{DataType: &touint256AbsTD.Vars[0]},
 		},
 		Term: &Builtin{builder.natWidthTypeMap[256]},
 	}
@@ -619,14 +623,14 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 
 	// schnorr_verify
 	schnorrVerifyAbsDD := AbsDD{
-		Vars: []*DataVar{
-			&DataVar{
+		Vars: []DataVar{
+			DataVar{
 				DataType: builder.typeMap["ByStr33"],
 			},
-			&DataVar{
+			DataVar{
 				DataType: builder.typeMap["ByStr"],
 			},
-			&DataVar{
+			DataVar{
 				DataType: builder.typeMap["ByStr64"],
 			},
 		},
@@ -636,14 +640,14 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 
 	// ecdsa_verify
 	ecdsaVerifyAbsDD := AbsDD{
-		Vars: []*DataVar{
-			&DataVar{
+		Vars: []DataVar{
+			DataVar{
 				DataType: builder.typeMap["ByStr33"],
 			},
-			&DataVar{
+			DataVar{
 				DataType: builder.typeMap["ByStr"],
 			},
-			&DataVar{
+			DataVar{
 				DataType: builder.typeMap["ByStr64"],
 			},
 		},
@@ -653,11 +657,11 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 
 	// bech32_to_bystr20
 	bech32ToBystr20AbsDD := AbsDD{
-		Vars: []*DataVar{
-			&DataVar{
+		Vars: []DataVar{
+			DataVar{
 				DataType: builder.typeMap["String"],
 			},
-			&DataVar{
+			DataVar{
 				DataType: builder.typeMap["String"],
 			},
 		},
@@ -672,11 +676,11 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 
 	// bystr20_to_bech32
 	bystr20ToBech32AbsDD := AbsDD{
-		Vars: []*DataVar{
-			&DataVar{
+		Vars: []DataVar{
+			DataVar{
 				DataType: builder.typeMap["String"],
 			},
-			&DataVar{
+			DataVar{
 				DataType: builder.typeMap["ByStr20"],
 			},
 		},
@@ -702,17 +706,17 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &putAbsDD,
 	}
 	putAbsDD = AbsDD{
-		Vars: []*DataVar{
-			&DataVar{
+		Vars: []DataVar{
+			DataVar{
 				&MapType{
 					&putAbsTD.Vars[0],
 					&putAbsTD.Vars[1],
 				},
 			},
-			&DataVar{
+			DataVar{
 				&putAbsTD.Vars[0],
 			},
-			&DataVar{
+			DataVar{
 				&putAbsTD.Vars[1],
 			},
 		},
@@ -730,14 +734,14 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &getAbsDD,
 	}
 	getAbsDD = AbsDD{
-		Vars: []*DataVar{
-			&DataVar{
+		Vars: []DataVar{
+			DataVar{
 				&MapType{
 					&getAbsTD.Vars[0],
 					&getAbsTD.Vars[1],
 				},
 			},
-			&DataVar{
+			DataVar{
 				&getAbsTD.Vars[0],
 			},
 		},
@@ -760,14 +764,14 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &containsAbsDD,
 	}
 	containsAbsDD = AbsDD{
-		Vars: []*DataVar{
-			&DataVar{
+		Vars: []DataVar{
+			DataVar{
 				&MapType{
 					&containsAbsTD.Vars[0],
 					&containsAbsTD.Vars[1],
 				},
 			},
-			&DataVar{
+			DataVar{
 				&containsAbsTD.Vars[0],
 			},
 		},
@@ -785,14 +789,14 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &removeAbsDD,
 	}
 	removeAbsDD = AbsDD{
-		Vars: []*DataVar{
-			&DataVar{
+		Vars: []DataVar{
+			DataVar{
 				&MapType{
 					&removeAbsTD.Vars[0],
 					&removeAbsTD.Vars[1],
 				},
 			},
-			&DataVar{
+			DataVar{
 				&removeAbsTD.Vars[0],
 			},
 		},
@@ -810,8 +814,8 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &sizeAbsDD,
 	}
 	sizeAbsDD = AbsDD{
-		Vars: []*DataVar{
-			&DataVar{
+		Vars: []DataVar{
+			DataVar{
 				&MapType{
 					&sizeAbsTD.Vars[0],
 					&sizeAbsTD.Vars[1],
@@ -824,11 +828,11 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 
 	// builtin blt
 	bltAbsDD := AbsDD{
-		Vars: []*DataVar{
-			&DataVar{
+		Vars: []DataVar{
+			DataVar{
 				DataType: builder.typeMap["BNum"],
 			},
-			&DataVar{
+			DataVar{
 				DataType: builder.typeMap["BNum"],
 			},
 		},
@@ -845,11 +849,11 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &baddAbsDD,
 	}
 	baddAbsDD = AbsDD{
-		Vars: []*DataVar{
-			&DataVar{
+		Vars: []DataVar{
+			DataVar{
 				DataType: &baddAbsTD.Vars[0],
 			},
-			&DataVar{
+			DataVar{
 				DataType: builder.typeMap["BNum"],
 			},
 		},
@@ -859,11 +863,11 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 
 	// builtin bsub
 	bsubAbsDD := AbsDD{
-		Vars: []*DataVar{
-			&DataVar{
+		Vars: []DataVar{
+			DataVar{
 				DataType: builder.typeMap["BNum"],
 			},
-			&DataVar{
+			DataVar{
 				DataType: builder.typeMap["BNum"],
 			},
 		},

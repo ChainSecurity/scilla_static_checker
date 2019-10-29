@@ -24,7 +24,7 @@ type (
 	// Cond :
 	Cond struct {
 		Case string
-		Data []*Bind
+		Data []Bind
 	}
 )
 
@@ -37,7 +37,7 @@ type (
 
 	// DataCase :
 	DataCase struct {
-		Bind *Bind
+		Bind Bind
 		Body Data
 	}
 )

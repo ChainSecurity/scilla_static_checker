@@ -1,16 +1,17 @@
 package ir
 
 // ProcType :
-type ProcType struct{ Vars []*DataVar }
+type ProcType struct {
+	Vars []DataVar
+}
 
 func (*ProcType) isType() {}
 
 // Proc :
 type Proc struct {
-	Vars    []Type
-	ProcTyp *ProcType
-	Plan    []Unit
-	Jump    Jump
+	Vars []DataVar
+	Plan []Unit
+	Jump Jump
 }
 
 func (*Proc) isData() {}

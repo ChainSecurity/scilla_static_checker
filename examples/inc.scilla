@@ -23,6 +23,7 @@ contract Inc
 (owner : ByStr20, x : Uint64)
 
 field a : Uint64 = builtin add one64 one64
+field b : Uint64 = builtin add one64 one64
 
 transition inc ()
     one = one64;

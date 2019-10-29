@@ -74,6 +74,57 @@ type dotBuilder struct {
 	kindCache   map[Kind]*dotNode
 }
 
+func dotWalkUnit(b *dotBuilder, u Unit) graph.Node {
+	switch x := u.(type) {
+	//case *EnumType:
+	//case *Load:
+	case *Save:
+		slot_field := fmt.Sprintf("Slot: %s", x.Slot)
+		n := &dotNode{
+			b.getNodeId(),
+			[]string{slot_field, "Path", "Data"},
+			"Save",
+		}
+		b.nodes = append(b.nodes, n)
+		for _, a := range x.Path {
+			e := dotPortedEdge{
+				id:       b.getEdgeId(),
+				from:     n,
+				to:       dotWalkData(b, a),
+				fromPort: "Path"}
+			b.edges = append(b.edges, &e)
+
+		}
+		e := &dotPortedEdge{
+			id:       b.getEdgeId(),
+			from:     n,
+			to:       dotWalkData(b, x.Data),
+			fromPort: "Body"}
+		b.edges = append(b.edges, e)
+		return n
+		//Path []Data
+		//Data Data
+	//case *Emit:
+	//case *Send:
+	//case *Have:
+	//case *AbsTD:
+	//case *AbsDD:
+	//case *AppDD:
+	//case *AppTD:
+	//case *Int:
+	//case *Nat:
+	//case *Raw:
+	//case *Str:
+	//case *Bnr:
+	//case *Exc:
+	//case *Msg:
+	//case *Map:
+	default:
+		panic(errors.New(fmt.Sprintf("unhandeled type: %T", x)))
+	}
+	//return nil
+}
+
 func dotWalkType(b *dotBuilder, t Type) graph.Node {
 
 	n, ok := b.typeCache[t]
@@ -91,6 +142,7 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 			keys,
 			"EnumType",
 		}
+		b.nodes = append(b.nodes, n)
 		for _, k := range keys {
 			for _, inner_t := range (*x)[k] {
 				v := dotWalkType(b, inner_t)
@@ -108,18 +160,21 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 			[]string{fmt.Sprintf("Size: %d", x.Size)},
 			"IntType",
 		}
+		b.nodes = append(b.nodes, n)
 	case *RawType:
 		n = &dotNode{
 			b.getNodeId(),
 			[]string{fmt.Sprintf("Size: %d", x.Size)},
 			"RawType",
 		}
+		b.nodes = append(b.nodes, n)
 	case *NatType:
 		n = &dotNode{
 			b.getNodeId(),
 			[]string{fmt.Sprintf("Size: %d", x.Size)},
 			"NatType",
 		}
+		b.nodes = append(b.nodes, n)
 		b.typeCache[t] = n
 	case *MapType:
 		n = &dotNode{
@@ -127,6 +182,7 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 			[]string{"KeyType", "ValType"},
 			"MapType",
 		}
+		b.nodes = append(b.nodes, n)
 		kNode := dotWalkType(b, x.KeyType)
 		ke := dotPortedEdge{
 			id:       b.getEdgeId(),
@@ -232,7 +288,7 @@ func dotWalkCond(b *dotBuilder, w *Cond) graph.Node {
 	}
 	b.nodes = append(b.nodes, &n)
 	for _, v := range w.Data {
-		vNode := dotWalkBind(b, v)
+		vNode := dotWalkBind(b, &v)
 		e := dotPortedEdge{
 			id:       b.getEdgeId(),
 			from:     n,
@@ -287,7 +343,7 @@ func dotWalkDataCase(b *dotBuilder, d *DataCase) graph.Node {
 	e = &dotPortedEdge{
 		id:       b.getEdgeId(),
 		from:     n,
-		to:       dotWalkBind(b, d.Bind),
+		to:       dotWalkBind(b, &d.Bind),
 		fromPort: "Bind"}
 	b.edges = append(b.edges, e)
 	return &n
@@ -412,7 +468,7 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 			e := dotPortedEdge{
 				id:       b.getEdgeId(),
 				from:     n,
-				to:       dotWalkData(b, v),
+				to:       dotWalkData(b, &v),
 				fromPort: "Vars"}
 			b.edges = append(b.edges, &e)
 
@@ -485,6 +541,22 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 			fromPort: "BuiltinType"}
 		b.edges = append(b.edges, &e)
 		return &n
+
+	case *Proc:
+		n := dotNode{
+			b.getNodeId(),
+			[]string{"1"},
+			"Proc",
+		}
+		b.nodes = append(b.nodes, &n)
+		uNode := dotWalkUnit(b, x.Plan[0])
+		e := dotPortedEdge{
+			id:       b.getEdgeId(),
+			from:     n,
+			to:       uNode,
+			fromPort: "1"}
+		b.edges = append(b.edges, &e)
+		return &n
 	default:
 		panic(errors.New(fmt.Sprintf("unhandeled type: %T", x)))
 	}
@@ -516,11 +588,11 @@ func GetDot(b *CFGBuilder) string {
 	//keys = append(keys, key)
 	//}
 	d := dotBuilder{0, 0, []*dotNode{}, []*dotPortedEdge{}, map[Type]*dotNode{}, map[Data]*dotNode{}, map[Kind]*dotNode{}}
-	v, ok := stackMapPeek(b.fieldStack, "a")
-	if !ok {
-		panic(errors.New("var not found"))
-	}
-	//v := b.constructor
+	//v, ok := stackMapPeek(b.fieldStack, "a")
+	//if !ok {
+	//panic(errors.New("var not found"))
+	//}
+	v := b.constructor
 	dotWalkData(&d, v)
 	g := directedPortedAttrGraphFrom(&d)
 	got, err := dot.MarshalMulti(g, "asd", "", "\t")
