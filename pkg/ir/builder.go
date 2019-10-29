@@ -17,7 +17,7 @@ type CFGBuilder struct {
 	typeMap         map[string]Type
 	varStack        map[string][]Data
 	fieldStack      map[string][]Data
-	Constructor     *Proc
+	constructor     *Proc
 }
 
 func (builder *CFGBuilder) visitCtr(ctr *ast.CtrDef) (string, []Type) {
@@ -45,7 +45,7 @@ func (builder *CFGBuilder) visitPattern(p ast.Pattern, t Type) Bind {
 			panic(errors.New(fmt.Sprintf("Not constructor pattern type: %T", t)))
 		}
 		if len(typeList) != len(pat.Pats) {
-			panic(errors.New(fmt.Sprintf("Constructor pattern argument length mistmatch: %s", pat.ConstrName)))
+			panic(errors.New(fmt.Sprintf("constructor pattern argument length mistmatch: %s", pat.ConstrName)))
 		}
 		whenData := []Bind{}
 		for i, subp := range pat.Pats {
@@ -324,13 +324,13 @@ func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
 			stackMapPush(builder.varStack, pName, &dataVars[i])
 		}
 
-		builder.Constructor = &Proc{}
-		builder.Constructor.Vars = dataVars
-		builder.Constructor.Plan = make([]Unit, len(n.Params))
+		builder.constructor = &Proc{}
+		builder.constructor.Vars = dataVars
+		builder.constructor.Plan = make([]Unit, len(n.Params))
 		for i, f := range n.Fields {
 			n, d := builder.visitField(f)
 			stackMapPush(builder.fieldStack, n, d)
-			builder.Constructor.Plan[i] = &Save{n, []Data{}, d}
+			builder.constructor.Plan[i] = &Save{n, []Data{}, d}
 		}
 
 		//for _, pName := range paramNames {
@@ -894,7 +894,7 @@ func BuildCFG(n ast.AstNode) *CFGBuilder {
 		natWidthTypeMap: map[int]*NatType{},
 		varStack:        map[string][]Data{},
 		fieldStack:      map[string][]Data{},
-		Constructor:     nil,
+		constructor:     nil,
 	}
 	builder.initPrimitiveTypes()
 	ast.Walk(&builder, n)

@@ -357,7 +357,7 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 		n = &dotNode{
 			b.getNodeId(),
 			[]string{"DataType"},
-			fmt.Sprintf("DataVar: %p", d),
+			"DataVar",
 		}
 		b.nodes = append(b.nodes, n)
 		tNode := dotWalkType(b, x.DataType)
@@ -604,7 +604,7 @@ func GetDot(b *CFGBuilder) string {
 	//if !ok {
 	//panic(errors.New("var not found"))
 	//}
-	v := b.Constructor
+	v := b.constructor
 	dotWalkData(&d, v)
 	g := directedPortedAttrGraphFrom(&d)
 	got, err := dot.MarshalMulti(g, "asd", "", "\t")
