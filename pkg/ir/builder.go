@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ast"
 	"strconv"
+	"strings"
 )
 
 type CFGBuilder struct {
@@ -16,7 +17,7 @@ type CFGBuilder struct {
 	typeMap         map[string]Type
 	varStack        map[string][]Data
 	fieldStack      map[string][]Data
-	constructor     *Proc
+	Constructor     *Proc
 }
 
 func (builder *CFGBuilder) visitCtr(ctr *ast.CtrDef) (string, []Type) {
@@ -108,10 +109,20 @@ func (builder *CFGBuilder) visitASTType(e ast.ASTType) Type {
 	switch n := e.(type) {
 	case *ast.PrimType:
 		t, ok := builder.typeMap[n.Name]
-		if !ok {
-			panic(errors.New(fmt.Sprintf("PrimType not found : %s", n.Name)))
+		if ok {
+			return t
 		}
-		return t
+		if strings.HasPrefix(n.Name, "ByStr") {
+			width, err := strconv.Atoi(n.Name[5:])
+			if err != nil {
+				panic(err)
+			}
+			t = &RawType{width}
+			builder.typeMap[n.Name] = t
+			return t
+		}
+
+		panic(errors.New(fmt.Sprintf("PrimType not found : %s", n.Name)))
 	//case *ast.MapType:
 	//fmt.Printf("%T", n)
 	case *ast.ADT:
@@ -294,7 +305,6 @@ func (builder *CFGBuilder) visitField(f *ast.Field) (string, Data) {
 }
 
 func (builder *CFGBuilder) visitComponent(comp *ast.Component) {
-	fmt.Println(comp.Name.Id)
 }
 
 func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
@@ -302,8 +312,7 @@ func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
 	case ast.LibEntry:
 		builder.visitLibEntry(n)
 	case *ast.Contract:
-		name := n.Name.Id
-		fmt.Println("Contract", name)
+		//name := n.Name.Id
 		paramNames := make([]string, len(n.Params))
 		params := map[string]Type{}
 		dataVars := make([]DataVar, len(n.Params))
@@ -311,18 +320,17 @@ func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
 			pName, pType := builder.visitParams(p)
 			params[pName] = pType
 			paramNames[i] = pName
-			dataVar := DataVar{pType}
-			dataVars[i] = dataVar
-			stackMapPush(builder.varStack, pName, &dataVar)
+			dataVars[i] = DataVar{pType}
+			stackMapPush(builder.varStack, pName, &dataVars[i])
 		}
 
-		builder.constructor = &Proc{}
-		builder.constructor.Vars = dataVars
-		builder.constructor.Plan = make([]Unit, len(n.Params))
+		builder.Constructor = &Proc{}
+		builder.Constructor.Vars = dataVars
+		builder.Constructor.Plan = make([]Unit, len(n.Params))
 		for i, f := range n.Fields {
 			n, d := builder.visitField(f)
 			stackMapPush(builder.fieldStack, n, d)
-			builder.constructor.Plan[i] = &Save{n, []Data{}, d}
+			builder.Constructor.Plan[i] = &Save{n, []Data{}, d}
 		}
 
 		//for _, pName := range paramNames {
@@ -886,7 +894,7 @@ func BuildCFG(n ast.AstNode) *CFGBuilder {
 		natWidthTypeMap: map[int]*NatType{},
 		varStack:        map[string][]Data{},
 		fieldStack:      map[string][]Data{},
-		constructor:     nil,
+		Constructor:     nil,
 	}
 	builder.initPrimitiveTypes()
 	ast.Walk(&builder, n)

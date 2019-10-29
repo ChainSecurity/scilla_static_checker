@@ -192,7 +192,7 @@
           "identifier": "x",
           "node_type": "Identifier"
         },
-        "parameter_type": { "node_type": "PrimType", "name": "Uint64" },
+        "parameter_type": { "node_type": "PrimType", "name": "ByStr3" },
         "node_type": "Parameter"
       }
     ],
@@ -263,7 +263,7 @@
           "identifier": "b",
           "node_type": "Identifier"
         },
-        "field_type": { "node_type": "PrimType", "name": "Uint64" },
+        "field_type": { "node_type": "PrimType", "name": "ByStr3" },
         "expression": {
           "loc": {
             "source_file": "../scilla_static/examples/inc.scilla",
@@ -271,38 +271,16 @@
             "column": 20,
             "node_type": "Location"
           },
-          "node_type": "BuiltinExpression",
-          "arguments": [
-            {
-              "loc": {
-                "source_file": "../scilla_static/examples/inc.scilla",
-                "line": 26,
-                "column": 32,
-                "node_type": "Location"
-              },
-              "identifier": "one64",
-              "node_type": "Identifier"
-            },
-            {
-              "loc": {
-                "source_file": "../scilla_static/examples/inc.scilla",
-                "line": 26,
-                "column": 38,
-                "node_type": "Location"
-              },
-              "identifier": "one64",
-              "node_type": "Identifier"
-            }
-          ],
-          "builtin_function": {
+          "node_type": "VarExpression",
+          "variable": {
             "loc": {
               "source_file": "../scilla_static/examples/inc.scilla",
               "line": 26,
-              "column": 28,
+              "column": 20,
               "node_type": "Location"
             },
-            "builtin_operator": "add",
-            "node_type": "Builtin"
+            "identifier": "x",
+            "node_type": "Identifier"
           }
         },
         "node_type": "Field"

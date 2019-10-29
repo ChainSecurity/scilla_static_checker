@@ -25,6 +25,7 @@ func main() {
 
 	dotPath := os.Args[2]
 	b := ir.BuildCFG(cm)
+
 	dot := ir.GetDot(b)
 	f, err := os.Create(dotPath)
 	if err != nil {

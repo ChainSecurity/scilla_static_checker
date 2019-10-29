@@ -99,7 +99,7 @@ func dotWalkUnit(b *dotBuilder, u Unit) graph.Node {
 			id:       b.getEdgeId(),
 			from:     n,
 			to:       dotWalkData(b, x.Data),
-			fromPort: "Body"}
+			fromPort: "Data"}
 		b.edges = append(b.edges, e)
 		return n
 		//Path []Data
@@ -175,7 +175,6 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 			"NatType",
 		}
 		b.nodes = append(b.nodes, n)
-		b.typeCache[t] = n
 	case *MapType:
 		n = &dotNode{
 			b.getNodeId(),
@@ -197,7 +196,6 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 			to:       vNode,
 			fromPort: "ValType"}
 		b.edges = append(b.edges, &ve)
-		b.typeCache[t] = n
 	case *AbsTT:
 		n = &dotNode{
 			b.getNodeId(),
@@ -350,14 +348,18 @@ func dotWalkDataCase(b *dotBuilder, d *DataCase) graph.Node {
 }
 
 func dotWalkData(b *dotBuilder, d Data) graph.Node {
+	n, ok := b.dataCache[d]
+	if ok {
+		return n
+	}
 	switch x := d.(type) {
 	case *DataVar:
-		n := dotNode{
+		n = &dotNode{
 			b.getNodeId(),
 			[]string{"DataType"},
-			"DataVar",
+			fmt.Sprintf("DataVar: %p", d),
 		}
-		b.nodes = append(b.nodes, &n)
+		b.nodes = append(b.nodes, n)
 		tNode := dotWalkType(b, x.DataType)
 		e := dotPortedEdge{
 			id:       b.getEdgeId(),
@@ -365,14 +367,13 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 			to:       tNode,
 			fromPort: "DataType"}
 		b.edges = append(b.edges, &e)
-		return &n
 	case *PickData:
-		n := dotNode{
+		n = &dotNode{
 			b.getNodeId(),
 			[]string{"From", "With"},
 			"PickData",
 		}
-		b.nodes = append(b.nodes, &n)
+		b.nodes = append(b.nodes, n)
 		for _, dc := range x.With {
 			e := dotPortedEdge{
 				id:       b.getEdgeId(),
@@ -388,14 +389,13 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 			to:       dotWalkData(b, x.From),
 			fromPort: "From"}
 		b.edges = append(b.edges, &e)
-		return &n
 	case *Int:
-		n := dotNode{
+		n = &dotNode{
 			b.getNodeId(),
 			[]string{"IntType", fmt.Sprintf("Data: %s", x.Data)},
 			"Int",
 		}
-		b.nodes = append(b.nodes, &n)
+		b.nodes = append(b.nodes, n)
 		tNode := dotWalkType(b, x.IntType)
 		e := dotPortedEdge{
 			id:       b.getEdgeId(),
@@ -403,14 +403,13 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 			to:       tNode,
 			fromPort: "IntType"}
 		b.edges = append(b.edges, &e)
-		return &n
 	case *Nat:
-		n := dotNode{
+		n = &dotNode{
 			b.getNodeId(),
 			[]string{"NatType", fmt.Sprintf("Data: %s", x.Data)},
 			"Nat",
 		}
-		b.nodes = append(b.nodes, &n)
+		b.nodes = append(b.nodes, n)
 		tNode := dotWalkType(b, x.NatType)
 		e := dotPortedEdge{
 			id:       b.getEdgeId(),
@@ -418,14 +417,13 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 			to:       tNode,
 			fromPort: "NatType"}
 		b.edges = append(b.edges, &e)
-		return &n
 	case *Map:
-		n := dotNode{
+		n = &dotNode{
 			b.getNodeId(),
 			[]string{"MapType", fmt.Sprintf("Data: %s", x.Data)},
 			"Map",
 		}
-		b.nodes = append(b.nodes, &n)
+		b.nodes = append(b.nodes, n)
 		tNode := dotWalkType(b, x.MapType)
 		e := dotPortedEdge{
 			id:       b.getEdgeId(),
@@ -433,14 +431,13 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 			to:       tNode,
 			fromPort: "MapType"}
 		b.edges = append(b.edges, &e)
-		return &n
 	case *AbsTD:
-		n := dotNode{
+		n = &dotNode{
 			b.getNodeId(),
 			[]string{"Vars", "Term"},
 			"AbsTD",
 		}
-		b.nodes = append(b.nodes, &n)
+		b.nodes = append(b.nodes, n)
 		for _, a := range x.Vars {
 			e := dotPortedEdge{
 				id:       b.getEdgeId(),
@@ -456,14 +453,13 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 			to:       dotWalkData(b, x.Term),
 			fromPort: "Term"}
 		b.edges = append(b.edges, &e)
-		return &n
 	case *AbsDD:
-		n := dotNode{
+		n = &dotNode{
 			b.getNodeId(),
 			[]string{"Vars", "Term"},
 			"AbsDD",
 		}
-		b.nodes = append(b.nodes, &n)
+		b.nodes = append(b.nodes, n)
 		for _, v := range x.Vars {
 			e := dotPortedEdge{
 				id:       b.getEdgeId(),
@@ -479,14 +475,13 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 			to:       dotWalkData(b, x.Term),
 			fromPort: "Term"}
 		b.edges = append(b.edges, &e)
-		return &n
 	case *AppTD:
-		n := dotNode{
+		n = &dotNode{
 			b.getNodeId(),
 			[]string{"Args", "To"},
 			"AppTD",
 		}
-		b.nodes = append(b.nodes, &n)
+		b.nodes = append(b.nodes, n)
 		for _, a := range x.Args {
 			e := dotPortedEdge{
 				id:       b.getEdgeId(),
@@ -502,14 +497,13 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 			to:       dotWalkData(b, x.To),
 			fromPort: "To"}
 		b.edges = append(b.edges, &e)
-		return &n
 	case *AppDD:
-		n := dotNode{
+		n = &dotNode{
 			b.getNodeId(),
 			[]string{"Args", "To"},
 			"AppDD",
 		}
-		b.nodes = append(b.nodes, &n)
+		b.nodes = append(b.nodes, n)
 		for _, a := range x.Args {
 			e := dotPortedEdge{
 				id:       b.getEdgeId(),
@@ -525,14 +519,13 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 			to:       dotWalkData(b, x.To),
 			fromPort: "To"}
 		b.edges = append(b.edges, &e)
-		return &n
 	case *Builtin:
-		n := dotNode{
+		n = &dotNode{
 			b.getNodeId(),
 			[]string{"BuiltinType"},
 			"Builtin",
 		}
-		b.nodes = append(b.nodes, &n)
+		b.nodes = append(b.nodes, n)
 		tNode := dotWalkType(b, x.BuiltinType)
 		e := dotPortedEdge{
 			id:       b.getEdgeId(),
@@ -540,26 +533,45 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 			to:       tNode,
 			fromPort: "BuiltinType"}
 		b.edges = append(b.edges, &e)
-		return &n
 
 	case *Proc:
-		n := dotNode{
+		n = &dotNode{
 			b.getNodeId(),
-			[]string{"1"},
+			[]string{},
 			"Proc",
 		}
-		b.nodes = append(b.nodes, &n)
-		uNode := dotWalkUnit(b, x.Plan[0])
-		e := dotPortedEdge{
-			id:       b.getEdgeId(),
-			from:     n,
-			to:       uNode,
-			fromPort: "1"}
-		b.edges = append(b.edges, &e)
-		return &n
+		b.nodes = append(b.nodes, n)
+
+		for i, _ := range x.Vars {
+			v := &x.Vars[i]
+			portName := fmt.Sprintf("Var %d", i)
+			vNode := dotWalkData(b, v)
+			n.ports = append(n.ports, portName)
+			e := dotPortedEdge{
+				id:       b.getEdgeId(),
+				from:     n,
+				to:       vNode,
+				fromPort: portName}
+			b.edges = append(b.edges, &e)
+		}
+
+		for i, p := range x.Plan {
+			portName := fmt.Sprintf("Unit %d", i)
+			uNode := dotWalkUnit(b, p)
+			n.ports = append(n.ports, portName)
+			e := dotPortedEdge{
+				id:       b.getEdgeId(),
+				from:     n,
+				to:       uNode,
+				fromPort: portName}
+			b.edges = append(b.edges, &e)
+		}
 	default:
 		panic(errors.New(fmt.Sprintf("unhandeled type: %T", x)))
 	}
+
+	b.dataCache[d] = n
+	return n
 }
 
 func (b *dotBuilder) getNodeId() int64 {
@@ -592,7 +604,7 @@ func GetDot(b *CFGBuilder) string {
 	//if !ok {
 	//panic(errors.New("var not found"))
 	//}
-	v := b.constructor
+	v := b.Constructor
 	dotWalkData(&d, v)
 	g := directedPortedAttrGraphFrom(&d)
 	got, err := dot.MarshalMulti(g, "asd", "", "\t")
