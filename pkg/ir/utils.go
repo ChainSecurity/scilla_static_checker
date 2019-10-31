@@ -14,6 +14,16 @@ func setDefaultType(h map[string]Type, k string, t Type) (r Type) {
 	return
 }
 
+func stackMapCopy(s map[string][]Data) map[string][]Data {
+	sCopy := map[string][]Data{}
+	for k, vals := range s {
+		valsCopy := make([]Data, len(vals))
+		copy(valsCopy, vals)
+		sCopy[k] = valsCopy
+	}
+	return sCopy
+}
+
 func stackMapPush(s map[string][]Data, k string, v Data) {
 	s[k] = append(s[k], v)
 }
@@ -37,8 +47,13 @@ func TypeOf(d Data) Type {
 		return x.NatType
 	case *DataVar:
 		return x.DataType
+	case *Load:
+	case *AppDD:
+		return TypeOf(x.To)
+	case *AppTD:
+		return TypeOf(x.To)
 	default:
-		fmt.Printf("TypeOf %T\n", d)
+		fmt.Printf("TypeOf not implemented %T\n", d)
 	}
 
 	return nil

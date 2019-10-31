@@ -288,7 +288,23 @@
     ],
     "components": [
       {
-        "params": [],
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file": "../scilla_static/examples/inc.scilla",
+                "line": 28,
+                "column": 17,
+                "node_type": "Location"
+              },
+              "identifier": "z",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "Uint64" },
+            "node_type": "Parameter"
+          }
+        ],
+        "component_type": "transition",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/inc.scilla",
@@ -307,48 +323,10 @@
               "column": 5,
               "node_type": "Location"
             },
-            "node_type": "BindStatement",
             "lhs": {
               "loc": {
                 "source_file": "../scilla_static/examples/inc.scilla",
                 "line": 29,
-                "column": 9,
-                "node_type": "Location"
-              },
-              "identifier": "one",
-              "node_type": "Identifier"
-            },
-            "rhs_expr": {
-              "loc": {
-                "source_file": "../scilla_static/examples/inc.scilla",
-                "line": 29,
-                "column": 11,
-                "node_type": "Location"
-              },
-              "node_type": "VarExpression",
-              "variable": {
-                "loc": {
-                  "source_file": "../scilla_static/examples/inc.scilla",
-                  "line": 29,
-                  "column": 11,
-                  "node_type": "Location"
-                },
-                "identifier": "one64",
-                "node_type": "Identifier"
-              }
-            }
-          },
-          {
-            "loc": {
-              "source_file": "../scilla_static/examples/inc.scilla",
-              "line": 30,
-              "column": 5,
-              "node_type": "Location"
-            },
-            "lhs": {
-              "loc": {
-                "source_file": "../scilla_static/examples/inc.scilla",
-                "line": 30,
                 "column": 11,
                 "node_type": "Location"
               },
@@ -358,7 +336,7 @@
             "rhs": {
               "loc": {
                 "source_file": "../scilla_static/examples/inc.scilla",
-                "line": 30,
+                "line": 29,
                 "column": 14,
                 "node_type": "Location"
               },
@@ -366,6 +344,66 @@
               "node_type": "Identifier"
             },
             "node_type": "LoadStatement"
+          },
+          {
+            "loc": {
+              "source_file": "../scilla_static/examples/inc.scilla",
+              "line": 30,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "../scilla_static/examples/inc.scilla",
+                "line": 30,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "identifier": "inca",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "../scilla_static/examples/inc.scilla",
+                "line": 30,
+                "column": 12,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "../scilla_static/examples/inc.scilla",
+                    "line": 30,
+                    "column": 24,
+                    "node_type": "Location"
+                  },
+                  "identifier": "curra",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "../scilla_static/examples/inc.scilla",
+                    "line": 30,
+                    "column": 30,
+                    "node_type": "Location"
+                  },
+                  "identifier": "z",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "../scilla_static/examples/inc.scilla",
+                  "line": 30,
+                  "column": 20,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "add",
+                "node_type": "Builtin"
+              }
+            }
           },
           {
             "loc": {
@@ -401,17 +439,17 @@
                     "column": 24,
                     "node_type": "Location"
                   },
-                  "identifier": "curra",
+                  "identifier": "inca",
                   "node_type": "Identifier"
                 },
                 {
                   "loc": {
                     "source_file": "../scilla_static/examples/inc.scilla",
                     "line": 31,
-                    "column": 30,
+                    "column": 29,
                     "node_type": "Location"
                   },
-                  "identifier": "one",
+                  "identifier": "one64",
                   "node_type": "Identifier"
                 }
               ],
@@ -455,6 +493,35 @@
               "node_type": "Identifier"
             },
             "node_type": "StoreStatement"
+          },
+          {
+            "loc": {
+              "source_file": "../scilla_static/examples/inc.scilla",
+              "line": 33,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "../scilla_static/examples/inc.scilla",
+                "line": 33,
+                "column": 11,
+                "node_type": "Location"
+              },
+              "identifier": "currb",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "../scilla_static/examples/inc.scilla",
+                "line": 33,
+                "column": 14,
+                "node_type": "Location"
+              },
+              "identifier": "a",
+              "node_type": "Identifier"
+            },
+            "node_type": "LoadStatement"
           }
         ],
         "node_type": "Component"

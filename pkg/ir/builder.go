@@ -16,8 +16,9 @@ type CFGBuilder struct {
 	natWidthTypeMap map[int]*NatType
 	typeMap         map[string]Type
 	varStack        map[string][]Data
-	fieldStack      map[string][]Data
 	constructor     *Proc
+	transitions     map[string]*Proc
+	procedures      map[string]*Proc
 }
 
 func (builder *CFGBuilder) visitCtr(ctr *ast.CtrDef) (string, []Type) {
@@ -141,6 +142,50 @@ func (builder *CFGBuilder) visitASTType(e ast.ASTType) Type {
 	//fmt.Printf("%T", n)
 	default:
 		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
+	}
+}
+
+func (builder *CFGBuilder) visitStatement(s ast.Statement) Unit {
+	switch n := s.(type) {
+	case *ast.LoadStatement:
+		lhs := n.Lhs.Id
+		rhs := n.Rhs.Id
+		fmt.Println("LOAD", lhs, rhs)
+		load := Load{
+			Slot: rhs,
+			Path: []Data{},
+		}
+		stackMapPush(builder.varStack, lhs, &load)
+		return &load
+	case *ast.BindStatement:
+		lhs := n.Lhs.Id
+		rhs := builder.visitExpression(n.RhsExpr)
+		stackMapPush(builder.varStack, lhs, rhs)
+		switch u := rhs.(type) {
+		case *AppTD:
+			return u
+		case *AppDD:
+			return u
+		default:
+			return nil
+		}
+	case *ast.StoreStatement:
+		lhs := n.Lhs.Id
+		rhs := n.Rhs.Id
+		data, ok := stackMapPeek(builder.varStack, rhs)
+		if !ok {
+			panic(errors.New(fmt.Sprintf("variable not found: %s", rhs)))
+		}
+		save := Save{
+			Slot: lhs,
+			Path: []Data{},
+			Data: data,
+		}
+		return &save
+	default:
+		//fmt.Printf("Unhandled Expression type: %T\n", n)
+		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
+		//return nil
 	}
 }
 
@@ -304,7 +349,51 @@ func (builder *CFGBuilder) visitField(f *ast.Field) (string, Data) {
 	return name, data
 }
 
+func (builder *CFGBuilder) restoreVarStack(varStack map[string][]Data) {
+	builder.varStack = varStack
+}
+
 func (builder *CFGBuilder) visitComponent(comp *ast.Component) {
+	varStackCopy := stackMapCopy(builder.varStack)
+	defer builder.restoreVarStack(varStackCopy)
+
+	paramNames := make([]string, len(comp.Params))
+	params := map[string]Type{}
+	dataVars := make([]DataVar, len(comp.Params))
+	for i, p := range comp.Params {
+		pName, pType := builder.visitParams(p)
+		params[pName] = pType
+		paramNames[i] = pName
+		dataVars[i] = DataVar{pType}
+		stackMapPush(builder.varStack, pName, &dataVars[i])
+		defer stackMapPop(builder.varStack, pName)
+	}
+
+	plan := []Unit{}
+	for i, s := range comp.Body {
+		unit := builder.visitStatement(s)
+		if unit != nil {
+			plan = append(plan, unit)
+		} else {
+			fmt.Printf("Component %s: Statement %d %T haven't produced Unit\n", comp.Name.Id, i, s)
+		}
+	}
+
+	proc := Proc{
+		Vars: dataVars,
+		Plan: plan,
+	}
+
+	fmt.Printf("Component %s type: %s\n\tvars: %s\n\tplan: %s\n", comp.Name.Id, comp.ComponentType, dataVars, plan)
+
+	if comp.ComponentType == "procedure" {
+		builder.transitions[comp.Name.Id] = &proc
+	} else if comp.ComponentType == "transition" {
+		builder.transitions[comp.Name.Id] = &proc
+	} else {
+		panic(errors.New(fmt.Sprintf("Wrong Component type: %s", comp.ComponentType)))
+	}
+	//fmt.Println("aasd")
 }
 
 func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
@@ -329,9 +418,15 @@ func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
 		builder.constructor.Plan = make([]Unit, len(n.Params))
 		for i, f := range n.Fields {
 			n, d := builder.visitField(f)
-			stackMapPush(builder.fieldStack, n, d)
+			stackMapPush(builder.varStack, n, d)
 			builder.constructor.Plan[i] = &Save{n, []Data{}, d}
 		}
+
+		//builder.transitions = make[[]*Proc, len(n.Components)]
+		//for _, c := range n.Components {
+		//builder.Visit(c)
+		//builder.transitions = append(builder.transitions, &e)
+		//}
 
 		//for _, pName := range paramNames {
 		//stackMapPop(builder.varStack, pName)
@@ -344,7 +439,9 @@ func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
 		//builder.Field[name] = Save{}
 		//builder.visitLibEntry(n)
 	case *ast.Component:
+		fmt.Println("Before", builder.varStack)
 		builder.visitComponent(n)
+		fmt.Println("After", builder.varStack)
 	case *ast.Identifier:
 		//do nothing
 	case *ast.Location:
@@ -893,8 +990,9 @@ func BuildCFG(n ast.AstNode) *CFGBuilder {
 		intWidthTypeMap: map[int]*IntType{},
 		natWidthTypeMap: map[int]*NatType{},
 		varStack:        map[string][]Data{},
-		fieldStack:      map[string][]Data{},
 		constructor:     nil,
+		transitions:     map[string]*Proc{},
+		procedures:      map[string]*Proc{},
 	}
 	builder.initPrimitiveTypes()
 	ast.Walk(&builder, n)

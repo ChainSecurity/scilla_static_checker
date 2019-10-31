@@ -158,6 +158,7 @@
     "components": [
       {
         "params": [],
+        "component_type": "transition",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/one-msg1.scilla",

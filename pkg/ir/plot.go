@@ -85,45 +85,70 @@ type dotBuilder struct {
 	typeCache   map[Type]graph.Node
 	dataCache   map[Data]graph.Node
 	kindCache   map[Kind]graph.Node
+	unitCache   map[Unit]graph.Node
 }
 
 func dotWalkUnit(b *dotBuilder, u Unit) graph.Node {
+	n, ok := b.unitCache[u]
+	if ok {
+		return n
+	}
 	switch x := u.(type) {
 	//case *EnumType:
-	//case *Load:
-	case *Save:
+	case *Load:
 		slot_field := fmt.Sprintf("Slot: %s", x.Slot)
-		n := &dotNode{
+		m := dotNode{
 			b.getNodeId(),
-			"Save",
-			[]string{slot_field, "Path", "Data"},
+			"Load",
+			[]string{slot_field},
 			map[string][]string{},
 		}
-		b.nodes = append(b.nodes, n)
-		for _, a := range x.Path {
+		for i, _ := range x.Path {
+			p := x.Path[i]
+			portName := fmt.Sprintf("%s_%d", "Path", i)
+			m.portGroups["Path"] = append(m.portGroups["Path"], portName)
 			e := dotPortedEdge{
 				id:       b.getEdgeId(),
-				from:     n,
-				to:       dotWalkData(b, a),
-				fromPort: "Path"}
+				from:     m,
+				to:       dotWalkData(b, p),
+				fromPort: portName}
 			b.edges = append(b.edges, &e)
-
+		}
+		n = &m
+		b.nodes = append(b.nodes, n)
+	case *Save:
+		slot_field := fmt.Sprintf("Slot: %s", x.Slot)
+		m := dotNode{
+			b.getNodeId(),
+			"Save",
+			[]string{slot_field, "Data"},
+			map[string][]string{},
+		}
+		for i, _ := range x.Path {
+			p := x.Path[i]
+			portName := fmt.Sprintf("%s_%d", "Path", i)
+			m.portGroups["Path"] = append(m.portGroups["Path"], portName)
+			e := dotPortedEdge{
+				id:       b.getEdgeId(),
+				from:     m,
+				to:       dotWalkData(b, p),
+				fromPort: portName}
+			b.edges = append(b.edges, &e)
 		}
 		e := &dotPortedEdge{
 			id:       b.getEdgeId(),
-			from:     n,
+			from:     m,
 			to:       dotWalkData(b, x.Data),
 			fromPort: "Data"}
+		n = &m
 		b.edges = append(b.edges, e)
-		return n
-		//Path []Data
-		//Data Data
-	//case *Emit:
+		b.nodes = append(b.nodes, n)
 	//case *Send:
 	//case *Have:
 	//case *AbsTD:
 	//case *AbsDD:
-	//case *AppDD:
+	case *AppDD:
+		n = dotWalkData(b, x)
 	//case *AppTD:
 	//case *Int:
 	//case *Nat:
@@ -136,6 +161,8 @@ func dotWalkUnit(b *dotBuilder, u Unit) graph.Node {
 	default:
 		panic(errors.New(fmt.Sprintf("unhandeled type: %T", x)))
 	}
+	b.unitCache[u] = n
+	return n
 	//return nil
 }
 
@@ -289,8 +316,15 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 			fromPort: "Kind"}
 		b.edges = append(b.edges, e)
 	default:
+		n = &dotNode{
+			b.getNodeId(),
+			"NIL",
+			[]string{},
+			map[string][]string{},
+		}
+		b.nodes = append(b.nodes, n)
 		//return nil
-		panic(errors.New(fmt.Sprintf("unhandeled type: %T", x)))
+		//panic(errors.New(fmt.Sprintf("unhandeled type: %T", x)))
 	}
 
 	b.typeCache[t] = n
@@ -641,6 +675,9 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 			b.edges = append(b.edges, &e)
 		}
 		n = &m
+	case *Load:
+		n = dotWalkUnit(b, x)
+
 	default:
 		panic(errors.New(fmt.Sprintf("unhandeled type: %T", x)))
 	}
@@ -674,12 +711,11 @@ func GetDot(b *CFGBuilder) string {
 	//for key := range b.GlobalVarMap {
 	//keys = append(keys, key)
 	//}
-	d := dotBuilder{0, 0, []graph.Node{}, []*dotPortedEdge{}, map[Type]graph.Node{}, map[Data]graph.Node{}, map[Kind]graph.Node{}}
-	//v, ok := stackMapPeek(b.fieldStack, "a")
+	d := dotBuilder{0, 0, []graph.Node{}, []*dotPortedEdge{}, map[Type]graph.Node{}, map[Data]graph.Node{}, map[Kind]graph.Node{}, map[Unit]graph.Node{}}
 	//if !ok {
 	//panic(errors.New("var not found"))
 	//}
-	v := b.constructor
+	v := b.transitions["inc"]
 	dotWalkData(&d, v)
 	g := directedPortedAttrGraphFrom(&d)
 	got, err := dot.MarshalMulti(g, "asd", "", "\t")

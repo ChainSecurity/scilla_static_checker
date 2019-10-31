@@ -736,8 +736,9 @@ func (comp *Component) UnmarshalJSON(b []byte) error {
 	}
 
 	type core struct {
-		Name   *Identifier  `json:"name"`
-		Params []*Parameter `json:"params"`
+		ComponentType string       `json:"component_type"`
+		Name          *Identifier  `json:"name"`
+		Params        []*Parameter `json:"params"`
 	}
 
 	var c core
@@ -747,6 +748,8 @@ func (comp *Component) UnmarshalJSON(b []byte) error {
 	}
 
 	comp.Name = c.Name
+	comp.ComponentType = c.ComponentType
+	comp.Params = c.Params
 	return nil
 }
 
