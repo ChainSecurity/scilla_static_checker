@@ -1,6 +1,7 @@
 package ir
 
 import (
+	"errors"
 	"fmt"
 )
 
@@ -41,24 +42,30 @@ func stackMapPeek(s map[string][]Data, k string) (Data, bool) {
 	return s[k][l-1], true
 }
 
-func TypeOf(d Data) Type {
+func (builder *CFGBuilder) TypeOf(d Data) Type {
 	switch x := d.(type) {
 	case *Nat:
 		return x.NatType
 	case *DataVar:
 		return x.DataType
 	case *Load:
+		if len(x.Path) != 0 {
+			panic(errors.New("Load with non empty path is not implemented"))
+		}
+		fmt.Println(builder.fieldTypeMap, x.Slot, builder.fieldTypeMap["b"])
+		return builder.fieldTypeMap[x.Slot]
 	case *AppDD:
-		return TypeOf(x.To)
+		return builder.TypeOf(x.To)
 	case *AppTD:
-		return TypeOf(x.To)
+		return builder.TypeOf(x.To)
 	default:
-		fmt.Printf("TypeOf not implemented %T\n", d)
+		fmt.Printf("builder.TypeOf not implemented %T\n", d)
 	}
-
-	return nil
+	panic(errors.New("ERROR TypeOf"))
+	//return nil
 }
 
 func KindOf(t Type) Kind {
+	fmt.Printf("builder.KindOf not implemented %T\n", t)
 	return nil
 }

@@ -315,6 +315,14 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 			to:       tNode,
 			fromPort: "Kind"}
 		b.edges = append(b.edges, e)
+	case *StrType:
+		n = &dotNode{
+			b.getNodeId(),
+			"StrType",
+			[]string{},
+			map[string][]string{},
+		}
+		b.nodes = append(b.nodes, n)
 	default:
 		n = &dotNode{
 			b.getNodeId(),
@@ -633,6 +641,7 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 		}
 		b.nodes = append(b.nodes, n)
 		tNode := dotWalkType(b, x.BuiltinType)
+		fmt.Println("BUILTIN", x.BuiltinType)
 		e := dotPortedEdge{
 			id:       b.getEdgeId(),
 			from:     n,

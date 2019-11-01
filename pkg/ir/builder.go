@@ -19,6 +19,40 @@ type CFGBuilder struct {
 	constructor     *Proc
 	transitions     map[string]*Proc
 	procedures      map[string]*Proc
+	fieldTypeMap    map[string]Type
+}
+
+func (builder *CFGBuilder) getBuiltinOp(opName string, varTypes []Type) Data {
+
+	if opName != "concat" {
+		return builder.builtinOpMap[opName]
+	}
+	v0 := varTypes[0]
+	switch raw0 := v0.(type) {
+	case *RawType:
+		v1 := varTypes[1]
+		raw1, ok := v1.(*RawType)
+		if !ok {
+			panic(errors.New(fmt.Sprintf("Builtin concat wrong type: %T", v1)))
+		}
+		resType := "ByStr" + strconv.Itoa(raw0.Size+raw1.Size)
+		op := &AbsDD{
+			Vars: []DataVar{
+				DataVar{
+					DataType: v0,
+				},
+				DataVar{
+					DataType: v1,
+				},
+			},
+			Term: &Builtin{setDefaultType(builder.typeMap, resType, &RawType{raw0.Size + raw1.Size})},
+		}
+		return op
+	case *StrType:
+		return builder.builtinOpMap["str_concat"]
+	default:
+		panic(errors.New(fmt.Sprintf("Builtin concat wrong type: %T", v0)))
+	}
 }
 
 func (builder *CFGBuilder) visitCtr(ctr *ast.CtrDef) (string, []Type) {
@@ -238,7 +272,7 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		}
 		cases := []DataCase{}
 		for _, c := range n.Cases {
-			b := builder.visitPattern(c.Pat, TypeOf(data))
+			b := builder.visitPattern(c.Pat, builder.TypeOf(data))
 			e := builder.visitExpression(c.Expr)
 			mec := DataCase{Bind: b, Body: e}
 			cases = append(cases, mec)
@@ -256,54 +290,51 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		return data
 	case *ast.BuiltinExpression:
 		opName := n.BuintinFunc.BuiltinOp
+
 		vars := make([]Data, len(n.Args))
+		varTypes := make([]Type, len(n.Args))
 		for i, a := range n.Args {
 			v, ok := stackMapPeek(builder.varStack, a.Id)
 			if !ok {
 				panic(errors.New(fmt.Sprintf("variable not found: %s", a.Id)))
 			}
 			vars[i] = v
+			varTypes[i] = builder.TypeOf(v)
 		}
-		op := builder.builtinOpMap[opName]
-		if opName == "concat" {
-			v0 := TypeOf(vars[0])
-			switch raw0 := v0.(type) {
-			case *RawType:
-				v1 := TypeOf(vars[1])
-				raw1, ok := v1.(*RawType)
-				if !ok {
-					panic(errors.New(fmt.Sprintf("Builtin concat wrong type: %T", v1)))
-				}
-				resType := "ByStr" + strconv.Itoa(raw0.Size+raw1.Size)
-				op = &AbsDD{
-					Vars: []DataVar{
-						DataVar{
-							DataType: v0,
-						},
-						DataVar{
-							DataType: v1,
-						},
-					},
-					Term: &Builtin{setDefaultType(builder.typeMap, resType, &RawType{raw0.Size + raw1.Size})},
-				}
-			case *StrType:
-				op = builder.builtinOpMap["str_concat"]
-			default:
-				panic(errors.New(fmt.Sprintf("Builtin concat wrong type: %T", v0)))
+
+		op := builder.getBuiltinOp(opName, varTypes)
+		fmt.Printf("BuiltinExpression %T\n", op)
+		switch op := op.(type) {
+		case *AbsTD:
+			if len(op.Vars) != 1 {
+				panic(errors.New(fmt.Sprintf("Unhandled Builtin AbsTD args number: %T\n", op)))
 			}
-		}
-		res := AppDD{
-			Args: vars,
-			To: &AppTD{
-				Args: []Type{TypeOf(vars[0])},
+			appTD := &AppTD{
+				Args: []Type{builder.TypeOf(vars[0])},
 				To:   op,
-			},
+			}
+			appDD := AppDD{
+				Args: vars,
+				To:   appTD,
+			}
+			return &appDD
+		case *AbsDD:
+			if len(op.Vars) != len(vars) {
+				panic(errors.New(fmt.Sprintf("Wrong number of Builtin AbsDD args")))
+			}
+			fmt.Println("BUILTINT EXPRESSION", builder.TypeOf(vars[0]), builder.TypeOf(vars[1]))
+			appDD := AppDD{
+				Args: vars,
+				To:   op,
+			}
+			return &appDD
+		default:
+			panic(errors.New(fmt.Sprintf("Unhandled Builtin op type: %T\n", n)))
 		}
-		return &res
 	case *ast.LetExpression:
 		varName := n.Var.Id
 		expr := builder.visitExpression(n.Expr)
-		fmt.Println("LetExpression", varName, TypeOf(expr))
+		fmt.Println("LetExpression", varName, builder.TypeOf(expr))
 		stackMapPush(builder.varStack, varName, expr)
 		defer stackMapPop(builder.varStack, varName)
 		body := builder.visitExpression(n.Body)
@@ -343,7 +374,8 @@ func (builder *CFGBuilder) visitParams(p *ast.Parameter) (string, Type) {
 
 func (builder *CFGBuilder) visitField(f *ast.Field) (string, Data) {
 	name := f.Name.Id
-	//t := builder.typeMap[f.Type]
+	t := builder.visitASTType(f.Type)
+	builder.fieldTypeMap[name] = t
 	data := builder.visitExpression(f.Expr)
 	stackMapPush(builder.varStack, name, data)
 	return name, data
@@ -368,6 +400,8 @@ func (builder *CFGBuilder) visitComponent(comp *ast.Component) {
 		stackMapPush(builder.varStack, pName, &dataVars[i])
 		defer stackMapPop(builder.varStack, pName)
 	}
+
+	fmt.Println("visitComponent", comp.Name.Id, dataVars)
 
 	plan := []Unit{}
 	for i, s := range comp.Body {
@@ -993,6 +1027,7 @@ func BuildCFG(n ast.AstNode) *CFGBuilder {
 		constructor:     nil,
 		transitions:     map[string]*Proc{},
 		procedures:      map[string]*Proc{},
+		fieldTypeMap:    map[string]Type{},
 	}
 	builder.initPrimitiveTypes()
 	ast.Walk(&builder, n)
