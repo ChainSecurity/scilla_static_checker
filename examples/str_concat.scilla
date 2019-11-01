@@ -1,0 +1,23 @@
+scilla_version 0
+
+
+
+(***************************************************)
+(*               Associated library                *)
+(***************************************************)
+library StrConcat
+
+(***************************************************)
+(*             The contract definition             *)
+(***************************************************)
+
+contract StrConcat
+(x : String)
+
+field b : String = x
+
+transition inc (z : String)
+    currb <- b;
+    newb = builtin concat currb z; 
+    b := newb
+end
