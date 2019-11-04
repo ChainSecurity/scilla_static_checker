@@ -144,7 +144,14 @@ func dotWalkUnit(b *dotBuilder, u Unit) graph.Node {
 		b.edges = append(b.edges, e)
 		b.nodes = append(b.nodes, n)
 	//case *Send:
-	//case *Have:
+	case *Have:
+		n = &dotNode{
+			b.getNodeId(),
+			"Have",
+			[]string{},
+			map[string][]string{},
+		}
+		b.nodes = append(b.nodes, n)
 	//case *AbsTD:
 	//case *AbsDD:
 	case *AppDD:
@@ -159,7 +166,7 @@ func dotWalkUnit(b *dotBuilder, u Unit) graph.Node {
 	//case *Msg:
 	//case *Map:
 	default:
-		panic(errors.New(fmt.Sprintf("unhandeled type: %T", x)))
+		panic(errors.New(fmt.Sprintf("unhandeled Unit type: %T", x)))
 	}
 	b.unitCache[u] = n
 	return n

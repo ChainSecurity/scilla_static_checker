@@ -216,6 +216,8 @@ func (builder *CFGBuilder) visitStatement(s ast.Statement) Unit {
 			Data: data,
 		}
 		return &save
+	case *ast.AcceptPaymentStatement:
+		return &Have{}
 	default:
 		//fmt.Printf("Unhandled Expression type: %T\n", n)
 		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
