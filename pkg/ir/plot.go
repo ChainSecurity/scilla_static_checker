@@ -216,12 +216,13 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 		for k := range *x {
 			keys = append(keys, k)
 		}
-		n := &dotNode{
+		n = &dotNode{
 			b.getNodeId(),
 			"EnumType",
 			keys,
 			map[string][]string{},
 		}
+		b.typeCache[t] = n
 		b.nodes = append(b.nodes, n)
 		for _, k := range keys {
 			for _, inner_t := range (*x)[k] {
