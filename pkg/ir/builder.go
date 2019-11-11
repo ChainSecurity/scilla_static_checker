@@ -30,7 +30,19 @@ func (builder *CFGBuilder) getType(typeName string, varTypes []Type) (Type, bool
 		return typ, true
 	}
 
-	panic(errors.New(fmt.Sprintf("Unknown type constructor type: %s", typeName)))
+	typeConstructor, ok := builder.genericTypeConstructors[typeName]
+	if !ok {
+		panic(errors.New(fmt.Sprintf("Unknown type constructor type: %s", typeName)))
+	}
+
+	if len(typeConstructor.Vars) != len(varTypes) {
+		panic(errors.New(fmt.Sprintf("Wrong number of arguments for the constructor: %s", typeName)))
+	}
+	typ = &AppTT{
+		Args: varTypes,
+		To:   typeConstructor,
+	}
+	return typ, true
 
 	//return nil, false
 }
@@ -114,7 +126,18 @@ func (builder *CFGBuilder) visitPattern(p ast.Pattern, t Type) Bind {
 func (builder *CFGBuilder) visitLiteral(l ast.Literal) Data {
 	switch lit := l.(type) {
 	case *ast.StringLiteral:
-		panic(errors.New(fmt.Sprintf("Not implemented: %T", lit)))
+		typ := builder.simpleTypeMap["String"]
+		strTyp, ok := typ.(*StrType)
+
+		if !ok {
+			panic(errors.New(fmt.Sprintf("Type exception: String")))
+		}
+
+		str := Str{
+			StrType: strTyp,
+			Data:    lit.Val,
+		}
+		return &str
 	case *ast.BNumLiteral:
 		panic(errors.New(fmt.Sprintf("Not implemented: %T", lit)))
 	case *ast.ByStrLiteral:
@@ -231,6 +254,13 @@ func (builder *CFGBuilder) visitStatement(s ast.Statement) Unit {
 		return &save
 	case *ast.AcceptPaymentStatement:
 		return &Have{}
+	case *ast.SendMsgsStatement:
+		d, ok := stackMapPeek(builder.varStack, n.Arg.Id)
+		if !ok {
+			panic(errors.New(fmt.Sprintf("variable not found: %s", n.Arg.Id)))
+		}
+		fmt.Println("data", d, ok, builder.varStack, n.Arg.Id)
+		return &Send{Data: d}
 	default:
 		//fmt.Printf("Unhandled Expression type: %T\n", n)
 		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
@@ -377,10 +407,73 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		defer stackMapPop(builder.varStack, varName)
 		body := builder.visitExpression(n.Body)
 		return body
+	case *ast.AppExpression:
+		rhsData := make([]Data, len(n.RhsList))
+		for i, rhs := range n.RhsList {
+			data, ok := stackMapPeek(builder.varStack, rhs.Id)
+			if !ok {
+				panic(errors.New(fmt.Sprintf("variable not found: %s", rhs.Id)))
+			}
+			rhsData[i] = data
+		}
+		lhs, ok := stackMapPeek(builder.varStack, n.Lhs.Id)
+		if !ok {
+			panic(errors.New(fmt.Sprintf("variable not found: %s", n.Lhs.Id)))
+		}
+
+		absDD, ok := lhs.(*AbsDD)
+		if !ok {
+			panic(errors.New(fmt.Sprintf("AppExpression lhs wrong type: %T", lhs)))
+		}
+		if len(absDD.Vars) != len(rhsData) {
+			panic(errors.New(fmt.Sprintf("AppExpression lhs and rhs length of args not equal")))
+		}
+		appDD := AppDD{
+			Args: rhsData,
+			To:   absDD,
+		}
+		return &appDD
+	case *ast.MessageExpression:
+		//nameList := make([]string, len(n.MArgs))
+		//dataList := make([]Data, len(n.MArgs))
+		data := make(map[string]Data)
+
+		for _, marg := range n.MArgs {
+			name := marg.Var
+			d := builder.visitPayload(marg.Pl)
+			data[name] = d
+		}
+
+		typ := builder.simpleTypeMap["Message"]
+		msgType, ok := typ.(*MsgType)
+
+		if !ok {
+			panic(errors.New(fmt.Sprintf("Type exception: Message")))
+		}
+
+		return &Msg{
+			MsgType: msgType,
+			Data:    data,
+		}
 	default:
 		fmt.Printf("Unhandled Expression type: %T\n", n)
 		//panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
 		return nil
+	}
+}
+
+func (builder *CFGBuilder) visitPayload(pl ast.Payload) Data {
+	switch n := pl.(type) {
+	case *ast.PayloadLiteral:
+		return builder.visitLiteral(n.Lit)
+	case *ast.PayloadVariable:
+		data, ok := stackMapPeek(builder.varStack, n.Val.Id)
+		if !ok {
+			panic(errors.New(fmt.Sprintf("variable not found: %s", n.Val.Id)))
+		}
+		return data
+	default:
+		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
 	}
 }
 

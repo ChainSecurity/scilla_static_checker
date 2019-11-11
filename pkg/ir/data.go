@@ -184,7 +184,7 @@ type (
 	// Msg :
 	Msg struct {
 		MsgType *MsgType
-		Data    map[string]string
+		Data    map[string]Data
 	}
 
 	// Map :

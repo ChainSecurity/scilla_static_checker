@@ -143,7 +143,36 @@ func dotWalkUnit(b *dotBuilder, u Unit) graph.Node {
 		n = &m
 		b.edges = append(b.edges, e)
 		b.nodes = append(b.nodes, n)
-	//case *Send:
+	case *Emit:
+		m := dotNode{
+			b.getNodeId(),
+			"Emit",
+			[]string{"Data"},
+			map[string][]string{},
+		}
+		e := &dotPortedEdge{
+			id:       b.getEdgeId(),
+			from:     m,
+			to:       dotWalkData(b, x.Data),
+			fromPort: "Data"}
+		n = &m
+		b.edges = append(b.edges, e)
+		b.nodes = append(b.nodes, n)
+	case *Send:
+		m := dotNode{
+			b.getNodeId(),
+			"Send",
+			[]string{"Data"},
+			map[string][]string{},
+		}
+		e := &dotPortedEdge{
+			id:       b.getEdgeId(),
+			from:     m,
+			to:       dotWalkData(b, x.Data),
+			fromPort: "Data"}
+		n = &m
+		b.edges = append(b.edges, e)
+		b.nodes = append(b.nodes, n)
 	case *Have:
 		n = &dotNode{
 			b.getNodeId(),
@@ -163,7 +192,9 @@ func dotWalkUnit(b *dotBuilder, u Unit) graph.Node {
 	//case *Str:
 	//case *Bnr:
 	//case *Exc:
-	//case *Msg:
+	case *Msg:
+		n = dotWalkData(b, x)
+	case *AbsDD:
 	//case *Map:
 	default:
 		panic(errors.New(fmt.Sprintf("unhandeled Unit type: %T", x)))
@@ -330,6 +361,14 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 			map[string][]string{},
 		}
 		b.nodes = append(b.nodes, n)
+	case *MsgType:
+		n = &dotNode{
+			b.getNodeId(),
+			"MsgType",
+			[]string{},
+			map[string][]string{},
+		}
+		b.nodes = append(b.nodes, n)
 	default:
 		n = &dotNode{
 			b.getNodeId(),
@@ -338,6 +377,7 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 			map[string][]string{},
 		}
 		b.nodes = append(b.nodes, n)
+		fmt.Printf("UNHANDLED TYPE %T\n", x)
 		//return nil
 		//panic(errors.New(fmt.Sprintf("unhandeled type: %T", x)))
 	}
@@ -693,6 +733,64 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 		n = &m
 	case *Load:
 		n = dotWalkUnit(b, x)
+	case *Msg:
+		m := dotNode{
+			b.getNodeId(),
+			"Msg",
+			[]string{"MsgType"},
+			map[string][]string{},
+		}
+
+		//for i, _ := range x.Vars {
+		//v := x.Vars[i]
+		//portName := fmt.Sprintf("%s_%d", "Var", i)
+		//m.portGroups["Vars"] = append(m.portGroups["Vars"], portName)
+		//e := dotPortedEdge{
+		//id:       b.getEdgeId(),
+		//from:     m,
+		//to:       dotWalkType(b, &v),
+		//fromPort: portName}
+		//b.edges = append(b.edges, &e)
+		//}
+
+		e := dotPortedEdge{
+			id:       b.getEdgeId(),
+			from:     m,
+			to:       dotWalkType(b, x.MsgType),
+			fromPort: "MsgType"}
+
+		b.edges = append(b.edges, &e)
+		b.nodes = append(b.nodes, m)
+		n = &m
+	case *Enum:
+		m := dotNode{
+			b.getNodeId(),
+			"Enum",
+			[]string{"EnumType", fmt.Sprintf("Case: %s", x.Case)},
+			map[string][]string{},
+		}
+
+		for i, _ := range x.Data {
+			v := x.Data[i]
+			portName := fmt.Sprintf("%s_%d", "Data", i)
+			m.portGroups["Data"] = append(m.portGroups["Data"], portName)
+			e := dotPortedEdge{
+				id:       b.getEdgeId(),
+				from:     m,
+				to:       dotWalkData(b, v),
+				fromPort: portName}
+			b.edges = append(b.edges, &e)
+		}
+
+		e := dotPortedEdge{
+			id:       b.getEdgeId(),
+			from:     m,
+			to:       dotWalkType(b, x.EnumType),
+			fromPort: "EnumType"}
+
+		b.edges = append(b.edges, &e)
+		b.nodes = append(b.nodes, m)
+		n = &m
 
 	default:
 		panic(errors.New(fmt.Sprintf("unhandeled type: %T", x)))
