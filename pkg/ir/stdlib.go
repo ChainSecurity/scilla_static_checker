@@ -9,11 +9,11 @@ type BuiltinADTs struct {
 	TT      Data
 	FF      Data
 
-	List  Type
-	Empty Data
-	Stack Data
+	List *AbsTT
+	Nil  Data
+	Cons Data
 
-	Option Type
+	Option *AbsTT
 	None   Data
 	Some   Data
 
@@ -71,8 +71,8 @@ func StdLib() BuiltinADTs {
 		Term: &listEnum,
 	}
 	listEnum = EnumType{
-		"empty": {},
-		"stack": {&list.Vars[0], &listEnum},
+		"Nil":  {},
+		"Cons": {&list.Vars[0], &listEnum},
 	}
 
 	empty = AbsTD{
@@ -85,7 +85,7 @@ func StdLib() BuiltinADTs {
 			Args: []Type{&empty.Vars[0]},
 			To:   &list,
 		},
-		Case: "empty",
+		Case: "Nil",
 		Data: []Data{},
 	}
 
@@ -111,7 +111,7 @@ func StdLib() BuiltinADTs {
 			Args: []Type{&stack.Vars[0]},
 			To:   &list,
 		},
-		Case: "stack",
+		Case: "Cons",
 		Data: []Data{&stackAbsDD.Vars[0], &stackAbsDD.Vars[1]},
 	}
 
@@ -200,9 +200,9 @@ func StdLib() BuiltinADTs {
 		TT:      &tt,
 		FF:      &ff,
 
-		List:  &list,
-		Empty: &empty,
-		Stack: &stack,
+		List: &list,
+		Nil:  &empty,
+		Cons: &stack,
 
 		Option: &option,
 		None:   &none,

@@ -14,12 +14,25 @@ type CFGBuilder struct {
 	constrTypeMap   map[string]string
 	intWidthTypeMap map[int]*IntType
 	natWidthTypeMap map[int]*NatType
-	typeMap         map[string]Type
+	simpleTypeMap   map[string]Type
 	varStack        map[string][]Data
 	constructor     *Proc
 	transitions     map[string]*Proc
 	procedures      map[string]*Proc
 	fieldTypeMap    map[string]Type
+
+	genericTypeConstructors map[string]*AbsTT
+}
+
+func (builder *CFGBuilder) getType(typeName string, varTypes []Type) (Type, bool) {
+	typ, ok := builder.simpleTypeMap[typeName]
+	if ok {
+		return typ, true
+	}
+
+	panic(errors.New(fmt.Sprintf("Unknown type constructor type: %s", typeName)))
+
+	//return nil, false
 }
 
 func (builder *CFGBuilder) getBuiltinOp(opName string, varTypes []Type) Data {
@@ -45,7 +58,7 @@ func (builder *CFGBuilder) getBuiltinOp(opName string, varTypes []Type) Data {
 					DataType: v1,
 				},
 			},
-			Term: &Builtin{setDefaultType(builder.typeMap, resType, &RawType{raw0.Size + raw1.Size})},
+			Term: &Builtin{setDefaultType(builder.simpleTypeMap, resType, &RawType{raw0.Size + raw1.Size})},
 		}
 		return op
 	case *StrType:
@@ -143,7 +156,7 @@ func (builder *CFGBuilder) visitASTType(e ast.ASTType) Type {
 
 	switch n := e.(type) {
 	case *ast.PrimType:
-		t, ok := builder.typeMap[n.Name]
+		t, ok := builder.simpleTypeMap[n.Name]
 		if ok {
 			return t
 		}
@@ -153,7 +166,7 @@ func (builder *CFGBuilder) visitASTType(e ast.ASTType) Type {
 				panic(err)
 			}
 			t = &RawType{width}
-			builder.typeMap[n.Name] = t
+			builder.simpleTypeMap[n.Name] = t
 			return t
 		}
 
@@ -161,7 +174,7 @@ func (builder *CFGBuilder) visitASTType(e ast.ASTType) Type {
 	//case *ast.MapType:
 	//fmt.Printf("%T", n)
 	case *ast.ADT:
-		typ, ok := builder.typeMap[n.Name]
+		typ, ok := builder.simpleTypeMap[n.Name]
 		if !ok {
 			panic(errors.New(fmt.Sprintf("Unknown type: %s", n.Name)))
 		}
@@ -229,31 +242,54 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 	switch n := e.(type) {
 	case *ast.ConstrExpression:
 		constrName := n.ConstructorName
-		typeName, ok := builder.constrTypeMap[constrName]
-		if !ok {
-			panic(errors.New(fmt.Sprintf("Unknown constructor: %s", constrName)))
-		}
 
 		for k := range builder.constrTypeMap {
 			fmt.Println("->", k, builder.constrTypeMap[k])
 		}
-		fmt.Println("____")
-		typ, ok := builder.typeMap[typeName]
-		if !ok {
-			panic(errors.New(fmt.Sprintf("Unknown type: %s", typeName)))
-		}
-		d := []Data{}
+		//if !ok {
+		//panic(errors.New(fmt.Sprintf("Unknown type: %s", typeName)))
+		//}
+		ds := []Data{}
+		ts := []Type{}
 		//TODO handle arguments
 		//TODO do a check on types
-		//for _, arg := range n.Args {
-		//fmt.Println(arg.Id)
-		//d = d.append(builderu)
-		//}
+		for _, arg := range n.Types {
+			t := builder.visitASTType(arg)
+			ts = append(ts, t)
+		}
+
+		for _, arg := range n.Args {
+			fmt.Println(arg.Id)
+			d, ok := stackMapPeek(builder.varStack, arg.Id)
+			if !ok {
+				panic(errors.New(fmt.Sprintf("variable not found: %s", arg.Id)))
+			}
+			ds = append(ds, d)
+		}
+
+		typeName, ok := builder.constrTypeMap[constrName]
+		if !ok {
+			panic(errors.New(fmt.Sprintf("Unknown constructor: %s", constrName)))
+		}
+		typ, ok := builder.getType(typeName, ts)
+
+		fmt.Println("ConstrExpression", constrName, ts, ds)
+		fmt.Println("____")
+		for _, t := range ts {
+			fmt.Printf("%T\n", t)
+		}
+		fmt.Println("____")
+		for _, t := range ds {
+			fmt.Printf("%T\n", t)
+		}
+		fmt.Println("____")
+
 		res := Enum{
 			EnumType: typ,
 			Case:     constrName,
-			Data:     d,
+			Data:     ds,
 		}
+
 		return &res
 	case *ast.FunExpression:
 		lhs := n.Lhs.Id
@@ -362,7 +398,7 @@ func (builder *CFGBuilder) visitLibEntry(le ast.LibEntry) {
 			typ[constrName] = types
 			builder.constrTypeMap[constrName] = typeName
 		}
-		builder.typeMap[typeName] = &typ
+		builder.simpleTypeMap[typeName] = &typ
 	default:
 		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
 	}
@@ -492,6 +528,11 @@ func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
 func (builder *CFGBuilder) initPrimitiveTypes() {
 	stdLib := StdLib()
 
+	builder.constrTypeMap["Nil"] = "List"
+	builder.constrTypeMap["Cons"] = "List"
+
+	builder.genericTypeConstructors["List"] = stdLib.List
+
 	sizes := []int{32, 64, 128, 256}
 	for _, s := range sizes {
 		intName := "Int" + strconv.Itoa(s)
@@ -500,8 +541,8 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		uintTyp := NatType{s}
 		builder.intWidthTypeMap[s] = &intTyp
 		builder.natWidthTypeMap[s] = &uintTyp
-		builder.typeMap[intName] = &intTyp
-		builder.typeMap[uintName] = &uintTyp
+		builder.simpleTypeMap[intName] = &intTyp
+		builder.simpleTypeMap[uintName] = &uintTyp
 
 		// Conversion functions
 		var intAbsDD AbsDD
@@ -548,15 +589,16 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 
 	}
 
-	builder.typeMap["String"] = &StrType{}
-	builder.typeMap["ByStr"] = &RawType{-1}
-	builder.typeMap["ByStr32"] = &RawType{32}
-	builder.typeMap["ByStr33"] = &RawType{33}
-	builder.typeMap["ByStr64"] = &RawType{64}
-	builder.typeMap["ByStr20"] = &RawType{20}
-	builder.typeMap["BNum"] = &BnrType{}
+	builder.simpleTypeMap["Message"] = &MsgType{}
+	builder.simpleTypeMap["String"] = &StrType{}
+	builder.simpleTypeMap["ByStr"] = &RawType{-1}
+	builder.simpleTypeMap["ByStr32"] = &RawType{32}
+	builder.simpleTypeMap["ByStr33"] = &RawType{33}
+	builder.simpleTypeMap["ByStr64"] = &RawType{64}
+	builder.simpleTypeMap["ByStr20"] = &RawType{20}
+	builder.simpleTypeMap["BNum"] = &BnrType{}
 
-	builder.typeMap["Bool"] = stdLib.Boolean
+	builder.simpleTypeMap["Bool"] = stdLib.Boolean
 
 	intIntOps := []string{"add", "sub", "mul", "div", "rem"}
 	intBoolOps := []string{"eq", "lt"}
@@ -619,13 +661,13 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	strConcatOp := AbsDD{
 		Vars: []DataVar{
 			DataVar{
-				DataType: builder.typeMap["String"],
+				DataType: builder.simpleTypeMap["String"],
 			},
 			DataVar{
-				DataType: builder.typeMap["String"],
+				DataType: builder.simpleTypeMap["String"],
 			},
 		},
-		Term: &Builtin{builder.typeMap["String"]},
+		Term: &Builtin{builder.simpleTypeMap["String"]},
 	}
 	builder.builtinOpMap["str_concat"] = &strConcatOp
 
@@ -633,7 +675,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	strSubstrOp := AbsDD{
 		Vars: []DataVar{
 			DataVar{
-				DataType: builder.typeMap["String"],
+				DataType: builder.simpleTypeMap["String"],
 			},
 			DataVar{
 				DataType: builder.natWidthTypeMap[32],
@@ -642,7 +684,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 				DataType: builder.natWidthTypeMap[32],
 			},
 		},
-		Term: &Builtin{builder.typeMap["String"]},
+		Term: &Builtin{builder.simpleTypeMap["String"]},
 	}
 	builder.builtinOpMap["substr"] = &strSubstrOp
 
@@ -658,7 +700,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Vars: []DataVar{
 			DataVar{DataType: &toStrAbsTD.Vars[0]},
 		},
-		Term: &Builtin{builder.typeMap["String"]},
+		Term: &Builtin{builder.simpleTypeMap["String"]},
 	}
 	builder.builtinOpMap["to_string"] = &toStrAbsTD
 
@@ -667,7 +709,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	strlenOp := AbsDD{
 		Vars: []DataVar{
 			DataVar{
-				DataType: builder.typeMap["String"],
+				DataType: builder.simpleTypeMap["String"],
 			},
 		},
 		Term: &Builtin{builder.natWidthTypeMap[32]},
@@ -687,7 +729,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 			DataVar{DataType: &shaAbsTD.Vars[0]},
 		},
 		Term: &Builtin{
-			BuiltinType: builder.typeMap["ByStr32"],
+			BuiltinType: builder.simpleTypeMap["ByStr32"],
 		},
 	}
 	builder.builtinOpMap["sha256hash"] = &shaAbsTD
@@ -705,7 +747,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 			DataVar{DataType: &keccakAbsTD.Vars[0]},
 		},
 		Term: &Builtin{
-			BuiltinType: builder.typeMap["ByStr32"],
+			BuiltinType: builder.simpleTypeMap["ByStr32"],
 		},
 	}
 	builder.builtinOpMap["keccak256hash"] = &keccakAbsTD
@@ -723,7 +765,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 			DataVar{DataType: &ripemdAbsTD.Vars[0]},
 		},
 		Term: &Builtin{
-			BuiltinType: builder.typeMap["ByStr20"],
+			BuiltinType: builder.simpleTypeMap["ByStr20"],
 		},
 	}
 	builder.builtinOpMap["ripemd160hash"] = &ripemdAbsTD
@@ -741,7 +783,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 			DataVar{DataType: &toBystrAbsTD.Vars[0]},
 		},
 		Term: &Builtin{
-			BuiltinType: builder.typeMap["ByStr"],
+			BuiltinType: builder.simpleTypeMap["ByStr"],
 		},
 	}
 	builder.builtinOpMap["to_bystr"] = &toBystrAbsTD
@@ -766,16 +808,16 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	schnorrVerifyAbsDD := AbsDD{
 		Vars: []DataVar{
 			DataVar{
-				DataType: builder.typeMap["ByStr33"],
+				DataType: builder.simpleTypeMap["ByStr33"],
 			},
 			DataVar{
-				DataType: builder.typeMap["ByStr"],
+				DataType: builder.simpleTypeMap["ByStr"],
 			},
 			DataVar{
-				DataType: builder.typeMap["ByStr64"],
+				DataType: builder.simpleTypeMap["ByStr64"],
 			},
 		},
-		Term: &Builtin{builder.typeMap["Bool"]},
+		Term: &Builtin{builder.simpleTypeMap["Bool"]},
 	}
 	builder.builtinOpMap["schnorr_verify"] = &schnorrVerifyAbsDD
 
@@ -783,16 +825,16 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	ecdsaVerifyAbsDD := AbsDD{
 		Vars: []DataVar{
 			DataVar{
-				DataType: builder.typeMap["ByStr33"],
+				DataType: builder.simpleTypeMap["ByStr33"],
 			},
 			DataVar{
-				DataType: builder.typeMap["ByStr"],
+				DataType: builder.simpleTypeMap["ByStr"],
 			},
 			DataVar{
-				DataType: builder.typeMap["ByStr64"],
+				DataType: builder.simpleTypeMap["ByStr64"],
 			},
 		},
-		Term: &Builtin{builder.typeMap["Bool"]},
+		Term: &Builtin{builder.simpleTypeMap["Bool"]},
 	}
 	builder.builtinOpMap["ecdsa_verify"] = &ecdsaVerifyAbsDD
 
@@ -800,15 +842,15 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	bech32ToBystr20AbsDD := AbsDD{
 		Vars: []DataVar{
 			DataVar{
-				DataType: builder.typeMap["String"],
+				DataType: builder.simpleTypeMap["String"],
 			},
 			DataVar{
-				DataType: builder.typeMap["String"],
+				DataType: builder.simpleTypeMap["String"],
 			},
 		},
 		Term: &Builtin{
 			&AppTT{
-				Args: []Type{builder.typeMap["ByStr20"]},
+				Args: []Type{builder.simpleTypeMap["ByStr20"]},
 				To:   stdLib.Option,
 			},
 		},
@@ -819,15 +861,15 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	bystr20ToBech32AbsDD := AbsDD{
 		Vars: []DataVar{
 			DataVar{
-				DataType: builder.typeMap["String"],
+				DataType: builder.simpleTypeMap["String"],
 			},
 			DataVar{
-				DataType: builder.typeMap["ByStr20"],
+				DataType: builder.simpleTypeMap["ByStr20"],
 			},
 		},
 		Term: &Builtin{
 			&AppTT{
-				Args: []Type{builder.typeMap["String"]},
+				Args: []Type{builder.simpleTypeMap["String"]},
 				To:   stdLib.Option,
 			},
 		},
@@ -916,7 +958,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 				&containsAbsTD.Vars[0],
 			},
 		},
-		Term: &Builtin{builder.typeMap["Bool"]},
+		Term: &Builtin{builder.simpleTypeMap["Bool"]},
 	}
 	builder.builtinOpMap["contains"] = &containsAbsTD
 
@@ -964,20 +1006,20 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 			},
 		},
 	}
-	sizeAbsDD.Term = &Builtin{builder.typeMap["Bool"]}
+	sizeAbsDD.Term = &Builtin{builder.simpleTypeMap["Bool"]}
 	builder.builtinOpMap["size"] = &sizeAbsTD
 
 	// builtin blt
 	bltAbsDD := AbsDD{
 		Vars: []DataVar{
 			DataVar{
-				DataType: builder.typeMap["BNum"],
+				DataType: builder.simpleTypeMap["BNum"],
 			},
 			DataVar{
-				DataType: builder.typeMap["BNum"],
+				DataType: builder.simpleTypeMap["BNum"],
 			},
 		},
-		Term: &Builtin{builder.typeMap["Bool"]},
+		Term: &Builtin{builder.simpleTypeMap["Bool"]},
 	}
 	builder.builtinOpMap["blt"] = &bltAbsDD
 
@@ -995,10 +1037,10 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 				DataType: &baddAbsTD.Vars[0],
 			},
 			DataVar{
-				DataType: builder.typeMap["BNum"],
+				DataType: builder.simpleTypeMap["BNum"],
 			},
 		},
-		Term: &Builtin{builder.typeMap["BNum"]},
+		Term: &Builtin{builder.simpleTypeMap["BNum"]},
 	}
 	builder.builtinOpMap["badd"] = &baddAbsTD
 
@@ -1006,13 +1048,13 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	bsubAbsDD := AbsDD{
 		Vars: []DataVar{
 			DataVar{
-				DataType: builder.typeMap["BNum"],
+				DataType: builder.simpleTypeMap["BNum"],
 			},
 			DataVar{
-				DataType: builder.typeMap["BNum"],
+				DataType: builder.simpleTypeMap["BNum"],
 			},
 		},
-		Term: &Builtin{builder.typeMap["Int256"]},
+		Term: &Builtin{builder.simpleTypeMap["Int256"]},
 	}
 	builder.builtinOpMap["bsub"] = &bsubAbsDD
 
@@ -1020,16 +1062,17 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 
 func BuildCFG(n ast.AstNode) *CFGBuilder {
 	builder := CFGBuilder{
-		builtinOpMap:    map[string]Data{},
-		typeMap:         map[string]Type{},
-		constrTypeMap:   map[string]string{},
-		intWidthTypeMap: map[int]*IntType{},
-		natWidthTypeMap: map[int]*NatType{},
-		varStack:        map[string][]Data{},
-		constructor:     nil,
-		transitions:     map[string]*Proc{},
-		procedures:      map[string]*Proc{},
-		fieldTypeMap:    map[string]Type{},
+		builtinOpMap:            map[string]Data{},
+		simpleTypeMap:           map[string]Type{},
+		constrTypeMap:           map[string]string{},
+		intWidthTypeMap:         map[int]*IntType{},
+		natWidthTypeMap:         map[int]*NatType{},
+		varStack:                map[string][]Data{},
+		constructor:             nil,
+		transitions:             map[string]*Proc{},
+		procedures:              map[string]*Proc{},
+		fieldTypeMap:            map[string]Type{},
+		genericTypeConstructors: map[string]*AbsTT{},
 	}
 	builder.initPrimitiveTypes()
 	ast.Walk(&builder, n)

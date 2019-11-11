@@ -54,14 +54,21 @@ func (builder *CFGBuilder) TypeOf(d Data) Type {
 		}
 		fmt.Println(builder.fieldTypeMap, x.Slot, builder.fieldTypeMap["b"])
 		return builder.fieldTypeMap[x.Slot]
+	case *AbsTD:
+		return builder.TypeOf(x.Term)
+	case *AbsDD:
+		return builder.TypeOf(x.Term)
 	case *AppDD:
 		return builder.TypeOf(x.To)
 	case *AppTD:
 		return builder.TypeOf(x.To)
+	case *Builtin:
+		return x.BuiltinType
+	case *Enum:
+		return x.EnumType
 	default:
-		fmt.Printf("builder.TypeOf not implemented %T\n", d)
+		panic(errors.New(fmt.Sprintf("builder.TypeOf not implemented %T\n", d)))
 	}
-	panic(errors.New("ERROR TypeOf"))
 	//return nil
 }
 
