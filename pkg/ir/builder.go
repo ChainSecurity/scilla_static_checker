@@ -90,12 +90,16 @@ func (builder *CFGBuilder) visitCtr(ctr *ast.CtrDef) (string, []Type) {
 	return name, types
 }
 
-func (builder *CFGBuilder) visitPattern(p ast.Pattern, t Type) Bind {
+func (builder *CFGBuilder) visitPattern(p ast.Pattern, t Type) (Bind, []string, []Type) {
+	varNames := []string{}
+	varTypes := []Type{}
 	switch pat := p.(type) {
 	case *ast.WildcardPattern:
-		return Bind{BindType: t}
+		return Bind{BindType: t}, varNames, varTypes
 	case *ast.BinderPattern:
-		return Bind{BindType: t}
+		varNames = append(varNames, pat.Variable.Id)
+		varTypes = append(varTypes, t)
+		return Bind{BindType: t}, varNames, varTypes
 	case *ast.ConstructorPattern:
 		var typeList []Type
 		switch typ := t.(type) {
@@ -109,15 +113,20 @@ func (builder *CFGBuilder) visitPattern(p ast.Pattern, t Type) Bind {
 		}
 		whenData := []Bind{}
 		for i, subp := range pat.Pats {
-			whenData = append(whenData, builder.visitPattern(subp, typeList[i]))
+			b, bNames, bTypes := builder.visitPattern(subp, typeList[i])
+
+			varNames = append(varNames, bNames...)
+			varTypes = append(varTypes, bTypes...)
+			whenData = append(whenData, b)
 		}
-		return Bind{
+		bind := Bind{
 			BindType: t,
 			Cond: &Cond{
 				Case: pat.ConstrName,
 				Data: whenData,
 			},
 		}
+		return bind, varNames, varTypes
 	default:
 		panic(errors.New("Unknown pattern "))
 	}
@@ -215,29 +224,29 @@ func (builder *CFGBuilder) visitASTType(e ast.ASTType) Type {
 	}
 }
 
-func (builder *CFGBuilder) visitStatement(s ast.Statement) Unit {
+func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) {
+	var u Unit
 	switch n := s.(type) {
 	case *ast.LoadStatement:
 		lhs := n.Lhs.Id
 		rhs := n.Rhs.Id
-		fmt.Println("LOAD", lhs, rhs)
 		load := Load{
 			Slot: rhs,
 			Path: []Data{},
 		}
 		stackMapPush(builder.varStack, lhs, &load)
-		return &load
+		u = &load
 	case *ast.BindStatement:
 		lhs := n.Lhs.Id
 		rhs := builder.visitExpression(n.RhsExpr)
 		stackMapPush(builder.varStack, lhs, rhs)
-		switch u := rhs.(type) {
+		switch r := rhs.(type) {
 		case *AppTD:
-			return u
+			u = r
 		case *AppDD:
-			return u
+			u = r
 		default:
-			return nil
+			u = nil
 		}
 	case *ast.StoreStatement:
 		lhs := n.Lhs.Id
@@ -251,20 +260,73 @@ func (builder *CFGBuilder) visitStatement(s ast.Statement) Unit {
 			Path: []Data{},
 			Data: data,
 		}
-		return &save
+		u = &save
 	case *ast.AcceptPaymentStatement:
-		return &Have{}
+		u = &Have{}
 	case *ast.SendMsgsStatement:
 		d, ok := stackMapPeek(builder.varStack, n.Arg.Id)
 		if !ok {
 			panic(errors.New(fmt.Sprintf("variable not found: %s", n.Arg.Id)))
 		}
-		fmt.Println("data", d, ok, builder.varStack, n.Arg.Id)
-		return &Send{Data: d}
+		u = &Send{Data: d}
+	case *ast.MatchStatement:
+		//type MatchStatementCase struct {
+		//Pat  Pattern     `json:"pattern"`
+		//Body []Statement `json:"pattern_body"`
+		//}
+		//Arg   *Identifier           `json:"arg"`
+		//Cases []*MatchStatementCase `json:"cases"`
+		d, ok := stackMapPeek(builder.varStack, n.Arg.Id)
+		if !ok {
+			panic(errors.New(fmt.Sprintf("variable not found: %s", n.Arg.Id)))
+		}
+		procCases := make([]ProcCase, len(n.Cases))
+		fmt.Println("MatchStatement")
+		for i, mc := range n.Cases {
+			//TODO create the DataVar and pass it as the arg for the call
+			fmt.Println("\t", mc.Pat)
+			newBind, varNames, varTypes := builder.visitPattern(mc.Pat, builder.TypeOf(d))
+			dataVars := make([]DataVar, len(varNames))
+			for j, name := range varNames {
+				typ := varTypes[j]
+				dataVar := DataVar{typ}
+				dataVars[j] = dataVar
+				stackMapPush(builder.varStack, name, &dataVar)
+			}
+
+			procCases[i] = ProcCase{
+				Bind: newBind,
+				Body: Proc{
+					Vars: dataVars,
+					Plan: []Unit{},
+				},
+			}
+			for _, s := range mc.Body {
+				builder.visitStatement(&procCases[i].Body, s)
+			}
+
+			for _, name := range varNames {
+				stackMapPop(builder.varStack, name)
+			}
+
+		}
+
+		for i, pc := range procCases {
+			fmt.Println("\t", i, "ProcCase", pc.Body)
+		}
+
+		pp := PickProc{
+			From: d,
+			With: procCases,
+		}
+		p.Jump = &pp
+
+		//panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
 	default:
-		//fmt.Printf("Unhandled Expression type: %T\n", n)
 		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
-		//return nil
+	}
+	if u != nil {
+		p.Plan = append(p.Plan, u)
 	}
 }
 
@@ -273,9 +335,6 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 	case *ast.ConstrExpression:
 		constrName := n.ConstructorName
 
-		for k := range builder.constrTypeMap {
-			fmt.Println("->", k, builder.constrTypeMap[k])
-		}
 		//if !ok {
 		//panic(errors.New(fmt.Sprintf("Unknown type: %s", typeName)))
 		//}
@@ -289,7 +348,6 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		}
 
 		for _, arg := range n.Args {
-			fmt.Println(arg.Id)
 			d, ok := stackMapPeek(builder.varStack, arg.Id)
 			if !ok {
 				panic(errors.New(fmt.Sprintf("variable not found: %s", arg.Id)))
@@ -302,17 +360,6 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 			panic(errors.New(fmt.Sprintf("Unknown constructor: %s", constrName)))
 		}
 		typ, ok := builder.getType(typeName, ts)
-
-		fmt.Println("ConstrExpression", constrName, ts, ds)
-		fmt.Println("____")
-		for _, t := range ts {
-			fmt.Printf("%T\n", t)
-		}
-		fmt.Println("____")
-		for _, t := range ds {
-			fmt.Printf("%T\n", t)
-		}
-		fmt.Println("____")
 
 		res := Enum{
 			EnumType: typ,
@@ -340,7 +387,9 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		}
 		cases := []DataCase{}
 		for _, c := range n.Cases {
-			b := builder.visitPattern(c.Pat, builder.TypeOf(data))
+			b, varNames, varTypes := builder.visitPattern(c.Pat, builder.TypeOf(data))
+			_ = varNames
+			_ = varTypes
 			e := builder.visitExpression(c.Expr)
 			mec := DataCase{Bind: b, Body: e}
 			cases = append(cases, mec)
@@ -390,7 +439,6 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 			if len(op.Vars) != len(vars) {
 				panic(errors.New(fmt.Sprintf("Wrong number of Builtin AbsDD args")))
 			}
-			fmt.Println("BUILTINT EXPRESSION", builder.TypeOf(vars[0]), builder.TypeOf(vars[1]))
 			appDD := AppDD{
 				Args: vars,
 				To:   op,
@@ -402,7 +450,6 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 	case *ast.LetExpression:
 		varName := n.Var.Id
 		expr := builder.visitExpression(n.Expr)
-		fmt.Println("LetExpression", varName, builder.TypeOf(expr))
 		stackMapPush(builder.varStack, varName, expr)
 		defer stackMapPop(builder.varStack, varName)
 		body := builder.visitExpression(n.Body)
@@ -532,24 +579,15 @@ func (builder *CFGBuilder) visitComponent(comp *ast.Component) {
 		defer stackMapPop(builder.varStack, pName)
 	}
 
-	fmt.Println("visitComponent", comp.Name.Id, dataVars)
-
-	plan := []Unit{}
-	for i, s := range comp.Body {
-		unit := builder.visitStatement(s)
-		if unit != nil {
-			plan = append(plan, unit)
-		} else {
-			fmt.Printf("Component %s: Statement %d %T haven't produced Unit\n", comp.Name.Id, i, s)
-		}
-	}
-
 	proc := Proc{
 		Vars: dataVars,
-		Plan: plan,
+		Plan: []Unit{},
+	}
+	for _, s := range comp.Body {
+		builder.visitStatement(&proc, s)
 	}
 
-	fmt.Printf("Component %s type: %s\n\tvars: %s\n\tplan: %s\n", comp.Name.Id, comp.ComponentType, dataVars, plan)
+	fmt.Printf("Component %s type: %s\n\tvars: %s\n\tplan: %s\n", comp.Name.Id, comp.ComponentType, dataVars, proc.Plan)
 
 	if comp.ComponentType == "procedure" {
 		builder.transitions[comp.Name.Id] = &proc
@@ -558,7 +596,6 @@ func (builder *CFGBuilder) visitComponent(comp *ast.Component) {
 	} else {
 		panic(errors.New(fmt.Sprintf("Wrong Component type: %s", comp.ComponentType)))
 	}
-	//fmt.Println("aasd")
 }
 
 func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
@@ -578,9 +615,10 @@ func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
 			stackMapPush(builder.varStack, pName, &dataVars[i])
 		}
 
-		builder.constructor = &Proc{}
-		builder.constructor.Vars = dataVars
-		builder.constructor.Plan = make([]Unit, len(n.Params))
+		builder.constructor = &Proc{
+			Vars: dataVars,
+			Plan: make([]Unit, len(n.Fields)),
+		}
 		for i, f := range n.Fields {
 			n, d := builder.visitField(f)
 			stackMapPush(builder.varStack, n, d)
@@ -604,9 +642,7 @@ func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
 		//builder.Field[name] = Save{}
 		//builder.visitLibEntry(n)
 	case *ast.Component:
-		fmt.Println("Before", builder.varStack)
 		builder.visitComponent(n)
-		fmt.Println("After", builder.varStack)
 	case *ast.Identifier:
 		//do nothing
 	case *ast.Location:
@@ -623,8 +659,15 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 
 	builder.constrTypeMap["Nil"] = "List"
 	builder.constrTypeMap["Cons"] = "List"
-
 	builder.genericTypeConstructors["List"] = stdLib.List
+
+	builder.constrTypeMap["True"] = "Boolean"
+	builder.constrTypeMap["False"] = "Boolean"
+	builder.simpleTypeMap["Boolean"] = stdLib.Boolean
+
+	//builder.constrTypeMap["True"] = "Bool"
+	//builder.constrTypeMap["False"] = "Bool"
+	//builder.genericTypeConstructors["Bool"] = stdLib.Boolean
 
 	sizes := []int{32, 64, 128, 256}
 	for _, s := range sizes {

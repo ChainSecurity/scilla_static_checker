@@ -52,16 +52,16 @@ func StdLib() BuiltinADTs {
 	)
 
 	boolean = EnumType{
-		"tt": {},
-		"ff": {},
+		"True":  {},
+		"False": {},
 	}
 	tt = Enum{
 		EnumType: &boolean,
-		Case:     "tt",
+		Case:     "True",
 	}
 	ff = Enum{
 		EnumType: &boolean,
-		Case:     "ff",
+		Case:     "False",
 	}
 
 	list = AbsTT{
