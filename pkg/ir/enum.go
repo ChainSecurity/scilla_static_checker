@@ -43,3 +43,4 @@ type (
 )
 
 func (*PickData) isData() {}
+func (*Bind) isData()     {}

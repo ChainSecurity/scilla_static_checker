@@ -167,7 +167,7 @@ func dotWalkProcCase(b *dotBuilder, pc ProcCase) graph.Node {
 	e := dotPortedEdge{
 		id:       b.getEdgeId(),
 		from:     m,
-		to:       dotWalkBind(b, &pc.Bind),
+		to:       dotWalkData(b, &pc.Bind),
 		fromPort: "Bind",
 	}
 
@@ -177,7 +177,7 @@ func dotWalkProcCase(b *dotBuilder, pc ProcCase) graph.Node {
 		id:       b.getEdgeId(),
 		from:     m,
 		to:       dotWalkData(b, &pc.Body),
-		fromPort: "Bind",
+		fromPort: "Body",
 	}
 
 	b.edges = append(b.edges, &f)
@@ -476,7 +476,7 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 			map[string][]string{},
 		}
 		b.nodes = append(b.nodes, n)
-		fmt.Printf("UNHANDLED TYPE %T\n", x)
+		fmt.Printf("UNHANDLED TYPE %T\n", t)
 		//return nil
 		//panic(errors.New(fmt.Sprintf("unhandeled type: %T", x)))
 	}
@@ -509,8 +509,9 @@ func dotWalkCond(b *dotBuilder, w *Cond) graph.Node {
 		map[string][]string{},
 	}
 	b.nodes = append(b.nodes, &n)
-	for _, v := range w.Data {
-		vNode := dotWalkBind(b, &v)
+	for i, _ := range w.Data {
+
+		vNode := dotWalkData(b, &w.Data[i])
 		e := dotPortedEdge{
 			id:       b.getEdgeId(),
 			from:     n,
@@ -518,34 +519,6 @@ func dotWalkCond(b *dotBuilder, w *Cond) graph.Node {
 			fromPort: "Data"}
 		b.edges = append(b.edges, &e)
 
-	}
-	return &n
-}
-
-func dotWalkBind(b *dotBuilder, d *Bind) graph.Node {
-	n := dotNode{
-		b.getNodeId(),
-		"Bind",
-		[]string{"BindType", "Cond"},
-		map[string][]string{},
-	}
-	var m graph.Node
-	m = dotWalkType(b, d.BindType)
-	var e *dotPortedEdge
-	e = &dotPortedEdge{
-		id:       b.getEdgeId(),
-		from:     n,
-		to:       m,
-		fromPort: "BindType"}
-	b.edges = append(b.edges, e)
-	if d.Cond != nil {
-		m = dotWalkCond(b, d.Cond)
-		e = &dotPortedEdge{
-			id:       b.getEdgeId(),
-			from:     n,
-			to:       m,
-			fromPort: "Cond"}
-		b.edges = append(b.edges, e)
 	}
 	return &n
 }
@@ -567,7 +540,7 @@ func dotWalkDataCase(b *dotBuilder, d *DataCase) graph.Node {
 	e = &dotPortedEdge{
 		id:       b.getEdgeId(),
 		from:     n,
-		to:       dotWalkBind(b, &d.Bind),
+		to:       dotWalkData(b, &d.Bind),
 		fromPort: "Bind"}
 	b.edges = append(b.edges, e)
 	return &n
@@ -602,7 +575,8 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 			map[string][]string{},
 		}
 		b.nodes = append(b.nodes, n)
-		for _, dc := range x.With {
+		for i, _ := range x.With {
+			dc := x.With[i]
 			e := dotPortedEdge{
 				id:       b.getEdgeId(),
 				from:     n,
@@ -787,7 +761,6 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 		}
 		b.nodes = append(b.nodes, n)
 		tNode := dotWalkType(b, x.BuiltinType)
-		fmt.Println("BUILTIN", x.BuiltinType)
 		e := dotPortedEdge{
 			id:       b.getEdgeId(),
 			from:     n,
@@ -803,9 +776,6 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 			[]string{"Jump"},
 			map[string][]string{},
 		}
-
-		fmt.Println(x)
-		fmt.Println(len(x.Vars))
 
 		for i, _ := range x.Vars {
 			v := &x.Vars[i]
@@ -922,7 +892,31 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 
 		b.edges = append(b.edges, &e)
 		b.nodes = append(b.nodes, m)
-		n = &m
+
+	case *Bind:
+
+		n = dotNode{
+			b.getNodeId(),
+			"Bind",
+			[]string{"BindType", "Cond"},
+			map[string][]string{},
+		}
+		m := dotWalkType(b, x.BindType)
+		e := &dotPortedEdge{
+			id:       b.getEdgeId(),
+			from:     n,
+			to:       m,
+			fromPort: "BindType"}
+		b.edges = append(b.edges, e)
+		if x.Cond != nil {
+			m = dotWalkCond(b, x.Cond)
+			e = &dotPortedEdge{
+				id:       b.getEdgeId(),
+				from:     n,
+				to:       m,
+				fromPort: "Cond"}
+			b.edges = append(b.edges, e)
+		}
 
 	default:
 		panic(errors.New(fmt.Sprintf("unhandeled type: %T", x)))

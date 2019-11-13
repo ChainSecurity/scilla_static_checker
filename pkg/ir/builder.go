@@ -90,16 +90,19 @@ func (builder *CFGBuilder) visitCtr(ctr *ast.CtrDef) (string, []Type) {
 	return name, types
 }
 
-func (builder *CFGBuilder) visitPattern(p ast.Pattern, t Type) (Bind, []string, []Type) {
+//Populates the Bind with the data. Return the lists of Name and Data of the varaibles that need to be in the new scope
+
+func (builder *CFGBuilder) visitPattern(p ast.Pattern, t Type, bind *Bind) ([]string, []Data) {
 	varNames := []string{}
-	varTypes := []Type{}
+	varBinds := []Data{}
 	switch pat := p.(type) {
 	case *ast.WildcardPattern:
-		return Bind{BindType: t}, varNames, varTypes
+		*bind = Bind{BindType: t}
 	case *ast.BinderPattern:
+		*bind = Bind{BindType: t}
 		varNames = append(varNames, pat.Variable.Id)
-		varTypes = append(varTypes, t)
-		return Bind{BindType: t}, varNames, varTypes
+		varBinds = append(varBinds, bind)
+
 	case *ast.ConstructorPattern:
 		var typeList []Type
 		switch typ := t.(type) {
@@ -111,25 +114,27 @@ func (builder *CFGBuilder) visitPattern(p ast.Pattern, t Type) (Bind, []string, 
 		if len(typeList) != len(pat.Pats) {
 			panic(errors.New(fmt.Sprintf("constructor pattern argument length mistmatch: %s", pat.ConstrName)))
 		}
-		whenData := []Bind{}
+		whenData := make([]Bind, len(pat.Pats))
 		for i, subp := range pat.Pats {
-			b, bNames, bTypes := builder.visitPattern(subp, typeList[i])
+			var bNames []string
+			var bBinds []Data
+			bNames, bBinds = builder.visitPattern(subp, typeList[i], &whenData[i])
 
 			varNames = append(varNames, bNames...)
-			varTypes = append(varTypes, bTypes...)
-			whenData = append(whenData, b)
+			varBinds = append(varBinds, bBinds...)
+			//whenData[i] = b
 		}
-		bind := Bind{
+		*bind = Bind{
 			BindType: t,
 			Cond: &Cond{
 				Case: pat.ConstrName,
 				Data: whenData,
 			},
 		}
-		return bind, varNames, varTypes
 	default:
 		panic(errors.New("Unknown pattern "))
 	}
+	return varNames, varBinds
 }
 
 func (builder *CFGBuilder) visitLiteral(l ast.Literal) Data {
@@ -281,26 +286,18 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) {
 			panic(errors.New(fmt.Sprintf("variable not found: %s", n.Arg.Id)))
 		}
 		procCases := make([]ProcCase, len(n.Cases))
-		fmt.Println("MatchStatement")
 		for i, mc := range n.Cases {
 			//TODO create the DataVar and pass it as the arg for the call
-			fmt.Println("\t", mc.Pat)
-			newBind, varNames, varTypes := builder.visitPattern(mc.Pat, builder.TypeOf(d))
-			dataVars := make([]DataVar, len(varNames))
-			for j, name := range varNames {
-				typ := varTypes[j]
-				dataVar := DataVar{typ}
-				dataVars[j] = dataVar
-				stackMapPush(builder.varStack, name, &dataVar)
-			}
-
 			procCases[i] = ProcCase{
-				Bind: newBind,
 				Body: Proc{
-					Vars: dataVars,
 					Plan: []Unit{},
 				},
 			}
+			varNames, varBinds := builder.visitPattern(mc.Pat, builder.TypeOf(d), &procCases[i].Bind)
+			for j, name := range varNames {
+				stackMapPush(builder.varStack, name, varBinds[j])
+			}
+
 			for _, s := range mc.Body {
 				builder.visitStatement(&procCases[i].Body, s)
 			}
@@ -309,10 +306,6 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) {
 				stackMapPop(builder.varStack, name)
 			}
 
-		}
-
-		for i, pc := range procCases {
-			fmt.Println("\t", i, "ProcCase", pc.Body)
 		}
 
 		pp := PickProc{
@@ -385,18 +378,24 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		if !ok {
 			panic(errors.New(fmt.Sprintf("variable not found: %s", lhs)))
 		}
-		cases := []DataCase{}
-		for _, c := range n.Cases {
-			b, varNames, varTypes := builder.visitPattern(c.Pat, builder.TypeOf(data))
-			_ = varNames
-			_ = varTypes
-			e := builder.visitExpression(c.Expr)
-			mec := DataCase{Bind: b, Body: e}
-			cases = append(cases, mec)
+		pd := PickData{
+			From: data,
+			With: make([]DataCase, len(n.Cases)),
 		}
-		return &PickData{
-			From: data, With: cases,
+		for i, c := range n.Cases {
+			mec := &pd.With[i].Bind
+			varNames, varBinds := builder.visitPattern(c.Pat, builder.TypeOf(data), mec)
+			for j, name := range varNames {
+				stackMapPush(builder.varStack, name, varBinds[j])
+			}
+
+			pd.With[i].Body = builder.visitExpression(c.Expr)
+
+			for _, name := range varNames {
+				stackMapPop(builder.varStack, name)
+			}
 		}
+		return &pd
 	case *ast.LiteralExpression:
 		return builder.visitLiteral(n.Val)
 	case *ast.VarExpression:
@@ -420,7 +419,6 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		}
 
 		op := builder.getBuiltinOp(opName, varTypes)
-		fmt.Printf("BuiltinExpression %T\n", op)
 		switch op := op.(type) {
 		case *AbsTD:
 			if len(op.Vars) != 1 {
