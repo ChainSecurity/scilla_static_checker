@@ -10,8 +10,8 @@ type BuiltinADTs struct {
 	FF      Data
 
 	List *AbsTT
-	Nil  Data
-	Cons Data
+	Nil  *AbsTD
+	Cons *AbsTD
 
 	Option *AbsTT
 	None   Data
@@ -32,10 +32,10 @@ func StdLib() BuiltinADTs {
 		list     AbsTT
 		listEnum EnumType
 
-		empty AbsTD
+		listNil AbsTD
 
-		stack      AbsTD
-		stackAbsDD AbsDD
+		listCons      AbsTD
+		listConsAbsDD AbsDD
 
 		option     AbsTT
 		optionEnum EnumType
@@ -75,44 +75,49 @@ func StdLib() BuiltinADTs {
 		"Cons": {&list.Vars[0], &listEnum},
 	}
 
-	empty = AbsTD{
+	listNil = AbsTD{
 		Vars: []TypeVar{
 			TypeVar{Kind: &star},
 		},
 	}
-	empty.Term = &Enum{
-		EnumType: &AppTT{
-			Args: []Type{&empty.Vars[0]},
-			To:   &list,
+	listNil.Term = &AbsDD{
+		Vars: []DataVar{},
+		Term: &Enum{
+			EnumType: &AppTT{
+				Args: []Type{&listNil.Vars[0]},
+				To:   &list,
+			},
+			Case: "Nil",
+			Data: []Data{},
 		},
-		Case: "Nil",
-		Data: []Data{},
 	}
 
-	stack = AbsTD{
+	listCons = AbsTD{
 		Vars: []TypeVar{
 			TypeVar{Kind: &star},
 		},
-		Term: &stackAbsDD,
+		Term: &listConsAbsDD,
 	}
-	stackAbsDD = AbsDD{
+	listType := &AppTT{
+		Args: []Type{&listCons.Vars[0]},
+		To:   &list,
+	}
+	listConsAbsDD = AbsDD{
 		Vars: []DataVar{
-			DataVar{DataType: &stack.Vars[0]},
+			DataVar{DataType: &listCons.Vars[0]},
 			DataVar{
-				DataType: &AppTT{
-					Args: []Type{&stack.Vars[0]},
-					To:   &list,
-				},
+				DataType: listType,
 			},
 		},
 	}
-	stackAbsDD.Term = &Enum{
-		EnumType: &AppTT{
-			Args: []Type{&stack.Vars[0]},
-			To:   &list,
-		},
+	listConsAbsDD.Term = &Enum{
+		EnumType: listType,
+		//&AppTT{
+		//Args: []Type{&listCons.Vars[0]},
+		//To:   &list,
+		//},
 		Case: "Cons",
-		Data: []Data{&stackAbsDD.Vars[0], &stackAbsDD.Vars[1]},
+		Data: []Data{&listConsAbsDD.Vars[0], &listConsAbsDD.Vars[1]},
 	}
 
 	option = AbsTT{
@@ -201,8 +206,8 @@ func StdLib() BuiltinADTs {
 		FF:      &ff,
 
 		List: &list,
-		Nil:  &empty,
-		Cons: &stack,
+		Nil:  &listNil,
+		Cons: &listCons,
 
 		Option: &option,
 		None:   &none,

@@ -412,7 +412,7 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 
 		m := dotNode{
 			b.getNodeId(),
-			"AppTT",
+			fmt.Sprintf("AppTT %p", x),
 			[]string{"To"},
 			map[string][]string{},
 		}
@@ -834,6 +834,7 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 				from:     m,
 				to:       dotWalkData(b, d),
 				fromPort: portName}
+
 			b.edges = append(b.edges, &e)
 			i++
 		}
@@ -843,6 +844,8 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 			from:     m,
 			to:       dotWalkType(b, x.MsgType),
 			fromPort: "MsgType"}
+
+		fmt.Println("Msg", e)
 
 		b.edges = append(b.edges, &e)
 		b.nodes = append(b.nodes, m)
@@ -892,6 +895,7 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 
 		b.edges = append(b.edges, &e)
 		b.nodes = append(b.nodes, m)
+		n = &m
 
 	case *Bind:
 
@@ -920,6 +924,10 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 
 	default:
 		panic(errors.New(fmt.Sprintf("unhandeled type: %T", x)))
+	}
+
+	if n == nil {
+		panic(errors.New(fmt.Sprintf("dotWalkData returned nil: %T", d)))
 	}
 
 	b.dataCache[d] = n

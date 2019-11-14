@@ -345,7 +345,7 @@
             "column": 12,
             "node_type": "Location"
           },
-          "identifier": "inc",
+          "identifier": "test",
           "node_type": "Identifier"
         },
         "body": [
