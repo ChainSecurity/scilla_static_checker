@@ -19,7 +19,7 @@ type CFGBuilder struct {
 	builtinADT       map[string]Type
 	varStack         map[string][]Data
 	constructor      *Proc
-	transitions      map[string]*Proc
+	Transitions      map[string]*Proc
 	procedures       map[string]*Proc
 	fieldTypeMap     map[string]Type
 
@@ -599,9 +599,9 @@ func (builder *CFGBuilder) visitComponent(comp *ast.Component) {
 	fmt.Printf("Component %s type: %s\n\tvars: %s\n\tplan: %s\n", comp.Name.Id, comp.ComponentType, dataVars, proc.Plan)
 
 	if comp.ComponentType == "procedure" {
-		builder.transitions[comp.Name.Id] = &proc
+		builder.Transitions[comp.Name.Id] = &proc
 	} else if comp.ComponentType == "transition" {
-		builder.transitions[comp.Name.Id] = &proc
+		builder.Transitions[comp.Name.Id] = &proc
 	} else {
 		panic(errors.New(fmt.Sprintf("Wrong Component type: %s", comp.ComponentType)))
 	}
@@ -634,10 +634,10 @@ func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
 			builder.constructor.Plan[i] = &Save{n, []Data{}, d}
 		}
 
-		//builder.transitions = make[[]*Proc, len(n.Components)]
+		//builder.Transitions = make[[]*Proc, len(n.Components)]
 		//for _, c := range n.Components {
 		//builder.Visit(c)
-		//builder.transitions = append(builder.transitions, &e)
+		//builder.Transitions = append(builder.Transitions, &e)
 		//}
 
 		//for _, pName := range paramNames {
@@ -1218,7 +1218,7 @@ func BuildCFG(n ast.AstNode) *CFGBuilder {
 		natWidthTypeMap:         map[int]*NatType{},
 		varStack:                map[string][]Data{},
 		constructor:             nil,
-		transitions:             map[string]*Proc{},
+		Transitions:             map[string]*Proc{},
 		procedures:              map[string]*Proc{},
 		fieldTypeMap:            map[string]Type{},
 		genericTypeConstructors: map[string]*AbsTT{},

@@ -3,25 +3,28 @@ package ir
 // Typed λ-calculus
 
 type (
-	// Type :
-	Type interface{ isType() }
+	IRNode interface{}
 
+	// Type :
+	Type interface {
+		IRNode
+		isType()
+	}
 	// Data :
 	Data interface {
+		IRNode
 		isData()
 	}
-
 	// Kind :
-	Kind interface{ isKind() }
-)
+	Kind interface {
+		IRNode
+		isKind()
+	}
 
-type (
 	// DataVar :
 	DataVar struct{ DataType Type }
-
 	// TypeVar :
 	TypeVar struct{ Kind Kind }
-
 	// SetKind :
 	SetKind struct{}
 
@@ -30,9 +33,7 @@ type (
 )
 
 func (*DataVar) isData() {}
-
 func (*Builtin) isData() {}
-
 func (*TypeVar) isType() {}
 func (*SetKind) isKind() {}
 
@@ -54,13 +55,7 @@ type (
 		Vars []TypeVar
 		Term Kind
 	}
-)
 
-func (*AllDD) isType() {}
-func (*AllTD) isType() {}
-func (*AllTT) isKind() {}
-
-type (
 	// AppDD :
 	AppDD struct {
 		Args []Data
@@ -78,13 +73,7 @@ type (
 		Args []Type
 		To   Type
 	}
-)
 
-func (*AppDD) isData() {}
-func (*AppTD) isData() {}
-func (*AppTT) isType() {}
-
-type (
 	// AbsDD :
 	AbsDD struct {
 		Vars []DataVar
@@ -104,11 +93,17 @@ type (
 	}
 )
 
+func (*AllDD) isType() {}
+func (*AllTD) isType() {}
+func (*AllTT) isKind() {}
+func (*AppDD) isData() {}
+func (*AppTD) isData() {}
+func (*AppTT) isType() {}
 func (*AbsDD) isData() {}
 func (*AbsTD) isData() {}
 func (*AbsTT) isType() {}
 
-// Scilla
+// Scilla Types
 type (
 	// Int
 	IntType struct{ Size int }
@@ -202,3 +197,149 @@ func (*Bnr) isData() {}
 func (*Exc) isData() {}
 func (*Msg) isData() {}
 func (*Map) isData() {}
+
+// EnumType :
+type EnumType map[string][]Type
+
+func (*EnumType) isType() {}
+
+// Enum :
+type Enum struct {
+	EnumType Type
+	Case     string
+	Data     []Data
+}
+
+func (*Enum) isData() {}
+
+type (
+	// Bind :
+	Bind struct {
+		BindType Type
+		Cond     *Cond
+	}
+
+	// Cond :
+	Cond struct {
+		Case string
+		Data []Bind
+	}
+)
+
+type (
+	// PickData :
+	PickData struct {
+		From Data
+		With []DataCase
+	}
+
+	// DataCase :
+	DataCase struct {
+		Bind Bind
+		Body Data
+	}
+)
+
+func (*PickData) isData() {}
+func (*Bind) isData()     {}
+
+// ProcType :
+type ProcType struct {
+	Vars []DataVar
+}
+
+func (*ProcType) isType() {}
+
+// Proc :
+type Proc struct {
+	Vars []DataVar
+	Plan []Unit
+	Jump Jump
+}
+
+func (*Proc) isData() {}
+
+type (
+	// Jump :
+	Jump interface {
+		IRNode
+		isJump()
+	}
+
+	// CallProc :
+	CallProc struct {
+		Args []Data
+		To   Data
+	}
+
+	// PickProc :
+	PickProc struct {
+		From Data
+		With []ProcCase
+	}
+
+	// ProcCase :
+	ProcCase struct {
+		Bind Bind
+		Body Proc
+	}
+)
+
+func (*CallProc) isJump() {}
+func (*PickProc) isJump() {}
+
+// Unit :
+type Unit interface {
+	IRNode
+	isUnit()
+}
+
+type (
+	// Load :
+	Load struct {
+		Slot string
+		Path []Data
+	}
+
+	// Save :
+	Save struct {
+		Slot string
+		Path []Data
+		Data Data
+	}
+
+	// Emit :
+	Emit struct {
+		Data Data
+	}
+
+	// Send :
+	Send struct {
+		Data Data
+	}
+
+	// Have :
+	Have struct{}
+)
+
+func (*Load) isData() {}
+
+func (*Load) isUnit() {}
+func (*Save) isUnit() {}
+func (*Emit) isUnit() {}
+func (*Send) isUnit() {}
+func (*Have) isUnit() {}
+
+func (*AbsTD) isUnit() {}
+func (*AbsDD) isUnit() {}
+func (*AppDD) isUnit() {}
+func (*AppTD) isUnit() {}
+
+func (*Int) isUnit() {}
+func (*Nat) isUnit() {}
+func (*Raw) isUnit() {}
+func (*Str) isUnit() {}
+func (*Bnr) isUnit() {}
+func (*Exc) isUnit() {}
+func (*Msg) isUnit() {}
+func (*Map) isUnit() {}

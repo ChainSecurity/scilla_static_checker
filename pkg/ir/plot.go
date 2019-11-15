@@ -963,8 +963,8 @@ func GetDot(b *CFGBuilder) string {
 	//if !ok {
 	//panic(errors.New("var not found"))
 	//}
-	v := b.transitions["test"]
-	//v := b.transitions["inc"]
+	v := b.Transitions["test"]
+	//v := b.Transitions["inc"]
 
 	dotWalkData(&d, v)
 	g := directedPortedAttrGraphFrom(&d)
