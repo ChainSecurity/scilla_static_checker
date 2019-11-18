@@ -13,7 +13,7 @@ type TestVisitor struct {
 }
 
 func (t TestVisitor) Visit(node ir.IRNode) ir.Visitor {
-	//fmt.Printf("+ %T\n", node)
+	fmt.Printf("+ %T\n", node)
 	visited, ok := t.visited[node]
 	if ok && visited {
 		return nil

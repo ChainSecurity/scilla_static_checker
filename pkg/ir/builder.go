@@ -226,7 +226,7 @@ func (builder *CFGBuilder) visitASTType(e ast.ASTType) Type {
 	}
 }
 
-func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) {
+func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) *Proc {
 	var u Unit
 	switch n := s.(type) {
 	case *ast.LoadStatement:
@@ -243,9 +243,29 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) {
 		rhs := builder.visitExpression(n.RhsExpr)
 		stackMapPush(builder.varStack, lhs, rhs)
 		switch r := rhs.(type) {
+		case *AbsTD:
+			u = r
+		case *AbsDD:
+			u = r
 		case *AppTD:
 			u = r
 		case *AppDD:
+			u = r
+		case *Int:
+			u = r
+		case *Nat:
+			u = r
+		case *Raw:
+			u = r
+		case *Str:
+			u = r
+		case *Bnr:
+			u = r
+		case *Exc:
+			u = r
+		case *Msg:
+			u = r
+		case *Map:
 			u = r
 		default:
 			u = nil
@@ -253,6 +273,7 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) {
 	case *ast.StoreStatement:
 		lhs := n.Lhs.Id
 		rhs := n.Rhs.Id
+		fmt.Println("StoreStatement", lhs, rhs)
 		data, ok := stackMapPeek(builder.varStack, rhs)
 		if !ok {
 			panic(errors.New(fmt.Sprintf("variable not found: %s", rhs)))
@@ -264,7 +285,7 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) {
 		}
 		u = &save
 	case *ast.AcceptPaymentStatement:
-		u = &Have{}
+		u = &Accept{}
 	case *ast.SendMsgsStatement:
 		d, ok := stackMapPeek(builder.varStack, n.Arg.Id)
 		if !ok {
@@ -272,17 +293,16 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) {
 		}
 		u = &Send{Data: d}
 	case *ast.MatchStatement:
-		//type MatchStatementCase struct {
-		//Pat  Pattern     `json:"pattern"`
-		//Body []Statement `json:"pattern_body"`
-		//}
-		//Arg   *Identifier           `json:"arg"`
-		//Cases []*MatchStatementCase `json:"cases"`
+
+		initialVarStack := stackMapCopy(builder.varStack)
 		d, ok := stackMapPeek(builder.varStack, n.Arg.Id)
 		if !ok {
 			panic(errors.New(fmt.Sprintf("variable not found: %s", n.Arg.Id)))
 		}
 		procCases := make([]ProcCase, len(n.Cases))
+		contProc := Proc{
+			Plan: []Unit{},
+		}
 		for i, mc := range n.Cases {
 			//TODO create the DataVar and pass it as the arg for the call
 			procCases[i] = ProcCase{
@@ -290,13 +310,23 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) {
 					Plan: []Unit{},
 				},
 			}
+			copyVarStack := stackMapCopy(initialVarStack)
+			builder.varStack = copyVarStack
 			varNames, varBinds := builder.visitPattern(mc.Pat, builder.TypeOf(d), &procCases[i].Bind)
 			for j, name := range varNames {
 				stackMapPush(builder.varStack, name, varBinds[j])
 			}
 
+			curProc := &procCases[i].Body
 			for _, s := range mc.Body {
-				builder.visitStatement(&procCases[i].Body, s)
+				nextProc := builder.visitStatement(curProc, s)
+				if nextProc != nil {
+					curProc = nextProc
+				}
+			}
+			curProc.Jump = &CallProc{
+				Args: []Data{},
+				To:   &contProc,
 			}
 
 			for _, name := range varNames {
@@ -310,14 +340,15 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) {
 			With: procCases,
 		}
 		p.Jump = &pp
-
-		//panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
+		builder.restoreVarStack(initialVarStack)
+		return &contProc
 	default:
 		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
 	}
 	if u != nil {
 		p.Plan = append(p.Plan, u)
 	}
+	return nil
 }
 
 func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
@@ -588,20 +619,25 @@ func (builder *CFGBuilder) visitComponent(comp *ast.Component) {
 		defer stackMapPop(builder.varStack, pName)
 	}
 
-	proc := Proc{
+	firstProc := Proc{
 		Vars: dataVars,
 		Plan: []Unit{},
 	}
+	proc := &firstProc
 	for _, s := range comp.Body {
-		builder.visitStatement(&proc, s)
+		contProc := builder.visitStatement(proc, s)
+		if contProc != nil {
+			proc = contProc
+		}
+
 	}
 
 	fmt.Printf("Component %s type: %s\n\tvars: %s\n\tplan: %s\n", comp.Name.Id, comp.ComponentType, dataVars, proc.Plan)
 
 	if comp.ComponentType == "procedure" {
-		builder.Transitions[comp.Name.Id] = &proc
+		builder.Transitions[comp.Name.Id] = &firstProc
 	} else if comp.ComponentType == "transition" {
-		builder.Transitions[comp.Name.Id] = &proc
+		builder.Transitions[comp.Name.Id] = &firstProc
 	} else {
 		panic(errors.New(fmt.Sprintf("Wrong Component type: %s", comp.ComponentType)))
 	}
@@ -672,13 +708,13 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	builder.genericDataConstructors["Nil"] = stdLib.Nil
 	builder.genericDataConstructors["Cons"] = stdLib.Cons
 
-	builder.constructorType["True"] = "Boolean"
-	builder.constructorType["False"] = "Boolean"
-	builder.primitiveTypeMap["Boolean"] = stdLib.Boolean
+	//builder.constructorType["True"] = "Boolean"
+	//builder.constructorType["False"] = "Boolean"
+	//builder.primitiveTypeMap["Boolean"] = stdLib.Boolean
 
-	//builder.constructorType["True"] = "Bool"
-	//builder.constructorType["False"] = "Bool"
-	//builder.genericTypeConstructors["Bool"] = stdLib.Boolean
+	builder.constructorType["True"] = "Bool"
+	builder.constructorType["False"] = "Bool"
+	builder.definedADT["Bool"] = stdLib.Boolean
 
 	sizes := []int{32, 64, 128, 256}
 	for _, s := range sizes {

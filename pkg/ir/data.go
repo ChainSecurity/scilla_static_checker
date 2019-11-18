@@ -308,8 +308,8 @@ type (
 		Data Data
 	}
 
-	// Emit :
-	Emit struct {
+	// Event :
+	Event struct {
 		Data Data
 	}
 
@@ -318,17 +318,17 @@ type (
 		Data Data
 	}
 
-	// Have :
-	Have struct{}
+	// Accept :
+	Accept struct{}
 )
 
 func (*Load) isData() {}
 
-func (*Load) isUnit() {}
-func (*Save) isUnit() {}
-func (*Emit) isUnit() {}
-func (*Send) isUnit() {}
-func (*Have) isUnit() {}
+func (*Load) isUnit()   {}
+func (*Save) isUnit()   {}
+func (*Event) isUnit()  {}
+func (*Send) isUnit()   {}
+func (*Accept) isUnit() {}
 
 func (*AbsTD) isUnit() {}
 func (*AbsDD) isUnit() {}

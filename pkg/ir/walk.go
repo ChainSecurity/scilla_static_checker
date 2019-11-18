@@ -1,7 +1,7 @@
 package ir
 
 import (
-	//"errors"
+	"errors"
 	"fmt"
 	//"strings"
 )
@@ -35,7 +35,7 @@ func Walk(v Visitor, node IRNode, prev_node IRNode) {
 		for i, _ := range n.Path {
 			Walk(v, n.Path[i], n)
 		}
-	case *Have:
+	case *Accept:
 		// do nothing
 	case *Send:
 		Walk(v, n.Data, n)

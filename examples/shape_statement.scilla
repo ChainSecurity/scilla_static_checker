@@ -21,12 +21,14 @@ field shape : Shape = Square one32 one32
 
 transition test ()
   s <- shape;
+  res = s;
   match s with
   | Square x y =>
     t = Circle x y;
-    shape := t
+    res = t
   | Circle x y =>
     t = Square x y;
-    shape := t
-  end
+    res = t
+  end;
+  shape := res
 end

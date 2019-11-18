@@ -241,10 +241,10 @@ func dotWalkUnit(b *dotBuilder, u Unit) graph.Node {
 		n = &m
 		b.edges = append(b.edges, e)
 		b.nodes = append(b.nodes, n)
-	case *Emit:
+	case *Event:
 		m := dotNode{
 			b.getNodeId(),
-			"Emit",
+			"Event",
 			[]string{"Data"},
 			map[string][]string{},
 		}
@@ -271,28 +271,36 @@ func dotWalkUnit(b *dotBuilder, u Unit) graph.Node {
 		n = &m
 		b.edges = append(b.edges, e)
 		b.nodes = append(b.nodes, n)
-	case *Have:
+	case *Accept:
 		n = &dotNode{
 			b.getNodeId(),
-			"Have",
+			"Accept",
 			[]string{},
 			map[string][]string{},
 		}
 		b.nodes = append(b.nodes, n)
-	//case *AbsTD:
-	//case *AbsDD:
 	case *AppDD:
 		n = dotWalkData(b, x)
-	//case *AppTD:
-	//case *Int:
-	//case *Nat:
-	//case *Raw:
-	//case *Str:
-	//case *Bnr:
-	//case *Exc:
-	case *Msg:
+	case *AbsTD:
 		n = dotWalkData(b, x)
 	case *AbsDD:
+		n = dotWalkData(b, x)
+	case *AppTD:
+		n = dotWalkData(b, x)
+	case *Int:
+		n = dotWalkData(b, x)
+	case *Nat:
+		n = dotWalkData(b, x)
+	case *Raw:
+		n = dotWalkData(b, x)
+	case *Str:
+		n = dotWalkData(b, x)
+	case *Bnr:
+		n = dotWalkData(b, x)
+	case *Exc:
+		n = dotWalkData(b, x)
+	case *Msg:
+		n = dotWalkData(b, x)
 	//case *Map:
 	default:
 		panic(errors.New(fmt.Sprintf("unhandeled Unit type: %T", x)))
