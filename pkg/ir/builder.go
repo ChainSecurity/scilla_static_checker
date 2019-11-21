@@ -27,6 +27,13 @@ type CFGBuilder struct {
 
 	genericTypeConstructors map[string]*AbsTT
 	genericDataConstructors map[string]*AbsTD
+	nodeCounter             uint64
+}
+
+func (b *CFGBuilder) newIDNode() IDNode {
+	id := b.nodeCounter
+	b.nodeCounter++
+	return IDNode{id}
 }
 
 func (builder *CFGBuilder) constructGenericType(typeName string, varTypes []Type) Type {
@@ -40,8 +47,9 @@ func (builder *CFGBuilder) constructGenericType(typeName string, varTypes []Type
 		panic(errors.New(fmt.Sprintf("Wrong number of arguments for the constructor: %s", typeName)))
 	}
 	typ := &AppTT{
-		Args: varTypes,
-		To:   typeConstructor,
+		IDNode: builder.newIDNode(),
+		Args:   varTypes,
+		To:     typeConstructor,
 	}
 	return typ
 }
@@ -61,6 +69,8 @@ func (builder *CFGBuilder) getBuiltinOp(opName string, varTypes []Type) Data {
 		}
 		resType := "ByStr" + strconv.Itoa(raw0.Size+raw1.Size)
 		op := &AbsDD{
+
+			IDNode: builder.newIDNode(),
 			Vars: []DataVar{
 				DataVar{
 					DataType: v0,
@@ -69,7 +79,10 @@ func (builder *CFGBuilder) getBuiltinOp(opName string, varTypes []Type) Data {
 					DataType: v1,
 				},
 			},
-			Term: &Builtin{setDefaultType(builder.primitiveTypeMap, resType, &RawType{raw0.Size + raw1.Size})},
+			Term: &Builtin{
+				builder.newIDNode(),
+				setDefaultType(builder.primitiveTypeMap, resType, &RawType{builder.newIDNode(), raw0.Size + raw1.Size}),
+			},
 		}
 		return op
 	case *StrType:
@@ -107,7 +120,7 @@ func (builder *CFGBuilder) visitPattern(p ast.Pattern, t Type, bind *Bind) ([]st
 		var typeList []Type
 		switch typ := t.(type) {
 		case *EnumType:
-			typeList = (*typ)[pat.ConstrName]
+			typeList = typ.Constructors[pat.ConstrName]
 		case *AppTT:
 			to := typ.To
 			absTT, ok := to.(*AbsTT)
@@ -121,7 +134,7 @@ func (builder *CFGBuilder) visitPattern(p ast.Pattern, t Type, bind *Bind) ([]st
 			if !ok {
 				panic(errors.New(fmt.Sprintf("Not supported AppTT ConstructorPattern %T", to)))
 			}
-			constrTypes := (*enumType)[pat.ConstrName]
+			constrTypes := enumType.Constructors[pat.ConstrName]
 			varToIndex := make(map[Type]int)
 			for i, _ := range vars {
 				varToIndex[&vars[i]] = i
@@ -178,6 +191,7 @@ func (builder *CFGBuilder) visitLiteral(l ast.Literal) Data {
 		}
 
 		str := Str{
+			IDNode:  builder.newIDNode(),
 			StrType: strTyp,
 			Data:    lit.Val,
 		}
@@ -194,6 +208,7 @@ func (builder *CFGBuilder) visitLiteral(l ast.Literal) Data {
 			panic(errors.New(fmt.Sprintf("Unknown width: %d", lit.Width)))
 		}
 		return &Int{
+			IDNode:  builder.newIDNode(),
 			IntType: typ, Data: lit.Val,
 		}
 	case *ast.UintLiteral:
@@ -202,6 +217,7 @@ func (builder *CFGBuilder) visitLiteral(l ast.Literal) Data {
 			panic(errors.New(fmt.Sprintf("Unknown width: %d", lit.Width)))
 		}
 		return &Nat{
+			IDNode:  builder.newIDNode(),
 			NatType: typ, Data: lit.Val,
 		}
 	//case *ast.MapLiteral:
@@ -219,6 +235,23 @@ func (builder *CFGBuilder) visitLiteral(l ast.Literal) Data {
 	return nil
 }
 
+func (builder *CFGBuilder) setdefaultMap(keyType Type, valType Type) Type {
+	_, ok := builder.mapTypeMap[keyType]
+	if !ok {
+		builder.mapTypeMap[keyType] = map[Type]Type{}
+	}
+	_, ok = builder.mapTypeMap[keyType][valType]
+	if !ok {
+		mtype := &MapType{
+			IDNode:  builder.newIDNode(),
+			KeyType: keyType,
+			ValType: valType,
+		}
+		builder.mapTypeMap[keyType][valType] = mtype
+	}
+	return builder.mapTypeMap[keyType][valType]
+}
+
 func (builder *CFGBuilder) visitASTType(e ast.ASTType) Type {
 
 	switch n := e.(type) {
@@ -232,7 +265,10 @@ func (builder *CFGBuilder) visitASTType(e ast.ASTType) Type {
 			if err != nil {
 				panic(err)
 			}
-			t = &RawType{width}
+			t = &RawType{
+				builder.newIDNode(),
+				width,
+			}
 			builder.primitiveTypeMap[n.Name] = t
 			return t
 		}
@@ -248,21 +284,7 @@ func (builder *CFGBuilder) visitASTType(e ast.ASTType) Type {
 	case *ast.MapType:
 		keyType := builder.visitASTType(n.KeyType)
 		valType := builder.visitASTType(n.ValType)
-		_, ok := builder.mapTypeMap[keyType]
-		if !ok {
-			mtype := &MapType{keyType, valType}
-			builder.mapTypeMap[keyType] = map[Type]Type{}
-			builder.mapTypeMap[keyType][valType] = mtype
-			return mtype
-		}
-
-		_, ok = builder.mapTypeMap[keyType][valType]
-		if !ok {
-			mtype := &MapType{keyType, valType}
-			builder.mapTypeMap[keyType][valType] = mtype
-			return mtype
-		}
-		return builder.mapTypeMap[keyType][valType]
+		return builder.setdefaultMap(keyType, valType)
 
 		//fmt.Printf("MapType %T %T\n", keyType, valType)
 		//panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
@@ -286,8 +308,9 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) *Proc {
 		lhs := n.Lhs.Id
 		rhs := n.Rhs.Id
 		load := Load{
-			Slot: rhs,
-			Path: []Data{},
+			IDNode: builder.newIDNode(),
+			Slot:   rhs,
+			Path:   []Data{},
 		}
 		stackMapPush(builder.varStack, lhs, &load)
 		u = &load
@@ -332,19 +355,25 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) *Proc {
 			panic(errors.New(fmt.Sprintf("variable not found: %s", rhs)))
 		}
 		save := Save{
-			Slot: lhs,
-			Path: []Data{},
-			Data: data,
+			IDNode: builder.newIDNode(),
+			Slot:   lhs,
+			Path:   []Data{},
+			Data:   data,
 		}
 		u = &save
 	case *ast.AcceptPaymentStatement:
-		u = &Accept{}
+		u = &Accept{
+			IDNode: builder.newIDNode(),
+		}
 	case *ast.SendMsgsStatement:
 		d, ok := stackMapPeek(builder.varStack, n.Arg.Id)
 		if !ok {
 			panic(errors.New(fmt.Sprintf("variable not found: %s", n.Arg.Id)))
 		}
-		u = &Send{Data: d}
+		u = &Send{
+			IDNode: builder.newIDNode(),
+			Data:   d,
+		}
 	case *ast.MatchStatement:
 
 		initialVarStack := stackMapCopy(builder.varStack)
@@ -354,13 +383,16 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) *Proc {
 		}
 		procCases := make([]ProcCase, len(n.Cases))
 		contProc := Proc{
-			Plan: []Unit{},
+			IDNode: builder.newIDNode(),
+			Plan:   []Unit{},
 		}
 		for i, mc := range n.Cases {
 			//TODO create the DataVar and pass it as the arg for the call
 			procCases[i] = ProcCase{
+				IDNode: builder.newIDNode(),
 				Body: Proc{
-					Plan: []Unit{},
+					IDNode: builder.newIDNode(),
+					Plan:   []Unit{},
 				},
 			}
 			copyVarStack := stackMapCopy(initialVarStack)
@@ -378,8 +410,9 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) *Proc {
 				}
 			}
 			curProc.Jump = &CallProc{
-				Args: []Data{},
-				To:   &contProc,
+				IDNode: builder.newIDNode(),
+				Args:   []Data{},
+				To:     &contProc,
 			}
 
 			for _, name := range varNames {
@@ -389,8 +422,9 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) *Proc {
 		}
 
 		pp := PickProc{
-			From: d,
-			With: procCases,
+			IDNode: builder.newIDNode(),
+			From:   d,
+			With:   procCases,
 		}
 		p.Jump = &pp
 		builder.restoreVarStack(initialVarStack)
@@ -409,7 +443,11 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) *Proc {
 				panic(errors.New(fmt.Sprintf("variable not found: %s", n.Keys[i].Id)))
 			}
 		}
-		load := Load{slot, path}
+		load := Load{
+			IDNode: builder.newIDNode(),
+			Slot:   slot,
+			Path:   path,
+		}
 		u = &load
 		stackMapPush(builder.varStack, n.Lhs.Id, &load)
 	case *ast.MapUpdateStatement:
@@ -428,7 +466,12 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) *Proc {
 				panic(errors.New(fmt.Sprintf("variable not found: %s", n.Keys[i].Id)))
 			}
 		}
-		u = &Save{slot, path, data}
+		u = &Save{
+			IDNode: builder.newIDNode(),
+			Slot:   slot,
+			Path:   path,
+			Data:   data,
+		}
 
 	default:
 		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
@@ -462,6 +505,7 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		typ, ok := builder.definedADT[typeName]
 		if ok {
 			res := Enum{
+				IDNode:   builder.newIDNode(),
 				EnumType: typ,
 				Case:     constrName,
 				Data:     ds,
@@ -482,25 +526,34 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 			panic(errors.New(fmt.Sprintf("Unknown constructor: %s", constrName)))
 		}
 		appTD := AppTD{
-			Args: ts,
-			To:   constr,
+			IDNode: builder.newIDNode(),
+			Args:   ts,
+			To:     constr,
 		}
 		appDD := AppDD{
-			Args: ds,
-			To:   &appTD,
+			IDNode: builder.newIDNode(),
+			Args:   ds,
+			To:     &appTD,
 		}
 		fmt.Printf("Constructor %s\n\t%s\n\t%s\n\t%T\n\t%T\n", constrName, ts, ds, typ, constr)
 		return &appDD
 	case *ast.FunExpression:
 		lhs := n.Lhs.Id
 		lhsTyp := builder.visitASTType(n.LhsType)
-		dataVar := DataVar{lhsTyp}
+		dataVar := DataVar{
+			IDNode:   builder.newIDNode(),
+			DataType: lhsTyp,
+		}
 		stackMapPush(builder.varStack, lhs, &dataVar)
 		defer stackMapPop(builder.varStack, lhs)
 
 		rhs := builder.visitExpression(n.RhsExpr)
 
-		return &AbsDD{Vars: []DataVar{dataVar}, Term: rhs}
+		return &AbsDD{
+			IDNode: builder.newIDNode(),
+			Vars:   []DataVar{dataVar},
+			Term:   rhs,
+		}
 	case *ast.MatchExpression:
 		lhs := n.Lhs.Id
 
@@ -509,8 +562,9 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 			panic(errors.New(fmt.Sprintf("variable not found: %s", lhs)))
 		}
 		pd := PickData{
-			From: data,
-			With: make([]DataCase, len(n.Cases)),
+			IDNode: builder.newIDNode(),
+			From:   data,
+			With:   make([]DataCase, len(n.Cases)),
 		}
 		for i, c := range n.Cases {
 			mec := &pd.With[i].Bind
@@ -559,12 +613,14 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 				types[i] = builder.TypeOf(vars[i])
 			}
 			appTD := &AppTD{
-				Args: types,
-				To:   op,
+				IDNode: builder.newIDNode(),
+				Args:   types,
+				To:     op,
 			}
 			appDD := AppDD{
-				Args: vars,
-				To:   appTD,
+				IDNode: builder.newIDNode(),
+				Args:   vars,
+				To:     appTD,
 			}
 			return &appDD
 		case *AbsDD:
@@ -572,8 +628,9 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 				panic(errors.New(fmt.Sprintf("Wrong number of Builtin AbsDD args")))
 			}
 			appDD := AppDD{
-				Args: vars,
-				To:   op,
+				IDNode: builder.newIDNode(),
+				Args:   vars,
+				To:     op,
 			}
 			return &appDD
 		default:
@@ -611,8 +668,9 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 			currData := rhsData[i : i+len(absDD.Vars)]
 			i = i + len(absDD.Vars)
 			accum = &AppDD{
-				Args: currData,
-				To:   accum,
+				IDNode: builder.newIDNode(),
+				Args:   currData,
+				To:     accum,
 			}
 			curr = absDD.Term
 		}
@@ -637,6 +695,7 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		}
 
 		return &Msg{
+			IDNode:  builder.newIDNode(),
 			MsgType: msgType,
 			Data:    data,
 		}
@@ -670,13 +729,13 @@ func (builder *CFGBuilder) visitLibEntry(le ast.LibEntry) {
 		stackMapPush(builder.varStack, name, v)
 	case *ast.LibraryType:
 		typeName := n.Name.Id
-		typ := EnumType{}
+		enumType := EnumType{}
 		for _, ctr := range n.CtrDefs {
 			constrName, types := builder.visitCtr(ctr)
-			typ[constrName] = types
+			enumType.Constructors[constrName] = types
 			builder.constructorType[constrName] = typeName
 		}
-		builder.definedADT[typeName] = &typ
+		builder.definedADT[typeName] = &enumType
 	default:
 		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
 	}
@@ -713,14 +772,22 @@ func (builder *CFGBuilder) visitComponent(comp *ast.Component) {
 		pName, pType := builder.visitParams(p)
 		params[pName] = pType
 		paramNames[i] = pName
-		paramVars[i] = DataVar{pType}
+		paramVars[i] = DataVar{
+			IDNode:   builder.newIDNode(),
+			DataType: pType,
+		}
 		stackMapPush(builder.varStack, pName, &paramVars[i])
 		defer stackMapPop(builder.varStack, pName)
 	}
 
 	implicitVars := []DataVar{
-		DataVar{builder.primitiveTypeMap["Uint128"]},
-		DataVar{builder.primitiveTypeMap["ByStr20"]},
+		DataVar{
+			IDNode:   builder.newIDNode(),
+			DataType: builder.primitiveTypeMap["Uint128"]},
+		DataVar{
+			IDNode:   builder.newIDNode(),
+			DataType: builder.primitiveTypeMap["ByStr20"],
+		},
 	}
 	stackMapPush(builder.varStack, "_amount", &implicitVars[0])
 	stackMapPush(builder.varStack, "_sender", &implicitVars[1])
@@ -729,8 +796,9 @@ func (builder *CFGBuilder) visitComponent(comp *ast.Component) {
 	dataVars := append(implicitVars, paramVars...)
 
 	firstProc := Proc{
-		Vars: dataVars,
-		Plan: []Unit{},
+		IDNode: builder.newIDNode(),
+		Vars:   dataVars,
+		Plan:   []Unit{},
 	}
 	proc := &firstProc
 	for _, s := range comp.Body {
@@ -741,7 +809,7 @@ func (builder *CFGBuilder) visitComponent(comp *ast.Component) {
 
 	}
 
-	fmt.Printf("Component %s type: %s\n\tvars: %s\n\tplan: %s\n", comp.Name.Id, comp.ComponentType, dataVars, proc.Plan)
+	//fmt.Printf("Component %s type: %s\n\tvars: %s\n\tplan: %s\n", comp.Name.Id, comp.ComponentType, dataVars, proc.Plan)
 
 	if comp.ComponentType == "procedure" {
 		builder.Transitions[comp.Name.Id] = &firstProc
@@ -765,18 +833,27 @@ func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
 			pName, pType := builder.visitParams(p)
 			params[pName] = pType
 			paramNames[i] = pName
-			dataVars[i] = DataVar{pType}
+			dataVars[i] = DataVar{
+				IDNode:   builder.newIDNode(),
+				DataType: pType,
+			}
 			stackMapPush(builder.varStack, pName, &dataVars[i])
 		}
 
 		builder.constructor = &Proc{
-			Vars: dataVars,
-			Plan: make([]Unit, len(n.Fields)),
+			IDNode: builder.newIDNode(),
+			Vars:   dataVars,
+			Plan:   make([]Unit, len(n.Fields)),
 		}
 		for i, f := range n.Fields {
 			n, d := builder.visitField(f)
 			stackMapPush(builder.varStack, n, d)
-			builder.constructor.Plan[i] = &Save{n, []Data{}, d}
+			builder.constructor.Plan[i] = &Save{
+				IDNode: builder.newIDNode(),
+				Slot:   n,
+				Path:   []Data{},
+				Data:   d,
+			}
 		}
 
 		//builder.Transitions = make[[]*Proc, len(n.Components)]
@@ -809,7 +886,7 @@ func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
 }
 
 func (builder *CFGBuilder) initPrimitiveTypes() {
-	stdLib := StdLib()
+	stdLib := StdLib(builder)
 
 	builder.constructorType["Nil"] = "List"
 	builder.constructorType["Cons"] = "List"
@@ -832,9 +909,15 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	sizes := []int{32, 64, 128, 256}
 	for _, s := range sizes {
 		intName := "Int" + strconv.Itoa(s)
-		intTyp := IntType{s}
+		intTyp := IntType{
+			IDNode: builder.newIDNode(),
+			Size:   s,
+		}
 		uintName := "Uint" + strconv.Itoa(s)
-		uintTyp := NatType{s}
+		uintTyp := NatType{
+			IDNode: builder.newIDNode(),
+			Size:   s,
+		}
 		builder.intWidthTypeMap[s] = &intTyp
 		builder.natWidthTypeMap[s] = &uintTyp
 		builder.primitiveTypeMap[intName] = &intTyp
@@ -843,19 +926,29 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		// Conversion functions
 		var intAbsDD AbsDD
 		intAbsTD := AbsTD{
+			IDNode: builder.newIDNode(),
 			Vars: []TypeVar{
-				TypeVar{Kind: stdLib.star},
+				TypeVar{
+					IDNode: builder.newIDNode(),
+					Kind:   stdLib.star,
+				},
 			},
 			Term: &intAbsDD,
 		}
 		intAbsDD = AbsDD{
+			IDNode: builder.newIDNode(),
 			Vars: []DataVar{
-				DataVar{DataType: &intAbsTD.Vars[0]},
+				DataVar{
+					IDNode:   builder.newIDNode(),
+					DataType: &intAbsTD.Vars[0],
+				},
 			},
 			Term: &Builtin{
+				builder.newIDNode(),
 				&AppTT{
-					Args: []Type{&intTyp},
-					To:   stdLib.Option,
+					IDNode: builder.newIDNode(),
+					Args:   []Type{&intTyp},
+					To:     stdLib.Option,
 				},
 			},
 		}
@@ -864,19 +957,26 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 
 		var uintAbsDD AbsDD
 		uintAbsTD := AbsTD{
+			IDNode: builder.newIDNode(),
 			Vars: []TypeVar{
-				TypeVar{Kind: stdLib.star},
+				TypeVar{
+					IDNode: builder.newIDNode(),
+					Kind:   stdLib.star,
+				},
 			},
 			Term: &uintAbsDD,
 		}
 		uintAbsDD = AbsDD{
+			IDNode: builder.newIDNode(),
 			Vars: []DataVar{
-				DataVar{DataType: &uintAbsTD.Vars[0]},
+				DataVar{IDNode: builder.newIDNode(), DataType: &uintAbsTD.Vars[0]},
 			},
 			Term: &Builtin{
+				builder.newIDNode(),
 				&AppTT{
-					Args: []Type{&uintTyp},
-					To:   stdLib.Option,
+					IDNode: builder.newIDNode(),
+					Args:   []Type{&uintTyp},
+					To:     stdLib.Option,
 				},
 			},
 		}
@@ -885,13 +985,13 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 
 	}
 
-	builder.primitiveTypeMap["Message"] = &MsgType{}
-	builder.primitiveTypeMap["String"] = &StrType{}
-	builder.primitiveTypeMap["ByStr"] = &RawType{-1}
-	builder.primitiveTypeMap["ByStr32"] = &RawType{32}
-	builder.primitiveTypeMap["ByStr33"] = &RawType{33}
-	builder.primitiveTypeMap["ByStr64"] = &RawType{64}
-	builder.primitiveTypeMap["ByStr20"] = &RawType{20}
+	builder.primitiveTypeMap["Message"] = &MsgType{builder.newIDNode()}
+	builder.primitiveTypeMap["String"] = &StrType{builder.newIDNode()}
+	builder.primitiveTypeMap["ByStr"] = &RawType{builder.newIDNode(), -1}
+	builder.primitiveTypeMap["ByStr32"] = &RawType{builder.newIDNode(), 32}
+	builder.primitiveTypeMap["ByStr33"] = &RawType{builder.newIDNode(), 33}
+	builder.primitiveTypeMap["ByStr64"] = &RawType{builder.newIDNode(), 64}
+	builder.primitiveTypeMap["ByStr20"] = &RawType{builder.newIDNode(), 20}
 	builder.primitiveTypeMap["BNum"] = &BnrType{}
 
 	builder.primitiveTypeMap["Bool"] = stdLib.Boolean
@@ -902,17 +1002,31 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	for _, bOp := range intIntOps {
 		var bAbsDD AbsDD
 		bAbsTD := AbsTD{
+			IDNode: builder.newIDNode(),
 			Vars: []TypeVar{
-				TypeVar{Kind: stdLib.star},
+				TypeVar{
+					IDNode: builder.newIDNode(),
+					Kind:   stdLib.star,
+				},
 			},
 			Term: &bAbsDD,
 		}
 		bAbsDD = AbsDD{
+			IDNode: builder.newIDNode(),
 			Vars: []DataVar{
-				DataVar{DataType: &bAbsTD.Vars[0]},
-				DataVar{DataType: &bAbsTD.Vars[0]},
+				DataVar{
+					IDNode:   builder.newIDNode(),
+					DataType: &bAbsTD.Vars[0],
+				},
+				DataVar{
+					IDNode:   builder.newIDNode(),
+					DataType: &bAbsTD.Vars[0],
+				},
 			},
-			Term: &Builtin{&bAbsTD.Vars[0]},
+			Term: &Builtin{
+				IDNode:      builder.newIDNode(),
+				BuiltinType: &bAbsTD.Vars[0],
+			},
 		}
 		builder.builtinOpMap[bOp] = &bAbsTD
 	}
@@ -920,17 +1034,21 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	for _, bOp := range intBoolOps {
 		var bAbsDD AbsDD
 		bAbsTD := AbsTD{
+			IDNode: builder.newIDNode(),
 			Vars: []TypeVar{
-				TypeVar{Kind: stdLib.star},
+				TypeVar{
+					IDNode: builder.newIDNode(),
+					Kind:   stdLib.star,
+				},
 			},
 			Term: &bAbsDD,
 		}
 		bAbsDD = AbsDD{
 			Vars: []DataVar{
-				DataVar{DataType: &bAbsTD.Vars[0]},
-				DataVar{DataType: &bAbsTD.Vars[0]},
+				DataVar{IDNode: builder.newIDNode(), DataType: &bAbsTD.Vars[0]},
+				DataVar{IDNode: builder.newIDNode(), DataType: &bAbsTD.Vars[0]},
 			},
-			Term: &Builtin{stdLib.Boolean},
+			Term: &Builtin{builder.newIDNode(), stdLib.Boolean},
 		}
 		builder.builtinOpMap[bOp] = &bAbsTD
 	}
@@ -938,65 +1056,81 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	// builtin pow
 	var powAbsDD AbsDD
 	powAbsTD := AbsTD{
+		IDNode: builder.newIDNode(),
 		Vars: []TypeVar{
-			TypeVar{Kind: stdLib.star},
-			TypeVar{Kind: stdLib.star},
+			TypeVar{IDNode: builder.newIDNode(), Kind: stdLib.star},
+			TypeVar{IDNode: builder.newIDNode(), Kind: stdLib.star},
 		},
 		Term: &powAbsDD,
 	}
 	powAbsDD = AbsDD{
+		IDNode: builder.newIDNode(),
 		Vars: []DataVar{
-			DataVar{DataType: &powAbsTD.Vars[0]},
-			DataVar{DataType: &powAbsTD.Vars[1]},
+			DataVar{IDNode: builder.newIDNode(), DataType: &powAbsTD.Vars[0]},
+			DataVar{IDNode: builder.newIDNode(), DataType: &powAbsTD.Vars[1]},
 		},
-		Term: &Builtin{&powAbsTD.Vars[0]},
+		Term: &Builtin{builder.newIDNode(), &powAbsTD.Vars[0]},
 	}
 	builder.builtinOpMap["pow"] = &powAbsTD
 
 	// builtin concat
 	strConcatOp := AbsDD{
+		IDNode: builder.newIDNode(),
 		Vars: []DataVar{
 			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: builder.primitiveTypeMap["String"],
 			},
 			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: builder.primitiveTypeMap["String"],
 			},
 		},
-		Term: &Builtin{builder.primitiveTypeMap["String"]},
+		Term: &Builtin{builder.newIDNode(), builder.primitiveTypeMap["String"]},
 	}
 	builder.builtinOpMap["str_concat"] = &strConcatOp
 
 	//builtin substr
 	strSubstrOp := AbsDD{
+		IDNode: builder.newIDNode(),
 		Vars: []DataVar{
 			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: builder.primitiveTypeMap["String"],
 			},
 			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: builder.natWidthTypeMap[32],
 			},
 			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: builder.natWidthTypeMap[32],
 			},
 		},
-		Term: &Builtin{builder.primitiveTypeMap["String"]},
+		Term: &Builtin{builder.newIDNode(), builder.primitiveTypeMap["String"]},
 	}
 	builder.builtinOpMap["substr"] = &strSubstrOp
 
 	// builtin to_string
 	var toStrAbsDD AbsDD
 	toStrAbsTD := AbsTD{
+		IDNode: builder.newIDNode(),
 		Vars: []TypeVar{
-			TypeVar{Kind: stdLib.star},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   stdLib.star},
 		},
 		Term: &toStrAbsDD,
 	}
 	toStrAbsDD = AbsDD{
+		IDNode: builder.newIDNode(),
 		Vars: []DataVar{
-			DataVar{DataType: &toStrAbsTD.Vars[0]},
+			DataVar{
+				IDNode:   builder.newIDNode(),
+				DataType: &toStrAbsTD.Vars[0],
+			},
 		},
-		Term: &Builtin{builder.primitiveTypeMap["String"]},
+		Term: &Builtin{builder.newIDNode(), builder.primitiveTypeMap["String"]},
 	}
 	builder.builtinOpMap["to_string"] = &toStrAbsTD
 
@@ -1005,26 +1139,36 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	strlenOp := AbsDD{
 		Vars: []DataVar{
 			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: builder.primitiveTypeMap["String"],
 			},
 		},
-		Term: &Builtin{builder.natWidthTypeMap[32]},
+		Term: &Builtin{builder.newIDNode(), builder.natWidthTypeMap[32]},
 	}
 	builder.builtinOpMap["strlen"] = &strlenOp
 
 	// builtin sha256hash
 	var shaAbsDD AbsDD
 	shaAbsTD := AbsTD{
+		IDNode: builder.newIDNode(),
 		Vars: []TypeVar{
-			TypeVar{Kind: stdLib.star},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   stdLib.star,
+			},
 		},
 		Term: &shaAbsDD,
 	}
 	shaAbsDD = AbsDD{
+		IDNode: builder.newIDNode(),
 		Vars: []DataVar{
-			DataVar{DataType: &shaAbsTD.Vars[0]},
+			DataVar{
+				IDNode:   builder.newIDNode(),
+				DataType: &shaAbsTD.Vars[0],
+			},
 		},
 		Term: &Builtin{
+			IDNode:      builder.newIDNode(),
 			BuiltinType: builder.primitiveTypeMap["ByStr32"],
 		},
 	}
@@ -1033,16 +1177,24 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	// builtin keccak256hash
 	var keccakAbsDD AbsDD
 	keccakAbsTD := AbsTD{
+		IDNode: builder.newIDNode(),
 		Vars: []TypeVar{
-			TypeVar{Kind: stdLib.star},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   stdLib.star,
+			},
 		},
 		Term: &keccakAbsDD,
 	}
 	keccakAbsDD = AbsDD{
+		IDNode: builder.newIDNode(),
 		Vars: []DataVar{
-			DataVar{DataType: &keccakAbsTD.Vars[0]},
+			DataVar{
+				IDNode:   builder.newIDNode(),
+				DataType: &keccakAbsTD.Vars[0]},
 		},
 		Term: &Builtin{
+			IDNode:      builder.newIDNode(),
 			BuiltinType: builder.primitiveTypeMap["ByStr32"],
 		},
 	}
@@ -1051,16 +1203,23 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	// builtin ripemd160hash
 	var ripemdAbsDD AbsDD
 	ripemdAbsTD := AbsTD{
+		IDNode: builder.newIDNode(),
 		Vars: []TypeVar{
-			TypeVar{Kind: stdLib.star},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   stdLib.star},
 		},
 		Term: &ripemdAbsDD,
 	}
 	ripemdAbsDD = AbsDD{
 		Vars: []DataVar{
-			DataVar{DataType: &ripemdAbsTD.Vars[0]},
+			DataVar{
+				IDNode:   builder.newIDNode(),
+				DataType: &ripemdAbsTD.Vars[0],
+			},
 		},
 		Term: &Builtin{
+			IDNode:      builder.newIDNode(),
 			BuiltinType: builder.primitiveTypeMap["ByStr20"],
 		},
 	}
@@ -1069,16 +1228,24 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	// builtin to_bystr
 	var toBystrAbsDD AbsDD
 	toBystrAbsTD := AbsTD{
+		IDNode: builder.newIDNode(),
 		Vars: []TypeVar{
-			TypeVar{Kind: stdLib.star},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   stdLib.star,
+			},
 		},
 		Term: &toBystrAbsDD,
 	}
 	toBystrAbsDD = AbsDD{
 		Vars: []DataVar{
-			DataVar{DataType: &toBystrAbsTD.Vars[0]},
+			DataVar{
+				IDNode:   builder.newIDNode(),
+				DataType: &toBystrAbsTD.Vars[0],
+			},
 		},
 		Term: &Builtin{
+			IDNode:      builder.newIDNode(),
 			BuiltinType: builder.primitiveTypeMap["ByStr"],
 		},
 	}
@@ -1087,67 +1254,97 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	// builtin to_uint256
 	var touint256AbsDD AbsDD
 	touint256AbsTD := AbsTD{
+		IDNode: builder.newIDNode(),
 		Vars: []TypeVar{
-			TypeVar{Kind: stdLib.star},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   stdLib.star,
+			},
 		},
 		Term: &touint256AbsDD,
 	}
 	touint256AbsDD = AbsDD{
+		IDNode: builder.newIDNode(),
 		Vars: []DataVar{
-			DataVar{DataType: &touint256AbsTD.Vars[0]},
+			DataVar{
+				IDNode:   builder.newIDNode(),
+				DataType: &touint256AbsTD.Vars[0],
+			},
 		},
-		Term: &Builtin{builder.natWidthTypeMap[256]},
+		Term: &Builtin{
+			IDNode:      builder.newIDNode(),
+			BuiltinType: builder.natWidthTypeMap[256],
+		},
 	}
 	builder.builtinOpMap["to_uint256"] = &touint256AbsTD
 
 	// schnorr_verify
 	schnorrVerifyAbsDD := AbsDD{
+		IDNode: builder.newIDNode(),
 		Vars: []DataVar{
 			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: builder.primitiveTypeMap["ByStr33"],
 			},
 			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: builder.primitiveTypeMap["ByStr"],
 			},
 			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: builder.primitiveTypeMap["ByStr64"],
 			},
 		},
-		Term: &Builtin{builder.primitiveTypeMap["Bool"]},
+		Term: &Builtin{
+			IDNode:      builder.newIDNode(),
+			BuiltinType: builder.primitiveTypeMap["Bool"],
+		},
 	}
 	builder.builtinOpMap["schnorr_verify"] = &schnorrVerifyAbsDD
 
 	// ecdsa_verify
 	ecdsaVerifyAbsDD := AbsDD{
+		IDNode: builder.newIDNode(),
 		Vars: []DataVar{
 			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: builder.primitiveTypeMap["ByStr33"],
 			},
 			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: builder.primitiveTypeMap["ByStr"],
 			},
 			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: builder.primitiveTypeMap["ByStr64"],
 			},
 		},
-		Term: &Builtin{builder.primitiveTypeMap["Bool"]},
+		Term: &Builtin{
+			IDNode:      builder.newIDNode(),
+			BuiltinType: builder.primitiveTypeMap["Bool"],
+		},
 	}
 	builder.builtinOpMap["ecdsa_verify"] = &ecdsaVerifyAbsDD
 
 	// bech32_to_bystr20
 	bech32ToBystr20AbsDD := AbsDD{
+		IDNode: builder.newIDNode(),
 		Vars: []DataVar{
 			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: builder.primitiveTypeMap["String"],
 			},
 			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: builder.primitiveTypeMap["String"],
 			},
 		},
 		Term: &Builtin{
-			&AppTT{
-				Args: []Type{builder.primitiveTypeMap["ByStr20"]},
-				To:   stdLib.Option,
+			IDNode: builder.newIDNode(),
+			BuiltinType: &AppTT{
+				IDNode: builder.newIDNode(),
+				Args:   []Type{builder.primitiveTypeMap["ByStr20"]},
+				To:     stdLib.Option,
 			},
 		},
 	}
@@ -1155,18 +1352,23 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 
 	// bystr20_to_bech32
 	bystr20ToBech32AbsDD := AbsDD{
+		IDNode: builder.newIDNode(),
 		Vars: []DataVar{
 			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: builder.primitiveTypeMap["String"],
 			},
 			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: builder.primitiveTypeMap["ByStr20"],
 			},
 		},
 		Term: &Builtin{
-			&AppTT{
-				Args: []Type{builder.primitiveTypeMap["String"]},
-				To:   stdLib.Option,
+			IDNode: builder.newIDNode(),
+			BuiltinType: &AppTT{
+				IDNode: builder.newIDNode(),
+				Args:   []Type{builder.primitiveTypeMap["String"]},
+				To:     stdLib.Option,
 			},
 		},
 	}
@@ -1178,56 +1380,74 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	// put
 	var putAbsDD AbsDD
 	putAbsTD := AbsTD{
+		IDNode: builder.newIDNode(),
 		Vars: []TypeVar{
-			TypeVar{Kind: stdLib.star},
-			TypeVar{Kind: stdLib.star},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   stdLib.star},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   stdLib.star},
 		},
 		Term: &putAbsDD,
 	}
 	putAbsDD = AbsDD{
+		IDNode: builder.newIDNode(),
 		Vars: []DataVar{
 			DataVar{
-				&MapType{
-					&putAbsTD.Vars[0],
-					&putAbsTD.Vars[1],
-				},
+				IDNode:   builder.newIDNode(),
+				DataType: builder.setdefaultMap(&putAbsTD.Vars[0], &putAbsTD.Vars[1]),
 			},
 			DataVar{
-				&putAbsTD.Vars[0],
+				IDNode:   builder.newIDNode(),
+				DataType: &putAbsTD.Vars[0],
 			},
 			DataVar{
-				&putAbsTD.Vars[1],
+				IDNode:   builder.newIDNode(),
+				DataType: &putAbsTD.Vars[1],
 			},
 		},
 	}
-	putAbsDD.Term = &Builtin{putAbsDD.Vars[0].DataType}
+	putAbsDD.Term = &Builtin{
+		IDNode:      builder.newIDNode(),
+		BuiltinType: putAbsDD.Vars[0].DataType,
+	}
 	builder.builtinOpMap["put"] = &putAbsTD
 
 	// get
 	var getAbsDD AbsDD
 	getAbsTD := AbsTD{
+		IDNode: builder.newIDNode(),
 		Vars: []TypeVar{
-			TypeVar{Kind: stdLib.star},
-			TypeVar{Kind: stdLib.star},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   stdLib.star,
+			},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   stdLib.star,
+			},
 		},
 		Term: &getAbsDD,
 	}
 	getAbsDD = AbsDD{
+		IDNode: builder.newIDNode(),
 		Vars: []DataVar{
 			DataVar{
-				&MapType{
-					&getAbsTD.Vars[0],
-					&getAbsTD.Vars[1],
-				},
+				IDNode:   builder.newIDNode(),
+				DataType: builder.setdefaultMap(&getAbsTD.Vars[0], &getAbsTD.Vars[1]),
 			},
 			DataVar{
-				&getAbsTD.Vars[0],
+				IDNode:   builder.newIDNode(),
+				DataType: &getAbsTD.Vars[0],
 			},
 		},
 		Term: &Builtin{
-			&AppTT{
-				Args: []Type{&getAbsTD.Vars[1]},
-				To:   stdLib.Option,
+			IDNode: builder.newIDNode(),
+			BuiltinType: &AppTT{
+				IDNode: builder.newIDNode(),
+				Args:   []Type{&getAbsTD.Vars[1]},
+				To:     stdLib.Option,
 			},
 		},
 	}
@@ -1245,112 +1465,155 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	containsAbsDD = AbsDD{
 		Vars: []DataVar{
 			DataVar{
-				&MapType{
-					&containsAbsTD.Vars[0],
-					&containsAbsTD.Vars[1],
-				},
+				IDNode:   builder.newIDNode(),
+				DataType: builder.setdefaultMap(&containsAbsTD.Vars[0], &containsAbsTD.Vars[1]),
 			},
 			DataVar{
-				&containsAbsTD.Vars[0],
+				IDNode:   builder.newIDNode(),
+				DataType: &containsAbsTD.Vars[0],
 			},
 		},
-		Term: &Builtin{builder.primitiveTypeMap["Bool"]},
+		Term: &Builtin{
+			IDNode:      builder.newIDNode(),
+			BuiltinType: builder.primitiveTypeMap["Bool"],
+		},
 	}
 	builder.builtinOpMap["contains"] = &containsAbsTD
 
 	// remove
 	var removeAbsDD AbsDD
 	removeAbsTD := AbsTD{
+		IDNode: builder.newIDNode(),
 		Vars: []TypeVar{
-			TypeVar{Kind: stdLib.star},
-			TypeVar{Kind: stdLib.star},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   stdLib.star,
+			},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   stdLib.star,
+			},
 		},
 		Term: &removeAbsDD,
 	}
 	removeAbsDD = AbsDD{
+		IDNode: builder.newIDNode(),
 		Vars: []DataVar{
 			DataVar{
-				&MapType{
-					&removeAbsTD.Vars[0],
-					&removeAbsTD.Vars[1],
-				},
+				IDNode:   builder.newIDNode(),
+				DataType: builder.setdefaultMap(&removeAbsTD.Vars[0], &removeAbsTD.Vars[1]),
 			},
 			DataVar{
-				&removeAbsTD.Vars[0],
+				IDNode:   builder.newIDNode(),
+				DataType: &removeAbsTD.Vars[0],
 			},
 		},
 	}
-	removeAbsDD.Term = &Builtin{removeAbsDD.Vars[0].DataType}
+	removeAbsDD.Term = &Builtin{
+		IDNode:      builder.newIDNode(),
+		BuiltinType: removeAbsDD.Vars[0].DataType,
+	}
 	builder.builtinOpMap["remove"] = &removeAbsTD
 
 	// size
 	var sizeAbsDD AbsDD
 	sizeAbsTD := AbsTD{
+		IDNode: builder.newIDNode(),
 		Vars: []TypeVar{
-			TypeVar{Kind: stdLib.star},
-			TypeVar{Kind: stdLib.star},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   stdLib.star,
+			},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   stdLib.star,
+			},
 		},
 		Term: &sizeAbsDD,
 	}
 	sizeAbsDD = AbsDD{
+		IDNode: builder.newIDNode(),
 		Vars: []DataVar{
 			DataVar{
-				&MapType{
-					&sizeAbsTD.Vars[0],
-					&sizeAbsTD.Vars[1],
-				},
+				IDNode:   builder.newIDNode(),
+				DataType: builder.setdefaultMap(&sizeAbsTD.Vars[0], &sizeAbsTD.Vars[1]),
 			},
 		},
 	}
-	sizeAbsDD.Term = &Builtin{builder.primitiveTypeMap["Bool"]}
+	sizeAbsDD.Term = &Builtin{
+		IDNode:      builder.newIDNode(),
+		BuiltinType: builder.primitiveTypeMap["Bool"],
+	}
 	builder.builtinOpMap["size"] = &sizeAbsTD
 
 	// builtin blt
 	bltAbsDD := AbsDD{
+		IDNode: builder.newIDNode(),
 		Vars: []DataVar{
 			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: builder.primitiveTypeMap["BNum"],
 			},
 			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: builder.primitiveTypeMap["BNum"],
 			},
 		},
-		Term: &Builtin{builder.primitiveTypeMap["Bool"]},
+		Term: &Builtin{
+			IDNode:      builder.newIDNode(),
+			BuiltinType: builder.primitiveTypeMap["Bool"],
+		},
 	}
 	builder.builtinOpMap["blt"] = &bltAbsDD
 
 	// builtin badd
 	var baddAbsDD AbsDD
 	baddAbsTD := AbsTD{
+		IDNode: builder.newIDNode(),
 		Vars: []TypeVar{
-			TypeVar{Kind: stdLib.star},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   stdLib.star,
+			},
 		},
 		Term: &baddAbsDD,
 	}
 	baddAbsDD = AbsDD{
+		IDNode: builder.newIDNode(),
 		Vars: []DataVar{
 			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: &baddAbsTD.Vars[0],
 			},
 			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: builder.primitiveTypeMap["BNum"],
 			},
 		},
-		Term: &Builtin{builder.primitiveTypeMap["BNum"]},
+		Term: &Builtin{
+			IDNode:      builder.newIDNode(),
+			BuiltinType: builder.primitiveTypeMap["BNum"],
+		},
 	}
 	builder.builtinOpMap["badd"] = &baddAbsTD
 
 	// builtin bsub
 	bsubAbsDD := AbsDD{
+		IDNode: builder.newIDNode(),
 		Vars: []DataVar{
 			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: builder.primitiveTypeMap["BNum"],
 			},
 			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: builder.primitiveTypeMap["BNum"],
 			},
 		},
-		Term: &Builtin{builder.primitiveTypeMap["Int256"]},
+		Term: &Builtin{
+			IDNode:      builder.newIDNode(),
+			BuiltinType: builder.primitiveTypeMap["Int256"],
+		},
 	}
 	builder.builtinOpMap["bsub"] = &bsubAbsDD
 
@@ -1374,6 +1637,7 @@ func BuildCFG(n ast.AstNode) *CFGBuilder {
 		mapTypeMap:              map[Type]map[Type]Type{},
 		genericTypeConstructors: map[string]*AbsTT{},
 		genericDataConstructors: map[string]*AbsTD{},
+		nodeCounter:             1,
 	}
 	builder.initPrimitiveTypes()
 	ast.Walk(&builder, n)

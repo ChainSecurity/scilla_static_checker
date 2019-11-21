@@ -9,10 +9,13 @@ import (
 )
 
 type TestVisitor struct {
-	visited map[ir.IRNode]bool
+	visited map[ir.Node]bool
 }
 
-func (t TestVisitor) Visit(node ir.IRNode) ir.Visitor {
+func (t TestVisitor) Visit(node ir.Node) ir.Visitor {
+	if node.ID() == 0 {
+		panic(fmt.Sprintf("ID was not assigned %T", node))
+	}
 	fmt.Printf("+ %T\n", node)
 	visited, ok := t.visited[node]
 	if ok && visited {
@@ -39,7 +42,7 @@ func main() {
 
 	b := ir.BuildCFG(cm)
 
-	v := TestVisitor{map[ir.IRNode]bool{}}
+	v := TestVisitor{map[ir.Node]bool{}}
 	ir.Walk(v, b.Transitions["test"], nil)
 
 }

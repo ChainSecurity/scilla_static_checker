@@ -7,10 +7,10 @@ import (
 )
 
 type Visitor interface {
-	Visit(x IRNode) (w Visitor)
+	Visit(x Node) (w Visitor)
 }
 
-func Walk(v Visitor, node IRNode, prev_node IRNode) {
+func Walk(v Visitor, node Node, prev_node Node) {
 	if v = v.Visit(node); v == nil {
 		return
 	}
@@ -71,17 +71,17 @@ func Walk(v Visitor, node IRNode, prev_node IRNode) {
 		Walk(v, n.MapType, n)
 	case *AllDD:
 		for i, _ := range n.Vars {
-			Walk(v, n.Vars[i], n)
+			Walk(v, &n.Vars[i], n)
 		}
 		Walk(v, n.Term, n)
 	case *AllTD:
 		for i, _ := range n.Vars {
-			Walk(v, n.Vars[i], n)
+			Walk(v, &n.Vars[i], n)
 		}
 		Walk(v, n.Term, n)
 	case *AllTT:
 		for i, _ := range n.Vars {
-			Walk(v, n.Vars[i], n)
+			Walk(v, &n.Vars[i], n)
 		}
 		Walk(v, n.Term, n)
 	case *AppDD:
@@ -115,7 +115,7 @@ func Walk(v Visitor, node IRNode, prev_node IRNode) {
 		}
 		Walk(v, n.Term, n)
 	case *EnumType:
-		for _, ts := range *n {
+		for _, ts := range n.Constructors {
 			for i, _ := range ts {
 				Walk(v, ts[i], n)
 			}

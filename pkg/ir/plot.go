@@ -35,7 +35,7 @@ func (n dotNode) Attributes() []encoding.Attribute {
 		groupLabels[i] = fmt.Sprintf("<%s> %s", p, p)
 		i = i + 1
 	}
-	label := fmt.Sprintf("{%s|{%s}}", n.name, strings.Join(groupLabels, " | "))
+	label := fmt.Sprintf("{%s %d|{%s}}", n.name, n.ID(), strings.Join(groupLabels, " | "))
 	attrs := []encoding.Attribute{
 		{Key: "shape", Value: "record"},
 		{Key: "label", Value: label},
@@ -318,8 +318,8 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 	}
 	switch x := t.(type) {
 	case *EnumType:
-		keys := make([]string, 0, len(*x))
-		for k := range *x {
+		keys := make([]string, 0, len(x.Constructors))
+		for k := range x.Constructors {
 			keys = append(keys, k)
 		}
 		n = &dotNode{
@@ -331,7 +331,7 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 		b.typeCache[t] = n
 		b.nodes = append(b.nodes, n)
 		for _, k := range keys {
-			for _, inner_t := range (*x)[k] {
+			for _, inner_t := range x.Constructors[k] {
 				v := dotWalkType(b, inner_t)
 				e := &dotPortedEdge{
 					id:       b.getEdgeId(),

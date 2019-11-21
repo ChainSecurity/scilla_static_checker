@@ -21,7 +21,7 @@ type BuiltinADTs struct {
 	Pair    Data
 }
 
-func StdLib() BuiltinADTs {
+func StdLib(builder *CFGBuilder) BuiltinADTs {
 	var (
 		star SetKind
 
@@ -51,41 +51,63 @@ func StdLib() BuiltinADTs {
 		pairAbsDD AbsDD
 	)
 
+	star = SetKind{
+		IDNode: builder.newIDNode(),
+	}
 	boolean = EnumType{
-		"True":  {},
-		"False": {},
+		IDNode: builder.newIDNode(),
+		Constructors: map[string][]Type{
+			"True":  {},
+			"False": {},
+		},
 	}
 	tt = Enum{
+		IDNode:   builder.newIDNode(),
 		EnumType: &boolean,
 		Case:     "True",
 	}
 	ff = Enum{
+		IDNode:   builder.newIDNode(),
 		EnumType: &boolean,
 		Case:     "False",
 	}
 
 	list = AbsTT{
+		IDNode: builder.newIDNode(),
 		Vars: []TypeVar{
-			TypeVar{Kind: &star},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   &star,
+			},
 		},
 		Term: &listEnum,
 	}
 	listEnum = EnumType{
-		"Nil":  {},
-		"Cons": {&list.Vars[0], &listEnum},
+		IDNode: builder.newIDNode(),
+		Constructors: map[string][]Type{
+			"Nil":  {},
+			"Cons": {&list.Vars[0], &listEnum},
+		},
 	}
 
 	listNil = AbsTD{
+		IDNode: builder.newIDNode(),
 		Vars: []TypeVar{
-			TypeVar{Kind: &star},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   &star,
+			},
 		},
 	}
 	listNil.Term = &AbsDD{
-		Vars: []DataVar{},
+		IDNode: builder.newIDNode(),
+		Vars:   []DataVar{},
 		Term: &Enum{
+			IDNode: builder.newIDNode(),
 			EnumType: &AppTT{
-				Args: []Type{&listNil.Vars[0]},
-				To:   &list,
+				IDNode: builder.newIDNode(),
+				Args:   []Type{&listNil.Vars[0]},
+				To:     &list,
 			},
 			Case: "Nil",
 			Data: []Data{},
@@ -93,24 +115,35 @@ func StdLib() BuiltinADTs {
 	}
 
 	listCons = AbsTD{
+		IDNode: builder.newIDNode(),
 		Vars: []TypeVar{
-			TypeVar{Kind: &star},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   &star,
+			},
 		},
 		Term: &listConsAbsDD,
 	}
 	listType := &AppTT{
-		Args: []Type{&listCons.Vars[0]},
-		To:   &list,
+		IDNode: builder.newIDNode(),
+		Args:   []Type{&listCons.Vars[0]},
+		To:     &list,
 	}
 	listConsAbsDD = AbsDD{
+		IDNode: builder.newIDNode(),
 		Vars: []DataVar{
-			DataVar{DataType: &listCons.Vars[0]},
 			DataVar{
+				IDNode:   builder.newIDNode(),
+				DataType: &listCons.Vars[0],
+			},
+			DataVar{
+				IDNode:   builder.newIDNode(),
 				DataType: listType,
 			},
 		},
 	}
 	listConsAbsDD.Term = &Enum{
+		IDNode:   builder.newIDNode(),
 		EnumType: listType,
 		//&AppTT{
 		//Args: []Type{&listCons.Vars[0]},
@@ -121,78 +154,124 @@ func StdLib() BuiltinADTs {
 	}
 
 	option = AbsTT{
+		IDNode: builder.newIDNode(),
 		Vars: []TypeVar{
-			TypeVar{Kind: &star},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   &star,
+			},
 		},
 		Term: &optionEnum,
 	}
 	optionEnum = EnumType{
-		"None": {},
-		"Some": {&option.Vars[0]},
+		IDNode: builder.newIDNode(),
+		Constructors: map[string][]Type{
+			"None": {},
+			"Some": {&option.Vars[0]},
+		},
 	}
 
 	none = AbsTD{
+		IDNode: builder.newIDNode(),
 		Vars: []TypeVar{
-			TypeVar{Kind: &star},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   &star,
+			},
 		},
 	}
 	none.Term = &Enum{
+		IDNode: builder.newIDNode(),
 		EnumType: &AppTT{
-			Args: []Type{&none.Vars[0]},
-			To:   &option,
+			IDNode: builder.newIDNode(),
+			Args:   []Type{&none.Vars[0]},
+			To:     &option,
 		},
 		Case: "None",
 		Data: []Data{},
 	}
 
 	some = AbsTD{
+		IDNode: builder.newIDNode(),
 		Vars: []TypeVar{
-			TypeVar{Kind: &star},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   &star,
+			},
 		},
 		Term: &someAbsDD,
 	}
 	someAbsDD = AbsDD{
-		Vars: []DataVar{DataVar{DataType: &some.Vars[0]}},
+		IDNode: builder.newIDNode(),
+		Vars:   []DataVar{DataVar{DataType: &some.Vars[0]}},
 	}
 	someAbsDD.Term = &Enum{
+		IDNode: builder.newIDNode(),
 		EnumType: &AppTT{
-			Args: []Type{&some.Vars[0]},
-			To:   &option,
+			IDNode: builder.newIDNode(),
+			Args:   []Type{&some.Vars[0]},
+			To:     &option,
 		},
 		Case: "Some",
 		Data: []Data{&someAbsDD.Vars[0]},
 	}
 
 	product = AbsTT{
+		IDNode: builder.newIDNode(),
 		Vars: []TypeVar{
-			TypeVar{Kind: &star},
-			TypeVar{Kind: &star},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   &star,
+			},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   &star,
+			},
 		},
 		Term: &pairEnum,
 	}
 
 	pairEnum = EnumType{
-		"pair": {&product.Vars[0], &product.Vars[1]},
+		IDNode: builder.newIDNode(),
+		Constructors: map[string][]Type{
+			"pair": {&product.Vars[0], &product.Vars[1]},
+		},
 	}
 
 	pair = AbsTD{
+		IDNode: builder.newIDNode(),
 		Vars: []TypeVar{
-			TypeVar{Kind: &star},
-			TypeVar{Kind: &star},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   &star,
+			},
+			TypeVar{
+				IDNode: builder.newIDNode(),
+				Kind:   &star,
+			},
 		},
 		Term: &pairAbsDD,
 	}
 
 	pairAbsDD = AbsDD{
+		IDNode: builder.newIDNode(),
 		Vars: []DataVar{
-			DataVar{DataType: &product.Vars[0]},
-			DataVar{DataType: &product.Vars[1]},
+			DataVar{
+				IDNode:   builder.newIDNode(),
+				DataType: &product.Vars[0],
+			},
+			DataVar{
+				IDNode:   builder.newIDNode(),
+				DataType: &product.Vars[1],
+			},
 		},
 	}
 	pairAbsDD.Term = &Enum{
+		IDNode: builder.newIDNode(),
 		EnumType: &AppTT{
-			Args: []Type{&product.Vars[0], &product.Vars[1]},
-			To:   &product,
+			IDNode: builder.newIDNode(),
+			Args:   []Type{&product.Vars[0], &product.Vars[1]},
+			To:     &product,
 		},
 		Case: "pair",
 		Data: []Data{&pairAbsDD.Vars[0], &pairAbsDD.Vars[1]},
