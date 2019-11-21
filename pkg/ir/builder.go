@@ -23,6 +23,8 @@ type CFGBuilder struct {
 	procedures       map[string]*Proc
 	fieldTypeMap     map[string]Type
 
+	mapTypeMap map[Type]map[Type]Type
+
 	genericTypeConstructors map[string]*AbsTT
 	genericDataConstructors map[string]*AbsTD
 }
@@ -101,12 +103,43 @@ func (builder *CFGBuilder) visitPattern(p ast.Pattern, t Type, bind *Bind) ([]st
 		varBinds = append(varBinds, bind)
 
 	case *ast.ConstructorPattern:
+		fmt.Printf("ConstructorPattern %s\n", pat.ConstrName)
 		var typeList []Type
 		switch typ := t.(type) {
 		case *EnumType:
 			typeList = (*typ)[pat.ConstrName]
+		case *AppTT:
+			to := typ.To
+			absTT, ok := to.(*AbsTT)
+			if !ok {
+				panic(errors.New(fmt.Sprintf("Not supported AppTT ConstructorPattern %T", to)))
+			}
+			args := typ.Args
+			vars := absTT.Vars
+			term := absTT.Term
+			enumType, ok := term.(*EnumType)
+			if !ok {
+				panic(errors.New(fmt.Sprintf("Not supported AppTT ConstructorPattern %T", to)))
+			}
+			constrTypes := (*enumType)[pat.ConstrName]
+			varToIndex := make(map[Type]int)
+			for i, _ := range vars {
+				varToIndex[&vars[i]] = i
+			}
+			indicies := make([]int, len(constrTypes))
+			for i, c := range constrTypes {
+				index, ok := varToIndex[c]
+				if !ok {
+					panic(errors.New(fmt.Sprintf("Not found Type order")))
+				}
+				indicies[i] = index
+			}
+			typeList = make([]Type, len(constrTypes))
+			for i, _ := range indicies {
+				typeList[i] = args[indicies[i]]
+			}
 		default:
-			panic(errors.New(fmt.Sprintf("Not constructor pattern type: %T", t)))
+			panic(errors.New(fmt.Sprintf("In %s; Not constructor pattern type: %T %d", pat.ConstrName, t, len(pat.Pats))))
 		}
 		if len(typeList) != len(pat.Pats) {
 			panic(errors.New(fmt.Sprintf("constructor pattern argument length mistmatch: %s", pat.ConstrName)))
@@ -171,14 +204,14 @@ func (builder *CFGBuilder) visitLiteral(l ast.Literal) Data {
 		return &Nat{
 			NatType: typ, Data: lit.Val,
 		}
-	case *ast.MapLiteral:
-		ktyp := builder.visitASTType(lit.KeyType)
-		vtyp := builder.visitASTType(lit.ValType)
-		maptyp := MapType{ktyp, vtyp}
-		return &Map{
-			MapType: &maptyp,
-			Data:    map[string]string{},
-		}
+	//case *ast.MapLiteral:
+	//ktyp := builder.visitASTType(lit.KeyType)
+	//vtyp := builder.visitASTType(lit.ValType)
+	//maptyp := MapType{ktyp, vtyp}
+	//return &Map{
+	//MapType: &maptyp,
+	//Data:    map[string]string{},
+	//}
 
 	case *ast.ADTValLiteral:
 		panic(errors.New(fmt.Sprintf("Not implemented: %T", lit)))
@@ -205,14 +238,34 @@ func (builder *CFGBuilder) visitASTType(e ast.ASTType) Type {
 		}
 
 		panic(errors.New(fmt.Sprintf("PrimType not found : %s", n.Name)))
-	//case *ast.MapType:
-	//fmt.Printf("%T", n)
 	case *ast.ADT:
 		typ, ok := builder.definedADT[n.Name]
 		if !ok {
 			panic(errors.New(fmt.Sprintf("Unknown type: %s", n.Name)))
 		}
 		return typ
+
+	case *ast.MapType:
+		keyType := builder.visitASTType(n.KeyType)
+		valType := builder.visitASTType(n.ValType)
+		_, ok := builder.mapTypeMap[keyType]
+		if !ok {
+			mtype := &MapType{keyType, valType}
+			builder.mapTypeMap[keyType] = map[Type]Type{}
+			builder.mapTypeMap[keyType][valType] = mtype
+			return mtype
+		}
+
+		_, ok = builder.mapTypeMap[keyType][valType]
+		if !ok {
+			mtype := &MapType{keyType, valType}
+			builder.mapTypeMap[keyType][valType] = mtype
+			return mtype
+		}
+		return builder.mapTypeMap[keyType][valType]
+
+		//fmt.Printf("MapType %T %T\n", keyType, valType)
+		//panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
 	//case *ast.FunType:
 	//fmt.Printf("%T", n)
 	//case *ast.TypeVar:
@@ -342,6 +395,41 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) *Proc {
 		p.Jump = &pp
 		builder.restoreVarStack(initialVarStack)
 		return &contProc
+	case *ast.MapGetStatement:
+		if !n.IsValRetrieve {
+			panic(errors.New(fmt.Sprintf("Only value retrive is implemeted for MapGetStatement")))
+		}
+
+		slot := n.Name.Id
+		path := make([]Data, len(n.Keys))
+		var ok bool
+		for i, _ := range n.Keys {
+			path[i], ok = stackMapPeek(builder.varStack, n.Keys[i].Id)
+			if !ok {
+				panic(errors.New(fmt.Sprintf("variable not found: %s", n.Keys[i].Id)))
+			}
+		}
+		load := Load{slot, path}
+		u = &load
+		stackMapPush(builder.varStack, n.Lhs.Id, &load)
+	case *ast.MapUpdateStatement:
+		if n.Rhs == nil {
+			panic(errors.New(fmt.Sprintf("Unhandled Map delete: %T", n)))
+		}
+		slot := n.Name.Id
+		data, ok := stackMapPeek(builder.varStack, n.Rhs.Id)
+		if !ok {
+			panic(errors.New(fmt.Sprintf("variable not found: %s", n.Rhs.Id)))
+		}
+		path := make([]Data, len(n.Keys))
+		for i, _ := range n.Keys {
+			path[i], ok = stackMapPeek(builder.varStack, n.Keys[i].Id)
+			if !ok {
+				panic(errors.New(fmt.Sprintf("variable not found: %s", n.Keys[i].Id)))
+			}
+		}
+		u = &Save{slot, path, data}
+
 	default:
 		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
 	}
@@ -463,11 +551,15 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		op := builder.getBuiltinOp(opName, varTypes)
 		switch op := op.(type) {
 		case *AbsTD:
-			if len(op.Vars) != 1 {
-				panic(errors.New(fmt.Sprintf("Unhandled Builtin AbsTD args number: %T\n", op)))
+			if len(op.Vars) != len(vars) {
+				panic(errors.New(fmt.Sprintf("Wrong number of Builtin AbsTD args")))
+			}
+			types := make([]Type, len(vars))
+			for i, _ := range vars {
+				types[i] = builder.TypeOf(vars[i])
 			}
 			appTD := &AppTD{
-				Args: []Type{builder.TypeOf(vars[0])},
+				Args: types,
 				To:   op,
 			}
 			appDD := AppDD{
@@ -508,18 +600,24 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 			panic(errors.New(fmt.Sprintf("variable not found: %s", n.Lhs.Id)))
 		}
 
-		absDD, ok := lhs.(*AbsDD)
-		if !ok {
-			panic(errors.New(fmt.Sprintf("AppExpression lhs wrong type: %T", lhs)))
+		i := 0
+		curr := lhs
+		accum := lhs
+		for i < len(rhsData) {
+			absDD, ok := curr.(*AbsDD)
+			if !ok {
+				panic(errors.New(fmt.Sprintf("AppExpression absDD wrong type: %T", curr)))
+			}
+			currData := rhsData[i : i+len(absDD.Vars)]
+			i = i + len(absDD.Vars)
+			accum = &AppDD{
+				Args: currData,
+				To:   accum,
+			}
+			curr = absDD.Term
 		}
-		if len(absDD.Vars) != len(rhsData) {
-			panic(errors.New(fmt.Sprintf("AppExpression lhs and rhs length of args not equal")))
-		}
-		appDD := AppDD{
-			Args: rhsData,
-			To:   absDD,
-		}
-		return &appDD
+
+		return accum
 	case *ast.MessageExpression:
 		//nameList := make([]string, len(n.MArgs))
 		//dataList := make([]Data, len(n.MArgs))
@@ -609,15 +707,26 @@ func (builder *CFGBuilder) visitComponent(comp *ast.Component) {
 
 	paramNames := make([]string, len(comp.Params))
 	params := map[string]Type{}
-	dataVars := make([]DataVar, len(comp.Params))
+	paramVars := make([]DataVar, len(comp.Params))
+
 	for i, p := range comp.Params {
 		pName, pType := builder.visitParams(p)
 		params[pName] = pType
 		paramNames[i] = pName
-		dataVars[i] = DataVar{pType}
-		stackMapPush(builder.varStack, pName, &dataVars[i])
+		paramVars[i] = DataVar{pType}
+		stackMapPush(builder.varStack, pName, &paramVars[i])
 		defer stackMapPop(builder.varStack, pName)
 	}
+
+	implicitVars := []DataVar{
+		DataVar{builder.primitiveTypeMap["Uint128"]},
+		DataVar{builder.primitiveTypeMap["ByStr20"]},
+	}
+	stackMapPush(builder.varStack, "_amount", &implicitVars[0])
+	stackMapPush(builder.varStack, "_sender", &implicitVars[1])
+	defer stackMapPop(builder.varStack, "_amount")
+	defer stackMapPop(builder.varStack, "_sender")
+	dataVars := append(implicitVars, paramVars...)
 
 	firstProc := Proc{
 		Vars: dataVars,
@@ -704,10 +813,14 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 
 	builder.constructorType["Nil"] = "List"
 	builder.constructorType["Cons"] = "List"
+
 	builder.genericTypeConstructors["List"] = stdLib.List
 	builder.genericDataConstructors["Nil"] = stdLib.Nil
 	builder.genericDataConstructors["Cons"] = stdLib.Cons
 
+	builder.genericTypeConstructors["Option"] = stdLib.Option
+	builder.genericDataConstructors["Some"] = stdLib.Some
+	builder.genericDataConstructors["None"] = stdLib.None
 	//builder.constructorType["True"] = "Boolean"
 	//builder.constructorType["False"] = "Boolean"
 	//builder.primitiveTypeMap["Boolean"] = stdLib.Boolean
@@ -1245,18 +1358,20 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 
 func BuildCFG(n ast.AstNode) *CFGBuilder {
 	builder := CFGBuilder{
-		builtinOpMap:            map[string]Data{},
-		primitiveTypeMap:        map[string]Type{},
-		definedADT:              map[string]Type{},
-		builtinADT:              map[string]Type{},
-		constructorType:         map[string]string{},
-		intWidthTypeMap:         map[int]*IntType{},
-		natWidthTypeMap:         map[int]*NatType{},
-		varStack:                map[string][]Data{},
-		constructor:             nil,
-		Transitions:             map[string]*Proc{},
-		procedures:              map[string]*Proc{},
-		fieldTypeMap:            map[string]Type{},
+		builtinOpMap:     map[string]Data{},
+		primitiveTypeMap: map[string]Type{},
+		definedADT:       map[string]Type{},
+		builtinADT:       map[string]Type{},
+		constructorType:  map[string]string{},
+		intWidthTypeMap:  map[int]*IntType{},
+		natWidthTypeMap:  map[int]*NatType{},
+		varStack:         map[string][]Data{},
+		constructor:      nil,
+		Transitions:      map[string]*Proc{},
+		procedures:       map[string]*Proc{},
+		fieldTypeMap:     map[string]Type{},
+
+		mapTypeMap:              map[Type]map[Type]Type{},
 		genericTypeConstructors: map[string]*AbsTT{},
 		genericDataConstructors: map[string]*AbsTD{},
 	}

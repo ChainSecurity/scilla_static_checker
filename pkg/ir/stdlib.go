@@ -14,8 +14,8 @@ type BuiltinADTs struct {
 	Cons *AbsTD
 
 	Option *AbsTT
-	None   Data
-	Some   Data
+	None   *AbsTD
+	Some   *AbsTD
 
 	Product Type
 	Pair    Data
@@ -127,8 +127,8 @@ func StdLib() BuiltinADTs {
 		Term: &optionEnum,
 	}
 	optionEnum = EnumType{
-		"none": {},
-		"some": {&option.Vars[0]},
+		"None": {},
+		"Some": {&option.Vars[0]},
 	}
 
 	none = AbsTD{
@@ -141,7 +141,7 @@ func StdLib() BuiltinADTs {
 			Args: []Type{&none.Vars[0]},
 			To:   &option,
 		},
-		Case: "none",
+		Case: "None",
 		Data: []Data{},
 	}
 
@@ -159,7 +159,7 @@ func StdLib() BuiltinADTs {
 			Args: []Type{&some.Vars[0]},
 			To:   &option,
 		},
-		Case: "some",
+		Case: "Some",
 		Data: []Data{&someAbsDD.Vars[0]},
 	}
 

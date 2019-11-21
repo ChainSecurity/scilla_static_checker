@@ -49,11 +49,22 @@ func (builder *CFGBuilder) TypeOf(d Data) Type {
 	case *DataVar:
 		return x.DataType
 	case *Load:
-		if len(x.Path) != 0 {
-			panic(errors.New("Load with non empty path is not implemented"))
+		if len(x.Path) == 0 {
+			return builder.fieldTypeMap[x.Slot]
 		}
-		fmt.Println(builder.fieldTypeMap, x.Slot, builder.fieldTypeMap["b"])
-		return builder.fieldTypeMap[x.Slot]
+		tt := builder.fieldTypeMap[x.Slot]
+		for _ = range x.Path {
+			mType, ok := tt.(*MapType)
+			if !ok {
+				panic(fmt.Sprintf("Path longer than the MapType chain"))
+			}
+			tt = mType.ValType
+		}
+		fmt.Printf("Load with Path %T\n", tt)
+		return &AppTT{
+			Args: []Type{tt},
+			To:   builder.genericTypeConstructors["Option"],
+		}
 	case *AbsTD:
 		return builder.TypeOf(x.Term)
 	case *AbsDD:
