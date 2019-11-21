@@ -1,9 +1,11 @@
 package main
 
 import (
+	"bufio"
 	"bytes"
 	"fmt"
 	"log"
+	"os"
 	"os/exec"
 )
 
@@ -25,6 +27,27 @@ func runSouffle(datalog, factsIn, factsOut string) {
 
 }
 
+func readOutput(fileName string) []string {
+	file, err := os.Open(fileName)
+	if err != nil {
+		log.Fatalf("failed opening file: %s", err)
+	}
+
+	scanner := bufio.NewScanner(file)
+	scanner.Split(bufio.ScanLines)
+	var txtlines []string
+
+	for scanner.Scan() {
+		txtlines = append(txtlines, scanner.Text())
+	}
+
+	file.Close()
+	return txtlines
+
+}
+
 func main() {
 	runSouffle("analysis.dl", "facts_in", "facts_out")
+	result := readOutput("facts_out/b.csv")
+	fmt.Println(result)
 }
