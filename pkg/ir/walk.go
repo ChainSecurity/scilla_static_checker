@@ -7,11 +7,11 @@ import (
 )
 
 type Visitor interface {
-	Visit(x Node) (w Visitor)
+	Visit(x Node, prevX Node) (w Visitor)
 }
 
 func Walk(v Visitor, node Node, prev_node Node) {
-	if v = v.Visit(node); v == nil {
+	if v = v.Visit(node, prev_node); v == nil {
 		return
 	}
 

@@ -8,24 +8,6 @@ import (
 	"os"
 )
 
-type TestVisitor struct {
-	visited map[ir.Node]bool
-}
-
-func (t TestVisitor) Visit(node ir.Node) ir.Visitor {
-	if node.ID() == 0 {
-		panic(fmt.Sprintf("ID was not assigned %T", node))
-	}
-	fmt.Printf("+ %T\n", node)
-	visited, ok := t.visited[node]
-	if ok && visited {
-		return nil
-	}
-
-	t.visited[node] = true
-	return t
-}
-
 func main() {
 	jsonPath := os.Args[1]
 	jsonFile, err := os.Open(jsonPath)
@@ -41,8 +23,6 @@ func main() {
 	}
 
 	b := ir.BuildCFG(cm)
-
-	v := TestVisitor{map[ir.Node]bool{}}
-	ir.Walk(v, b.Transitions["test"], nil)
+	ir.DumpFacts(b)
 
 }
