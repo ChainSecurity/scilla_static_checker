@@ -31,6 +31,9 @@ type FactsDumper struct {
 	strFacts        []string
 	pickDataFacts   []string
 	dataCaseFacts   []string
+	procCaseFacts   []string
+	callProcFacts   []string
+	pickProcFacts   []string
 	natFacts        []string
 	natTypeFacts    []string
 	intFacts        []string
@@ -197,8 +200,11 @@ func DumpFacts(builder *CFGBuilder) {
 		msgFacts:       []string{},
 		dataFacts:      []string{},
 		strFacts:       []string{},
+		callProcFacts:  []string{},
+		pickProcFacts:  []string{},
 		pickDataFacts:  []string{},
 		dataCaseFacts:  []string{},
+		procCaseFacts:  []string{},
 		natFacts:       []string{},
 		natTypeFacts:   []string{},
 		intFacts:       []string{},
@@ -215,10 +221,14 @@ func DumpFacts(builder *CFGBuilder) {
 	}
 	for tName, t := range builder.Transitions {
 		fmt.Println("Transition", tName)
+		fact := fmt.Sprintf("%d", t.ID())
+		fd.transitionFacts = append(fd.transitionFacts, fact)
 		Walk(&fd, t, nil)
 	}
 	for pName, p := range builder.Procedures {
 		fmt.Println("Procedure", pName)
+		fact := fmt.Sprintf("%d", p.ID())
+		fd.procedureFacts = append(fd.procedureFacts, fact)
 		Walk(&fd, p, nil)
 	}
 
@@ -240,6 +250,8 @@ func DumpFacts(builder *CFGBuilder) {
 		"msg":        fd.msgFacts,
 		"data":       fd.dataFacts,
 		"str":        fd.strFacts,
+		"callProc":   fd.callProcFacts,
+		"pickProc":   fd.pickProcFacts,
 		"pickData":   fd.pickDataFacts,
 		"dataCase":   fd.dataCaseFacts,
 		"nat":        fd.natFacts,
@@ -256,14 +268,29 @@ func DumpFacts(builder *CFGBuilder) {
 		"enumType":   fd.enumTypeFacts,
 	}
 
-	outFolder := "out"
-	err := os.Mkdir(outFolder, 0700)
+	analysisFolder := "./souffle_analysis"
+	if _, err := os.Stat(analysisFolder); os.IsNotExist(err) {
+		err = os.Mkdir(analysisFolder, 0700)
+		if err != nil {
+			panic(err)
+		}
+	}
+
+	factsInFolder := path.Join(analysisFolder, "facts_in")
+
+	if _, err := os.Stat(factsInFolder); !os.IsNotExist(err) {
+		err = os.RemoveAll(factsInFolder)
+		if err != nil {
+			panic(err)
+		}
+	}
+	err := os.Mkdir(factsInFolder, 0700)
 	if err != nil {
 		panic(err)
 	}
 
 	for fileName, lines := range fileToFacts {
-		filePath := path.Join(outFolder, fmt.Sprintf("%s.facts", fileName))
+		filePath := path.Join(factsInFolder, fmt.Sprintf("%s.facts", fileName))
 		f, err := os.Create(filePath)
 		if err != nil {
 			f.Close()
