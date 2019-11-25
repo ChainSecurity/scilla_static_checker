@@ -20,7 +20,7 @@ type CFGBuilder struct {
 	varStack         map[string][]Data
 	constructor      *Proc
 	Transitions      map[string]*Proc
-	procedures       map[string]*Proc
+	Procedures       map[string]*Proc
 	fieldTypeMap     map[string]Type
 
 	mapTypeMap map[Type]map[Type]Type
@@ -817,7 +817,7 @@ func (builder *CFGBuilder) visitComponent(comp *ast.Component) {
 	//fmt.Printf("Component %s type: %s\n\tvars: %s\n\tplan: %s\n", comp.Name.Id, comp.ComponentType, dataVars, proc.Plan)
 
 	if comp.ComponentType == "procedure" {
-		builder.Transitions[comp.Name.Id] = &firstProc
+		builder.Procedures[comp.Name.Id] = &firstProc
 	} else if comp.ComponentType == "transition" {
 		builder.Transitions[comp.Name.Id] = &firstProc
 	} else {
@@ -1638,7 +1638,7 @@ func BuildCFG(n ast.AstNode) *CFGBuilder {
 		varStack:         map[string][]Data{},
 		constructor:      nil,
 		Transitions:      map[string]*Proc{},
-		procedures:       map[string]*Proc{},
+		Procedures:       map[string]*Proc{},
 		fieldTypeMap:     map[string]Type{},
 
 		mapTypeMap:              map[Type]map[Type]Type{},

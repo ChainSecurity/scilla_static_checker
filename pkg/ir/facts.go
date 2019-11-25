@@ -10,38 +10,40 @@ import (
 )
 
 type FactsDumper struct {
-	visited        map[Node]bool
-	idToPrefixID   map[uint64]string
-	procFacts      []string
-	unitFacts      []string
-	planFacts      []string
-	sendFacts      []string
-	acceptFacts    []string
-	saveFacts      []string
-	loadFacts      []string
-	appDDFacts     []string
-	appTDFacts     []string
-	appTTFacts     []string
-	argumentsFacts []string
-	absDDFacts     []string
-	msgFacts       []string
-	dataFacts      []string
-	strFacts       []string
-	pickDataFacts  []string
-	dataCaseFacts  []string
-	natFacts       []string
-	natTypeFacts   []string
-	intFacts       []string
-	intTypeFacts   []string
-	rawFacts       []string
-	rawTypeFacts   []string
-	bindFacts      []string
-	condFacts      []string
-	condBindFacts  []string
-	typeVarFacts   []string
-	enumFacts      []string
-	enumTypeFacts  []string
-	Facts          []string
+	visited         map[Node]bool
+	idToPrefixID    map[uint64]string
+	procFacts       []string
+	transitionFacts []string
+	procedureFacts  []string
+	unitFacts       []string
+	planFacts       []string
+	sendFacts       []string
+	acceptFacts     []string
+	saveFacts       []string
+	loadFacts       []string
+	appDDFacts      []string
+	appTDFacts      []string
+	appTTFacts      []string
+	argumentsFacts  []string
+	absDDFacts      []string
+	msgFacts        []string
+	dataFacts       []string
+	strFacts        []string
+	pickDataFacts   []string
+	dataCaseFacts   []string
+	natFacts        []string
+	natTypeFacts    []string
+	intFacts        []string
+	intTypeFacts    []string
+	rawFacts        []string
+	rawTypeFacts    []string
+	bindFacts       []string
+	condFacts       []string
+	condBindFacts   []string
+	typeVarFacts    []string
+	enumFacts       []string
+	enumTypeFacts   []string
+	Facts           []string
 }
 
 func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
@@ -211,38 +213,47 @@ func DumpFacts(builder *CFGBuilder) {
 		enumTypeFacts:  []string{},
 		Facts:          []string{},
 	}
-	Walk(&fd, builder.Transitions["test"], nil)
+	for tName, t := range builder.Transitions {
+		fmt.Println("Transition", tName)
+		Walk(&fd, t, nil)
+	}
+	for pName, p := range builder.Procedures {
+		fmt.Println("Procedure", pName)
+		Walk(&fd, p, nil)
+	}
 
 	fileToFacts := map[string][]string{
-		"proc":      fd.procFacts,
-		"unit":      fd.unitFacts,
-		"plan":      fd.planFacts,
-		"send":      fd.sendFacts,
-		"accept":    fd.acceptFacts,
-		"save":      fd.saveFacts,
-		"load":      fd.loadFacts,
-		"appDD":     fd.appDDFacts,
-		"appTD":     fd.appTDFacts,
-		"appTT":     fd.appTTFacts,
-		"arguments": fd.argumentsFacts,
-		"absDD":     fd.absDDFacts,
-		"msg":       fd.msgFacts,
-		"data":      fd.dataFacts,
-		"str":       fd.strFacts,
-		"pickData":  fd.pickDataFacts,
-		"dataCase":  fd.dataCaseFacts,
-		"nat":       fd.natFacts,
-		"natType":   fd.natTypeFacts,
-		"int":       fd.intFacts,
-		"intType":   fd.intTypeFacts,
-		"raw":       fd.rawFacts,
-		"rawType":   fd.rawTypeFacts,
-		"bind":      fd.bindFacts,
-		"cond":      fd.condFacts,
-		"condBind":  fd.condBindFacts,
-		"typeVar":   fd.typeVarFacts,
-		"enum":      fd.enumFacts,
-		"enumType":  fd.enumTypeFacts,
+		"proc":       fd.procFacts,
+		"transition": fd.transitionFacts,
+		"procedure":  fd.procedureFacts,
+		"unit":       fd.unitFacts,
+		"plan":       fd.planFacts,
+		"send":       fd.sendFacts,
+		"accept":     fd.acceptFacts,
+		"save":       fd.saveFacts,
+		"load":       fd.loadFacts,
+		"appDD":      fd.appDDFacts,
+		"appTD":      fd.appTDFacts,
+		"appTT":      fd.appTTFacts,
+		"arguments":  fd.argumentsFacts,
+		"absDD":      fd.absDDFacts,
+		"msg":        fd.msgFacts,
+		"data":       fd.dataFacts,
+		"str":        fd.strFacts,
+		"pickData":   fd.pickDataFacts,
+		"dataCase":   fd.dataCaseFacts,
+		"nat":        fd.natFacts,
+		"natType":    fd.natTypeFacts,
+		"int":        fd.intFacts,
+		"intType":    fd.intTypeFacts,
+		"raw":        fd.rawFacts,
+		"rawType":    fd.rawTypeFacts,
+		"bind":       fd.bindFacts,
+		"cond":       fd.condFacts,
+		"condBind":   fd.condBindFacts,
+		"typeVar":    fd.typeVarFacts,
+		"enum":       fd.enumFacts,
+		"enumType":   fd.enumTypeFacts,
 	}
 
 	outFolder := "out"
