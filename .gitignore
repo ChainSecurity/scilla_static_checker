@@ -14,3 +14,7 @@ go.mod
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# png and dot files
+*.png
+*.dot
