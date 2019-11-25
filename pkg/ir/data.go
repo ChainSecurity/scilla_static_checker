@@ -321,9 +321,10 @@ func (*ProcType) isType() {}
 // Proc :
 type Proc struct {
 	IDNode
-	Vars []DataVar
-	Plan []Unit
-	Jump Jump
+	ProcName string
+	Vars     []DataVar
+	Plan     []Unit
+	Jump     Jump
 }
 
 func (*Proc) isData() {}

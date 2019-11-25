@@ -28,6 +28,7 @@ type CFGBuilder struct {
 	genericTypeConstructors map[string]*AbsTT
 	genericDataConstructors map[string]*AbsTD
 	nodeCounter             uint64
+	currentProc             string
 }
 
 func (b *CFGBuilder) newIDNode() IDNode {
@@ -383,16 +384,18 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) *Proc {
 		}
 		procCases := make([]ProcCase, len(n.Cases))
 		contProc := Proc{
-			IDNode: builder.newIDNode(),
-			Plan:   []Unit{},
+			ProcName: builder.currentProc,
+			IDNode:   builder.newIDNode(),
+			Plan:     []Unit{},
 		}
 		for i, mc := range n.Cases {
 			//TODO create the DataVar and pass it as the arg for the call
 			procCases[i] = ProcCase{
 				IDNode: builder.newIDNode(),
 				Body: Proc{
-					IDNode: builder.newIDNode(),
-					Plan:   []Unit{},
+					ProcName: builder.currentProc,
+					IDNode:   builder.newIDNode(),
+					Plan:     []Unit{},
 				},
 			}
 			copyVarStack := stackMapCopy(initialVarStack)
@@ -796,10 +799,12 @@ func (builder *CFGBuilder) visitComponent(comp *ast.Component) {
 	dataVars := append(implicitVars, paramVars...)
 
 	firstProc := Proc{
-		IDNode: builder.newIDNode(),
-		Vars:   dataVars,
-		Plan:   []Unit{},
+		IDNode:   builder.newIDNode(),
+		ProcName: comp.Name.Id,
+		Vars:     dataVars,
+		Plan:     []Unit{},
 	}
+	builder.currentProc = comp.Name.Id
 	proc := &firstProc
 	for _, s := range comp.Body {
 		contProc := builder.visitStatement(proc, s)
@@ -818,6 +823,7 @@ func (builder *CFGBuilder) visitComponent(comp *ast.Component) {
 	} else {
 		panic(errors.New(fmt.Sprintf("Wrong Component type: %s", comp.ComponentType)))
 	}
+	builder.currentProc = ""
 }
 
 func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
@@ -841,9 +847,10 @@ func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
 		}
 
 		builder.constructor = &Proc{
-			IDNode: builder.newIDNode(),
-			Vars:   dataVars,
-			Plan:   make([]Unit, len(n.Fields)),
+			IDNode:   builder.newIDNode(),
+			ProcName: "constructor",
+			Vars:     dataVars,
+			Plan:     make([]Unit, len(n.Fields)),
 		}
 		for i, f := range n.Fields {
 			n, d := builder.visitField(f)

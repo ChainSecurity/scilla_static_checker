@@ -6,7 +6,6 @@ import (
 	"os"
 	"path"
 	//"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ast"
-	"strconv"
 	//"strings"
 )
 
@@ -17,6 +16,7 @@ type FactsDumper struct {
 	unitFacts      []string
 	planFacts      []string
 	sendFacts      []string
+	acceptFacts    []string
 	saveFacts      []string
 	loadFacts      []string
 	appDDFacts     []string
@@ -61,7 +61,8 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 	case *Proc:
 		//prefixID := fmt.Sprintf("Proc%d", n.ID())
 		//fd.idToPrefixID[n.ID()] = prefixID
-		fd.procFacts = append(fd.procFacts, strconv.FormatUint(n.ID(), 10))
+		fact := fmt.Sprintf("%d\t%s", n.ID(), n.ProcName)
+		fd.procFacts = append(fd.procFacts, fact)
 
 		for i, u := range n.Plan {
 			fact := fmt.Sprintf("plan_%d_%d\t%d\t%d", n.ID(), i, n.ID(), u.ID())
@@ -71,6 +72,9 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 	case *Send:
 		fact := fmt.Sprintf("%d\t%d", n.ID(), n.Data.ID())
 		fd.sendFacts = append(fd.sendFacts, fact)
+	case *Accept:
+		fact := fmt.Sprintf("%d", n.ID())
+		fd.acceptFacts = append(fd.acceptFacts, fact)
 	case *Save:
 		fact := fmt.Sprintf("%d\t%s", n.ID(), n.Slot)
 		fd.saveFacts = append(fd.saveFacts, fact)
@@ -180,6 +184,7 @@ func DumpFacts(builder *CFGBuilder) {
 		unitFacts:      []string{},
 		planFacts:      []string{},
 		sendFacts:      []string{},
+		acceptFacts:    []string{},
 		saveFacts:      []string{},
 		loadFacts:      []string{},
 		appDDFacts:     []string{},
@@ -213,6 +218,7 @@ func DumpFacts(builder *CFGBuilder) {
 		"unit":      fd.unitFacts,
 		"plan":      fd.planFacts,
 		"send":      fd.sendFacts,
+		"accept":    fd.acceptFacts,
 		"save":      fd.saveFacts,
 		"load":      fd.loadFacts,
 		"appDD":     fd.appDDFacts,
