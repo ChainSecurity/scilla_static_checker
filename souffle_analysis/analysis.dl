@@ -20,8 +20,8 @@
 .decl bind(unit_id: Unit, bind_type: Type, cond: Unit)
 .decl cond(unit_id: Unit, case: symbol)
 .decl condBind(unit_id: Unit, cond: Unit, index: number)
-.decl typeVar(type: string)
-.decl enum(enum_id: Enum, enum_type: Type, case: symbol)
+.decl typeVar(type: symbol)
+.decl enum(enum_id: Unit, enum_type: Type, case: symbol)
 
 .input plan
 .input send
@@ -39,6 +39,11 @@
 .input natType
 .input bind
 .input cond
-.input cond_bind
+.input condBind
 .input typeVar
 .input enum
+
+.decl vulnerability()
+vulnerability() :- plan(_, _, _).
+
+.output vulnerability
