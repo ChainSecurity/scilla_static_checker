@@ -1,6 +1,7 @@
 .symbol_type Unit
 .symbol_type Type
 .symbol_type Proc
+.symbol_type Plan
 
 .decl plan(plan_id: Plan, proc_id: Proc, unit_id: Unit)
 .decl send(unit_id: Unit, data: Unit)
@@ -18,7 +19,7 @@
 .decl natType(type_id: Type, size: number)
 .decl bind(unit_id: Unit, bind_type: Type, cond: Unit)
 .decl cond(unit_id: Unit, case: symbol)
-.decl cond_bind(unit_id: Unit, cond: Unit, index: number)
+.decl condBind(unit_id: Unit, cond: Unit, index: number)
 .decl typeVar(type: string)
 .decl enum(enum_id: Enum, enum_type: Type, case: symbol)
 
