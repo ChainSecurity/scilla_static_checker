@@ -1,0 +1,44 @@
+.symbol_type Unit
+.symbol_type Type
+.symbol_type Proc
+.symbol_type Plan
+
+.decl plan(plan_id: Plan, proc_id: Proc, unit_id: Unit)
+.decl send(unit_id: Unit, data: Unit)
+.decl load(unit_id: Unit, slot : symbol)
+.decl appDD(unit_id: Unit, to: Unit)
+.decl appTD(unit_id: Unit, to: Unit)
+.decl appTT(unit_id: Unit, to: Unit)
+.decl argument(unit_id: Unit, appdd_id: Unit, index: number) 
+.decl absDD(unit_id: Unit, term: Unit)
+.decl data(unit_id: Unit, msg_id: Unit, tag_name: symbol)
+.decl str(unit_id: Unit, type: Type, data: symbol)
+.decl pickData(unit_id: Unit, from: Unit, with: Unit)
+.decl dataCase(unit_id: Unit, pick_data_id: Unit, bind: Unit, body: Unit)
+.decl nat(unit_id: Unit, type: Type, data: number)
+.decl natType(type_id: Type, size: number)
+.decl bind(unit_id: Unit, bind_type: Type, cond: Unit)
+.decl cond(unit_id: Unit, case: symbol)
+.decl condBind(unit_id: Unit, cond: Unit, index: number)
+.decl typeVar(type: symbol)
+.decl enum(enum_id: Unit, enum_type: Type, case: symbol)
+
+.input plan
+.input send
+.input load
+.input appDD
+.input appTD
+.input appTT
+.input argument
+.input absDD
+.input data
+.input str
+.input pickData
+.input dataCase
+.input nat
+.input natType
+.input bind
+.input cond
+.input condBind
+.input typeVar
+.input enum
