@@ -223,20 +223,20 @@ func DumpFacts(builder *CFGBuilder) {
 		"msg":       fd.msgFacts,
 		"data":      fd.dataFacts,
 		"str":       fd.strFacts,
-		"pick_data": fd.pickDataFacts,
-		"data_case": fd.dataCaseFacts,
+		"pickData":  fd.pickDataFacts,
+		"dataCase":  fd.dataCaseFacts,
 		"nat":       fd.natFacts,
-		"nat_type":  fd.natTypeFacts,
+		"natType":   fd.natTypeFacts,
 		"int":       fd.intFacts,
-		"int_type":  fd.intTypeFacts,
+		"intType":   fd.intTypeFacts,
 		"raw":       fd.rawFacts,
-		"raw_type":  fd.rawTypeFacts,
+		"rawType":   fd.rawTypeFacts,
 		"bind":      fd.bindFacts,
 		"cond":      fd.condFacts,
-		"cond_bind": fd.condBindFacts,
-		"type":      fd.typeVarFacts,
+		"condBind":  fd.condBindFacts,
+		"typeVar":   fd.typeVarFacts,
 		"enum":      fd.enumFacts,
-		"enum_type": fd.enumTypeFacts,
+		"enumType":  fd.enumTypeFacts,
 	}
 
 	outFolder := "out"
@@ -246,7 +246,7 @@ func DumpFacts(builder *CFGBuilder) {
 	}
 
 	for fileName, lines := range fileToFacts {
-		filePath := path.Join(outFolder, fmt.Sprintf("%s.tsv", fileName))
+		filePath := path.Join(outFolder, fmt.Sprintf("%s.facts", fileName))
 		f, err := os.Create(filePath)
 		if err != nil {
 			f.Close()
