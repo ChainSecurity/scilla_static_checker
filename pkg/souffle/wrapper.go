@@ -19,6 +19,7 @@ func runSouffle(datalog, factsIn, factsOut string) {
 
 	var err = cmd.Run()
 	if err != nil {
+		fmt.Println("Error happened")
 		log.Fatal(err.Error())
 		fmt.Printf(out.String())
 	} else {
@@ -30,7 +31,7 @@ func runSouffle(datalog, factsIn, factsOut string) {
 func readOutput(fileName string) []string {
 	file, err := os.Open(fileName)
 	if err != nil {
-		log.Fatalf("failed opening file: %s", err)
+		fmt.Printf("failed opening file: %s", err)
 	}
 
 	scanner := bufio.NewScanner(file)
@@ -46,8 +47,9 @@ func readOutput(fileName string) []string {
 
 }
 
+// We run the analysis in the root directory
 func main() {
-	runSouffle("analysis.dl", "facts_in", "facts_out")
-	result := readOutput("facts_out/b.csv")
+	runSouffle("souffle_analysis/analysis.dl", "souffle_analysis/facts_in", "souffle_analysis/facts_out")
+	result := readOutput("souffle_analysis/facts_out/vulnerability.csv")
 	fmt.Println(result)
 }
