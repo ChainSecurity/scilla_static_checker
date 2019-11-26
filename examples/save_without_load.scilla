@@ -1,0 +1,14 @@
+scilla_version 0
+
+
+
+contract B
+()
+
+(*field signatures       : Map Uint32 (Map ByStr20 Bool) =*)
+                           (*Emp Uint32 (Map ByStr20 Bool)*)
+field x : Uint128  = Uint128 0
+transition inc ()
+    five = Uint128 5;
+    x := five
+end

@@ -10,47 +10,51 @@ import (
 )
 
 type FactsDumper struct {
-	visited         map[Node]bool
-	idToPrefixID    map[uint64]string
-	procFacts       []string
-	dataVarFacts    []string
-	transitionFacts []string
-	procedureFacts  []string
-	unitFacts       []string
-	planFacts       []string
-	sendFacts       []string
-	acceptFacts     []string
-	saveFacts       []string
-	loadFacts       []string
-	appDDFacts      []string
-	appTDFacts      []string
-	appTTFacts      []string
-	argumentFacts   []string
-	absDDFacts      []string
-	msgFacts        []string
-	msgTypeFacts    []string
-	msgDataFacts    []string
-	strFacts        []string
-	strTypeFacts    []string
-	pickDataFacts   []string
-	dataCaseFacts   []string
-	jumpFacts       []string
-	procCaseFacts   []string
-	callProcFacts   []string
-	pickProcFacts   []string
-	natFacts        []string
-	natTypeFacts    []string
-	intFacts        []string
-	intTypeFacts    []string
-	rawFacts        []string
-	rawTypeFacts    []string
-	bindFacts       []string
-	condFacts       []string
-	condBindFacts   []string
-	typeVarFacts    []string
-	enumFacts       []string
-	enumTypeFacts   []string
-	Facts           []string
+	visited          map[Node]bool
+	idToPrefixID     map[uint64]string
+	procFacts        []string
+	dataVarFacts     []string
+	transitionFacts  []string
+	procedureFacts   []string
+	unitFacts        []string
+	planFacts        []string
+	sendFacts        []string
+	acceptFacts      []string
+	saveFacts        []string
+	loadFacts        []string
+	absDDFacts       []string
+	absTDFacts       []string
+	absTTFacts       []string
+	appDDFacts       []string
+	appTDFacts       []string
+	appTTFacts       []string
+	argumentFacts    []string
+	msgFacts         []string
+	msgTypeFacts     []string
+	keyArgumentFacts []string
+	strFacts         []string
+	strTypeFacts     []string
+	pickDataFacts    []string
+	dataCaseFacts    []string
+	jumpFacts        []string
+	procCaseFacts    []string
+	callProcFacts    []string
+	pickProcFacts    []string
+	natFacts         []string
+	natTypeFacts     []string
+	intFacts         []string
+	intTypeFacts     []string
+	rawFacts         []string
+	rawTypeFacts     []string
+	bindFacts        []string
+	condFacts        []string
+	condBindFacts    []string
+	typeVarFacts     []string
+	enumFacts        []string
+	enumTypeFacts    []string
+	setKindFacts     []string
+	mapTypeFacts     []string
+	builtinFacts     []string
 }
 
 func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
@@ -84,6 +88,12 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 			fd.jumpFacts = append(fd.jumpFacts, fact)
 		}
 
+	case *SetKind:
+		fact := fmt.Sprintf("%d", n.ID())
+		fd.setKindFacts = append(fd.setKindFacts, fact)
+	case *TypeVar:
+		fact := fmt.Sprintf("%d", n.ID())
+		fd.typeVarFacts = append(fd.typeVarFacts, fact)
 	case *DataVar:
 		fact := fmt.Sprintf("%d", n.ID())
 		fd.dataVarFacts = append(fd.dataVarFacts, fact)
@@ -94,11 +104,33 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 		fact := fmt.Sprintf("%d", n.ID())
 		fd.acceptFacts = append(fd.acceptFacts, fact)
 	case *Save:
-		fact := fmt.Sprintf("%d\t%s", n.ID(), n.Slot)
+		fact := fmt.Sprintf("%d\t%s\t%d", n.ID(), n.Slot, n.Data.ID())
 		fd.saveFacts = append(fd.saveFacts, fact)
 	case *Load:
 		fact := fmt.Sprintf("%d\t%s", n.ID(), n.Slot)
 		fd.loadFacts = append(fd.loadFacts, fact)
+
+	case *AbsDD:
+		for i, u := range n.Vars {
+			argFact := fmt.Sprintf("%d\t%d\t%d", n.ID(), u.ID(), i)
+			fd.argumentFacts = append(fd.argumentFacts, argFact)
+		}
+		fact := fmt.Sprintf("%d\t%d", n.ID(), n.Term.ID())
+		fd.absDDFacts = append(fd.absDDFacts, fact)
+	case *AbsTD:
+		for i, u := range n.Vars {
+			argFact := fmt.Sprintf("%d\t%d\t%d", n.ID(), u.ID(), i)
+			fd.argumentFacts = append(fd.argumentFacts, argFact)
+		}
+		fact := fmt.Sprintf("%d\t%d", n.ID(), n.Term.ID())
+		fd.absTDFacts = append(fd.absTDFacts, fact)
+	case *AbsTT:
+		for i, u := range n.Vars {
+			argFact := fmt.Sprintf("%d\t%d\t%d", n.ID(), u.ID(), i)
+			fd.argumentFacts = append(fd.argumentFacts, argFact)
+		}
+		fact := fmt.Sprintf("%d\t%d", n.ID(), n.Term.ID())
+		fd.absTTFacts = append(fd.absTTFacts, fact)
 	case *AppDD:
 		for i, u := range n.Args {
 			argFact := fmt.Sprintf("%d\t%d\t%d", n.ID(), u.ID(), i)
@@ -120,17 +152,10 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 		}
 		fact := fmt.Sprintf("%d\t%d", n.ID(), n.To.ID())
 		fd.appTTFacts = append(fd.appTTFacts, fact)
-	case *AbsDD:
-		for i, u := range n.Vars {
-			argFact := fmt.Sprintf("%d\t%d\t%d", n.ID(), u.ID(), i)
-			fd.argumentFacts = append(fd.argumentFacts, argFact)
-		}
-		fact := fmt.Sprintf("%d\t%d", n.ID(), n.Term.ID())
-		fd.absDDFacts = append(fd.absDDFacts, fact)
 	case *Msg:
 		for k, v := range n.Data {
 			fact := fmt.Sprintf("%d\t%d\t%s", n.ID(), v.ID(), k)
-			fd.msgDataFacts = append(fd.msgDataFacts, fact)
+			fd.keyArgumentFacts = append(fd.keyArgumentFacts, fact)
 		}
 		fact := fmt.Sprintf("%d\t%d", n.ID(), n.MsgType.ID())
 		fd.msgFacts = append(fd.msgFacts, fact)
@@ -201,7 +226,29 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 	case *RawType:
 		fact := fmt.Sprintf("%d\t%d", n.ID(), n.Size)
 		fd.rawTypeFacts = append(fd.rawTypeFacts, fact)
+	case *Enum:
+		fact := fmt.Sprintf("%d\t%d\t%s", n.ID(), n.EnumType.ID(), n.Case)
+		fd.enumFacts = append(fd.enumFacts, fact)
+		for i, u := range n.Data {
+			fact := fmt.Sprintf("%d\t%d\t%d", n.ID(), u.ID(), i)
+			fd.argumentFacts = append(fd.argumentFacts, fact)
+		}
+	case *EnumType:
+		fact := fmt.Sprintf("%d", n.ID())
+		fd.enumTypeFacts = append(fd.enumTypeFacts, fact)
+		for k, types := range n.Constructors {
+			typeListID := fmt.Sprintf("EnumTypeConstructor_%d_%s", n.ID(), k)
+			fact := fmt.Sprintf("%d\t%s\t%s", n.ID(), typeListID, k)
+			fd.keyArgumentFacts = append(fd.keyArgumentFacts, fact)
+			for j, t := range types {
+				listFact := fmt.Sprintf("%s\t%d\t%d", typeListID, t.ID(), j)
+				fd.argumentFacts = append(fd.argumentFacts, listFact)
+			}
 
+		}
+	case *MapType:
+		fact := fmt.Sprintf("%d\t%d\t%d", n.ID(), n.KeyType.ID(), n.ValType.ID())
+		fd.mapTypeFacts = append(fd.mapTypeFacts, fact)
 	default:
 		fmt.Printf("+ %T %d\n", node, node.ID())
 	}
@@ -213,43 +260,46 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 
 func DumpFacts(builder *CFGBuilder) {
 	fd := FactsDumper{
-		visited:       map[Node]bool{},
-		idToPrefixID:  map[uint64]string{},
-		procFacts:     []string{},
-		dataVarFacts:  []string{},
-		unitFacts:     []string{},
-		planFacts:     []string{},
-		sendFacts:     []string{},
-		acceptFacts:   []string{},
-		saveFacts:     []string{},
-		loadFacts:     []string{},
-		appDDFacts:    []string{},
-		appTDFacts:    []string{},
-		appTTFacts:    []string{},
-		argumentFacts: []string{},
-		absDDFacts:    []string{},
-		msgFacts:      []string{},
-		msgDataFacts:  []string{},
-		strFacts:      []string{},
-		strTypeFacts:  []string{},
-		callProcFacts: []string{},
-		pickProcFacts: []string{},
-		pickDataFacts: []string{},
-		dataCaseFacts: []string{},
-		procCaseFacts: []string{},
-		natFacts:      []string{},
-		natTypeFacts:  []string{},
-		intFacts:      []string{},
-		intTypeFacts:  []string{},
-		rawFacts:      []string{},
-		rawTypeFacts:  []string{},
-		bindFacts:     []string{},
-		condFacts:     []string{},
-		condBindFacts: []string{},
-		typeVarFacts:  []string{},
-		enumFacts:     []string{},
-		enumTypeFacts: []string{},
-		Facts:         []string{},
+		visited:          map[Node]bool{},
+		idToPrefixID:     map[uint64]string{},
+		procFacts:        []string{},
+		dataVarFacts:     []string{},
+		unitFacts:        []string{},
+		planFacts:        []string{},
+		sendFacts:        []string{},
+		acceptFacts:      []string{},
+		saveFacts:        []string{},
+		loadFacts:        []string{},
+		absDDFacts:       []string{},
+		absTDFacts:       []string{},
+		absTTFacts:       []string{},
+		appDDFacts:       []string{},
+		appTDFacts:       []string{},
+		appTTFacts:       []string{},
+		argumentFacts:    []string{},
+		msgFacts:         []string{},
+		keyArgumentFacts: []string{},
+		strFacts:         []string{},
+		strTypeFacts:     []string{},
+		callProcFacts:    []string{},
+		pickProcFacts:    []string{},
+		pickDataFacts:    []string{},
+		dataCaseFacts:    []string{},
+		procCaseFacts:    []string{},
+		natFacts:         []string{},
+		natTypeFacts:     []string{},
+		intFacts:         []string{},
+		intTypeFacts:     []string{},
+		rawFacts:         []string{},
+		rawTypeFacts:     []string{},
+		bindFacts:        []string{},
+		condFacts:        []string{},
+		condBindFacts:    []string{},
+		typeVarFacts:     []string{},
+		enumFacts:        []string{},
+		enumTypeFacts:    []string{},
+		setKindFacts:     []string{},
+		builtinFacts:     []string{},
 	}
 	for tName, t := range builder.Transitions {
 		fmt.Println("Transition", tName)
@@ -265,42 +315,46 @@ func DumpFacts(builder *CFGBuilder) {
 	}
 
 	fileToFacts := map[string][]string{
-		"proc":       fd.procFacts,
-		"dataVar":    fd.dataVarFacts,
-		"transition": fd.transitionFacts,
-		"procedure":  fd.procedureFacts,
-		"unit":       fd.unitFacts,
-		"plan":       fd.planFacts,
-		"send":       fd.sendFacts,
-		"accept":     fd.acceptFacts,
-		"save":       fd.saveFacts,
-		"load":       fd.loadFacts,
-		"appDD":      fd.appDDFacts,
-		"appTD":      fd.appTDFacts,
-		"appTT":      fd.appTTFacts,
-		"argument":   fd.argumentFacts,
-		"absDD":      fd.absDDFacts,
-		"msg":        fd.msgFacts,
-		"msgData":    fd.msgDataFacts,
-		"str":        fd.strFacts,
-		"strType":    fd.strTypeFacts,
-		"jump":       fd.jumpFacts,
-		"callProc":   fd.callProcFacts,
-		"pickProc":   fd.pickProcFacts,
-		"pickData":   fd.pickDataFacts,
-		"dataCase":   fd.dataCaseFacts,
-		"nat":        fd.natFacts,
-		"natType":    fd.natTypeFacts,
-		"int":        fd.intFacts,
-		"intType":    fd.intTypeFacts,
-		"raw":        fd.rawFacts,
-		"rawType":    fd.rawTypeFacts,
-		"bind":       fd.bindFacts,
-		"cond":       fd.condFacts,
-		"condBind":   fd.condBindFacts,
-		"typeVar":    fd.typeVarFacts,
-		"enum":       fd.enumFacts,
-		"enumType":   fd.enumTypeFacts,
+		"proc":        fd.procFacts,
+		"dataVar":     fd.dataVarFacts,
+		"transition":  fd.transitionFacts,
+		"procedure":   fd.procedureFacts,
+		"unit":        fd.unitFacts,
+		"plan":        fd.planFacts,
+		"send":        fd.sendFacts,
+		"accept":      fd.acceptFacts,
+		"save":        fd.saveFacts,
+		"load":        fd.loadFacts,
+		"absDD":       fd.absDDFacts,
+		"absTD":       fd.absTDFacts,
+		"absTT":       fd.absTTFacts,
+		"appDD":       fd.appDDFacts,
+		"appTD":       fd.appTDFacts,
+		"appTT":       fd.appTTFacts,
+		"argument":    fd.argumentFacts,
+		"msg":         fd.msgFacts,
+		"keyArgument": fd.keyArgumentFacts,
+		"str":         fd.strFacts,
+		"strType":     fd.strTypeFacts,
+		"jump":        fd.jumpFacts,
+		"callProc":    fd.callProcFacts,
+		"pickProc":    fd.pickProcFacts,
+		"pickData":    fd.pickDataFacts,
+		"dataCase":    fd.dataCaseFacts,
+		"nat":         fd.natFacts,
+		"natType":     fd.natTypeFacts,
+		"int":         fd.intFacts,
+		"intType":     fd.intTypeFacts,
+		"raw":         fd.rawFacts,
+		"rawType":     fd.rawTypeFacts,
+		"bind":        fd.bindFacts,
+		"cond":        fd.condFacts,
+		"condBind":    fd.condBindFacts,
+		"typeVar":     fd.typeVarFacts,
+		"enum":        fd.enumFacts,
+		"enumType":    fd.enumTypeFacts,
+		"setKind":     fd.setKindFacts,
+		"mapType":     fd.mapTypeFacts,
 	}
 
 	analysisFolder := "./souffle_analysis"
