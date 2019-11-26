@@ -72,6 +72,7 @@
     "components": [
       {
         "params": [],
+        "component_type": "transition",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/map_key_test.scilla",

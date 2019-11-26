@@ -261,6 +261,7 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "transition",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/helloWorld.scilla",
@@ -596,6 +597,7 @@
       },
       {
         "params": [],
+        "component_type": "transition",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/helloWorld.scilla",
@@ -719,6 +721,7 @@
       },
       {
         "params": [],
+        "component_type": "transition",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/helloWorld.scilla",
@@ -996,6 +999,7 @@
       },
       {
         "params": [],
+        "component_type": "transition",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/helloWorld.scilla",

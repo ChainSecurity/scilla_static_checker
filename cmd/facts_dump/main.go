@@ -1,0 +1,28 @@
+package main
+
+import (
+	"fmt"
+	"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ast"
+	"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ir"
+	"io/ioutil"
+	"os"
+)
+
+func main() {
+	jsonPath := os.Args[1]
+	jsonFile, err := os.Open(jsonPath)
+	if err != nil {
+		fmt.Println(err)
+	}
+	defer jsonFile.Close()
+
+	byteValue, _ := ioutil.ReadAll(jsonFile)
+	cm, err := ast.Parse_mod(byteValue)
+	if err != nil {
+		panic(err)
+	}
+
+	b := ir.BuildCFG(cm)
+	ir.DumpFacts(b)
+
+}

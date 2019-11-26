@@ -20,13 +20,15 @@ let a : Uint64 = one64
 (***************************************************)
 
 contract Inc
-(owner : ByStr20, x : Uint64)
+(owner : ByStr20, x : ByStr3)
 
 field a : Uint64 = builtin add one64 one64
+field b : ByStr3 = x
 
-transition inc ()
-    one = one64;
+transition inc (z : Uint64)
     curra <- a;
-    inca = builtin add curra one; 
-    a := inca
+    inca = builtin add curra z; 
+    inca = builtin add inca one64; 
+    a := inca;
+    currb <- a
 end

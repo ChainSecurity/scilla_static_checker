@@ -1,0 +1,448 @@
+{
+  "scilla_major_version": 0,
+  "name": {
+    "loc": {
+      "source_file": "../scilla_static/examples/match_x_y_z_statement.scilla",
+      "line": 3,
+      "column": 10,
+      "node_type": "Location"
+    },
+    "identifier": "StatementXYZ",
+    "node_type": "Identifier"
+  },
+  "library": null,
+  "external_libraries": [],
+  "contract": {
+    "name": {
+      "loc": {
+        "source_file":
+          "../scilla_static/examples/match_x_y_z_statement.scilla",
+        "line": 3,
+        "column": 10,
+        "node_type": "Location"
+      },
+      "identifier": "StatementXYZ",
+      "node_type": "Identifier"
+    },
+    "params": [],
+    "fields": [
+      {
+        "field_name": {
+          "loc": {
+            "source_file":
+              "../scilla_static/examples/match_x_y_z_statement.scilla",
+            "line": 6,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "s0",
+          "node_type": "Identifier"
+        },
+        "field_type": { "node_type": "PrimType", "name": "Uint32" },
+        "expression": {
+          "loc": {
+            "source_file":
+              "../scilla_static/examples/match_x_y_z_statement.scilla",
+            "line": 6,
+            "column": 21,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "1", "width": 32 }
+        },
+        "node_type": "Field"
+      },
+      {
+        "field_name": {
+          "loc": {
+            "source_file":
+              "../scilla_static/examples/match_x_y_z_statement.scilla",
+            "line": 7,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "s1",
+          "node_type": "Identifier"
+        },
+        "field_type": { "node_type": "PrimType", "name": "Uint32" },
+        "expression": {
+          "loc": {
+            "source_file":
+              "../scilla_static/examples/match_x_y_z_statement.scilla",
+            "line": 7,
+            "column": 21,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "1", "width": 32 }
+        },
+        "node_type": "Field"
+      }
+    ],
+    "components": [
+      {
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/match_x_y_z_statement.scilla",
+                "line": 9,
+                "column": 18,
+                "node_type": "Location"
+              },
+              "identifier": "f",
+              "node_type": "Identifier"
+            },
+            "parameter_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "type_args": []
+            },
+            "node_type": "Parameter"
+          }
+        ],
+        "component_type": "transition",
+        "name": {
+          "loc": {
+            "source_file":
+              "../scilla_static/examples/match_x_y_z_statement.scilla",
+            "line": 9,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "test",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/match_x_y_z_statement.scilla",
+              "line": 10,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/match_x_y_z_statement.scilla",
+                "line": 10,
+                "column": 6,
+                "node_type": "Location"
+              },
+              "identifier": "x",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/match_x_y_z_statement.scilla",
+                "line": 10,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "node_type": "LiteralExpression",
+              "value": {
+                "node_type": "UintLiteral",
+                "value": "1",
+                "width": 32
+              }
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/match_x_y_z_statement.scilla",
+              "line": 11,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/match_x_y_z_statement.scilla",
+                "line": 11,
+                "column": 6,
+                "node_type": "Location"
+              },
+              "identifier": "y",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/match_x_y_z_statement.scilla",
+                "line": 11,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "node_type": "LiteralExpression",
+              "value": {
+                "node_type": "UintLiteral",
+                "value": "2",
+                "width": 32
+              }
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/match_x_y_z_statement.scilla",
+              "line": 12,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/match_x_y_z_statement.scilla",
+                "line": 12,
+                "column": 6,
+                "node_type": "Location"
+              },
+              "identifier": "z",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/match_x_y_z_statement.scilla",
+                "line": 12,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "node_type": "LiteralExpression",
+              "value": {
+                "node_type": "UintLiteral",
+                "value": "3",
+                "width": 32
+              }
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/match_x_y_z_statement.scilla",
+              "line": 13,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/match_x_y_z_statement.scilla",
+                "line": 13,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "f",
+              "node_type": "Identifier"
+            },
+            "cases": [
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "../scilla_static/examples/match_x_y_z_statement.scilla",
+                      "line": 15,
+                      "column": 7,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/match_x_y_z_statement.scilla",
+                        "line": 15,
+                        "column": 10,
+                        "node_type": "Location"
+                      },
+                      "identifier": "x",
+                      "node_type": "Identifier"
+                    },
+                    "rhs_expr": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/match_x_y_z_statement.scilla",
+                        "line": 15,
+                        "column": 12,
+                        "node_type": "Location"
+                      },
+                      "node_type": "LiteralExpression",
+                      "value": {
+                        "node_type": "UintLiteral",
+                        "value": "5",
+                        "width": 32
+                      }
+                    }
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "False",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              },
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file":
+                        "../scilla_static/examples/match_x_y_z_statement.scilla",
+                      "line": 17,
+                      "column": 7,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/match_x_y_z_statement.scilla",
+                        "line": 17,
+                        "column": 10,
+                        "node_type": "Location"
+                      },
+                      "identifier": "x",
+                      "node_type": "Identifier"
+                    },
+                    "rhs_expr": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/match_x_y_z_statement.scilla",
+                        "line": 17,
+                        "column": 12,
+                        "node_type": "Location"
+                      },
+                      "node_type": "LiteralExpression",
+                      "value": {
+                        "node_type": "UintLiteral",
+                        "value": "1",
+                        "width": 32
+                      }
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file":
+                        "../scilla_static/examples/match_x_y_z_statement.scilla",
+                      "line": 18,
+                      "column": 7,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/match_x_y_z_statement.scilla",
+                        "line": 18,
+                        "column": 10,
+                        "node_type": "Location"
+                      },
+                      "identifier": "y",
+                      "node_type": "Identifier"
+                    },
+                    "rhs_expr": {
+                      "loc": {
+                        "source_file":
+                          "../scilla_static/examples/match_x_y_z_statement.scilla",
+                        "line": 18,
+                        "column": 12,
+                        "node_type": "Location"
+                      },
+                      "node_type": "LiteralExpression",
+                      "value": {
+                        "node_type": "UintLiteral",
+                        "value": "3",
+                        "width": 32
+                      }
+                    }
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "True",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              }
+            ],
+            "node_type": "MatchStatement"
+          },
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/match_x_y_z_statement.scilla",
+              "line": 20,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/match_x_y_z_statement.scilla",
+                "line": 20,
+                "column": 6,
+                "node_type": "Location"
+              },
+              "identifier": "s0",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/match_x_y_z_statement.scilla",
+                "line": 20,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "x",
+              "node_type": "Identifier"
+            },
+            "node_type": "StoreStatement"
+          },
+          {
+            "loc": {
+              "source_file":
+                "../scilla_static/examples/match_x_y_z_statement.scilla",
+              "line": 21,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/match_x_y_z_statement.scilla",
+                "line": 21,
+                "column": 6,
+                "node_type": "Location"
+              },
+              "identifier": "s1",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "../scilla_static/examples/match_x_y_z_statement.scilla",
+                "line": 21,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "y",
+              "node_type": "Identifier"
+            },
+            "node_type": "StoreStatement"
+          }
+        ],
+        "node_type": "Component"
+      }
+    ],
+    "node_type": "Contract"
+  },
+  "node_type": "ContractModule"
+}

@@ -161,6 +161,7 @@
     "components": [
       {
         "params": [],
+        "component_type": "transition",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/multiple-msgs.scilla",

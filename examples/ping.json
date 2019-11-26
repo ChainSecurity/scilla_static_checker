@@ -196,6 +196,7 @@
     "components": [
       {
         "params": [],
+        "component_type": "transition",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/ping.scilla",
@@ -924,6 +925,7 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "transition",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/ping.scilla",

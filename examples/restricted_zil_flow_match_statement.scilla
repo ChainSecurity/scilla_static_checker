@@ -1,0 +1,56 @@
+scilla_version 0
+
+(* A contract *)
+
+
+(***************************************************)
+(*               Associated library                *)
+(***************************************************)
+library A
+let code_0 = Int32 0
+
+let code_1 = Int32 1
+let code_2 = Int32 2
+let code_3 = Int32 3
+let code_m1 = Int32 -1
+
+let one_msg =
+  fun (msg : Message) =>
+  let nil_msg = Nil {Message} in
+    Cons {Message} msg nil_msg
+
+(***************************************************)
+(*             The contract definition             *)
+(***************************************************)
+let get_from_map =
+  fun (m : Map ByStr20 Uint128) => fun (x : ByStr20) =>
+     builtin get m x
+
+
+contract A
+()
+
+field balances : Map ByStr20 Uint128 = Emp ByStr20 Uint128 
+
+
+transition put (d : Uint128)
+    balances[_sender] := _amount
+end
+
+transition get()
+    b <- balances;
+    v = get_from_map b _sender;
+    match v with
+    | Some x =>
+        a = x;
+        msg = {_tag : ""; _recipient : _sender; _amount : a; code : code_1};
+        msgs = one_msg msg;
+        send msgs
+    | None =>
+         a = Uint128 0;
+        msg = {_tag : ""; _recipient : _sender; _amount : a; code : code_1};
+        msgs = one_msg msg;
+        send msgs
+    end
+end
+

@@ -168,6 +168,7 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "transition",
         "name": {
           "loc": {
             "source_file":
@@ -351,6 +352,7 @@
       },
       {
         "params": [],
+        "component_type": "transition",
         "name": {
           "loc": {
             "source_file":

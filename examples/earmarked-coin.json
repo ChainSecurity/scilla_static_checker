@@ -365,6 +365,7 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "procedure",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/earmarked-coin.scilla",
@@ -565,6 +566,7 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "procedure",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/earmarked-coin.scilla",
@@ -746,6 +748,7 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "procedure",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/earmarked-coin.scilla",
@@ -897,6 +900,7 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "transition",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/earmarked-coin.scilla",
@@ -1231,6 +1235,7 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "transition",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/earmarked-coin.scilla",
@@ -1717,6 +1722,7 @@
       },
       {
         "params": [],
+        "component_type": "transition",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/earmarked-coin.scilla",

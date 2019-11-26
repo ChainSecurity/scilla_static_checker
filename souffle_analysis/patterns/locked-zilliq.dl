@@ -1,0 +1,27 @@
+// accept_payment_and_send_0.json :locked-zilliq:True
+// accept_payment_and_send.json :locked-zilliq:False
+// accept_payment.json :locked-zilliq:True
+
+// Locked Zilliq where there's accept and send or all sends contain zero values 
+// (there are no nonZeroValues sent)
+.decl lockedZilliq()
+lockedZilliq() :- 
+    accept(_),
+    (
+        !send(_, _); 
+        !nonZeroSend()
+    ).
+
+.output lockedZilliq
+
+// this should be changed to nonZeroSend
+.decl nonZeroSend()
+nonZeroSend() :-
+    send(_, data_id),
+    dependsOn(data_id, msg_id),
+    msg(msg_id, _),
+    msgData(msg_id, num_id, "_amount"),
+    !nat(num_id, _, 0).
+
+//.output nonZeroSend
+

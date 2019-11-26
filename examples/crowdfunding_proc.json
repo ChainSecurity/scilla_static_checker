@@ -1429,6 +1429,7 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "procedure",
         "name": {
           "loc": {
             "source_file":
@@ -1727,6 +1728,7 @@
       },
       {
         "params": [],
+        "component_type": "procedure",
         "name": {
           "loc": {
             "source_file":
@@ -1978,6 +1980,7 @@
       },
       {
         "params": [],
+        "component_type": "transition",
         "name": {
           "loc": {
             "source_file":
@@ -2243,6 +2246,7 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "procedure",
         "name": {
           "loc": {
             "source_file":
@@ -2379,6 +2383,7 @@
       },
       {
         "params": [],
+        "component_type": "procedure",
         "name": {
           "loc": {
             "source_file":
@@ -2665,6 +2670,7 @@
       },
       {
         "params": [],
+        "component_type": "transition",
         "name": {
           "loc": {
             "source_file":
@@ -3082,6 +3088,7 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "procedure",
         "name": {
           "loc": {
             "source_file":
@@ -3234,6 +3241,7 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "procedure",
         "name": {
           "loc": {
             "source_file":
@@ -3576,6 +3584,7 @@
       },
       {
         "params": [],
+        "component_type": "transition",
         "name": {
           "loc": {
             "source_file":

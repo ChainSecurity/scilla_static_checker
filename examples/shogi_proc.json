@@ -12719,6 +12719,7 @@
     "components": [
       {
         "params": [],
+        "component_type": "procedure",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/shogi_proc.scilla",
@@ -12905,6 +12906,7 @@
       },
       {
         "params": [],
+        "component_type": "procedure",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/shogi_proc.scilla",
@@ -13046,6 +13048,7 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "procedure",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/shogi_proc.scilla",
@@ -13209,6 +13212,7 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "procedure",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/shogi_proc.scilla",
@@ -13368,6 +13372,7 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "procedure",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/shogi_proc.scilla",
@@ -14353,6 +14358,7 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "procedure",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/shogi_proc.scilla",
@@ -14806,6 +14812,7 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "procedure",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/shogi_proc.scilla",
@@ -17659,6 +17666,7 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "transition",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/shogi_proc.scilla",
@@ -18056,6 +18064,7 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "transition",
         "name": {
           "loc": {
             "source_file": "../scilla_static/examples/shogi_proc.scilla",

@@ -1,0 +1,57 @@
+#include "analysis-input.dl"
+
+#include "patterns/locked-zilliq.dl"
+
+// DependsOn: a unit depends on another one which is closer to the leaves of the tree
+.decl dependsOnStep(unit: Unit, previousUnit: Unit)
+dependsOnStep(dependent, independent) :-
+    unit(dependent),
+    unit(independent),
+    (
+        send(dependent, independent);
+        argument(dependent, independent, _);
+        msgData(dependent, independent, _);
+        appDD(dependent, independent);
+        appTD(dependent, independent);
+        absDD(dependent, independent);
+        bind(dependent, _, independent);
+        condBind(dependent, independent, _)
+    ).
+
+.decl dependsOn(dependent: Unit, independent: Unit)
+dependsOn(dependent, independent) :- dependsOnStep(dependent, independent).
+dependsOn(dependent, independent) :- dependsOnStep(dependent, intermediate), dependsOn(intermediate, independent).
+
+.output dependsOn
+
+
+// Maybe this should be produced straight from the go implementation
+.decl unit(unitId: Unit)
+unit(unitId) :- 
+    (
+        msg(unitId, _);
+        send(unitId, _);
+        send(unitId, _);
+        load(unitId, _);
+        appDD(unitId, _);
+        appTD(unitId, _);
+        appTT(unitId, _);
+        argument(unitId, _, _);
+        absDD(unitId, _);
+        msgData(unitId, _, _);
+        str(unitId, _, _);
+        pickData(unitId, _, _);
+        dataCase(unitId, _, _, _);
+        nat(unitId, _, _);
+        bind(unitId, _, _);
+        cond(unitId, _);
+        condBind(unitId, _, _);
+        accept(unitId);
+        save(unitId, _, _)
+    ).
+
+.decl followsPlan(nextPlan: Plan, previousPlan: Plan)
+followsPlan(nextPlan, previousPlan) :-
+    plan(procId, _, nextIndex),
+    plan(procId, _, previousIndex),
+    nextIndex > previousIndex.
