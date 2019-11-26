@@ -1,19 +1,28 @@
+// accept_payment_and_send_0.json :locked-zilliq:True
+// accept_payment_and_send.json :locked-zilliq:False
+// accept_payment.json :locked-zilliq:True
 
-// Locked Zilliq where there's accept and send or there's a send with zero amount
-.decl lockedZilliq() :- 
+// Locked Zilliq where there's accept and send or all sends contain zero values
+.decl lockedZilliq()
+lockedZilliq() :- 
     accept(_),
     (
-        !send(_); 
-        zero_send()
+        !send(_, _); 
+        !nonZeroSend()
     ).
 
-.decl zeroSend() :-
-    send(_, data_id),
-    dependsOn(data_id, msg_id)
-    msg(msg_id),
-    data(num, msg_id, "_amount"),
-    nat(num, _, "0").
+.output lockedZilliq
 
+// this should be changed to nonZeroSend
+.decl nonZeroSend()
+nonZeroSend() :-
+    send(_, data_id),
+    dependsOn(data_id, msg_id),
+    msg(msg_id, _),
+    msgData(msg_id, num_id, "_amount"),
+    !nat(num_id, _, 0).
+
+//.output nonZeroSend
 
 
 // DependsOn: a unit depends on another one which is closer to the leaves of the tree
@@ -22,16 +31,41 @@ dependsOnStep(dependent, independent) :-
     unit(dependent),
     unit(independent),
     (
-        argument(independent, dependent);
-        data(independent, dependent);
+        send(dependent, independent);
+        argument(dependent, independent, _);
+        msgData(dependent, independent, _);
         appDD(dependent, independent);
         appTD(dependent, independent);
         absDD(dependent, independent);
-        bind(dependent, independent)
-        condBind(dependent, independent)
+        bind(dependent, _, independent);
+        condBind(dependent, independent, _)
     ).
 
 .decl dependsOn(dependent: Unit, independent: Unit)
 dependsOn(dependent, independent) :- dependsOnStep(dependent, independent).
 dependsOn(dependent, independent) :- dependsOnStep(dependent, intermediate), dependsOn(intermediate, independent).
 
+.output dependsOn
+
+.decl unit(unit_id: Unit)
+unit(unit_id) :- 
+    (
+        msg(unit_id, _);
+        send(unit_id, _);
+        send(unit_id, _);
+        load(unit_id, _);
+        appDD(unit_id, _);
+        appTD(unit_id, _);
+        appTT(unit_id, _);
+        argument(unit_id, _, _);
+        absDD(unit_id, _);
+        msgData(unit_id, _, _);
+        str(unit_id, _, _);
+        pickData(unit_id, _, _);
+        dataCase(unit_id, _, _, _);
+        nat(unit_id, _, _);
+        bind(unit_id, _, _);
+        cond(unit_id, _);
+        condBind(unit_id, _, _);
+        accept(unit_id)
+    ).
