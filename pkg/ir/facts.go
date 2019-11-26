@@ -13,6 +13,7 @@ type FactsDumper struct {
 	visited         map[Node]bool
 	idToPrefixID    map[uint64]string
 	procFacts       []string
+	dataVarFacts    []string
 	transitionFacts []string
 	procedureFacts  []string
 	unitFacts       []string
@@ -27,10 +28,11 @@ type FactsDumper struct {
 	argumentsFacts  []string
 	absDDFacts      []string
 	msgFacts        []string
-	dataFacts       []string
+	msgDataFacts    []string
 	strFacts        []string
 	pickDataFacts   []string
 	dataCaseFacts   []string
+	jumpFacts       []string
 	procCaseFacts   []string
 	callProcFacts   []string
 	pickProcFacts   []string
@@ -50,14 +52,15 @@ type FactsDumper struct {
 }
 
 func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
-	// DEBUG related check
-	if node.ID() == 0 {
-		panic(fmt.Sprintf("ID was not assigned %T", node))
-	}
 
 	visited, ok := fd.visited[node]
 	if ok && visited {
 		return nil
+	}
+
+	// DEBUG related check
+	if node.ID() == 0 {
+		panic(fmt.Sprintf("ID was not assigned %T", node))
 	}
 
 	fd.unitFacts = append(fd.unitFacts, fmt.Sprintf("%d", node.ID()))
@@ -74,6 +77,14 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 			fd.planFacts = append(fd.planFacts, fact)
 		}
 
+		if n.Jump != nil {
+			fact = fmt.Sprintf("%d\t%d", n.ID(), n.Jump.ID())
+			fd.jumpFacts = append(fd.jumpFacts, fact)
+		}
+
+	case *DataVar:
+		fact := fmt.Sprintf("%d", n.ID())
+		fd.dataVarFacts = append(fd.dataVarFacts, fact)
 	case *Send:
 		fact := fmt.Sprintf("%d\t%d", n.ID(), n.Data.ID())
 		fd.sendFacts = append(fd.sendFacts, fact)
@@ -117,7 +128,7 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 	case *Msg:
 		for k, v := range n.Data {
 			fact := fmt.Sprintf("%d\t%d\t%s", n.ID(), v.ID(), k)
-			fd.dataFacts = append(fd.dataFacts, fact)
+			fd.msgDataFacts = append(fd.msgDataFacts, fact)
 		}
 		fact := fmt.Sprintf("%d", n.ID())
 		fd.msgFacts = append(fd.msgFacts, fact)
@@ -131,6 +142,8 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 			argFact := fmt.Sprintf("%d\t%d\t%d", n.ID(), u.ID(), i)
 			fd.argumentsFacts = append(fd.argumentsFacts, argFact)
 		}
+
+	//case *PickProc:
 	case *DataCase:
 
 		body, ok := n.Body.(Node)
@@ -141,7 +154,12 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 		fact := fmt.Sprintf("%d\t%d\t%d\t%d", n.ID(), prev.ID(), n.Bind.ID(), body.ID())
 		fd.dataCaseFacts = append(fd.dataCaseFacts, fact)
 	case *Bind:
-		fact := fmt.Sprintf("%d\t%d\t%d", n.ID(), n.BindType.ID(), n.Cond.ID())
+		var condID int64
+		condID = -1
+		if n.Cond != nil {
+			condID = n.Cond.ID()
+		}
+		fact := fmt.Sprintf("%d\t%d\t%d", n.ID(), n.BindType.ID(), condID)
 		fd.bindFacts = append(fd.bindFacts, fact)
 	case *Cond:
 		fact := fmt.Sprintf("%d\t%s", n.ID(), n.Case)
@@ -186,6 +204,7 @@ func DumpFacts(builder *CFGBuilder) {
 		visited:        map[Node]bool{},
 		idToPrefixID:   map[uint64]string{},
 		procFacts:      []string{},
+		dataVarFacts:   []string{},
 		unitFacts:      []string{},
 		planFacts:      []string{},
 		sendFacts:      []string{},
@@ -198,7 +217,7 @@ func DumpFacts(builder *CFGBuilder) {
 		argumentsFacts: []string{},
 		absDDFacts:     []string{},
 		msgFacts:       []string{},
-		dataFacts:      []string{},
+		msgDataFacts:   []string{},
 		strFacts:       []string{},
 		callProcFacts:  []string{},
 		pickProcFacts:  []string{},
@@ -234,6 +253,7 @@ func DumpFacts(builder *CFGBuilder) {
 
 	fileToFacts := map[string][]string{
 		"proc":       fd.procFacts,
+		"dataVar":    fd.dataVarFacts,
 		"transition": fd.transitionFacts,
 		"procedure":  fd.procedureFacts,
 		"unit":       fd.unitFacts,
@@ -248,8 +268,9 @@ func DumpFacts(builder *CFGBuilder) {
 		"arguments":  fd.argumentsFacts,
 		"absDD":      fd.absDDFacts,
 		"msg":        fd.msgFacts,
-		"data":       fd.dataFacts,
+		"msgData":    fd.msgDataFacts,
 		"str":        fd.strFacts,
+		"jump":       fd.jumpFacts,
 		"callProc":   fd.callProcFacts,
 		"pickProc":   fd.pickProcFacts,
 		"pickData":   fd.pickDataFacts,

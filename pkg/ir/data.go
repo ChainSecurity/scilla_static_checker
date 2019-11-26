@@ -4,11 +4,11 @@ package ir
 
 type (
 	Node interface {
-		ID() uint64
+		ID() int64
 	}
 
 	IDNode struct {
-		Id uint64
+		Id int64
 	}
 
 	// Type :
@@ -49,7 +49,7 @@ type (
 	}
 )
 
-func (i *IDNode) ID() uint64 {
+func (i *IDNode) ID() int64 {
 	return i.Id
 }
 

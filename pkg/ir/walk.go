@@ -120,13 +120,37 @@ func Walk(v Visitor, node Node, prev_node Node) {
 				Walk(v, ts[i], n)
 			}
 		}
+	case *PickProc:
+		Walk(v, n.From, n)
+		for i, _ := range n.With {
+			Walk(v, &n.With[i], n)
+		}
+	case *ProcCase:
+		Walk(v, &n.Bind, n)
+		Walk(v, &n.Body, n)
+	case *Bind:
+		Walk(v, n.BindType, n)
+		if n.Cond != nil {
+			Walk(v, n.Cond, n)
+		}
+	case *Cond:
+		for i, _ := range n.Data {
+			Walk(v, &n.Data[i], n)
+		}
+	case *Builtin:
+		//do Nothing
 	case *Enum:
 		Walk(v, n.EnumType, n)
 		for i, _ := range n.Data {
 			Walk(v, n.Data[i], n)
 		}
-	case nil:
-		fmt.Printf("NIL %T\n", prev_node)
+	case *CallProc:
+		for i, _ := range n.Args {
+			Walk(v, n.Args[i], n)
+		}
+		Walk(v, n.To, n)
+	//case nil:
+	//fmt.Printf("NIL %T\n", prev_node)
 	default:
 		//fmt.Printf("- %T\n", n)
 		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))

@@ -27,7 +27,7 @@ type CFGBuilder struct {
 
 	genericTypeConstructors map[string]*AbsTT
 	genericDataConstructors map[string]*AbsTD
-	nodeCounter             uint64
+	nodeCounter             int64
 	currentProc             string
 }
 
@@ -110,9 +110,15 @@ func (builder *CFGBuilder) visitPattern(p ast.Pattern, t Type, bind *Bind) ([]st
 	varBinds := []Data{}
 	switch pat := p.(type) {
 	case *ast.WildcardPattern:
-		*bind = Bind{BindType: t}
+		*bind = Bind{
+			IDNode:   builder.newIDNode(),
+			BindType: t,
+		}
 	case *ast.BinderPattern:
-		*bind = Bind{BindType: t}
+		*bind = Bind{
+			IDNode:   builder.newIDNode(),
+			BindType: t,
+		}
 		varNames = append(varNames, pat.Variable.Id)
 		varBinds = append(varBinds, bind)
 
@@ -169,10 +175,12 @@ func (builder *CFGBuilder) visitPattern(p ast.Pattern, t Type, bind *Bind) ([]st
 			//whenData[i] = b
 		}
 		*bind = Bind{
+			IDNode:   builder.newIDNode(),
 			BindType: t,
 			Cond: &Cond{
-				Case: pat.ConstrName,
-				Data: whenData,
+				IDNode: builder.newIDNode(),
+				Case:   pat.ConstrName,
+				Data:   whenData,
 			},
 		}
 	default:
@@ -732,7 +740,10 @@ func (builder *CFGBuilder) visitLibEntry(le ast.LibEntry) {
 		stackMapPush(builder.varStack, name, v)
 	case *ast.LibraryType:
 		typeName := n.Name.Id
-		enumType := EnumType{}
+		enumType := EnumType{
+			IDNode:       builder.newIDNode(),
+			Constructors: make(map[string][]Type),
+		}
 		for _, ctr := range n.CtrDefs {
 			constrName, types := builder.visitCtr(ctr)
 			enumType.Constructors[constrName] = types
