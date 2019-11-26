@@ -138,7 +138,11 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 		fact := fmt.Sprintf("%d", n.ID())
 		fd.msgTypeFacts = append(fd.msgTypeFacts, fact)
 	case *Str:
-		fact := fmt.Sprintf("%d\t%d\t%s", n.ID(), n.StrType, n.Data)
+		strData := "-1"
+		if n.Data != "" {
+			strData = n.Data
+		}
+		fact := fmt.Sprintf("%d\t%d\t%s", n.ID(), n.StrType, strData)
 		fd.strFacts = append(fd.strFacts, fact)
 	case *StrType:
 		fact := fmt.Sprintf("%d", n.ID())
