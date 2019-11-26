@@ -31,6 +31,7 @@ type FactsDumper struct {
 	msgTypeFacts    []string
 	msgDataFacts    []string
 	strFacts        []string
+	strTypeFacts    []string
 	pickDataFacts   []string
 	dataCaseFacts   []string
 	jumpFacts       []string
@@ -137,8 +138,11 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 		fact := fmt.Sprintf("%d", n.ID())
 		fd.msgTypeFacts = append(fd.msgTypeFacts, fact)
 	case *Str:
-		fact := fmt.Sprintf("%d\t%s", n.ID(), n.Data)
+		fact := fmt.Sprintf("%d\t%d\t%s", n.ID(), n.StrType, n.Data)
 		fd.strFacts = append(fd.strFacts, fact)
+	case *StrType:
+		fact := fmt.Sprintf("%d", n.ID())
+		fd.strTypeFacts = append(fd.strTypeFacts, fact)
 	case *PickData:
 		fact := fmt.Sprintf("%d\t%d", n.ID(), n.From)
 		fd.pickDataFacts = append(fd.pickDataFacts, fact)
@@ -223,6 +227,7 @@ func DumpFacts(builder *CFGBuilder) {
 		msgFacts:      []string{},
 		msgDataFacts:  []string{},
 		strFacts:      []string{},
+		strTypeFacts:  []string{},
 		callProcFacts: []string{},
 		pickProcFacts: []string{},
 		pickDataFacts: []string{},
@@ -274,6 +279,7 @@ func DumpFacts(builder *CFGBuilder) {
 		"msg":        fd.msgFacts,
 		"msgData":    fd.msgDataFacts,
 		"str":        fd.strFacts,
+		"strType":    fd.strTypeFacts,
 		"jump":       fd.jumpFacts,
 		"callProc":   fd.callProcFacts,
 		"pickProc":   fd.pickProcFacts,
