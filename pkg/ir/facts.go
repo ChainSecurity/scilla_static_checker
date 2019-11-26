@@ -73,13 +73,11 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 
 	switch n := node.(type) {
 	case *Proc:
-		//prefixID := fmt.Sprintf("Proc%d", n.ID())
-		//fd.idToPrefixID[n.ID()] = prefixID
 		fact := fmt.Sprintf("%d\t%s", n.ID(), n.ProcName)
 		fd.procFacts = append(fd.procFacts, fact)
 
 		for i, u := range n.Plan {
-			fact := fmt.Sprintf("plan_%d_%d\t%d\t%d", n.ID(), i, n.ID(), u.ID())
+			fact := fmt.Sprintf("%d\t%d\t%d", n.ID(), u.ID(), i)
 			fd.planFacts = append(fd.planFacts, fact)
 		}
 
@@ -180,15 +178,8 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 			fd.argumentFacts = append(fd.argumentFacts, argFact)
 		}
 
-	//case *PickProc:
 	case *DataCase:
-
-		body, ok := n.Body.(Node)
-		if !ok {
-			panic(fmt.Sprintf("Node is IDNode %T", body))
-		}
-
-		fact := fmt.Sprintf("%d\t%d\t%d\t%d", n.ID(), prev.ID(), n.Bind.ID(), body.ID())
+		fact := fmt.Sprintf("%d\t%d\t%d", n.ID(), n.Bind.ID(), n.Body.ID())
 		fd.dataCaseFacts = append(fd.dataCaseFacts, fact)
 	case *Bind:
 		var condID int64
@@ -233,6 +224,26 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 			fact := fmt.Sprintf("%d\t%d\t%d", n.ID(), u.ID(), i)
 			fd.argumentFacts = append(fd.argumentFacts, fact)
 		}
+	case *CallProc:
+		fact := fmt.Sprintf("%d\t%d", n.ID(), n.To.ID())
+		fd.callProcFacts = append(fd.callProcFacts, fact)
+		for i, u := range n.Args {
+			fact := fmt.Sprintf("%d\t%d\t%d", n.ID(), u.ID(), i)
+			fd.argumentFacts = append(fd.argumentFacts, fact)
+		}
+	case *PickProc:
+		fact := fmt.Sprintf("%d\t%d", n.ID(), n.From.ID())
+		fd.pickProcFacts = append(fd.pickProcFacts, fact)
+		for i, u := range n.With {
+			fact := fmt.Sprintf("%d\t%d\t%d", n.ID(), u.ID(), i)
+			fd.argumentFacts = append(fd.argumentFacts, fact)
+		}
+	case *ProcCase:
+		fact := fmt.Sprintf("%d\t%d\t%d", n.ID(), n.Bind.ID(), n.Body.ID())
+		fd.procCaseFacts = append(fd.procCaseFacts, fact)
+	case *Builtin:
+		fact := fmt.Sprintf("%d\t%d", n.ID(), n.BuiltinType.ID())
+		fd.builtinFacts = append(fd.builtinFacts, fact)
 	case *EnumType:
 		fact := fmt.Sprintf("%d", n.ID())
 		fd.enumTypeFacts = append(fd.enumTypeFacts, fact)
