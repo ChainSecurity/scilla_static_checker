@@ -2,7 +2,7 @@
   "scilla_major_version": 0,
   "name": {
     "loc": {
-      "source_file": "examples/accept_payment_and_send_0.scilla",
+      "source_file": "examples/transaction_order_dependency.scilla",
       "line": 27,
       "column": 10,
       "node_type": "Location"
@@ -13,7 +13,7 @@
   "library": {
     "library_name": {
       "loc": {
-        "source_file": "examples/accept_payment_and_send_0.scilla",
+        "source_file": "examples/transaction_order_dependency.scilla",
         "line": 8,
         "column": 1,
         "node_type": "Location"
@@ -26,7 +26,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "examples/accept_payment_and_send_0.scilla",
+            "source_file": "examples/transaction_order_dependency.scilla",
             "line": 10,
             "column": 5,
             "node_type": "Location"
@@ -37,7 +37,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "examples/accept_payment_and_send_0.scilla",
+            "source_file": "examples/transaction_order_dependency.scilla",
             "line": 10,
             "column": 11,
             "node_type": "Location"
@@ -50,7 +50,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "examples/accept_payment_and_send_0.scilla",
+            "source_file": "examples/transaction_order_dependency.scilla",
             "line": 11,
             "column": 5,
             "node_type": "Location"
@@ -61,7 +61,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "examples/accept_payment_and_send_0.scilla",
+            "source_file": "examples/transaction_order_dependency.scilla",
             "line": 11,
             "column": 15,
             "node_type": "Location"
@@ -74,7 +74,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "examples/accept_payment_and_send_0.scilla",
+            "source_file": "examples/transaction_order_dependency.scilla",
             "line": 12,
             "column": 5,
             "node_type": "Location"
@@ -85,7 +85,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "examples/accept_payment_and_send_0.scilla",
+            "source_file": "examples/transaction_order_dependency.scilla",
             "line": 12,
             "column": 13,
             "node_type": "Location"
@@ -98,7 +98,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "examples/accept_payment_and_send_0.scilla",
+            "source_file": "examples/transaction_order_dependency.scilla",
             "line": 13,
             "column": 5,
             "node_type": "Location"
@@ -109,7 +109,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "examples/accept_payment_and_send_0.scilla",
+            "source_file": "examples/transaction_order_dependency.scilla",
             "line": 13,
             "column": 13,
             "node_type": "Location"
@@ -122,7 +122,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "examples/accept_payment_and_send_0.scilla",
+            "source_file": "examples/transaction_order_dependency.scilla",
             "line": 15,
             "column": 5,
             "node_type": "Location"
@@ -133,7 +133,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "examples/accept_payment_and_send_0.scilla",
+            "source_file": "examples/transaction_order_dependency.scilla",
             "line": 15,
             "column": 14,
             "node_type": "Location"
@@ -146,7 +146,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "examples/accept_payment_and_send_0.scilla",
+            "source_file": "examples/transaction_order_dependency.scilla",
             "line": 17,
             "column": 5,
             "node_type": "Location"
@@ -157,7 +157,7 @@
         "variable_type": { "node_type": "PrimType", "name": "Uint64" },
         "expression": {
           "loc": {
-            "source_file": "examples/accept_payment_and_send_0.scilla",
+            "source_file": "examples/transaction_order_dependency.scilla",
             "line": 17,
             "column": 18,
             "node_type": "Location"
@@ -165,7 +165,7 @@
           "node_type": "VarExpression",
           "variable": {
             "loc": {
-              "source_file": "examples/accept_payment_and_send_0.scilla",
+              "source_file": "examples/transaction_order_dependency.scilla",
               "line": 17,
               "column": 18,
               "node_type": "Location"
@@ -179,7 +179,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "examples/accept_payment_and_send_0.scilla",
+            "source_file": "examples/transaction_order_dependency.scilla",
             "line": 19,
             "column": 5,
             "node_type": "Location"
@@ -190,7 +190,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "examples/accept_payment_and_send_0.scilla",
+            "source_file": "examples/transaction_order_dependency.scilla",
             "line": 20,
             "column": 3,
             "node_type": "Location"
@@ -198,7 +198,7 @@
           "node_type": "FunExpression",
           "lhs": {
             "loc": {
-              "source_file": "examples/accept_payment_and_send_0.scilla",
+              "source_file": "examples/transaction_order_dependency.scilla",
               "line": 20,
               "column": 3,
               "node_type": "Location"
@@ -208,7 +208,7 @@
           },
           "rhs_expr": {
             "loc": {
-              "source_file": "examples/accept_payment_and_send_0.scilla",
+              "source_file": "examples/transaction_order_dependency.scilla",
               "line": 21,
               "column": 3,
               "node_type": "Location"
@@ -216,7 +216,7 @@
             "node_type": "LetExpression",
             "variable": {
               "loc": {
-                "source_file": "examples/accept_payment_and_send_0.scilla",
+                "source_file": "examples/transaction_order_dependency.scilla",
                 "line": 21,
                 "column": 3,
                 "node_type": "Location"
@@ -227,7 +227,7 @@
             "variable_type": null,
             "expression": {
               "loc": {
-                "source_file": "examples/accept_payment_and_send_0.scilla",
+                "source_file": "examples/transaction_order_dependency.scilla",
                 "line": 21,
                 "column": 17,
                 "node_type": "Location"
@@ -239,7 +239,7 @@
             },
             "body": {
               "loc": {
-                "source_file": "examples/accept_payment_and_send_0.scilla",
+                "source_file": "examples/transaction_order_dependency.scilla",
                 "line": 22,
                 "column": 5,
                 "node_type": "Location"
@@ -251,7 +251,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "examples/accept_payment_and_send_0.scilla",
+                      "examples/transaction_order_dependency.scilla",
                     "line": 22,
                     "column": 20,
                     "node_type": "Location"
@@ -262,7 +262,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "examples/accept_payment_and_send_0.scilla",
+                      "examples/transaction_order_dependency.scilla",
                     "line": 22,
                     "column": 24,
                     "node_type": "Location"
@@ -283,7 +283,7 @@
   "contract": {
     "name": {
       "loc": {
-        "source_file": "examples/accept_payment_and_send_0.scilla",
+        "source_file": "examples/transaction_order_dependency.scilla",
         "line": 27,
         "column": 10,
         "node_type": "Location"
@@ -295,7 +295,7 @@
       {
         "parameter_name": {
           "loc": {
-            "source_file": "examples/accept_payment_and_send_0.scilla",
+            "source_file": "examples/transaction_order_dependency.scilla",
             "line": 28,
             "column": 2,
             "node_type": "Location"
@@ -311,7 +311,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "examples/accept_payment_and_send_0.scilla",
+            "source_file": "examples/transaction_order_dependency.scilla",
             "line": 30,
             "column": 7,
             "node_type": "Location"
@@ -322,7 +322,7 @@
         "field_type": { "node_type": "PrimType", "name": "Uint128" },
         "expression": {
           "loc": {
-            "source_file": "examples/accept_payment_and_send_0.scilla",
+            "source_file": "examples/transaction_order_dependency.scilla",
             "line": 30,
             "column": 23,
             "node_type": "Location"
@@ -339,18 +339,18 @@
         "component_type": "transition",
         "name": {
           "loc": {
-            "source_file": "examples/accept_payment_and_send_0.scilla",
+            "source_file": "examples/transaction_order_dependency.scilla",
             "line": 32,
             "column": 12,
             "node_type": "Location"
           },
-          "identifier": "test",
+          "identifier": "save",
           "node_type": "Identifier"
         },
         "body": [
           {
             "loc": {
-              "source_file": "examples/accept_payment_and_send_0.scilla",
+              "source_file": "examples/transaction_order_dependency.scilla",
               "line": 33,
               "column": 5,
               "node_type": "Location"
@@ -359,15 +359,61 @@
           },
           {
             "loc": {
-              "source_file": "examples/accept_payment_and_send_0.scilla",
+              "source_file": "examples/transaction_order_dependency.scilla",
               "line": 34,
               "column": 5,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file": "examples/accept_payment_and_send_0.scilla",
+                "source_file": "examples/transaction_order_dependency.scilla",
                 "line": 34,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "bal",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "examples/transaction_order_dependency.scilla",
+                "line": 34,
+                "column": 12,
+                "node_type": "Location"
+              },
+              "identifier": "_amount",
+              "node_type": "Identifier"
+            },
+            "node_type": "StoreStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [],
+        "component_type": "transition",
+        "name": {
+          "loc": {
+            "source_file": "examples/transaction_order_dependency.scilla",
+            "line": 37,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "load",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file": "examples/transaction_order_dependency.scilla",
+              "line": 38,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "examples/transaction_order_dependency.scilla",
+                "line": 38,
                 "column": 7,
                 "node_type": "Location"
               },
@@ -376,8 +422,8 @@
             },
             "rhs": {
               "loc": {
-                "source_file": "examples/accept_payment_and_send_0.scilla",
-                "line": 34,
+                "source_file": "examples/transaction_order_dependency.scilla",
+                "line": 38,
                 "column": 10,
                 "node_type": "Location"
               },
@@ -388,15 +434,15 @@
           },
           {
             "loc": {
-              "source_file": "examples/accept_payment_and_send_0.scilla",
-              "line": 35,
+              "source_file": "examples/transaction_order_dependency.scilla",
+              "line": 39,
               "column": 5,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file": "examples/accept_payment_and_send_0.scilla",
-                "line": 35,
+                "source_file": "examples/transaction_order_dependency.scilla",
+                "line": 39,
                 "column": 9,
                 "node_type": "Location"
               },
@@ -405,8 +451,8 @@
             },
             "rhs": {
               "loc": {
-                "source_file": "examples/accept_payment_and_send_0.scilla",
-                "line": 35,
+                "source_file": "examples/transaction_order_dependency.scilla",
+                "line": 39,
                 "column": 12,
                 "node_type": "Location"
               },
@@ -417,16 +463,16 @@
           },
           {
             "loc": {
-              "source_file": "examples/accept_payment_and_send_0.scilla",
-              "line": 36,
+              "source_file": "examples/transaction_order_dependency.scilla",
+              "line": 40,
               "column": 5,
               "node_type": "Location"
             },
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "examples/accept_payment_and_send_0.scilla",
-                "line": 36,
+                "source_file": "examples/transaction_order_dependency.scilla",
+                "line": 40,
                 "column": 9,
                 "node_type": "Location"
               },
@@ -435,8 +481,8 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "examples/accept_payment_and_send_0.scilla",
-                "line": 36,
+                "source_file": "examples/transaction_order_dependency.scilla",
+                "line": 40,
                 "column": 11,
                 "node_type": "Location"
               },
@@ -458,8 +504,8 @@
                     "value": {
                       "loc": {
                         "source_file":
-                          "examples/accept_payment_and_send_0.scilla",
-                        "line": 36,
+                          "examples/transaction_order_dependency.scilla",
+                        "line": 40,
                         "column": 36,
                         "node_type": "Location"
                       },
@@ -476,8 +522,8 @@
                     "value": {
                       "loc": {
                         "source_file":
-                          "examples/accept_payment_and_send_0.scilla",
-                        "line": 36,
+                          "examples/transaction_order_dependency.scilla",
+                        "line": 40,
                         "column": 53,
                         "node_type": "Location"
                       },
@@ -494,8 +540,8 @@
                     "value": {
                       "loc": {
                         "source_file":
-                          "examples/accept_payment_and_send_0.scilla",
-                        "line": 36,
+                          "examples/transaction_order_dependency.scilla",
+                        "line": 40,
                         "column": 71,
                         "node_type": "Location"
                       },
@@ -509,16 +555,16 @@
           },
           {
             "loc": {
-              "source_file": "examples/accept_payment_and_send_0.scilla",
-              "line": 37,
+              "source_file": "examples/transaction_order_dependency.scilla",
+              "line": 41,
               "column": 5,
               "node_type": "Location"
             },
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "examples/accept_payment_and_send_0.scilla",
-                "line": 37,
+                "source_file": "examples/transaction_order_dependency.scilla",
+                "line": 41,
                 "column": 10,
                 "node_type": "Location"
               },
@@ -527,16 +573,17 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "examples/accept_payment_and_send_0.scilla",
-                "line": 37,
+                "source_file": "examples/transaction_order_dependency.scilla",
+                "line": 41,
                 "column": 12,
                 "node_type": "Location"
               },
               "node_type": "AppExpression",
               "lhs": {
                 "loc": {
-                  "source_file": "examples/accept_payment_and_send_0.scilla",
-                  "line": 37,
+                  "source_file":
+                    "examples/transaction_order_dependency.scilla",
+                  "line": 41,
                   "column": 12,
                   "node_type": "Location"
                 },
@@ -547,8 +594,8 @@
                 {
                   "loc": {
                     "source_file":
-                      "examples/accept_payment_and_send_0.scilla",
-                    "line": 37,
+                      "examples/transaction_order_dependency.scilla",
+                    "line": 41,
                     "column": 20,
                     "node_type": "Location"
                   },
@@ -560,15 +607,15 @@
           },
           {
             "loc": {
-              "source_file": "examples/accept_payment_and_send_0.scilla",
-              "line": 38,
+              "source_file": "examples/transaction_order_dependency.scilla",
+              "line": 42,
               "column": 5,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file": "examples/accept_payment_and_send_0.scilla",
-                "line": 38,
+                "source_file": "examples/transaction_order_dependency.scilla",
+                "line": 42,
                 "column": 5,
                 "node_type": "Location"
               },

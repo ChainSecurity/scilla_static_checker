@@ -2,7 +2,7 @@
   "scilla_major_version": 0,
   "name": {
     "loc": {
-      "source_file": "examples/match_statement_2.scilla",
+      "source_file": "examples/compare_timestamp.scilla",
       "line": 5,
       "column": 10,
       "node_type": "Location"
@@ -15,7 +15,7 @@
   "contract": {
     "name": {
       "loc": {
-        "source_file": "examples/match_statement_2.scilla",
+        "source_file": "examples/compare_timestamp.scilla",
         "line": 5,
         "column": 10,
         "node_type": "Location"
@@ -28,7 +28,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "examples/match_statement_2.scilla",
+            "source_file": "examples/compare_timestamp.scilla",
             "line": 8,
             "column": 7,
             "node_type": "Location"
@@ -39,7 +39,7 @@
         "field_type": { "node_type": "ADT", "name": "Bool", "type_args": [] },
         "expression": {
           "loc": {
-            "source_file": "examples/match_statement_2.scilla",
+            "source_file": "examples/compare_timestamp.scilla",
             "line": 8,
             "column": 20,
             "node_type": "Location"
@@ -58,7 +58,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "examples/match_statement_2.scilla",
+                "source_file": "examples/compare_timestamp.scilla",
                 "line": 10,
                 "column": 18,
                 "node_type": "Location"
@@ -66,28 +66,14 @@
               "identifier": "a",
               "node_type": "Identifier"
             },
-            "parameter_type": { "node_type": "PrimType", "name": "Uint32" },
-            "node_type": "Parameter"
-          },
-          {
-            "parameter_name": {
-              "loc": {
-                "source_file": "examples/match_statement_2.scilla",
-                "line": 10,
-                "column": 29,
-                "node_type": "Location"
-              },
-              "identifier": "b",
-              "node_type": "Identifier"
-            },
-            "parameter_type": { "node_type": "PrimType", "name": "Uint32" },
+            "parameter_type": { "node_type": "PrimType", "name": "BNum" },
             "node_type": "Parameter"
           }
         ],
         "component_type": "transition",
         "name": {
           "loc": {
-            "source_file": "examples/match_statement_2.scilla",
+            "source_file": "examples/compare_timestamp.scilla",
             "line": 10,
             "column": 12,
             "node_type": "Location"
@@ -98,16 +84,36 @@
         "body": [
           {
             "loc": {
-              "source_file": "examples/match_statement_2.scilla",
+              "source_file": "examples/compare_timestamp.scilla",
               "line": 11,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "examples/compare_timestamp.scilla",
+                "line": 11,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_str": "BLOCKNUMBER",
+            "node_type": "ReadFromBCStatement"
+          },
+          {
+            "loc": {
+              "source_file": "examples/compare_timestamp.scilla",
+              "line": 12,
               "column": 3,
               "node_type": "Location"
             },
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "examples/match_statement_2.scilla",
-                "line": 11,
+                "source_file": "examples/compare_timestamp.scilla",
+                "line": 12,
                 "column": 5,
                 "node_type": "Location"
               },
@@ -116,8 +122,8 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "examples/match_statement_2.scilla",
-                "line": 11,
+                "source_file": "examples/compare_timestamp.scilla",
+                "line": 12,
                 "column": 7,
                 "node_type": "Location"
               },
@@ -125,8 +131,8 @@
               "arguments": [
                 {
                   "loc": {
-                    "source_file": "examples/match_statement_2.scilla",
-                    "line": 11,
+                    "source_file": "examples/compare_timestamp.scilla",
+                    "line": 12,
                     "column": 18,
                     "node_type": "Location"
                   },
@@ -135,19 +141,19 @@
                 },
                 {
                   "loc": {
-                    "source_file": "examples/match_statement_2.scilla",
-                    "line": 11,
+                    "source_file": "examples/compare_timestamp.scilla",
+                    "line": 12,
                     "column": 20,
                     "node_type": "Location"
                   },
-                  "identifier": "b",
+                  "identifier": "t",
                   "node_type": "Identifier"
                 }
               ],
               "builtin_function": {
                 "loc": {
-                  "source_file": "examples/match_statement_2.scilla",
-                  "line": 11,
+                  "source_file": "examples/compare_timestamp.scilla",
+                  "line": 12,
                   "column": 15,
                   "node_type": "Location"
                 },
@@ -158,15 +164,15 @@
           },
           {
             "loc": {
-              "source_file": "examples/match_statement_2.scilla",
-              "line": 12,
+              "source_file": "examples/compare_timestamp.scilla",
+              "line": 13,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file": "examples/match_statement_2.scilla",
-                "line": 12,
+                "source_file": "examples/compare_timestamp.scilla",
+                "line": 13,
                 "column": 9,
                 "node_type": "Location"
               },
@@ -178,15 +184,15 @@
                 "pattern_body": [
                   {
                     "loc": {
-                      "source_file": "examples/match_statement_2.scilla",
-                      "line": 14,
+                      "source_file": "examples/compare_timestamp.scilla",
+                      "line": 15,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "lhs": {
                       "loc": {
-                        "source_file": "examples/match_statement_2.scilla",
-                        "line": 14,
+                        "source_file": "examples/compare_timestamp.scilla",
+                        "line": 15,
                         "column": 9,
                         "node_type": "Location"
                       },
@@ -195,8 +201,8 @@
                     },
                     "rhs": {
                       "loc": {
-                        "source_file": "examples/match_statement_2.scilla",
-                        "line": 14,
+                        "source_file": "examples/compare_timestamp.scilla",
+                        "line": 15,
                         "column": 12,
                         "node_type": "Location"
                       },
@@ -217,15 +223,15 @@
                 "pattern_body": [
                   {
                     "loc": {
-                      "source_file": "examples/match_statement_2.scilla",
-                      "line": 16,
+                      "source_file": "examples/compare_timestamp.scilla",
+                      "line": 17,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "lhs": {
                       "loc": {
-                        "source_file": "examples/match_statement_2.scilla",
-                        "line": 16,
+                        "source_file": "examples/compare_timestamp.scilla",
+                        "line": 17,
                         "column": 9,
                         "node_type": "Location"
                       },
@@ -234,8 +240,8 @@
                     },
                     "rhs": {
                       "loc": {
-                        "source_file": "examples/match_statement_2.scilla",
-                        "line": 16,
+                        "source_file": "examples/compare_timestamp.scilla",
+                        "line": 17,
                         "column": 12,
                         "node_type": "Location"
                       },

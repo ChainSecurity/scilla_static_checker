@@ -2,7 +2,7 @@
   "scilla_major_version": 0,
   "name": {
     "loc": {
-      "source_file": "../scilla_static/examples/crowdfunding.scilla",
+      "source_file": "examples/crowdfunding.scilla",
       "line": 48,
       "column": 10,
       "node_type": "Location"
@@ -13,7 +13,7 @@
   "library": {
     "library_name": {
       "loc": {
-        "source_file": "../scilla_static/examples/crowdfunding.scilla",
+        "source_file": "examples/crowdfunding.scilla",
         "line": 9,
         "column": 1,
         "node_type": "Location"
@@ -26,7 +26,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 11,
             "column": 5,
             "node_type": "Location"
@@ -37,7 +37,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 12,
             "column": 3,
             "node_type": "Location"
@@ -45,7 +45,7 @@
           "node_type": "FunExpression",
           "lhs": {
             "loc": {
-              "source_file": "../scilla_static/examples/crowdfunding.scilla",
+              "source_file": "examples/crowdfunding.scilla",
               "line": 12,
               "column": 3,
               "node_type": "Location"
@@ -55,7 +55,7 @@
           },
           "rhs_expr": {
             "loc": {
-              "source_file": "../scilla_static/examples/crowdfunding.scilla",
+              "source_file": "examples/crowdfunding.scilla",
               "line": 13,
               "column": 5,
               "node_type": "Location"
@@ -63,8 +63,7 @@
             "node_type": "LetExpression",
             "variable": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/crowdfunding.scilla",
+                "source_file": "examples/crowdfunding.scilla",
                 "line": 13,
                 "column": 5,
                 "node_type": "Location"
@@ -75,8 +74,7 @@
             "variable_type": null,
             "expression": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/crowdfunding.scilla",
+                "source_file": "examples/crowdfunding.scilla",
                 "line": 13,
                 "column": 19,
                 "node_type": "Location"
@@ -88,8 +86,7 @@
             },
             "body": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/crowdfunding.scilla",
+                "source_file": "examples/crowdfunding.scilla",
                 "line": 14,
                 "column": 5,
                 "node_type": "Location"
@@ -100,8 +97,7 @@
               "args": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/crowdfunding.scilla",
+                    "source_file": "examples/crowdfunding.scilla",
                     "line": 14,
                     "column": 20,
                     "node_type": "Location"
@@ -111,8 +107,7 @@
                 },
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/crowdfunding.scilla",
+                    "source_file": "examples/crowdfunding.scilla",
                     "line": 14,
                     "column": 24,
                     "node_type": "Location"
@@ -130,7 +125,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 16,
             "column": 5,
             "node_type": "Location"
@@ -141,7 +136,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 17,
             "column": 3,
             "node_type": "Location"
@@ -149,7 +144,7 @@
           "node_type": "FunExpression",
           "lhs": {
             "loc": {
-              "source_file": "../scilla_static/examples/crowdfunding.scilla",
+              "source_file": "examples/crowdfunding.scilla",
               "line": 17,
               "column": 3,
               "node_type": "Location"
@@ -159,7 +154,7 @@
           },
           "rhs_expr": {
             "loc": {
-              "source_file": "../scilla_static/examples/crowdfunding.scilla",
+              "source_file": "examples/crowdfunding.scilla",
               "line": 18,
               "column": 3,
               "node_type": "Location"
@@ -167,8 +162,7 @@
             "node_type": "FunExpression",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/crowdfunding.scilla",
+                "source_file": "examples/crowdfunding.scilla",
                 "line": 18,
                 "column": 3,
                 "node_type": "Location"
@@ -178,8 +172,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/crowdfunding.scilla",
+                "source_file": "examples/crowdfunding.scilla",
                 "line": 19,
                 "column": 3,
                 "node_type": "Location"
@@ -187,8 +180,7 @@
               "node_type": "FunExpression",
               "lhs": {
                 "loc": {
-                  "source_file":
-                    "../scilla_static/examples/crowdfunding.scilla",
+                  "source_file": "examples/crowdfunding.scilla",
                   "line": 19,
                   "column": 3,
                   "node_type": "Location"
@@ -198,8 +190,7 @@
               },
               "rhs_expr": {
                 "loc": {
-                  "source_file":
-                    "../scilla_static/examples/crowdfunding.scilla",
+                  "source_file": "examples/crowdfunding.scilla",
                   "line": 20,
                   "column": 5,
                   "node_type": "Location"
@@ -207,8 +198,7 @@
                 "node_type": "LetExpression",
                 "variable": {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/crowdfunding.scilla",
+                    "source_file": "examples/crowdfunding.scilla",
                     "line": 20,
                     "column": 5,
                     "node_type": "Location"
@@ -219,8 +209,7 @@
                 "variable_type": null,
                 "expression": {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/crowdfunding.scilla",
+                    "source_file": "examples/crowdfunding.scilla",
                     "line": 20,
                     "column": 13,
                     "node_type": "Location"
@@ -229,8 +218,7 @@
                   "arguments": [
                     {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 20,
                         "column": 30,
                         "node_type": "Location"
@@ -240,8 +228,7 @@
                     },
                     {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 20,
                         "column": 33,
                         "node_type": "Location"
@@ -252,8 +239,7 @@
                   ],
                   "builtin_function": {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 20,
                       "column": 21,
                       "node_type": "Location"
@@ -264,8 +250,7 @@
                 },
                 "body": {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/crowdfunding.scilla",
+                    "source_file": "examples/crowdfunding.scilla",
                     "line": 21,
                     "column": 5,
                     "node_type": "Location"
@@ -273,8 +258,7 @@
                   "node_type": "MatchExpression",
                   "lhs": {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 21,
                       "column": 11,
                       "node_type": "Location"
@@ -292,8 +276,7 @@
                       },
                       "expression": {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/crowdfunding.scilla",
+                          "source_file": "examples/crowdfunding.scilla",
                           "line": 23,
                           "column": 7,
                           "node_type": "Location"
@@ -301,8 +284,7 @@
                         "node_type": "LetExpression",
                         "variable": {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 23,
                             "column": 7,
                             "node_type": "Location"
@@ -313,8 +295,7 @@
                         "variable_type": null,
                         "expression": {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 23,
                             "column": 17,
                             "node_type": "Location"
@@ -323,8 +304,7 @@
                           "arguments": [
                             {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 23,
                                 "column": 29,
                                 "node_type": "Location"
@@ -334,8 +314,7 @@
                             },
                             {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 23,
                                 "column": 32,
                                 "node_type": "Location"
@@ -345,8 +324,7 @@
                             },
                             {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 23,
                                 "column": 39,
                                 "node_type": "Location"
@@ -357,8 +335,7 @@
                           ],
                           "builtin_function": {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/crowdfunding.scilla",
+                              "source_file": "examples/crowdfunding.scilla",
                               "line": 23,
                               "column": 25,
                               "node_type": "Location"
@@ -369,8 +346,7 @@
                         },
                         "body": {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 24,
                             "column": 7,
                             "node_type": "Location"
@@ -393,8 +369,7 @@
                           "args": [
                             {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 24,
                                 "column": 34,
                                 "node_type": "Location"
@@ -415,8 +390,7 @@
                       },
                       "expression": {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/crowdfunding.scilla",
+                          "source_file": "examples/crowdfunding.scilla",
                           "line": 25,
                           "column": 16,
                           "node_type": "Location"
@@ -457,7 +431,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 28,
             "column": 5,
             "node_type": "Location"
@@ -468,7 +442,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 29,
             "column": 3,
             "node_type": "Location"
@@ -476,7 +450,7 @@
           "node_type": "FunExpression",
           "lhs": {
             "loc": {
-              "source_file": "../scilla_static/examples/crowdfunding.scilla",
+              "source_file": "examples/crowdfunding.scilla",
               "line": 29,
               "column": 3,
               "node_type": "Location"
@@ -486,7 +460,7 @@
           },
           "rhs_expr": {
             "loc": {
-              "source_file": "../scilla_static/examples/crowdfunding.scilla",
+              "source_file": "examples/crowdfunding.scilla",
               "line": 30,
               "column": 3,
               "node_type": "Location"
@@ -494,8 +468,7 @@
             "node_type": "FunExpression",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/crowdfunding.scilla",
+                "source_file": "examples/crowdfunding.scilla",
                 "line": 30,
                 "column": 3,
                 "node_type": "Location"
@@ -505,8 +478,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/crowdfunding.scilla",
+                "source_file": "examples/crowdfunding.scilla",
                 "line": 31,
                 "column": 5,
                 "node_type": "Location"
@@ -514,8 +486,7 @@
               "node_type": "LetExpression",
               "variable": {
                 "loc": {
-                  "source_file":
-                    "../scilla_static/examples/crowdfunding.scilla",
+                  "source_file": "examples/crowdfunding.scilla",
                   "line": 31,
                   "column": 5,
                   "node_type": "Location"
@@ -526,8 +497,7 @@
               "variable_type": null,
               "expression": {
                 "loc": {
-                  "source_file":
-                    "../scilla_static/examples/crowdfunding.scilla",
+                  "source_file": "examples/crowdfunding.scilla",
                   "line": 31,
                   "column": 15,
                   "node_type": "Location"
@@ -536,8 +506,7 @@
                 "arguments": [
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 31,
                       "column": 27,
                       "node_type": "Location"
@@ -547,8 +516,7 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 31,
                       "column": 32,
                       "node_type": "Location"
@@ -559,8 +527,7 @@
                 ],
                 "builtin_function": {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/crowdfunding.scilla",
+                    "source_file": "examples/crowdfunding.scilla",
                     "line": 31,
                     "column": 23,
                     "node_type": "Location"
@@ -571,8 +538,7 @@
               },
               "body": {
                 "loc": {
-                  "source_file":
-                    "../scilla_static/examples/crowdfunding.scilla",
+                  "source_file": "examples/crowdfunding.scilla",
                   "line": 32,
                   "column": 5,
                   "node_type": "Location"
@@ -580,8 +546,7 @@
                 "node_type": "LetExpression",
                 "variable": {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/crowdfunding.scilla",
+                    "source_file": "examples/crowdfunding.scilla",
                     "line": 32,
                     "column": 5,
                     "node_type": "Location"
@@ -592,8 +557,7 @@
                 "variable_type": null,
                 "expression": {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/crowdfunding.scilla",
+                    "source_file": "examples/crowdfunding.scilla",
                     "line": 32,
                     "column": 15,
                     "node_type": "Location"
@@ -602,8 +566,7 @@
                   "arguments": [
                     {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 32,
                         "column": 26,
                         "node_type": "Location"
@@ -613,8 +576,7 @@
                     },
                     {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 32,
                         "column": 31,
                         "node_type": "Location"
@@ -625,8 +587,7 @@
                   ],
                   "builtin_function": {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 32,
                       "column": 23,
                       "node_type": "Location"
@@ -637,8 +598,7 @@
                 },
                 "body": {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/crowdfunding.scilla",
+                    "source_file": "examples/crowdfunding.scilla",
                     "line": 33,
                     "column": 5,
                     "node_type": "Location"
@@ -646,8 +606,7 @@
                   "node_type": "AppExpression",
                   "lhs": {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 33,
                       "column": 5,
                       "node_type": "Location"
@@ -658,8 +617,7 @@
                   "rhs_list": [
                     {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 33,
                         "column": 9,
                         "node_type": "Location"
@@ -669,8 +627,7 @@
                     },
                     {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 33,
                         "column": 13,
                         "node_type": "Location"
@@ -691,7 +648,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 35,
             "column": 5,
             "node_type": "Location"
@@ -702,7 +659,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 35,
             "column": 21,
             "node_type": "Location"
@@ -715,7 +672,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 36,
             "column": 5,
             "node_type": "Location"
@@ -726,7 +683,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 36,
             "column": 28,
             "node_type": "Location"
@@ -739,7 +696,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 37,
             "column": 5,
             "node_type": "Location"
@@ -750,7 +707,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 37,
             "column": 28,
             "node_type": "Location"
@@ -763,7 +720,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 38,
             "column": 5,
             "node_type": "Location"
@@ -774,7 +731,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 38,
             "column": 23,
             "node_type": "Location"
@@ -787,7 +744,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 39,
             "column": 5,
             "node_type": "Location"
@@ -798,7 +755,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 39,
             "column": 23,
             "node_type": "Location"
@@ -811,7 +768,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 40,
             "column": 5,
             "node_type": "Location"
@@ -822,7 +779,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 40,
             "column": 23,
             "node_type": "Location"
@@ -835,7 +792,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 41,
             "column": 5,
             "node_type": "Location"
@@ -846,7 +803,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 41,
             "column": 25,
             "node_type": "Location"
@@ -859,7 +816,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 42,
             "column": 5,
             "node_type": "Location"
@@ -870,7 +827,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 42,
             "column": 27,
             "node_type": "Location"
@@ -883,7 +840,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 43,
             "column": 5,
             "node_type": "Location"
@@ -894,7 +851,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 43,
             "column": 22,
             "node_type": "Location"
@@ -910,7 +867,7 @@
     {
       "name": {
         "loc": {
-          "source_file": "../scilla_static/examples/crowdfunding.scilla",
+          "source_file": "examples/crowdfunding.scilla",
           "line": 7,
           "column": 8,
           "node_type": "Location"
@@ -925,7 +882,7 @@
   "contract": {
     "name": {
       "loc": {
-        "source_file": "../scilla_static/examples/crowdfunding.scilla",
+        "source_file": "examples/crowdfunding.scilla",
         "line": 48,
         "column": 10,
         "node_type": "Location"
@@ -937,7 +894,7 @@
       {
         "parameter_name": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 51,
             "column": 2,
             "node_type": "Location"
@@ -951,7 +908,7 @@
       {
         "parameter_name": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 52,
             "column": 2,
             "node_type": "Location"
@@ -965,7 +922,7 @@
       {
         "parameter_name": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 53,
             "column": 2,
             "node_type": "Location"
@@ -981,7 +938,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 56,
             "column": 7,
             "node_type": "Location"
@@ -996,7 +953,7 @@
         },
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 56,
             "column": 39,
             "node_type": "Location"
@@ -1014,7 +971,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 57,
             "column": 7,
             "node_type": "Location"
@@ -1025,7 +982,7 @@
         "field_type": { "node_type": "ADT", "name": "Bool", "type_args": [] },
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 57,
             "column": 23,
             "node_type": "Location"
@@ -1044,7 +1001,7 @@
         "component_type": "transition",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 59,
             "column": 12,
             "node_type": "Location"
@@ -1055,15 +1012,14 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_static/examples/crowdfunding.scilla",
+              "source_file": "examples/crowdfunding.scilla",
               "line": 60,
               "column": 3,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/crowdfunding.scilla",
+                "source_file": "examples/crowdfunding.scilla",
                 "line": 60,
                 "column": 7,
                 "node_type": "Location"
@@ -1076,7 +1032,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_static/examples/crowdfunding.scilla",
+              "source_file": "examples/crowdfunding.scilla",
               "line": 61,
               "column": 3,
               "node_type": "Location"
@@ -1084,8 +1040,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/crowdfunding.scilla",
+                "source_file": "examples/crowdfunding.scilla",
                 "line": 61,
                 "column": 11,
                 "node_type": "Location"
@@ -1095,8 +1050,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/crowdfunding.scilla",
+                "source_file": "examples/crowdfunding.scilla",
                 "line": 61,
                 "column": 13,
                 "node_type": "Location"
@@ -1104,8 +1058,7 @@
               "node_type": "AppExpression",
               "lhs": {
                 "loc": {
-                  "source_file":
-                    "../scilla_static/examples/crowdfunding.scilla",
+                  "source_file": "examples/crowdfunding.scilla",
                   "line": 61,
                   "column": 13,
                   "node_type": "Location"
@@ -1116,8 +1069,7 @@
               "rhs_list": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/crowdfunding.scilla",
+                    "source_file": "examples/crowdfunding.scilla",
                     "line": 61,
                     "column": 21,
                     "node_type": "Location"
@@ -1127,8 +1079,7 @@
                 },
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/crowdfunding.scilla",
+                    "source_file": "examples/crowdfunding.scilla",
                     "line": 61,
                     "column": 25,
                     "node_type": "Location"
@@ -1141,15 +1092,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_static/examples/crowdfunding.scilla",
+              "source_file": "examples/crowdfunding.scilla",
               "line": 62,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/crowdfunding.scilla",
+                "source_file": "examples/crowdfunding.scilla",
                 "line": 62,
                 "column": 9,
                 "node_type": "Location"
@@ -1162,16 +1112,14 @@
                 "pattern_body": [
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 64,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "lhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 64,
                         "column": 9,
                         "node_type": "Location"
@@ -1181,8 +1129,7 @@
                     },
                     "rhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 64,
                         "column": 12,
                         "node_type": "Location"
@@ -1194,8 +1141,7 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 65,
                       "column": 5,
                       "node_type": "Location"
@@ -1203,8 +1149,7 @@
                     "node_type": "BindStatement",
                     "lhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 65,
                         "column": 9,
                         "node_type": "Location"
@@ -1214,8 +1159,7 @@
                     },
                     "rhs_expr": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 65,
                         "column": 11,
                         "node_type": "Location"
@@ -1223,8 +1167,7 @@
                       "node_type": "AppExpression",
                       "lhs": {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/crowdfunding.scilla",
+                          "source_file": "examples/crowdfunding.scilla",
                           "line": 65,
                           "column": 11,
                           "node_type": "Location"
@@ -1235,8 +1178,7 @@
                       "rhs_list": [
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 65,
                             "column": 24,
                             "node_type": "Location"
@@ -1246,8 +1188,7 @@
                         },
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 65,
                             "column": 27,
                             "node_type": "Location"
@@ -1257,8 +1198,7 @@
                         },
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 65,
                             "column": 35,
                             "node_type": "Location"
@@ -1271,16 +1211,14 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 66,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "arg": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 66,
                         "column": 11,
                         "node_type": "Location"
@@ -1293,8 +1231,7 @@
                         "pattern_body": [
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/crowdfunding.scilla",
+                              "source_file": "examples/crowdfunding.scilla",
                               "line": 68,
                               "column": 7,
                               "node_type": "Location"
@@ -1302,8 +1239,7 @@
                             "node_type": "BindStatement",
                             "lhs": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 68,
                                 "column": 9,
                                 "node_type": "Location"
@@ -1313,8 +1249,7 @@
                             },
                             "rhs_expr": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 68,
                                 "column": 11,
                                 "node_type": "Location"
@@ -1340,7 +1275,7 @@
                                     "value": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 68,
                                         "column": 52,
                                         "node_type": "Location"
@@ -1358,7 +1293,7 @@
                                     "value": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 68,
                                         "column": 70,
                                         "node_type": "Location"
@@ -1376,7 +1311,7 @@
                                     "value": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 68,
                                         "column": 86,
                                         "node_type": "Location"
@@ -1391,16 +1326,14 @@
                           },
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/crowdfunding.scilla",
+                              "source_file": "examples/crowdfunding.scilla",
                               "line": 69,
                               "column": 7,
                               "node_type": "Location"
                             },
                             "arg": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 69,
                                 "column": 7,
                                 "node_type": "Location"
@@ -1422,16 +1355,14 @@
                         "pattern_body": [
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/crowdfunding.scilla",
+                              "source_file": "examples/crowdfunding.scilla",
                               "line": 71,
                               "column": 7,
                               "node_type": "Location"
                             },
                             "lhs": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 71,
                                 "column": 15,
                                 "node_type": "Location"
@@ -1441,8 +1372,7 @@
                             },
                             "rhs": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 71,
                                 "column": 18,
                                 "node_type": "Location"
@@ -1454,8 +1384,7 @@
                           },
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/crowdfunding.scilla",
+                              "source_file": "examples/crowdfunding.scilla",
                               "line": 72,
                               "column": 7,
                               "node_type": "Location"
@@ -1464,8 +1393,7 @@
                           },
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/crowdfunding.scilla",
+                              "source_file": "examples/crowdfunding.scilla",
                               "line": 73,
                               "column": 7,
                               "node_type": "Location"
@@ -1473,8 +1401,7 @@
                             "node_type": "BindStatement",
                             "lhs": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 73,
                                 "column": 9,
                                 "node_type": "Location"
@@ -1484,8 +1411,7 @@
                             },
                             "rhs_expr": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 73,
                                 "column": 11,
                                 "node_type": "Location"
@@ -1511,7 +1437,7 @@
                                     "value": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 73,
                                         "column": 52,
                                         "node_type": "Location"
@@ -1529,7 +1455,7 @@
                                     "value": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 73,
                                         "column": 70,
                                         "node_type": "Location"
@@ -1547,7 +1473,7 @@
                                     "value": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 73,
                                         "column": 86,
                                         "node_type": "Location"
@@ -1562,16 +1488,14 @@
                           },
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/crowdfunding.scilla",
+                              "source_file": "examples/crowdfunding.scilla",
                               "line": 74,
                               "column": 7,
                               "node_type": "Location"
                             },
                             "arg": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 74,
                                 "column": 7,
                                 "node_type": "Location"
@@ -1591,7 +1515,7 @@
                               "variable": {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_static/examples/crowdfunding.scilla",
+                                    "examples/crowdfunding.scilla",
                                   "line": 70,
                                   "column": 12,
                                   "node_type": "Location"
@@ -1619,8 +1543,7 @@
                 "pattern_body": [
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 77,
                       "column": 2,
                       "node_type": "Location"
@@ -1628,8 +1551,7 @@
                     "node_type": "BindStatement",
                     "lhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 77,
                         "column": 4,
                         "node_type": "Location"
@@ -1639,8 +1561,7 @@
                     },
                     "rhs_expr": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 77,
                         "column": 6,
                         "node_type": "Location"
@@ -1665,8 +1586,7 @@
                             "node_type": "PayloadVariable",
                             "value": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 77,
                                 "column": 47,
                                 "node_type": "Location"
@@ -1683,8 +1603,7 @@
                             "node_type": "PayloadVariable",
                             "value": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 77,
                                 "column": 65,
                                 "node_type": "Location"
@@ -1701,8 +1620,7 @@
                             "node_type": "PayloadVariable",
                             "value": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 77,
                                 "column": 81,
                                 "node_type": "Location"
@@ -1717,16 +1635,14 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 78,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "arg": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 78,
                         "column": 5,
                         "node_type": "Location"
@@ -1755,7 +1671,7 @@
         "component_type": "transition",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 82,
             "column": 12,
             "node_type": "Location"
@@ -1766,7 +1682,7 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_static/examples/crowdfunding.scilla",
+              "source_file": "examples/crowdfunding.scilla",
               "line": 83,
               "column": 3,
               "node_type": "Location"
@@ -1774,8 +1690,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/crowdfunding.scilla",
+                "source_file": "examples/crowdfunding.scilla",
                 "line": 83,
                 "column": 12,
                 "node_type": "Location"
@@ -1785,8 +1700,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/crowdfunding.scilla",
+                "source_file": "examples/crowdfunding.scilla",
                 "line": 83,
                 "column": 14,
                 "node_type": "Location"
@@ -1795,8 +1709,7 @@
               "arguments": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/crowdfunding.scilla",
+                    "source_file": "examples/crowdfunding.scilla",
                     "line": 83,
                     "column": 25,
                     "node_type": "Location"
@@ -1806,8 +1719,7 @@
                 },
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/crowdfunding.scilla",
+                    "source_file": "examples/crowdfunding.scilla",
                     "line": 83,
                     "column": 31,
                     "node_type": "Location"
@@ -1818,8 +1730,7 @@
               ],
               "builtin_function": {
                 "loc": {
-                  "source_file":
-                    "../scilla_static/examples/crowdfunding.scilla",
+                  "source_file": "examples/crowdfunding.scilla",
                   "line": 83,
                   "column": 22,
                   "node_type": "Location"
@@ -1831,15 +1742,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_static/examples/crowdfunding.scilla",
+              "source_file": "examples/crowdfunding.scilla",
               "line": 84,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/crowdfunding.scilla",
+                "source_file": "examples/crowdfunding.scilla",
                 "line": 84,
                 "column": 9,
                 "node_type": "Location"
@@ -1852,8 +1762,7 @@
                 "pattern_body": [
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 86,
                       "column": 2,
                       "node_type": "Location"
@@ -1861,8 +1770,7 @@
                     "node_type": "BindStatement",
                     "lhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 86,
                         "column": 4,
                         "node_type": "Location"
@@ -1872,8 +1780,7 @@
                     },
                     "rhs_expr": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 86,
                         "column": 6,
                         "node_type": "Location"
@@ -1898,8 +1805,7 @@
                             "node_type": "PayloadVariable",
                             "value": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 86,
                                 "column": 48,
                                 "node_type": "Location"
@@ -1928,8 +1834,7 @@
                             "node_type": "PayloadVariable",
                             "value": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 86,
                                 "column": 84,
                                 "node_type": "Location"
@@ -1944,16 +1849,14 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 87,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "arg": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 87,
                         "column": 5,
                         "node_type": "Location"
@@ -1975,16 +1878,14 @@
                 "pattern_body": [
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 89,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "lhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 89,
                         "column": 9,
                         "node_type": "Location"
@@ -1997,8 +1898,7 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 90,
                       "column": 5,
                       "node_type": "Location"
@@ -2006,8 +1906,7 @@
                     "node_type": "BindStatement",
                     "lhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 90,
                         "column": 13,
                         "node_type": "Location"
@@ -2017,8 +1916,7 @@
                     },
                     "rhs_expr": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 90,
                         "column": 15,
                         "node_type": "Location"
@@ -2026,8 +1924,7 @@
                       "node_type": "AppExpression",
                       "lhs": {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/crowdfunding.scilla",
+                          "source_file": "examples/crowdfunding.scilla",
                           "line": 90,
                           "column": 15,
                           "node_type": "Location"
@@ -2038,8 +1935,7 @@
                       "rhs_list": [
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 90,
                             "column": 23,
                             "node_type": "Location"
@@ -2049,8 +1945,7 @@
                         },
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 90,
                             "column": 27,
                             "node_type": "Location"
@@ -2063,8 +1958,7 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 91,
                       "column": 5,
                       "node_type": "Location"
@@ -2072,8 +1966,7 @@
                     "node_type": "BindStatement",
                     "lhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 91,
                         "column": 8,
                         "node_type": "Location"
@@ -2083,8 +1976,7 @@
                     },
                     "rhs_expr": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 91,
                         "column": 10,
                         "node_type": "Location"
@@ -2092,8 +1984,7 @@
                       "node_type": "AppExpression",
                       "lhs": {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/crowdfunding.scilla",
+                          "source_file": "examples/crowdfunding.scilla",
                           "line": 91,
                           "column": 10,
                           "node_type": "Location"
@@ -2104,8 +1995,7 @@
                       "rhs_list": [
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 91,
                             "column": 15,
                             "node_type": "Location"
@@ -2118,16 +2008,14 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 92,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "lhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 92,
                         "column": 9,
                         "node_type": "Location"
@@ -2137,8 +2025,7 @@
                     },
                     "rhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 92,
                         "column": 12,
                         "node_type": "Location"
@@ -2150,8 +2037,7 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 93,
                       "column": 5,
                       "node_type": "Location"
@@ -2159,8 +2045,7 @@
                     "node_type": "BindStatement",
                     "lhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 93,
                         "column": 8,
                         "node_type": "Location"
@@ -2170,8 +2055,7 @@
                     },
                     "rhs_expr": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 93,
                         "column": 10,
                         "node_type": "Location"
@@ -2180,8 +2064,7 @@
                       "arguments": [
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 93,
                             "column": 21,
                             "node_type": "Location"
@@ -2191,8 +2074,7 @@
                         },
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 93,
                             "column": 25,
                             "node_type": "Location"
@@ -2203,8 +2085,7 @@
                       ],
                       "builtin_function": {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/crowdfunding.scilla",
+                          "source_file": "examples/crowdfunding.scilla",
                           "line": 93,
                           "column": 18,
                           "node_type": "Location"
@@ -2216,8 +2097,7 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 94,
                       "column": 5,
                       "node_type": "Location"
@@ -2225,8 +2105,7 @@
                     "node_type": "BindStatement",
                     "lhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 94,
                         "column": 8,
                         "node_type": "Location"
@@ -2236,8 +2115,7 @@
                     },
                     "rhs_expr": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 94,
                         "column": 10,
                         "node_type": "Location"
@@ -2245,8 +2123,7 @@
                       "node_type": "AppExpression",
                       "lhs": {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/crowdfunding.scilla",
+                          "source_file": "examples/crowdfunding.scilla",
                           "line": 94,
                           "column": 10,
                           "node_type": "Location"
@@ -2257,8 +2134,7 @@
                       "rhs_list": [
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 94,
                             "column": 15,
                             "node_type": "Location"
@@ -2271,8 +2147,7 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 95,
                       "column": 5,
                       "node_type": "Location"
@@ -2280,8 +2155,7 @@
                     "node_type": "BindStatement",
                     "lhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 95,
                         "column": 8,
                         "node_type": "Location"
@@ -2291,8 +2165,7 @@
                     },
                     "rhs_expr": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 95,
                         "column": 10,
                         "node_type": "Location"
@@ -2300,8 +2173,7 @@
                       "node_type": "AppExpression",
                       "lhs": {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/crowdfunding.scilla",
+                          "source_file": "examples/crowdfunding.scilla",
                           "line": 95,
                           "column": 10,
                           "node_type": "Location"
@@ -2312,8 +2184,7 @@
                       "rhs_list": [
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 95,
                             "column": 15,
                             "node_type": "Location"
@@ -2323,8 +2194,7 @@
                         },
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 95,
                             "column": 18,
                             "node_type": "Location"
@@ -2337,16 +2207,14 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 96,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "arg": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 96,
                         "column": 11,
                         "node_type": "Location"
@@ -2359,8 +2227,7 @@
                         "pattern_body": [
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/crowdfunding.scilla",
+                              "source_file": "examples/crowdfunding.scilla",
                               "line": 98,
                               "column": 6,
                               "node_type": "Location"
@@ -2368,8 +2235,7 @@
                             "node_type": "BindStatement",
                             "lhs": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 98,
                                 "column": 8,
                                 "node_type": "Location"
@@ -2379,8 +2245,7 @@
                             },
                             "rhs_expr": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 98,
                                 "column": 10,
                                 "node_type": "Location"
@@ -2406,7 +2271,7 @@
                                     "value": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 98,
                                         "column": 52,
                                         "node_type": "Location"
@@ -2436,7 +2301,7 @@
                                     "value": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 98,
                                         "column": 88,
                                         "node_type": "Location"
@@ -2451,16 +2316,14 @@
                           },
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/crowdfunding.scilla",
+                              "source_file": "examples/crowdfunding.scilla",
                               "line": 99,
                               "column": 7,
                               "node_type": "Location"
                             },
                             "arg": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 99,
                                 "column": 7,
                                 "node_type": "Location"
@@ -2482,8 +2345,7 @@
                         "pattern_body": [
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/crowdfunding.scilla",
+                              "source_file": "examples/crowdfunding.scilla",
                               "line": 101,
                               "column": 7,
                               "node_type": "Location"
@@ -2491,8 +2353,7 @@
                             "node_type": "BindStatement",
                             "lhs": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 101,
                                 "column": 10,
                                 "node_type": "Location"
@@ -2502,8 +2363,7 @@
                             },
                             "rhs_expr": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 101,
                                 "column": 12,
                                 "node_type": "Location"
@@ -2516,16 +2376,14 @@
                           },
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/crowdfunding.scilla",
+                              "source_file": "examples/crowdfunding.scilla",
                               "line": 102,
                               "column": 7,
                               "node_type": "Location"
                             },
                             "lhs": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 102,
                                 "column": 14,
                                 "node_type": "Location"
@@ -2535,8 +2393,7 @@
                             },
                             "rhs": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 102,
                                 "column": 17,
                                 "node_type": "Location"
@@ -2548,8 +2405,7 @@
                           },
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/crowdfunding.scilla",
+                              "source_file": "examples/crowdfunding.scilla",
                               "line": 103,
                               "column": 6,
                               "node_type": "Location"
@@ -2557,8 +2413,7 @@
                             "node_type": "BindStatement",
                             "lhs": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 103,
                                 "column": 11,
                                 "node_type": "Location"
@@ -2568,8 +2423,7 @@
                             },
                             "rhs_expr": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 103,
                                 "column": 13,
                                 "node_type": "Location"
@@ -2595,7 +2449,7 @@
                                     "value": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 103,
                                         "column": 38,
                                         "node_type": "Location"
@@ -2613,7 +2467,7 @@
                                     "value": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 103,
                                         "column": 55,
                                         "node_type": "Location"
@@ -2628,8 +2482,7 @@
                           },
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/crowdfunding.scilla",
+                              "source_file": "examples/crowdfunding.scilla",
                               "line": 104,
                               "column": 4,
                               "node_type": "Location"
@@ -2637,8 +2490,7 @@
                             "node_type": "BindStatement",
                             "lhs": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 104,
                                 "column": 9,
                                 "node_type": "Location"
@@ -2648,8 +2500,7 @@
                             },
                             "rhs_expr": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 104,
                                 "column": 11,
                                 "node_type": "Location"
@@ -2658,7 +2509,7 @@
                               "lhs": {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_static/examples/crowdfunding.scilla",
+                                    "examples/crowdfunding.scilla",
                                   "line": 104,
                                   "column": 11,
                                   "node_type": "Location"
@@ -2670,7 +2521,7 @@
                                 {
                                   "loc": {
                                     "source_file":
-                                      "../scilla_static/examples/crowdfunding.scilla",
+                                      "examples/crowdfunding.scilla",
                                     "line": 104,
                                     "column": 19,
                                     "node_type": "Location"
@@ -2683,8 +2534,7 @@
                           },
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/crowdfunding.scilla",
+                              "source_file": "examples/crowdfunding.scilla",
                               "line": 105,
                               "column": 4,
                               "node_type": "Location"
@@ -2692,8 +2542,7 @@
                             "node_type": "BindStatement",
                             "lhs": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 105,
                                 "column": 6,
                                 "node_type": "Location"
@@ -2703,8 +2552,7 @@
                             },
                             "rhs_expr": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 105,
                                 "column": 8,
                                 "node_type": "Location"
@@ -2730,7 +2578,7 @@
                                     "value": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 105,
                                         "column": 50,
                                         "node_type": "Location"
@@ -2748,7 +2596,7 @@
                                     "value": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 105,
                                         "column": 66,
                                         "node_type": "Location"
@@ -2766,7 +2614,7 @@
                                     "value": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 105,
                                         "column": 78,
                                         "node_type": "Location"
@@ -2781,16 +2629,14 @@
                           },
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/crowdfunding.scilla",
+                              "source_file": "examples/crowdfunding.scilla",
                               "line": 106,
                               "column": 7,
                               "node_type": "Location"
                             },
                             "arg": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 106,
                                 "column": 7,
                                 "node_type": "Location"
@@ -2802,16 +2648,14 @@
                           },
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/crowdfunding.scilla",
+                              "source_file": "examples/crowdfunding.scilla",
                               "line": 107,
                               "column": 4,
                               "node_type": "Location"
                             },
                             "arg": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 107,
                                 "column": 4,
                                 "node_type": "Location"
@@ -2851,7 +2695,7 @@
         "component_type": "transition",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/crowdfunding.scilla",
+            "source_file": "examples/crowdfunding.scilla",
             "line": 113,
             "column": 12,
             "node_type": "Location"
@@ -2862,15 +2706,14 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_static/examples/crowdfunding.scilla",
+              "source_file": "examples/crowdfunding.scilla",
               "line": 114,
               "column": 3,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/crowdfunding.scilla",
+                "source_file": "examples/crowdfunding.scilla",
                 "line": 114,
                 "column": 7,
                 "node_type": "Location"
@@ -2883,7 +2726,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_static/examples/crowdfunding.scilla",
+              "source_file": "examples/crowdfunding.scilla",
               "line": 115,
               "column": 3,
               "node_type": "Location"
@@ -2891,8 +2734,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/crowdfunding.scilla",
+                "source_file": "examples/crowdfunding.scilla",
                 "line": 115,
                 "column": 18,
                 "node_type": "Location"
@@ -2902,8 +2744,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/crowdfunding.scilla",
+                "source_file": "examples/crowdfunding.scilla",
                 "line": 115,
                 "column": 20,
                 "node_type": "Location"
@@ -2912,8 +2753,7 @@
               "arguments": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/crowdfunding.scilla",
+                    "source_file": "examples/crowdfunding.scilla",
                     "line": 115,
                     "column": 32,
                     "node_type": "Location"
@@ -2923,8 +2763,7 @@
                 },
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/crowdfunding.scilla",
+                    "source_file": "examples/crowdfunding.scilla",
                     "line": 115,
                     "column": 42,
                     "node_type": "Location"
@@ -2935,8 +2774,7 @@
               ],
               "builtin_function": {
                 "loc": {
-                  "source_file":
-                    "../scilla_static/examples/crowdfunding.scilla",
+                  "source_file": "examples/crowdfunding.scilla",
                   "line": 115,
                   "column": 28,
                   "node_type": "Location"
@@ -2948,15 +2786,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_static/examples/crowdfunding.scilla",
+              "source_file": "examples/crowdfunding.scilla",
               "line": 116,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/crowdfunding.scilla",
+                "source_file": "examples/crowdfunding.scilla",
                 "line": 116,
                 "column": 9,
                 "node_type": "Location"
@@ -2969,8 +2806,7 @@
                 "pattern_body": [
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 118,
                       "column": 2,
                       "node_type": "Location"
@@ -2978,8 +2814,7 @@
                     "node_type": "BindStatement",
                     "lhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 118,
                         "column": 4,
                         "node_type": "Location"
@@ -2989,8 +2824,7 @@
                     },
                     "rhs_expr": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 118,
                         "column": 6,
                         "node_type": "Location"
@@ -3015,8 +2849,7 @@
                             "node_type": "PayloadVariable",
                             "value": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 118,
                                 "column": 50,
                                 "node_type": "Location"
@@ -3045,8 +2878,7 @@
                             "node_type": "PayloadVariable",
                             "value": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 118,
                                 "column": 86,
                                 "node_type": "Location"
@@ -3061,16 +2893,14 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 119,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "arg": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 119,
                         "column": 5,
                         "node_type": "Location"
@@ -3092,16 +2922,14 @@
                 "pattern_body": [
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 121,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "lhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 121,
                         "column": 8,
                         "node_type": "Location"
@@ -3111,8 +2939,7 @@
                     },
                     "rhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 121,
                         "column": 11,
                         "node_type": "Location"
@@ -3124,16 +2951,14 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 122,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "lhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 122,
                         "column": 9,
                         "node_type": "Location"
@@ -3143,8 +2968,7 @@
                     },
                     "rhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 122,
                         "column": 12,
                         "node_type": "Location"
@@ -3156,16 +2980,14 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 124,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "lhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 124,
                         "column": 7,
                         "node_type": "Location"
@@ -3175,8 +2997,7 @@
                     },
                     "rhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 124,
                         "column": 10,
                         "node_type": "Location"
@@ -3188,8 +3009,7 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 125,
                       "column": 5,
                       "node_type": "Location"
@@ -3197,8 +3017,7 @@
                     "node_type": "BindStatement",
                     "lhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 125,
                         "column": 8,
                         "node_type": "Location"
@@ -3208,8 +3027,7 @@
                     },
                     "rhs_expr": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 125,
                         "column": 10,
                         "node_type": "Location"
@@ -3218,8 +3036,7 @@
                       "arguments": [
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 125,
                             "column": 21,
                             "node_type": "Location"
@@ -3229,8 +3046,7 @@
                         },
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 125,
                             "column": 25,
                             "node_type": "Location"
@@ -3241,8 +3057,7 @@
                       ],
                       "builtin_function": {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/crowdfunding.scilla",
+                          "source_file": "examples/crowdfunding.scilla",
                           "line": 125,
                           "column": 18,
                           "node_type": "Location"
@@ -3254,8 +3069,7 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 126,
                       "column": 5,
                       "node_type": "Location"
@@ -3263,8 +3077,7 @@
                     "node_type": "BindStatement",
                     "lhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 126,
                         "column": 8,
                         "node_type": "Location"
@@ -3274,8 +3087,7 @@
                     },
                     "rhs_expr": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 126,
                         "column": 10,
                         "node_type": "Location"
@@ -3284,8 +3096,7 @@
                       "arguments": [
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 126,
                             "column": 27,
                             "node_type": "Location"
@@ -3295,8 +3106,7 @@
                         },
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 126,
                             "column": 30,
                             "node_type": "Location"
@@ -3307,8 +3117,7 @@
                       ],
                       "builtin_function": {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/crowdfunding.scilla",
+                          "source_file": "examples/crowdfunding.scilla",
                           "line": 126,
                           "column": 18,
                           "node_type": "Location"
@@ -3320,8 +3129,7 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 127,
                       "column": 5,
                       "node_type": "Location"
@@ -3329,8 +3137,7 @@
                     "node_type": "BindStatement",
                     "lhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 127,
                         "column": 8,
                         "node_type": "Location"
@@ -3340,8 +3147,7 @@
                     },
                     "rhs_expr": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 127,
                         "column": 10,
                         "node_type": "Location"
@@ -3349,8 +3155,7 @@
                       "node_type": "AppExpression",
                       "lhs": {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/crowdfunding.scilla",
+                          "source_file": "examples/crowdfunding.scilla",
                           "line": 127,
                           "column": 10,
                           "node_type": "Location"
@@ -3361,8 +3166,7 @@
                       "rhs_list": [
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 127,
                             "column": 15,
                             "node_type": "Location"
@@ -3375,8 +3179,7 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 128,
                       "column": 5,
                       "node_type": "Location"
@@ -3384,8 +3187,7 @@
                     "node_type": "BindStatement",
                     "lhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 128,
                         "column": 8,
                         "node_type": "Location"
@@ -3395,8 +3197,7 @@
                     },
                     "rhs_expr": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 128,
                         "column": 10,
                         "node_type": "Location"
@@ -3404,8 +3205,7 @@
                       "node_type": "AppExpression",
                       "lhs": {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/crowdfunding.scilla",
+                          "source_file": "examples/crowdfunding.scilla",
                           "line": 128,
                           "column": 10,
                           "node_type": "Location"
@@ -3416,8 +3216,7 @@
                       "rhs_list": [
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 128,
                             "column": 15,
                             "node_type": "Location"
@@ -3427,8 +3226,7 @@
                         },
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 128,
                             "column": 18,
                             "node_type": "Location"
@@ -3441,8 +3239,7 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 129,
                       "column": 5,
                       "node_type": "Location"
@@ -3450,8 +3247,7 @@
                     "node_type": "BindStatement",
                     "lhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 129,
                         "column": 8,
                         "node_type": "Location"
@@ -3461,8 +3257,7 @@
                     },
                     "rhs_expr": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 129,
                         "column": 10,
                         "node_type": "Location"
@@ -3470,8 +3265,7 @@
                       "node_type": "AppExpression",
                       "lhs": {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/crowdfunding.scilla",
+                          "source_file": "examples/crowdfunding.scilla",
                           "line": 129,
                           "column": 10,
                           "node_type": "Location"
@@ -3482,8 +3276,7 @@
                       "rhs_list": [
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 129,
                             "column": 15,
                             "node_type": "Location"
@@ -3493,8 +3286,7 @@
                         },
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/crowdfunding.scilla",
+                            "source_file": "examples/crowdfunding.scilla",
                             "line": 129,
                             "column": 18,
                             "node_type": "Location"
@@ -3507,16 +3299,14 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/crowdfunding.scilla",
+                      "source_file": "examples/crowdfunding.scilla",
                       "line": 130,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "arg": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/crowdfunding.scilla",
+                        "source_file": "examples/crowdfunding.scilla",
                         "line": 130,
                         "column": 11,
                         "node_type": "Location"
@@ -3529,8 +3319,7 @@
                         "pattern_body": [
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/crowdfunding.scilla",
+                              "source_file": "examples/crowdfunding.scilla",
                               "line": 132,
                               "column": 6,
                               "node_type": "Location"
@@ -3538,8 +3327,7 @@
                             "node_type": "BindStatement",
                             "lhs": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 132,
                                 "column": 8,
                                 "node_type": "Location"
@@ -3549,8 +3337,7 @@
                             },
                             "rhs_expr": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 132,
                                 "column": 10,
                                 "node_type": "Location"
@@ -3576,7 +3363,7 @@
                                     "value": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 132,
                                         "column": 54,
                                         "node_type": "Location"
@@ -3606,7 +3393,7 @@
                                     "value": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 132,
                                         "column": 90,
                                         "node_type": "Location"
@@ -3621,16 +3408,14 @@
                           },
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/crowdfunding.scilla",
+                              "source_file": "examples/crowdfunding.scilla",
                               "line": 133,
                               "column": 7,
                               "node_type": "Location"
                             },
                             "arg": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 133,
                                 "column": 7,
                                 "node_type": "Location"
@@ -3652,8 +3437,7 @@
                         "pattern_body": [
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/crowdfunding.scilla",
+                              "source_file": "examples/crowdfunding.scilla",
                               "line": 135,
                               "column": 7,
                               "node_type": "Location"
@@ -3661,8 +3445,7 @@
                             "node_type": "BindStatement",
                             "lhs": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 135,
                                 "column": 11,
                                 "node_type": "Location"
@@ -3672,8 +3455,7 @@
                             },
                             "rhs_expr": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 135,
                                 "column": 13,
                                 "node_type": "Location"
@@ -3683,7 +3465,7 @@
                                 {
                                   "loc": {
                                     "source_file":
-                                      "../scilla_static/examples/crowdfunding.scilla",
+                                      "examples/crowdfunding.scilla",
                                     "line": 135,
                                     "column": 25,
                                     "node_type": "Location"
@@ -3694,7 +3476,7 @@
                                 {
                                   "loc": {
                                     "source_file":
-                                      "../scilla_static/examples/crowdfunding.scilla",
+                                      "examples/crowdfunding.scilla",
                                     "line": 135,
                                     "column": 28,
                                     "node_type": "Location"
@@ -3706,7 +3488,7 @@
                               "builtin_function": {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_static/examples/crowdfunding.scilla",
+                                    "examples/crowdfunding.scilla",
                                   "line": 135,
                                   "column": 21,
                                   "node_type": "Location"
@@ -3718,16 +3500,14 @@
                           },
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/crowdfunding.scilla",
+                              "source_file": "examples/crowdfunding.scilla",
                               "line": 136,
                               "column": 7,
                               "node_type": "Location"
                             },
                             "arg": {
                               "loc": {
-                                "source_file":
-                                  "../scilla_static/examples/crowdfunding.scilla",
+                                "source_file": "examples/crowdfunding.scilla",
                                 "line": 136,
                                 "column": 13,
                                 "node_type": "Location"
@@ -3741,7 +3521,7 @@
                                   {
                                     "loc": {
                                       "source_file":
-                                        "../scilla_static/examples/crowdfunding.scilla",
+                                        "examples/crowdfunding.scilla",
                                       "line": 138,
                                       "column": 8,
                                       "node_type": "Location"
@@ -3750,7 +3530,7 @@
                                     "lhs": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 138,
                                         "column": 10,
                                         "node_type": "Location"
@@ -3761,7 +3541,7 @@
                                     "rhs_expr": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 138,
                                         "column": 12,
                                         "node_type": "Location"
@@ -3787,7 +3567,7 @@
                                             "value": {
                                               "loc": {
                                                 "source_file":
-                                                  "../scilla_static/examples/crowdfunding.scilla",
+                                                  "examples/crowdfunding.scilla",
                                                 "line": 138,
                                                 "column": 56,
                                                 "node_type": "Location"
@@ -3817,7 +3597,7 @@
                                             "value": {
                                               "loc": {
                                                 "source_file":
-                                                  "../scilla_static/examples/crowdfunding.scilla",
+                                                  "examples/crowdfunding.scilla",
                                                 "line": 138,
                                                 "column": 92,
                                                 "node_type": "Location"
@@ -3834,7 +3614,7 @@
                                   {
                                     "loc": {
                                       "source_file":
-                                        "../scilla_static/examples/crowdfunding.scilla",
+                                        "examples/crowdfunding.scilla",
                                       "line": 139,
                                       "column": 9,
                                       "node_type": "Location"
@@ -3842,7 +3622,7 @@
                                     "arg": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 139,
                                         "column": 9,
                                         "node_type": "Location"
@@ -3865,7 +3645,7 @@
                                   {
                                     "loc": {
                                       "source_file":
-                                        "../scilla_static/examples/crowdfunding.scilla",
+                                        "examples/crowdfunding.scilla",
                                       "line": 141,
                                       "column": 9,
                                       "node_type": "Location"
@@ -3874,7 +3654,7 @@
                                     "lhs": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 141,
                                         "column": 13,
                                         "node_type": "Location"
@@ -3885,7 +3665,7 @@
                                     "rhs_expr": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 141,
                                         "column": 15,
                                         "node_type": "Location"
@@ -3895,7 +3675,7 @@
                                         {
                                           "loc": {
                                             "source_file":
-                                              "../scilla_static/examples/crowdfunding.scilla",
+                                              "examples/crowdfunding.scilla",
                                             "line": 141,
                                             "column": 30,
                                             "node_type": "Location"
@@ -3906,7 +3686,7 @@
                                         {
                                           "loc": {
                                             "source_file":
-                                              "../scilla_static/examples/crowdfunding.scilla",
+                                              "examples/crowdfunding.scilla",
                                             "line": 141,
                                             "column": 33,
                                             "node_type": "Location"
@@ -3918,7 +3698,7 @@
                                       "builtin_function": {
                                         "loc": {
                                           "source_file":
-                                            "../scilla_static/examples/crowdfunding.scilla",
+                                            "examples/crowdfunding.scilla",
                                           "line": 141,
                                           "column": 23,
                                           "node_type": "Location"
@@ -3931,7 +3711,7 @@
                                   {
                                     "loc": {
                                       "source_file":
-                                        "../scilla_static/examples/crowdfunding.scilla",
+                                        "examples/crowdfunding.scilla",
                                       "line": 142,
                                       "column": 9,
                                       "node_type": "Location"
@@ -3939,7 +3719,7 @@
                                     "lhs": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 142,
                                         "column": 17,
                                         "node_type": "Location"
@@ -3950,7 +3730,7 @@
                                     "rhs": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 142,
                                         "column": 20,
                                         "node_type": "Location"
@@ -3963,7 +3743,7 @@
                                   {
                                     "loc": {
                                       "source_file":
-                                        "../scilla_static/examples/crowdfunding.scilla",
+                                        "examples/crowdfunding.scilla",
                                       "line": 143,
                                       "column": 8,
                                       "node_type": "Location"
@@ -3972,7 +3752,7 @@
                                     "lhs": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 143,
                                         "column": 13,
                                         "node_type": "Location"
@@ -3983,7 +3763,7 @@
                                     "rhs_expr": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 143,
                                         "column": 15,
                                         "node_type": "Location"
@@ -4009,7 +3789,7 @@
                                             "value": {
                                               "loc": {
                                                 "source_file":
-                                                  "../scilla_static/examples/crowdfunding.scilla",
+                                                  "examples/crowdfunding.scilla",
                                                 "line": 143,
                                                 "column": 40,
                                                 "node_type": "Location"
@@ -4027,7 +3807,7 @@
                                             "value": {
                                               "loc": {
                                                 "source_file":
-                                                  "../scilla_static/examples/crowdfunding.scilla",
+                                                  "examples/crowdfunding.scilla",
                                                 "line": 143,
                                                 "column": 59,
                                                 "node_type": "Location"
@@ -4043,7 +3823,7 @@
                                   {
                                     "loc": {
                                       "source_file":
-                                        "../scilla_static/examples/crowdfunding.scilla",
+                                        "examples/crowdfunding.scilla",
                                       "line": 144,
                                       "column": 8,
                                       "node_type": "Location"
@@ -4052,7 +3832,7 @@
                                     "lhs": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 144,
                                         "column": 13,
                                         "node_type": "Location"
@@ -4063,7 +3843,7 @@
                                     "rhs_expr": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 144,
                                         "column": 15,
                                         "node_type": "Location"
@@ -4072,7 +3852,7 @@
                                       "lhs": {
                                         "loc": {
                                           "source_file":
-                                            "../scilla_static/examples/crowdfunding.scilla",
+                                            "examples/crowdfunding.scilla",
                                           "line": 144,
                                           "column": 15,
                                           "node_type": "Location"
@@ -4084,7 +3864,7 @@
                                         {
                                           "loc": {
                                             "source_file":
-                                              "../scilla_static/examples/crowdfunding.scilla",
+                                              "examples/crowdfunding.scilla",
                                             "line": 144,
                                             "column": 23,
                                             "node_type": "Location"
@@ -4098,7 +3878,7 @@
                                   {
                                     "loc": {
                                       "source_file":
-                                        "../scilla_static/examples/crowdfunding.scilla",
+                                        "examples/crowdfunding.scilla",
                                       "line": 145,
                                       "column": 8,
                                       "node_type": "Location"
@@ -4107,7 +3887,7 @@
                                     "lhs": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 145,
                                         "column": 10,
                                         "node_type": "Location"
@@ -4118,7 +3898,7 @@
                                     "rhs_expr": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 145,
                                         "column": 12,
                                         "node_type": "Location"
@@ -4144,7 +3924,7 @@
                                             "value": {
                                               "loc": {
                                                 "source_file":
-                                                  "../scilla_static/examples/crowdfunding.scilla",
+                                                  "examples/crowdfunding.scilla",
                                                 "line": 145,
                                                 "column": 56,
                                                 "node_type": "Location"
@@ -4162,7 +3942,7 @@
                                             "value": {
                                               "loc": {
                                                 "source_file":
-                                                  "../scilla_static/examples/crowdfunding.scilla",
+                                                  "examples/crowdfunding.scilla",
                                                 "line": 145,
                                                 "column": 74,
                                                 "node_type": "Location"
@@ -4180,7 +3960,7 @@
                                             "value": {
                                               "loc": {
                                                 "source_file":
-                                                  "../scilla_static/examples/crowdfunding.scilla",
+                                                  "examples/crowdfunding.scilla",
                                                 "line": 145,
                                                 "column": 84,
                                                 "node_type": "Location"
@@ -4196,7 +3976,7 @@
                                   {
                                     "loc": {
                                       "source_file":
-                                        "../scilla_static/examples/crowdfunding.scilla",
+                                        "examples/crowdfunding.scilla",
                                       "line": 146,
                                       "column": 9,
                                       "node_type": "Location"
@@ -4204,7 +3984,7 @@
                                     "arg": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 146,
                                         "column": 9,
                                         "node_type": "Location"
@@ -4217,7 +3997,7 @@
                                   {
                                     "loc": {
                                       "source_file":
-                                        "../scilla_static/examples/crowdfunding.scilla",
+                                        "examples/crowdfunding.scilla",
                                       "line": 147,
                                       "column": 8,
                                       "node_type": "Location"
@@ -4225,7 +4005,7 @@
                                     "arg": {
                                       "loc": {
                                         "source_file":
-                                          "../scilla_static/examples/crowdfunding.scilla",
+                                          "examples/crowdfunding.scilla",
                                         "line": 147,
                                         "column": 8,
                                         "node_type": "Location"
@@ -4245,7 +4025,7 @@
                                       "variable": {
                                         "loc": {
                                           "source_file":
-                                            "../scilla_static/examples/crowdfunding.scilla",
+                                            "examples/crowdfunding.scilla",
                                           "line": 140,
                                           "column": 14,
                                           "node_type": "Location"

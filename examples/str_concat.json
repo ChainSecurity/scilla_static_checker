@@ -2,7 +2,7 @@
   "scilla_major_version": 0,
   "name": {
     "loc": {
-      "source_file": "../scilla_static/examples/str_concat.scilla",
+      "source_file": "examples/str_concat.scilla",
       "line": 14,
       "column": 10,
       "node_type": "Location"
@@ -13,7 +13,7 @@
   "library": {
     "library_name": {
       "loc": {
-        "source_file": "../scilla_static/examples/str_concat.scilla",
+        "source_file": "examples/str_concat.scilla",
         "line": 8,
         "column": 1,
         "node_type": "Location"
@@ -28,7 +28,7 @@
   "contract": {
     "name": {
       "loc": {
-        "source_file": "../scilla_static/examples/str_concat.scilla",
+        "source_file": "examples/str_concat.scilla",
         "line": 14,
         "column": 10,
         "node_type": "Location"
@@ -40,7 +40,7 @@
       {
         "parameter_name": {
           "loc": {
-            "source_file": "../scilla_static/examples/str_concat.scilla",
+            "source_file": "examples/str_concat.scilla",
             "line": 15,
             "column": 2,
             "node_type": "Location"
@@ -56,7 +56,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "../scilla_static/examples/str_concat.scilla",
+            "source_file": "examples/str_concat.scilla",
             "line": 17,
             "column": 7,
             "node_type": "Location"
@@ -67,7 +67,7 @@
         "field_type": { "node_type": "PrimType", "name": "String" },
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/str_concat.scilla",
+            "source_file": "examples/str_concat.scilla",
             "line": 17,
             "column": 20,
             "node_type": "Location"
@@ -75,7 +75,7 @@
           "node_type": "VarExpression",
           "variable": {
             "loc": {
-              "source_file": "../scilla_static/examples/str_concat.scilla",
+              "source_file": "examples/str_concat.scilla",
               "line": 17,
               "column": 20,
               "node_type": "Location"
@@ -93,7 +93,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "../scilla_static/examples/str_concat.scilla",
+                "source_file": "examples/str_concat.scilla",
                 "line": 19,
                 "column": 17,
                 "node_type": "Location"
@@ -108,7 +108,7 @@
         "component_type": "transition",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/str_concat.scilla",
+            "source_file": "examples/str_concat.scilla",
             "line": 19,
             "column": 12,
             "node_type": "Location"
@@ -119,14 +119,14 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_static/examples/str_concat.scilla",
+              "source_file": "examples/str_concat.scilla",
               "line": 20,
               "column": 5,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file": "../scilla_static/examples/str_concat.scilla",
+                "source_file": "examples/str_concat.scilla",
                 "line": 20,
                 "column": 11,
                 "node_type": "Location"
@@ -136,7 +136,7 @@
             },
             "rhs": {
               "loc": {
-                "source_file": "../scilla_static/examples/str_concat.scilla",
+                "source_file": "examples/str_concat.scilla",
                 "line": 20,
                 "column": 14,
                 "node_type": "Location"
@@ -148,7 +148,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_static/examples/str_concat.scilla",
+              "source_file": "examples/str_concat.scilla",
               "line": 21,
               "column": 5,
               "node_type": "Location"
@@ -156,7 +156,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_static/examples/str_concat.scilla",
+                "source_file": "examples/str_concat.scilla",
                 "line": 21,
                 "column": 10,
                 "node_type": "Location"
@@ -166,7 +166,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_static/examples/str_concat.scilla",
+                "source_file": "examples/str_concat.scilla",
                 "line": 21,
                 "column": 12,
                 "node_type": "Location"
@@ -175,8 +175,7 @@
               "arguments": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/str_concat.scilla",
+                    "source_file": "examples/str_concat.scilla",
                     "line": 21,
                     "column": 27,
                     "node_type": "Location"
@@ -186,8 +185,7 @@
                 },
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/str_concat.scilla",
+                    "source_file": "examples/str_concat.scilla",
                     "line": 21,
                     "column": 33,
                     "node_type": "Location"
@@ -198,8 +196,7 @@
               ],
               "builtin_function": {
                 "loc": {
-                  "source_file":
-                    "../scilla_static/examples/str_concat.scilla",
+                  "source_file": "examples/str_concat.scilla",
                   "line": 21,
                   "column": 20,
                   "node_type": "Location"
@@ -211,14 +208,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_static/examples/str_concat.scilla",
+              "source_file": "examples/str_concat.scilla",
               "line": 22,
               "column": 5,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file": "../scilla_static/examples/str_concat.scilla",
+                "source_file": "examples/str_concat.scilla",
                 "line": 22,
                 "column": 7,
                 "node_type": "Location"
@@ -228,7 +225,7 @@
             },
             "rhs": {
               "loc": {
-                "source_file": "../scilla_static/examples/str_concat.scilla",
+                "source_file": "examples/str_concat.scilla",
                 "line": 22,
                 "column": 10,
                 "node_type": "Location"

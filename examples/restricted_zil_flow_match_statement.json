@@ -2,8 +2,7 @@
   "scilla_major_version": 0,
   "name": {
     "loc": {
-      "source_file":
-        "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+      "source_file": "examples/restricted_zil_flow_match_statement.scilla",
       "line": 30,
       "column": 10,
       "node_type": "Location"
@@ -14,8 +13,7 @@
   "library": {
     "library_name": {
       "loc": {
-        "source_file":
-          "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+        "source_file": "examples/restricted_zil_flow_match_statement.scilla",
         "line": 9,
         "column": 1,
         "node_type": "Location"
@@ -29,7 +27,7 @@
         "name": {
           "loc": {
             "source_file":
-              "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+              "examples/restricted_zil_flow_match_statement.scilla",
             "line": 10,
             "column": 5,
             "node_type": "Location"
@@ -41,7 +39,7 @@
         "expression": {
           "loc": {
             "source_file":
-              "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+              "examples/restricted_zil_flow_match_statement.scilla",
             "line": 10,
             "column": 14,
             "node_type": "Location"
@@ -55,7 +53,7 @@
         "name": {
           "loc": {
             "source_file":
-              "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+              "examples/restricted_zil_flow_match_statement.scilla",
             "line": 12,
             "column": 5,
             "node_type": "Location"
@@ -67,7 +65,7 @@
         "expression": {
           "loc": {
             "source_file":
-              "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+              "examples/restricted_zil_flow_match_statement.scilla",
             "line": 12,
             "column": 14,
             "node_type": "Location"
@@ -81,7 +79,7 @@
         "name": {
           "loc": {
             "source_file":
-              "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+              "examples/restricted_zil_flow_match_statement.scilla",
             "line": 13,
             "column": 5,
             "node_type": "Location"
@@ -93,7 +91,7 @@
         "expression": {
           "loc": {
             "source_file":
-              "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+              "examples/restricted_zil_flow_match_statement.scilla",
             "line": 13,
             "column": 14,
             "node_type": "Location"
@@ -107,7 +105,7 @@
         "name": {
           "loc": {
             "source_file":
-              "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+              "examples/restricted_zil_flow_match_statement.scilla",
             "line": 14,
             "column": 5,
             "node_type": "Location"
@@ -119,7 +117,7 @@
         "expression": {
           "loc": {
             "source_file":
-              "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+              "examples/restricted_zil_flow_match_statement.scilla",
             "line": 14,
             "column": 14,
             "node_type": "Location"
@@ -133,7 +131,7 @@
         "name": {
           "loc": {
             "source_file":
-              "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+              "examples/restricted_zil_flow_match_statement.scilla",
             "line": 15,
             "column": 5,
             "node_type": "Location"
@@ -145,7 +143,7 @@
         "expression": {
           "loc": {
             "source_file":
-              "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+              "examples/restricted_zil_flow_match_statement.scilla",
             "line": 15,
             "column": 15,
             "node_type": "Location"
@@ -159,7 +157,7 @@
         "name": {
           "loc": {
             "source_file":
-              "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+              "examples/restricted_zil_flow_match_statement.scilla",
             "line": 17,
             "column": 5,
             "node_type": "Location"
@@ -171,7 +169,7 @@
         "expression": {
           "loc": {
             "source_file":
-              "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+              "examples/restricted_zil_flow_match_statement.scilla",
             "line": 18,
             "column": 3,
             "node_type": "Location"
@@ -180,7 +178,7 @@
           "lhs": {
             "loc": {
               "source_file":
-                "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                "examples/restricted_zil_flow_match_statement.scilla",
               "line": 18,
               "column": 3,
               "node_type": "Location"
@@ -191,7 +189,7 @@
           "rhs_expr": {
             "loc": {
               "source_file":
-                "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                "examples/restricted_zil_flow_match_statement.scilla",
               "line": 19,
               "column": 3,
               "node_type": "Location"
@@ -200,7 +198,7 @@
             "variable": {
               "loc": {
                 "source_file":
-                  "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                  "examples/restricted_zil_flow_match_statement.scilla",
                 "line": 19,
                 "column": 3,
                 "node_type": "Location"
@@ -212,7 +210,7 @@
             "expression": {
               "loc": {
                 "source_file":
-                  "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                  "examples/restricted_zil_flow_match_statement.scilla",
                 "line": 19,
                 "column": 17,
                 "node_type": "Location"
@@ -225,7 +223,7 @@
             "body": {
               "loc": {
                 "source_file":
-                  "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                  "examples/restricted_zil_flow_match_statement.scilla",
                 "line": 20,
                 "column": 5,
                 "node_type": "Location"
@@ -237,7 +235,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                      "examples/restricted_zil_flow_match_statement.scilla",
                     "line": 20,
                     "column": 20,
                     "node_type": "Location"
@@ -248,7 +246,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                      "examples/restricted_zil_flow_match_statement.scilla",
                     "line": 20,
                     "column": 24,
                     "node_type": "Location"
@@ -267,7 +265,7 @@
         "name": {
           "loc": {
             "source_file":
-              "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+              "examples/restricted_zil_flow_match_statement.scilla",
             "line": 25,
             "column": 5,
             "node_type": "Location"
@@ -279,7 +277,7 @@
         "expression": {
           "loc": {
             "source_file":
-              "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+              "examples/restricted_zil_flow_match_statement.scilla",
             "line": 26,
             "column": 3,
             "node_type": "Location"
@@ -288,7 +286,7 @@
           "lhs": {
             "loc": {
               "source_file":
-                "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                "examples/restricted_zil_flow_match_statement.scilla",
               "line": 26,
               "column": 3,
               "node_type": "Location"
@@ -299,7 +297,7 @@
           "rhs_expr": {
             "loc": {
               "source_file":
-                "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                "examples/restricted_zil_flow_match_statement.scilla",
               "line": 26,
               "column": 36,
               "node_type": "Location"
@@ -308,7 +306,7 @@
             "lhs": {
               "loc": {
                 "source_file":
-                  "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                  "examples/restricted_zil_flow_match_statement.scilla",
                 "line": 26,
                 "column": 36,
                 "node_type": "Location"
@@ -319,7 +317,7 @@
             "rhs_expr": {
               "loc": {
                 "source_file":
-                  "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                  "examples/restricted_zil_flow_match_statement.scilla",
                 "line": 27,
                 "column": 6,
                 "node_type": "Location"
@@ -329,7 +327,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                      "examples/restricted_zil_flow_match_statement.scilla",
                     "line": 27,
                     "column": 18,
                     "node_type": "Location"
@@ -340,7 +338,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                      "examples/restricted_zil_flow_match_statement.scilla",
                     "line": 27,
                     "column": 20,
                     "node_type": "Location"
@@ -352,7 +350,7 @@
               "builtin_function": {
                 "loc": {
                   "source_file":
-                    "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                    "examples/restricted_zil_flow_match_statement.scilla",
                   "line": 27,
                   "column": 14,
                   "node_type": "Location"
@@ -377,8 +375,7 @@
   "contract": {
     "name": {
       "loc": {
-        "source_file":
-          "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+        "source_file": "examples/restricted_zil_flow_match_statement.scilla",
         "line": 30,
         "column": 10,
         "node_type": "Location"
@@ -392,7 +389,7 @@
         "field_name": {
           "loc": {
             "source_file":
-              "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+              "examples/restricted_zil_flow_match_statement.scilla",
             "line": 33,
             "column": 7,
             "node_type": "Location"
@@ -408,7 +405,7 @@
         "expression": {
           "loc": {
             "source_file":
-              "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+              "examples/restricted_zil_flow_match_statement.scilla",
             "line": 33,
             "column": 40,
             "node_type": "Location"
@@ -431,7 +428,7 @@
             "parameter_name": {
               "loc": {
                 "source_file":
-                  "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                  "examples/restricted_zil_flow_match_statement.scilla",
                 "line": 36,
                 "column": 17,
                 "node_type": "Location"
@@ -447,7 +444,7 @@
         "name": {
           "loc": {
             "source_file":
-              "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+              "examples/restricted_zil_flow_match_statement.scilla",
             "line": 36,
             "column": 12,
             "node_type": "Location"
@@ -459,7 +456,7 @@
           {
             "loc": {
               "source_file":
-                "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                "examples/restricted_zil_flow_match_statement.scilla",
               "line": 37,
               "column": 5,
               "node_type": "Location"
@@ -468,7 +465,7 @@
             "map_name": {
               "loc": {
                 "source_file":
-                  "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                  "examples/restricted_zil_flow_match_statement.scilla",
                 "line": 37,
                 "column": 5,
                 "node_type": "Location"
@@ -479,7 +476,7 @@
             "rhs": {
               "loc": {
                 "source_file":
-                  "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                  "examples/restricted_zil_flow_match_statement.scilla",
                 "line": 37,
                 "column": 26,
                 "node_type": "Location"
@@ -491,7 +488,7 @@
               {
                 "loc": {
                   "source_file":
-                    "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                    "examples/restricted_zil_flow_match_statement.scilla",
                   "line": 37,
                   "column": 14,
                   "node_type": "Location"
@@ -510,7 +507,7 @@
         "name": {
           "loc": {
             "source_file":
-              "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+              "examples/restricted_zil_flow_match_statement.scilla",
             "line": 40,
             "column": 12,
             "node_type": "Location"
@@ -522,7 +519,7 @@
           {
             "loc": {
               "source_file":
-                "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                "examples/restricted_zil_flow_match_statement.scilla",
               "line": 41,
               "column": 5,
               "node_type": "Location"
@@ -530,7 +527,7 @@
             "lhs": {
               "loc": {
                 "source_file":
-                  "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                  "examples/restricted_zil_flow_match_statement.scilla",
                 "line": 41,
                 "column": 7,
                 "node_type": "Location"
@@ -541,7 +538,7 @@
             "rhs": {
               "loc": {
                 "source_file":
-                  "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                  "examples/restricted_zil_flow_match_statement.scilla",
                 "line": 41,
                 "column": 10,
                 "node_type": "Location"
@@ -554,7 +551,7 @@
           {
             "loc": {
               "source_file":
-                "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                "examples/restricted_zil_flow_match_statement.scilla",
               "line": 42,
               "column": 5,
               "node_type": "Location"
@@ -563,7 +560,7 @@
             "lhs": {
               "loc": {
                 "source_file":
-                  "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                  "examples/restricted_zil_flow_match_statement.scilla",
                 "line": 42,
                 "column": 7,
                 "node_type": "Location"
@@ -574,7 +571,7 @@
             "rhs_expr": {
               "loc": {
                 "source_file":
-                  "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                  "examples/restricted_zil_flow_match_statement.scilla",
                 "line": 42,
                 "column": 9,
                 "node_type": "Location"
@@ -583,7 +580,7 @@
               "lhs": {
                 "loc": {
                   "source_file":
-                    "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                    "examples/restricted_zil_flow_match_statement.scilla",
                   "line": 42,
                   "column": 9,
                   "node_type": "Location"
@@ -595,7 +592,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                      "examples/restricted_zil_flow_match_statement.scilla",
                     "line": 42,
                     "column": 22,
                     "node_type": "Location"
@@ -606,7 +603,7 @@
                 {
                   "loc": {
                     "source_file":
-                      "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                      "examples/restricted_zil_flow_match_statement.scilla",
                     "line": 42,
                     "column": 24,
                     "node_type": "Location"
@@ -620,7 +617,7 @@
           {
             "loc": {
               "source_file":
-                "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                "examples/restricted_zil_flow_match_statement.scilla",
               "line": 43,
               "column": 5,
               "node_type": "Location"
@@ -628,7 +625,7 @@
             "arg": {
               "loc": {
                 "source_file":
-                  "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                  "examples/restricted_zil_flow_match_statement.scilla",
                 "line": 43,
                 "column": 11,
                 "node_type": "Location"
@@ -642,7 +639,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                        "examples/restricted_zil_flow_match_statement.scilla",
                       "line": 45,
                       "column": 9,
                       "node_type": "Location"
@@ -651,7 +648,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                          "examples/restricted_zil_flow_match_statement.scilla",
                         "line": 45,
                         "column": 11,
                         "node_type": "Location"
@@ -662,7 +659,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                          "examples/restricted_zil_flow_match_statement.scilla",
                         "line": 45,
                         "column": 13,
                         "node_type": "Location"
@@ -671,7 +668,7 @@
                       "variable": {
                         "loc": {
                           "source_file":
-                            "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                            "examples/restricted_zil_flow_match_statement.scilla",
                           "line": 45,
                           "column": 13,
                           "node_type": "Location"
@@ -684,7 +681,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                        "examples/restricted_zil_flow_match_statement.scilla",
                       "line": 46,
                       "column": 9,
                       "node_type": "Location"
@@ -693,7 +690,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                          "examples/restricted_zil_flow_match_statement.scilla",
                         "line": 46,
                         "column": 13,
                         "node_type": "Location"
@@ -704,7 +701,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                          "examples/restricted_zil_flow_match_statement.scilla",
                         "line": 46,
                         "column": 15,
                         "node_type": "Location"
@@ -730,7 +727,7 @@
                             "value": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                                  "examples/restricted_zil_flow_match_statement.scilla",
                                 "line": 46,
                                 "column": 40,
                                 "node_type": "Location"
@@ -748,7 +745,7 @@
                             "value": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                                  "examples/restricted_zil_flow_match_statement.scilla",
                                 "line": 46,
                                 "column": 59,
                                 "node_type": "Location"
@@ -766,7 +763,7 @@
                             "value": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                                  "examples/restricted_zil_flow_match_statement.scilla",
                                 "line": 46,
                                 "column": 69,
                                 "node_type": "Location"
@@ -782,7 +779,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                        "examples/restricted_zil_flow_match_statement.scilla",
                       "line": 47,
                       "column": 9,
                       "node_type": "Location"
@@ -791,7 +788,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                          "examples/restricted_zil_flow_match_statement.scilla",
                         "line": 47,
                         "column": 14,
                         "node_type": "Location"
@@ -802,7 +799,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                          "examples/restricted_zil_flow_match_statement.scilla",
                         "line": 47,
                         "column": 16,
                         "node_type": "Location"
@@ -811,7 +808,7 @@
                       "lhs": {
                         "loc": {
                           "source_file":
-                            "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                            "examples/restricted_zil_flow_match_statement.scilla",
                           "line": 47,
                           "column": 16,
                           "node_type": "Location"
@@ -823,7 +820,7 @@
                         {
                           "loc": {
                             "source_file":
-                              "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                              "examples/restricted_zil_flow_match_statement.scilla",
                             "line": 47,
                             "column": 24,
                             "node_type": "Location"
@@ -837,7 +834,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                        "examples/restricted_zil_flow_match_statement.scilla",
                       "line": 48,
                       "column": 9,
                       "node_type": "Location"
@@ -845,7 +842,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                          "examples/restricted_zil_flow_match_statement.scilla",
                         "line": 48,
                         "column": 9,
                         "node_type": "Location"
@@ -865,7 +862,7 @@
                       "variable": {
                         "loc": {
                           "source_file":
-                            "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                            "examples/restricted_zil_flow_match_statement.scilla",
                           "line": 44,
                           "column": 12,
                           "node_type": "Location"
@@ -883,7 +880,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                        "examples/restricted_zil_flow_match_statement.scilla",
                       "line": 50,
                       "column": 10,
                       "node_type": "Location"
@@ -892,7 +889,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                          "examples/restricted_zil_flow_match_statement.scilla",
                         "line": 50,
                         "column": 12,
                         "node_type": "Location"
@@ -903,7 +900,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                          "examples/restricted_zil_flow_match_statement.scilla",
                         "line": 50,
                         "column": 14,
                         "node_type": "Location"
@@ -919,7 +916,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                        "examples/restricted_zil_flow_match_statement.scilla",
                       "line": 51,
                       "column": 9,
                       "node_type": "Location"
@@ -928,7 +925,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                          "examples/restricted_zil_flow_match_statement.scilla",
                         "line": 51,
                         "column": 13,
                         "node_type": "Location"
@@ -939,7 +936,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                          "examples/restricted_zil_flow_match_statement.scilla",
                         "line": 51,
                         "column": 15,
                         "node_type": "Location"
@@ -965,7 +962,7 @@
                             "value": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                                  "examples/restricted_zil_flow_match_statement.scilla",
                                 "line": 51,
                                 "column": 40,
                                 "node_type": "Location"
@@ -983,7 +980,7 @@
                             "value": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                                  "examples/restricted_zil_flow_match_statement.scilla",
                                 "line": 51,
                                 "column": 59,
                                 "node_type": "Location"
@@ -1001,7 +998,7 @@
                             "value": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                                  "examples/restricted_zil_flow_match_statement.scilla",
                                 "line": 51,
                                 "column": 69,
                                 "node_type": "Location"
@@ -1017,7 +1014,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                        "examples/restricted_zil_flow_match_statement.scilla",
                       "line": 52,
                       "column": 9,
                       "node_type": "Location"
@@ -1026,7 +1023,7 @@
                     "lhs": {
                       "loc": {
                         "source_file":
-                          "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                          "examples/restricted_zil_flow_match_statement.scilla",
                         "line": 52,
                         "column": 14,
                         "node_type": "Location"
@@ -1037,7 +1034,7 @@
                     "rhs_expr": {
                       "loc": {
                         "source_file":
-                          "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                          "examples/restricted_zil_flow_match_statement.scilla",
                         "line": 52,
                         "column": 16,
                         "node_type": "Location"
@@ -1046,7 +1043,7 @@
                       "lhs": {
                         "loc": {
                           "source_file":
-                            "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                            "examples/restricted_zil_flow_match_statement.scilla",
                           "line": 52,
                           "column": 16,
                           "node_type": "Location"
@@ -1058,7 +1055,7 @@
                         {
                           "loc": {
                             "source_file":
-                              "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                              "examples/restricted_zil_flow_match_statement.scilla",
                             "line": 52,
                             "column": 24,
                             "node_type": "Location"
@@ -1072,7 +1069,7 @@
                   {
                     "loc": {
                       "source_file":
-                        "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                        "examples/restricted_zil_flow_match_statement.scilla",
                       "line": 53,
                       "column": 9,
                       "node_type": "Location"
@@ -1080,7 +1077,7 @@
                     "arg": {
                       "loc": {
                         "source_file":
-                          "../scilla_static/examples/restricted_zil_flow_match_statement.scilla",
+                          "examples/restricted_zil_flow_match_statement.scilla",
                         "line": 53,
                         "column": 9,
                         "node_type": "Location"

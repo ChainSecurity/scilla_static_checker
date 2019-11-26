@@ -2,7 +2,7 @@
   "scilla_major_version": 0,
   "name": {
     "loc": {
-      "source_file": "../scilla_static/examples/save_with_load_stored.scilla",
+      "source_file": "examples/save_with_load_stored.scilla",
       "line": 5,
       "column": 10,
       "node_type": "Location"
@@ -15,8 +15,7 @@
   "contract": {
     "name": {
       "loc": {
-        "source_file":
-          "../scilla_static/examples/save_with_load_stored.scilla",
+        "source_file": "examples/save_with_load_stored.scilla",
         "line": 5,
         "column": 10,
         "node_type": "Location"
@@ -29,8 +28,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file":
-              "../scilla_static/examples/save_with_load_stored.scilla",
+            "source_file": "examples/save_with_load_stored.scilla",
             "line": 10,
             "column": 7,
             "node_type": "Location"
@@ -41,8 +39,7 @@
         "field_type": { "node_type": "PrimType", "name": "Uint128" },
         "expression": {
           "loc": {
-            "source_file":
-              "../scilla_static/examples/save_with_load_stored.scilla",
+            "source_file": "examples/save_with_load_stored.scilla",
             "line": 10,
             "column": 22,
             "node_type": "Location"
@@ -55,8 +52,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file":
-              "../scilla_static/examples/save_with_load_stored.scilla",
+            "source_file": "examples/save_with_load_stored.scilla",
             "line": 11,
             "column": 7,
             "node_type": "Location"
@@ -67,8 +63,7 @@
         "field_type": { "node_type": "PrimType", "name": "Uint128" },
         "expression": {
           "loc": {
-            "source_file":
-              "../scilla_static/examples/save_with_load_stored.scilla",
+            "source_file": "examples/save_with_load_stored.scilla",
             "line": 11,
             "column": 22,
             "node_type": "Location"
@@ -85,8 +80,7 @@
         "component_type": "transition",
         "name": {
           "loc": {
-            "source_file":
-              "../scilla_static/examples/save_with_load_stored.scilla",
+            "source_file": "examples/save_with_load_stored.scilla",
             "line": 12,
             "column": 12,
             "node_type": "Location"
@@ -97,8 +91,7 @@
         "body": [
           {
             "loc": {
-              "source_file":
-                "../scilla_static/examples/save_with_load_stored.scilla",
+              "source_file": "examples/save_with_load_stored.scilla",
               "line": 13,
               "column": 5,
               "node_type": "Location"
@@ -106,8 +99,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/save_with_load_stored.scilla",
+                "source_file": "examples/save_with_load_stored.scilla",
                 "line": 13,
                 "column": 10,
                 "node_type": "Location"
@@ -117,8 +109,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/save_with_load_stored.scilla",
+                "source_file": "examples/save_with_load_stored.scilla",
                 "line": 13,
                 "column": 12,
                 "node_type": "Location"
@@ -133,16 +124,14 @@
           },
           {
             "loc": {
-              "source_file":
-                "../scilla_static/examples/save_with_load_stored.scilla",
+              "source_file": "examples/save_with_load_stored.scilla",
               "line": 14,
               "column": 5,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/save_with_load_stored.scilla",
+                "source_file": "examples/save_with_load_stored.scilla",
                 "line": 14,
                 "column": 11,
                 "node_type": "Location"
@@ -152,8 +141,7 @@
             },
             "rhs": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/save_with_load_stored.scilla",
+                "source_file": "examples/save_with_load_stored.scilla",
                 "line": 14,
                 "column": 14,
                 "node_type": "Location"
@@ -165,16 +153,14 @@
           },
           {
             "loc": {
-              "source_file":
-                "../scilla_static/examples/save_with_load_stored.scilla",
+              "source_file": "examples/save_with_load_stored.scilla",
               "line": 15,
               "column": 5,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/save_with_load_stored.scilla",
+                "source_file": "examples/save_with_load_stored.scilla",
                 "line": 15,
                 "column": 7,
                 "node_type": "Location"
@@ -184,8 +170,7 @@
             },
             "rhs": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/save_with_load_stored.scilla",
+                "source_file": "examples/save_with_load_stored.scilla",
                 "line": 15,
                 "column": 10,
                 "node_type": "Location"
@@ -197,16 +182,14 @@
           },
           {
             "loc": {
-              "source_file":
-                "../scilla_static/examples/save_with_load_stored.scilla",
+              "source_file": "examples/save_with_load_stored.scilla",
               "line": 16,
               "column": 5,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/save_with_load_stored.scilla",
+                "source_file": "examples/save_with_load_stored.scilla",
                 "line": 16,
                 "column": 7,
                 "node_type": "Location"
@@ -216,8 +199,7 @@
             },
             "rhs": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/save_with_load_stored.scilla",
+                "source_file": "examples/save_with_load_stored.scilla",
                 "line": 16,
                 "column": 10,
                 "node_type": "Location"

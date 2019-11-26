@@ -2,7 +2,7 @@
   "scilla_major_version": 0,
   "name": {
     "loc": {
-      "source_file": "../scilla_static/examples/let.scilla",
+      "source_file": "examples/let.scilla",
       "line": 19,
       "column": 10,
       "node_type": "Location"
@@ -13,7 +13,7 @@
   "library": {
     "library_name": {
       "loc": {
-        "source_file": "../scilla_static/examples/let.scilla",
+        "source_file": "examples/let.scilla",
         "line": 8,
         "column": 1,
         "node_type": "Location"
@@ -26,7 +26,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/let.scilla",
+            "source_file": "examples/let.scilla",
             "line": 10,
             "column": 5,
             "node_type": "Location"
@@ -37,7 +37,7 @@
         "variable_type": { "node_type": "PrimType", "name": "Uint32" },
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/let.scilla",
+            "source_file": "examples/let.scilla",
             "line": 10,
             "column": 20,
             "node_type": "Location"
@@ -50,7 +50,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/let.scilla",
+            "source_file": "examples/let.scilla",
             "line": 11,
             "column": 5,
             "node_type": "Location"
@@ -61,7 +61,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/let.scilla",
+            "source_file": "examples/let.scilla",
             "line": 11,
             "column": 13,
             "node_type": "Location"
@@ -74,7 +74,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/let.scilla",
+            "source_file": "examples/let.scilla",
             "line": 12,
             "column": 5,
             "node_type": "Location"
@@ -85,7 +85,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/let.scilla",
+            "source_file": "examples/let.scilla",
             "line": 12,
             "column": 14,
             "node_type": "Location"
@@ -98,7 +98,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/let.scilla",
+            "source_file": "examples/let.scilla",
             "line": 13,
             "column": 5,
             "node_type": "Location"
@@ -109,7 +109,7 @@
         "variable_type": { "node_type": "PrimType", "name": "Uint32" },
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/let.scilla",
+            "source_file": "examples/let.scilla",
             "line": 13,
             "column": 24,
             "node_type": "Location"
@@ -117,7 +117,7 @@
           "node_type": "LetExpression",
           "variable": {
             "loc": {
-              "source_file": "../scilla_static/examples/let.scilla",
+              "source_file": "examples/let.scilla",
               "line": 13,
               "column": 24,
               "node_type": "Location"
@@ -128,7 +128,7 @@
           "variable_type": { "node_type": "PrimType", "name": "Uint32" },
           "expression": {
             "loc": {
-              "source_file": "../scilla_static/examples/let.scilla",
+              "source_file": "examples/let.scilla",
               "line": 13,
               "column": 47,
               "node_type": "Location"
@@ -142,7 +142,7 @@
           },
           "body": {
             "loc": {
-              "source_file": "../scilla_static/examples/let.scilla",
+              "source_file": "examples/let.scilla",
               "line": 13,
               "column": 59,
               "node_type": "Location"
@@ -150,7 +150,7 @@
             "node_type": "VarExpression",
             "variable": {
               "loc": {
-                "source_file": "../scilla_static/examples/let.scilla",
+                "source_file": "examples/let.scilla",
                 "line": 13,
                 "column": 59,
                 "node_type": "Location"
@@ -168,7 +168,7 @@
   "contract": {
     "name": {
       "loc": {
-        "source_file": "../scilla_static/examples/let.scilla",
+        "source_file": "examples/let.scilla",
         "line": 19,
         "column": 10,
         "node_type": "Location"
@@ -180,7 +180,7 @@
       {
         "parameter_name": {
           "loc": {
-            "source_file": "../scilla_static/examples/let.scilla",
+            "source_file": "examples/let.scilla",
             "line": 20,
             "column": 2,
             "node_type": "Location"
@@ -194,7 +194,7 @@
       {
         "parameter_name": {
           "loc": {
-            "source_file": "../scilla_static/examples/let.scilla",
+            "source_file": "examples/let.scilla",
             "line": 20,
             "column": 19,
             "node_type": "Location"
@@ -210,7 +210,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "../scilla_static/examples/let.scilla",
+            "source_file": "examples/let.scilla",
             "line": 24,
             "column": 7,
             "node_type": "Location"
@@ -225,7 +225,7 @@
         },
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/let.scilla",
+            "source_file": "examples/let.scilla",
             "line": 24,
             "column": 40,
             "node_type": "Location"
@@ -243,7 +243,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "../scilla_static/examples/let.scilla",
+            "source_file": "examples/let.scilla",
             "line": 27,
             "column": 7,
             "node_type": "Location"
@@ -254,7 +254,7 @@
         "field_type": { "node_type": "PrimType", "name": "Uint64" },
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/let.scilla",
+            "source_file": "examples/let.scilla",
             "line": 27,
             "column": 20,
             "node_type": "Location"
@@ -263,7 +263,7 @@
           "arguments": [
             {
               "loc": {
-                "source_file": "../scilla_static/examples/let.scilla",
+                "source_file": "examples/let.scilla",
                 "line": 27,
                 "column": 32,
                 "node_type": "Location"
@@ -273,7 +273,7 @@
             },
             {
               "loc": {
-                "source_file": "../scilla_static/examples/let.scilla",
+                "source_file": "examples/let.scilla",
                 "line": 27,
                 "column": 34,
                 "node_type": "Location"
@@ -284,7 +284,7 @@
           ],
           "builtin_function": {
             "loc": {
-              "source_file": "../scilla_static/examples/let.scilla",
+              "source_file": "examples/let.scilla",
               "line": 27,
               "column": 28,
               "node_type": "Location"
@@ -302,7 +302,7 @@
         "component_type": "transition",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/let.scilla",
+            "source_file": "examples/let.scilla",
             "line": 30,
             "column": 12,
             "node_type": "Location"
@@ -313,7 +313,7 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_static/examples/let.scilla",
+              "source_file": "examples/let.scilla",
               "line": 31,
               "column": 5,
               "node_type": "Location"
@@ -321,7 +321,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_static/examples/let.scilla",
+                "source_file": "examples/let.scilla",
                 "line": 31,
                 "column": 9,
                 "node_type": "Location"
@@ -331,7 +331,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_static/examples/let.scilla",
+                "source_file": "examples/let.scilla",
                 "line": 31,
                 "column": 11,
                 "node_type": "Location"
@@ -346,14 +346,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_static/examples/let.scilla",
+              "source_file": "examples/let.scilla",
               "line": 32,
               "column": 5,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file": "../scilla_static/examples/let.scilla",
+                "source_file": "examples/let.scilla",
                 "line": 32,
                 "column": 11,
                 "node_type": "Location"
@@ -363,7 +363,7 @@
             },
             "rhs": {
               "loc": {
-                "source_file": "../scilla_static/examples/let.scilla",
+                "source_file": "examples/let.scilla",
                 "line": 32,
                 "column": 14,
                 "node_type": "Location"
@@ -375,7 +375,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_static/examples/let.scilla",
+              "source_file": "examples/let.scilla",
               "line": 33,
               "column": 5,
               "node_type": "Location"
@@ -383,7 +383,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_static/examples/let.scilla",
+                "source_file": "examples/let.scilla",
                 "line": 33,
                 "column": 10,
                 "node_type": "Location"
@@ -393,7 +393,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_static/examples/let.scilla",
+                "source_file": "examples/let.scilla",
                 "line": 33,
                 "column": 12,
                 "node_type": "Location"
@@ -402,7 +402,7 @@
               "arguments": [
                 {
                   "loc": {
-                    "source_file": "../scilla_static/examples/let.scilla",
+                    "source_file": "examples/let.scilla",
                     "line": 33,
                     "column": 24,
                     "node_type": "Location"
@@ -412,7 +412,7 @@
                 },
                 {
                   "loc": {
-                    "source_file": "../scilla_static/examples/let.scilla",
+                    "source_file": "examples/let.scilla",
                     "line": 33,
                     "column": 30,
                     "node_type": "Location"
@@ -423,7 +423,7 @@
               ],
               "builtin_function": {
                 "loc": {
-                  "source_file": "../scilla_static/examples/let.scilla",
+                  "source_file": "examples/let.scilla",
                   "line": 33,
                   "column": 20,
                   "node_type": "Location"
@@ -435,14 +435,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_static/examples/let.scilla",
+              "source_file": "examples/let.scilla",
               "line": 34,
               "column": 5,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file": "../scilla_static/examples/let.scilla",
+                "source_file": "examples/let.scilla",
                 "line": 34,
                 "column": 7,
                 "node_type": "Location"
@@ -452,7 +452,7 @@
             },
             "rhs": {
               "loc": {
-                "source_file": "../scilla_static/examples/let.scilla",
+                "source_file": "examples/let.scilla",
                 "line": 34,
                 "column": 10,
                 "node_type": "Location"
