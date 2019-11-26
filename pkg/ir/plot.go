@@ -92,7 +92,7 @@ func dotWalkJump(b *dotBuilder, jump Jump) graph.Node {
 	switch j := jump.(type) {
 	case *CallProc:
 		m := dotNode{
-			b.getNodeId(),
+			j.ID(),
 			"CallProc",
 			[]string{"To"},
 			map[string][]string{},
@@ -123,7 +123,7 @@ func dotWalkJump(b *dotBuilder, jump Jump) graph.Node {
 		return &m
 	case *PickProc:
 		m := dotNode{
-			b.getNodeId(),
+			j.ID(),
 			"PickProc",
 			[]string{"From"},
 			map[string][]string{},
@@ -158,7 +158,7 @@ func dotWalkJump(b *dotBuilder, jump Jump) graph.Node {
 
 func dotWalkProcCase(b *dotBuilder, pc ProcCase) graph.Node {
 	m := dotNode{
-		b.getNodeId(),
+		pc.ID(),
 		"ProcCase",
 		[]string{"Bind", "Body"},
 		map[string][]string{},
@@ -196,7 +196,7 @@ func dotWalkUnit(b *dotBuilder, u Unit) graph.Node {
 	case *Load:
 		slot_field := fmt.Sprintf("Slot: %s", x.Slot)
 		m := dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"Load",
 			[]string{slot_field},
 			map[string][]string{},
@@ -217,7 +217,7 @@ func dotWalkUnit(b *dotBuilder, u Unit) graph.Node {
 	case *Save:
 		slot_field := fmt.Sprintf("Slot: %s", x.Slot)
 		m := dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"Save",
 			[]string{slot_field, "Data"},
 			map[string][]string{},
@@ -243,7 +243,7 @@ func dotWalkUnit(b *dotBuilder, u Unit) graph.Node {
 		b.nodes = append(b.nodes, n)
 	case *Event:
 		m := dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"Event",
 			[]string{"Data"},
 			map[string][]string{},
@@ -258,7 +258,7 @@ func dotWalkUnit(b *dotBuilder, u Unit) graph.Node {
 		b.nodes = append(b.nodes, n)
 	case *Send:
 		m := dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"Send",
 			[]string{"Data"},
 			map[string][]string{},
@@ -273,7 +273,7 @@ func dotWalkUnit(b *dotBuilder, u Unit) graph.Node {
 		b.nodes = append(b.nodes, n)
 	case *Accept:
 		n = &dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"Accept",
 			[]string{},
 			map[string][]string{},
@@ -323,7 +323,7 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 			keys = append(keys, k)
 		}
 		n = &dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"EnumType",
 			keys,
 			map[string][]string{},
@@ -343,7 +343,7 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 		}
 	case *IntType:
 		n = &dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"IntType",
 			[]string{fmt.Sprintf("Size: %d", x.Size)},
 			map[string][]string{},
@@ -351,7 +351,7 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 		b.nodes = append(b.nodes, n)
 	case *RawType:
 		n = &dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"RawType",
 			[]string{fmt.Sprintf("Size: %d", x.Size)},
 			map[string][]string{},
@@ -359,7 +359,7 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 		b.nodes = append(b.nodes, n)
 	case *NatType:
 		n = &dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"NatType",
 			[]string{fmt.Sprintf("Size: %d", x.Size)},
 			map[string][]string{},
@@ -367,7 +367,7 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 		b.nodes = append(b.nodes, n)
 	case *MapType:
 		n = &dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"MapType",
 			[]string{"KeyType", "ValType"},
 			map[string][]string{},
@@ -390,7 +390,7 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 	case *AbsTT:
 
 		m := dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"AbsTT",
 			[]string{"Term"},
 			map[string][]string{},
@@ -419,7 +419,7 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 	case *AppTT:
 
 		m := dotNode{
-			b.getNodeId(),
+			x.ID(),
 			fmt.Sprintf("AppTT %p", x),
 			[]string{"To"},
 			map[string][]string{},
@@ -447,7 +447,7 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 		n = &m
 	case *TypeVar:
 		n = &dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"TypeVar",
 			[]string{"Kind"},
 			map[string][]string{},
@@ -462,7 +462,7 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 		b.edges = append(b.edges, e)
 	case *StrType:
 		n = &dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"StrType",
 			[]string{},
 			map[string][]string{},
@@ -470,7 +470,7 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 		b.nodes = append(b.nodes, n)
 	case *MsgType:
 		n = &dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"MsgType",
 			[]string{},
 			map[string][]string{},
@@ -478,7 +478,7 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 		b.nodes = append(b.nodes, n)
 	default:
 		n = &dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"NIL",
 			[]string{},
 			map[string][]string{},
@@ -499,7 +499,7 @@ func dotWalkKind(b *dotBuilder, k Kind) graph.Node {
 		return n
 	}
 	n = &dotNode{
-		b.getNodeId(),
+		k.ID(),
 		"Kind",
 		[]string{},
 		map[string][]string{},
@@ -511,7 +511,7 @@ func dotWalkKind(b *dotBuilder, k Kind) graph.Node {
 
 func dotWalkCond(b *dotBuilder, w *Cond) graph.Node {
 	n := dotNode{
-		b.getNodeId(),
+		w.ID(),
 		"Cond",
 		[]string{"Data", fmt.Sprintf("Case: %s", w.Case)},
 		map[string][]string{},
@@ -533,7 +533,7 @@ func dotWalkCond(b *dotBuilder, w *Cond) graph.Node {
 
 func dotWalkDataCase(b *dotBuilder, d *DataCase) graph.Node {
 	n := dotNode{
-		b.getNodeId(),
+		d.ID(),
 		"DataCase",
 		[]string{"Bind", "Body"},
 		map[string][]string{},
@@ -562,7 +562,7 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 	switch x := d.(type) {
 	case *DataVar:
 		n = &dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"DataVar",
 			[]string{"DataType"},
 			map[string][]string{},
@@ -577,7 +577,7 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 		b.edges = append(b.edges, &e)
 	case *PickData:
 		n = &dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"PickData",
 			[]string{"From", "With"},
 			map[string][]string{},
@@ -601,7 +601,7 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 		b.edges = append(b.edges, &e)
 	case *Int:
 		n = &dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"Int",
 			[]string{"IntType", fmt.Sprintf("Data: %s", x.Data)},
 			map[string][]string{},
@@ -616,7 +616,7 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 		b.edges = append(b.edges, &e)
 	case *Nat:
 		n = &dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"Nat",
 			[]string{"NatType", fmt.Sprintf("Data: %s", x.Data)},
 			map[string][]string{},
@@ -631,7 +631,7 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 		b.edges = append(b.edges, &e)
 	case *Map:
 		n = &dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"Map",
 			[]string{"MapType", fmt.Sprintf("Data: %s", x.Data)},
 			map[string][]string{},
@@ -647,7 +647,7 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 	case *AbsTD:
 
 		m := dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"AbsTD",
 			[]string{"Term"},
 			map[string][]string{},
@@ -677,7 +677,7 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 
 	case *AbsDD:
 		m := dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"AbsDD",
 			[]string{"Term"},
 			map[string][]string{},
@@ -705,7 +705,7 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 		b.nodes = append(b.nodes, n)
 	case *AppTD:
 		m := dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"AppTD",
 			[]string{"To"},
 			map[string][]string{},
@@ -734,7 +734,7 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 		n = &m
 	case *AppDD:
 		m := dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"AppDD",
 			[]string{"To"},
 			map[string][]string{},
@@ -762,7 +762,7 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 		n = &m
 	case *Builtin:
 		n = &dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"Builtin",
 			[]string{"BuiltinType"},
 			map[string][]string{},
@@ -779,7 +779,7 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 	case *Proc:
 
 		m := dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"Proc",
 			[]string{"Jump"},
 			map[string][]string{},
@@ -827,7 +827,7 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 		n = dotWalkUnit(b, x)
 	case *Msg:
 		m := dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"Msg",
 			[]string{"MsgType"},
 			map[string][]string{},
@@ -860,7 +860,7 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 		n = &m
 	case *Enum:
 		m := dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"Enum",
 			[]string{"EnumType", fmt.Sprintf("Case: %s", x.Case)},
 			map[string][]string{},
@@ -889,7 +889,7 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 		n = &m
 	case *Str:
 		m := dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"Str",
 			[]string{"StrType", fmt.Sprintf("Data: %s", x.Data)},
 			map[string][]string{},
@@ -908,7 +908,7 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 	case *Bind:
 
 		n = dotNode{
-			b.getNodeId(),
+			x.ID(),
 			"Bind",
 			[]string{"BindType", "Cond"},
 			map[string][]string{},
@@ -940,12 +940,6 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 
 	b.dataCache[d] = n
 	return n
-}
-
-func (b *dotBuilder) getNodeId() int64 {
-	id := b.nodeCounter
-	b.nodeCounter++
-	return id
 }
 
 func (b *dotBuilder) getEdgeId() int64 {
