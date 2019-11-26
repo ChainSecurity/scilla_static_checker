@@ -25,9 +25,10 @@ type FactsDumper struct {
 	appDDFacts      []string
 	appTDFacts      []string
 	appTTFacts      []string
-	argumentsFacts  []string
+	argumentFacts   []string
 	absDDFacts      []string
 	msgFacts        []string
+	msgTypeFacts    []string
 	msgDataFacts    []string
 	strFacts        []string
 	pickDataFacts   []string
@@ -100,28 +101,28 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 	case *AppDD:
 		for i, u := range n.Args {
 			argFact := fmt.Sprintf("%d\t%d\t%d", n.ID(), u.ID(), i)
-			fd.argumentsFacts = append(fd.argumentsFacts, argFact)
+			fd.argumentFacts = append(fd.argumentFacts, argFact)
 		}
 		fact := fmt.Sprintf("%d\t%d", n.ID(), n.To.ID())
 		fd.appDDFacts = append(fd.appDDFacts, fact)
 	case *AppTD:
 		for i, u := range n.Args {
 			argFact := fmt.Sprintf("%d\t%d\t%d", n.ID(), u.ID(), i)
-			fd.argumentsFacts = append(fd.argumentsFacts, argFact)
+			fd.argumentFacts = append(fd.argumentFacts, argFact)
 		}
 		fact := fmt.Sprintf("%d\t%d", n.ID(), n.To.ID())
 		fd.appTDFacts = append(fd.appTDFacts, fact)
 	case *AppTT:
 		for i, u := range n.Args {
 			argFact := fmt.Sprintf("%d\t%d\t%d", n.ID(), u.ID(), i)
-			fd.argumentsFacts = append(fd.argumentsFacts, argFact)
+			fd.argumentFacts = append(fd.argumentFacts, argFact)
 		}
 		fact := fmt.Sprintf("%d\t%d", n.ID(), n.To.ID())
 		fd.appTTFacts = append(fd.appTTFacts, fact)
 	case *AbsDD:
 		for i, u := range n.Vars {
 			argFact := fmt.Sprintf("%d\t%d\t%d", n.ID(), u.ID(), i)
-			fd.argumentsFacts = append(fd.argumentsFacts, argFact)
+			fd.argumentFacts = append(fd.argumentFacts, argFact)
 		}
 		fact := fmt.Sprintf("%d\t%d", n.ID(), n.Term.ID())
 		fd.absDDFacts = append(fd.absDDFacts, fact)
@@ -130,8 +131,11 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 			fact := fmt.Sprintf("%d\t%d\t%s", n.ID(), v.ID(), k)
 			fd.msgDataFacts = append(fd.msgDataFacts, fact)
 		}
-		fact := fmt.Sprintf("%d", n.ID())
+		fact := fmt.Sprintf("%d\t%d", n.ID(), n.MsgType.ID())
 		fd.msgFacts = append(fd.msgFacts, fact)
+	case *MsgType:
+		fact := fmt.Sprintf("%d", n.ID())
+		fd.msgTypeFacts = append(fd.msgTypeFacts, fact)
 	case *Str:
 		fact := fmt.Sprintf("%d\t%s", n.ID(), n.Data)
 		fd.strFacts = append(fd.strFacts, fact)
@@ -140,7 +144,7 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 		fd.pickDataFacts = append(fd.pickDataFacts, fact)
 		for i, u := range n.With {
 			argFact := fmt.Sprintf("%d\t%d\t%d", n.ID(), u.ID(), i)
-			fd.argumentsFacts = append(fd.argumentsFacts, argFact)
+			fd.argumentFacts = append(fd.argumentFacts, argFact)
 		}
 
 	//case *PickProc:
@@ -201,42 +205,42 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 
 func DumpFacts(builder *CFGBuilder) {
 	fd := FactsDumper{
-		visited:        map[Node]bool{},
-		idToPrefixID:   map[uint64]string{},
-		procFacts:      []string{},
-		dataVarFacts:   []string{},
-		unitFacts:      []string{},
-		planFacts:      []string{},
-		sendFacts:      []string{},
-		acceptFacts:    []string{},
-		saveFacts:      []string{},
-		loadFacts:      []string{},
-		appDDFacts:     []string{},
-		appTDFacts:     []string{},
-		appTTFacts:     []string{},
-		argumentsFacts: []string{},
-		absDDFacts:     []string{},
-		msgFacts:       []string{},
-		msgDataFacts:   []string{},
-		strFacts:       []string{},
-		callProcFacts:  []string{},
-		pickProcFacts:  []string{},
-		pickDataFacts:  []string{},
-		dataCaseFacts:  []string{},
-		procCaseFacts:  []string{},
-		natFacts:       []string{},
-		natTypeFacts:   []string{},
-		intFacts:       []string{},
-		intTypeFacts:   []string{},
-		rawFacts:       []string{},
-		rawTypeFacts:   []string{},
-		bindFacts:      []string{},
-		condFacts:      []string{},
-		condBindFacts:  []string{},
-		typeVarFacts:   []string{},
-		enumFacts:      []string{},
-		enumTypeFacts:  []string{},
-		Facts:          []string{},
+		visited:       map[Node]bool{},
+		idToPrefixID:  map[uint64]string{},
+		procFacts:     []string{},
+		dataVarFacts:  []string{},
+		unitFacts:     []string{},
+		planFacts:     []string{},
+		sendFacts:     []string{},
+		acceptFacts:   []string{},
+		saveFacts:     []string{},
+		loadFacts:     []string{},
+		appDDFacts:    []string{},
+		appTDFacts:    []string{},
+		appTTFacts:    []string{},
+		argumentFacts: []string{},
+		absDDFacts:    []string{},
+		msgFacts:      []string{},
+		msgDataFacts:  []string{},
+		strFacts:      []string{},
+		callProcFacts: []string{},
+		pickProcFacts: []string{},
+		pickDataFacts: []string{},
+		dataCaseFacts: []string{},
+		procCaseFacts: []string{},
+		natFacts:      []string{},
+		natTypeFacts:  []string{},
+		intFacts:      []string{},
+		intTypeFacts:  []string{},
+		rawFacts:      []string{},
+		rawTypeFacts:  []string{},
+		bindFacts:     []string{},
+		condFacts:     []string{},
+		condBindFacts: []string{},
+		typeVarFacts:  []string{},
+		enumFacts:     []string{},
+		enumTypeFacts: []string{},
+		Facts:         []string{},
 	}
 	for tName, t := range builder.Transitions {
 		fmt.Println("Transition", tName)
@@ -265,7 +269,7 @@ func DumpFacts(builder *CFGBuilder) {
 		"appDD":      fd.appDDFacts,
 		"appTD":      fd.appTDFacts,
 		"appTT":      fd.appTTFacts,
-		"arguments":  fd.argumentsFacts,
+		"argument":   fd.argumentFacts,
 		"absDD":      fd.absDDFacts,
 		"msg":        fd.msgFacts,
 		"msgData":    fd.msgDataFacts,
