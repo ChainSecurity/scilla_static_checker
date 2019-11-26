@@ -24,25 +24,34 @@ dependsOn(dependent, independent) :- dependsOnStep(dependent, intermediate), dep
 
 .output dependsOn
 
-.decl unit(unit_id: Unit)
-unit(unit_id) :- 
+
+// Maybe this should be produced straight from the go implementation
+.decl unit(unitId: Unit)
+unit(unitId) :- 
     (
-        msg(unit_id, _);
-        send(unit_id, _);
-        send(unit_id, _);
-        load(unit_id, _);
-        appDD(unit_id, _);
-        appTD(unit_id, _);
-        appTT(unit_id, _);
-        argument(unit_id, _, _);
-        absDD(unit_id, _);
-        msgData(unit_id, _, _);
-        str(unit_id, _, _);
-        pickData(unit_id, _, _);
-        dataCase(unit_id, _, _, _);
-        nat(unit_id, _, _);
-        bind(unit_id, _, _);
-        cond(unit_id, _);
-        condBind(unit_id, _, _);
-        accept(unit_id)
+        msg(unitId, _);
+        send(unitId, _);
+        send(unitId, _);
+        load(unitId, _);
+        appDD(unitId, _);
+        appTD(unitId, _);
+        appTT(unitId, _);
+        argument(unitId, _, _);
+        absDD(unitId, _);
+        msgData(unitId, _, _);
+        str(unitId, _, _);
+        pickData(unitId, _, _);
+        dataCase(unitId, _, _, _);
+        nat(unitId, _, _);
+        bind(unitId, _, _);
+        cond(unitId, _);
+        condBind(unitId, _, _);
+        accept(unitId);
+        save(unitId, _, _)
     ).
+
+.decl followsPlan(nextPlan: Plan, previousPlan: Plan)
+followsPlan(nextPlan, previousPlan) :-
+    plan(procId, _, nextIndex),
+    plan(procId, _, previousIndex),
+    nextIndex > previousIndex.

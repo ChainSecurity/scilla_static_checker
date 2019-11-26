@@ -3,7 +3,7 @@
 .symbol_type Proc
 .symbol_type Plan
 
-.decl plan(plan_id: Plan, proc_id: Proc, unit_id: Unit)
+.decl plan(proc_id: Proc, unit_id: Unit, index: number)
 .decl msg(unit_id: Unit, unit_type: Type)
 .decl send(unit_id: Unit, data: Unit)
 .decl load(unit_id: Unit, slot : symbol)
@@ -25,6 +25,7 @@
 .decl enum(enum_id: Unit, enum_type: Type, case: symbol)
 .decl accept(unit_id: Unit)
 .decl msgType(unit_id: Type)
+.decl save(unit_id: Unit, slot: symbol, data: Unit)
 
 .input plan
 .input msg
@@ -48,3 +49,4 @@
 .input enum
 .input accept
 .input msgType
+.input save
