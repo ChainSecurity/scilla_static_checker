@@ -2,7 +2,8 @@
 // accept_payment_and_send.json :locked-zilliq:False
 // accept_payment.json :locked-zilliq:True
 
-// Locked Zilliq where there's accept and send or all sends contain zero values
+// Locked Zilliq where there's accept and send or all sends contain zero values 
+// (there are no nonZeroValues sent)
 .decl lockedZilliq()
 lockedZilliq() :- 
     accept(_),
