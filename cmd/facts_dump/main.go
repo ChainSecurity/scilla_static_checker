@@ -37,7 +37,7 @@ func main() {
 	}
 
 	analysisFolder := "./souffle_analysis"
-	factsInFolder := path.Join(analysisFolder, "facts_int")
+	factsInFolder := path.Join(analysisFolder, "facts_in")
 
 	err = makeCleanFolder(factsInFolder)
 	if err != nil {

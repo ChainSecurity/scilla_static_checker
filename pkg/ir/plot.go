@@ -476,9 +476,17 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 			map[string][]string{},
 		}
 		b.nodes = append(b.nodes, n)
-	default:
+	case *BnrType:
 		n = &dotNode{
 			x.ID(),
+			"BnrType",
+			[]string{},
+			map[string][]string{},
+		}
+		b.nodes = append(b.nodes, n)
+	default:
+		n = &dotNode{
+			-1,
 			"NIL",
 			[]string{},
 			map[string][]string{},

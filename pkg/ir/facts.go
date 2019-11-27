@@ -55,6 +55,7 @@ type FactsDumper struct {
 	setKindFacts     []string
 	mapTypeFacts     []string
 	builtinFacts     []string
+	bnrTypeFacts     []string
 }
 
 func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
@@ -244,6 +245,9 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 	case *Builtin:
 		fact := fmt.Sprintf("%d\t%d", n.ID(), n.BuiltinType.ID())
 		fd.builtinFacts = append(fd.builtinFacts, fact)
+	case *BnrType:
+		fact := fmt.Sprintf("%d", n.ID())
+		fd.bnrTypeFacts = append(fd.bnrTypeFacts, fact)
 	case *EnumType:
 		fact := fmt.Sprintf("%d", n.ID())
 		fd.enumTypeFacts = append(fd.enumTypeFacts, fact)
@@ -311,6 +315,7 @@ func DumpFacts(builder *CFGBuilder, factsInFolder string) {
 		enumTypeFacts:    []string{},
 		setKindFacts:     []string{},
 		builtinFacts:     []string{},
+		bnrTypeFacts:     []string{},
 	}
 	for tName, t := range builder.Transitions {
 		fmt.Println("Transition", tName)
@@ -366,6 +371,8 @@ func DumpFacts(builder *CFGBuilder, factsInFolder string) {
 		"enumType":    fd.enumTypeFacts,
 		"setKind":     fd.setKindFacts,
 		"mapType":     fd.mapTypeFacts,
+		"builtin":     fd.builtinFacts,
+		"bnrType":     fd.bnrTypeFacts,
 	}
 
 	for fileName, lines := range fileToFacts {

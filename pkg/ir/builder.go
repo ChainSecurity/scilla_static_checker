@@ -483,6 +483,17 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) *Proc {
 			Path:   path,
 			Data:   data,
 		}
+	case *ast.ReadFromBCStatement:
+		switch n.RhsStr {
+		case "BLOCKNUMBER":
+			bn := Builtin{
+				IDNode:      builder.newIDNode(),
+				BuiltinType: builder.primitiveTypeMap["BNum"],
+			}
+			stackMapPush(builder.varStack, n.Lhs.Id, &bn)
+		default:
+			panic(errors.New(fmt.Sprintf("Unhandled ReadFromBCStatement: %s", n.RhsStr)))
+		}
 
 	default:
 		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
@@ -616,11 +627,11 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		op := builder.getBuiltinOp(opName, varTypes)
 		switch op := op.(type) {
 		case *AbsTD:
-			if len(op.Vars) != len(vars) {
-				panic(errors.New(fmt.Sprintf("Wrong number of Builtin AbsTD args")))
-			}
-			types := make([]Type, len(vars))
-			for i, _ := range vars {
+			fmt.Println(op.Vars, vars, opName)
+			fmt.Println(len(op.Vars), len(vars))
+
+			types := make([]Type, len(op.Vars))
+			for i, _ := range op.Vars {
 				types[i] = builder.TypeOf(vars[i])
 			}
 			appTD := &AppTD{
@@ -1010,7 +1021,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	builder.primitiveTypeMap["ByStr33"] = &RawType{builder.newIDNode(), 33}
 	builder.primitiveTypeMap["ByStr64"] = &RawType{builder.newIDNode(), 64}
 	builder.primitiveTypeMap["ByStr20"] = &RawType{builder.newIDNode(), 20}
-	builder.primitiveTypeMap["BNum"] = &BnrType{}
+	builder.primitiveTypeMap["BNum"] = &BnrType{builder.newIDNode()}
 
 	builder.primitiveTypeMap["Bool"] = stdLib.Boolean
 
@@ -1062,6 +1073,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 			Term: &bAbsDD,
 		}
 		bAbsDD = AbsDD{
+			IDNode: builder.newIDNode(),
 			Vars: []DataVar{
 				DataVar{IDNode: builder.newIDNode(), DataType: &bAbsTD.Vars[0]},
 				DataVar{IDNode: builder.newIDNode(), DataType: &bAbsTD.Vars[0]},
@@ -1155,6 +1167,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	//builtin strlen
 
 	strlenOp := AbsDD{
+		IDNode: builder.newIDNode(),
 		Vars: []DataVar{
 			DataVar{
 				IDNode:   builder.newIDNode(),
@@ -1256,6 +1269,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &toBystrAbsDD,
 	}
 	toBystrAbsDD = AbsDD{
+		IDNode: builder.newIDNode(),
 		Vars: []DataVar{
 			DataVar{
 				IDNode:   builder.newIDNode(),
