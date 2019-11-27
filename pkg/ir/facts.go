@@ -269,7 +269,7 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 	return fd
 }
 
-func DumpFacts(builder *CFGBuilder) {
+func DumpFacts(builder *CFGBuilder, factsInFolder string) {
 	fd := FactsDumper{
 		visited:          map[Node]bool{},
 		idToPrefixID:     map[uint64]string{},
@@ -366,27 +366,6 @@ func DumpFacts(builder *CFGBuilder) {
 		"enumType":    fd.enumTypeFacts,
 		"setKind":     fd.setKindFacts,
 		"mapType":     fd.mapTypeFacts,
-	}
-
-	analysisFolder := "./souffle_analysis"
-	if _, err := os.Stat(analysisFolder); os.IsNotExist(err) {
-		err = os.Mkdir(analysisFolder, 0700)
-		if err != nil {
-			panic(err)
-		}
-	}
-
-	factsInFolder := path.Join(analysisFolder, "facts_in")
-
-	if _, err := os.Stat(factsInFolder); !os.IsNotExist(err) {
-		err = os.RemoveAll(factsInFolder)
-		if err != nil {
-			panic(err)
-		}
-	}
-	err := os.Mkdir(factsInFolder, 0700)
-	if err != nil {
-		panic(err)
 	}
 
 	for fileName, lines := range fileToFacts {
