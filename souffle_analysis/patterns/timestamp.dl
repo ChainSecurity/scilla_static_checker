@@ -3,7 +3,7 @@ timestampEquality():-
     builtin(blocknumberUnit, _, "BLOCKNUMBER"),
     builtin(equalityFunUnit, _, "eq"),
     appDD(appDDUnit, _),
-    argument(blocknumberUnit, appDDUnit, _),
+    argument(appDDUnit, blocknumberUnit, _),
     dependsOn(appDDUnit, equalityFunUnit).
 
 .output timestampEquality
