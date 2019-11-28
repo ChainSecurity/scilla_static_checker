@@ -2,6 +2,8 @@
 
 #include "patterns/locked-zilliq.dl"
 #include "patterns/write-only.dl"
+#include "patterns/timestamp.dl"
+#include "patterns/transaction-order-dependency.dl"
 
 
 // DependsOn: a unit depends on another one which is closer to the leaves of the tree

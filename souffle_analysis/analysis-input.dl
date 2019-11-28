@@ -28,6 +28,7 @@
 .decl save(unitId: Unit, slot: symbol, data: Unit)
 .decl procedure(unitId: Unit, name: symbol)
 .decl transition(unitId: Unit)
+.decl builtin(unitId: Unit, type: Type, name: symbol)
 
 .input plan
 .input msg
@@ -54,3 +55,4 @@
 .input save
 .input procedure
 .input transition
+.input builtin
