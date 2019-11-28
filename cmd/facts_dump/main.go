@@ -4,24 +4,12 @@ import (
 	"fmt"
 	"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ast"
 	"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ir"
+	"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/souffle"
 	"io/ioutil"
 	"os"
 	"path"
 )
 
-func makeCleanFolder(path string) error {
-	if _, err := os.Stat(path); !os.IsNotExist(err) {
-		err = os.RemoveAll(path)
-		if err != nil {
-			return err
-		}
-	}
-	err := os.Mkdir(path, 0700)
-	if err != nil {
-		return err
-	}
-	return nil
-}
 func main() {
 	jsonPath := os.Args[1]
 	jsonFile, err := os.Open(jsonPath)
@@ -39,7 +27,7 @@ func main() {
 	analysisFolder := "./souffle_analysis"
 	factsInFolder := path.Join(analysisFolder, "facts_in")
 
-	err = makeCleanFolder(factsInFolder)
+	err = souffle.MakeCleanFolder(factsInFolder)
 	if err != nil {
 		panic(err)
 	}
