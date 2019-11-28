@@ -7,9 +7,10 @@ contract MatchStatement
 
 field msg : Bool = True
 
-transition test (a: BNum)
+transition test (a: BNum, b: BNum)
   t <- & BLOCKNUMBER;
   e = builtin eq a t;
+  f = builtin eq a b;
   match e with
   | False =>
     msg := e
