@@ -10,10 +10,10 @@ import (
 
 var SOUFFLE = "souffle"
 
-func ReadOutput(fileName string) []string {
+func ReadOutput(fileName string) ([]string, error) {
 	file, err := os.Open(fileName)
 	if err != nil {
-		fmt.Printf("failed opening file: %s", err)
+		return nil, err
 	}
 	scanner := bufio.NewScanner(file)
 	scanner.Split(bufio.ScanLines)
@@ -23,7 +23,7 @@ func ReadOutput(fileName string) []string {
 		txtlines = append(txtlines, scanner.Text())
 	}
 	file.Close()
-	return txtlines
+	return txtlines, nil
 }
 
 func RunSouffle(datalog string, factsIn string, factsOut string) {

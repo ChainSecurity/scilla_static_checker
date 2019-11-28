@@ -43,7 +43,20 @@ func main() {
 	ir.DumpFacts(b, factsInFolder)
 
 	souffle.RunSouffle("souffle_analysis/analysis.dl", "souffle_analysis/facts_in", "souffle_analysis/facts_out")
-	result := souffle.ReadOutput("souffle_analysis/facts_out/vulnerability.csv")
+
 	fmt.Println("======RESULTS======")
-	fmt.Println(result)
+	files, err := ioutil.ReadDir(factsOutFolder)
+	if err != nil {
+		panic(err)
+	}
+	for _, f := range files {
+		result, err := souffle.ReadOutput(path.Join(factsOutFolder, f.Name()))
+		if err != nil {
+			panic(err)
+		}
+		fmt.Println()
+		fmt.Println(f.Name())
+		fmt.Println(result)
+		fmt.Println()
+	}
 }
