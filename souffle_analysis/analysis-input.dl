@@ -3,6 +3,8 @@
 .symbol_type Proc
 .symbol_type Plan
 
+.type Element = Unit | Type | Proc | Plan
+
 .decl plan(proc_id: Proc, unitId: Unit, index: number)
 .decl msg(unitId: Unit, unit_type: Type)
 .decl send(unitId: Unit, data: Unit)

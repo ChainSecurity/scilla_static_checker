@@ -1,9 +1,22 @@
-.decl timestampEquality()
-timestampEquality():-
-    builtin(blocknumberUnit, _, "BLOCKNUMBER"),
-    builtin(equalityFunUnit, _, "eq"),
-    appDD(appDDUnit, _),
-    argument(appDDUnit, blocknumberUnit, _),
-    dependsOn(appDDUnit, equalityFunUnit).
 
-.output timestampEquality
+
+.comp TimestampPattern : Pattern{
+
+    NAME("Usage of block timestamp")
+
+    DESCRIPTION(
+        "Returned value relies on block timestamp."
+    )
+
+	SEVERITY(LOW)
+
+    applicable(equalityFunUnit, "unknown_line") :-
+        builtin(blocknumberUnit, _, "BLOCKNUMBER"),
+        builtin(equalityFunUnit, _, "eq"),
+        appDD(appDDUnit, _),
+        argument(appDDUnit, blocknumberUnit, _),
+        dependsOn(appDDUnit, equalityFunUnit).
+
+    violation(equalityFunUnit, "unknown_line", "") :-
+        applicable(equalityFunUnit, _).
+}
