@@ -316,7 +316,7 @@
             "column": 7,
             "node_type": "Location"
           },
-          "identifier": "bal",
+          "identifier": "token",
           "node_type": "Identifier"
         },
         "field_type": { "node_type": "PrimType", "name": "Uint128" },
@@ -324,39 +324,73 @@
           "loc": {
             "source_file": "examples/transaction_order_dependency.scilla",
             "line": 30,
-            "column": 23,
+            "column": 25,
             "node_type": "Location"
           },
           "node_type": "LiteralExpression",
-          "value": { "node_type": "UintLiteral", "value": "0", "width": 128 }
+          "value": {
+            "node_type": "UintLiteral",
+            "value": "42",
+            "width": 128
+          }
+        },
+        "node_type": "Field"
+      },
+      {
+        "field_name": {
+          "loc": {
+            "source_file": "examples/transaction_order_dependency.scilla",
+            "line": 31,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "price",
+          "node_type": "Identifier"
+        },
+        "field_type": { "node_type": "PrimType", "name": "Uint128" },
+        "expression": {
+          "loc": {
+            "source_file": "examples/transaction_order_dependency.scilla",
+            "line": 31,
+            "column": 25,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "2", "width": 128 }
         },
         "node_type": "Field"
       }
     ],
     "components": [
       {
-        "params": [],
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file": "examples/transaction_order_dependency.scilla",
+                "line": 33,
+                "column": 23,
+                "node_type": "Location"
+              },
+              "identifier": "new_price",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "Uint128" },
+            "node_type": "Parameter"
+          }
+        ],
         "component_type": "transition",
         "name": {
           "loc": {
             "source_file": "examples/transaction_order_dependency.scilla",
-            "line": 32,
+            "line": 33,
             "column": 12,
             "node_type": "Location"
           },
-          "identifier": "save",
+          "identifier": "set_price",
           "node_type": "Identifier"
         },
         "body": [
-          {
-            "loc": {
-              "source_file": "examples/transaction_order_dependency.scilla",
-              "line": 33,
-              "column": 5,
-              "node_type": "Location"
-            },
-            "node_type": "AcceptPaymentStatement"
-          },
           {
             "loc": {
               "source_file": "examples/transaction_order_dependency.scilla",
@@ -368,20 +402,20 @@
               "loc": {
                 "source_file": "examples/transaction_order_dependency.scilla",
                 "line": 34,
-                "column": 9,
+                "column": 11,
                 "node_type": "Location"
               },
-              "identifier": "bal",
+              "identifier": "price",
               "node_type": "Identifier"
             },
             "rhs": {
               "loc": {
                 "source_file": "examples/transaction_order_dependency.scilla",
                 "line": 34,
-                "column": 12,
+                "column": 14,
                 "node_type": "Location"
               },
-              "identifier": "_amount",
+              "identifier": "new_price",
               "node_type": "Identifier"
             },
             "node_type": "StoreStatement"
@@ -399,7 +433,7 @@
             "column": 12,
             "node_type": "Location"
           },
-          "identifier": "load",
+          "identifier": "sell",
           "node_type": "Identifier"
         },
         "body": [
@@ -417,7 +451,7 @@
                 "column": 7,
                 "node_type": "Location"
               },
-              "identifier": "b",
+              "identifier": "t",
               "node_type": "Identifier"
             },
             "rhs": {
@@ -427,7 +461,7 @@
                 "column": 10,
                 "node_type": "Location"
               },
-              "identifier": "_balance",
+              "identifier": "token",
               "node_type": "Identifier"
             },
             "node_type": "LoadStatement"
@@ -443,23 +477,23 @@
               "loc": {
                 "source_file": "examples/transaction_order_dependency.scilla",
                 "line": 39,
-                "column": 9,
+                "column": 7,
                 "node_type": "Location"
               },
-              "identifier": "bal",
+              "identifier": "p",
               "node_type": "Identifier"
             },
             "rhs": {
               "loc": {
                 "source_file": "examples/transaction_order_dependency.scilla",
                 "line": 39,
-                "column": 12,
+                "column": 10,
                 "node_type": "Location"
               },
-              "identifier": "b",
+              "identifier": "price",
               "node_type": "Identifier"
             },
-            "node_type": "StoreStatement"
+            "node_type": "LoadStatement"
           },
           {
             "loc": {
@@ -473,6 +507,69 @@
               "loc": {
                 "source_file": "examples/transaction_order_dependency.scilla",
                 "line": 40,
+                "column": 12,
+                "node_type": "Location"
+              },
+              "identifier": "amount",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/transaction_order_dependency.scilla",
+                "line": 40,
+                "column": 14,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file":
+                      "examples/transaction_order_dependency.scilla",
+                    "line": 40,
+                    "column": 26,
+                    "node_type": "Location"
+                  },
+                  "identifier": "t",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file":
+                      "examples/transaction_order_dependency.scilla",
+                    "line": 40,
+                    "column": 28,
+                    "node_type": "Location"
+                  },
+                  "identifier": "p",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file":
+                    "examples/transaction_order_dependency.scilla",
+                  "line": 40,
+                  "column": 22,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "mul",
+                "node_type": "Builtin"
+              }
+            }
+          },
+          {
+            "loc": {
+              "source_file": "examples/transaction_order_dependency.scilla",
+              "line": 41,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/transaction_order_dependency.scilla",
+                "line": 41,
                 "column": 9,
                 "node_type": "Location"
               },
@@ -482,7 +579,7 @@
             "rhs_expr": {
               "loc": {
                 "source_file": "examples/transaction_order_dependency.scilla",
-                "line": 40,
+                "line": 41,
                 "column": 11,
                 "node_type": "Location"
               },
@@ -505,7 +602,7 @@
                       "loc": {
                         "source_file":
                           "examples/transaction_order_dependency.scilla",
-                        "line": 40,
+                        "line": 41,
                         "column": 36,
                         "node_type": "Location"
                       },
@@ -523,11 +620,11 @@
                       "loc": {
                         "source_file":
                           "examples/transaction_order_dependency.scilla",
-                        "line": 40,
+                        "line": 41,
                         "column": 53,
                         "node_type": "Location"
                       },
-                      "identifier": "zero128",
+                      "identifier": "amount",
                       "node_type": "Identifier"
                     }
                   }
@@ -541,8 +638,8 @@
                       "loc": {
                         "source_file":
                           "examples/transaction_order_dependency.scilla",
-                        "line": 40,
-                        "column": 71,
+                        "line": 41,
+                        "column": 70,
                         "node_type": "Location"
                       },
                       "identifier": "one",
@@ -556,7 +653,7 @@
           {
             "loc": {
               "source_file": "examples/transaction_order_dependency.scilla",
-              "line": 41,
+              "line": 42,
               "column": 5,
               "node_type": "Location"
             },
@@ -564,7 +661,7 @@
             "lhs": {
               "loc": {
                 "source_file": "examples/transaction_order_dependency.scilla",
-                "line": 41,
+                "line": 42,
                 "column": 10,
                 "node_type": "Location"
               },
@@ -574,7 +671,7 @@
             "rhs_expr": {
               "loc": {
                 "source_file": "examples/transaction_order_dependency.scilla",
-                "line": 41,
+                "line": 42,
                 "column": 12,
                 "node_type": "Location"
               },
@@ -583,7 +680,7 @@
                 "loc": {
                   "source_file":
                     "examples/transaction_order_dependency.scilla",
-                  "line": 41,
+                  "line": 42,
                   "column": 12,
                   "node_type": "Location"
                 },
@@ -595,7 +692,7 @@
                   "loc": {
                     "source_file":
                       "examples/transaction_order_dependency.scilla",
-                    "line": 41,
+                    "line": 42,
                     "column": 20,
                     "node_type": "Location"
                   },
@@ -608,14 +705,14 @@
           {
             "loc": {
               "source_file": "examples/transaction_order_dependency.scilla",
-              "line": 42,
+              "line": 43,
               "column": 5,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
                 "source_file": "examples/transaction_order_dependency.scilla",
-                "line": 42,
+                "line": 43,
                 "column": 5,
                 "node_type": "Location"
               },
