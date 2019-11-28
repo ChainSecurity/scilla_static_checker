@@ -393,8 +393,8 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) *Proc {
 		}
 		procCases := make([]ProcCase, len(n.Cases))
 		contProc := Proc{
-			ProcName: builder.currentProc,
 			IDNode:   builder.newIDNode(),
+			ProcName: builder.currentProc,
 			Plan:     []Unit{},
 		}
 		for i, mc := range n.Cases {
@@ -402,8 +402,8 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) *Proc {
 			procCases[i] = ProcCase{
 				IDNode: builder.newIDNode(),
 				Body: Proc{
-					ProcName: builder.currentProc,
 					IDNode:   builder.newIDNode(),
+					ProcName: builder.currentProc,
 					Plan:     []Unit{},
 				},
 			}

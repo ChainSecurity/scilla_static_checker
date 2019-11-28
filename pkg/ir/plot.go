@@ -965,16 +965,13 @@ func directedPortedAttrGraphFrom(b *dotBuilder) graph.Multigraph {
 }
 
 func GetDot(b *CFGBuilder) string {
-	//keys := make([]string, 0, len(b.GlobalVarMap))
-	//for key := range b.GlobalVarMap {
-	//keys = append(keys, key)
-	//}
 	d := dotBuilder{0, 0, []graph.Node{}, []*dotPortedEdge{}, map[Type]graph.Node{}, map[Data]graph.Node{}, map[Kind]graph.Node{}, map[Unit]graph.Node{}}
-	//if !ok {
-	//panic(errors.New("var not found"))
-	//}
-	v := b.Transitions["test"]
-	//v := b.Transitions["inc"]
+
+	var lastKey string
+	for k, _ := range b.Transitions {
+		lastKey = k
+	}
+	v := b.Transitions[lastKey]
 
 	dotWalkData(&d, v)
 	g := directedPortedAttrGraphFrom(&d)
