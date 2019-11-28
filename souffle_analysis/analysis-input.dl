@@ -3,29 +3,32 @@
 .symbol_type Proc
 .symbol_type Plan
 
-.decl plan(proc_id: Proc, unit_id: Unit, index: number)
-.decl msg(unit_id: Unit, unit_type: Type)
-.decl send(unit_id: Unit, data: Unit)
-.decl load(unit_id: Unit, slot : symbol)
-.decl appDD(unit_id: Unit, to: Unit)
-.decl appTD(unit_id: Unit, to: Unit)
-.decl appTT(unit_id: Unit, to: Unit)
-.decl argument(unit_id: Unit, appdd_id: Unit, index: number) 
-.decl absDD(unit_id: Unit, term: Unit)
-.decl msgData(msg_id: Unit, unit_id: Unit, tag_name: symbol)
-.decl str(unit_id: Unit, type: Type, data: symbol)
-.decl pickData(unit_id: Unit, from: Unit, with: Unit)
-.decl dataCase(unit_id: Unit, pick_data_id: Unit, bind: Unit, body: Unit)
-.decl nat(unit_id: Unit, type: Type, data: number)
+.decl plan(proc_id: Proc, unitId: Unit, index: number)
+.decl msg(unitId: Unit, unit_type: Type)
+.decl send(unitId: Unit, data: Unit)
+.decl load(unitId: Unit, slot : symbol)
+.decl appDD(unitId: Unit, to: Unit)
+.decl appTD(unitId: Unit, to: Unit)
+.decl appTT(unitId: Unit, to: Unit)
+.decl argument(unitId: Unit, appdd_id: Unit, index: number) 
+.decl absDD(unitId: Unit, term: Unit)
+.decl keyArgument(msg_id: Unit, unitId: Unit, tag_name: symbol)
+.decl str(unitId: Unit, type: Type, data: symbol)
+.decl pickData(unitId: Unit, from: Unit, with: Unit)
+.decl dataCase(unitId: Unit, pick_data_id: Unit, bind: Unit, body: Unit)
+.decl nat(unitId: Unit, type: Type, data: number)
 .decl natType(type_id: Type, size: number)
-.decl bind(unit_id: Unit, bind_type: Type, cond: Unit)
-.decl cond(unit_id: Unit, case: symbol)
-.decl condBind(unit_id: Unit, cond: Unit, index: number)
+.decl bind(unitId: Unit, bind_type: Type, cond: Unit)
+.decl cond(unitId: Unit, case: symbol)
+.decl condBind(unitId: Unit, cond: Unit, index: number)
 .decl typeVar(type: symbol)
 .decl enum(enum_id: Unit, enum_type: Type, case: symbol)
-.decl accept(unit_id: Unit)
-.decl msgType(unit_id: Type)
-.decl save(unit_id: Unit, slot: symbol, data: Unit)
+.decl accept(unitId: Unit)
+.decl msgType(unitId: Type)
+.decl save(unitId: Unit, slot: symbol, data: Unit)
+.decl procedure(unitId: Unit, name: symbol)
+.decl transition(unitId: Unit)
+.decl builtin(unitId: Unit, type: Type, name: symbol)
 
 .input plan
 .input msg
@@ -36,7 +39,7 @@
 .input appTT
 .input argument
 .input absDD
-.input msgData
+.input keyArgument
 .input str
 .input pickData
 .input dataCase
@@ -50,3 +53,6 @@
 .input accept
 .input msgType
 .input save
+.input procedure
+.input transition
+.input builtin

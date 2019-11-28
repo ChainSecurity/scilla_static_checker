@@ -20,7 +20,7 @@ nonZeroSend() :-
     send(_, data_id),
     dependsOn(data_id, msg_id),
     msg(msg_id, _),
-    msgData(msg_id, num_id, "_amount"),
+    keyArgument(msg_id, num_id, "_amount"),
     !nat(num_id, _, 0).
 
 //.output nonZeroSend

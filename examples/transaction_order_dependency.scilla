@@ -27,17 +27,18 @@ let one_msg =
 contract Inc
 (owner : ByStr20)
 
-field bal : Uint128 = Uint128 0
+field token : Uint128 = Uint128 42
+field price : Uint128 = Uint128 2
 
-transition save ()
-    accept;
-    bal := _amount
+transition set_price (new_price : Uint128)
+    price := new_price
 end
 
-transition load ()
-    b <- _balance;
-    bal := b;
-    msg = {_tag : ""; _recipient : owner; _amount : zero128  ; code : one};
+transition sell ()
+    t <- token;
+    p <- price;
+    amount = builtin mul t p;
+    msg = {_tag : ""; _recipient : owner; _amount : amount  ; code : one};
     msgs = one_msg msg;
     send msgs
 end
