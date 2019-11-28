@@ -45,18 +45,18 @@ func main() {
 	souffle.RunSouffle("souffle_analysis/analysis.dl", "souffle_analysis/facts_in", "souffle_analysis/facts_out")
 
 	fmt.Println("======RESULTS======")
-	files, err := ioutil.ReadDir(factsOutFolder)
-	if err != nil {
-		panic(err)
-	}
-	for _, f := range files {
-		result, err := souffle.ReadOutput(path.Join(factsOutFolder, f.Name()))
+
+	outputFiles := []string{"patternMatch.csv", "patternMatchInfo.csv"}
+	for _, f := range outputFiles {
+		result, err := souffle.ReadOutput(path.Join(factsOutFolder, f))
 		if err != nil {
 			panic(err)
 		}
 		fmt.Println()
-		fmt.Println(f.Name())
-		fmt.Println(result)
+		fmt.Println(f)
+		for _, fact := range result {
+			fmt.Println(fact)
+		}
 		fmt.Println()
 	}
 }
