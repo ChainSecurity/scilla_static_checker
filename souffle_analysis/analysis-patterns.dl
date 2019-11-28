@@ -1,0 +1,117 @@
+.symbol_type PatternId
+
+/** Numeric Match ID (note [[PatternBase]]'s MatchId will be translated via ord(X)) */
+.number_type MatchId
+.symbol_type MatchType
+.symbol_type MatchComment
+
+// Match Types
+#define WARNING   "warning"
+#define VIOLATION "violation"
+#define COMPLIANT "compliant"
+#define CONFLICT  "conflict"
+
+// Converts anything to a numeric match ID
+#define MATCH(x) ord(x)
+
+.comp PatternBase<MatchId> {
+	/** Stores information about the pattern such as name, description and custom tags. */
+	.decl tag(tag: symbol, value: symbol)
+
+	.decl matchId(matchId: MatchId)
+	.decl matchType(matchId: MatchId, type: MatchType)
+	.decl matchInfo(matchId: MatchId, key: symbol, value: symbol)
+}
+
+.comp Pattern : PatternBase<Element> {
+	.decl applicable(element: Element, info: symbol)
+
+	.decl compliance(element: Element, info: symbol, comment: symbol)
+	.decl violation(element: Element, info: symbol, comment: symbol)
+
+	matchId(element) :-
+		(
+			applicable(element, _);
+			compliance(element, _, _);
+			violation(element, _, _)
+		).
+
+	matchType(element, WARNING) :-
+		applicable(element, _),
+		!compliance(element, _, _),
+		!violation(element, _, _).
+
+	matchType(element, COMPLIANT) :-
+		applicable(element, _),
+		compliance(element, _, _),
+		!violation(element, _, _).
+
+	matchType(element, VIOLATION) :-
+		applicable(element, _),
+		!compliance(element, _, _),
+		violation(element, _, _).
+
+	matchType(element, CONFLICT) :-
+		applicable(element, _),
+		compliance(element, _, _),
+		violation(element, _, _).
+
+	matchInfo(element, "element", element) :-
+		applicable(element, _).
+
+	/*
+	matchInfo(element, "line", line) :-
+		applicable(element, _), sourceLine(element, line).
+
+	matchInfo(element, "loc", line) :-
+		applicable(element, _), sourceInfo(element, "loc", line).
+
+	matchInfo(element, "contract", contract) :-
+		applicable(element, _), sourceInfo(element, "contract", contract).
+    */
+
+	matchInfo(element, "comment", comment) :- matchType(element, COMPLIANT), compliance(element, _, comment).
+	matchInfo(element, "comment", comment) :- matchType(element, VIOLATION), violation(element, _, comment).
+
+	matchInfo(element, "comment", comment) :-
+		matchType(element, CONFLICT),
+		(
+			compliance(element, _, comment);
+			violation(element, _, comment)
+		).
+}
+
+.decl patternId(patternId: PatternId)
+.decl patternTag(patternId: PatternId, tag: symbol, value: symbol)
+
+.decl patternMatch(patternId: PatternId, matchId: MatchId, matchType: MatchType)
+.decl patternMatchInfo(patternId: PatternId, matchId: MatchId, key: symbol, value: symbol)
+
+patternTag(id, "id", id) :- patternId(id).
+
+#include "analysis-patterns-macros.dl"
+
+#include "patterns/timestamp.dl"
+#include "patterns/locked-zilliq.dl"
+#include "patterns/transaction-order-dependency.dl"
+#include "patterns/write-only.dl"
+
+REGISTER_PATTERN(TimestampPattern)
+REGISTER_PATTERN(LockedZilliqPattern)
+REGISTER_PATTERN(TransactionOrderDependencyPattern)
+REGISTER_PATTERN(WriteOnlyPattern)
+
+.output patternId
+.output patternTag
+.output patternMatch
+.output patternMatchInfo
+
+//LOG(patternCompliance)
+//LOG(patternViolation)
+//LOG(patternWarning)
+//LOG(patternConflict)
+//
+//.output patternCompliance
+//.output patternViolation
+//.output patternWarning
+//.output patternConflict

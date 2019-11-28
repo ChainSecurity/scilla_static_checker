@@ -3,6 +3,8 @@
 .symbol_type Proc
 .symbol_type Plan
 
+.type Element = Unit | Type | Proc | Plan
+
 .decl plan(proc_id: Proc, unitId: Unit, index: number)
 .decl msg(unitId: Unit, unit_type: Type)
 .decl send(unitId: Unit, data: Unit)
@@ -12,6 +14,7 @@
 .decl appTT(unitId: Unit, to: Unit)
 .decl argument(unitId: Unit, appdd_id: Unit, index: number) 
 .decl absDD(unitId: Unit, term: Unit)
+.decl absTD(unitId: Unit, term: Unit)
 .decl keyArgument(msg_id: Unit, unitId: Unit, tag_name: symbol)
 .decl str(unitId: Unit, type: Type, data: symbol)
 .decl pickData(unitId: Unit, from: Unit, with: Unit)
@@ -39,6 +42,7 @@
 .input appTT
 .input argument
 .input absDD
+.input absTD
 .input keyArgument
 .input str
 .input pickData

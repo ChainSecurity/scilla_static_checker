@@ -1,10 +1,6 @@
 #include "analysis-input.dl"
-
-#include "patterns/locked-zilliq.dl"
-#include "patterns/write-only.dl"
-#include "patterns/timestamp.dl"
-#include "patterns/transaction-order-dependency.dl"
-
+#include "analysis-patterns.dl"
+#include "util-macros.dl"
 
 // DependsOn: a unit depends on another one which is closer to the leaves of the tree
 .decl dependsOnStep(unit: Unit, previousUnit: Unit)
@@ -18,6 +14,7 @@ dependsOnStep(dependent, independent) :-
         appDD(dependent, independent);
         appTD(dependent, independent);
         absDD(dependent, independent);
+        absTD(dependent, independent);
         bind(dependent, _, independent);
         condBind(dependent, independent, _)
     ).
@@ -42,6 +39,7 @@ unit(unitId) :-
         appTT(unitId, _);
         argument(unitId, _, _);
         absDD(unitId, _);
+        absTD(unitId, _);
         keyArgument(unitId, _, _);
         str(unitId, _, _);
         pickData(unitId, _, _);
@@ -51,7 +49,8 @@ unit(unitId) :-
         cond(unitId, _);
         condBind(unitId, _, _);
         accept(unitId);
-        save(unitId, _, _)
+        save(unitId, _, _);
+        builtin(unitId, _, _)
     ).
 
 //.decl followsPlan(nextUnitPlan: Unit, prevUnitPlan: Unit)
