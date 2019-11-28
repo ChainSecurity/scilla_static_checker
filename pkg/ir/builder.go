@@ -83,6 +83,7 @@ func (builder *CFGBuilder) getBuiltinOp(opName string, varTypes []Type) Data {
 			Term: &Builtin{
 				builder.newIDNode(),
 				setDefaultType(builder.primitiveTypeMap, resType, &RawType{builder.newIDNode(), raw0.Size + raw1.Size}),
+				"raw_concat",
 			},
 		}
 		return op
@@ -489,6 +490,7 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) *Proc {
 			bn := Builtin{
 				IDNode:      builder.newIDNode(),
 				BuiltinType: builder.primitiveTypeMap["BNum"],
+				Label:       "BLOCKNUMBER",
 			}
 			stackMapPush(builder.varStack, n.Lhs.Id, &bn)
 		default:
@@ -964,6 +966,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 			},
 			Term: &intAbsDD,
 		}
+		intOpName := fmt.Sprintf("to_int%d", s)
 		intAbsDD = AbsDD{
 			IDNode: builder.newIDNode(),
 			Vars: []DataVar{
@@ -979,9 +982,9 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 					Args:   []Type{&intTyp},
 					To:     stdLib.Option,
 				},
+				intOpName,
 			},
 		}
-		intOpName := fmt.Sprintf("to_int%d", s)
 		builder.builtinOpMap[intOpName] = &intAbsTD
 
 		var uintAbsDD AbsDD
@@ -995,6 +998,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 			},
 			Term: &uintAbsDD,
 		}
+		uintOpName := fmt.Sprintf("to_uint%d", s)
 		uintAbsDD = AbsDD{
 			IDNode: builder.newIDNode(),
 			Vars: []DataVar{
@@ -1007,9 +1011,9 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 					Args:   []Type{&uintTyp},
 					To:     stdLib.Option,
 				},
+				uintOpName,
 			},
 		}
-		uintOpName := fmt.Sprintf("to_uint%d", s)
 		builder.builtinOpMap[uintOpName] = &uintAbsTD
 
 	}
@@ -1055,6 +1059,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 			Term: &Builtin{
 				IDNode:      builder.newIDNode(),
 				BuiltinType: &bAbsTD.Vars[0],
+				Label:       bOp,
 			},
 		}
 		builder.builtinOpMap[bOp] = &bAbsTD
@@ -1078,7 +1083,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 				DataVar{IDNode: builder.newIDNode(), DataType: &bAbsTD.Vars[0]},
 				DataVar{IDNode: builder.newIDNode(), DataType: &bAbsTD.Vars[0]},
 			},
-			Term: &Builtin{builder.newIDNode(), stdLib.Boolean},
+			Term: &Builtin{builder.newIDNode(), stdLib.Boolean, bOp},
 		}
 		builder.builtinOpMap[bOp] = &bAbsTD
 	}
@@ -1099,7 +1104,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 			DataVar{IDNode: builder.newIDNode(), DataType: &powAbsTD.Vars[0]},
 			DataVar{IDNode: builder.newIDNode(), DataType: &powAbsTD.Vars[1]},
 		},
-		Term: &Builtin{builder.newIDNode(), &powAbsTD.Vars[0]},
+		Term: &Builtin{builder.newIDNode(), &powAbsTD.Vars[0], "pow"},
 	}
 	builder.builtinOpMap["pow"] = &powAbsTD
 
@@ -1116,7 +1121,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 				DataType: builder.primitiveTypeMap["String"],
 			},
 		},
-		Term: &Builtin{builder.newIDNode(), builder.primitiveTypeMap["String"]},
+		Term: &Builtin{builder.newIDNode(), builder.primitiveTypeMap["String"], "str_concat"},
 	}
 	builder.builtinOpMap["str_concat"] = &strConcatOp
 
@@ -1137,7 +1142,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 				DataType: builder.natWidthTypeMap[32],
 			},
 		},
-		Term: &Builtin{builder.newIDNode(), builder.primitiveTypeMap["String"]},
+		Term: &Builtin{builder.newIDNode(), builder.primitiveTypeMap["String"], "substr"},
 	}
 	builder.builtinOpMap["substr"] = &strSubstrOp
 
@@ -1160,7 +1165,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 				DataType: &toStrAbsTD.Vars[0],
 			},
 		},
-		Term: &Builtin{builder.newIDNode(), builder.primitiveTypeMap["String"]},
+		Term: &Builtin{builder.newIDNode(), builder.primitiveTypeMap["String"], "to_string"},
 	}
 	builder.builtinOpMap["to_string"] = &toStrAbsTD
 
@@ -1174,7 +1179,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 				DataType: builder.primitiveTypeMap["String"],
 			},
 		},
-		Term: &Builtin{builder.newIDNode(), builder.natWidthTypeMap[32]},
+		Term: &Builtin{builder.newIDNode(), builder.natWidthTypeMap[32], "strlen"},
 	}
 	builder.builtinOpMap["strlen"] = &strlenOp
 
@@ -1201,6 +1206,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &Builtin{
 			IDNode:      builder.newIDNode(),
 			BuiltinType: builder.primitiveTypeMap["ByStr32"],
+			Label:       "sha256hash",
 		},
 	}
 	builder.builtinOpMap["sha256hash"] = &shaAbsTD
@@ -1227,6 +1233,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &Builtin{
 			IDNode:      builder.newIDNode(),
 			BuiltinType: builder.primitiveTypeMap["ByStr32"],
+			Label:       "keccak256hash",
 		},
 	}
 	builder.builtinOpMap["keccak256hash"] = &keccakAbsTD
@@ -1252,6 +1259,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &Builtin{
 			IDNode:      builder.newIDNode(),
 			BuiltinType: builder.primitiveTypeMap["ByStr20"],
+			Label:       "ripemd160hash",
 		},
 	}
 	builder.builtinOpMap["ripemd160hash"] = &ripemdAbsTD
@@ -1279,6 +1287,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &Builtin{
 			IDNode:      builder.newIDNode(),
 			BuiltinType: builder.primitiveTypeMap["ByStr"],
+			Label:       "to_bystr",
 		},
 	}
 	builder.builtinOpMap["to_bystr"] = &toBystrAbsTD
@@ -1306,6 +1315,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &Builtin{
 			IDNode:      builder.newIDNode(),
 			BuiltinType: builder.natWidthTypeMap[256],
+			Label:       "to_uint256",
 		},
 	}
 	builder.builtinOpMap["to_uint256"] = &touint256AbsTD
@@ -1330,6 +1340,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &Builtin{
 			IDNode:      builder.newIDNode(),
 			BuiltinType: builder.primitiveTypeMap["Bool"],
+			Label:       "schnorr_verify",
 		},
 	}
 	builder.builtinOpMap["schnorr_verify"] = &schnorrVerifyAbsDD
@@ -1354,6 +1365,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &Builtin{
 			IDNode:      builder.newIDNode(),
 			BuiltinType: builder.primitiveTypeMap["Bool"],
+			Label:       "ecdsa_verify",
 		},
 	}
 	builder.builtinOpMap["ecdsa_verify"] = &ecdsaVerifyAbsDD
@@ -1378,6 +1390,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 				Args:   []Type{builder.primitiveTypeMap["ByStr20"]},
 				To:     stdLib.Option,
 			},
+			Label: "bech32_to_bystr20",
 		},
 	}
 	builder.builtinOpMap["bech32_to_bystr20"] = &bech32ToBystr20AbsDD
@@ -1402,6 +1415,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 				Args:   []Type{builder.primitiveTypeMap["String"]},
 				To:     stdLib.Option,
 			},
+			Label: "bystr20_to_bech32",
 		},
 	}
 
@@ -1443,6 +1457,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	putAbsDD.Term = &Builtin{
 		IDNode:      builder.newIDNode(),
 		BuiltinType: putAbsDD.Vars[0].DataType,
+		Label:       "put",
 	}
 	builder.builtinOpMap["put"] = &putAbsTD
 
@@ -1481,6 +1496,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 				Args:   []Type{&getAbsTD.Vars[1]},
 				To:     stdLib.Option,
 			},
+			Label: "get",
 		},
 	}
 	builder.builtinOpMap["get"] = &getAbsTD
@@ -1508,6 +1524,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &Builtin{
 			IDNode:      builder.newIDNode(),
 			BuiltinType: builder.primitiveTypeMap["Bool"],
+			Label:       "contains",
 		},
 	}
 	builder.builtinOpMap["contains"] = &containsAbsTD
@@ -1544,6 +1561,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	removeAbsDD.Term = &Builtin{
 		IDNode:      builder.newIDNode(),
 		BuiltinType: removeAbsDD.Vars[0].DataType,
+		Label:       "remove",
 	}
 	builder.builtinOpMap["remove"] = &removeAbsTD
 
@@ -1575,6 +1593,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	sizeAbsDD.Term = &Builtin{
 		IDNode:      builder.newIDNode(),
 		BuiltinType: builder.primitiveTypeMap["Bool"],
+		Label:       "size",
 	}
 	builder.builtinOpMap["size"] = &sizeAbsTD
 
@@ -1594,6 +1613,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &Builtin{
 			IDNode:      builder.newIDNode(),
 			BuiltinType: builder.primitiveTypeMap["Bool"],
+			Label:       "blt",
 		},
 	}
 	builder.builtinOpMap["blt"] = &bltAbsDD
@@ -1625,6 +1645,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &Builtin{
 			IDNode:      builder.newIDNode(),
 			BuiltinType: builder.primitiveTypeMap["BNum"],
+			Label:       "badd",
 		},
 	}
 	builder.builtinOpMap["badd"] = &baddAbsTD
@@ -1645,6 +1666,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		Term: &Builtin{
 			IDNode:      builder.newIDNode(),
 			BuiltinType: builder.primitiveTypeMap["Int256"],
+			Label:       "bsub",
 		},
 	}
 	builder.builtinOpMap["bsub"] = &bsubAbsDD

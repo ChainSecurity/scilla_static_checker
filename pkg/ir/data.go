@@ -46,6 +46,7 @@ type (
 	Builtin struct {
 		IDNode
 		BuiltinType Type
+		Label       string
 	}
 )
 

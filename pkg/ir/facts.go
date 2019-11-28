@@ -243,7 +243,7 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 		fact := fmt.Sprintf("%d\t%d\t%d", n.ID(), n.Bind.ID(), n.Body.ID())
 		fd.procCaseFacts = append(fd.procCaseFacts, fact)
 	case *Builtin:
-		fact := fmt.Sprintf("%d\t%d", n.ID(), n.BuiltinType.ID())
+		fact := fmt.Sprintf("%d\t%d\t%s", n.ID(), n.BuiltinType.ID(), n.Label)
 		fd.builtinFacts = append(fd.builtinFacts, fact)
 	case *BnrType:
 		fact := fmt.Sprintf("%d", n.ID())

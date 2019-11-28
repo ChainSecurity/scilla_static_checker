@@ -14,7 +14,7 @@ import (
 
 var SOUFFLE = "souffle"
 
-func runSouffle(datalog, factsIn, factsOut string) {
+func runSouffle(datalog string, factsIn string, factsOut string) {
 	cmd := exec.Command(SOUFFLE, "--fact-dir", factsIn, "--output-dir", factsOut, datalog)
 
 	var out bytes.Buffer
