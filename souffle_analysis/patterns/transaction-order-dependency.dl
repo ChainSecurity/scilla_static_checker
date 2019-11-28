@@ -3,15 +3,17 @@
 // There must be two different! transactions. In one transaction the variable is saved and in the other one the variable is loaded before saved
 transctionOrderDependency():-
     save(saveId, fieldName, _),
-    plan(_, saveProc, saveId),
-    send(_, data),
+    plan(saveProc, saveId, _),
+    send(_, dataId),
     dependsOn(dataId, msgId),
     msg(msgId, _),
-    msgData(msgId, numId, "_amount"),
+    keyArgument(msgId, _, "_amount"),
     dependsOn(msgId, loadId),
     load(loadId, fieldName),
     plan(loadProc, loadId, loadPlanIndex),
     plan(loadProc, saveIdLoad, savePlanIndex),
-    save(saveIdLoad, fieldName, _)
-    !followsPlan(loadPlanIndex, savePlanIndex),
+    save(saveIdLoad, fieldName, _),
+    savePlanIndex > loadPlanIndex,
     saveProc != loadProc.
+
+.output transctionOrderDependency
