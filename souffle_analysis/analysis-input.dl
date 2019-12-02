@@ -32,6 +32,7 @@
 .decl procedure(unitId: Unit, name: symbol)
 .decl transition(unitId: Unit)
 .decl builtin(unitId: Unit, type: Type, name: symbol)
+.decl unit(unitId: Unit)
 
 .input plan
 .input msg
