@@ -11,10 +11,10 @@ transition test (a: BNum, b: BNum)
   t <- & BLOCKNUMBER;
   e = builtin eq a t;
   f = builtin eq a b;
-  match e with
+  match f with
   | False =>
-    msg := e
+    msg := f
   | True =>
-    msg := e
+    msg := f
   end
 end

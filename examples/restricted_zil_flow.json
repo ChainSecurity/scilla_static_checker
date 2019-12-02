@@ -3,7 +3,7 @@
   "name": {
     "loc": {
       "source_file": "examples/restricted_zil_flow.scilla",
-      "line": 30,
+      "line": 32,
       "column": 10,
       "node_type": "Location"
     },
@@ -294,41 +294,105 @@
               "loc": {
                 "source_file": "examples/restricted_zil_flow.scilla",
                 "line": 27,
-                "column": 6,
+                "column": 3,
                 "node_type": "Location"
               },
-              "node_type": "BuiltinExpression",
-              "arguments": [
-                {
-                  "loc": {
-                    "source_file": "examples/restricted_zil_flow.scilla",
-                    "line": 27,
-                    "column": 18,
-                    "node_type": "Location"
-                  },
-                  "identifier": "m",
-                  "node_type": "Identifier"
-                },
-                {
-                  "loc": {
-                    "source_file": "examples/restricted_zil_flow.scilla",
-                    "line": 27,
-                    "column": 20,
-                    "node_type": "Location"
-                  },
-                  "identifier": "x",
-                  "node_type": "Identifier"
-                }
-              ],
-              "builtin_function": {
+              "node_type": "LetExpression",
+              "variable": {
                 "loc": {
                   "source_file": "examples/restricted_zil_flow.scilla",
                   "line": 27,
-                  "column": 14,
+                  "column": 3,
                   "node_type": "Location"
                 },
-                "builtin_operator": "get",
-                "node_type": "Builtin"
+                "identifier": "nil_msg1",
+                "node_type": "Identifier"
+              },
+              "variable_type": null,
+              "expression": {
+                "loc": {
+                  "source_file": "examples/restricted_zil_flow.scilla",
+                  "line": 27,
+                  "column": 18,
+                  "node_type": "Location"
+                },
+                "node_type": "ConstrExpression",
+                "constructor_name": "Nil",
+                "types": [ { "node_type": "PrimType", "name": "Message" } ],
+                "args": []
+              },
+              "body": {
+                "loc": {
+                  "source_file": "examples/restricted_zil_flow.scilla",
+                  "line": 28,
+                  "column": 3,
+                  "node_type": "Location"
+                },
+                "node_type": "LetExpression",
+                "variable": {
+                  "loc": {
+                    "source_file": "examples/restricted_zil_flow.scilla",
+                    "line": 28,
+                    "column": 3,
+                    "node_type": "Location"
+                  },
+                  "identifier": "nil_msg2",
+                  "node_type": "Identifier"
+                },
+                "variable_type": null,
+                "expression": {
+                  "loc": {
+                    "source_file": "examples/restricted_zil_flow.scilla",
+                    "line": 28,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "node_type": "ConstrExpression",
+                  "constructor_name": "Nil",
+                  "types": [ { "node_type": "PrimType", "name": "Message" } ],
+                  "args": []
+                },
+                "body": {
+                  "loc": {
+                    "source_file": "examples/restricted_zil_flow.scilla",
+                    "line": 29,
+                    "column": 6,
+                    "node_type": "Location"
+                  },
+                  "node_type": "BuiltinExpression",
+                  "arguments": [
+                    {
+                      "loc": {
+                        "source_file": "examples/restricted_zil_flow.scilla",
+                        "line": 29,
+                        "column": 18,
+                        "node_type": "Location"
+                      },
+                      "identifier": "m",
+                      "node_type": "Identifier"
+                    },
+                    {
+                      "loc": {
+                        "source_file": "examples/restricted_zil_flow.scilla",
+                        "line": 29,
+                        "column": 20,
+                        "node_type": "Location"
+                      },
+                      "identifier": "x",
+                      "node_type": "Identifier"
+                    }
+                  ],
+                  "builtin_function": {
+                    "loc": {
+                      "source_file": "examples/restricted_zil_flow.scilla",
+                      "line": 29,
+                      "column": 14,
+                      "node_type": "Location"
+                    },
+                    "builtin_operator": "get",
+                    "node_type": "Builtin"
+                  }
+                }
               }
             },
             "lhs_type": { "node_type": "PrimType", "name": "ByStr20" }
@@ -348,7 +412,7 @@
     "name": {
       "loc": {
         "source_file": "examples/restricted_zil_flow.scilla",
-        "line": 30,
+        "line": 32,
         "column": 10,
         "node_type": "Location"
       },
@@ -361,7 +425,7 @@
         "field_name": {
           "loc": {
             "source_file": "examples/restricted_zil_flow.scilla",
-            "line": 33,
+            "line": 35,
             "column": 7,
             "node_type": "Location"
           },
@@ -376,7 +440,7 @@
         "expression": {
           "loc": {
             "source_file": "examples/restricted_zil_flow.scilla",
-            "line": 33,
+            "line": 35,
             "column": 40,
             "node_type": "Location"
           },
@@ -398,7 +462,7 @@
             "parameter_name": {
               "loc": {
                 "source_file": "examples/restricted_zil_flow.scilla",
-                "line": 36,
+                "line": 38,
                 "column": 17,
                 "node_type": "Location"
               },
@@ -413,7 +477,7 @@
         "name": {
           "loc": {
             "source_file": "examples/restricted_zil_flow.scilla",
-            "line": 36,
+            "line": 38,
             "column": 12,
             "node_type": "Location"
           },
@@ -424,7 +488,7 @@
           {
             "loc": {
               "source_file": "examples/restricted_zil_flow.scilla",
-              "line": 37,
+              "line": 39,
               "column": 5,
               "node_type": "Location"
             },
@@ -432,7 +496,7 @@
             "map_name": {
               "loc": {
                 "source_file": "examples/restricted_zil_flow.scilla",
-                "line": 37,
+                "line": 39,
                 "column": 5,
                 "node_type": "Location"
               },
@@ -442,7 +506,7 @@
             "rhs": {
               "loc": {
                 "source_file": "examples/restricted_zil_flow.scilla",
-                "line": 37,
+                "line": 39,
                 "column": 26,
                 "node_type": "Location"
               },
@@ -453,7 +517,7 @@
               {
                 "loc": {
                   "source_file": "examples/restricted_zil_flow.scilla",
-                  "line": 37,
+                  "line": 39,
                   "column": 14,
                   "node_type": "Location"
                 },
@@ -466,12 +530,27 @@
         "node_type": "Component"
       },
       {
-        "params": [],
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file": "examples/restricted_zil_flow.scilla",
+                "line": 42,
+                "column": 16,
+                "node_type": "Location"
+              },
+              "identifier": "x",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "node_type": "Parameter"
+          }
+        ],
         "component_type": "transition",
         "name": {
           "loc": {
             "source_file": "examples/restricted_zil_flow.scilla",
-            "line": 40,
+            "line": 42,
             "column": 12,
             "node_type": "Location"
           },
@@ -482,14 +561,14 @@
           {
             "loc": {
               "source_file": "examples/restricted_zil_flow.scilla",
-              "line": 41,
+              "line": 43,
               "column": 5,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
                 "source_file": "examples/restricted_zil_flow.scilla",
-                "line": 41,
+                "line": 43,
                 "column": 7,
                 "node_type": "Location"
               },
@@ -499,7 +578,7 @@
             "rhs": {
               "loc": {
                 "source_file": "examples/restricted_zil_flow.scilla",
-                "line": 41,
+                "line": 43,
                 "column": 10,
                 "node_type": "Location"
               },
@@ -511,7 +590,7 @@
           {
             "loc": {
               "source_file": "examples/restricted_zil_flow.scilla",
-              "line": 42,
+              "line": 44,
               "column": 5,
               "node_type": "Location"
             },
@@ -519,26 +598,26 @@
             "lhs": {
               "loc": {
                 "source_file": "examples/restricted_zil_flow.scilla",
-                "line": 42,
-                "column": 7,
+                "line": 44,
+                "column": 8,
                 "node_type": "Location"
               },
-              "identifier": "v",
+              "identifier": "v1",
               "node_type": "Identifier"
             },
             "rhs_expr": {
               "loc": {
                 "source_file": "examples/restricted_zil_flow.scilla",
-                "line": 42,
-                "column": 9,
+                "line": 44,
+                "column": 10,
                 "node_type": "Location"
               },
               "node_type": "AppExpression",
               "lhs": {
                 "loc": {
                   "source_file": "examples/restricted_zil_flow.scilla",
-                  "line": 42,
-                  "column": 9,
+                  "line": 44,
+                  "column": 10,
                   "node_type": "Location"
                 },
                 "identifier": "get_from_map",
@@ -548,8 +627,8 @@
                 {
                   "loc": {
                     "source_file": "examples/restricted_zil_flow.scilla",
-                    "line": 42,
-                    "column": 22,
+                    "line": 44,
+                    "column": 23,
                     "node_type": "Location"
                   },
                   "identifier": "b",
@@ -558,8 +637,8 @@
                 {
                   "loc": {
                     "source_file": "examples/restricted_zil_flow.scilla",
-                    "line": 42,
-                    "column": 24,
+                    "line": 44,
+                    "column": 25,
                     "node_type": "Location"
                   },
                   "identifier": "_sender",
@@ -571,7 +650,7 @@
           {
             "loc": {
               "source_file": "examples/restricted_zil_flow.scilla",
-              "line": 43,
+              "line": 45,
               "column": 5,
               "node_type": "Location"
             },
@@ -579,7 +658,67 @@
             "lhs": {
               "loc": {
                 "source_file": "examples/restricted_zil_flow.scilla",
-                "line": 43,
+                "line": 45,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "v",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/restricted_zil_flow.scilla",
+                "line": 45,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "examples/restricted_zil_flow.scilla",
+                  "line": 45,
+                  "column": 9,
+                  "node_type": "Location"
+                },
+                "identifier": "get_from_map",
+                "node_type": "Identifier"
+              },
+              "rhs_list": [
+                {
+                  "loc": {
+                    "source_file": "examples/restricted_zil_flow.scilla",
+                    "line": 45,
+                    "column": 22,
+                    "node_type": "Location"
+                  },
+                  "identifier": "b",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "examples/restricted_zil_flow.scilla",
+                    "line": 45,
+                    "column": 24,
+                    "node_type": "Location"
+                  },
+                  "identifier": "x",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "examples/restricted_zil_flow.scilla",
+              "line": 46,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/restricted_zil_flow.scilla",
+                "line": 46,
                 "column": 7,
                 "node_type": "Location"
               },
@@ -589,7 +728,7 @@
             "rhs_expr": {
               "loc": {
                 "source_file": "examples/restricted_zil_flow.scilla",
-                "line": 43,
+                "line": 46,
                 "column": 9,
                 "node_type": "Location"
               },
@@ -597,7 +736,7 @@
               "lhs": {
                 "loc": {
                   "source_file": "examples/restricted_zil_flow.scilla",
-                  "line": 43,
+                  "line": 46,
                   "column": 15,
                   "node_type": "Location"
                 },
@@ -617,7 +756,7 @@
                           "loc": {
                             "source_file":
                               "examples/restricted_zil_flow.scilla",
-                            "line": 44,
+                            "line": 47,
                             "column": 12,
                             "node_type": "Location"
                           },
@@ -630,7 +769,7 @@
                   "expression": {
                     "loc": {
                       "source_file": "examples/restricted_zil_flow.scilla",
-                      "line": 45,
+                      "line": 48,
                       "column": 9,
                       "node_type": "Location"
                     },
@@ -638,7 +777,7 @@
                     "variable": {
                       "loc": {
                         "source_file": "examples/restricted_zil_flow.scilla",
-                        "line": 45,
+                        "line": 48,
                         "column": 9,
                         "node_type": "Location"
                       },
@@ -657,7 +796,7 @@
                   "expression": {
                     "loc": {
                       "source_file": "examples/restricted_zil_flow.scilla",
-                      "line": 47,
+                      "line": 50,
                       "column": 9,
                       "node_type": "Location"
                     },
@@ -675,7 +814,7 @@
           {
             "loc": {
               "source_file": "examples/restricted_zil_flow.scilla",
-              "line": 49,
+              "line": 52,
               "column": 5,
               "node_type": "Location"
             },
@@ -683,7 +822,7 @@
             "lhs": {
               "loc": {
                 "source_file": "examples/restricted_zil_flow.scilla",
-                "line": 49,
+                "line": 52,
                 "column": 9,
                 "node_type": "Location"
               },
@@ -693,7 +832,7 @@
             "rhs_expr": {
               "loc": {
                 "source_file": "examples/restricted_zil_flow.scilla",
-                "line": 49,
+                "line": 52,
                 "column": 11,
                 "node_type": "Location"
               },
@@ -715,7 +854,7 @@
                     "value": {
                       "loc": {
                         "source_file": "examples/restricted_zil_flow.scilla",
-                        "line": 49,
+                        "line": 52,
                         "column": 36,
                         "node_type": "Location"
                       },
@@ -732,7 +871,7 @@
                     "value": {
                       "loc": {
                         "source_file": "examples/restricted_zil_flow.scilla",
-                        "line": 49,
+                        "line": 52,
                         "column": 55,
                         "node_type": "Location"
                       },
@@ -749,7 +888,7 @@
                     "value": {
                       "loc": {
                         "source_file": "examples/restricted_zil_flow.scilla",
-                        "line": 49,
+                        "line": 52,
                         "column": 65,
                         "node_type": "Location"
                       },
@@ -764,7 +903,7 @@
           {
             "loc": {
               "source_file": "examples/restricted_zil_flow.scilla",
-              "line": 50,
+              "line": 53,
               "column": 5,
               "node_type": "Location"
             },
@@ -772,7 +911,7 @@
             "lhs": {
               "loc": {
                 "source_file": "examples/restricted_zil_flow.scilla",
-                "line": 50,
+                "line": 53,
                 "column": 10,
                 "node_type": "Location"
               },
@@ -782,7 +921,7 @@
             "rhs_expr": {
               "loc": {
                 "source_file": "examples/restricted_zil_flow.scilla",
-                "line": 50,
+                "line": 53,
                 "column": 12,
                 "node_type": "Location"
               },
@@ -790,7 +929,7 @@
               "lhs": {
                 "loc": {
                   "source_file": "examples/restricted_zil_flow.scilla",
-                  "line": 50,
+                  "line": 53,
                   "column": 12,
                   "node_type": "Location"
                 },
@@ -801,7 +940,7 @@
                 {
                   "loc": {
                     "source_file": "examples/restricted_zil_flow.scilla",
-                    "line": 50,
+                    "line": 53,
                     "column": 20,
                     "node_type": "Location"
                   },
@@ -814,14 +953,14 @@
           {
             "loc": {
               "source_file": "examples/restricted_zil_flow.scilla",
-              "line": 51,
+              "line": 54,
               "column": 5,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
                 "source_file": "examples/restricted_zil_flow.scilla",
-                "line": 51,
+                "line": 54,
                 "column": 5,
                 "node_type": "Location"
               },
