@@ -1,0 +1,35 @@
+scilla_version 0
+
+library A
+let id  = 
+    fun (a: Uint128) =>
+        a
+let one = Uint128 1
+
+let code_0 = Int32 0
+
+let code_1 = Int32 1
+let code_2 = Int32 2
+let code_3 = Int32 3
+let code_m1 = Int32 -1
+
+let one_msg =
+  fun (msg : Message) =>
+  let nil_msg = Nil {Message} in
+    Cons {Message} msg nil_msg
+
+(* MatchStatement contract *)
+
+contract TwoCalls
+()
+
+field msg : Uint128 = Uint128 1
+
+transition test (a: BNum, b: BNum)
+    m <- msg;
+    new_msg = id m;
+    new_one = id one;
+    msg = {_tag : ""; _recipient : _sender; _amount : one; content: new_one};
+    msgs = one_msg msg;
+    send msgs
+end
