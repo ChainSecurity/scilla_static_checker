@@ -12,50 +12,50 @@ import (
 type FactsDumper struct {
 	visited          map[Node]bool
 	idToPrefixID     map[uint64]string
-	procFacts        []string
-	dataVarFacts     []string
-	transitionFacts  []string
-	procedureFacts   []string
-	unitFacts        []string
-	planFacts        []string
-	sendFacts        []string
-	acceptFacts      []string
-	saveFacts        []string
-	loadFacts        []string
 	absDDFacts       []string
 	absTDFacts       []string
 	absTTFacts       []string
+	acceptFacts      []string
 	appDDFacts       []string
 	appTDFacts       []string
 	appTTFacts       []string
 	argumentFacts    []string
-	msgFacts         []string
-	msgTypeFacts     []string
-	keyArgumentFacts []string
-	strFacts         []string
-	strTypeFacts     []string
-	pickDataFacts    []string
-	dataCaseFacts    []string
-	jumpFacts        []string
-	procCaseFacts    []string
-	callProcFacts    []string
-	pickProcFacts    []string
-	natFacts         []string
-	natTypeFacts     []string
-	intFacts         []string
-	intTypeFacts     []string
-	rawFacts         []string
-	rawTypeFacts     []string
 	bindFacts        []string
-	condFacts        []string
+	bnrTypeFacts     []string
+	builtinFacts     []string
+	callProcFacts    []string
 	condBindFacts    []string
-	typeVarFacts     []string
+	condFacts        []string
+	dataCaseFacts    []string
+	dataVarFacts     []string
 	enumFacts        []string
 	enumTypeFacts    []string
-	setKindFacts     []string
+	intFacts         []string
+	intTypeFacts     []string
+	jumpFacts        []string
+	keyArgumentFacts []string
+	loadFacts        []string
 	mapTypeFacts     []string
-	builtinFacts     []string
-	bnrTypeFacts     []string
+	msgFacts         []string
+	msgTypeFacts     []string
+	natFacts         []string
+	natTypeFacts     []string
+	pickDataFacts    []string
+	pickProcFacts    []string
+	planFacts        []string
+	procCaseFacts    []string
+	procFacts        []string
+	procedureFacts   []string
+	rawFacts         []string
+	rawTypeFacts     []string
+	saveFacts        []string
+	sendFacts        []string
+	setKindFacts     []string
+	strFacts         []string
+	strTypeFacts     []string
+	transitionFacts  []string
+	typeVarFacts     []string
+	unitFacts        []string
 }
 
 func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
@@ -277,45 +277,45 @@ func DumpFacts(builder *CFGBuilder, factsInFolder string) {
 	fd := FactsDumper{
 		visited:          map[Node]bool{},
 		idToPrefixID:     map[uint64]string{},
-		procFacts:        []string{},
-		dataVarFacts:     []string{},
-		unitFacts:        []string{},
-		planFacts:        []string{},
-		sendFacts:        []string{},
-		acceptFacts:      []string{},
-		saveFacts:        []string{},
-		loadFacts:        []string{},
 		absDDFacts:       []string{},
 		absTDFacts:       []string{},
 		absTTFacts:       []string{},
+		acceptFacts:      []string{},
 		appDDFacts:       []string{},
 		appTDFacts:       []string{},
 		appTTFacts:       []string{},
 		argumentFacts:    []string{},
-		msgFacts:         []string{},
-		keyArgumentFacts: []string{},
-		strFacts:         []string{},
-		strTypeFacts:     []string{},
-		callProcFacts:    []string{},
-		pickProcFacts:    []string{},
-		pickDataFacts:    []string{},
-		dataCaseFacts:    []string{},
-		procCaseFacts:    []string{},
-		natFacts:         []string{},
-		natTypeFacts:     []string{},
-		intFacts:         []string{},
-		intTypeFacts:     []string{},
-		rawFacts:         []string{},
-		rawTypeFacts:     []string{},
 		bindFacts:        []string{},
-		condFacts:        []string{},
+		bnrTypeFacts:     []string{},
+		builtinFacts:     []string{},
+		callProcFacts:    []string{},
 		condBindFacts:    []string{},
-		typeVarFacts:     []string{},
+		condFacts:        []string{},
+		dataCaseFacts:    []string{},
+		dataVarFacts:     []string{},
 		enumFacts:        []string{},
 		enumTypeFacts:    []string{},
+		intFacts:         []string{},
+		intTypeFacts:     []string{},
+		keyArgumentFacts: []string{},
+		loadFacts:        []string{},
+		msgFacts:         []string{},
+		natFacts:         []string{},
+		natTypeFacts:     []string{},
+		pickDataFacts:    []string{},
+		pickProcFacts:    []string{},
+		planFacts:        []string{},
+		procCaseFacts:    []string{},
+		procFacts:        []string{},
+		rawFacts:         []string{},
+		rawTypeFacts:     []string{},
+		saveFacts:        []string{},
+		sendFacts:        []string{},
 		setKindFacts:     []string{},
-		builtinFacts:     []string{},
-		bnrTypeFacts:     []string{},
+		strFacts:         []string{},
+		strTypeFacts:     []string{},
+		typeVarFacts:     []string{},
+		unitFacts:        []string{},
 	}
 	for tName, t := range builder.Transitions {
 		fmt.Println("Transition", tName)
