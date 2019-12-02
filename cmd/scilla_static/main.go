@@ -17,8 +17,6 @@ func main() {
 
 	var analysisDir string
 	flag.StringVar(&analysisDir, "analysis_dir", "./souffle_analysis", "folder where facts_in and facts_out will be created")
-	factsOutFolder := path.Join(analysisDir, "facts_out")
-	factsInFolder := path.Join(analysisDir, "facts_in")
 
 	flag.Parse()
 
@@ -42,6 +40,10 @@ func main() {
 	b := ir.BuildCFG(cm)
 
 	// Creating souffle output files
+
+	factsOutFolder := path.Join(analysisDir, "facts_out")
+	factsInFolder := path.Join(analysisDir, "facts_in")
+	fmt.Printf("The facts folders: %s %s\n", factsOutFolder, factsInFolder)
 	err = souffle.MakeCleanFolder(factsOutFolder)
 	if err != nil {
 		panic(err)
@@ -55,7 +57,7 @@ func main() {
 	ir.DumpFacts(b, factsInFolder)
 
 	// Running souffle
-	souffle.RunSouffle("souffle_analysis/analysis.dl", "souffle_analysis/facts_in", "souffle_analysis/facts_out")
+	souffle.RunSouffle("souffle_analysis/analysis.dl", factsInFolder, factsOutFolder)
 
 	// Results output
 	fmt.Println("======RESULTS======")
