@@ -1,23 +1,41 @@
 #include "analysis-input.dl"
-#include "analysis-patterns.dl"
+//#include "analysis-patterns.dl"
 #include "util-macros.dl"
+#include "util-graph.dl"
+#include "util-lists.dl"
+//#include "analysis-contexts.dl"
+//#include "contexts/callstack-context.dl"
+
+//.init ctxProvider = FullContext
 
 // DependsOn: a unit depends on another one which is closer to the leaves of the tree
-.decl dependsOnStep(unit: Unit, previousUnit: Unit)
+.decl dependsOnStep(element: Element, previousElement: Element)
 dependsOnStep(dependent, independent) :-
-    unit(dependent),
-    unit(independent),
     (
-        send(dependent, independent);
-        argument(dependent, independent, _);
-        keyArgument(dependent, independent, _);
-        appDD(dependent, independent);
-        appTD(dependent, independent);
         absDD(dependent, independent);
         absTD(dependent, independent);
+        absTT(dependent, independent);
+        appDD(dependent, independent);
+        appTD(dependent, independent);
+        argument(dependent, independent, _);
         bind(dependent, _, independent);
-        condBind(dependent, independent, _)
+        callProc(dependent, independent);
+        condBind(dependent, independent, _);
+        dataCase(dependent, independent, _, _);
+        dataCase(dependent, _, independent, _);
+        dataCase(dependent, _, _, independent);
+        jump(dependent, independent);
+        keyArgument(dependent, independent, _);
+        mapType(dependent, _, independent);
+        pickData(dependent, independent, _);
+        pickProc(dependent, independent);
+        plan(dependent, independent, _);
+        procCase(dependent, independent, _);
+        procCase(dependent, _, independent);
+        save(dependent, _, independent);
+        send(dependent, independent)
     ).
+.output dependsOnStep
 
 .decl dependsOn(dependent: Unit, independent: Unit)
 dependsOn(dependent, independent) :- dependsOnStep(dependent, independent).
@@ -25,7 +43,62 @@ dependsOn(dependent, independent) :- dependsOnStep(dependent, intermediate), dep
 
 .output dependsOn
 
+.decl transfer(transfer: Unit, argument: Unit, parameter: Unit)
+transfer(transfer, argument, parameter):-
+    appDD(transfer, _),
+    argument(transfer, argument, index),
+    argument(absDDId, parameter, index),
+    dependsOn(transfer, absDDId),
+    absDD(absDDId, _),
+    cApp = count : {dependsOn(transfer, intermediate), appDD(intermediate, _) ,dependsOn(intermediate, absDDId)},
+    cAbs = count : {dependsOn(transfer, intermediate), absDD(intermediate, _) ,dependsOn(intermediate, absDDId)},
+    cApp = cAbs.
 
+.output transfer
+
+
+.type Context = [u: Unit, c: Context]
+.type ElementInContext = [element: Element, context: Context]
+
+.decl contextForInit(element: Element, context : Context)
+contextForInit(transitionId, nil) :- transition(transitionId).
+
+.decl executionState(element: Element, context: Context)
+executionState(element, context) :- 
+    transition(element), contextForInit(element, context).
+
+executionState(elementId, context) :-
+    dependsOnStep(dep, elementId),
+    !appDD(dep, _), 
+    !appTD(dep, _),
+    executionState(dep, context).
+
+executionState(elementId, contextAppDD) :-
+    dependsOnStep(dep, elementId),
+    (
+        appDD(dep, _); 
+        appTD(dep, _)
+    ),
+    contextAppDD = [dep, context],
+    executionState(dep, context).
+
+.init contexts = ListOps<Element, Context>
+
+.decl printExecutionState(elementId: Element, strCtx: symbol)
+printExecutionState(elementId, strCtx):-
+    executionState(elementId, context),
+    contexts.toString(context, strCtx).
+
+.output printExecutionState
+.output executionState
+
+
+
+
+
+
+
+//.decl followsPlan(nextUnitPlan: Unit, prevUnitPlan: Unit)
 //followsPlan(nextUnitPlan, prevUnitPlan) :-
     //plan(procId, nextUnitPlan, nextIndex),
     //plan(procId, prevUnitPlan, previousIndex),
