@@ -1,0 +1,701 @@
+{
+  "scilla_major_version": 0,
+  "name": {
+    "loc": {
+      "source_file": "examples/two_calls.scilla",
+      "line": 23,
+      "column": 10,
+      "node_type": "Location"
+    },
+    "identifier": "TwoCalls",
+    "node_type": "Identifier"
+  },
+  "library": {
+    "library_name": {
+      "loc": {
+        "source_file": "examples/two_calls.scilla",
+        "line": 3,
+        "column": 1,
+        "node_type": "Location"
+      },
+      "identifier": "A",
+      "node_type": "Identifier"
+    },
+    "library_entries": [
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/two_calls.scilla",
+            "line": 4,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "id",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/two_calls.scilla",
+            "line": 5,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/two_calls.scilla",
+              "line": 5,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "identifier": "a",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/two_calls.scilla",
+              "line": 6,
+              "column": 9,
+              "node_type": "Location"
+            },
+            "node_type": "VarExpression",
+            "variable": {
+              "loc": {
+                "source_file": "examples/two_calls.scilla",
+                "line": 6,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "a",
+              "node_type": "Identifier"
+            }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Uint128" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/two_calls.scilla",
+            "line": 7,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "one",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/two_calls.scilla",
+            "line": 7,
+            "column": 11,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "1", "width": 128 }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/two_calls.scilla",
+            "line": 9,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "code_0",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/two_calls.scilla",
+            "line": 9,
+            "column": 14,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "0", "width": 32 }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/two_calls.scilla",
+            "line": 11,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "code_1",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/two_calls.scilla",
+            "line": 11,
+            "column": 14,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "1", "width": 32 }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/two_calls.scilla",
+            "line": 12,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "code_2",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/two_calls.scilla",
+            "line": 12,
+            "column": 14,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "2", "width": 32 }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/two_calls.scilla",
+            "line": 13,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "code_3",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/two_calls.scilla",
+            "line": 13,
+            "column": 14,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "3", "width": 32 }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/two_calls.scilla",
+            "line": 14,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "code_m1",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/two_calls.scilla",
+            "line": 14,
+            "column": 15,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "IntLiteral", "value": "-1", "width": 32 }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/two_calls.scilla",
+            "line": 16,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "one_msg",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/two_calls.scilla",
+            "line": 17,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/two_calls.scilla",
+              "line": 17,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "msg",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/two_calls.scilla",
+              "line": 18,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "LetExpression",
+            "variable": {
+              "loc": {
+                "source_file": "examples/two_calls.scilla",
+                "line": 18,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "nil_msg",
+              "node_type": "Identifier"
+            },
+            "variable_type": null,
+            "expression": {
+              "loc": {
+                "source_file": "examples/two_calls.scilla",
+                "line": 18,
+                "column": 17,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "Nil",
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
+              "args": []
+            },
+            "body": {
+              "loc": {
+                "source_file": "examples/two_calls.scilla",
+                "line": 19,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "Cons",
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
+              "args": [
+                {
+                  "loc": {
+                    "source_file": "examples/two_calls.scilla",
+                    "line": 19,
+                    "column": 20,
+                    "node_type": "Location"
+                  },
+                  "identifier": "msg",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "examples/two_calls.scilla",
+                    "line": 19,
+                    "column": 24,
+                    "node_type": "Location"
+                  },
+                  "identifier": "nil_msg",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Message" }
+        }
+      }
+    ],
+    "node_type": "Library"
+  },
+  "external_libraries": [],
+  "contract": {
+    "name": {
+      "loc": {
+        "source_file": "examples/two_calls.scilla",
+        "line": 23,
+        "column": 10,
+        "node_type": "Location"
+      },
+      "identifier": "TwoCalls",
+      "node_type": "Identifier"
+    },
+    "params": [],
+    "fields": [
+      {
+        "field_name": {
+          "loc": {
+            "source_file": "examples/two_calls.scilla",
+            "line": 26,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "msg",
+          "node_type": "Identifier"
+        },
+        "field_type": { "node_type": "PrimType", "name": "Uint128" },
+        "expression": {
+          "loc": {
+            "source_file": "examples/two_calls.scilla",
+            "line": 26,
+            "column": 23,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "1", "width": 128 }
+        },
+        "node_type": "Field"
+      }
+    ],
+    "components": [
+      {
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file": "examples/two_calls.scilla",
+                "line": 28,
+                "column": 18,
+                "node_type": "Location"
+              },
+              "identifier": "a",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "BNum" },
+            "node_type": "Parameter"
+          },
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file": "examples/two_calls.scilla",
+                "line": 28,
+                "column": 27,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "BNum" },
+            "node_type": "Parameter"
+          }
+        ],
+        "component_type": "transition",
+        "name": {
+          "loc": {
+            "source_file": "examples/two_calls.scilla",
+            "line": 28,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "test",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file": "examples/two_calls.scilla",
+              "line": 29,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "examples/two_calls.scilla",
+                "line": 29,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "m",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "examples/two_calls.scilla",
+                "line": 29,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "identifier": "msg",
+              "node_type": "Identifier"
+            },
+            "node_type": "LoadStatement"
+          },
+          {
+            "loc": {
+              "source_file": "examples/two_calls.scilla",
+              "line": 30,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/two_calls.scilla",
+                "line": 30,
+                "column": 13,
+                "node_type": "Location"
+              },
+              "identifier": "new_msg",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/two_calls.scilla",
+                "line": 30,
+                "column": 15,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "examples/two_calls.scilla",
+                  "line": 30,
+                  "column": 15,
+                  "node_type": "Location"
+                },
+                "identifier": "id",
+                "node_type": "Identifier"
+              },
+              "rhs_list": [
+                {
+                  "loc": {
+                    "source_file": "examples/two_calls.scilla",
+                    "line": 30,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "m",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "examples/two_calls.scilla",
+              "line": 31,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/two_calls.scilla",
+                "line": 31,
+                "column": 13,
+                "node_type": "Location"
+              },
+              "identifier": "new_one",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/two_calls.scilla",
+                "line": 31,
+                "column": 15,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "examples/two_calls.scilla",
+                  "line": 31,
+                  "column": 15,
+                  "node_type": "Location"
+                },
+                "identifier": "id",
+                "node_type": "Identifier"
+              },
+              "rhs_list": [
+                {
+                  "loc": {
+                    "source_file": "examples/two_calls.scilla",
+                    "line": 31,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "one",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "examples/two_calls.scilla",
+              "line": 32,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/two_calls.scilla",
+                "line": 32,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "msg",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/two_calls.scilla",
+                "line": 32,
+                "column": 11,
+                "node_type": "Location"
+              },
+              "node_type": "MessageExpression",
+              "margs": [
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_tag",
+                  "payload": {
+                    "node_type": "PayloadLiteral",
+                    "literal": { "node_type": "StringLiteral", "value": "" }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_recipient",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file": "examples/two_calls.scilla",
+                        "line": 32,
+                        "column": 36,
+                        "node_type": "Location"
+                      },
+                      "identifier": "_sender",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_amount",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file": "examples/two_calls.scilla",
+                        "line": 32,
+                        "column": 55,
+                        "node_type": "Location"
+                      },
+                      "identifier": "one",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "content",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file": "examples/two_calls.scilla",
+                        "line": 32,
+                        "column": 69,
+                        "node_type": "Location"
+                      },
+                      "identifier": "new_one",
+                      "node_type": "Identifier"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "examples/two_calls.scilla",
+              "line": 33,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/two_calls.scilla",
+                "line": 33,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "identifier": "msgs",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/two_calls.scilla",
+                "line": 33,
+                "column": 12,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "examples/two_calls.scilla",
+                  "line": 33,
+                  "column": 12,
+                  "node_type": "Location"
+                },
+                "identifier": "one_msg",
+                "node_type": "Identifier"
+              },
+              "rhs_list": [
+                {
+                  "loc": {
+                    "source_file": "examples/two_calls.scilla",
+                    "line": 33,
+                    "column": 20,
+                    "node_type": "Location"
+                  },
+                  "identifier": "msg",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "examples/two_calls.scilla",
+              "line": 34,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file": "examples/two_calls.scilla",
+                "line": 34,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "msgs",
+              "node_type": "Identifier"
+            },
+            "node_type": "SendMsgsStatement"
+          }
+        ],
+        "node_type": "Component"
+      }
+    ],
+    "node_type": "Contract"
+  },
+  "node_type": "ContractModule"
+}
