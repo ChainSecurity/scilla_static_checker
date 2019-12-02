@@ -63,31 +63,55 @@ transfer(transfer, argument, parameter):-
 .decl contextForInit(element: Element, context : Context)
 contextForInit(transitionId, nil) :- transition(transitionId).
 
+.decl context(context: Context)
 .decl executionState(element: Element, context: Context)
-executionState(element, context) :- 
+context(context), executionState(element, context) :- 
     transition(element), contextForInit(element, context).
 
-executionState(elementId, context) :-
+// if the node does not depend on an appDD, just propagate the context
+context(context) ,executionState(elementId, context) :-
     dependsOnStep(dep, elementId),
-    !appDD(dep, _), 
-    !appTD(dep, _),
+    !planApp(dep),
     executionState(dep, context).
 
-executionState(elementId, contextAppDD) :-
+//check two_calls.json
+// If the node depends on an appDD which is part of the plan then add a context taking the context
+// of the proc. We do this since a planAppDD my be used later by another appDD. Then we will add the context twice,
+// once for the calculation of the value of the appDD and once when the value is used as an argument.
+context(context), executionState(elementId, contextAppDD) :-
     dependsOnStep(dep, elementId),
-    (
-        appDD(dep, _); 
-        appTD(dep, _)
-    ),
+    plan(procId, dep, _),
+    appDD(dep, elementId),
     contextAppDD = [dep, context],
-    executionState(dep, context).
+    executionState(procId, context).
 
+.decl planApp(unitId: Unit)
+planApp(unitId):-
+    appDD(unitId, _), plan(_, unitId, _).
+
+planApp(unitId):-
+    appTD(unitId, _), plan(_, unitId, _).
+
+.output planApp
 .init contexts = ListOps<Element, Context>
 
 .decl printExecutionState(elementId: Element, strCtx: symbol)
 printExecutionState(elementId, strCtx):-
     executionState(elementId, context),
-    contexts.toString(context, strCtx).
+    contextToString(context, strCtx).
+
+.decl contextToString(context: Context, str: symbol)
+contextToString(nil, "").
+contextToString([c, cRest], STR_JOIN(c, ",", rest)) :-
+    context([c, cRest]),
+    contextToString(cRest, rest).
+
+.decl contextToLength(context: Context, n: number)
+contextToLength(nil, 0).
+contextToLength([c, cRest], n+1):-
+    context([c, cRest]),
+    contextToLength(cRest, n).
+
 
 .output printExecutionState
 .output executionState
