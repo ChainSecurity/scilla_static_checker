@@ -3,8 +3,8 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ast"
-	"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ir"
+	"github.com/ChainSecurity/scilla_static_checker/pkg/ast"
+	"github.com/ChainSecurity/scilla_static_checker/pkg/ir"
 	"io/ioutil"
 	"os"
 )

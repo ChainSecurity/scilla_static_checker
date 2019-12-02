@@ -3,7 +3,7 @@ package ast
 import (
 	"errors"
 	"fmt"
-	//"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ast"
+	//"github.com/ChainSecurity/scilla_static_checker/pkg/ast"
 )
 
 type Visitor interface {
