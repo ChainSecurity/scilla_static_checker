@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ast"
 	"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ir"
@@ -11,25 +12,36 @@ import (
 )
 
 func main() {
-	jsonPath := os.Args[1]
-	jsonFile, err := os.Open(jsonPath)
+
+	// Handling CLI flags
+
+	var analysisDir string
+	flag.StringVar(&analysisDir, "analysis_dir", "./souffle_analysis", "folder where facts_in and facts_out will be created")
+	factsOutFolder := path.Join(analysisDir, "facts_out")
+	factsInFolder := path.Join(analysisDir, "facts_in")
+
+	flag.Parse()
+
+	// Reading json ast
+	astJsonPath := flag.Arg(0)
+	jsonFile, err := os.Open(astJsonPath)
+	fmt.Println(astJsonPath, analysisDir)
 	if err != nil {
 		panic(err)
 	}
 	defer jsonFile.Close()
 
+	// Parsing ast
 	byteValue, _ := ioutil.ReadAll(jsonFile)
 	cm, err := ast.Parse_mod(byteValue)
 	if err != nil {
 		panic(err)
 	}
 
+	// Building IR CFG
 	b := ir.BuildCFG(cm)
 
-	analysisFolder := "./souffle_analysis"
-	factsOutFolder := path.Join(analysisFolder, "facts_out")
-	factsInFolder := path.Join(analysisFolder, "facts_in")
-
+	// Creating souffle output files
 	err = souffle.MakeCleanFolder(factsOutFolder)
 	if err != nil {
 		panic(err)
@@ -42,8 +54,10 @@ func main() {
 
 	ir.DumpFacts(b, factsInFolder)
 
+	// Running souffle
 	souffle.RunSouffle("souffle_analysis/analysis.dl", "souffle_analysis/facts_in", "souffle_analysis/facts_out")
 
+	// Results output
 	fmt.Println("======RESULTS======")
 
 	outputFiles := []string{"patternMatch.csv", "patternMatchInfo.csv"}
