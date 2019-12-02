@@ -46,10 +46,10 @@ def test_single(folder):
     violations = collections.Counter([r[0] for r in out_lines if r[2] == 'violation'])
     warnings = collections.Counter([r[0] for r in out_lines if r[2] == 'warning'])
 
-    for key in violations.keys():
-        assert key in expected_violations
+    for key in expected_violations.keys():
+        assert key in violations
         assert violations[key] >= expected_violations[key]
 
-    for key in warnings.keys():
-        assert key in expected_warnings
+    for key in expected_warnings.keys():
+        assert key in warnings
         assert warnings[key] >= expected_warnings[key]
