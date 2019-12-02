@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ast"
-	"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ir"
-	"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/souffle"
+	"github.com/ChainSecurity/scilla_static_checker/pkg/ast"
+	"github.com/ChainSecurity/scilla_static_checker/pkg/ir"
+	"github.com/ChainSecurity/scilla_static_checker/pkg/souffle"
 	"io/ioutil"
 	"os"
 	"path"
