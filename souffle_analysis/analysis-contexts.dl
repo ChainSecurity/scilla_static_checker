@@ -1,68 +1,72 @@
 #include "util-lists.dl"
 
-/** Interface component for program context definition logic
- *
- *  This component defines a request-response interface for generating
- *  call stack related contexts.
- *
- *  The client of this provider requests contexts via the methods
- *    [[requestContextForInit]] (for entry calls to functions)
- *    [[requestContextForCall]] (for calls from functions)
- *  for program elements ([[Element]]).
- *
- *  The provider implementation will then populate the relations
- *    [[contextForCall]] and
- *    [[contextForInit]]
- *  according to its rules and the requested program elements.
- */
-.comp ContextProvider<TContext> {
-    .type Context = [c: TContext]
-    .type ElementInContext = [element: Element, context: TContext]
+.comp ContextProvider {
 
-    // Relational Interface
-    .decl contextForCall(callee: Function, transferToCallee: Transfer, callerContext: TContext, context: TContext)
-    .decl contextForInit(callee: Function, context: TContext)
+    .type Context = [u: Unit, c: Context]
+    .type ElementInContext = [element: Element, context: Context]
 
-    .decl requestContextForCall(callee: Function, transferToCallee: Transfer, callerContext: TContext)
-    .decl requestContextForInit(callee: Function)
+    .decl contextForInit(element: Element, context : Context)
+    contextForInit(transitionId, nil) :- transition(transitionId).
 
-    .decl requestFallbackContextForCall(callee: Function, transferToCallee: Transfer, callerContext: TContext)
+    .decl context(context: Context)
+    .decl executionState(element: Element, context: Context)
+    context(context), executionState(element, context) :- 
+        transition(element), contextForInit(element, context).
 
-    .decl executionState(state: ElementInContext)
+    // if the node does not depend on an appDD, just propagate the context
+    context(context) ,executionState(elementId, context) :-
+        followsStep(dep, elementId),
+        !planApp(dep),
+        executionState(dep, context).
 
+    context(context) ,executionState(elementId, context) :-
+        argument(dep, elementId, _),
+        planApp(dep),
+        executionState(dep, context).
+    //check two_calls.json
+    // If the node depends on an appDD which is part of the plan then add a context taking the context
+    // of the proc. We do this since a planAppDD my be used later by another appDD. Then we will add the context twice,
+    // once for the calculation of the value of the appDD and once when the value is used as an argument.
+    context(context), executionState(elementId, contextAppDD) :-
+        followsStep(dep, elementId),
+        plan(procId, dep, _),
+        appDD(dep, elementId),
+        contextAppDD = [dep, context],
+        executionState(procId, context).
 
-    // Helper Relations
-    .decl contextFor(callee: Function, context: TContext)
-    contextFor(callee, context) :- contextForInit(callee, context).
-    contextFor(callee, context) :- contextForCall(callee, _, _, context).
+    .decl elementInContext(elemCtx: ElementInContext, element: Element, context: Context)
+    elementInContext([element, context], element, context):-
+        executionState(element, context).
 
-    .decl contexts(context: TContext)
-    contexts(context) :- contextFor(_, context).
+    .decl printExecutionState(elementId: Element, strCtx: symbol)
+    printExecutionState(elementId, strCtx):-
+        executionState(elementId, context),
+        contextToString(context, strCtx).
 
-    .decl contextToString(context: TContext, string: symbol)
+    .decl contextToString(context: Context, str: symbol)
+    contextToString(nil, "").
+    contextToString([c, cRest], STR_JOIN(c, ",", rest)) :-
+        context([c, cRest]),
+        contextToString(cRest, rest).
 
-    .init contextGraph = DiGraphOps<TContext>
-    contextGraph.node(context) :- contexts(context).
-    contextGraph.edge(contextInner, contextOuter) :- contextForCall(_, _, contextOuter, contextInner).
+    .output printExecutionState
+    .output executionState
 
-    //.decl isInConstructorContext(context: TContext)
-    //isInConstructorContext(context) :-
-        //function(c, _),
-        //annotation(c, "solidityFunctionKind", "constructor"),
-        //contextForInit(c, cCtx),
-        //contextGraph.dominatedBy(context, cCtx).
+    .decl followsContext(ctxPrev: Context, ctx: Context)
+    followsContext(ctxPrev, ctx) :-
+        context(ctx),
+        context(ctxPrev),
+        [c, previousCtx] = ctx,
+        previousCtx = ctxPrev.
 
-    .decl isSubcontextOf(sub: TContext, super: TContext) inline
-    isSubcontextOf(sub, super) :- contextGraph.reachableFrom(sub, super).
+    .output followsContext
 
-    /** Associates an element with its context and context-qualified variant. */
-    .decl elementInContext(elementInContext: ElementInContext, element: Element, context: TContext)
-    elementInContext([element, context], element, context) :- executionState([element, context]).
-
-    .decl executionStateToString(state: ElementInContext, string: symbol)
-    executionStateToString(elemCtx, cat(cat(elem, " @ "), ctxString)) :-
+    .decl printElementInContext(elemCtx: ElementInContext, elem: Element, str: symbol)
+    printElementInContext(elemCtx, elem, str) :-
         elementInContext(elemCtx, elem, ctx),
-        contextToString(ctx, ctxString).
+        contextToString(ctx, str).
+
+    .output printElementInContext
 }
 
 #include "analysis-contexts-macros.dl"
