@@ -559,7 +559,8 @@
                     "node_type": "BindStatement",
                     "lhs": {
                       "loc": {
-                        "source_file": "examples/blocknumber_compliance.scilla",
+                        "source_file":
+                          "examples/blocknumber_compliance.scilla",
                         "line": 39,
                         "column": 7,
                         "node_type": "Location"
@@ -569,7 +570,8 @@
                     },
                     "rhs_expr": {
                       "loc": {
-                        "source_file": "examples/blocknumber_compliance.scilla",
+                        "source_file":
+                          "examples/blocknumber_compliance.scilla",
                         "line": 39,
                         "column": 9,
                         "node_type": "Location"
@@ -608,7 +610,8 @@
                     "node_type": "BindStatement",
                     "lhs": {
                       "loc": {
-                        "source_file": "examples/blocknumber_compliance.scilla",
+                        "source_file":
+                          "examples/blocknumber_compliance.scilla",
                         "line": 41,
                         "column": 9,
                         "node_type": "Location"
@@ -618,7 +621,8 @@
                     },
                     "rhs_expr": {
                       "loc": {
-                        "source_file": "examples/blocknumber_compliance.scilla",
+                        "source_file":
+                          "examples/blocknumber_compliance.scilla",
                         "line": 41,
                         "column": 11,
                         "node_type": "Location"
@@ -703,7 +707,8 @@
                     "node_type": "BindStatement",
                     "lhs": {
                       "loc": {
-                        "source_file": "examples/blocknumber_compliance.scilla",
+                        "source_file":
+                          "examples/blocknumber_compliance.scilla",
                         "line": 42,
                         "column": 10,
                         "node_type": "Location"
@@ -713,7 +718,8 @@
                     },
                     "rhs_expr": {
                       "loc": {
-                        "source_file": "examples/blocknumber_compliance.scilla",
+                        "source_file":
+                          "examples/blocknumber_compliance.scilla",
                         "line": 42,
                         "column": 12,
                         "node_type": "Location"
@@ -754,7 +760,8 @@
                     },
                     "arg": {
                       "loc": {
-                        "source_file": "examples/blocknumber_compliance.scilla",
+                        "source_file":
+                          "examples/blocknumber_compliance.scilla",
                         "line": 43,
                         "column": 5,
                         "node_type": "Location"
