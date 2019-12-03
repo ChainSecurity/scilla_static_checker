@@ -37,6 +37,8 @@ func Walk(v Visitor, node Node, prev_node Node) {
 		}
 	case *Accept:
 		// do nothing
+	case *Event:
+		Walk(v, n.Data, n)
 	case *Send:
 		Walk(v, n.Data, n)
 	case *DataVar:
@@ -149,8 +151,6 @@ func Walk(v Visitor, node Node, prev_node Node) {
 			Walk(v, n.Args[i], n)
 		}
 		Walk(v, n.To, n)
-	//case nil:
-	//fmt.Printf("NIL %T\n", prev_node)
 	default:
 		//fmt.Printf("- %T\n", n)
 		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))

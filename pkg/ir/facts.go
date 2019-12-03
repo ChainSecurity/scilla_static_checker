@@ -30,6 +30,7 @@ type FactsDumper struct {
 	dataVarFacts     []string
 	enumFacts        []string
 	enumTypeFacts    []string
+	eventFacts       []string
 	intFacts         []string
 	intTypeFacts     []string
 	jumpFacts        []string
@@ -96,6 +97,9 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 	case *DataVar:
 		fact := fmt.Sprintf("%d", n.ID())
 		fd.dataVarFacts = append(fd.dataVarFacts, fact)
+	case *Event:
+		fact := fmt.Sprintf("%d\t%d", n.ID(), n.Data.ID())
+		fd.eventFacts = append(fd.eventFacts, fact)
 	case *Send:
 		fact := fmt.Sprintf("%d\t%d", n.ID(), n.Data.ID())
 		fd.sendFacts = append(fd.sendFacts, fact)
@@ -295,6 +299,7 @@ func DumpFacts(builder *CFGBuilder, factsInFolder string) {
 		dataVarFacts:     []string{},
 		enumFacts:        []string{},
 		enumTypeFacts:    []string{},
+		eventFacts:       []string{},
 		intFacts:         []string{},
 		intTypeFacts:     []string{},
 		keyArgumentFacts: []string{},
@@ -331,48 +336,50 @@ func DumpFacts(builder *CFGBuilder, factsInFolder string) {
 	}
 
 	fileToFacts := map[string][]string{
-		"proc":        fd.procFacts,
-		"dataVar":     fd.dataVarFacts,
-		"transition":  fd.transitionFacts,
-		"procedure":   fd.procedureFacts,
-		"unit":        fd.unitFacts,
-		"plan":        fd.planFacts,
-		"send":        fd.sendFacts,
-		"accept":      fd.acceptFacts,
-		"save":        fd.saveFacts,
-		"load":        fd.loadFacts,
 		"absDD":       fd.absDDFacts,
 		"absTD":       fd.absTDFacts,
 		"absTT":       fd.absTTFacts,
+		"accept":      fd.acceptFacts,
 		"appDD":       fd.appDDFacts,
 		"appTD":       fd.appTDFacts,
 		"appTT":       fd.appTTFacts,
 		"argument":    fd.argumentFacts,
-		"msg":         fd.msgFacts,
-		"keyArgument": fd.keyArgumentFacts,
-		"str":         fd.strFacts,
-		"strType":     fd.strTypeFacts,
-		"jump":        fd.jumpFacts,
-		"callProc":    fd.callProcFacts,
-		"pickProc":    fd.pickProcFacts,
-		"pickData":    fd.pickDataFacts,
-		"dataCase":    fd.dataCaseFacts,
-		"nat":         fd.natFacts,
-		"natType":     fd.natTypeFacts,
-		"int":         fd.intFacts,
-		"intType":     fd.intTypeFacts,
-		"raw":         fd.rawFacts,
-		"rawType":     fd.rawTypeFacts,
 		"bind":        fd.bindFacts,
+		"bnrType":     fd.bnrTypeFacts,
+		"builtin":     fd.builtinFacts,
+		"callProc":    fd.callProcFacts,
 		"cond":        fd.condFacts,
 		"condBind":    fd.condBindFacts,
-		"typeVar":     fd.typeVarFacts,
+		"dataCase":    fd.dataCaseFacts,
+		"dataVar":     fd.dataVarFacts,
 		"enum":        fd.enumFacts,
 		"enumType":    fd.enumTypeFacts,
-		"setKind":     fd.setKindFacts,
+		"event":       fd.eventFacts,
+		"int":         fd.intFacts,
+		"intType":     fd.intTypeFacts,
+		"jump":        fd.jumpFacts,
+		"keyArgument": fd.keyArgumentFacts,
+		"load":        fd.loadFacts,
 		"mapType":     fd.mapTypeFacts,
-		"builtin":     fd.builtinFacts,
-		"bnrType":     fd.bnrTypeFacts,
+		"msg":         fd.msgFacts,
+		"nat":         fd.natFacts,
+		"natType":     fd.natTypeFacts,
+		"pickData":    fd.pickDataFacts,
+		"pickProc":    fd.pickProcFacts,
+		"procCase":    fd.procCaseFacts,
+		"plan":        fd.planFacts,
+		"proc":        fd.procFacts,
+		"procedure":   fd.procedureFacts,
+		"raw":         fd.rawFacts,
+		"rawType":     fd.rawTypeFacts,
+		"save":        fd.saveFacts,
+		"send":        fd.sendFacts,
+		"setKind":     fd.setKindFacts,
+		"str":         fd.strFacts,
+		"strType":     fd.strTypeFacts,
+		"transition":  fd.transitionFacts,
+		"typeVar":     fd.typeVarFacts,
+		"unit":        fd.unitFacts,
 	}
 
 	for fileName, lines := range fileToFacts {

@@ -497,6 +497,15 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) *Proc {
 			panic(errors.New(fmt.Sprintf("Unhandled ReadFromBCStatement: %s", n.RhsStr)))
 		}
 
+	case *ast.CreateEvntStatement:
+		d, ok := stackMapPeek(builder.varStack, n.Arg.Id)
+		if !ok {
+			panic(errors.New(fmt.Sprintf("variable not found: %s", n.Arg.Id)))
+		}
+		u = &Event{
+			IDNode: builder.newIDNode(),
+			Data:   d,
+		}
 	default:
 		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
 	}
