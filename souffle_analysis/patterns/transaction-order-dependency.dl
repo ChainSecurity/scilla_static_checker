@@ -33,6 +33,19 @@
         savePlanIndex > loadPlanIndex,
         saveProc != loadProc.
 
+    transctionOrderDependency(saveId):-
+        save(saveId, fieldName, _),
+        plan(saveProc, saveId, _),
+        send(_, dataId),
+        dependsOn(dataId, msgId),
+        msg(msgId, _),
+        keyArgument(msgId, _, "_amount"),
+        dependsOn(msgId, loadId),
+        load(loadId, fieldName),
+        plan(loadProc, loadId, loadPlanIndex),
+        plan(loadProc, saveIdLoad, savePlanIndex),
+        !save(saveIdLoad, fieldName, _),
+        saveProc != loadProc.
 //.output transctionOrderDependency
 
 }

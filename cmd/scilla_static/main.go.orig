@@ -57,9 +57,13 @@ func main() {
 	ir.DumpFacts(b, factsInFolder)
 
 	// Running souffle
+<<<<<<< HEAD
+	souffle.RunSouffle("souffle_analysis/analysis.dl", factsInFolder, factsOutFolder)
+=======
 	fmt.Println("Starting Souffle analysis")
 	souffle.RunSouffle("souffle_analysis/analysis.dl", factsInFolder, factsOutFolder)
 	fmt.Println("Souffle analysis finished")
+>>>>>>> feature-ir
 
 	// Results output
 	fmt.Println("======RESULTS======")

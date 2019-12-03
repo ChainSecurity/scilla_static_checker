@@ -24,6 +24,8 @@ let one_msg =
 (***************************************************)
 let get_from_map =
   fun (m : Map ByStr20 Uint128) => fun (x : ByStr20) =>
+  let nil_msg1 = Nil {Message} in
+  let nil_msg2 = Nil {Message} in
      builtin get m x
 
 
@@ -37,9 +39,10 @@ transition put (d : Uint128)
     balances[_sender] := _amount
 end
 
-transition get()
+transition get(x: ByStr20)
     b <- balances;
-    v = get_from_map b _sender;
+    v1 = get_from_map b _sender;
+    v = get_from_map b x;
     a = match v with
     | Some x =>
         x

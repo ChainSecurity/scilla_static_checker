@@ -4,6 +4,7 @@
 .symbol_type Plan
 
 .type Element = Unit | Type | Proc | Plan
+.type Function = Proc
 
 .decl absDD(unitId: Unit, term: Unit)
 .decl absTD(unitId: Unit, term: Unit)
@@ -12,27 +13,27 @@
 .decl appDD(unitId: Unit, to: Unit)
 .decl appTD(unitId: Unit, to: Unit)
 .decl appTT(unitId: Unit, to: Unit)
-.decl argument(unitId: Unit, appdd_id: Unit, index: number) 
-.decl bind(unitId: Unit, bind_type: Type, cond: Unit)
+.decl argument(unitId: Unit, appddId: Unit, index: number) 
+.decl bind(unitId: Unit, bindType: Type, cond: Unit)
 .decl bnrType(unitId: Unit)
 .decl builtin(unitId: Unit, type: Type, name: symbol)
 .decl callProc(unitId: Unit, to: Unit)
 .decl cond(unitId: Unit, case: symbol)
 .decl condBind(unitId: Unit, cond: Unit, index: number)
-.decl dataCase(unitId: Unit, pick_data_id: Unit, bind: Unit, body: Unit)
+.decl dataCase(unitId: Unit, pickDataIdd: Unit, bind: Unit, body: Unit)
 .decl dataVar(unitId: Unit)
 .decl enum(enum_id: Unit, enum_type: Type, case: symbol)
 .decl enumType(unitId: Unit)
 .decl int(unitId: Unit, type: Type, data: number)
-.decl intType(type_id: Type, size: number)
-.decl jump(from: Unit, top: Unit)
-.decl keyArgument(msg_id: Unit, unitId: Unit, tag_name: symbol)
+.decl intType(typeId: Type, size: number)
+.decl jump(from: Unit, to: Unit)
+.decl keyArgument(msgIdd: Unit, unitId: Unit, tagName: symbol)
 .decl load(unitId: Unit, slot : symbol)
 .decl mapType(unitId: Unit, keType : Unit, varType : Unit)
 .decl msg(unitId: Unit, unit_type: Type)
 .decl msgType(unitId: Type)
 .decl nat(unitId: Unit, type: Type, data: number)
-.decl natType(type_id: Type, size: number)
+.decl natType(typeId: Type, size: number)
 .decl pickData(unitId: Unit, from: Unit, with: Unit)
 .decl pickProc(unitId: Unit, from: Unit)
 .decl plan(proc_id: Proc, unitId: Unit, index: number)
@@ -40,7 +41,7 @@
 .decl proc(unitId: Unit, name: symbol)
 .decl procedure(procId: Proc)
 .decl raw(unitId: Unit, type: Type, data: symbol)
-.decl rawType(type_id: Type, size: number)
+.decl rawType(typeId: Type, size: number)
 .decl save(unitId: Unit, slot: symbol, data: Unit)
 .decl send(unitId: Unit, data: Unit)
 .decl setKind(unitId: Unit)
@@ -50,30 +51,47 @@
 .decl typeVar(type: symbol)
 .decl unit(unitId: Unit)
 
-.input plan
-.input msg
-.input send
-.input load
+.input absDD
+.input absTD
+.input absTT
+.input accept
 .input appDD
 .input appTD
 .input appTT
 .input argument
-.input absDD
-.input absTD
-.input keyArgument
-.input str
-.input pickData
-.input dataCase
-.input nat
-.input natType
 .input bind
+.input bnrType
+.input builtin
+.input callProc
 .input cond
 .input condBind
-.input typeVar
+.input dataCase
+.input dataVar
 .input enum
-.input accept
+.input enumType
+.input int
+.input intType
+.input jump
+.input keyArgument
+.input load
+.input mapType
+.input msg
 .input msgType
-.input save
+.input nat
+.input natType
+.input pickData
+.input pickProc
+.input plan
+.input procCase
+.input proc
 .input procedure
+.input raw
+.input rawType
+.input save
+.input send
+.input setKind
+.input str
+.input strType
 .input transition
-.input builtin
+.input typeVar
+.input unit
