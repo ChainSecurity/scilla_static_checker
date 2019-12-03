@@ -1,0 +1,625 @@
+{
+  "scilla_major_version": 0,
+  "name": {
+    "loc": {
+      "source_file": "examples/transaction_order_violation.scilla",
+      "line": 28,
+      "column": 10,
+      "node_type": "Location"
+    },
+    "identifier": "Inc",
+    "node_type": "Identifier"
+  },
+  "library": {
+    "library_name": {
+      "loc": {
+        "source_file": "examples/transaction_order_violation.scilla",
+        "line": 8,
+        "column": 1,
+        "node_type": "Location"
+      },
+      "identifier": "Inc",
+      "node_type": "Identifier"
+    },
+    "library_entries": [
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/transaction_order_violation.scilla",
+            "line": 10,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "one",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/transaction_order_violation.scilla",
+            "line": 10,
+            "column": 11,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "1", "width": 32 }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/transaction_order_violation.scilla",
+            "line": 11,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "one32",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/transaction_order_violation.scilla",
+            "line": 11,
+            "column": 13,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "1", "width": 32 }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/transaction_order_violation.scilla",
+            "line": 12,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "one64",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/transaction_order_violation.scilla",
+            "line": 12,
+            "column": 13,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "1", "width": 64 }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/transaction_order_violation.scilla",
+            "line": 14,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "one128",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/transaction_order_violation.scilla",
+            "line": 14,
+            "column": 14,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "1", "width": 128 }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/transaction_order_violation.scilla",
+            "line": 15,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "zero128",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/transaction_order_violation.scilla",
+            "line": 15,
+            "column": 15,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "0", "width": 128 }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/transaction_order_violation.scilla",
+            "line": 17,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "a",
+          "node_type": "Identifier"
+        },
+        "variable_type": { "node_type": "PrimType", "name": "Uint64" },
+        "expression": {
+          "loc": {
+            "source_file": "examples/transaction_order_violation.scilla",
+            "line": 17,
+            "column": 18,
+            "node_type": "Location"
+          },
+          "node_type": "VarExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/transaction_order_violation.scilla",
+              "line": 17,
+              "column": 18,
+              "node_type": "Location"
+            },
+            "identifier": "one64",
+            "node_type": "Identifier"
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/transaction_order_violation.scilla",
+            "line": 23,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "one_msg",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/transaction_order_violation.scilla",
+            "line": 24,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/transaction_order_violation.scilla",
+              "line": 24,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "msg",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/transaction_order_violation.scilla",
+              "line": 25,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "LetExpression",
+            "variable": {
+              "loc": {
+                "source_file": "examples/transaction_order_violation.scilla",
+                "line": 25,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "nil_msg",
+              "node_type": "Identifier"
+            },
+            "variable_type": null,
+            "expression": {
+              "loc": {
+                "source_file": "examples/transaction_order_violation.scilla",
+                "line": 25,
+                "column": 17,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "Nil",
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
+              "args": []
+            },
+            "body": {
+              "loc": {
+                "source_file": "examples/transaction_order_violation.scilla",
+                "line": 26,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "Cons",
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
+              "args": [
+                {
+                  "loc": {
+                    "source_file":
+                      "examples/transaction_order_violation.scilla",
+                    "line": 26,
+                    "column": 20,
+                    "node_type": "Location"
+                  },
+                  "identifier": "msg",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file":
+                      "examples/transaction_order_violation.scilla",
+                    "line": 26,
+                    "column": 24,
+                    "node_type": "Location"
+                  },
+                  "identifier": "nil_msg",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Message" }
+        }
+      }
+    ],
+    "node_type": "Library"
+  },
+  "external_libraries": [],
+  "contract": {
+    "name": {
+      "loc": {
+        "source_file": "examples/transaction_order_violation.scilla",
+        "line": 28,
+        "column": 10,
+        "node_type": "Location"
+      },
+      "identifier": "Inc",
+      "node_type": "Identifier"
+    },
+    "params": [
+      {
+        "parameter_name": {
+          "loc": {
+            "source_file": "examples/transaction_order_violation.scilla",
+            "line": 29,
+            "column": 2,
+            "node_type": "Location"
+          },
+          "identifier": "owner",
+          "node_type": "Identifier"
+        },
+        "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
+        "node_type": "Parameter"
+      },
+      {
+        "parameter_name": {
+          "loc": {
+            "source_file": "examples/transaction_order_violation.scilla",
+            "line": 29,
+            "column": 19,
+            "node_type": "Location"
+          },
+          "identifier": "x",
+          "node_type": "Identifier"
+        },
+        "parameter_type": { "node_type": "PrimType", "name": "ByStr3" },
+        "node_type": "Parameter"
+      }
+    ],
+    "fields": [
+      {
+        "field_name": {
+          "loc": {
+            "source_file": "examples/transaction_order_violation.scilla",
+            "line": 31,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "bal",
+          "node_type": "Identifier"
+        },
+        "field_type": { "node_type": "PrimType", "name": "Uint128" },
+        "expression": {
+          "loc": {
+            "source_file": "examples/transaction_order_violation.scilla",
+            "line": 31,
+            "column": 23,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "0", "width": 128 }
+        },
+        "node_type": "Field"
+      }
+    ],
+    "components": [
+      {
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file": "examples/transaction_order_violation.scilla",
+                "line": 33,
+                "column": 17,
+                "node_type": "Location"
+              },
+              "identifier": "a",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "Uint128" },
+            "node_type": "Parameter"
+          }
+        ],
+        "component_type": "transition",
+        "name": {
+          "loc": {
+            "source_file": "examples/transaction_order_violation.scilla",
+            "line": 33,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "bar",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file": "examples/transaction_order_violation.scilla",
+              "line": 34,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "examples/transaction_order_violation.scilla",
+                "line": 34,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "bal",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "examples/transaction_order_violation.scilla",
+                "line": 34,
+                "column": 12,
+                "node_type": "Location"
+              },
+              "identifier": "a",
+              "node_type": "Identifier"
+            },
+            "node_type": "StoreStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [],
+        "component_type": "transition",
+        "name": {
+          "loc": {
+            "source_file": "examples/transaction_order_violation.scilla",
+            "line": 37,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "foo",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file": "examples/transaction_order_violation.scilla",
+              "line": 38,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "examples/transaction_order_violation.scilla",
+                "line": 38,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "examples/transaction_order_violation.scilla",
+                "line": 38,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "identifier": "bal",
+              "node_type": "Identifier"
+            },
+            "node_type": "LoadStatement"
+          },
+          {
+            "loc": {
+              "source_file": "examples/transaction_order_violation.scilla",
+              "line": 39,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/transaction_order_violation.scilla",
+                "line": 39,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "msg",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/transaction_order_violation.scilla",
+                "line": 39,
+                "column": 11,
+                "node_type": "Location"
+              },
+              "node_type": "MessageExpression",
+              "margs": [
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_tag",
+                  "payload": {
+                    "node_type": "PayloadLiteral",
+                    "literal": { "node_type": "StringLiteral", "value": "" }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_recipient",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "examples/transaction_order_violation.scilla",
+                        "line": 39,
+                        "column": 36,
+                        "node_type": "Location"
+                      },
+                      "identifier": "_sender",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_amount",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "examples/transaction_order_violation.scilla",
+                        "line": 39,
+                        "column": 55,
+                        "node_type": "Location"
+                      },
+                      "identifier": "b",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "code",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "examples/transaction_order_violation.scilla",
+                        "line": 39,
+                        "column": 67,
+                        "node_type": "Location"
+                      },
+                      "identifier": "one",
+                      "node_type": "Identifier"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "examples/transaction_order_violation.scilla",
+              "line": 40,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/transaction_order_violation.scilla",
+                "line": 40,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "identifier": "msgs",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/transaction_order_violation.scilla",
+                "line": 40,
+                "column": 12,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file":
+                    "examples/transaction_order_violation.scilla",
+                  "line": 40,
+                  "column": 12,
+                  "node_type": "Location"
+                },
+                "identifier": "one_msg",
+                "node_type": "Identifier"
+              },
+              "rhs_list": [
+                {
+                  "loc": {
+                    "source_file":
+                      "examples/transaction_order_violation.scilla",
+                    "line": 40,
+                    "column": 20,
+                    "node_type": "Location"
+                  },
+                  "identifier": "msg",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "examples/transaction_order_violation.scilla",
+              "line": 41,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file": "examples/transaction_order_violation.scilla",
+                "line": 41,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "msgs",
+              "node_type": "Identifier"
+            },
+            "node_type": "SendMsgsStatement"
+          }
+        ],
+        "node_type": "Component"
+      }
+    ],
+    "node_type": "Contract"
+  },
+  "node_type": "ContractModule"
+}
