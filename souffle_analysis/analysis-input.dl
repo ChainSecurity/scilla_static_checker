@@ -24,6 +24,7 @@
 .decl dataVar(unitId: Unit)
 .decl enum(enum_id: Unit, enum_type: Type, case: symbol)
 .decl enumType(unitId: Unit)
+.decl event(unitId: Unit, data: Unit)
 .decl int(unitId: Unit, type: Type, data: number)
 .decl intType(typeId: Type, size: number)
 .decl jump(from: Unit, to: Unit)
@@ -69,6 +70,7 @@
 .input dataVar
 .input enum
 .input enumType
+.input event
 .input int
 .input intType
 .input jump
@@ -82,8 +84,8 @@
 .input pickData
 .input pickProc
 .input plan
-.input procCase
 .input proc
+.input procCase
 .input procedure
 .input raw
 .input rawType
