@@ -109,9 +109,17 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 	case *Save:
 		fact := fmt.Sprintf("%d\t%s\t%d", n.ID(), n.Slot, n.Data.ID())
 		fd.saveFacts = append(fd.saveFacts, fact)
+		for i, p := range n.Path {
+			argFact := fmt.Sprintf("%d\t%d\t%d", n.ID(), p.ID(), i)
+			fd.argumentFacts = append(fd.argumentFacts, argFact)
+		}
 	case *Load:
 		fact := fmt.Sprintf("%d\t%s", n.ID(), n.Slot)
 		fd.loadFacts = append(fd.loadFacts, fact)
+		for i, p := range n.Path {
+			argFact := fmt.Sprintf("%d\t%d\t%d", n.ID(), p.ID(), i)
+			fd.argumentFacts = append(fd.argumentFacts, argFact)
+		}
 
 	case *AbsDD:
 		for i, u := range n.Vars {
