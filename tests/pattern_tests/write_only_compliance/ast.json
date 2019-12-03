@@ -1,0 +1,258 @@
+{
+  "scilla_major_version": 0,
+  "name": {
+    "loc": {
+      "source_file": "examples/write_only_compliance.scilla",
+      "line": 9,
+      "column": 10,
+      "node_type": "Location"
+    },
+    "identifier": "Inc",
+    "node_type": "Identifier"
+  },
+  "library": null,
+  "external_libraries": [],
+  "contract": {
+    "name": {
+      "loc": {
+        "source_file": "examples/write_only_compliance.scilla",
+        "line": 9,
+        "column": 10,
+        "node_type": "Location"
+      },
+      "identifier": "Inc",
+      "node_type": "Identifier"
+    },
+    "params": [],
+    "fields": [
+      {
+        "field_name": {
+          "loc": {
+            "source_file": "examples/write_only_compliance.scilla",
+            "line": 12,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "bal",
+          "node_type": "Identifier"
+        },
+        "field_type": { "node_type": "PrimType", "name": "Uint128" },
+        "expression": {
+          "loc": {
+            "source_file": "examples/write_only_compliance.scilla",
+            "line": 12,
+            "column": 23,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "0", "width": 128 }
+        },
+        "node_type": "Field"
+      }
+    ],
+    "components": [
+      {
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file": "examples/write_only_compliance.scilla",
+                "line": 14,
+                "column": 17,
+                "node_type": "Location"
+              },
+              "identifier": "a",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "Uint128" },
+            "node_type": "Parameter"
+          }
+        ],
+        "component_type": "transition",
+        "name": {
+          "loc": {
+            "source_file": "examples/write_only_compliance.scilla",
+            "line": 14,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "bar",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file": "examples/write_only_compliance.scilla",
+              "line": 15,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "examples/write_only_compliance.scilla",
+                "line": 15,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "examples/write_only_compliance.scilla",
+                "line": 15,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "identifier": "bal",
+              "node_type": "Identifier"
+            },
+            "node_type": "LoadStatement"
+          },
+          {
+            "loc": {
+              "source_file": "examples/write_only_compliance.scilla",
+              "line": 16,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/write_only_compliance.scilla",
+                "line": 16,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "e",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/write_only_compliance.scilla",
+                "line": 16,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "node_type": "MessageExpression",
+              "margs": [
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_eventname",
+                  "payload": {
+                    "node_type": "PayloadLiteral",
+                    "literal": {
+                      "node_type": "StringLiteral",
+                      "value": "test"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "bal",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "examples/write_only_compliance.scilla",
+                        "line": 16,
+                        "column": 38,
+                        "node_type": "Location"
+                      },
+                      "identifier": "b",
+                      "node_type": "Identifier"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "examples/write_only_compliance.scilla",
+              "line": 17,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file": "examples/write_only_compliance.scilla",
+                "line": 17,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "e",
+              "node_type": "Identifier"
+            },
+            "node_type": "CreateEvntStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file": "examples/write_only_compliance.scilla",
+                "line": 20,
+                "column": 17,
+                "node_type": "Location"
+              },
+              "identifier": "a",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "Uint128" },
+            "node_type": "Parameter"
+          }
+        ],
+        "component_type": "transition",
+        "name": {
+          "loc": {
+            "source_file": "examples/write_only_compliance.scilla",
+            "line": 20,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "foo",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file": "examples/write_only_compliance.scilla",
+              "line": 21,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "examples/write_only_compliance.scilla",
+                "line": 21,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "bal",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "examples/write_only_compliance.scilla",
+                "line": 21,
+                "column": 12,
+                "node_type": "Location"
+              },
+              "identifier": "a",
+              "node_type": "Identifier"
+            },
+            "node_type": "StoreStatement"
+          }
+        ],
+        "node_type": "Component"
+      }
+    ],
+    "node_type": "Contract"
+  },
+  "node_type": "ContractModule"
+}
