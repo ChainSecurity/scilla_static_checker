@@ -62,8 +62,9 @@ func (builder *CFGBuilder) TypeOf(d Data) Type {
 		}
 		fmt.Printf("Load with Path %T\n", tt)
 		return &AppTT{
-			Args: []Type{tt},
-			To:   builder.genericTypeConstructors["Option"],
+			IDNode: builder.newIDNode(),
+			Args:   []Type{tt},
+			To:     builder.genericTypeConstructors["Option"],
 		}
 	case *AbsTD:
 		return builder.TypeOf(x.Term)
@@ -77,6 +78,10 @@ func (builder *CFGBuilder) TypeOf(d Data) Type {
 		return x.BuiltinType
 	case *Enum:
 		return x.EnumType
+	case *Bind:
+		return x.BindType
+	case *PickData:
+		return builder.TypeOf(x.With[0].Body)
 	default:
 		panic(errors.New(fmt.Sprintf("builder.TypeOf not implemented %T\n", d)))
 	}

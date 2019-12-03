@@ -151,6 +151,14 @@ func Walk(v Visitor, node Node, prev_node Node) {
 			Walk(v, n.Args[i], n)
 		}
 		Walk(v, n.To, n)
+	case *PickData:
+		Walk(v, n.From, n)
+		for i, _ := range n.With {
+			Walk(v, &n.With[i], n)
+		}
+	case *DataCase:
+		Walk(v, &n.Bind, n)
+		Walk(v, n.Body, n)
 	default:
 		//fmt.Printf("- %T\n", n)
 		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
