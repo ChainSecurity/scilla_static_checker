@@ -1,0 +1,45 @@
+scilla_version 0
+
+
+
+(***************************************************)
+(*               Associated library                *)
+(***************************************************)
+library Inc
+
+let one = Uint32 1
+let one32 = Uint32 1
+let one64 = Uint64 1
+
+let one128 = Uint128 1
+let zero128 = Uint128 0
+
+let a : Uint64 = one64
+
+(***************************************************)
+(*             The contract definition             *)
+(***************************************************)
+
+let one_msg =
+  fun (msg : Message) =>
+  let nil_msg = Nil {Message} in
+    Cons {Message} msg nil_msg
+
+contract Inc
+(owner : ByStr20, x : ByStr3)
+
+field bal : Uint128 = Uint128 0
+
+transition test (a: BNum, b: BNum)
+  t <- & BLOCKNUMBER;
+  e = builtin eq a t;
+  (*e = builtin eq a b;*)
+  match e with
+  | False =>
+    t = t
+  | True =>
+    msg = {_tag : ""; _recipient : _sender; _amount : zero128  ; code : one};
+    msgs = one_msg msg;
+    send msgs
+  end
+end

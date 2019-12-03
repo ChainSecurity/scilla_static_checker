@@ -1,5 +1,5 @@
 #include "analysis-input.dl"
-//#include "analysis-patterns.dl"
+#include "analysis-patterns.dl"
 #include "util-macros.dl"
 #include "util-graph.dl"
 #include "util-lists.dl"
