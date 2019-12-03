@@ -1,28 +1,28 @@
-// accept_payment_and_send_0.json :locked-zilliq:True
-// accept_payment_and_send.json :locked-zilliq:False
-// accept_payment.json :locked-zilliq:True
+// accept_payment_and_send_0.json :locked-zillings:True
+// accept_payment_and_send.json :locked-zillings:False
+// accept_payment.json :locked-zillings:True
 
-// Locked Zilliq where there's accept and send or all sends contain zero values 
+// Locked Zillings where there's accept and send or all sends contain zero values 
 // (there are no nonZeroValues sent)
 
-.comp LockedZilliqPattern : Pattern{
-    NAME("Locked Zilliq")
+.comp LockedZillingsPattern : Pattern{
+    NAME("Locked Zillings")
 
 
     // TODO: Why STR_JOIN doesn't work
-    DESCRIPTION("Contracts that may receive ether must also allow users to extract the deposited zilliq from the contract.")
+    DESCRIPTION("Contracts that may receive ether must also allow users to extract the deposited zillings from the contract.")
 
     SEVERITY(MEDIUM)
 
     applicable(unitId, "unknown") :-
-        lockedZilliq(unitId).
+        lockedZillings(unitId).
 
 
     violation(unitId, "unknown_line", "") :-
         applicable(unitId, "unknown").
 
-    .decl lockedZilliq(unitId : Unit)
-    lockedZilliq(unitId) :- 
+    .decl lockedZillings(unitId : Unit)
+    lockedZillings(unitId) :- 
         accept(unitId),
         (
             !send(_, _); 
@@ -38,7 +38,7 @@
         keyArgument(msg_id, num_id, "_amount"),
         !nat(num_id, _, 0).
     
-    //.output lockedZilliq
+    //.output lockedZillings
     //.output nonZeroSend
 
 

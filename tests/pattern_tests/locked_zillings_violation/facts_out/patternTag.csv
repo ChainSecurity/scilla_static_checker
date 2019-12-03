@@ -3,8 +3,8 @@ TimestampPattern	name	Usage of block timestamp
 TimestampPattern	description	Returned value relies on block timestamp.
 TimestampPattern	severity	low
 LockedZillingsPattern	id	LockedZillingsPattern
-LockedZillingsPattern	name	Locked Zilling
-LockedZillingsPattern	description	Contracts that may receive ether must also allow users to extract the deposited zilliq from the contract.
+LockedZillingsPattern	name	Locked Zillings
+LockedZillingsPattern	description	Contracts that may receive ether must also allow users to extract the deposited zillings from the contract.
 LockedZillingsPattern	severity	medium
 TransactionOrderDependencyPattern	id	TransactionOrderDependencyPattern
 TransactionOrderDependencyPattern	name	Transaction Order Dependency

@@ -2,10 +2,10 @@ TimestampPattern	id	TimestampPattern
 TimestampPattern	name	Usage of block timestamp
 TimestampPattern	description	Returned value relies on block timestamp.
 TimestampPattern	severity	low
-LockedZilliqPattern	id	LockedZilliqPattern
-LockedZilliqPattern	name	Locked Zilliq
-LockedZilliqPattern	description	Contracts that may receive ether must also allow users to extract the deposited zilliq from the contract.
-LockedZilliqPattern	severity	medium
+LockedZillingsPattern	id	LockedZillingsPattern
+LockedZillingsPattern	name	Locked Zilling
+LockedZillingsPattern	description	Contracts that may receive ether must also allow users to extract the deposited zilliq from the contract.
+LockedZillingsPattern	severity	medium
 TransactionOrderDependencyPattern	id	TransactionOrderDependencyPattern
 TransactionOrderDependencyPattern	name	Transaction Order Dependency
 TransactionOrderDependencyPattern	description	The amount sent by the contract depends on the order of transitions.
