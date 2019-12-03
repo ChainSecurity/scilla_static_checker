@@ -1,0 +1,32 @@
+
+
+.comp TimestampContextPattern : Pattern{
+
+    NAME("Usage of block timestamp (Context-sensitive)")
+
+    DESCRIPTION(
+        "Returned value relies on block timestamp."
+    )
+
+	SEVERITY(LOW)
+
+    applicable(equalityFunUnit, "unknown_line") :-
+        builtin(blocknumberUnit, _, "BLOCKNUMBER"), elementInContext(blocknumberUnitCtx, blocknumberUnit, _),
+        builtin(equalityFunUnit, _, "eq"), elementInContext(equalityFunUnitCtx, equalityFunUnit, _),
+        sentElem(elem), elementInContext(elemCtx,elem, _),
+        dependsOn(appDDCtx, blocknumberUnitCtx),
+        dependsOn(appDDCtx, equalityFunUnitCtx),
+        instrMayDependOn(elemCtx, appDDCtx).
+
+    .decl sentElem(elem: Element)
+    sentElem(elem) :-
+        send(sendId, _),
+        follows(sendId, msgId),
+        msg(msgId, _),
+        keyArgument(msgId, elem, _).
+
+    .output sentElem
+
+    violation(equalityFunUnit, "unknown_line", "") :-
+        applicable(equalityFunUnit, _).
+}

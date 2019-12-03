@@ -74,6 +74,10 @@ context(context) ,executionState(elementId, context) :-
     !planApp(dep),
     executionState(dep, context).
 
+context(context) ,executionState(elementId, context) :-
+    argument(dep, elementId, _),
+    planApp(dep),
+    executionState(dep, context).
 //check two_calls.json
 // If the node depends on an appDD which is part of the plan then add a context taking the context
 // of the proc. We do this since a planAppDD my be used later by another appDD. Then we will add the context twice,
@@ -115,6 +119,9 @@ contextToString([c, cRest], STR_JOIN(c, ",", rest)) :-
 
 
 .decl dependsOnStep(elemCtx: ElementInContext, prevCtx: ElementInContext)
+dependsOnStep(elemCtx, elemCtx) :-
+    elementInContext(elemCtx, _, _).
+
 dependsOnStep(elemCtx, prevCtx) :-
     followsStep(elem, prev),
     elementInContext(elemCtx, elem, ctx),
@@ -127,6 +134,17 @@ dependsOnStep(elemCtx, prevCtx) :-
     elementInContext(prevCtx, prev, ctxPrev).
 
 .output dependsOnStep
+
+.decl instrMayDependOn(instCtx: ElementInContext, condCtx: ElementInContext)
+instrMayDependOn(instCtx, condCtx) :-
+    pickProc(pickProcId, condId),
+    elementInContext(condCtx, condId, _),
+    argument(pickProcId, pickCaseId, _),
+    elementInContext(pickCaseCtx, pickCaseId, _),
+    dependsOn(pickCaseCtx, instCtx).
+
+.output instrMayDependOn
+
 
 .decl printDependsOnStep(elem: Element, ctxStr: symbol, prevElem: Element, prevCtxStr: symbol)
 printDependsOnStep(elem, ctxStr, prevElem, prevCtxStr) :-
