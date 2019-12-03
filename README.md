@@ -3,7 +3,12 @@
 *  `pkg/ast` Scilla AST related code
 *  `pkg/ir` IR related code
 
-## How to run
+## How to run static checker
+
+`go run cmd/scilla_static/main.go examples/inc.json`
+
+
+## How to plot IR dot graph
 
 There is exists a graphical output of IR.
 Example:
@@ -11,5 +16,3 @@ Example:
 `go run cmd/graph_plot/main.go examples/inc.json a.dot`
 
 `dot -Tpng -O a.dot`
-
-To get more dot graphs, code modifications in `pkg/ir/plot.go` are needed.
