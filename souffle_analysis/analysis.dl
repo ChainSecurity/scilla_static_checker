@@ -36,7 +36,8 @@ followsStep(dependent, independent) :-
         procCase(dependent, independent, _);
         procCase(dependent, _, independent);
         save(dependent, _, independent);
-        send(dependent, independent)
+        send(dependent, independent);
+        event(dependent, independent)
     ).
 .output followsStep
 
