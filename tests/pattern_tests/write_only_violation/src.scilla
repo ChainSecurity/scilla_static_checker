@@ -1,0 +1,16 @@
+scilla_version 0
+
+
+
+(***************************************************)
+(*               Associated library                *)
+(***************************************************)
+
+contract Inc()
+
+
+field bal : Uint128 = Uint128 0
+
+transition test (a: Uint128)
+    bal := a
+end

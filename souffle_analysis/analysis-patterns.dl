@@ -93,13 +93,13 @@ patternTag(id, "id", id) :- patternId(id).
 
 #include "patterns/timestamp.dl"
 #include "patterns/timestamp-context.dl"
-#include "patterns/locked-zilliq.dl"
+#include "patterns/locked-zillings.dl"
 #include "patterns/transaction-order-dependency.dl"
 #include "patterns/write-only.dl"
 
 REGISTER_PATTERN(TimestampPattern)
 REGISTER_PATTERN(TimestampContextPattern)
-REGISTER_PATTERN(LockedZilliqPattern)
+REGISTER_PATTERN(LockedZillingsPattern)
 REGISTER_PATTERN(TransactionOrderDependencyPattern)
 REGISTER_PATTERN(WriteOnlyPattern)
 

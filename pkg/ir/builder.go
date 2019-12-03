@@ -600,6 +600,7 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 			With:   make([]DataCase, len(n.Cases)),
 		}
 		for i, c := range n.Cases {
+			pd.With[i].IDNode = builder.newIDNode()
 			mec := &pd.With[i].Bind
 			varNames, varBinds := builder.visitPattern(c.Pat, builder.TypeOf(data), mec)
 			for j, name := range varNames {

@@ -1,0 +1,62 @@
+scilla_version 0
+
+
+
+(***************************************************)
+(*               Associated library                *)
+(***************************************************)
+library Inc
+
+let one = Uint32 1
+let one32 = Uint32 1
+let one64 = Uint64 1
+
+let one128 = Uint128 1
+let zero128 = Uint128 0
+
+let a : Uint64 = one64
+
+(***************************************************)
+(*             The contract definition             *)
+(***************************************************)
+
+let one_msg =
+  fun (msg : Message) =>
+  let nil_msg = Nil {Message} in
+    Cons {Message} msg nil_msg
+
+contract Inc
+(owner : ByStr20, x : ByStr3)
+
+field balances : Map ByStr20 Uint128 = Emp ByStr20 Uint128
+
+transition unlockZillings (tokens: Uint128)
+    old_bal <- balances[_sender];
+    b <- _balance;
+    match old_bal with 
+    | Some o =>
+        new_bal = builtin sub o tokens;
+        balances[_sender] := new_bal;
+        msg = { _tag : "unlock"; _recipient : _sender; _amount : tokens};
+        msgs = one_msg msg;
+        send msgs
+    | None =>
+        msg = { _tag : "unlock"; _recipient : _sender; _amount : zero128};
+        msgs = one_msg msg;
+        send msgs
+    end
+end
+
+transition lockZillings()
+    o <- balances[_sender];
+
+    old_bal = match o with 
+    | Some o =>
+        o
+    | None =>
+        zero128
+    end;
+    b <- _balance;
+    new_bal = builtin add old_bal b;
+    balances[_sender] := new_bal
+end
