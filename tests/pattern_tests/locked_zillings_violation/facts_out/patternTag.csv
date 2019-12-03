@@ -1,7 +1,7 @@
-TimestampPattern	id	TimestampPattern
-TimestampPattern	name	Usage of block timestamp
-TimestampPattern	description	Returned value relies on block timestamp.
-TimestampPattern	severity	low
+BlocknumberPattern	id	BlocknumberPattern
+BlocknumberPattern	name	Usage of block blocknumber
+BlocknumberPattern	description	Returned value relies on block blocknumber.
+BlocknumberPattern	severity	low
 LockedZillingsPattern	id	LockedZillingsPattern
 LockedZillingsPattern	name	Locked Zillings
 LockedZillingsPattern	description	Contracts that may receive ether must also allow users to extract the deposited zillings from the contract.

@@ -1,11 +1,11 @@
 
 
-.comp TimestampContextPattern : Pattern{
+.comp BlocknumberContextPattern : Pattern{
 
-    NAME("Usage of block timestamp (Context-sensitive)")
+    NAME("Usage of block blocknumber (Context-sensitive)")
 
     DESCRIPTION(
-        "Returned value relies on block timestamp."
+        "Returned value relies on block blocknumber."
     )
 
 	SEVERITY(LOW)

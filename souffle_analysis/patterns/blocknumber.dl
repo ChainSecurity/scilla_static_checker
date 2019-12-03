@@ -1,11 +1,11 @@
 
 
-.comp TimestampPattern : Pattern{
+.comp BlocknumberPattern : Pattern{
 
-    NAME("Usage of block timestamp")
+    NAME("Usage of blocknumber")
 
     DESCRIPTION(
-        "Returned value relies on block timestamp."
+        "Returned value relies on blocknumber."
     )
 
 	SEVERITY(LOW)

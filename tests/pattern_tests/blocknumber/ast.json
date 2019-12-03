@@ -2,7 +2,7 @@
   "scilla_major_version": 0,
   "name": {
     "loc": {
-      "source_file": "examples/timestamp_compliance.scilla",
+      "source_file": "examples/blocknumber_violation.scilla",
       "line": 28,
       "column": 10,
       "node_type": "Location"
@@ -13,7 +13,7 @@
   "library": {
     "library_name": {
       "loc": {
-        "source_file": "examples/timestamp_compliance.scilla",
+        "source_file": "examples/blocknumber_violation.scilla",
         "line": 8,
         "column": 1,
         "node_type": "Location"
@@ -26,7 +26,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "examples/timestamp_compliance.scilla",
+            "source_file": "examples/blocknumber_violation.scilla",
             "line": 10,
             "column": 5,
             "node_type": "Location"
@@ -37,7 +37,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "examples/timestamp_compliance.scilla",
+            "source_file": "examples/blocknumber_violation.scilla",
             "line": 10,
             "column": 11,
             "node_type": "Location"
@@ -50,7 +50,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "examples/timestamp_compliance.scilla",
+            "source_file": "examples/blocknumber_violation.scilla",
             "line": 11,
             "column": 5,
             "node_type": "Location"
@@ -61,7 +61,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "examples/timestamp_compliance.scilla",
+            "source_file": "examples/blocknumber_violation.scilla",
             "line": 11,
             "column": 13,
             "node_type": "Location"
@@ -74,7 +74,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "examples/timestamp_compliance.scilla",
+            "source_file": "examples/blocknumber_violation.scilla",
             "line": 12,
             "column": 5,
             "node_type": "Location"
@@ -85,7 +85,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "examples/timestamp_compliance.scilla",
+            "source_file": "examples/blocknumber_violation.scilla",
             "line": 12,
             "column": 13,
             "node_type": "Location"
@@ -98,7 +98,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "examples/timestamp_compliance.scilla",
+            "source_file": "examples/blocknumber_violation.scilla",
             "line": 14,
             "column": 5,
             "node_type": "Location"
@@ -109,7 +109,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "examples/timestamp_compliance.scilla",
+            "source_file": "examples/blocknumber_violation.scilla",
             "line": 14,
             "column": 14,
             "node_type": "Location"
@@ -122,7 +122,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "examples/timestamp_compliance.scilla",
+            "source_file": "examples/blocknumber_violation.scilla",
             "line": 15,
             "column": 5,
             "node_type": "Location"
@@ -133,7 +133,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "examples/timestamp_compliance.scilla",
+            "source_file": "examples/blocknumber_violation.scilla",
             "line": 15,
             "column": 15,
             "node_type": "Location"
@@ -146,7 +146,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "examples/timestamp_compliance.scilla",
+            "source_file": "examples/blocknumber_violation.scilla",
             "line": 17,
             "column": 5,
             "node_type": "Location"
@@ -157,7 +157,7 @@
         "variable_type": { "node_type": "PrimType", "name": "Uint64" },
         "expression": {
           "loc": {
-            "source_file": "examples/timestamp_compliance.scilla",
+            "source_file": "examples/blocknumber_violation.scilla",
             "line": 17,
             "column": 18,
             "node_type": "Location"
@@ -165,7 +165,7 @@
           "node_type": "VarExpression",
           "variable": {
             "loc": {
-              "source_file": "examples/timestamp_compliance.scilla",
+              "source_file": "examples/blocknumber_violation.scilla",
               "line": 17,
               "column": 18,
               "node_type": "Location"
@@ -179,7 +179,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "examples/timestamp_compliance.scilla",
+            "source_file": "examples/blocknumber_violation.scilla",
             "line": 23,
             "column": 5,
             "node_type": "Location"
@@ -190,7 +190,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "examples/timestamp_compliance.scilla",
+            "source_file": "examples/blocknumber_violation.scilla",
             "line": 24,
             "column": 3,
             "node_type": "Location"
@@ -198,7 +198,7 @@
           "node_type": "FunExpression",
           "lhs": {
             "loc": {
-              "source_file": "examples/timestamp_compliance.scilla",
+              "source_file": "examples/blocknumber_violation.scilla",
               "line": 24,
               "column": 3,
               "node_type": "Location"
@@ -208,7 +208,7 @@
           },
           "rhs_expr": {
             "loc": {
-              "source_file": "examples/timestamp_compliance.scilla",
+              "source_file": "examples/blocknumber_violation.scilla",
               "line": 25,
               "column": 3,
               "node_type": "Location"
@@ -216,7 +216,7 @@
             "node_type": "LetExpression",
             "variable": {
               "loc": {
-                "source_file": "examples/timestamp_compliance.scilla",
+                "source_file": "examples/blocknumber_violation.scilla",
                 "line": 25,
                 "column": 3,
                 "node_type": "Location"
@@ -227,7 +227,7 @@
             "variable_type": null,
             "expression": {
               "loc": {
-                "source_file": "examples/timestamp_compliance.scilla",
+                "source_file": "examples/blocknumber_violation.scilla",
                 "line": 25,
                 "column": 17,
                 "node_type": "Location"
@@ -239,7 +239,7 @@
             },
             "body": {
               "loc": {
-                "source_file": "examples/timestamp_compliance.scilla",
+                "source_file": "examples/blocknumber_violation.scilla",
                 "line": 26,
                 "column": 5,
                 "node_type": "Location"
@@ -250,7 +250,7 @@
               "args": [
                 {
                   "loc": {
-                    "source_file": "examples/timestamp_compliance.scilla",
+                    "source_file": "examples/blocknumber_violation.scilla",
                     "line": 26,
                     "column": 20,
                     "node_type": "Location"
@@ -260,7 +260,7 @@
                 },
                 {
                   "loc": {
-                    "source_file": "examples/timestamp_compliance.scilla",
+                    "source_file": "examples/blocknumber_violation.scilla",
                     "line": 26,
                     "column": 24,
                     "node_type": "Location"
@@ -281,7 +281,7 @@
   "contract": {
     "name": {
       "loc": {
-        "source_file": "examples/timestamp_compliance.scilla",
+        "source_file": "examples/blocknumber_violation.scilla",
         "line": 28,
         "column": 10,
         "node_type": "Location"
@@ -293,7 +293,7 @@
       {
         "parameter_name": {
           "loc": {
-            "source_file": "examples/timestamp_compliance.scilla",
+            "source_file": "examples/blocknumber_violation.scilla",
             "line": 29,
             "column": 2,
             "node_type": "Location"
@@ -307,7 +307,7 @@
       {
         "parameter_name": {
           "loc": {
-            "source_file": "examples/timestamp_compliance.scilla",
+            "source_file": "examples/blocknumber_violation.scilla",
             "line": 29,
             "column": 19,
             "node_type": "Location"
@@ -323,7 +323,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "examples/timestamp_compliance.scilla",
+            "source_file": "examples/blocknumber_violation.scilla",
             "line": 31,
             "column": 7,
             "node_type": "Location"
@@ -334,7 +334,7 @@
         "field_type": { "node_type": "PrimType", "name": "Uint128" },
         "expression": {
           "loc": {
-            "source_file": "examples/timestamp_compliance.scilla",
+            "source_file": "examples/blocknumber_violation.scilla",
             "line": 31,
             "column": 23,
             "node_type": "Location"
@@ -351,7 +351,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "examples/timestamp_compliance.scilla",
+                "source_file": "examples/blocknumber_violation.scilla",
                 "line": 33,
                 "column": 18,
                 "node_type": "Location"
@@ -365,7 +365,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file": "examples/timestamp_compliance.scilla",
+                "source_file": "examples/blocknumber_violation.scilla",
                 "line": 33,
                 "column": 27,
                 "node_type": "Location"
@@ -380,7 +380,7 @@
         "component_type": "transition",
         "name": {
           "loc": {
-            "source_file": "examples/timestamp_compliance.scilla",
+            "source_file": "examples/blocknumber_violation.scilla",
             "line": 33,
             "column": 12,
             "node_type": "Location"
@@ -391,14 +391,14 @@
         "body": [
           {
             "loc": {
-              "source_file": "examples/timestamp_compliance.scilla",
+              "source_file": "examples/blocknumber_violation.scilla",
               "line": 34,
               "column": 3,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file": "examples/timestamp_compliance.scilla",
+                "source_file": "examples/blocknumber_violation.scilla",
                 "line": 34,
                 "column": 5,
                 "node_type": "Location"
@@ -411,7 +411,7 @@
           },
           {
             "loc": {
-              "source_file": "examples/timestamp_compliance.scilla",
+              "source_file": "examples/blocknumber_violation.scilla",
               "line": 35,
               "column": 3,
               "node_type": "Location"
@@ -419,7 +419,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "examples/timestamp_compliance.scilla",
+                "source_file": "examples/blocknumber_violation.scilla",
                 "line": 35,
                 "column": 5,
                 "node_type": "Location"
@@ -429,7 +429,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "examples/timestamp_compliance.scilla",
+                "source_file": "examples/blocknumber_violation.scilla",
                 "line": 35,
                 "column": 7,
                 "node_type": "Location"
@@ -438,7 +438,7 @@
               "arguments": [
                 {
                   "loc": {
-                    "source_file": "examples/timestamp_compliance.scilla",
+                    "source_file": "examples/blocknumber_violation.scilla",
                     "line": 35,
                     "column": 18,
                     "node_type": "Location"
@@ -448,7 +448,7 @@
                 },
                 {
                   "loc": {
-                    "source_file": "examples/timestamp_compliance.scilla",
+                    "source_file": "examples/blocknumber_violation.scilla",
                     "line": 35,
                     "column": 20,
                     "node_type": "Location"
@@ -459,7 +459,7 @@
               ],
               "builtin_function": {
                 "loc": {
-                  "source_file": "examples/timestamp_compliance.scilla",
+                  "source_file": "examples/blocknumber_violation.scilla",
                   "line": 35,
                   "column": 15,
                   "node_type": "Location"
@@ -471,74 +471,14 @@
           },
           {
             "loc": {
-              "source_file": "examples/timestamp_compliance.scilla",
-              "line": 36,
-              "column": 3,
-              "node_type": "Location"
-            },
-            "node_type": "BindStatement",
-            "lhs": {
-              "loc": {
-                "source_file": "examples/timestamp_compliance.scilla",
-                "line": 36,
-                "column": 5,
-                "node_type": "Location"
-              },
-              "identifier": "e",
-              "node_type": "Identifier"
-            },
-            "rhs_expr": {
-              "loc": {
-                "source_file": "examples/timestamp_compliance.scilla",
-                "line": 36,
-                "column": 7,
-                "node_type": "Location"
-              },
-              "node_type": "BuiltinExpression",
-              "arguments": [
-                {
-                  "loc": {
-                    "source_file": "examples/timestamp_compliance.scilla",
-                    "line": 36,
-                    "column": 18,
-                    "node_type": "Location"
-                  },
-                  "identifier": "a",
-                  "node_type": "Identifier"
-                },
-                {
-                  "loc": {
-                    "source_file": "examples/timestamp_compliance.scilla",
-                    "line": 36,
-                    "column": 20,
-                    "node_type": "Location"
-                  },
-                  "identifier": "b",
-                  "node_type": "Identifier"
-                }
-              ],
-              "builtin_function": {
-                "loc": {
-                  "source_file": "examples/timestamp_compliance.scilla",
-                  "line": 36,
-                  "column": 15,
-                  "node_type": "Location"
-                },
-                "builtin_operator": "eq",
-                "node_type": "Builtin"
-              }
-            }
-          },
-          {
-            "loc": {
-              "source_file": "examples/timestamp_compliance.scilla",
+              "source_file": "examples/blocknumber_violation.scilla",
               "line": 37,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file": "examples/timestamp_compliance.scilla",
+                "source_file": "examples/blocknumber_violation.scilla",
                 "line": 37,
                 "column": 9,
                 "node_type": "Location"
@@ -551,7 +491,7 @@
                 "pattern_body": [
                   {
                     "loc": {
-                      "source_file": "examples/timestamp_compliance.scilla",
+                      "source_file": "examples/blocknumber_violation.scilla",
                       "line": 39,
                       "column": 5,
                       "node_type": "Location"
@@ -559,7 +499,7 @@
                     "node_type": "BindStatement",
                     "lhs": {
                       "loc": {
-                        "source_file": "examples/timestamp_compliance.scilla",
+                        "source_file": "examples/blocknumber_violation.scilla",
                         "line": 39,
                         "column": 7,
                         "node_type": "Location"
@@ -569,7 +509,7 @@
                     },
                     "rhs_expr": {
                       "loc": {
-                        "source_file": "examples/timestamp_compliance.scilla",
+                        "source_file": "examples/blocknumber_violation.scilla",
                         "line": 39,
                         "column": 9,
                         "node_type": "Location"
@@ -578,7 +518,7 @@
                       "variable": {
                         "loc": {
                           "source_file":
-                            "examples/timestamp_compliance.scilla",
+                            "examples/blocknumber_violation.scilla",
                           "line": 39,
                           "column": 9,
                           "node_type": "Location"
@@ -600,7 +540,7 @@
                 "pattern_body": [
                   {
                     "loc": {
-                      "source_file": "examples/timestamp_compliance.scilla",
+                      "source_file": "examples/blocknumber_violation.scilla",
                       "line": 41,
                       "column": 5,
                       "node_type": "Location"
@@ -608,7 +548,7 @@
                     "node_type": "BindStatement",
                     "lhs": {
                       "loc": {
-                        "source_file": "examples/timestamp_compliance.scilla",
+                        "source_file": "examples/blocknumber_violation.scilla",
                         "line": 41,
                         "column": 9,
                         "node_type": "Location"
@@ -618,7 +558,7 @@
                     },
                     "rhs_expr": {
                       "loc": {
-                        "source_file": "examples/timestamp_compliance.scilla",
+                        "source_file": "examples/blocknumber_violation.scilla",
                         "line": 41,
                         "column": 11,
                         "node_type": "Location"
@@ -644,7 +584,7 @@
                             "value": {
                               "loc": {
                                 "source_file":
-                                  "examples/timestamp_compliance.scilla",
+                                  "examples/blocknumber_violation.scilla",
                                 "line": 41,
                                 "column": 36,
                                 "node_type": "Location"
@@ -662,7 +602,7 @@
                             "value": {
                               "loc": {
                                 "source_file":
-                                  "examples/timestamp_compliance.scilla",
+                                  "examples/blocknumber_violation.scilla",
                                 "line": 41,
                                 "column": 55,
                                 "node_type": "Location"
@@ -680,7 +620,7 @@
                             "value": {
                               "loc": {
                                 "source_file":
-                                  "examples/timestamp_compliance.scilla",
+                                  "examples/blocknumber_violation.scilla",
                                 "line": 41,
                                 "column": 73,
                                 "node_type": "Location"
@@ -695,7 +635,7 @@
                   },
                   {
                     "loc": {
-                      "source_file": "examples/timestamp_compliance.scilla",
+                      "source_file": "examples/blocknumber_violation.scilla",
                       "line": 42,
                       "column": 5,
                       "node_type": "Location"
@@ -703,7 +643,7 @@
                     "node_type": "BindStatement",
                     "lhs": {
                       "loc": {
-                        "source_file": "examples/timestamp_compliance.scilla",
+                        "source_file": "examples/blocknumber_violation.scilla",
                         "line": 42,
                         "column": 10,
                         "node_type": "Location"
@@ -713,7 +653,7 @@
                     },
                     "rhs_expr": {
                       "loc": {
-                        "source_file": "examples/timestamp_compliance.scilla",
+                        "source_file": "examples/blocknumber_violation.scilla",
                         "line": 42,
                         "column": 12,
                         "node_type": "Location"
@@ -722,7 +662,7 @@
                       "lhs": {
                         "loc": {
                           "source_file":
-                            "examples/timestamp_compliance.scilla",
+                            "examples/blocknumber_violation.scilla",
                           "line": 42,
                           "column": 12,
                           "node_type": "Location"
@@ -734,7 +674,7 @@
                         {
                           "loc": {
                             "source_file":
-                              "examples/timestamp_compliance.scilla",
+                              "examples/blocknumber_violation.scilla",
                             "line": 42,
                             "column": 20,
                             "node_type": "Location"
@@ -747,14 +687,14 @@
                   },
                   {
                     "loc": {
-                      "source_file": "examples/timestamp_compliance.scilla",
+                      "source_file": "examples/blocknumber_violation.scilla",
                       "line": 43,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "arg": {
                       "loc": {
-                        "source_file": "examples/timestamp_compliance.scilla",
+                        "source_file": "examples/blocknumber_violation.scilla",
                         "line": 43,
                         "column": 5,
                         "node_type": "Location"
