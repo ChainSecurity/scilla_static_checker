@@ -15,7 +15,7 @@
         builtin(equalityFunUnit, _, "eq"),
         appDD(appDDUnit, _),
         argument(appDDUnit, blocknumberUnit, _),
-        dependsOn(appDDUnit, equalityFunUnit).
+        follows(appDDUnit, equalityFunUnit).
 
     violation(equalityFunUnit, "unknown_line", "") :-
         applicable(equalityFunUnit, _).
