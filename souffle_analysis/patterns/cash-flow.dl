@@ -1,0 +1,48 @@
+
+
+.comp CashFlowPattern : Pattern{
+
+    NAME("Wrong _amount")
+
+    DESCRIPTION(
+        "The _amount tag in msg is associated with a variable that does not contain zilling."
+    )
+
+	SEVERITY(LOW)
+
+    applicable(argUnit, "unknown_line") :-
+        msg(msgUnit, _),
+        keyArgument(msgUnit, argUnit, "_amount").
+
+    violation(argUnit, "unknown_line", "") :-
+        applicable(argUnit, _),
+        ctxProvider.elementInContext(argUnitCtx, argUnit, _),
+        zillingUnit(zillingUnitCtx),
+        !dataflow.mayDependOn(argUnitCtx, zillingUnitCtx).
+
+    .decl zillingField(field: symbol)
+    zillingField("_balance").
+    zillingField(field) :-
+        save(unitId, field, _),
+        ctxProvider.elementInContext(unitIdCtx, unitId, _),
+        dataflow.mayDependOn(unitIdCtx, zillingUnitIdCtx),
+        zillingUnit(zillingUnitIdCtx).
+        
+    .decl zillingUnit(unitIdCtx: ctxProvider.ElementInContext)
+    zillingUnit(unitIdCtx) :-
+        transition(transId),
+        argument(transId, unitId, 1),
+        ctxProvider.elementInContext(unitIdCtx, unitId, _).
+
+    zillingUnit(unitIdCtx) :-
+        load(unitId, zillingField),
+        zillingField(zillingField),
+        ctxProvider.elementInContext(unitIdCtx, unitId, _).
+
+    zillingUnit(unitIdCtx) :-
+        dataflow.mayDependOn(unitIdCtx, otherZillingUnitIdCtx),
+        ctxProvider.elementInContext(unitIdCtx, unitId, _),
+        zillingUnit(otherZillingUnitIdCtx).
+
+    .output zillingUnit
+}
