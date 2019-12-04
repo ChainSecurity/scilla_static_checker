@@ -14,11 +14,11 @@
         msg(msgUnit, _),
         keyArgument(msgUnit, argUnit, "_amount").
 
-    violation(argUnit, "unknown_line", "") :-
+    compliance(argUnit, "unknown_line", "") :-
         applicable(argUnit, _),
         ctxProvider.elementInContext(argUnitCtx, argUnit, _),
         zillingUnit(zillingUnitCtx),
-        !dataflow.mayDependOn(argUnitCtx, zillingUnitCtx).
+        dataflow.mayDependOn(argUnitCtx, zillingUnitCtx).
 
     .decl zillingField(field: symbol)
     zillingField("_balance").
@@ -31,7 +31,7 @@
     .decl zillingUnit(unitIdCtx: ctxProvider.ElementInContext)
     zillingUnit(unitIdCtx) :-
         transition(transId),
-        argument(transId, unitId, 1),
+        argument(transId, unitId, 0),
         ctxProvider.elementInContext(unitIdCtx, unitId, _).
 
     zillingUnit(unitIdCtx) :-
@@ -45,4 +45,5 @@
         zillingUnit(otherZillingUnitIdCtx).
 
     .output zillingUnit
+    .output zillingField
 }

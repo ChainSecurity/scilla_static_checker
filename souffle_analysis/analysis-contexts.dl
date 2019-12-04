@@ -21,8 +21,9 @@
 
     context(context) ,executionState(elementId, context) :-
         argument(dep, elementId, _),
-        planApp(dep),
+        //planApp(dep),
         executionState(dep, context).
+
     //check two_calls.json
     // If the node depends on an appDD which is part of the plan then add a context taking the context
     // of the proc. We do this since a planAppDD my be used later by another appDD. Then we will add the context twice,
