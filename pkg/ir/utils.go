@@ -44,6 +44,8 @@ func stackMapPeek(s map[string][]Data, k string) (Data, bool) {
 
 func (builder *CFGBuilder) TypeOf(d Data) Type {
 	switch x := d.(type) {
+	case *Bnr:
+		return x.BnrType
 	case *Nat:
 		return x.NatType
 	case *DataVar:

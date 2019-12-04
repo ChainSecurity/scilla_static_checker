@@ -207,7 +207,24 @@ func (builder *CFGBuilder) visitLiteral(l ast.Literal) Data {
 		}
 		return &str
 	case *ast.BNumLiteral:
-		panic(errors.New(fmt.Sprintf("Not implemented: %T", lit)))
+		typ, ok := builder.primitiveTypeMap["BNum"]
+
+		if !ok {
+			panic(errors.New(fmt.Sprintf("Type not found: BNum")))
+		}
+
+		bnrTyp, ok := typ.(*BnrType)
+
+		if !ok {
+			panic(errors.New(fmt.Sprintf("Type exception: BnrType")))
+		}
+
+		bnr := Bnr{
+			IDNode:  builder.newIDNode(),
+			BnrType: bnrTyp,
+			Data:    lit.Val,
+		}
+		return &bnr
 	case *ast.ByStrLiteral:
 		panic(errors.New(fmt.Sprintf("Not implemented: %T", lit)))
 	case *ast.ByStrXLiteral:

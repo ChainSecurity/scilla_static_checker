@@ -21,6 +21,7 @@ type FactsDumper struct {
 	appTTFacts       []string
 	argumentFacts    []string
 	bindFacts        []string
+	bnrFacts         []string
 	bnrTypeFacts     []string
 	builtinFacts     []string
 	callProcFacts    []string
@@ -258,6 +259,9 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 	case *Builtin:
 		fact := fmt.Sprintf("%d\t%d\t%s", n.ID(), n.BuiltinType.ID(), n.Label)
 		fd.builtinFacts = append(fd.builtinFacts, fact)
+	case *Bnr:
+		fact := fmt.Sprintf("%d\t%d\t%s", n.ID(), n.BnrType.ID(), n.Data)
+		fd.bnrFacts = append(fd.bnrFacts, fact)
 	case *BnrType:
 		fact := fmt.Sprintf("%d", n.ID())
 		fd.bnrTypeFacts = append(fd.bnrTypeFacts, fact)
@@ -299,6 +303,7 @@ func DumpFacts(builder *CFGBuilder, factsInFolder string) {
 		appTTFacts:       []string{},
 		argumentFacts:    []string{},
 		bindFacts:        []string{},
+		bnrFacts:         []string{},
 		bnrTypeFacts:     []string{},
 		builtinFacts:     []string{},
 		callProcFacts:    []string{},
@@ -360,6 +365,7 @@ func DumpFacts(builder *CFGBuilder, factsInFolder string) {
 		"appTT":       fd.appTTFacts,
 		"argument":    fd.argumentFacts,
 		"bind":        fd.bindFacts,
+		"bnr":         fd.bnrFacts,
 		"bnrType":     fd.bnrTypeFacts,
 		"builtin":     fd.builtinFacts,
 		"callProc":    fd.callProcFacts,

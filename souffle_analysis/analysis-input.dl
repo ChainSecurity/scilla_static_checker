@@ -15,6 +15,7 @@
 .decl appTT(unitId: Unit, to: Unit)
 .decl argument(unitId: Unit, appddId: Unit, index: number) 
 .decl bind(unitId: Unit, bindType: Type, cond: Unit)
+.decl bnr(unitId: Unit, type: Type, data: number)
 .decl bnrType(unitId: Unit)
 .decl builtin(unitId: Unit, type: Type, name: symbol)
 .decl callProc(unitId: Unit, to: Unit)
@@ -62,6 +63,7 @@
 .input appTT
 .input argument
 .input bind
+.input bnr
 .input bnrType
 .input builtin
 .input callProc
