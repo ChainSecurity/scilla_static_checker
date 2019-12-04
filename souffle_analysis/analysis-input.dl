@@ -25,6 +25,7 @@
 .decl enum(enum_id: Unit, enum_type: Type, case: symbol)
 .decl enumType(unitId: Unit)
 .decl event(unitId: Unit, data: Unit)
+.decl field(slot: symbol)
 .decl int(unitId: Unit, type: Type, data: number)
 .decl intType(typeId: Type, size: number)
 .decl jump(from: Unit, to: Unit)
@@ -71,6 +72,7 @@
 .input enum
 .input enumType
 .input event
+.input field
 .input int
 .input intType
 .input jump

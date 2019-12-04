@@ -31,6 +31,7 @@ type FactsDumper struct {
 	enumFacts        []string
 	enumTypeFacts    []string
 	eventFacts       []string
+	fieldFacts       []string
 	intFacts         []string
 	intTypeFacts     []string
 	jumpFacts        []string
@@ -308,6 +309,7 @@ func DumpFacts(builder *CFGBuilder, factsInFolder string) {
 		enumFacts:        []string{},
 		enumTypeFacts:    []string{},
 		eventFacts:       []string{},
+		fieldFacts:       []string{},
 		intFacts:         []string{},
 		intTypeFacts:     []string{},
 		keyArgumentFacts: []string{},
@@ -330,8 +332,13 @@ func DumpFacts(builder *CFGBuilder, factsInFolder string) {
 		typeVarFacts:     []string{},
 		unitFacts:        []string{},
 	}
-	for tName, t := range builder.Transitions {
-		fmt.Println("Transition", tName)
+	for fname, _ := range builder.fieldTypeMap {
+		fmt.Println("field", fname)
+		fact := fmt.Sprintf("%s", fname)
+		fd.fieldFacts = append(fd.fieldFacts, fact)
+	}
+	for tname, t := range builder.Transitions {
+		fmt.Println("transition", tname)
 		fact := fmt.Sprintf("%d", t.ID())
 		fd.transitionFacts = append(fd.transitionFacts, fact)
 		Walk(&fd, t, nil)
@@ -363,6 +370,7 @@ func DumpFacts(builder *CFGBuilder, factsInFolder string) {
 		"enum":        fd.enumFacts,
 		"enumType":    fd.enumTypeFacts,
 		"event":       fd.eventFacts,
+		"field":       fd.fieldFacts,
 		"int":         fd.intFacts,
 		"intType":     fd.intTypeFacts,
 		"jump":        fd.jumpFacts,
