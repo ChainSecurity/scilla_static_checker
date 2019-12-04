@@ -80,6 +80,10 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 		fact := fmt.Sprintf("%d\t%s", n.ID(), n.ProcName)
 		fd.procFacts = append(fd.procFacts, fact)
 
+		for i, v := range n.Vars {
+			fact := fmt.Sprintf("%d\t%d\t%d", n.ID(), v.ID(), i)
+			fd.argumentFacts = append(fd.argumentFacts, fact)
+		}
 		for i, u := range n.Plan {
 			fact := fmt.Sprintf("%d\t%d\t%d", n.ID(), u.ID(), i)
 			fd.planFacts = append(fd.planFacts, fact)

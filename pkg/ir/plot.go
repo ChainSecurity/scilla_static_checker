@@ -788,7 +788,7 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 
 		m := dotNode{
 			x.ID(),
-			"Proc",
+			fmt.Sprintf("Proc %s", x.ProcName),
 			[]string{"Jump"},
 			map[string][]string{},
 		}
@@ -967,13 +967,10 @@ func directedPortedAttrGraphFrom(b *dotBuilder) graph.Multigraph {
 func GetDot(b *CFGBuilder) string {
 	d := dotBuilder{0, 0, []graph.Node{}, []*dotPortedEdge{}, map[Type]graph.Node{}, map[Data]graph.Node{}, map[Kind]graph.Node{}, map[Unit]graph.Node{}}
 
-	var lastKey string
-	for k, _ := range b.Transitions {
-		lastKey = k
+	for _, v := range b.Transitions {
+		dotWalkData(&d, v)
 	}
-	v := b.Transitions[lastKey]
 
-	dotWalkData(&d, v)
 	g := directedPortedAttrGraphFrom(&d)
 	got, err := dot.MarshalMulti(g, "asd", "", "\t")
 	_ = got
