@@ -44,6 +44,18 @@
         ctxProvider.elementInContext(unitIdCtx, unitId, _),
         zillingUnit(otherZillingUnitIdCtx).
 
+    zillingUnit(unitIdCtx) :-
+        bind(unitId, _, _),
+        ctxProvider.elementInContext(unitIdCtx, unitId, _),
+        dataflow.mayDependOn(pickProcIdCtx, unitIdCtx),
+        ctxProvider.elementInContext(pickProcIdCtx, pickProcId, _),
+        pickProc(pickProcId, from),
+        ctxProvider.elementInContext(fromCtx, from, _),
+        dataflow.mayDependOn(fromCtx, zillingUnitIdCtx),
+        zillingUnit(zillingUnitIdCtx).
+
+        
+
     .output zillingUnit
     .output zillingField
 }
