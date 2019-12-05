@@ -6,6 +6,12 @@
 
     mayDependOnStep(elemCtx, prevCtx) :-
         followsStep(elem, prev),
+        !(argument(elem, prev, _), 
+            (
+            appDD(elem, _); 
+            appTD(elem, _)
+            ) 
+        ),
         ctxProvider.elementInContext(elemCtx, elem, ctx),
         ctxProvider.elementInContext(prevCtx, prev, ctx).
 
@@ -14,6 +20,16 @@
         ctxProvider.followsContext(ctxElem, ctxPrev),
         ctxProvider.elementInContext(elemCtx, elem, ctxElem),
         ctxProvider.elementInContext(prevCtx, prev, ctxPrev).
+
+    .decl log(a: ctxProvider.ElementInContext, b: ctxProvider.ElementInContext)
+    //log(parameterCtx, argumentCtx),
+    mayDependOnStep(parameterCtx, argumentCtx) :-
+        transfer(_, argument, parameter),
+        argument(appDD, argument, _),
+        [appDD, ctxArgument] = ctxParameter,
+        ctxProvider.elementInContext(argumentCtx, argument, ctxArgument),
+        ctxProvider.elementInContext(parameterCtx, parameter, ctxParameter).
+    //.output log
 
     .output mayDependOnStep
 
