@@ -16,12 +16,7 @@
     // if the node does not depend on an appDD, just propagate the context
     context(context) ,executionState(elementId, context) :-
         followsStep(dep, elementId),
-        !appDD(dep, _),
-        executionState(dep, context).
-
-    //arguments get the context of the element they are arguments of
-    context(context) ,executionState(elementId, context) :-
-        argument(dep, elementId, _),
+        !appDD(dep, elementId),
         executionState(dep, context).
 
     //check two_calls.json
