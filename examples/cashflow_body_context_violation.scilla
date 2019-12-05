@@ -31,8 +31,7 @@ transition withdraw()
     c <- count;   
     t <- totalBalance;   
     a = foo t;
-    b = foo zero128;
-    msg = {_tag : ""; _recipient : _sender; _amount : b};
+    msg = {_tag : ""; _recipient : _sender; _amount : a};
     msgs = one_msg msg;
     send msgs    
 end
