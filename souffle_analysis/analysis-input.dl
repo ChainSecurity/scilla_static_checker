@@ -18,6 +18,7 @@
 .decl bnr(unitId: Unit, type: Type, data: number)
 .decl bnrType(unitId: Unit)
 .decl builtin(unitId: Unit, type: Type, name: symbol)
+.decl builtinVar(unitId: Unit, type: Type, name: symbol)
 .decl callProc(unitId: Unit, to: Unit)
 .decl cond(unitId: Unit, case: symbol)
 .decl condBind(unitId: Unit, cond: Unit, index: number)
@@ -66,6 +67,7 @@
 .input bnr
 .input bnrType
 .input builtin
+.input builtinVar
 .input callProc
 .input cond
 .input condBind

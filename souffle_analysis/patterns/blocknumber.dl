@@ -11,7 +11,7 @@
 	SEVERITY(LOW)
 
     applicable(equalityFunUnit, "unknown_line") :-
-        builtin(blocknumberUnit, _, "BLOCKNUMBER"),
+        builtinVar(blocknumberUnit, _, "BLOCKNUMBER"),
         builtin(equalityFunUnit, _, "eq"),
         appDD(appDDUnit, _),
         argument(appDDUnit, blocknumberUnit, _),

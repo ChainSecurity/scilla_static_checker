@@ -11,7 +11,7 @@
 	SEVERITY(LOW)
 
     applicable(equalityFunUnit, "unknown_line") :-
-        builtin(blocknumberUnit, _, "BLOCKNUMBER"), 
+        builtinVar(blocknumberUnit, _, "BLOCKNUMBER"), 
         ctxProvider.elementInContext(blocknumberUnitCtx, blocknumberUnit, _),
         builtin(equalityFunUnit, _, "eq"), 
         ctxProvider.elementInContext(equalityFunUnitCtx, equalityFunUnit, _),
