@@ -6,7 +6,7 @@ let one_msg =
     let nil_msg = Nil {Message} in
     Cons {Message} msg nil_msg
 
-let id = 
+let foo = 
     fun (x: Uint128) =>
         x
 
@@ -27,16 +27,12 @@ transition put()
   totalBalance := t
 end
 
-procedure reset()
-  totalBalance := zero128
-end
-
 transition withdraw() 
     c <- count;   
-    reset;
     t <- totalBalance;   
-    count := zero128;
-    msg = {_tag : ""; _recipient : _sender; _amount : t};
+    a = foo t;
+    b = foo zero128;
+    msg = {_tag : ""; _recipient : _sender; _amount : b};
     msgs = one_msg msg;
     send msgs    
 end
