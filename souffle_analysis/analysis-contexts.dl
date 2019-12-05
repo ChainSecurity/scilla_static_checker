@@ -16,24 +16,19 @@
     // if the node does not depend on an appDD, just propagate the context
     context(context) ,executionState(elementId, context) :-
         followsStep(dep, elementId),
-        //!planApp(dep),
         !appDD(dep, _),
         executionState(dep, context).
 
     //arguments get the context of the element they are arguments of
     context(context) ,executionState(elementId, context) :-
         argument(dep, elementId, _),
-        //planApp(dep),
         executionState(dep, context).
 
     //check two_calls.json
     // the "to" part of the appDD gets the context of the appDD stacked with another context
     context(context), executionState(elementId, contextAppDD) :-
-        //followsStep(dep, elementId),
-        //plan(procId, dep, _),
         appDD(dep, elementId),
         contextAppDD = [dep, context],
-        //executionState(procId, context).
         executionState(dep, context).
 
     .decl elementInContext(elemCtx: ElementInContext, element: Element, context: Context)
