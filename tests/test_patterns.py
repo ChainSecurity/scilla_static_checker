@@ -30,6 +30,7 @@ def test_single(folder):
     process = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
     stdout, err = process.communicate()
     stdout = stdout.decode("utf-8") if stdout is not None else ""
+    print(stdout)
 
     assert err is None
     output_file = os.path.join(output_folder, "facts_out/patternMatch.csv")
