@@ -484,6 +484,14 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 			map[string][]string{},
 		}
 		b.nodes = append(b.nodes, n)
+	case *ProcType:
+		n = &dotNode{
+			x.ID(),
+			fmt.Sprintf("ProcType %d", len(x.Vars)),
+			[]string{},
+			map[string][]string{},
+		}
+		b.nodes = append(b.nodes, n)
 	default:
 		n = &dotNode{
 			-1,

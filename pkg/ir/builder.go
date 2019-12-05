@@ -523,6 +523,36 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) *Proc {
 			IDNode: builder.newIDNode(),
 			Data:   d,
 		}
+	case *ast.CallProcStatement:
+		contProc := Proc{
+			IDNode:   builder.newIDNode(),
+			ProcName: builder.currentProc,
+			Plan:     []Unit{},
+		}
+
+		procedureProc, ok := builder.Procedures[n.Arg.Id]
+		if !ok {
+			panic(errors.New(fmt.Sprintf("Unknown procedure: %s", n.Arg.Id)))
+		}
+
+		cp := CallProc{
+			IDNode: builder.newIDNode(),
+			Args:   make([]Data, len(n.Messages)+3),
+			To:     procedureProc,
+		}
+		cp.Args[0] = &p.Vars[0]
+		cp.Args[1] = &p.Vars[1]
+		cp.Args[len(cp.Args)-1] = &contProc
+		for i, m := range n.Messages {
+			d, ok := stackMapPeek(builder.varStack, m.Id)
+			if !ok {
+				panic(errors.New(fmt.Sprintf("variable not found: %s", m.Id)))
+			}
+			cp.Args[2+i] = d
+		}
+		p.Jump = &cp
+
+		return &contProc
 	default:
 		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
 	}
@@ -866,9 +896,18 @@ func (builder *CFGBuilder) visitComponent(comp *ast.Component) {
 	}
 
 	//fmt.Printf("Component %s type: %s\n\tvars: %s\n\tplan: %s\n", comp.Name.Id, comp.ComponentType, dataVars, proc.Plan)
-
 	if comp.ComponentType == "procedure" {
 		builder.Procedures[comp.Name.Id] = &firstProc
+		continuationVar := DataVar{
+			IDNode:   builder.newIDNode(),
+			DataType: &ProcType{builder.newIDNode(), []DataVar{}},
+		}
+		firstProc.Vars = append(firstProc.Vars, continuationVar)
+		proc.Jump = &CallProc{
+			IDNode: builder.newIDNode(),
+			Args:   []Data{},
+			To:     &firstProc.Vars[len(firstProc.Vars)-1],
+		}
 	} else if comp.ComponentType == "transition" {
 		builder.Transitions[comp.Name.Id] = &firstProc
 	} else {
@@ -1720,6 +1759,7 @@ func BuildCFG(n ast.AstNode) *CFGBuilder {
 		genericDataConstructors: map[string]*AbsTD{},
 		nodeCounter:             1,
 	}
+
 	builder.initPrimitiveTypes()
 	ast.Walk(&builder, n)
 

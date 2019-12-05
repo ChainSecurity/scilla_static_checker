@@ -48,6 +48,7 @@ type FactsDumper struct {
 	planFacts        []string
 	procCaseFacts    []string
 	procFacts        []string
+	procTypeFacts    []string
 	procedureFacts   []string
 	rawFacts         []string
 	rawTypeFacts     []string
@@ -76,6 +77,9 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 	fd.unitFacts = append(fd.unitFacts, fmt.Sprintf("%d", node.ID()))
 
 	switch n := node.(type) {
+	case *ProcType:
+		fact := fmt.Sprintf("%d", n.ID())
+		fd.procTypeFacts = append(fd.procTypeFacts, fact)
 	case *Proc:
 		fact := fmt.Sprintf("%d\t%s", n.ID(), n.ProcName)
 		fd.procFacts = append(fd.procFacts, fact)
@@ -331,6 +335,7 @@ func DumpFacts(builder *CFGBuilder, factsInFolder string) {
 		planFacts:        []string{},
 		procCaseFacts:    []string{},
 		procFacts:        []string{},
+		procTypeFacts:    []string{},
 		rawFacts:         []string{},
 		rawTypeFacts:     []string{},
 		saveFacts:        []string{},
@@ -395,6 +400,7 @@ func DumpFacts(builder *CFGBuilder, factsInFolder string) {
 		"procCase":    fd.procCaseFacts,
 		"plan":        fd.planFacts,
 		"proc":        fd.procFacts,
+		"procType":    fd.procTypeFacts,
 		"procedure":   fd.procedureFacts,
 		"raw":         fd.rawFacts,
 		"rawType":     fd.rawTypeFacts,

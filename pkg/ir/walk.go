@@ -159,6 +159,10 @@ func Walk(v Visitor, node Node, prev_node Node) {
 	case *DataCase:
 		Walk(v, &n.Bind, n)
 		Walk(v, n.Body, n)
+	case *ProcType:
+		for i, _ := range n.Vars {
+			Walk(v, &n.Vars[i], n)
+		}
 	default:
 		//fmt.Printf("- %T\n", n)
 		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
