@@ -11,9 +11,12 @@
 	SEVERITY(LOW)
 
     applicable(equalityFunUnit, "unknown_line") :-
-        builtin(blocknumberUnit, _, "BLOCKNUMBER"), ctxProvider.elementInContext(blocknumberUnitCtx, blocknumberUnit, _),
-        builtin(equalityFunUnit, _, "eq"), ctxProvider.elementInContext(equalityFunUnitCtx, equalityFunUnit, _),
-        sentElem(elem), ctxProvider.elementInContext(elemCtx,elem, _),
+        builtin(blocknumberUnit, _, "BLOCKNUMBER"), 
+        ctxProvider.elementInContext(blocknumberUnitCtx, blocknumberUnit, _),
+        builtin(equalityFunUnit, _, "eq"), 
+        ctxProvider.elementInContext(equalityFunUnitCtx, equalityFunUnit, _),
+        sentElem(elem), 
+        ctxProvider.elementInContext(elemCtx,elem, _),
         dataflow.mayDependOn(appDDCtx, blocknumberUnitCtx),
         dataflow.mayDependOn(appDDCtx, equalityFunUnitCtx),
         infoflow.instrMayDependOn(elemCtx, appDDCtx).

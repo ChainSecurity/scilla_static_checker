@@ -9,7 +9,9 @@
         !(argument(elem, prev, _), 
             (
             appDD(elem, _); 
-            appTD(elem, _)
+            appTD(elem, _);
+            absDD(elem, _);
+            absTD(elem, _)
             ) 
         ),
         ctxProvider.elementInContext(elemCtx, elem, ctx),
@@ -25,10 +27,32 @@
     //log(parameterCtx, argumentCtx),
     mayDependOnStep(parameterCtx, argumentCtx) :-
         transfer(_, argument, parameter),
+        (appDD(appDD, _); appTD(appDD, _)),
         argument(appDD, argument, _),
-        [appDD, ctxArgument] = ctxParameter,
+        (   
+            [appDD, ctxArgument] = ctxParameter ; 
+            ctxProvider.followsContext( [appDD,ctxArgument], ctxParameter)
+        ),
         ctxProvider.elementInContext(argumentCtx, argument, ctxArgument),
         ctxProvider.elementInContext(parameterCtx, parameter, ctxParameter).
+
+    mayDependOnStep(absDDCtx, varCtx) :-
+        absDD(absDD, term),
+        builtin(term, _, _),
+        argument(absDD, var, _),
+        ctxProvider.elementInContext(absDDCtx, absDD, ctx),
+        ctxProvider.elementInContext(varCtx, var, ctx).
+
+    //mayDependOnStep(parameterCtx, argumentCtx) :-
+        //transfer(_, argument, parameter),
+        //(absDD(appDD, _); absTD(appDD, _)),
+        //argument(appDD, argument, _),
+        //(
+            //ctxArgument = ctxParameter ; 
+            //ctxProvider.followsContext( [appDD,ctxArgument], ctxParameter)
+        //),
+        //ctxProvider.elementInContext(argumentCtx, argument, ctxArgument),
+        //ctxProvider.elementInContext(parameterCtx, parameter, ctxParameter).
     //.output log
 
     .output mayDependOnStep
