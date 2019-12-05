@@ -41,7 +41,7 @@ followsStep(dependent, independent) :-
     ).
 .output followsStep
 
-.decl follows(dependent: Unit, independent: Unit)
+.decl follows(dependent: Element, independent: Element)
 follows(dependent, independent) :- followsStep(dependent, independent).
 follows(dependent, independent) :- followsStep(dependent, intermediate), follows(intermediate, independent).
 

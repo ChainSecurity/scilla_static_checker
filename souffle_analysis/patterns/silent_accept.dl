@@ -1,0 +1,43 @@
+
+
+.comp SilentAcceptPattern : Pattern{
+
+    NAME("Usage of blocknumber")
+
+    DESCRIPTION(
+        "Returned value relies on blocknumber."
+    )
+
+	SEVERITY(LOW)
+
+    applicable(unitId, "unknown_line") :-
+        violation(unitId, "unknown_line", "").
+    
+    violation("", "unknown_line", "") :-
+        !compliance(_, "unknown_line", "").
+
+
+    compliance(acceptID, "unknown_line", "") :-
+        accept(acceptID),
+        plan(acceptProc, acceptID, _),
+        plan(acceptProc, otherId, _),
+        (
+            send(otherId, _);
+            event(otherId, _)
+        ).
+
+    compliance(acceptID, "unknown_line", "") :-
+        accept(acceptID),
+        plan(acceptProc, acceptID, _),
+        plan(otherProc, otherId, _),
+        (
+            follows(otherProc, acceptProc);
+            follows(acceptProc, otherProc)
+        ),
+        (
+            send(otherId, _);
+            event(otherId, _)
+        ).
+
+
+}

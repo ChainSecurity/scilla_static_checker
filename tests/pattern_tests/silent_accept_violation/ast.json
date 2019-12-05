@@ -380,26 +380,6 @@
               "node_type": "Identifier"
             },
             "node_type": "StoreStatement"
-          },
-          {
-            "loc": {
-              "source_file": "examples/accept_payment.scilla",
-              "line": 36,
-              "column": 5,
-              "node_type": "Location"
-            },
-            "arg": {
-              "loc": {
-                "source_file": "examples/accept_payment.scilla",
-                "line": 36,
-                "column": 5,
-                "node_type": "Location"
-              },
-              "identifier": "EmitEvent",
-              "node_type": "Identifier"
-            },
-            "messages": [],
-            "node_type": "CallProcStatement"
           }
         ],
         "node_type": "Component"
