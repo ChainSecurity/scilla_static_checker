@@ -1,0 +1,38 @@
+scilla_version 0
+library ISteal
+
+let one_msg = 
+  fun (msg : Message) => 
+    let nil_msg = Nil {Message} in
+    Cons {Message} msg nil_msg
+
+let foo = 
+    fun (x: Uint128) =>
+        zero128
+
+let one128 = Uint128 1
+let zero128 = Uint128 0
+
+contract ISteal ()
+
+field count : Uint128 = Uint128 0
+field totalBalance : Uint128 = Uint128 0
+
+transition put()
+  accept;
+  c_old <- count;
+  c_new = builtin add c_old one128;
+  count := c_new;
+  t <- _balance;
+  totalBalance := t
+end
+
+transition withdraw() 
+    c <- count;   
+    a = foo totalBalance;
+    msg = {_tag : ""; _recipient : _sender; _amount : a};
+    msgs = one_msg msg;
+    send msgs    
+end
+    
+
