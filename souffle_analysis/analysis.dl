@@ -47,8 +47,8 @@ follows(dependent, independent) :- followsStep(dependent, intermediate), follows
 
 .output follows
 
-.decl transfer(transfer: Unit, argument: Unit, parameter: Unit)
-transfer(transfer, argument, parameter):-
+.decl possibleTransfer(transfer: Unit, argument: Unit, parameter: Unit, distance: number)
+possibleTransfer(transfer, argument, parameter, cApp):-
     appDD(transfer, _),
     argument(transfer, argument, index),
     argument(absDDId, parameter, index),
@@ -57,6 +57,17 @@ transfer(transfer, argument, parameter):-
     cApp = count : {follows(transfer, intermediate), appDD(intermediate, _) ,follows(intermediate, absDDId)},
     cAbs = count : {follows(transfer, intermediate), absDD(intermediate, _) ,follows(intermediate, absDDId)},
     cApp = cAbs.
+
+.decl notSmallestTransfer(transfer: Unit, argument: Unit, parameter: Unit)
+notSmallestTransfer(transfer, argument, parameter) :-
+    possibleTransfer(transfer, _, _, smallerDistance),
+    possibleTransfer(transfer, argument, parameter, distance),
+    smallerDistance < distance.
+
+.decl transfer(transfer: Unit, argument: Unit, parameter: Unit)
+transfer(transfer, argument, parameter) :-
+    possibleTransfer(transfer, argument, parameter, _),
+    !notSmallestTransfer(transfer, argument, parameter).
 
 .output transfer
 
