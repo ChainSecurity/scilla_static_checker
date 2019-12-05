@@ -140,7 +140,9 @@ func Walk(v Visitor, node Node, prev_node Node) {
 			Walk(v, &n.Data[i], n)
 		}
 	case *Builtin:
-		//do Nothing
+		Walk(v, n.BuiltinType, n)
+	case *BuiltinVar:
+		Walk(v, n.BuiltinVarType, n)
 	case *Enum:
 		Walk(v, n.EnumType, n)
 		for i, _ := range n.Data {

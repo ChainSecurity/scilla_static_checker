@@ -42,7 +42,12 @@ type (
 		IDNode
 	}
 
-	//Builtin
+	BuiltinVar struct {
+		IDNode
+		BuiltinVarType Type
+		Label          string
+	}
+
 	Builtin struct {
 		IDNode
 		BuiltinType Type
@@ -54,10 +59,11 @@ func (i *IDNode) ID() int64 {
 	return i.Id
 }
 
-func (*DataVar) isData() {}
-func (*Builtin) isData() {}
-func (*TypeVar) isType() {}
-func (*SetKind) isKind() {}
+func (*DataVar) isData()    {}
+func (*Builtin) isData()    {}
+func (*BuiltinVar) isData() {}
+func (*TypeVar) isType()    {}
+func (*SetKind) isKind()    {}
 
 type (
 	// AllDD :

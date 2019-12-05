@@ -504,10 +504,10 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) *Proc {
 	case *ast.ReadFromBCStatement:
 		switch n.RhsStr {
 		case "BLOCKNUMBER":
-			bn := Builtin{
-				IDNode:      builder.newIDNode(),
-				BuiltinType: builder.primitiveTypeMap["BNum"],
-				Label:       "BLOCKNUMBER",
+			bn := BuiltinVar{
+				IDNode:         builder.newIDNode(),
+				BuiltinVarType: builder.primitiveTypeMap["BNum"],
+				Label:          "BLOCKNUMBER",
 			}
 			stackMapPush(builder.varStack, n.Lhs.Id, &bn)
 		default:

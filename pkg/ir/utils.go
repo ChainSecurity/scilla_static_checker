@@ -76,6 +76,8 @@ func (builder *CFGBuilder) TypeOf(d Data) Type {
 		return builder.TypeOf(x.To)
 	case *AppTD:
 		return builder.TypeOf(x.To)
+	case *BuiltinVar:
+		return x.BuiltinVarType
 	case *Builtin:
 		return x.BuiltinType
 	case *Enum:
