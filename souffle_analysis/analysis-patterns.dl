@@ -97,6 +97,7 @@ patternTag(id, "id", id) :- patternId(id).
 #include "patterns/transaction-order-dependency.dl"
 #include "patterns/write-only.dl"
 #include "patterns/cash-flow.dl"
+#include "patterns/read-only.dl"
 
 REGISTER_PATTERN(BlocknumberPattern)
 REGISTER_PATTERN(BlocknumberContextPattern)

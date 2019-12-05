@@ -1,0 +1,23 @@
+.comp ReadOnlyPattern : Pattern{
+    NAME("Read-only field.")
+
+    DESCRIPTION("Field is loaded but never used.")
+
+    SEVERITY(MEDIUM)
+
+    applicable(unitId, "unknown") :-
+        load(unitId, _).
+
+
+    violation(unitId, "unknown_line", "") :-
+        applicable(unitId, _),
+        c = count : { followsStep(_, unitId)},
+        c = 1.
+
+    compliance(unitId, "unknown_line", "") :-
+        applicable(unitId, _),
+        c = count : { followsStep(_, unitId) },
+        c > 1.
+}
+
+
