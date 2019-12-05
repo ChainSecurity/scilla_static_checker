@@ -667,61 +667,6 @@
                 "source_file":
                   "examples/cashflow_body_context_violation.scilla",
                 "line": 34,
-                "column": 7,
-                "node_type": "Location"
-              },
-              "identifier": "b",
-              "node_type": "Identifier"
-            },
-            "rhs_expr": {
-              "loc": {
-                "source_file":
-                  "examples/cashflow_body_context_violation.scilla",
-                "line": 34,
-                "column": 9,
-                "node_type": "Location"
-              },
-              "node_type": "AppExpression",
-              "lhs": {
-                "loc": {
-                  "source_file":
-                    "examples/cashflow_body_context_violation.scilla",
-                  "line": 34,
-                  "column": 9,
-                  "node_type": "Location"
-                },
-                "identifier": "foo",
-                "node_type": "Identifier"
-              },
-              "rhs_list": [
-                {
-                  "loc": {
-                    "source_file":
-                      "examples/cashflow_body_context_violation.scilla",
-                    "line": 34,
-                    "column": 13,
-                    "node_type": "Location"
-                  },
-                  "identifier": "zero128",
-                  "node_type": "Identifier"
-                }
-              ]
-            }
-          },
-          {
-            "loc": {
-              "source_file":
-                "examples/cashflow_body_context_violation.scilla",
-              "line": 35,
-              "column": 5,
-              "node_type": "Location"
-            },
-            "node_type": "BindStatement",
-            "lhs": {
-              "loc": {
-                "source_file":
-                  "examples/cashflow_body_context_violation.scilla",
-                "line": 35,
                 "column": 9,
                 "node_type": "Location"
               },
@@ -732,7 +677,7 @@
               "loc": {
                 "source_file":
                   "examples/cashflow_body_context_violation.scilla",
-                "line": 35,
+                "line": 34,
                 "column": 11,
                 "node_type": "Location"
               },
@@ -755,7 +700,7 @@
                       "loc": {
                         "source_file":
                           "examples/cashflow_body_context_violation.scilla",
-                        "line": 35,
+                        "line": 34,
                         "column": 36,
                         "node_type": "Location"
                       },
@@ -773,11 +718,11 @@
                       "loc": {
                         "source_file":
                           "examples/cashflow_body_context_violation.scilla",
-                        "line": 35,
+                        "line": 34,
                         "column": 55,
                         "node_type": "Location"
                       },
-                      "identifier": "b",
+                      "identifier": "a",
                       "node_type": "Identifier"
                     }
                   }
@@ -789,7 +734,7 @@
             "loc": {
               "source_file":
                 "examples/cashflow_body_context_violation.scilla",
-              "line": 36,
+              "line": 35,
               "column": 5,
               "node_type": "Location"
             },
@@ -798,7 +743,7 @@
               "loc": {
                 "source_file":
                   "examples/cashflow_body_context_violation.scilla",
-                "line": 36,
+                "line": 35,
                 "column": 10,
                 "node_type": "Location"
               },
@@ -809,7 +754,7 @@
               "loc": {
                 "source_file":
                   "examples/cashflow_body_context_violation.scilla",
-                "line": 36,
+                "line": 35,
                 "column": 12,
                 "node_type": "Location"
               },
@@ -818,7 +763,7 @@
                 "loc": {
                   "source_file":
                     "examples/cashflow_body_context_violation.scilla",
-                  "line": 36,
+                  "line": 35,
                   "column": 12,
                   "node_type": "Location"
                 },
@@ -830,7 +775,7 @@
                   "loc": {
                     "source_file":
                       "examples/cashflow_body_context_violation.scilla",
-                    "line": 36,
+                    "line": 35,
                     "column": 20,
                     "node_type": "Location"
                   },
@@ -844,7 +789,7 @@
             "loc": {
               "source_file":
                 "examples/cashflow_body_context_violation.scilla",
-              "line": 37,
+              "line": 36,
               "column": 5,
               "node_type": "Location"
             },
@@ -852,7 +797,7 @@
               "loc": {
                 "source_file":
                   "examples/cashflow_body_context_violation.scilla",
-                "line": 37,
+                "line": 36,
                 "column": 5,
                 "node_type": "Location"
               },
