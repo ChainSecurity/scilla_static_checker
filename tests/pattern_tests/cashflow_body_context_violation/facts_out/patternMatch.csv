@@ -1,0 +1,3 @@
+CashFlowPattern	239	warning
+SilentAcceptPattern	16	violation
+TransactionOrderDependencyPattern	278	violation
