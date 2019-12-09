@@ -2,7 +2,7 @@
   "scilla_major_version": 0,
   "name": {
     "loc": {
-      "source_file": "examples/accept_payment.scilla",
+      "source_file": "examples/unused_procedure.scilla",
       "line": 22,
       "column": 10,
       "node_type": "Location"
@@ -13,7 +13,7 @@
   "library": {
     "library_name": {
       "loc": {
-        "source_file": "examples/accept_payment.scilla",
+        "source_file": "examples/unused_procedure.scilla",
         "line": 8,
         "column": 1,
         "node_type": "Location"
@@ -26,7 +26,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "examples/accept_payment.scilla",
+            "source_file": "examples/unused_procedure.scilla",
             "line": 10,
             "column": 5,
             "node_type": "Location"
@@ -37,7 +37,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "examples/accept_payment.scilla",
+            "source_file": "examples/unused_procedure.scilla",
             "line": 10,
             "column": 11,
             "node_type": "Location"
@@ -50,7 +50,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "examples/accept_payment.scilla",
+            "source_file": "examples/unused_procedure.scilla",
             "line": 11,
             "column": 5,
             "node_type": "Location"
@@ -61,7 +61,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "examples/accept_payment.scilla",
+            "source_file": "examples/unused_procedure.scilla",
             "line": 11,
             "column": 13,
             "node_type": "Location"
@@ -74,7 +74,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "examples/accept_payment.scilla",
+            "source_file": "examples/unused_procedure.scilla",
             "line": 12,
             "column": 5,
             "node_type": "Location"
@@ -85,7 +85,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "examples/accept_payment.scilla",
+            "source_file": "examples/unused_procedure.scilla",
             "line": 12,
             "column": 13,
             "node_type": "Location"
@@ -98,7 +98,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "examples/accept_payment.scilla",
+            "source_file": "examples/unused_procedure.scilla",
             "line": 14,
             "column": 5,
             "node_type": "Location"
@@ -109,7 +109,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "examples/accept_payment.scilla",
+            "source_file": "examples/unused_procedure.scilla",
             "line": 14,
             "column": 14,
             "node_type": "Location"
@@ -122,7 +122,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "examples/accept_payment.scilla",
+            "source_file": "examples/unused_procedure.scilla",
             "line": 16,
             "column": 5,
             "node_type": "Location"
@@ -133,7 +133,7 @@
         "variable_type": { "node_type": "PrimType", "name": "Uint64" },
         "expression": {
           "loc": {
-            "source_file": "examples/accept_payment.scilla",
+            "source_file": "examples/unused_procedure.scilla",
             "line": 16,
             "column": 18,
             "node_type": "Location"
@@ -141,7 +141,7 @@
           "node_type": "VarExpression",
           "variable": {
             "loc": {
-              "source_file": "examples/accept_payment.scilla",
+              "source_file": "examples/unused_procedure.scilla",
               "line": 16,
               "column": 18,
               "node_type": "Location"
@@ -158,7 +158,7 @@
   "contract": {
     "name": {
       "loc": {
-        "source_file": "examples/accept_payment.scilla",
+        "source_file": "examples/unused_procedure.scilla",
         "line": 22,
         "column": 10,
         "node_type": "Location"
@@ -170,7 +170,7 @@
       {
         "parameter_name": {
           "loc": {
-            "source_file": "examples/accept_payment.scilla",
+            "source_file": "examples/unused_procedure.scilla",
             "line": 23,
             "column": 2,
             "node_type": "Location"
@@ -184,7 +184,7 @@
       {
         "parameter_name": {
           "loc": {
-            "source_file": "examples/accept_payment.scilla",
+            "source_file": "examples/unused_procedure.scilla",
             "line": 23,
             "column": 19,
             "node_type": "Location"
@@ -200,7 +200,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "examples/accept_payment.scilla",
+            "source_file": "examples/unused_procedure.scilla",
             "line": 25,
             "column": 7,
             "node_type": "Location"
@@ -211,7 +211,7 @@
         "field_type": { "node_type": "PrimType", "name": "Uint128" },
         "expression": {
           "loc": {
-            "source_file": "examples/accept_payment.scilla",
+            "source_file": "examples/unused_procedure.scilla",
             "line": 25,
             "column": 23,
             "node_type": "Location"
@@ -225,11 +225,88 @@
     "components": [
       {
         "params": [],
+        "component_type": "procedure",
+        "name": {
+          "loc": {
+            "source_file": "examples/unused_procedure.scilla",
+            "line": 27,
+            "column": 11,
+            "node_type": "Location"
+          },
+          "identifier": "EmitEvent",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file": "examples/unused_procedure.scilla",
+              "line": 28,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/unused_procedure.scilla",
+                "line": 28,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "e",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/unused_procedure.scilla",
+                "line": 28,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "node_type": "MessageExpression",
+              "margs": [
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_eventname",
+                  "payload": {
+                    "node_type": "PayloadLiteral",
+                    "literal": {
+                      "node_type": "StringLiteral",
+                      "value": "accepted"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "examples/unused_procedure.scilla",
+              "line": 29,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file": "examples/unused_procedure.scilla",
+                "line": 29,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "e",
+              "node_type": "Identifier"
+            },
+            "node_type": "CreateEvntStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [],
         "component_type": "transition",
         "name": {
           "loc": {
-            "source_file": "examples/accept_payment.scilla",
-            "line": 27,
+            "source_file": "examples/unused_procedure.scilla",
+            "line": 32,
             "column": 12,
             "node_type": "Location"
           },
@@ -239,8 +316,8 @@
         "body": [
           {
             "loc": {
-              "source_file": "examples/accept_payment.scilla",
-              "line": 28,
+              "source_file": "examples/unused_procedure.scilla",
+              "line": 33,
               "column": 5,
               "node_type": "Location"
             },
@@ -248,15 +325,15 @@
           },
           {
             "loc": {
-              "source_file": "examples/accept_payment.scilla",
-              "line": 29,
+              "source_file": "examples/unused_procedure.scilla",
+              "line": 34,
               "column": 5,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file": "examples/accept_payment.scilla",
-                "line": 29,
+                "source_file": "examples/unused_procedure.scilla",
+                "line": 34,
                 "column": 7,
                 "node_type": "Location"
               },
@@ -265,8 +342,8 @@
             },
             "rhs": {
               "loc": {
-                "source_file": "examples/accept_payment.scilla",
-                "line": 29,
+                "source_file": "examples/unused_procedure.scilla",
+                "line": 34,
                 "column": 10,
                 "node_type": "Location"
               },
@@ -277,15 +354,15 @@
           },
           {
             "loc": {
-              "source_file": "examples/accept_payment.scilla",
-              "line": 30,
+              "source_file": "examples/unused_procedure.scilla",
+              "line": 35,
               "column": 5,
               "node_type": "Location"
             },
             "lhs": {
               "loc": {
-                "source_file": "examples/accept_payment.scilla",
-                "line": 30,
+                "source_file": "examples/unused_procedure.scilla",
+                "line": 35,
                 "column": 9,
                 "node_type": "Location"
               },
@@ -294,8 +371,8 @@
             },
             "rhs": {
               "loc": {
-                "source_file": "examples/accept_payment.scilla",
-                "line": 30,
+                "source_file": "examples/unused_procedure.scilla",
+                "line": 35,
                 "column": 12,
                 "node_type": "Location"
               },

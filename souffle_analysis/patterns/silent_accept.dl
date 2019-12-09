@@ -2,10 +2,10 @@
 
 .comp SilentAcceptPattern : Pattern{
 
-    NAME("Usage of blocknumber")
+    NAME("Silent Zillings Accept")
 
     DESCRIPTION(
-        "Returned value relies on blocknumber."
+        "The accept of Zillings wihtout emitting any event/message"
     )
 
 	SEVERITY(LOW)

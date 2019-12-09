@@ -97,6 +97,7 @@ patternTag(id, "id", id) :- patternId(id).
 #include "patterns/locked-zillings.dl"
 #include "patterns/read-only.dl"
 #include "patterns/silent_accept.dl"
+#include "patterns/unused_procedure.dl"
 #include "patterns/transaction-order-dependency.dl"
 #include "patterns/write-only.dl"
 
@@ -107,6 +108,7 @@ REGISTER_PATTERN(LockedZillingsPattern)
 REGISTER_PATTERN(SilentAcceptPattern)
 REGISTER_PATTERN(TransactionOrderDependencyPattern)
 REGISTER_PATTERN(WriteOnlyPattern)
+REGISTER_PATTERN(UnusedProcedure)
 
 
 .output patternId

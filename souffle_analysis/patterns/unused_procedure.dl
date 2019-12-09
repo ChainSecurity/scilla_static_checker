@@ -1,0 +1,25 @@
+
+
+.comp UnusedProcedure : Pattern{
+
+    NAME("Unused procedure")
+
+    DESCRIPTION(
+        "The procedure defined in the contract is not used anywhere"
+    )
+
+	SEVERITY(LOW)
+
+    applicable(procedureId, "unknown") :-
+        procedure(procedureId).
+
+
+    violation(procedureId, "unknown_line", "") :-
+        applicable(procedureId, "unknown"),
+        !callProc(_, procedureId).
+
+
+    compliance(procedureId, "unknown_line", "") :-
+        applicable(procedureId, "unknown"),
+        callProc(_, procedureId).
+}
