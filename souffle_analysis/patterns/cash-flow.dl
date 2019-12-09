@@ -24,6 +24,8 @@
     zillingField("_balance").
     zillingField(field) :-
         save(unitId, field, _),
+        plan(procId, unitId, _),
+        !constructor(procId),
         ctxProvider.elementInContext(unitIdCtx, unitId, _),
         dataflow.mayDependOn(unitIdCtx, zillingUnitIdCtx),
         zillingUnit(zillingUnitIdCtx).

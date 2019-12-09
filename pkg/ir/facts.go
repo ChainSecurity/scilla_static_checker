@@ -28,6 +28,7 @@ type FactsDumper struct {
 	callProcFacts    []string
 	condBindFacts    []string
 	condFacts        []string
+	constructorFacts []string
 	dataCaseFacts    []string
 	dataVarFacts     []string
 	enumFacts        []string
@@ -322,6 +323,7 @@ func DumpFacts(builder *CFGBuilder, factsInFolder string) {
 		callProcFacts:    []string{},
 		condBindFacts:    []string{},
 		condFacts:        []string{},
+		constructorFacts: []string{},
 		dataCaseFacts:    []string{},
 		dataVarFacts:     []string{},
 		enumFacts:        []string{},
@@ -351,6 +353,10 @@ func DumpFacts(builder *CFGBuilder, factsInFolder string) {
 		typeVarFacts:     []string{},
 		unitFacts:        []string{},
 	}
+
+	fd.constructorFacts = append(fd.constructorFacts, fmt.Sprintf("%d", builder.Constructor.ID()))
+	Walk(&fd, builder.Constructor, nil)
+
 	for fname, _ := range builder.fieldTypeMap {
 		fmt.Println("field", fname)
 		fact := fmt.Sprintf("%s", fname)
@@ -385,6 +391,7 @@ func DumpFacts(builder *CFGBuilder, factsInFolder string) {
 		"builtinVar":  fd.builtinVarFacts,
 		"callProc":    fd.callProcFacts,
 		"cond":        fd.condFacts,
+		"constructor": fd.constructorFacts,
 		"condBind":    fd.condBindFacts,
 		"dataCase":    fd.dataCaseFacts,
 		"dataVar":     fd.dataVarFacts,

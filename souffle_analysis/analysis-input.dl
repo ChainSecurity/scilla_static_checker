@@ -22,6 +22,7 @@
 .decl callProc(unitId: Unit, to: Proc)
 .decl cond(unitId: Unit, case: symbol)
 .decl condBind(unitId: Unit, cond: Unit, index: number)
+.decl constructor(procId: Proc)
 .decl dataCase(unitId: Unit, pickDataIdd: Unit, bind: Unit, body: Unit)
 .decl dataVar(unitId: Unit)
 .decl enum(enum_id: Unit, enum_type: Type, case: symbol)
@@ -71,6 +72,7 @@
 .input callProc
 .input cond
 .input condBind
+.input constructor
 .input dataCase
 .input dataVar
 .input enum

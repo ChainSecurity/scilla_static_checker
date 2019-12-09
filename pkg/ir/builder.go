@@ -18,12 +18,12 @@ type CFGBuilder struct {
 	definedADT       map[string]Type
 	builtinADT       map[string]Type
 	varStack         map[string][]Data
-	constructor      *Proc
+	Constructor      *Proc
 	Transitions      map[string]*Proc
 	Procedures       map[string]*Proc
 	fieldTypeMap     map[string]Type
 
-	mapTypeMap map[Type]map[Type]Type
+	mapTypeMap map[Type]map[Type]*MapType
 
 	genericTypeConstructors map[string]*AbsTT
 	genericDataConstructors map[string]*AbsTD
@@ -247,25 +247,27 @@ func (builder *CFGBuilder) visitLiteral(l ast.Literal) Data {
 			IDNode:  builder.newIDNode(),
 			NatType: typ, Data: lit.Val,
 		}
-	//case *ast.MapLiteral:
-	//ktyp := builder.visitASTType(lit.KeyType)
-	//vtyp := builder.visitASTType(lit.ValType)
-	//maptyp := MapType{ktyp, vtyp}
-	//return &Map{
-	//MapType: &maptyp,
-	//Data:    map[string]string{},
-	//}
+	case *ast.MapLiteral:
+		ktyp := builder.visitASTType(lit.KeyType)
+		vtyp := builder.visitASTType(lit.ValType)
+		maptyp := builder.setdefaultMap(ktyp, vtyp)
+		return &Map{
+			IDNode:  builder.newIDNode(),
+			MapType: maptyp,
+			Data:    map[string]string{},
+		}
 
 	case *ast.ADTValLiteral:
 		panic(errors.New(fmt.Sprintf("Not implemented: %T", lit)))
+	default:
+		panic(errors.New(fmt.Sprintf("Not implemented: %T", lit)))
 	}
-	return nil
 }
 
-func (builder *CFGBuilder) setdefaultMap(keyType Type, valType Type) Type {
+func (builder *CFGBuilder) setdefaultMap(keyType Type, valType Type) *MapType {
 	_, ok := builder.mapTypeMap[keyType]
 	if !ok {
-		builder.mapTypeMap[keyType] = map[Type]Type{}
+		builder.mapTypeMap[keyType] = map[Type]*MapType{}
 	}
 	_, ok = builder.mapTypeMap[keyType][valType]
 	if !ok {
@@ -936,7 +938,7 @@ func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
 			stackMapPush(builder.varStack, pName, &dataVars[i])
 		}
 
-		builder.constructor = &Proc{
+		builder.Constructor = &Proc{
 			IDNode:   builder.newIDNode(),
 			ProcName: "constructor",
 			Vars:     dataVars,
@@ -944,8 +946,9 @@ func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
 		}
 		for i, f := range n.Fields {
 			n, d := builder.visitField(f)
+			fmt.Println("Field", n, d)
 			stackMapPush(builder.varStack, n, d)
-			builder.constructor.Plan[i] = &Save{
+			builder.Constructor.Plan[i] = &Save{
 				IDNode: builder.newIDNode(),
 				Slot:   n,
 				Path:   []Data{},
@@ -1749,12 +1752,12 @@ func BuildCFG(n ast.AstNode) *CFGBuilder {
 		intWidthTypeMap:  map[int]*IntType{},
 		natWidthTypeMap:  map[int]*NatType{},
 		varStack:         map[string][]Data{},
-		constructor:      nil,
+		Constructor:      nil,
 		Transitions:      map[string]*Proc{},
 		Procedures:       map[string]*Proc{},
 		fieldTypeMap:     map[string]Type{},
 
-		mapTypeMap:              map[Type]map[Type]Type{},
+		mapTypeMap:              map[Type]map[Type]*MapType{},
 		genericTypeConstructors: map[string]*AbsTT{},
 		genericDataConstructors: map[string]*AbsTD{},
 		nodeCounter:             1,
