@@ -109,6 +109,7 @@ REGISTER_PATTERN(SilentAcceptPattern)
 REGISTER_PATTERN(TransactionOrderDependencyPattern)
 REGISTER_PATTERN(WriteOnlyPattern)
 REGISTER_PATTERN(UnusedProcedure)
+REGISTER_PATTERN(ReadOnlyPattern)
 
 
 .output patternId

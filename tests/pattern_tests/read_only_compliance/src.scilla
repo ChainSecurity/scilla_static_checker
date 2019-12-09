@@ -1,0 +1,31 @@
+scilla_version 0
+
+
+
+(***************************************************)
+(*               Associated library                *)
+(***************************************************)
+library Inc
+
+let one = Uint32 1
+let one32 = Uint32 1
+let one64 = Uint64 1
+
+let one128 = Uint128 1
+
+let a : Uint64 = one64
+
+(***************************************************)
+(*             The contract definition             *)
+(***************************************************)
+
+contract Inc
+(owner : ByStr20, x : ByStr3)
+
+field bal : Uint128 = Uint128 0
+field val : Uint128 = Uint128 0
+
+transition inc ()
+    b <- bal;
+    val := b
+end
