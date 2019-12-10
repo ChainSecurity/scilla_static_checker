@@ -1,0 +1,1985 @@
+{
+  "library": {
+    "library_name": {
+      "loc": {
+        "source_file": "examples/stdlib/NatUtils.scillib",
+        "line": 1,
+        "column": 1,
+        "node_type": "Location"
+      },
+      "identifier": "NatUtils",
+      "node_type": "Identifier"
+    },
+    "library_entries": [
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 3,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "nat_prev",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "ADT", "name": "Nat", "type_args": [] },
+          "val_type": {
+            "node_type": "ADT",
+            "name": "Option",
+            "type_args": [
+              { "node_type": "ADT", "name": "Nat", "type_args": [] }
+            ]
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 4,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/NatUtils.scillib",
+              "line": 4,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "n",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/NatUtils.scillib",
+              "line": 5,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "MatchExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 5,
+                "column": 11,
+                "node_type": "Location"
+              },
+              "identifier": "n",
+              "node_type": "Identifier"
+            },
+            "cases": [
+              {
+                "node_type": "MatchExpressionCase",
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "Succ",
+                  "patterns": [
+                    {
+                      "node_type": "BinderPattern",
+                      "variable": {
+                        "loc": {
+                          "source_file": "examples/stdlib/NatUtils.scillib",
+                          "line": 6,
+                          "column": 12,
+                          "node_type": "Location"
+                        },
+                        "identifier": "n1",
+                        "node_type": "Identifier"
+                      }
+                    }
+                  ]
+                },
+                "expression": {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 6,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "node_type": "ConstrExpression",
+                  "constructor_name": "Some",
+                  "types": [
+                    { "node_type": "ADT", "name": "Nat", "type_args": [] }
+                  ],
+                  "args": [
+                    {
+                      "loc": {
+                        "source_file": "examples/stdlib/NatUtils.scillib",
+                        "line": 6,
+                        "column": 29,
+                        "node_type": "Location"
+                      },
+                      "identifier": "n1",
+                      "node_type": "Identifier"
+                    }
+                  ]
+                }
+              },
+              {
+                "node_type": "MatchExpressionCase",
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "Zero",
+                  "patterns": []
+                },
+                "expression": {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 7,
+                    "column": 15,
+                    "node_type": "Location"
+                  },
+                  "node_type": "ConstrExpression",
+                  "constructor_name": "None",
+                  "types": [
+                    { "node_type": "ADT", "name": "Nat", "type_args": [] }
+                  ],
+                  "args": []
+                }
+              }
+            ]
+          },
+          "lhs_type": { "node_type": "ADT", "name": "Nat", "type_args": [] }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 10,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "is_some_zero",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "ADT", "name": "Nat", "type_args": [] },
+          "val_type": { "node_type": "ADT", "name": "Bool", "type_args": [] }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 11,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/NatUtils.scillib",
+              "line": 11,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "n",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/NatUtils.scillib",
+              "line": 12,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "MatchExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 12,
+                "column": 11,
+                "node_type": "Location"
+              },
+              "identifier": "n",
+              "node_type": "Identifier"
+            },
+            "cases": [
+              {
+                "node_type": "MatchExpressionCase",
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "Zero",
+                  "patterns": []
+                },
+                "expression": {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 13,
+                    "column": 15,
+                    "node_type": "Location"
+                  },
+                  "node_type": "ConstrExpression",
+                  "constructor_name": "True",
+                  "types": [],
+                  "args": []
+                }
+              },
+              {
+                "node_type": "MatchExpressionCase",
+                "pattern": { "node_type": "WildcardPattern" },
+                "expression": {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 14,
+                    "column": 12,
+                    "node_type": "Location"
+                  },
+                  "node_type": "ConstrExpression",
+                  "constructor_name": "False",
+                  "types": [],
+                  "args": []
+                }
+              }
+            ]
+          },
+          "lhs_type": { "node_type": "ADT", "name": "Nat", "type_args": [] }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 19,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "nat_fold_while",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'T",
+          "body_type": {
+            "node_type": "FunType",
+            "arg_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'T" },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": {
+                  "node_type": "ADT",
+                  "name": "Nat",
+                  "type_args": []
+                },
+                "val_type": {
+                  "node_type": "ADT",
+                  "name": "Option",
+                  "type_args": [ { "node_type": "TypeVar", "name": "'T" } ]
+                }
+              }
+            },
+            "val_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'T" },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": {
+                  "node_type": "ADT",
+                  "name": "Nat",
+                  "type_args": []
+                },
+                "val_type": { "node_type": "TypeVar", "name": "'T" }
+              }
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 20,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 33,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "nat_eq",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "ADT", "name": "Nat", "type_args": [] },
+          "val_type": {
+            "node_type": "FunType",
+            "arg_type": {
+              "node_type": "ADT",
+              "name": "Nat",
+              "type_args": []
+            },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "type_args": []
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 34,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/NatUtils.scillib",
+              "line": 34,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "n",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/NatUtils.scillib",
+              "line": 34,
+              "column": 20,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 34,
+                "column": 20,
+                "node_type": "Location"
+              },
+              "identifier": "m",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 35,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "LetExpression",
+              "variable": {
+                "loc": {
+                  "source_file": "examples/stdlib/NatUtils.scillib",
+                  "line": 35,
+                  "column": 5,
+                  "node_type": "Location"
+                },
+                "identifier": "foldk",
+                "node_type": "Identifier"
+              },
+              "variable_type": null,
+              "expression": {
+                "loc": {
+                  "source_file": "examples/stdlib/NatUtils.scillib",
+                  "line": 35,
+                  "column": 17,
+                  "node_type": "Location"
+                },
+                "node_type": "TAppExpression"
+              },
+              "body": {
+                "loc": {
+                  "source_file": "examples/stdlib/NatUtils.scillib",
+                  "line": 36,
+                  "column": 5,
+                  "node_type": "Location"
+                },
+                "node_type": "LetExpression",
+                "variable": {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 36,
+                    "column": 5,
+                    "node_type": "Location"
+                  },
+                  "identifier": "iter",
+                  "node_type": "Identifier"
+                },
+                "variable_type": null,
+                "expression": {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 37,
+                    "column": 7,
+                    "node_type": "Location"
+                  },
+                  "node_type": "FunExpression",
+                  "lhs": {
+                    "loc": {
+                      "source_file": "examples/stdlib/NatUtils.scillib",
+                      "line": 37,
+                      "column": 7,
+                      "node_type": "Location"
+                    },
+                    "identifier": "n",
+                    "node_type": "Identifier"
+                  },
+                  "rhs_expr": {
+                    "loc": {
+                      "source_file": "examples/stdlib/NatUtils.scillib",
+                      "line": 37,
+                      "column": 24,
+                      "node_type": "Location"
+                    },
+                    "node_type": "FunExpression",
+                    "lhs": {
+                      "loc": {
+                        "source_file": "examples/stdlib/NatUtils.scillib",
+                        "line": 37,
+                        "column": 24,
+                        "node_type": "Location"
+                      },
+                      "identifier": "ignore",
+                      "node_type": "Identifier"
+                    },
+                    "rhs_expr": {
+                      "loc": {
+                        "source_file": "examples/stdlib/NatUtils.scillib",
+                        "line": 37,
+                        "column": 46,
+                        "node_type": "Location"
+                      },
+                      "node_type": "FunExpression",
+                      "lhs": {
+                        "loc": {
+                          "source_file": "examples/stdlib/NatUtils.scillib",
+                          "line": 37,
+                          "column": 46,
+                          "node_type": "Location"
+                        },
+                        "identifier": "recurse",
+                        "node_type": "Identifier"
+                      },
+                      "rhs_expr": {
+                        "loc": {
+                          "source_file": "examples/stdlib/NatUtils.scillib",
+                          "line": 38,
+                          "column": 9,
+                          "node_type": "Location"
+                        },
+                        "node_type": "MatchExpression",
+                        "lhs": {
+                          "loc": {
+                            "source_file": "examples/stdlib/NatUtils.scillib",
+                            "line": 38,
+                            "column": 15,
+                            "node_type": "Location"
+                          },
+                          "identifier": "n",
+                          "node_type": "Identifier"
+                        },
+                        "cases": [
+                          {
+                            "node_type": "MatchExpressionCase",
+                            "pattern": {
+                              "node_type": "ConstructorPattern",
+                              "constructor_name": "Succ",
+                              "patterns": [
+                                {
+                                  "node_type": "BinderPattern",
+                                  "variable": {
+                                    "loc": {
+                                      "source_file":
+                                        "examples/stdlib/NatUtils.scillib",
+                                      "line": 39,
+                                      "column": 16,
+                                      "node_type": "Location"
+                                    },
+                                    "identifier": "n_pred",
+                                    "node_type": "Identifier"
+                                  }
+                                }
+                              ]
+                            },
+                            "expression": {
+                              "loc": {
+                                "source_file":
+                                  "examples/stdlib/NatUtils.scillib",
+                                "line": 39,
+                                "column": 26,
+                                "node_type": "Location"
+                              },
+                              "node_type": "AppExpression",
+                              "lhs": {
+                                "loc": {
+                                  "source_file":
+                                    "examples/stdlib/NatUtils.scillib",
+                                  "line": 39,
+                                  "column": 26,
+                                  "node_type": "Location"
+                                },
+                                "identifier": "recurse",
+                                "node_type": "Identifier"
+                              },
+                              "rhs_list": [
+                                {
+                                  "loc": {
+                                    "source_file":
+                                      "examples/stdlib/NatUtils.scillib",
+                                    "line": 39,
+                                    "column": 34,
+                                    "node_type": "Location"
+                                  },
+                                  "identifier": "n_pred",
+                                  "node_type": "Identifier"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            "node_type": "MatchExpressionCase",
+                            "pattern": {
+                              "node_type": "ConstructorPattern",
+                              "constructor_name": "Zero",
+                              "patterns": []
+                            },
+                            "expression": {
+                              "loc": {
+                                "source_file":
+                                  "examples/stdlib/NatUtils.scillib",
+                                "line": 40,
+                                "column": 19,
+                                "node_type": "Location"
+                              },
+                              "node_type": "VarExpression",
+                              "variable": {
+                                "loc": {
+                                  "source_file":
+                                    "examples/stdlib/NatUtils.scillib",
+                                  "line": 40,
+                                  "column": 19,
+                                  "node_type": "Location"
+                                },
+                                "identifier": "m",
+                                "node_type": "Identifier"
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      "lhs_type": {
+                        "node_type": "FunType",
+                        "arg_type": {
+                          "node_type": "ADT",
+                          "name": "Nat",
+                          "type_args": []
+                        },
+                        "val_type": {
+                          "node_type": "ADT",
+                          "name": "Nat",
+                          "type_args": []
+                        }
+                      }
+                    },
+                    "lhs_type": {
+                      "node_type": "ADT",
+                      "name": "Nat",
+                      "type_args": []
+                    }
+                  },
+                  "lhs_type": {
+                    "node_type": "ADT",
+                    "name": "Nat",
+                    "type_args": []
+                  }
+                },
+                "body": {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 42,
+                    "column": 5,
+                    "node_type": "Location"
+                  },
+                  "node_type": "LetExpression",
+                  "variable": {
+                    "loc": {
+                      "source_file": "examples/stdlib/NatUtils.scillib",
+                      "line": 42,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "identifier": "remaining",
+                    "node_type": "Identifier"
+                  },
+                  "variable_type": null,
+                  "expression": {
+                    "loc": {
+                      "source_file": "examples/stdlib/NatUtils.scillib",
+                      "line": 42,
+                      "column": 21,
+                      "node_type": "Location"
+                    },
+                    "node_type": "AppExpression",
+                    "lhs": {
+                      "loc": {
+                        "source_file": "examples/stdlib/NatUtils.scillib",
+                        "line": 42,
+                        "column": 21,
+                        "node_type": "Location"
+                      },
+                      "identifier": "foldk",
+                      "node_type": "Identifier"
+                    },
+                    "rhs_list": [
+                      {
+                        "loc": {
+                          "source_file": "examples/stdlib/NatUtils.scillib",
+                          "line": 42,
+                          "column": 27,
+                          "node_type": "Location"
+                        },
+                        "identifier": "iter",
+                        "node_type": "Identifier"
+                      },
+                      {
+                        "loc": {
+                          "source_file": "examples/stdlib/NatUtils.scillib",
+                          "line": 42,
+                          "column": 32,
+                          "node_type": "Location"
+                        },
+                        "identifier": "n",
+                        "node_type": "Identifier"
+                      },
+                      {
+                        "loc": {
+                          "source_file": "examples/stdlib/NatUtils.scillib",
+                          "line": 42,
+                          "column": 34,
+                          "node_type": "Location"
+                        },
+                        "identifier": "m",
+                        "node_type": "Identifier"
+                      }
+                    ]
+                  },
+                  "body": {
+                    "loc": {
+                      "source_file": "examples/stdlib/NatUtils.scillib",
+                      "line": 43,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "MatchExpression",
+                    "lhs": {
+                      "loc": {
+                        "source_file": "examples/stdlib/NatUtils.scillib",
+                        "line": 43,
+                        "column": 11,
+                        "node_type": "Location"
+                      },
+                      "identifier": "remaining",
+                      "node_type": "Identifier"
+                    },
+                    "cases": [
+                      {
+                        "node_type": "MatchExpressionCase",
+                        "pattern": {
+                          "node_type": "ConstructorPattern",
+                          "constructor_name": "Zero",
+                          "patterns": []
+                        },
+                        "expression": {
+                          "loc": {
+                            "source_file": "examples/stdlib/NatUtils.scillib",
+                            "line": 44,
+                            "column": 15,
+                            "node_type": "Location"
+                          },
+                          "node_type": "ConstrExpression",
+                          "constructor_name": "True",
+                          "types": [],
+                          "args": []
+                        }
+                      },
+                      {
+                        "node_type": "MatchExpressionCase",
+                        "pattern": { "node_type": "WildcardPattern" },
+                        "expression": {
+                          "loc": {
+                            "source_file": "examples/stdlib/NatUtils.scillib",
+                            "line": 45,
+                            "column": 14,
+                            "node_type": "Location"
+                          },
+                          "node_type": "ConstrExpression",
+                          "constructor_name": "False",
+                          "types": [],
+                          "args": []
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "lhs_type": {
+              "node_type": "ADT",
+              "name": "Nat",
+              "type_args": []
+            }
+          },
+          "lhs_type": { "node_type": "ADT", "name": "Nat", "type_args": [] }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 48,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "nat_to_int",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "ADT", "name": "Nat", "type_args": [] },
+          "val_type": { "node_type": "PrimType", "name": "Uint32" }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 49,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/NatUtils.scillib",
+              "line": 49,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "n",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/NatUtils.scillib",
+              "line": 50,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "LetExpression",
+            "variable": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 50,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "fold",
+              "node_type": "Identifier"
+            },
+            "variable_type": null,
+            "expression": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 50,
+                "column": 16,
+                "node_type": "Location"
+              },
+              "node_type": "TAppExpression"
+            },
+            "body": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 51,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "LetExpression",
+              "variable": {
+                "loc": {
+                  "source_file": "examples/stdlib/NatUtils.scillib",
+                  "line": 51,
+                  "column": 5,
+                  "node_type": "Location"
+                },
+                "identifier": "one_int",
+                "node_type": "Identifier"
+              },
+              "variable_type": null,
+              "expression": {
+                "loc": {
+                  "source_file": "examples/stdlib/NatUtils.scillib",
+                  "line": 51,
+                  "column": 19,
+                  "node_type": "Location"
+                },
+                "node_type": "LiteralExpression",
+                "value": {
+                  "node_type": "UintLiteral",
+                  "value": "1",
+                  "width": 32
+                }
+              },
+              "body": {
+                "loc": {
+                  "source_file": "examples/stdlib/NatUtils.scillib",
+                  "line": 52,
+                  "column": 5,
+                  "node_type": "Location"
+                },
+                "node_type": "LetExpression",
+                "variable": {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 52,
+                    "column": 5,
+                    "node_type": "Location"
+                  },
+                  "identifier": "f",
+                  "node_type": "Identifier"
+                },
+                "variable_type": null,
+                "expression": {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 52,
+                    "column": 13,
+                    "node_type": "Location"
+                  },
+                  "node_type": "FunExpression",
+                  "lhs": {
+                    "loc": {
+                      "source_file": "examples/stdlib/NatUtils.scillib",
+                      "line": 52,
+                      "column": 13,
+                      "node_type": "Location"
+                    },
+                    "identifier": "z",
+                    "node_type": "Identifier"
+                  },
+                  "rhs_expr": {
+                    "loc": {
+                      "source_file": "examples/stdlib/NatUtils.scillib",
+                      "line": 52,
+                      "column": 33,
+                      "node_type": "Location"
+                    },
+                    "node_type": "FunExpression",
+                    "lhs": {
+                      "loc": {
+                        "source_file": "examples/stdlib/NatUtils.scillib",
+                        "line": 52,
+                        "column": 33,
+                        "node_type": "Location"
+                      },
+                      "identifier": "ignore",
+                      "node_type": "Identifier"
+                    },
+                    "rhs_expr": {
+                      "loc": {
+                        "source_file": "examples/stdlib/NatUtils.scillib",
+                        "line": 53,
+                        "column": 7,
+                        "node_type": "Location"
+                      },
+                      "node_type": "BuiltinExpression",
+                      "arguments": [
+                        {
+                          "loc": {
+                            "source_file": "examples/stdlib/NatUtils.scillib",
+                            "line": 53,
+                            "column": 19,
+                            "node_type": "Location"
+                          },
+                          "identifier": "z",
+                          "node_type": "Identifier"
+                        },
+                        {
+                          "loc": {
+                            "source_file": "examples/stdlib/NatUtils.scillib",
+                            "line": 53,
+                            "column": 21,
+                            "node_type": "Location"
+                          },
+                          "identifier": "one_int",
+                          "node_type": "Identifier"
+                        }
+                      ],
+                      "builtin_function": {
+                        "loc": {
+                          "source_file": "examples/stdlib/NatUtils.scillib",
+                          "line": 53,
+                          "column": 15,
+                          "node_type": "Location"
+                        },
+                        "builtin_operator": "add",
+                        "node_type": "Builtin"
+                      }
+                    },
+                    "lhs_type": {
+                      "node_type": "ADT",
+                      "name": "Nat",
+                      "type_args": []
+                    }
+                  },
+                  "lhs_type": { "node_type": "PrimType", "name": "Uint32" }
+                },
+                "body": {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 54,
+                    "column": 5,
+                    "node_type": "Location"
+                  },
+                  "node_type": "LetExpression",
+                  "variable": {
+                    "loc": {
+                      "source_file": "examples/stdlib/NatUtils.scillib",
+                      "line": 54,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "identifier": "zero_int",
+                    "node_type": "Identifier"
+                  },
+                  "variable_type": null,
+                  "expression": {
+                    "loc": {
+                      "source_file": "examples/stdlib/NatUtils.scillib",
+                      "line": 54,
+                      "column": 20,
+                      "node_type": "Location"
+                    },
+                    "node_type": "LiteralExpression",
+                    "value": {
+                      "node_type": "UintLiteral",
+                      "value": "0",
+                      "width": 32
+                    }
+                  },
+                  "body": {
+                    "loc": {
+                      "source_file": "examples/stdlib/NatUtils.scillib",
+                      "line": 55,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "AppExpression",
+                    "lhs": {
+                      "loc": {
+                        "source_file": "examples/stdlib/NatUtils.scillib",
+                        "line": 55,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "fold",
+                      "node_type": "Identifier"
+                    },
+                    "rhs_list": [
+                      {
+                        "loc": {
+                          "source_file": "examples/stdlib/NatUtils.scillib",
+                          "line": 55,
+                          "column": 10,
+                          "node_type": "Location"
+                        },
+                        "identifier": "f",
+                        "node_type": "Identifier"
+                      },
+                      {
+                        "loc": {
+                          "source_file": "examples/stdlib/NatUtils.scillib",
+                          "line": 55,
+                          "column": 12,
+                          "node_type": "Location"
+                        },
+                        "identifier": "zero_int",
+                        "node_type": "Identifier"
+                      },
+                      {
+                        "loc": {
+                          "source_file": "examples/stdlib/NatUtils.scillib",
+                          "line": 55,
+                          "column": 21,
+                          "node_type": "Location"
+                        },
+                        "identifier": "n",
+                        "node_type": "Identifier"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "lhs_type": { "node_type": "ADT", "name": "Nat", "type_args": [] }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 57,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint32_to_nat_helper",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": {
+            "node_type": "ADT",
+            "name": "Option",
+            "type_args": [ { "node_type": "PrimType", "name": "Uint32" } ]
+          },
+          "val_type": {
+            "node_type": "ADT",
+            "name": "Option",
+            "type_args": [
+              { "node_type": "ADT", "name": "Nat", "type_args": [] }
+            ]
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 58,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/NatUtils.scillib",
+              "line": 58,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "m",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/NatUtils.scillib",
+              "line": 59,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "MatchExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 59,
+                "column": 11,
+                "node_type": "Location"
+              },
+              "identifier": "m",
+              "node_type": "Identifier"
+            },
+            "cases": [
+              {
+                "node_type": "MatchExpressionCase",
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "Some",
+                  "patterns": [
+                    {
+                      "node_type": "BinderPattern",
+                      "variable": {
+                        "loc": {
+                          "source_file": "examples/stdlib/NatUtils.scillib",
+                          "line": 60,
+                          "column": 12,
+                          "node_type": "Location"
+                        },
+                        "identifier": "x",
+                        "node_type": "Identifier"
+                      }
+                    }
+                  ]
+                },
+                "expression": {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 61,
+                    "column": 7,
+                    "node_type": "Location"
+                  },
+                  "node_type": "LetExpression",
+                  "variable": {
+                    "loc": {
+                      "source_file": "examples/stdlib/NatUtils.scillib",
+                      "line": 61,
+                      "column": 7,
+                      "node_type": "Location"
+                    },
+                    "identifier": "res",
+                    "node_type": "Identifier"
+                  },
+                  "variable_type": null,
+                  "expression": {
+                    "loc": {
+                      "source_file": "examples/stdlib/NatUtils.scillib",
+                      "line": 61,
+                      "column": 17,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BuiltinExpression",
+                    "arguments": [
+                      {
+                        "loc": {
+                          "source_file": "examples/stdlib/NatUtils.scillib",
+                          "line": 61,
+                          "column": 32,
+                          "node_type": "Location"
+                        },
+                        "identifier": "x",
+                        "node_type": "Identifier"
+                      }
+                    ],
+                    "builtin_function": {
+                      "loc": {
+                        "source_file": "examples/stdlib/NatUtils.scillib",
+                        "line": 61,
+                        "column": 25,
+                        "node_type": "Location"
+                      },
+                      "builtin_operator": "to_nat",
+                      "node_type": "Builtin"
+                    }
+                  },
+                  "body": {
+                    "loc": {
+                      "source_file": "examples/stdlib/NatUtils.scillib",
+                      "line": 62,
+                      "column": 7,
+                      "node_type": "Location"
+                    },
+                    "node_type": "ConstrExpression",
+                    "constructor_name": "Some",
+                    "types": [
+                      { "node_type": "ADT", "name": "Nat", "type_args": [] }
+                    ],
+                    "args": [
+                      {
+                        "loc": {
+                          "source_file": "examples/stdlib/NatUtils.scillib",
+                          "line": 62,
+                          "column": 18,
+                          "node_type": "Location"
+                        },
+                        "identifier": "res",
+                        "node_type": "Identifier"
+                      }
+                    ]
+                  }
+                }
+              },
+              {
+                "node_type": "MatchExpressionCase",
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "None",
+                  "patterns": []
+                },
+                "expression": {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 63,
+                    "column": 15,
+                    "node_type": "Location"
+                  },
+                  "node_type": "ConstrExpression",
+                  "constructor_name": "None",
+                  "types": [
+                    { "node_type": "ADT", "name": "Nat", "type_args": [] }
+                  ],
+                  "args": []
+                }
+              }
+            ]
+          },
+          "lhs_type": {
+            "node_type": "ADT",
+            "name": "Option",
+            "type_args": [ { "node_type": "PrimType", "name": "Uint32" } ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 66,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint32_to_nat",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "PrimType", "name": "Uint32" },
+          "val_type": {
+            "node_type": "ADT",
+            "name": "Option",
+            "type_args": [
+              { "node_type": "ADT", "name": "Nat", "type_args": [] }
+            ]
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 67,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/NatUtils.scillib",
+              "line": 67,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "n",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/NatUtils.scillib",
+              "line": 68,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "LetExpression",
+            "variable": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 68,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "m",
+              "node_type": "Identifier"
+            },
+            "variable_type": null,
+            "expression": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 68,
+                "column": 13,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 68,
+                    "column": 31,
+                    "node_type": "Location"
+                  },
+                  "identifier": "n",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/stdlib/NatUtils.scillib",
+                  "line": 68,
+                  "column": 21,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "to_uint32",
+                "node_type": "Builtin"
+              }
+            },
+            "body": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 69,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "examples/stdlib/NatUtils.scillib",
+                  "line": 69,
+                  "column": 5,
+                  "node_type": "Location"
+                },
+                "identifier": "uint32_to_nat_helper",
+                "node_type": "Identifier"
+              },
+              "rhs_list": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 69,
+                    "column": 26,
+                    "node_type": "Location"
+                  },
+                  "identifier": "m",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Uint32" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 71,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint64_to_nat",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "PrimType", "name": "Uint64" },
+          "val_type": {
+            "node_type": "ADT",
+            "name": "Option",
+            "type_args": [
+              { "node_type": "ADT", "name": "Nat", "type_args": [] }
+            ]
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 72,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/NatUtils.scillib",
+              "line": 72,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "n",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/NatUtils.scillib",
+              "line": 73,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "LetExpression",
+            "variable": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 73,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "m",
+              "node_type": "Identifier"
+            },
+            "variable_type": null,
+            "expression": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 73,
+                "column": 13,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 73,
+                    "column": 31,
+                    "node_type": "Location"
+                  },
+                  "identifier": "n",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/stdlib/NatUtils.scillib",
+                  "line": 73,
+                  "column": 21,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "to_uint32",
+                "node_type": "Builtin"
+              }
+            },
+            "body": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 74,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "examples/stdlib/NatUtils.scillib",
+                  "line": 74,
+                  "column": 5,
+                  "node_type": "Location"
+                },
+                "identifier": "uint32_to_nat_helper",
+                "node_type": "Identifier"
+              },
+              "rhs_list": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 74,
+                    "column": 26,
+                    "node_type": "Location"
+                  },
+                  "identifier": "m",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Uint64" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 76,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint128_to_nat",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "PrimType", "name": "Uint128" },
+          "val_type": {
+            "node_type": "ADT",
+            "name": "Option",
+            "type_args": [
+              { "node_type": "ADT", "name": "Nat", "type_args": [] }
+            ]
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 77,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/NatUtils.scillib",
+              "line": 77,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "n",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/NatUtils.scillib",
+              "line": 78,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "LetExpression",
+            "variable": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 78,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "m",
+              "node_type": "Identifier"
+            },
+            "variable_type": null,
+            "expression": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 78,
+                "column": 13,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 78,
+                    "column": 31,
+                    "node_type": "Location"
+                  },
+                  "identifier": "n",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/stdlib/NatUtils.scillib",
+                  "line": 78,
+                  "column": 21,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "to_uint32",
+                "node_type": "Builtin"
+              }
+            },
+            "body": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 79,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "examples/stdlib/NatUtils.scillib",
+                  "line": 79,
+                  "column": 5,
+                  "node_type": "Location"
+                },
+                "identifier": "uint32_to_nat_helper",
+                "node_type": "Identifier"
+              },
+              "rhs_list": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 79,
+                    "column": 26,
+                    "node_type": "Location"
+                  },
+                  "identifier": "m",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Uint128" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 81,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int32_to_nat",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "PrimType", "name": "Int32" },
+          "val_type": {
+            "node_type": "ADT",
+            "name": "Option",
+            "type_args": [
+              { "node_type": "ADT", "name": "Nat", "type_args": [] }
+            ]
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 82,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/NatUtils.scillib",
+              "line": 82,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "n",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/NatUtils.scillib",
+              "line": 83,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "LetExpression",
+            "variable": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 83,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "m",
+              "node_type": "Identifier"
+            },
+            "variable_type": null,
+            "expression": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 83,
+                "column": 13,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 83,
+                    "column": 31,
+                    "node_type": "Location"
+                  },
+                  "identifier": "n",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/stdlib/NatUtils.scillib",
+                  "line": 83,
+                  "column": 21,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "to_uint32",
+                "node_type": "Builtin"
+              }
+            },
+            "body": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 84,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "examples/stdlib/NatUtils.scillib",
+                  "line": 84,
+                  "column": 5,
+                  "node_type": "Location"
+                },
+                "identifier": "uint32_to_nat_helper",
+                "node_type": "Identifier"
+              },
+              "rhs_list": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 84,
+                    "column": 26,
+                    "node_type": "Location"
+                  },
+                  "identifier": "m",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Int32" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 86,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int64_to_nat",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "PrimType", "name": "Int64" },
+          "val_type": {
+            "node_type": "ADT",
+            "name": "Option",
+            "type_args": [
+              { "node_type": "ADT", "name": "Nat", "type_args": [] }
+            ]
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 87,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/NatUtils.scillib",
+              "line": 87,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "n",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/NatUtils.scillib",
+              "line": 88,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "LetExpression",
+            "variable": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 88,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "m",
+              "node_type": "Identifier"
+            },
+            "variable_type": null,
+            "expression": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 88,
+                "column": 13,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 88,
+                    "column": 31,
+                    "node_type": "Location"
+                  },
+                  "identifier": "n",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/stdlib/NatUtils.scillib",
+                  "line": 88,
+                  "column": 21,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "to_uint32",
+                "node_type": "Builtin"
+              }
+            },
+            "body": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 89,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "examples/stdlib/NatUtils.scillib",
+                  "line": 89,
+                  "column": 5,
+                  "node_type": "Location"
+                },
+                "identifier": "uint32_to_nat_helper",
+                "node_type": "Identifier"
+              },
+              "rhs_list": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 89,
+                    "column": 26,
+                    "node_type": "Location"
+                  },
+                  "identifier": "m",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Int64" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 91,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int128_to_nat",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "PrimType", "name": "Int128" },
+          "val_type": {
+            "node_type": "ADT",
+            "name": "Option",
+            "type_args": [
+              { "node_type": "ADT", "name": "Nat", "type_args": [] }
+            ]
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/NatUtils.scillib",
+            "line": 92,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/NatUtils.scillib",
+              "line": 92,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "n",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/NatUtils.scillib",
+              "line": 93,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "LetExpression",
+            "variable": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 93,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "m",
+              "node_type": "Identifier"
+            },
+            "variable_type": null,
+            "expression": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 93,
+                "column": 13,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 93,
+                    "column": 31,
+                    "node_type": "Location"
+                  },
+                  "identifier": "n",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/stdlib/NatUtils.scillib",
+                  "line": 93,
+                  "column": 21,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "to_uint32",
+                "node_type": "Builtin"
+              }
+            },
+            "body": {
+              "loc": {
+                "source_file": "examples/stdlib/NatUtils.scillib",
+                "line": 94,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "examples/stdlib/NatUtils.scillib",
+                  "line": 94,
+                  "column": 5,
+                  "node_type": "Location"
+                },
+                "identifier": "uint32_to_nat_helper",
+                "node_type": "Identifier"
+              },
+              "rhs_list": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/NatUtils.scillib",
+                    "line": 94,
+                    "column": 26,
+                    "node_type": "Location"
+                  },
+                  "identifier": "m",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Int128" }
+        }
+      }
+    ],
+    "node_type": "Library"
+  },
+  "external_libraries": [],
+  "node_type": "LibraryModule"
+}

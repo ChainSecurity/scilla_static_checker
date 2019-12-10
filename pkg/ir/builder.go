@@ -1096,8 +1096,6 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	builder.primitiveTypeMap["ByStr20"] = &RawType{builder.newIDNode(), 20}
 	builder.primitiveTypeMap["BNum"] = &BnrType{builder.newIDNode()}
 
-	builder.primitiveTypeMap["Bool"] = stdLib.Boolean
-
 	intIntOps := []string{"add", "sub", "mul", "div", "rem"}
 	intBoolOps := []string{"eq", "lt"}
 
@@ -1152,7 +1150,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 				DataVar{IDNode: builder.newIDNode(), DataType: &bAbsTD.Vars[0]},
 				DataVar{IDNode: builder.newIDNode(), DataType: &bAbsTD.Vars[0]},
 			},
-			Term: &Builtin{builder.newIDNode(), stdLib.Boolean, bOp},
+			Term: &Builtin{builder.newIDNode(), builder.definedADT["Bool"], bOp},
 		}
 		builder.builtinOpMap[bOp] = &bAbsTD
 	}
@@ -1408,7 +1406,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		},
 		Term: &Builtin{
 			IDNode:      builder.newIDNode(),
-			BuiltinType: builder.primitiveTypeMap["Bool"],
+			BuiltinType: builder.definedADT["Bool"],
 			Label:       "schnorr_verify",
 		},
 	}
@@ -1433,7 +1431,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		},
 		Term: &Builtin{
 			IDNode:      builder.newIDNode(),
-			BuiltinType: builder.primitiveTypeMap["Bool"],
+			BuiltinType: builder.definedADT["Bool"],
 			Label:       "ecdsa_verify",
 		},
 	}
@@ -1592,7 +1590,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		},
 		Term: &Builtin{
 			IDNode:      builder.newIDNode(),
-			BuiltinType: builder.primitiveTypeMap["Bool"],
+			BuiltinType: builder.definedADT["Bool"],
 			Label:       "contains",
 		},
 	}
@@ -1661,7 +1659,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	}
 	sizeAbsDD.Term = &Builtin{
 		IDNode:      builder.newIDNode(),
-		BuiltinType: builder.primitiveTypeMap["Bool"],
+		BuiltinType: builder.definedADT["Bool"],
 		Label:       "size",
 	}
 	builder.builtinOpMap["size"] = &sizeAbsTD
@@ -1681,7 +1679,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		},
 		Term: &Builtin{
 			IDNode:      builder.newIDNode(),
-			BuiltinType: builder.primitiveTypeMap["Bool"],
+			BuiltinType: builder.definedADT["Bool"],
 			Label:       "blt",
 		},
 	}
@@ -1739,7 +1737,6 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 		},
 	}
 	builder.builtinOpMap["bsub"] = &bsubAbsDD
-
 }
 
 func BuildCFG(n ast.AstNode) *CFGBuilder {

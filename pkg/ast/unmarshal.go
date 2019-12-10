@@ -44,6 +44,7 @@ func unmarshalASTType(rawMsg *json.RawMessage) (ASTType, error) {
 		}
 		return &t, err
 	case "ADT":
+		fmt.Println(string(*rawMsg))
 		var t ADT
 		err = json.Unmarshal(*rawMsg, &t)
 		if err != nil {
@@ -305,6 +306,41 @@ func unmarshalLibEntry(rawMsg *json.RawMessage) (LibEntry, error) {
 	default:
 		return nil, errors.New(fmt.Sprintf("Unsupported type found! %s\n", ntype))
 	}
+}
+func (adt *ADT) UnmarshalJSON(b []byte) error {
+	var objMap map[string]*json.RawMessage
+	err := json.Unmarshal(b, &objMap)
+	if err != nil {
+		return err
+	}
+
+	var rawMsgs []*json.RawMessage
+	err = json.Unmarshal(*objMap["type_args"], &rawMsgs)
+	if err != nil {
+		return err
+	}
+
+	adt.Args = make([]ASTType, len(rawMsgs))
+	for index, rawMsg := range rawMsgs {
+		s, err := unmarshalASTType(rawMsg)
+		if err != nil {
+			return err
+		}
+		adt.Args[index] = s
+	}
+
+	type core struct {
+		Name string `json:"name"`
+	}
+
+	var c core
+	err = json.Unmarshal(b, &c)
+	if err != nil {
+		return err
+	}
+
+	adt.Name = c.Name
+	return nil
 }
 
 func (ce *ConstrExpression) UnmarshalJSON(b []byte) error {
@@ -678,6 +714,38 @@ func (l *LibraryVariable) UnmarshalJSON(b []byte) error {
 
 	l.VarType = vt
 	l.Name = c.Name
+	return nil
+}
+
+func (ft *FunType) UnmarshalJSON(b []byte) error {
+	var objMap map[string]*json.RawMessage
+	err := json.Unmarshal(b, &objMap)
+	if err != nil {
+		panic(err)
+	}
+
+	var rawMsg *json.RawMessage
+	rawMsg = objMap["arg_type"]
+	var at ASTType
+	if rawMsg != nil {
+		at, err = unmarshalASTType(rawMsg)
+		if err != nil {
+			return err
+		}
+	}
+
+	rawMsg = objMap["val_type"]
+	var vt ASTType
+	if rawMsg != nil {
+		vt, err = unmarshalASTType(rawMsg)
+		if err != nil {
+			return err
+		}
+	}
+
+	ft.ArgType = at
+	ft.ValType = vt
+
 	return nil
 }
 

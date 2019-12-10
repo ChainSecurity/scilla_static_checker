@@ -1,0 +1,95 @@
+library NatUtils
+
+let nat_prev : Nat -> Option Nat =
+  fun (n: Nat) =>
+    match n with
+    | Succ n1 => Some {Nat} n1
+    | Zero => None {Nat}
+    end
+
+let is_some_zero : Nat -> Bool =
+  fun (n: Nat) =>
+    match n with
+    | Zero => True
+    | _ => False
+    end
+
+(* nat_fold with early termination. Continues recursing so long as f returns Some _.
+   Once f returns None, the recursion terminates. *)
+let nat_fold_while : forall 'T. ('T -> Nat -> Option 'T) -> 'T -> Nat -> 'T =
+  tfun 'T =>
+  fun (f : 'T -> Nat -> Option 'T) =>
+    let foldk = @nat_foldk 'T in
+    let iter = fun (z : 'T) => fun (n : Nat) =>
+      fun (recurse : 'T -> 'T) =>
+        let res_opt = f z n in
+        match res_opt with
+        | Some res => recurse res
+        | None => z
+        end in
+    foldk iter
+
+(* Return true iff two nats compare equal. *)
+let nat_eq : Nat -> Nat -> Bool =
+  fun (n : Nat) => fun (m : Nat) =>
+    let foldk = @nat_foldk Nat in
+    let iter =
+      fun (n : Nat) => fun (ignore : Nat) => fun (recurse : Nat -> Nat) =>
+        match n with
+        | Succ n_pred => recurse n_pred
+        | Zero => m   (* m is not zero in this context *)
+        end in
+    let remaining = foldk iter n m in
+    match remaining with
+    | Zero => True
+    |   _ => False
+    end
+
+let nat_to_int : Nat -> Uint32 =
+  fun (n : Nat) =>
+    let fold = @nat_fold Uint32 in
+    let one_int = Uint32 1 in
+    let f = fun (z : Uint32) => fun (ignore : Nat) =>
+      builtin add z one_int in
+    let zero_int = Uint32 0 in
+    fold f zero_int n
+
+let uint32_to_nat_helper : Option Uint32 -> Option Nat =
+  fun (m : Option Uint32) =>
+    match m with
+    | Some x =>
+      let res = builtin to_nat x in
+      Some {Nat} res
+    | None => None {Nat}
+    end
+
+let uint32_to_nat : Uint32 -> Option Nat =
+  fun (n : Uint32) =>
+    let m = builtin to_uint32 n in
+    uint32_to_nat_helper m
+
+let uint64_to_nat : Uint64 -> Option Nat =
+  fun (n : Uint64) =>
+    let m = builtin to_uint32 n in
+    uint32_to_nat_helper m
+
+let uint128_to_nat : Uint128 -> Option Nat =
+  fun (n : Uint128) =>
+    let m = builtin to_uint32 n in
+    uint32_to_nat_helper m
+
+let int32_to_nat : Int32 -> Option Nat =
+  fun (n : Int32) =>
+    let m = builtin to_uint32 n in
+    uint32_to_nat_helper m
+
+let int64_to_nat : Int64 -> Option Nat  =
+  fun (n : Int64) =>
+    let m = builtin to_uint32 n in
+    uint32_to_nat_helper m
+
+let int128_to_nat : Int128 -> Option Nat  =
+  fun (n : Int128) =>
+    let m = builtin to_uint32 n in
+    uint32_to_nat_helper m
+

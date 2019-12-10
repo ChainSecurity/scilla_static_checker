@@ -1,0 +1,4511 @@
+{
+  "library": {
+    "library_name": {
+      "loc": {
+        "source_file": "examples/stdlib/IntUtils.scillib",
+        "line": 1,
+        "column": 1,
+        "node_type": "Location"
+      },
+      "identifier": "IntUtils",
+      "node_type": "Identifier"
+    },
+    "library_entries": [
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 3,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int_neq",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "FunType",
+            "arg_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'A" },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                "val_type": {
+                  "node_type": "ADT",
+                  "name": "Bool",
+                  "type_args": []
+                }
+              }
+            },
+            "val_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'A" },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                "val_type": {
+                  "node_type": "ADT",
+                  "name": "Bool",
+                  "type_args": []
+                }
+              }
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 4,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 14,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int_le",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "FunType",
+            "arg_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'A" },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                "val_type": {
+                  "node_type": "ADT",
+                  "name": "Bool",
+                  "type_args": []
+                }
+              }
+            },
+            "val_type": {
+              "node_type": "FunType",
+              "arg_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                "val_type": {
+                  "node_type": "FunType",
+                  "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                  "val_type": {
+                    "node_type": "ADT",
+                    "name": "Bool",
+                    "type_args": []
+                  }
+                }
+              },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                "val_type": {
+                  "node_type": "FunType",
+                  "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                  "val_type": {
+                    "node_type": "ADT",
+                    "name": "Bool",
+                    "type_args": []
+                  }
+                }
+              }
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 16,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 27,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int_gt",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "FunType",
+            "arg_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'A" },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                "val_type": {
+                  "node_type": "ADT",
+                  "name": "Bool",
+                  "type_args": []
+                }
+              }
+            },
+            "val_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'A" },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                "val_type": {
+                  "node_type": "ADT",
+                  "name": "Bool",
+                  "type_args": []
+                }
+              }
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 28,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 34,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int_ge",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "FunType",
+            "arg_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'A" },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                "val_type": {
+                  "node_type": "ADT",
+                  "name": "Bool",
+                  "type_args": []
+                }
+              }
+            },
+            "val_type": {
+              "node_type": "FunType",
+              "arg_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                "val_type": {
+                  "node_type": "FunType",
+                  "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                  "val_type": {
+                    "node_type": "ADT",
+                    "name": "Bool",
+                    "type_args": []
+                  }
+                }
+              },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                "val_type": {
+                  "node_type": "FunType",
+                  "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                  "val_type": {
+                    "node_type": "ADT",
+                    "name": "Bool",
+                    "type_args": []
+                  }
+                }
+              }
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 36,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 45,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int32_eq",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "PrimType", "name": "Int32" },
+          "val_type": {
+            "node_type": "FunType",
+            "arg_type": { "node_type": "PrimType", "name": "Int32" },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "type_args": []
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 46,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 46,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "a",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 47,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 47,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 48,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 48,
+                    "column": 16,
+                    "node_type": "Location"
+                  },
+                  "identifier": "a",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 48,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "b",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 48,
+                  "column": 13,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "eq",
+                "node_type": "Builtin"
+              }
+            },
+            "lhs_type": { "node_type": "PrimType", "name": "Int32" }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Int32" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 49,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int64_eq",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "PrimType", "name": "Int64" },
+          "val_type": {
+            "node_type": "FunType",
+            "arg_type": { "node_type": "PrimType", "name": "Int64" },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "type_args": []
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 50,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 50,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "a",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 51,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 51,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 52,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 52,
+                    "column": 16,
+                    "node_type": "Location"
+                  },
+                  "identifier": "a",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 52,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "b",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 52,
+                  "column": 13,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "eq",
+                "node_type": "Builtin"
+              }
+            },
+            "lhs_type": { "node_type": "PrimType", "name": "Int64" }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Int64" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 53,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int128_eq",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "PrimType", "name": "Int128" },
+          "val_type": {
+            "node_type": "FunType",
+            "arg_type": { "node_type": "PrimType", "name": "Int128" },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "type_args": []
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 54,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 54,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "a",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 55,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 55,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 56,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 56,
+                    "column": 16,
+                    "node_type": "Location"
+                  },
+                  "identifier": "a",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 56,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "b",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 56,
+                  "column": 13,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "eq",
+                "node_type": "Builtin"
+              }
+            },
+            "lhs_type": { "node_type": "PrimType", "name": "Int128" }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Int128" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 57,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int256_eq",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "PrimType", "name": "Int256" },
+          "val_type": {
+            "node_type": "FunType",
+            "arg_type": { "node_type": "PrimType", "name": "Int256" },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "type_args": []
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 58,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 58,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "a",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 59,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 59,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 60,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 60,
+                    "column": 16,
+                    "node_type": "Location"
+                  },
+                  "identifier": "a",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 60,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "b",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 60,
+                  "column": 13,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "eq",
+                "node_type": "Builtin"
+              }
+            },
+            "lhs_type": { "node_type": "PrimType", "name": "Int256" }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Int256" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 61,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint32_eq",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "PrimType", "name": "Uint32" },
+          "val_type": {
+            "node_type": "FunType",
+            "arg_type": { "node_type": "PrimType", "name": "Uint32" },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "type_args": []
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 62,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 62,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "a",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 63,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 63,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 64,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 64,
+                    "column": 16,
+                    "node_type": "Location"
+                  },
+                  "identifier": "a",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 64,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "b",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 64,
+                  "column": 13,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "eq",
+                "node_type": "Builtin"
+              }
+            },
+            "lhs_type": { "node_type": "PrimType", "name": "Uint32" }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Uint32" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 65,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint64_eq",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "PrimType", "name": "Uint64" },
+          "val_type": {
+            "node_type": "FunType",
+            "arg_type": { "node_type": "PrimType", "name": "Uint64" },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "type_args": []
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 66,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 66,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "a",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 67,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 67,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 68,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 68,
+                    "column": 16,
+                    "node_type": "Location"
+                  },
+                  "identifier": "a",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 68,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "b",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 68,
+                  "column": 13,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "eq",
+                "node_type": "Builtin"
+              }
+            },
+            "lhs_type": { "node_type": "PrimType", "name": "Uint64" }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Uint64" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 69,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint128_eq",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "PrimType", "name": "Uint128" },
+          "val_type": {
+            "node_type": "FunType",
+            "arg_type": { "node_type": "PrimType", "name": "Uint128" },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "type_args": []
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 70,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 70,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "a",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 71,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 71,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 72,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 72,
+                    "column": 16,
+                    "node_type": "Location"
+                  },
+                  "identifier": "a",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 72,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "b",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 72,
+                  "column": 13,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "eq",
+                "node_type": "Builtin"
+              }
+            },
+            "lhs_type": { "node_type": "PrimType", "name": "Uint128" }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Uint128" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 73,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint256_eq",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "PrimType", "name": "Uint256" },
+          "val_type": {
+            "node_type": "FunType",
+            "arg_type": { "node_type": "PrimType", "name": "Uint256" },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "type_args": []
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 74,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 74,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "a",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 75,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 75,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 76,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 76,
+                    "column": 16,
+                    "node_type": "Location"
+                  },
+                  "identifier": "a",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 76,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "b",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 76,
+                  "column": 13,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "eq",
+                "node_type": "Builtin"
+              }
+            },
+            "lhs_type": { "node_type": "PrimType", "name": "Uint256" }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Uint256" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 79,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int32_lt",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "PrimType", "name": "Int32" },
+          "val_type": {
+            "node_type": "FunType",
+            "arg_type": { "node_type": "PrimType", "name": "Int32" },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "type_args": []
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 80,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 80,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "a",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 81,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 81,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 82,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 82,
+                    "column": 16,
+                    "node_type": "Location"
+                  },
+                  "identifier": "a",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 82,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "b",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 82,
+                  "column": 13,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "lt",
+                "node_type": "Builtin"
+              }
+            },
+            "lhs_type": { "node_type": "PrimType", "name": "Int32" }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Int32" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 83,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int64_lt",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "PrimType", "name": "Int64" },
+          "val_type": {
+            "node_type": "FunType",
+            "arg_type": { "node_type": "PrimType", "name": "Int64" },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "type_args": []
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 84,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 84,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "a",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 85,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 85,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 86,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 86,
+                    "column": 16,
+                    "node_type": "Location"
+                  },
+                  "identifier": "a",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 86,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "b",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 86,
+                  "column": 13,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "lt",
+                "node_type": "Builtin"
+              }
+            },
+            "lhs_type": { "node_type": "PrimType", "name": "Int64" }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Int64" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 87,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int128_lt",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "PrimType", "name": "Int128" },
+          "val_type": {
+            "node_type": "FunType",
+            "arg_type": { "node_type": "PrimType", "name": "Int128" },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "type_args": []
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 88,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 88,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "a",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 89,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 89,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 90,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 90,
+                    "column": 16,
+                    "node_type": "Location"
+                  },
+                  "identifier": "a",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 90,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "b",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 90,
+                  "column": 13,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "lt",
+                "node_type": "Builtin"
+              }
+            },
+            "lhs_type": { "node_type": "PrimType", "name": "Int128" }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Int128" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 91,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int256_lt",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "PrimType", "name": "Int256" },
+          "val_type": {
+            "node_type": "FunType",
+            "arg_type": { "node_type": "PrimType", "name": "Int256" },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "type_args": []
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 92,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 92,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "a",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 93,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 93,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 94,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 94,
+                    "column": 16,
+                    "node_type": "Location"
+                  },
+                  "identifier": "a",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 94,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "b",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 94,
+                  "column": 13,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "lt",
+                "node_type": "Builtin"
+              }
+            },
+            "lhs_type": { "node_type": "PrimType", "name": "Int256" }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Int256" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 95,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint32_lt",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "PrimType", "name": "Uint32" },
+          "val_type": {
+            "node_type": "FunType",
+            "arg_type": { "node_type": "PrimType", "name": "Uint32" },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "type_args": []
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 96,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 96,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "a",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 97,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 97,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 98,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 98,
+                    "column": 16,
+                    "node_type": "Location"
+                  },
+                  "identifier": "a",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 98,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "b",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 98,
+                  "column": 13,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "lt",
+                "node_type": "Builtin"
+              }
+            },
+            "lhs_type": { "node_type": "PrimType", "name": "Uint32" }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Uint32" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 99,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint64_lt",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "PrimType", "name": "Uint64" },
+          "val_type": {
+            "node_type": "FunType",
+            "arg_type": { "node_type": "PrimType", "name": "Uint64" },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "type_args": []
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 100,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 100,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "a",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 101,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 101,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 102,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 102,
+                    "column": 16,
+                    "node_type": "Location"
+                  },
+                  "identifier": "a",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 102,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "b",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 102,
+                  "column": 13,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "lt",
+                "node_type": "Builtin"
+              }
+            },
+            "lhs_type": { "node_type": "PrimType", "name": "Uint64" }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Uint64" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 103,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint128_lt",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "PrimType", "name": "Uint128" },
+          "val_type": {
+            "node_type": "FunType",
+            "arg_type": { "node_type": "PrimType", "name": "Uint128" },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "type_args": []
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 104,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 104,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "a",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 105,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 105,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 106,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 106,
+                    "column": 16,
+                    "node_type": "Location"
+                  },
+                  "identifier": "a",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 106,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "b",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 106,
+                  "column": 13,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "lt",
+                "node_type": "Builtin"
+              }
+            },
+            "lhs_type": { "node_type": "PrimType", "name": "Uint128" }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Uint128" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 107,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint256_lt",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "FunType",
+          "arg_type": { "node_type": "PrimType", "name": "Uint256" },
+          "val_type": {
+            "node_type": "FunType",
+            "arg_type": { "node_type": "PrimType", "name": "Uint256" },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Bool",
+              "type_args": []
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 108,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 108,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "a",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 109,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 109,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 110,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 110,
+                    "column": 16,
+                    "node_type": "Location"
+                  },
+                  "identifier": "a",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 110,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "b",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 110,
+                  "column": 13,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "lt",
+                "node_type": "Builtin"
+              }
+            },
+            "lhs_type": { "node_type": "PrimType", "name": "Uint256" }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Uint256" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 113,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int32_neq",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 113,
+            "column": 17,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 113,
+              "column": 17,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 113,
+              "column": 25,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 113,
+              "column": 43,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 113,
+                "column": 43,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 113,
+                  "column": 45,
+                  "node_type": "Location"
+                },
+                "identifier": "int32_eq",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 114,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int64_neq",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 114,
+            "column": 17,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 114,
+              "column": 17,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 114,
+              "column": 25,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 114,
+              "column": 43,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 114,
+                "column": 43,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 114,
+                  "column": 45,
+                  "node_type": "Location"
+                },
+                "identifier": "int64_eq",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 115,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int128_neq",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 115,
+            "column": 18,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 115,
+              "column": 18,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 115,
+              "column": 26,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 115,
+              "column": 45,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 115,
+                "column": 45,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 115,
+                  "column": 47,
+                  "node_type": "Location"
+                },
+                "identifier": "int128_eq",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 116,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int256_neq",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 116,
+            "column": 18,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 116,
+              "column": 18,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 116,
+              "column": 26,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 116,
+              "column": 45,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 116,
+                "column": 45,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 116,
+                  "column": 47,
+                  "node_type": "Location"
+                },
+                "identifier": "int256_eq",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 117,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint32_neq",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 117,
+            "column": 18,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 117,
+              "column": 18,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 117,
+              "column": 26,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 117,
+              "column": 45,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 117,
+                "column": 45,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 117,
+                  "column": 47,
+                  "node_type": "Location"
+                },
+                "identifier": "uint32_eq",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 118,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint64_neq",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 118,
+            "column": 18,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 118,
+              "column": 18,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 118,
+              "column": 26,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 118,
+              "column": 45,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 118,
+                "column": 45,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 118,
+                  "column": 47,
+                  "node_type": "Location"
+                },
+                "identifier": "uint64_eq",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 119,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint128_neq",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 119,
+            "column": 19,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 119,
+              "column": 19,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 119,
+              "column": 27,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 119,
+              "column": 47,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 119,
+                "column": 47,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 119,
+                  "column": 49,
+                  "node_type": "Location"
+                },
+                "identifier": "uint128_eq",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 120,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint256_neq",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 120,
+            "column": 19,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 120,
+              "column": 19,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 120,
+              "column": 27,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 120,
+              "column": 47,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 120,
+                "column": 47,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 120,
+                  "column": 49,
+                  "node_type": "Location"
+                },
+                "identifier": "uint256_eq",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 122,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int32_le",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 122,
+            "column": 16,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 122,
+              "column": 16,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 122,
+              "column": 24,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 122,
+              "column": 41,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 122,
+                "column": 41,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 122,
+                  "column": 43,
+                  "node_type": "Location"
+                },
+                "identifier": "int32_eq",
+                "node_type": "Identifier"
+              },
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 122,
+                  "column": 52,
+                  "node_type": "Location"
+                },
+                "identifier": "int32_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 123,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int64_le",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 123,
+            "column": 16,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 123,
+              "column": 16,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 123,
+              "column": 24,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 123,
+              "column": 41,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 123,
+                "column": 41,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 123,
+                  "column": 43,
+                  "node_type": "Location"
+                },
+                "identifier": "int64_eq",
+                "node_type": "Identifier"
+              },
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 123,
+                  "column": 52,
+                  "node_type": "Location"
+                },
+                "identifier": "int64_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 124,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int128_le",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 124,
+            "column": 17,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 124,
+              "column": 17,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 124,
+              "column": 25,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 124,
+              "column": 43,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 124,
+                "column": 43,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 124,
+                  "column": 45,
+                  "node_type": "Location"
+                },
+                "identifier": "int128_eq",
+                "node_type": "Identifier"
+              },
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 124,
+                  "column": 55,
+                  "node_type": "Location"
+                },
+                "identifier": "int128_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 125,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int256_le",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 125,
+            "column": 17,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 125,
+              "column": 17,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 125,
+              "column": 25,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 125,
+              "column": 43,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 125,
+                "column": 43,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 125,
+                  "column": 45,
+                  "node_type": "Location"
+                },
+                "identifier": "int256_eq",
+                "node_type": "Identifier"
+              },
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 125,
+                  "column": 55,
+                  "node_type": "Location"
+                },
+                "identifier": "int256_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 126,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint32_le",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 126,
+            "column": 17,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 126,
+              "column": 17,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 126,
+              "column": 25,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 126,
+              "column": 43,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 126,
+                "column": 43,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 126,
+                  "column": 45,
+                  "node_type": "Location"
+                },
+                "identifier": "uint32_eq",
+                "node_type": "Identifier"
+              },
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 126,
+                  "column": 55,
+                  "node_type": "Location"
+                },
+                "identifier": "uint32_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 127,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint64_le",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 127,
+            "column": 17,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 127,
+              "column": 17,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 127,
+              "column": 25,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 127,
+              "column": 43,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 127,
+                "column": 43,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 127,
+                  "column": 45,
+                  "node_type": "Location"
+                },
+                "identifier": "uint64_eq",
+                "node_type": "Identifier"
+              },
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 127,
+                  "column": 55,
+                  "node_type": "Location"
+                },
+                "identifier": "uint64_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 128,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint128_le",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 128,
+            "column": 18,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 128,
+              "column": 18,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 128,
+              "column": 26,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 128,
+              "column": 45,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 128,
+                "column": 45,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 128,
+                  "column": 47,
+                  "node_type": "Location"
+                },
+                "identifier": "uint128_eq",
+                "node_type": "Identifier"
+              },
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 128,
+                  "column": 58,
+                  "node_type": "Location"
+                },
+                "identifier": "uint128_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 129,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint256_le",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 129,
+            "column": 18,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 129,
+              "column": 18,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 129,
+              "column": 26,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 129,
+              "column": 45,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 129,
+                "column": 45,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 129,
+                  "column": 47,
+                  "node_type": "Location"
+                },
+                "identifier": "uint256_eq",
+                "node_type": "Identifier"
+              },
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 129,
+                  "column": 58,
+                  "node_type": "Location"
+                },
+                "identifier": "uint256_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 131,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int32_gt",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 131,
+            "column": 16,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 131,
+              "column": 16,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 131,
+              "column": 24,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 131,
+              "column": 41,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 131,
+                "column": 41,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 131,
+                  "column": 43,
+                  "node_type": "Location"
+                },
+                "identifier": "int32_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 132,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int64_gt",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 132,
+            "column": 16,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 132,
+              "column": 16,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 132,
+              "column": 24,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 132,
+              "column": 41,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 132,
+                "column": 41,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 132,
+                  "column": 43,
+                  "node_type": "Location"
+                },
+                "identifier": "int64_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 133,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int128_gt",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 133,
+            "column": 17,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 133,
+              "column": 17,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 133,
+              "column": 25,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 133,
+              "column": 43,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 133,
+                "column": 43,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 133,
+                  "column": 45,
+                  "node_type": "Location"
+                },
+                "identifier": "int128_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 134,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int256_gt",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 134,
+            "column": 17,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 134,
+              "column": 17,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 134,
+              "column": 25,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 134,
+              "column": 43,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 134,
+                "column": 43,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 134,
+                  "column": 45,
+                  "node_type": "Location"
+                },
+                "identifier": "int256_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 135,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint32_gt",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 135,
+            "column": 17,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 135,
+              "column": 17,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 135,
+              "column": 25,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 135,
+              "column": 43,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 135,
+                "column": 43,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 135,
+                  "column": 45,
+                  "node_type": "Location"
+                },
+                "identifier": "uint32_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 136,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint64_gt",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 136,
+            "column": 17,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 136,
+              "column": 17,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 136,
+              "column": 25,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 136,
+              "column": 43,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 136,
+                "column": 43,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 136,
+                  "column": 45,
+                  "node_type": "Location"
+                },
+                "identifier": "uint64_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 137,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint128_gt",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 137,
+            "column": 18,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 137,
+              "column": 18,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 137,
+              "column": 26,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 137,
+              "column": 45,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 137,
+                "column": 45,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 137,
+                  "column": 47,
+                  "node_type": "Location"
+                },
+                "identifier": "uint128_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 138,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint256_gt",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 138,
+            "column": 18,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 138,
+              "column": 18,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 138,
+              "column": 26,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 138,
+              "column": 45,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 138,
+                "column": 45,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 138,
+                  "column": 47,
+                  "node_type": "Location"
+                },
+                "identifier": "uint256_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 140,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int32_ge",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 140,
+            "column": 16,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 140,
+              "column": 16,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 140,
+              "column": 24,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 140,
+              "column": 41,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 140,
+                "column": 41,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 140,
+                  "column": 43,
+                  "node_type": "Location"
+                },
+                "identifier": "int32_eq",
+                "node_type": "Identifier"
+              },
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 140,
+                  "column": 52,
+                  "node_type": "Location"
+                },
+                "identifier": "int32_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 141,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int64_ge",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 141,
+            "column": 16,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 141,
+              "column": 16,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 141,
+              "column": 24,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 141,
+              "column": 41,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 141,
+                "column": 41,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 141,
+                  "column": 43,
+                  "node_type": "Location"
+                },
+                "identifier": "int64_eq",
+                "node_type": "Identifier"
+              },
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 141,
+                  "column": 52,
+                  "node_type": "Location"
+                },
+                "identifier": "int64_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 142,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int128_ge",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 142,
+            "column": 17,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 142,
+              "column": 17,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 142,
+              "column": 25,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 142,
+              "column": 43,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 142,
+                "column": 43,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 142,
+                  "column": 45,
+                  "node_type": "Location"
+                },
+                "identifier": "int128_eq",
+                "node_type": "Identifier"
+              },
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 142,
+                  "column": 55,
+                  "node_type": "Location"
+                },
+                "identifier": "int128_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 143,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "int256_ge",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 143,
+            "column": 17,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 143,
+              "column": 17,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 143,
+              "column": 25,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 143,
+              "column": 43,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 143,
+                "column": 43,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 143,
+                  "column": 45,
+                  "node_type": "Location"
+                },
+                "identifier": "int256_eq",
+                "node_type": "Identifier"
+              },
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 143,
+                  "column": 55,
+                  "node_type": "Location"
+                },
+                "identifier": "int256_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 144,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint32_ge",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 144,
+            "column": 17,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 144,
+              "column": 17,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 144,
+              "column": 25,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 144,
+              "column": 43,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 144,
+                "column": 43,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 144,
+                  "column": 45,
+                  "node_type": "Location"
+                },
+                "identifier": "uint32_eq",
+                "node_type": "Identifier"
+              },
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 144,
+                  "column": 55,
+                  "node_type": "Location"
+                },
+                "identifier": "uint32_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 145,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint64_ge",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 145,
+            "column": 17,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 145,
+              "column": 17,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 145,
+              "column": 25,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 145,
+              "column": 43,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 145,
+                "column": 43,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 145,
+                  "column": 45,
+                  "node_type": "Location"
+                },
+                "identifier": "uint64_eq",
+                "node_type": "Identifier"
+              },
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 145,
+                  "column": 55,
+                  "node_type": "Location"
+                },
+                "identifier": "uint64_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 146,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint128_ge",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 146,
+            "column": 18,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 146,
+              "column": 18,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 146,
+              "column": 26,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 146,
+              "column": 45,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 146,
+                "column": 45,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 146,
+                  "column": 47,
+                  "node_type": "Location"
+                },
+                "identifier": "uint128_eq",
+                "node_type": "Identifier"
+              },
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 146,
+                  "column": 58,
+                  "node_type": "Location"
+                },
+                "identifier": "uint128_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 147,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "uint256_ge",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/IntUtils.scillib",
+            "line": 147,
+            "column": 18,
+            "node_type": "Location"
+          },
+          "node_type": "LetExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 147,
+              "column": 18,
+              "node_type": "Location"
+            },
+            "identifier": "t",
+            "node_type": "Identifier"
+          },
+          "variable_type": null,
+          "expression": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 147,
+              "column": 26,
+              "node_type": "Location"
+            },
+            "node_type": "TAppExpression"
+          },
+          "body": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 147,
+              "column": 45,
+              "node_type": "Location"
+            },
+            "node_type": "AppExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 147,
+                "column": 45,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs_list": [
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 147,
+                  "column": 47,
+                  "node_type": "Location"
+                },
+                "identifier": "uint256_eq",
+                "node_type": "Identifier"
+              },
+              {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 147,
+                  "column": 58,
+                  "node_type": "Location"
+                },
+                "identifier": "uint256_lt",
+                "node_type": "Identifier"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "node_type": "Library"
+  },
+  "external_libraries": [],
+  "node_type": "LibraryModule"
+}

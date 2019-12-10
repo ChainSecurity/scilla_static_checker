@@ -1,32 +1,21 @@
 {
-  "scilla_major_version": 0,
-  "name": {
-    "loc": {
-      "source_file": "examples/shape.scilla",
-      "line": 17,
-      "column": 10,
-      "node_type": "Location"
-    },
-    "identifier": "ShapeTest",
-    "node_type": "Identifier"
-  },
   "library": {
     "library_name": {
       "loc": {
-        "source_file": "examples/shape.scilla",
-        "line": 3,
+        "source_file": "examples/shape.scillib",
+        "line": 1,
         "column": 1,
         "node_type": "Location"
       },
-      "identifier": "ShapeTest",
+      "identifier": "ShapeLib",
       "node_type": "Identifier"
     },
     "library_entries": [
       {
         "name": {
           "loc": {
-            "source_file": "examples/shape.scilla",
-            "line": 4,
+            "source_file": "examples/shape.scillib",
+            "line": 3,
             "column": 1,
             "node_type": "Location"
           },
@@ -38,8 +27,8 @@
           {
             "ctr_def_name": {
               "loc": {
-                "source_file": "examples/shape.scilla",
-                "line": 5,
+                "source_file": "examples/shape.scillib",
+                "line": 4,
                 "column": 1,
                 "node_type": "Location"
               },
@@ -55,8 +44,8 @@
           {
             "ctr_def_name": {
               "loc": {
-                "source_file": "examples/shape.scilla",
-                "line": 6,
+                "source_file": "examples/shape.scillib",
+                "line": 5,
                 "column": 1,
                 "node_type": "Location"
               },
@@ -75,8 +64,8 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "examples/shape.scilla",
-            "line": 8,
+            "source_file": "examples/shape.scillib",
+            "line": 7,
             "column": 5,
             "node_type": "Location"
           },
@@ -86,16 +75,16 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "examples/shape.scilla",
-            "line": 9,
+            "source_file": "examples/shape.scillib",
+            "line": 8,
             "column": 3,
             "node_type": "Location"
           },
           "node_type": "FunExpression",
           "lhs": {
             "loc": {
-              "source_file": "examples/shape.scilla",
-              "line": 9,
+              "source_file": "examples/shape.scillib",
+              "line": 8,
               "column": 3,
               "node_type": "Location"
             },
@@ -104,16 +93,16 @@
           },
           "rhs_expr": {
             "loc": {
-              "source_file": "examples/shape.scilla",
-              "line": 10,
+              "source_file": "examples/shape.scillib",
+              "line": 9,
               "column": 5,
               "node_type": "Location"
             },
             "node_type": "MatchExpression",
             "lhs": {
               "loc": {
-                "source_file": "examples/shape.scilla",
-                "line": 10,
+                "source_file": "examples/shape.scillib",
+                "line": 9,
                 "column": 11,
                 "node_type": "Location"
               },
@@ -133,8 +122,8 @@
                 },
                 "expression": {
                   "loc": {
-                    "source_file": "examples/shape.scilla",
-                    "line": 11,
+                    "source_file": "examples/shape.scillib",
+                    "line": 10,
                     "column": 21,
                     "node_type": "Location"
                   },
@@ -158,8 +147,8 @@
                 },
                 "expression": {
                   "loc": {
-                    "source_file": "examples/shape.scilla",
-                    "line": 12,
+                    "source_file": "examples/shape.scillib",
+                    "line": 11,
                     "column": 21,
                     "node_type": "Location"
                   },
@@ -179,354 +168,10 @@
             "type_args": []
           }
         }
-      },
-      {
-        "node_type": "LibraryVariable",
-        "name": {
-          "loc": {
-            "source_file": "examples/shape.scilla",
-            "line": 15,
-            "column": 5,
-            "node_type": "Location"
-          },
-          "identifier": "one32",
-          "node_type": "Identifier"
-        },
-        "variable_type": null,
-        "expression": {
-          "loc": {
-            "source_file": "examples/shape.scilla",
-            "line": 15,
-            "column": 14,
-            "node_type": "Location"
-          },
-          "node_type": "LiteralExpression",
-          "value": { "node_type": "UintLiteral", "value": "1", "width": 32 }
-        }
       }
     ],
     "node_type": "Library"
   },
   "external_libraries": [],
-  "contract": {
-    "name": {
-      "loc": {
-        "source_file": "examples/shape.scilla",
-        "line": 17,
-        "column": 10,
-        "node_type": "Location"
-      },
-      "identifier": "ShapeTest",
-      "node_type": "Identifier"
-    },
-    "params": [],
-    "fields": [
-      {
-        "field_name": {
-          "loc": {
-            "source_file": "examples/shape.scilla",
-            "line": 20,
-            "column": 7,
-            "node_type": "Location"
-          },
-          "identifier": "shape",
-          "node_type": "Identifier"
-        },
-        "field_type": {
-          "node_type": "ADT",
-          "name": "Shape",
-          "type_args": []
-        },
-        "expression": {
-          "loc": {
-            "source_file": "examples/shape.scilla",
-            "line": 20,
-            "column": 23,
-            "node_type": "Location"
-          },
-          "node_type": "ConstrExpression",
-          "constructor_name": "Square",
-          "types": [],
-          "args": [
-            {
-              "loc": {
-                "source_file": "examples/shape.scilla",
-                "line": 20,
-                "column": 30,
-                "node_type": "Location"
-              },
-              "identifier": "one32",
-              "node_type": "Identifier"
-            },
-            {
-              "loc": {
-                "source_file": "examples/shape.scilla",
-                "line": 20,
-                "column": 36,
-                "node_type": "Location"
-              },
-              "identifier": "one32",
-              "node_type": "Identifier"
-            }
-          ]
-        },
-        "node_type": "Field"
-      }
-    ],
-    "components": [
-      {
-        "params": [],
-        "component_type": "transition",
-        "name": {
-          "loc": {
-            "source_file": "examples/shape.scilla",
-            "line": 22,
-            "column": 12,
-            "node_type": "Location"
-          },
-          "identifier": "test",
-          "node_type": "Identifier"
-        },
-        "body": [
-          {
-            "loc": {
-              "source_file": "examples/shape.scilla",
-              "line": 23,
-              "column": 3,
-              "node_type": "Location"
-            },
-            "lhs": {
-              "loc": {
-                "source_file": "examples/shape.scilla",
-                "line": 23,
-                "column": 5,
-                "node_type": "Location"
-              },
-              "identifier": "s",
-              "node_type": "Identifier"
-            },
-            "rhs": {
-              "loc": {
-                "source_file": "examples/shape.scilla",
-                "line": 23,
-                "column": 8,
-                "node_type": "Location"
-              },
-              "identifier": "shape",
-              "node_type": "Identifier"
-            },
-            "node_type": "LoadStatement"
-          },
-          {
-            "loc": {
-              "source_file": "examples/shape.scilla",
-              "line": 24,
-              "column": 3,
-              "node_type": "Location"
-            },
-            "node_type": "BindStatement",
-            "lhs": {
-              "loc": {
-                "source_file": "examples/shape.scilla",
-                "line": 24,
-                "column": 6,
-                "node_type": "Location"
-              },
-              "identifier": "t",
-              "node_type": "Identifier"
-            },
-            "rhs_expr": {
-              "loc": {
-                "source_file": "examples/shape.scilla",
-                "line": 24,
-                "column": 8,
-                "node_type": "Location"
-              },
-              "node_type": "MatchExpression",
-              "lhs": {
-                "loc": {
-                  "source_file": "examples/shape.scilla",
-                  "line": 24,
-                  "column": 14,
-                  "node_type": "Location"
-                },
-                "identifier": "s",
-                "node_type": "Identifier"
-              },
-              "cases": [
-                {
-                  "node_type": "MatchExpressionCase",
-                  "pattern": {
-                    "node_type": "ConstructorPattern",
-                    "constructor_name": "Square",
-                    "patterns": [
-                      {
-                        "node_type": "BinderPattern",
-                        "variable": {
-                          "loc": {
-                            "source_file": "examples/shape.scilla",
-                            "line": 25,
-                            "column": 12,
-                            "node_type": "Location"
-                          },
-                          "identifier": "x",
-                          "node_type": "Identifier"
-                        }
-                      },
-                      {
-                        "node_type": "BinderPattern",
-                        "variable": {
-                          "loc": {
-                            "source_file": "examples/shape.scilla",
-                            "line": 25,
-                            "column": 14,
-                            "node_type": "Location"
-                          },
-                          "identifier": "y",
-                          "node_type": "Identifier"
-                        }
-                      }
-                    ]
-                  },
-                  "expression": {
-                    "loc": {
-                      "source_file": "examples/shape.scilla",
-                      "line": 26,
-                      "column": 5,
-                      "node_type": "Location"
-                    },
-                    "node_type": "ConstrExpression",
-                    "constructor_name": "Circle",
-                    "types": [],
-                    "args": [
-                      {
-                        "loc": {
-                          "source_file": "examples/shape.scilla",
-                          "line": 26,
-                          "column": 12,
-                          "node_type": "Location"
-                        },
-                        "identifier": "x",
-                        "node_type": "Identifier"
-                      },
-                      {
-                        "loc": {
-                          "source_file": "examples/shape.scilla",
-                          "line": 26,
-                          "column": 14,
-                          "node_type": "Location"
-                        },
-                        "identifier": "y",
-                        "node_type": "Identifier"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "node_type": "MatchExpressionCase",
-                  "pattern": {
-                    "node_type": "ConstructorPattern",
-                    "constructor_name": "Circle",
-                    "patterns": [
-                      {
-                        "node_type": "BinderPattern",
-                        "variable": {
-                          "loc": {
-                            "source_file": "examples/shape.scilla",
-                            "line": 27,
-                            "column": 12,
-                            "node_type": "Location"
-                          },
-                          "identifier": "x",
-                          "node_type": "Identifier"
-                        }
-                      },
-                      {
-                        "node_type": "BinderPattern",
-                        "variable": {
-                          "loc": {
-                            "source_file": "examples/shape.scilla",
-                            "line": 27,
-                            "column": 14,
-                            "node_type": "Location"
-                          },
-                          "identifier": "y",
-                          "node_type": "Identifier"
-                        }
-                      }
-                    ]
-                  },
-                  "expression": {
-                    "loc": {
-                      "source_file": "examples/shape.scilla",
-                      "line": 28,
-                      "column": 5,
-                      "node_type": "Location"
-                    },
-                    "node_type": "ConstrExpression",
-                    "constructor_name": "Square",
-                    "types": [],
-                    "args": [
-                      {
-                        "loc": {
-                          "source_file": "examples/shape.scilla",
-                          "line": 28,
-                          "column": 12,
-                          "node_type": "Location"
-                        },
-                        "identifier": "x",
-                        "node_type": "Identifier"
-                      },
-                      {
-                        "loc": {
-                          "source_file": "examples/shape.scilla",
-                          "line": 28,
-                          "column": 14,
-                          "node_type": "Location"
-                        },
-                        "identifier": "y",
-                        "node_type": "Identifier"
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          },
-          {
-            "loc": {
-              "source_file": "examples/shape.scilla",
-              "line": 30,
-              "column": 3,
-              "node_type": "Location"
-            },
-            "lhs": {
-              "loc": {
-                "source_file": "examples/shape.scilla",
-                "line": 30,
-                "column": 9,
-                "node_type": "Location"
-              },
-              "identifier": "shape",
-              "node_type": "Identifier"
-            },
-            "rhs": {
-              "loc": {
-                "source_file": "examples/shape.scilla",
-                "line": 30,
-                "column": 12,
-                "node_type": "Location"
-              },
-              "identifier": "t",
-              "node_type": "Identifier"
-            },
-            "node_type": "StoreStatement"
-          }
-        ],
-        "node_type": "Component"
-      }
-    ],
-    "node_type": "Contract"
-  },
-  "node_type": "ContractModule"
+  "node_type": "LibraryModule"
 }

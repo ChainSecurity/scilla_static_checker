@@ -1,0 +1,17 @@
+library PairUtils
+
+let fst : forall 'A. forall 'B. Pair 'A 'B -> 'A =
+  tfun 'A =>
+  tfun 'B =>
+  fun (p : Pair ('A) ('B)) =>
+    match p with
+    | Pair a b => a
+    end
+
+let snd : forall 'A. forall 'B. Pair 'A 'B -> 'B =
+  tfun 'A =>
+  tfun 'B =>
+  fun (p : Pair ('A) ('B)) =>
+    match p with
+    | Pair a b => b
+    end

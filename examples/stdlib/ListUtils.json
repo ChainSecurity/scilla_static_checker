@@ -1,0 +1,1068 @@
+{
+  "library": {
+    "library_name": {
+      "loc": {
+        "source_file": "examples/stdlib/ListUtils.scillib",
+        "line": 1,
+        "column": 1,
+        "node_type": "Location"
+      },
+      "identifier": "ListUtils",
+      "node_type": "Identifier"
+    },
+    "library_entries": [
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 5,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "list_foldl_while",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "PolyFun",
+            "type_val": "'B",
+            "body_type": {
+              "node_type": "FunType",
+              "arg_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'B" },
+                "val_type": {
+                  "node_type": "FunType",
+                  "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                  "val_type": {
+                    "node_type": "ADT",
+                    "name": "Option",
+                    "type_args": [ { "node_type": "TypeVar", "name": "'B" } ]
+                  }
+                }
+              },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'B" },
+                "val_type": {
+                  "node_type": "FunType",
+                  "arg_type": {
+                    "node_type": "ADT",
+                    "name": "List",
+                    "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+                  },
+                  "val_type": { "node_type": "TypeVar", "name": "'B" }
+                }
+              }
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 7,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 20,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "list_map",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "PolyFun",
+            "type_val": "'B",
+            "body_type": {
+              "node_type": "FunType",
+              "arg_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                "val_type": { "node_type": "TypeVar", "name": "'B" }
+              },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": {
+                  "node_type": "ADT",
+                  "name": "List",
+                  "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+                },
+                "val_type": {
+                  "node_type": "ADT",
+                  "name": "List",
+                  "type_args": [ { "node_type": "TypeVar", "name": "'B" } ]
+                }
+              }
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 21,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 33,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "list_filter",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "FunType",
+            "arg_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'A" },
+              "val_type": {
+                "node_type": "ADT",
+                "name": "Bool",
+                "type_args": []
+              }
+            },
+            "val_type": {
+              "node_type": "FunType",
+              "arg_type": {
+                "node_type": "ADT",
+                "name": "List",
+                "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+              },
+              "val_type": {
+                "node_type": "ADT",
+                "name": "List",
+                "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+              }
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 34,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 47,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "list_head",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "FunType",
+            "arg_type": {
+              "node_type": "ADT",
+              "name": "List",
+              "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+            },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Option",
+              "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 48,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 56,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "list_tail",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "FunType",
+            "arg_type": {
+              "node_type": "ADT",
+              "name": "List",
+              "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+            },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "Option",
+              "type_args": [
+                {
+                  "node_type": "ADT",
+                  "name": "List",
+                  "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+                }
+              ]
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 57,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 65,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "list_append",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "FunType",
+            "arg_type": {
+              "node_type": "ADT",
+              "name": "List",
+              "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+            },
+            "val_type": {
+              "node_type": "FunType",
+              "arg_type": {
+                "node_type": "ADT",
+                "name": "List",
+                "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+              },
+              "val_type": {
+                "node_type": "ADT",
+                "name": "List",
+                "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+              }
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 66,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 77,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "list_reverse",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "FunType",
+            "arg_type": {
+              "node_type": "ADT",
+              "name": "List",
+              "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+            },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "List",
+              "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 78,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 87,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "list_flatten",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "FunType",
+            "arg_type": {
+              "node_type": "ADT",
+              "name": "List",
+              "type_args": [
+                {
+                  "node_type": "ADT",
+                  "name": "List",
+                  "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+                }
+              ]
+            },
+            "val_type": {
+              "node_type": "ADT",
+              "name": "List",
+              "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 88,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 97,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "list_length",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "FunType",
+            "arg_type": {
+              "node_type": "ADT",
+              "name": "List",
+              "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+            },
+            "val_type": { "node_type": "PrimType", "name": "Uint32" }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 98,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 108,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "list_eq_helper",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "FunType",
+            "arg_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'A" },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                "val_type": {
+                  "node_type": "ADT",
+                  "name": "Bool",
+                  "type_args": []
+                }
+              }
+            },
+            "val_type": {
+              "node_type": "FunType",
+              "arg_type": {
+                "node_type": "ADT",
+                "name": "List",
+                "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+              },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": {
+                  "node_type": "ADT",
+                  "name": "List",
+                  "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+                },
+                "val_type": {
+                  "node_type": "ADT",
+                  "name": "Option",
+                  "type_args": [
+                    {
+                      "node_type": "ADT",
+                      "name": "List",
+                      "type_args": [
+                        { "node_type": "TypeVar", "name": "'A" }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 110,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 137,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "list_eq",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "FunType",
+            "arg_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'A" },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                "val_type": {
+                  "node_type": "ADT",
+                  "name": "Bool",
+                  "type_args": []
+                }
+              }
+            },
+            "val_type": {
+              "node_type": "FunType",
+              "arg_type": {
+                "node_type": "ADT",
+                "name": "List",
+                "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+              },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": {
+                  "node_type": "ADT",
+                  "name": "List",
+                  "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+                },
+                "val_type": {
+                  "node_type": "ADT",
+                  "name": "Bool",
+                  "type_args": []
+                }
+              }
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 138,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 161,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "list_forall",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "FunType",
+            "arg_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'A" },
+              "val_type": {
+                "node_type": "ADT",
+                "name": "Bool",
+                "type_args": []
+              }
+            },
+            "val_type": {
+              "node_type": "FunType",
+              "arg_type": {
+                "node_type": "ADT",
+                "name": "List",
+                "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+              },
+              "val_type": {
+                "node_type": "ADT",
+                "name": "Bool",
+                "type_args": []
+              }
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 162,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 179,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "list_sort",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "FunType",
+            "arg_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'A" },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                "val_type": {
+                  "node_type": "ADT",
+                  "name": "Bool",
+                  "type_args": []
+                }
+              }
+            },
+            "val_type": {
+              "node_type": "FunType",
+              "arg_type": {
+                "node_type": "ADT",
+                "name": "List",
+                "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+              },
+              "val_type": {
+                "node_type": "ADT",
+                "name": "List",
+                "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+              }
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 181,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 219,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "list_find",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "FunType",
+            "arg_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'A" },
+              "val_type": {
+                "node_type": "ADT",
+                "name": "Bool",
+                "type_args": []
+              }
+            },
+            "val_type": {
+              "node_type": "FunType",
+              "arg_type": {
+                "node_type": "ADT",
+                "name": "List",
+                "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+              },
+              "val_type": {
+                "node_type": "ADT",
+                "name": "Option",
+                "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+              }
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 220,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 236,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "list_exists",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "FunType",
+            "arg_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'A" },
+              "val_type": {
+                "node_type": "ADT",
+                "name": "Bool",
+                "type_args": []
+              }
+            },
+            "val_type": {
+              "node_type": "FunType",
+              "arg_type": {
+                "node_type": "ADT",
+                "name": "List",
+                "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+              },
+              "val_type": {
+                "node_type": "ADT",
+                "name": "Bool",
+                "type_args": []
+              }
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 237,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 247,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "list_mem",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "FunType",
+            "arg_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'A" },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                "val_type": {
+                  "node_type": "ADT",
+                  "name": "Bool",
+                  "type_args": []
+                }
+              }
+            },
+            "val_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'A" },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": {
+                  "node_type": "ADT",
+                  "name": "List",
+                  "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+                },
+                "val_type": {
+                  "node_type": "ADT",
+                  "name": "Bool",
+                  "type_args": []
+                }
+              }
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 248,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 257,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "list_zip_with",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "PolyFun",
+            "type_val": "'B",
+            "body_type": {
+              "node_type": "PolyFun",
+              "type_val": "'C",
+              "body_type": {
+                "node_type": "FunType",
+                "arg_type": {
+                  "node_type": "FunType",
+                  "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                  "val_type": {
+                    "node_type": "FunType",
+                    "arg_type": { "node_type": "TypeVar", "name": "'B" },
+                    "val_type": { "node_type": "TypeVar", "name": "'C" }
+                  }
+                },
+                "val_type": {
+                  "node_type": "FunType",
+                  "arg_type": {
+                    "node_type": "ADT",
+                    "name": "List",
+                    "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+                  },
+                  "val_type": {
+                    "node_type": "FunType",
+                    "arg_type": {
+                      "node_type": "ADT",
+                      "name": "List",
+                      "type_args": [
+                        { "node_type": "TypeVar", "name": "'B" }
+                      ]
+                    },
+                    "val_type": {
+                      "node_type": "ADT",
+                      "name": "List",
+                      "type_args": [
+                        { "node_type": "TypeVar", "name": "'C" }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 259,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 288,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "list_zip",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "PolyFun",
+            "type_val": "'B",
+            "body_type": {
+              "node_type": "FunType",
+              "arg_type": {
+                "node_type": "ADT",
+                "name": "List",
+                "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+              },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": {
+                  "node_type": "ADT",
+                  "name": "List",
+                  "type_args": [ { "node_type": "TypeVar", "name": "'B" } ]
+                },
+                "val_type": {
+                  "node_type": "ADT",
+                  "name": "List",
+                  "type_args": [
+                    {
+                      "node_type": "ADT",
+                      "name": "Pair",
+                      "type_args": [
+                        { "node_type": "TypeVar", "name": "'A" },
+                        { "node_type": "TypeVar", "name": "'B" }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 289,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 295,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "list_unzip",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "PolyFun",
+            "type_val": "'B",
+            "body_type": {
+              "node_type": "FunType",
+              "arg_type": {
+                "node_type": "ADT",
+                "name": "List",
+                "type_args": [
+                  {
+                    "node_type": "ADT",
+                    "name": "Pair",
+                    "type_args": [
+                      { "node_type": "TypeVar", "name": "'A" },
+                      { "node_type": "TypeVar", "name": "'B" }
+                    ]
+                  }
+                ]
+              },
+              "val_type": {
+                "node_type": "ADT",
+                "name": "Pair",
+                "type_args": [
+                  {
+                    "node_type": "ADT",
+                    "name": "List",
+                    "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+                  },
+                  {
+                    "node_type": "ADT",
+                    "name": "List",
+                    "type_args": [ { "node_type": "TypeVar", "name": "'B" } ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 297,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 315,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "list_nth",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "FunType",
+            "arg_type": { "node_type": "PrimType", "name": "Uint32" },
+            "val_type": {
+              "node_type": "FunType",
+              "arg_type": {
+                "node_type": "ADT",
+                "name": "List",
+                "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+              },
+              "val_type": {
+                "node_type": "ADT",
+                "name": "Option",
+                "type_args": [ { "node_type": "TypeVar", "name": "'A" } ]
+              }
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/ListUtils.scillib",
+            "line": 316,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression"
+        }
+      }
+    ],
+    "node_type": "Library"
+  },
+  "external_libraries": [],
+  "node_type": "LibraryModule"
+}
