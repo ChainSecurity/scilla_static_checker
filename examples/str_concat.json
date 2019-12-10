@@ -1,0 +1,245 @@
+{
+  "scilla_major_version": 0,
+  "name": {
+    "loc": {
+      "source_file": "examples/str_concat.scilla",
+      "line": 14,
+      "column": 10,
+      "node_type": "Location"
+    },
+    "identifier": "StrConcat",
+    "node_type": "Identifier"
+  },
+  "library": {
+    "library_name": {
+      "loc": {
+        "source_file": "examples/str_concat.scilla",
+        "line": 8,
+        "column": 1,
+        "node_type": "Location"
+      },
+      "identifier": "StrConcat",
+      "node_type": "Identifier"
+    },
+    "library_entries": [],
+    "node_type": "Library"
+  },
+  "external_libraries": [],
+  "contract": {
+    "name": {
+      "loc": {
+        "source_file": "examples/str_concat.scilla",
+        "line": 14,
+        "column": 10,
+        "node_type": "Location"
+      },
+      "identifier": "StrConcat",
+      "node_type": "Identifier"
+    },
+    "params": [
+      {
+        "parameter_name": {
+          "loc": {
+            "source_file": "examples/str_concat.scilla",
+            "line": 15,
+            "column": 2,
+            "node_type": "Location"
+          },
+          "identifier": "x",
+          "node_type": "Identifier"
+        },
+        "parameter_type": { "node_type": "PrimType", "name": "String" },
+        "node_type": "Parameter"
+      }
+    ],
+    "fields": [
+      {
+        "field_name": {
+          "loc": {
+            "source_file": "examples/str_concat.scilla",
+            "line": 17,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "b",
+          "node_type": "Identifier"
+        },
+        "field_type": { "node_type": "PrimType", "name": "String" },
+        "expression": {
+          "loc": {
+            "source_file": "examples/str_concat.scilla",
+            "line": 17,
+            "column": 20,
+            "node_type": "Location"
+          },
+          "node_type": "VarExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/str_concat.scilla",
+              "line": 17,
+              "column": 20,
+              "node_type": "Location"
+            },
+            "identifier": "x",
+            "node_type": "Identifier"
+          }
+        },
+        "node_type": "Field"
+      }
+    ],
+    "components": [
+      {
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file": "examples/str_concat.scilla",
+                "line": 19,
+                "column": 17,
+                "node_type": "Location"
+              },
+              "identifier": "z",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "String" },
+            "node_type": "Parameter"
+          }
+        ],
+        "component_type": "transition",
+        "name": {
+          "loc": {
+            "source_file": "examples/str_concat.scilla",
+            "line": 19,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "inc",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file": "examples/str_concat.scilla",
+              "line": 20,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "examples/str_concat.scilla",
+                "line": 20,
+                "column": 11,
+                "node_type": "Location"
+              },
+              "identifier": "currb",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "examples/str_concat.scilla",
+                "line": 20,
+                "column": 14,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "node_type": "LoadStatement"
+          },
+          {
+            "loc": {
+              "source_file": "examples/str_concat.scilla",
+              "line": 21,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/str_concat.scilla",
+                "line": 21,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "identifier": "newb",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/str_concat.scilla",
+                "line": 21,
+                "column": 12,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/str_concat.scilla",
+                    "line": 21,
+                    "column": 27,
+                    "node_type": "Location"
+                  },
+                  "identifier": "currb",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "examples/str_concat.scilla",
+                    "line": 21,
+                    "column": 33,
+                    "node_type": "Location"
+                  },
+                  "identifier": "z",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/str_concat.scilla",
+                  "line": 21,
+                  "column": 20,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "concat",
+                "node_type": "Builtin"
+              }
+            }
+          },
+          {
+            "loc": {
+              "source_file": "examples/str_concat.scilla",
+              "line": 22,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "examples/str_concat.scilla",
+                "line": 22,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "examples/str_concat.scilla",
+                "line": 22,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "identifier": "newb",
+              "node_type": "Identifier"
+            },
+            "node_type": "StoreStatement"
+          }
+        ],
+        "node_type": "Component"
+      }
+    ],
+    "node_type": "Contract"
+  },
+  "node_type": "ContractModule"
+}

@@ -2,7 +2,7 @@
   "scilla_major_version": 0,
   "name": {
     "loc": {
-      "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+      "source_file": "examples/earmarked-coin.scilla",
       "line": 31,
       "column": 10,
       "node_type": "Location"
@@ -13,7 +13,7 @@
   "library": {
     "library_name": {
       "loc": {
-        "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+        "source_file": "examples/earmarked-coin.scilla",
         "line": 15,
         "column": 1,
         "node_type": "Location"
@@ -25,7 +25,7 @@
       {
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "source_file": "examples/earmarked-coin.scilla",
             "line": 18,
             "column": 1,
             "node_type": "Location"
@@ -38,8 +38,7 @@
           {
             "ctr_def_name": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 19,
                 "column": 1,
                 "node_type": "Location"
@@ -59,7 +58,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "source_file": "examples/earmarked-coin.scilla",
             "line": 21,
             "column": 5,
             "node_type": "Location"
@@ -70,7 +69,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "source_file": "examples/earmarked-coin.scilla",
             "line": 22,
             "column": 3,
             "node_type": "Location"
@@ -78,8 +77,7 @@
           "node_type": "FunExpression",
           "lhs": {
             "loc": {
-              "source_file":
-                "../scilla_static/examples/earmarked-coin.scilla",
+              "source_file": "examples/earmarked-coin.scilla",
               "line": 22,
               "column": 3,
               "node_type": "Location"
@@ -89,8 +87,7 @@
           },
           "rhs_expr": {
             "loc": {
-              "source_file":
-                "../scilla_static/examples/earmarked-coin.scilla",
+              "source_file": "examples/earmarked-coin.scilla",
               "line": 23,
               "column": 5,
               "node_type": "Location"
@@ -98,8 +95,7 @@
             "node_type": "LetExpression",
             "variable": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 23,
                 "column": 5,
                 "node_type": "Location"
@@ -110,8 +106,7 @@
             "variable_type": null,
             "expression": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 23,
                 "column": 19,
                 "node_type": "Location"
@@ -123,8 +118,7 @@
             },
             "body": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 24,
                 "column": 5,
                 "node_type": "Location"
@@ -135,8 +129,7 @@
               "args": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/earmarked-coin.scilla",
+                    "source_file": "examples/earmarked-coin.scilla",
                     "line": 24,
                     "column": 20,
                     "node_type": "Location"
@@ -146,8 +139,7 @@
                 },
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/earmarked-coin.scilla",
+                    "source_file": "examples/earmarked-coin.scilla",
                     "line": 24,
                     "column": 24,
                     "node_type": "Location"
@@ -165,7 +157,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "source_file": "examples/earmarked-coin.scilla",
             "line": 26,
             "column": 5,
             "node_type": "Location"
@@ -176,7 +168,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "source_file": "examples/earmarked-coin.scilla",
             "line": 26,
             "column": 20,
             "node_type": "Location"
@@ -189,7 +181,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "source_file": "examples/earmarked-coin.scilla",
             "line": 27,
             "column": 5,
             "node_type": "Location"
@@ -200,7 +192,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "source_file": "examples/earmarked-coin.scilla",
             "line": 27,
             "column": 30,
             "node_type": "Location"
@@ -213,7 +205,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "source_file": "examples/earmarked-coin.scilla",
             "line": 28,
             "column": 5,
             "node_type": "Location"
@@ -224,7 +216,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "source_file": "examples/earmarked-coin.scilla",
             "line": 28,
             "column": 27,
             "node_type": "Location"
@@ -237,7 +229,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "source_file": "examples/earmarked-coin.scilla",
             "line": 29,
             "column": 5,
             "node_type": "Location"
@@ -248,7 +240,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "source_file": "examples/earmarked-coin.scilla",
             "line": 29,
             "column": 28,
             "node_type": "Location"
@@ -264,7 +256,7 @@
     {
       "name": {
         "loc": {
-          "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+          "source_file": "examples/earmarked-coin.scilla",
           "line": 13,
           "column": 8,
           "node_type": "Location"
@@ -279,7 +271,7 @@
   "contract": {
     "name": {
       "loc": {
-        "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+        "source_file": "examples/earmarked-coin.scilla",
         "line": 31,
         "column": 10,
         "node_type": "Location"
@@ -292,7 +284,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "source_file": "examples/earmarked-coin.scilla",
             "line": 34,
             "column": 7,
             "node_type": "Location"
@@ -311,7 +303,7 @@
         },
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "source_file": "examples/earmarked-coin.scilla",
             "line": 34,
             "column": 53,
             "node_type": "Location"
@@ -337,8 +329,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 38,
                 "column": 26,
                 "node_type": "Location"
@@ -352,8 +343,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 38,
                 "column": 44,
                 "node_type": "Location"
@@ -365,9 +355,10 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "procedure",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "source_file": "examples/earmarked-coin.scilla",
             "line": 38,
             "column": 11,
             "node_type": "Location"
@@ -378,8 +369,7 @@
         "body": [
           {
             "loc": {
-              "source_file":
-                "../scilla_static/examples/earmarked-coin.scilla",
+              "source_file": "examples/earmarked-coin.scilla",
               "line": 39,
               "column": 3,
               "node_type": "Location"
@@ -387,8 +377,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 39,
                 "column": 7,
                 "node_type": "Location"
@@ -398,8 +387,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 39,
                 "column": 9,
                 "node_type": "Location"
@@ -421,8 +409,7 @@
                     "node_type": "PayloadVariable",
                     "value": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "source_file": "examples/earmarked-coin.scilla",
                         "line": 39,
                         "column": 34,
                         "node_type": "Location"
@@ -439,8 +426,7 @@
                     "node_type": "PayloadVariable",
                     "value": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "source_file": "examples/earmarked-coin.scilla",
                         "line": 39,
                         "column": 55,
                         "node_type": "Location"
@@ -455,8 +441,7 @@
           },
           {
             "loc": {
-              "source_file":
-                "../scilla_static/examples/earmarked-coin.scilla",
+              "source_file": "examples/earmarked-coin.scilla",
               "line": 40,
               "column": 3,
               "node_type": "Location"
@@ -464,8 +449,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 40,
                 "column": 8,
                 "node_type": "Location"
@@ -475,8 +459,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 40,
                 "column": 10,
                 "node_type": "Location"
@@ -484,8 +467,7 @@
               "node_type": "AppExpression",
               "lhs": {
                 "loc": {
-                  "source_file":
-                    "../scilla_static/examples/earmarked-coin.scilla",
+                  "source_file": "examples/earmarked-coin.scilla",
                   "line": 40,
                   "column": 10,
                   "node_type": "Location"
@@ -496,8 +478,7 @@
               "rhs_list": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/earmarked-coin.scilla",
+                    "source_file": "examples/earmarked-coin.scilla",
                     "line": 40,
                     "column": 18,
                     "node_type": "Location"
@@ -510,16 +491,14 @@
           },
           {
             "loc": {
-              "source_file":
-                "../scilla_static/examples/earmarked-coin.scilla",
+              "source_file": "examples/earmarked-coin.scilla",
               "line": 41,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 41,
                 "column": 3,
                 "node_type": "Location"
@@ -537,8 +516,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 44,
                 "column": 38,
                 "node_type": "Location"
@@ -552,8 +530,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 44,
                 "column": 54,
                 "node_type": "Location"
@@ -565,9 +542,10 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "procedure",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "source_file": "examples/earmarked-coin.scilla",
             "line": 44,
             "column": 11,
             "node_type": "Location"
@@ -578,8 +556,7 @@
         "body": [
           {
             "loc": {
-              "source_file":
-                "../scilla_static/examples/earmarked-coin.scilla",
+              "source_file": "examples/earmarked-coin.scilla",
               "line": 45,
               "column": 3,
               "node_type": "Location"
@@ -587,8 +564,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 45,
                 "column": 5,
                 "node_type": "Location"
@@ -598,8 +574,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 45,
                 "column": 7,
                 "node_type": "Location"
@@ -624,8 +599,7 @@
                     "node_type": "PayloadVariable",
                     "value": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "source_file": "examples/earmarked-coin.scilla",
                         "line": 46,
                         "column": 14,
                         "node_type": "Location"
@@ -642,8 +616,7 @@
                     "node_type": "PayloadVariable",
                     "value": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "source_file": "examples/earmarked-coin.scilla",
                         "line": 46,
                         "column": 25,
                         "node_type": "Location"
@@ -660,8 +633,7 @@
                     "node_type": "PayloadVariable",
                     "value": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "source_file": "examples/earmarked-coin.scilla",
                         "line": 46,
                         "column": 36,
                         "node_type": "Location"
@@ -676,16 +648,14 @@
           },
           {
             "loc": {
-              "source_file":
-                "../scilla_static/examples/earmarked-coin.scilla",
+              "source_file": "examples/earmarked-coin.scilla",
               "line": 47,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 47,
                 "column": 3,
                 "node_type": "Location"
@@ -703,8 +673,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 50,
                 "column": 34,
                 "node_type": "Location"
@@ -718,8 +687,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 50,
                 "column": 50,
                 "node_type": "Location"
@@ -733,8 +701,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 50,
                 "column": 64,
                 "node_type": "Location"
@@ -746,9 +713,10 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "procedure",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "source_file": "examples/earmarked-coin.scilla",
             "line": 50,
             "column": 11,
             "node_type": "Location"
@@ -759,8 +727,7 @@
         "body": [
           {
             "loc": {
-              "source_file":
-                "../scilla_static/examples/earmarked-coin.scilla",
+              "source_file": "examples/earmarked-coin.scilla",
               "line": 51,
               "column": 3,
               "node_type": "Location"
@@ -768,8 +735,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 51,
                 "column": 5,
                 "node_type": "Location"
@@ -779,8 +745,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 51,
                 "column": 7,
                 "node_type": "Location"
@@ -805,8 +770,7 @@
                     "node_type": "PayloadVariable",
                     "value": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "source_file": "examples/earmarked-coin.scilla",
                         "line": 52,
                         "column": 14,
                         "node_type": "Location"
@@ -823,8 +787,7 @@
                     "node_type": "PayloadVariable",
                     "value": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "source_file": "examples/earmarked-coin.scilla",
                         "line": 52,
                         "column": 25,
                         "node_type": "Location"
@@ -841,8 +804,7 @@
                     "node_type": "PayloadVariable",
                     "value": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "source_file": "examples/earmarked-coin.scilla",
                         "line": 52,
                         "column": 36,
                         "node_type": "Location"
@@ -857,16 +819,14 @@
           },
           {
             "loc": {
-              "source_file":
-                "../scilla_static/examples/earmarked-coin.scilla",
+              "source_file": "examples/earmarked-coin.scilla",
               "line": 53,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 53,
                 "column": 3,
                 "node_type": "Location"
@@ -884,8 +844,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 64,
                 "column": 21,
                 "node_type": "Location"
@@ -897,9 +856,10 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "transition",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "source_file": "examples/earmarked-coin.scilla",
             "line": 64,
             "column": 12,
             "node_type": "Location"
@@ -910,8 +870,7 @@
         "body": [
           {
             "loc": {
-              "source_file":
-                "../scilla_static/examples/earmarked-coin.scilla",
+              "source_file": "examples/earmarked-coin.scilla",
               "line": 65,
               "column": 3,
               "node_type": "Location"
@@ -919,8 +878,7 @@
             "node_type": "MapGetStatement",
             "map_name": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 65,
                 "column": 15,
                 "node_type": "Location"
@@ -930,8 +888,7 @@
             },
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 65,
                 "column": 3,
                 "node_type": "Location"
@@ -942,8 +899,7 @@
             "keys": [
               {
                 "loc": {
-                  "source_file":
-                    "../scilla_static/examples/earmarked-coin.scilla",
+                  "source_file": "examples/earmarked-coin.scilla",
                   "line": 65,
                   "column": 31,
                   "node_type": "Location"
@@ -956,16 +912,14 @@
           },
           {
             "loc": {
-              "source_file":
-                "../scilla_static/examples/earmarked-coin.scilla",
+              "source_file": "examples/earmarked-coin.scilla",
               "line": 66,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 66,
                 "column": 9,
                 "node_type": "Location"
@@ -978,8 +932,7 @@
                 "pattern_body": [
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "source_file": "examples/earmarked-coin.scilla",
                       "line": 68,
                       "column": 5,
                       "node_type": "Location"
@@ -988,8 +941,7 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "source_file": "examples/earmarked-coin.scilla",
                       "line": 69,
                       "column": 5,
                       "node_type": "Location"
@@ -997,8 +949,7 @@
                     "node_type": "BindStatement",
                     "lhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "source_file": "examples/earmarked-coin.scilla",
                         "line": 69,
                         "column": 12,
                         "node_type": "Location"
@@ -1008,8 +959,7 @@
                     },
                     "rhs_expr": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "source_file": "examples/earmarked-coin.scilla",
                         "line": 69,
                         "column": 14,
                         "node_type": "Location"
@@ -1020,8 +970,7 @@
                       "args": [
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/earmarked-coin.scilla",
+                            "source_file": "examples/earmarked-coin.scilla",
                             "line": 69,
                             "column": 28,
                             "node_type": "Location"
@@ -1031,8 +980,7 @@
                         },
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/earmarked-coin.scilla",
+                            "source_file": "examples/earmarked-coin.scilla",
                             "line": 69,
                             "column": 36,
                             "node_type": "Location"
@@ -1045,8 +993,7 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "source_file": "examples/earmarked-coin.scilla",
                       "line": 70,
                       "column": 5,
                       "node_type": "Location"
@@ -1054,8 +1001,7 @@
                     "node_type": "MapUpdateStatement",
                     "map_name": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "source_file": "examples/earmarked-coin.scilla",
                         "line": 70,
                         "column": 5,
                         "node_type": "Location"
@@ -1065,8 +1011,7 @@
                     },
                     "rhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "source_file": "examples/earmarked-coin.scilla",
                         "line": 70,
                         "column": 33,
                         "node_type": "Location"
@@ -1077,8 +1022,7 @@
                     "keys": [
                       {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "source_file": "examples/earmarked-coin.scilla",
                           "line": 70,
                           "column": 21,
                           "node_type": "Location"
@@ -1090,16 +1034,14 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "source_file": "examples/earmarked-coin.scilla",
                       "line": 71,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "arg": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "source_file": "examples/earmarked-coin.scilla",
                         "line": 71,
                         "column": 5,
                         "node_type": "Location"
@@ -1110,8 +1052,7 @@
                     "messages": [
                       {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "source_file": "examples/earmarked-coin.scilla",
                           "line": 71,
                           "column": 31,
                           "node_type": "Location"
@@ -1121,8 +1062,7 @@
                       },
                       {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "source_file": "examples/earmarked-coin.scilla",
                           "line": 71,
                           "column": 39,
                           "node_type": "Location"
@@ -1145,16 +1085,14 @@
                 "pattern_body": [
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "source_file": "examples/earmarked-coin.scilla",
                       "line": 73,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "arg": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "source_file": "examples/earmarked-coin.scilla",
                         "line": 73,
                         "column": 5,
                         "node_type": "Location"
@@ -1165,8 +1103,7 @@
                     "messages": [
                       {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "source_file": "examples/earmarked-coin.scilla",
                           "line": 73,
                           "column": 27,
                           "node_type": "Location"
@@ -1176,8 +1113,7 @@
                       },
                       {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "source_file": "examples/earmarked-coin.scilla",
                           "line": 73,
                           "column": 35,
                           "node_type": "Location"
@@ -1187,8 +1123,7 @@
                       },
                       {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "source_file": "examples/earmarked-coin.scilla",
                           "line": 73,
                           "column": 49,
                           "node_type": "Location"
@@ -1218,8 +1153,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 78,
                 "column": 31,
                 "node_type": "Location"
@@ -1231,9 +1165,10 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "transition",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "source_file": "examples/earmarked-coin.scilla",
             "line": 78,
             "column": 12,
             "node_type": "Location"
@@ -1244,8 +1179,7 @@
         "body": [
           {
             "loc": {
-              "source_file":
-                "../scilla_static/examples/earmarked-coin.scilla",
+              "source_file": "examples/earmarked-coin.scilla",
               "line": 79,
               "column": 3,
               "node_type": "Location"
@@ -1253,8 +1187,7 @@
             "node_type": "MapGetStatement",
             "map_name": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 79,
                 "column": 17,
                 "node_type": "Location"
@@ -1264,8 +1197,7 @@
             },
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 79,
                 "column": 3,
                 "node_type": "Location"
@@ -1276,8 +1208,7 @@
             "keys": [
               {
                 "loc": {
-                  "source_file":
-                    "../scilla_static/examples/earmarked-coin.scilla",
+                  "source_file": "examples/earmarked-coin.scilla",
                   "line": 79,
                   "column": 33,
                   "node_type": "Location"
@@ -1290,16 +1221,14 @@
           },
           {
             "loc": {
-              "source_file":
-                "../scilla_static/examples/earmarked-coin.scilla",
+              "source_file": "examples/earmarked-coin.scilla",
               "line": 80,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 80,
                 "column": 9,
                 "node_type": "Location"
@@ -1312,8 +1241,7 @@
                 "pattern_body": [
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "source_file": "examples/earmarked-coin.scilla",
                       "line": 83,
                       "column": 5,
                       "node_type": "Location"
@@ -1321,8 +1249,7 @@
                     "node_type": "BindStatement",
                     "lhs": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "source_file": "examples/earmarked-coin.scilla",
                         "line": 83,
                         "column": 25,
                         "node_type": "Location"
@@ -1332,8 +1259,7 @@
                     },
                     "rhs_expr": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "source_file": "examples/earmarked-coin.scilla",
                         "line": 83,
                         "column": 27,
                         "node_type": "Location"
@@ -1342,8 +1268,7 @@
                       "arguments": [
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/earmarked-coin.scilla",
+                            "source_file": "examples/earmarked-coin.scilla",
                             "line": 83,
                             "column": 38,
                             "node_type": "Location"
@@ -1353,8 +1278,7 @@
                         },
                         {
                           "loc": {
-                            "source_file":
-                              "../scilla_static/examples/earmarked-coin.scilla",
+                            "source_file": "examples/earmarked-coin.scilla",
                             "line": 83,
                             "column": 48,
                             "node_type": "Location"
@@ -1365,8 +1289,7 @@
                       ],
                       "builtin_function": {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "source_file": "examples/earmarked-coin.scilla",
                           "line": 83,
                           "column": 35,
                           "node_type": "Location"
@@ -1378,16 +1301,14 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "source_file": "examples/earmarked-coin.scilla",
                       "line": 84,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "arg": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "source_file": "examples/earmarked-coin.scilla",
                         "line": 84,
                         "column": 11,
                         "node_type": "Location"
@@ -1400,8 +1321,7 @@
                         "pattern_body": [
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/earmarked-coin.scilla",
+                              "source_file": "examples/earmarked-coin.scilla",
                               "line": 86,
                               "column": 7,
                               "node_type": "Location"
@@ -1409,7 +1329,7 @@
                             "arg": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_static/examples/earmarked-coin.scilla",
+                                  "examples/earmarked-coin.scilla",
                                 "line": 86,
                                 "column": 7,
                                 "node_type": "Location"
@@ -1421,7 +1341,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_static/examples/earmarked-coin.scilla",
+                                    "examples/earmarked-coin.scilla",
                                   "line": 86,
                                   "column": 21,
                                   "node_type": "Location"
@@ -1432,7 +1352,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_static/examples/earmarked-coin.scilla",
+                                    "examples/earmarked-coin.scilla",
                                   "line": 86,
                                   "column": 28,
                                   "node_type": "Location"
@@ -1445,8 +1365,7 @@
                           },
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/earmarked-coin.scilla",
+                              "source_file": "examples/earmarked-coin.scilla",
                               "line": 87,
                               "column": 7,
                               "node_type": "Location"
@@ -1455,7 +1374,7 @@
                             "map_name": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_static/examples/earmarked-coin.scilla",
+                                  "examples/earmarked-coin.scilla",
                                 "line": 87,
                                 "column": 14,
                                 "node_type": "Location"
@@ -1468,7 +1387,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_static/examples/earmarked-coin.scilla",
+                                    "examples/earmarked-coin.scilla",
                                   "line": 87,
                                   "column": 30,
                                   "node_type": "Location"
@@ -1480,8 +1399,7 @@
                           },
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/earmarked-coin.scilla",
+                              "source_file": "examples/earmarked-coin.scilla",
                               "line": 88,
                               "column": 7,
                               "node_type": "Location"
@@ -1489,7 +1407,7 @@
                             "arg": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_static/examples/earmarked-coin.scilla",
+                                  "examples/earmarked-coin.scilla",
                                 "line": 88,
                                 "column": 7,
                                 "node_type": "Location"
@@ -1501,7 +1419,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_static/examples/earmarked-coin.scilla",
+                                    "examples/earmarked-coin.scilla",
                                   "line": 88,
                                   "column": 33,
                                   "node_type": "Location"
@@ -1512,7 +1430,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_static/examples/earmarked-coin.scilla",
+                                    "examples/earmarked-coin.scilla",
                                   "line": 88,
                                   "column": 47,
                                   "node_type": "Location"
@@ -1535,8 +1453,7 @@
                         "pattern_body": [
                           {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/earmarked-coin.scilla",
+                              "source_file": "examples/earmarked-coin.scilla",
                               "line": 90,
                               "column": 7,
                               "node_type": "Location"
@@ -1544,7 +1461,7 @@
                             "arg": {
                               "loc": {
                                 "source_file":
-                                  "../scilla_static/examples/earmarked-coin.scilla",
+                                  "examples/earmarked-coin.scilla",
                                 "line": 90,
                                 "column": 7,
                                 "node_type": "Location"
@@ -1556,7 +1473,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_static/examples/earmarked-coin.scilla",
+                                    "examples/earmarked-coin.scilla",
                                   "line": 90,
                                   "column": 29,
                                   "node_type": "Location"
@@ -1567,7 +1484,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_static/examples/earmarked-coin.scilla",
+                                    "examples/earmarked-coin.scilla",
                                   "line": 90,
                                   "column": 43,
                                   "node_type": "Location"
@@ -1578,7 +1495,7 @@
                               {
                                 "loc": {
                                   "source_file":
-                                    "../scilla_static/examples/earmarked-coin.scilla",
+                                    "examples/earmarked-coin.scilla",
                                   "line": 90,
                                   "column": 51,
                                   "node_type": "Location"
@@ -1613,8 +1530,7 @@
                           "node_type": "BinderPattern",
                           "variable": {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/earmarked-coin.scilla",
+                              "source_file": "examples/earmarked-coin.scilla",
                               "line": 81,
                               "column": 25,
                               "node_type": "Location"
@@ -1627,8 +1543,7 @@
                           "node_type": "BinderPattern",
                           "variable": {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/earmarked-coin.scilla",
+                              "source_file": "examples/earmarked-coin.scilla",
                               "line": 81,
                               "column": 32,
                               "node_type": "Location"
@@ -1647,16 +1562,14 @@
                 "pattern_body": [
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "source_file": "examples/earmarked-coin.scilla",
                       "line": 94,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "arg": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "source_file": "examples/earmarked-coin.scilla",
                         "line": 94,
                         "column": 5,
                         "node_type": "Location"
@@ -1667,8 +1580,7 @@
                     "messages": [
                       {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "source_file": "examples/earmarked-coin.scilla",
                           "line": 94,
                           "column": 27,
                           "node_type": "Location"
@@ -1678,8 +1590,7 @@
                       },
                       {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "source_file": "examples/earmarked-coin.scilla",
                           "line": 94,
                           "column": 41,
                           "node_type": "Location"
@@ -1689,8 +1600,7 @@
                       },
                       {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "source_file": "examples/earmarked-coin.scilla",
                           "line": 94,
                           "column": 49,
                           "node_type": "Location"
@@ -1717,9 +1627,10 @@
       },
       {
         "params": [],
+        "component_type": "transition",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/earmarked-coin.scilla",
+            "source_file": "examples/earmarked-coin.scilla",
             "line": 103,
             "column": 12,
             "node_type": "Location"
@@ -1730,8 +1641,7 @@
         "body": [
           {
             "loc": {
-              "source_file":
-                "../scilla_static/examples/earmarked-coin.scilla",
+              "source_file": "examples/earmarked-coin.scilla",
               "line": 104,
               "column": 3,
               "node_type": "Location"
@@ -1739,8 +1649,7 @@
             "node_type": "MapGetStatement",
             "map_name": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 104,
                 "column": 17,
                 "node_type": "Location"
@@ -1750,8 +1659,7 @@
             },
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 104,
                 "column": 3,
                 "node_type": "Location"
@@ -1762,8 +1670,7 @@
             "keys": [
               {
                 "loc": {
-                  "source_file":
-                    "../scilla_static/examples/earmarked-coin.scilla",
+                  "source_file": "examples/earmarked-coin.scilla",
                   "line": 104,
                   "column": 33,
                   "node_type": "Location"
@@ -1776,16 +1683,14 @@
           },
           {
             "loc": {
-              "source_file":
-                "../scilla_static/examples/earmarked-coin.scilla",
+              "source_file": "examples/earmarked-coin.scilla",
               "line": 105,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/earmarked-coin.scilla",
+                "source_file": "examples/earmarked-coin.scilla",
                 "line": 105,
                 "column": 9,
                 "node_type": "Location"
@@ -1798,16 +1703,14 @@
                 "pattern_body": [
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "source_file": "examples/earmarked-coin.scilla",
                       "line": 108,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "arg": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "source_file": "examples/earmarked-coin.scilla",
                         "line": 108,
                         "column": 5,
                         "node_type": "Location"
@@ -1818,8 +1721,7 @@
                     "messages": [
                       {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "source_file": "examples/earmarked-coin.scilla",
                           "line": 108,
                           "column": 19,
                           "node_type": "Location"
@@ -1829,8 +1731,7 @@
                       },
                       {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "source_file": "examples/earmarked-coin.scilla",
                           "line": 108,
                           "column": 26,
                           "node_type": "Location"
@@ -1843,8 +1744,7 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "source_file": "examples/earmarked-coin.scilla",
                       "line": 109,
                       "column": 5,
                       "node_type": "Location"
@@ -1852,8 +1752,7 @@
                     "node_type": "MapUpdateStatement",
                     "map_name": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "source_file": "examples/earmarked-coin.scilla",
                         "line": 109,
                         "column": 12,
                         "node_type": "Location"
@@ -1865,8 +1764,7 @@
                     "keys": [
                       {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "source_file": "examples/earmarked-coin.scilla",
                           "line": 109,
                           "column": 28,
                           "node_type": "Location"
@@ -1878,16 +1776,14 @@
                   },
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "source_file": "examples/earmarked-coin.scilla",
                       "line": 110,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "arg": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "source_file": "examples/earmarked-coin.scilla",
                         "line": 110,
                         "column": 5,
                         "node_type": "Location"
@@ -1898,8 +1794,7 @@
                     "messages": [
                       {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "source_file": "examples/earmarked-coin.scilla",
                           "line": 110,
                           "column": 31,
                           "node_type": "Location"
@@ -1909,8 +1804,7 @@
                       },
                       {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "source_file": "examples/earmarked-coin.scilla",
                           "line": 110,
                           "column": 45,
                           "node_type": "Location"
@@ -1934,8 +1828,7 @@
                           "node_type": "BinderPattern",
                           "variable": {
                             "loc": {
-                              "source_file":
-                                "../scilla_static/examples/earmarked-coin.scilla",
+                              "source_file": "examples/earmarked-coin.scilla",
                               "line": 106,
                               "column": 25,
                               "node_type": "Location"
@@ -1955,16 +1848,14 @@
                 "pattern_body": [
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/earmarked-coin.scilla",
+                      "source_file": "examples/earmarked-coin.scilla",
                       "line": 113,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "arg": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/earmarked-coin.scilla",
+                        "source_file": "examples/earmarked-coin.scilla",
                         "line": 113,
                         "column": 5,
                         "node_type": "Location"
@@ -1975,8 +1866,7 @@
                     "messages": [
                       {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "source_file": "examples/earmarked-coin.scilla",
                           "line": 113,
                           "column": 27,
                           "node_type": "Location"
@@ -1986,8 +1876,7 @@
                       },
                       {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "source_file": "examples/earmarked-coin.scilla",
                           "line": 113,
                           "column": 41,
                           "node_type": "Location"
@@ -1997,8 +1886,7 @@
                       },
                       {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/earmarked-coin.scilla",
+                          "source_file": "examples/earmarked-coin.scilla",
                           "line": 113,
                           "column": 49,
                           "node_type": "Location"

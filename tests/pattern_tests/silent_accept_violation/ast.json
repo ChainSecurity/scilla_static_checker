@@ -1,0 +1,391 @@
+{
+  "scilla_major_version": 0,
+  "name": {
+    "loc": {
+      "source_file": "examples/accept_payment.scilla",
+      "line": 22,
+      "column": 10,
+      "node_type": "Location"
+    },
+    "identifier": "Inc",
+    "node_type": "Identifier"
+  },
+  "library": {
+    "library_name": {
+      "loc": {
+        "source_file": "examples/accept_payment.scilla",
+        "line": 8,
+        "column": 1,
+        "node_type": "Location"
+      },
+      "identifier": "Inc",
+      "node_type": "Identifier"
+    },
+    "library_entries": [
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/accept_payment.scilla",
+            "line": 10,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "one",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/accept_payment.scilla",
+            "line": 10,
+            "column": 11,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "1", "width": 32 }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/accept_payment.scilla",
+            "line": 11,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "one32",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/accept_payment.scilla",
+            "line": 11,
+            "column": 13,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "1", "width": 32 }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/accept_payment.scilla",
+            "line": 12,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "one64",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/accept_payment.scilla",
+            "line": 12,
+            "column": 13,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "1", "width": 64 }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/accept_payment.scilla",
+            "line": 14,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "one128",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file": "examples/accept_payment.scilla",
+            "line": 14,
+            "column": 14,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "1", "width": 128 }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/accept_payment.scilla",
+            "line": 16,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "a",
+          "node_type": "Identifier"
+        },
+        "variable_type": { "node_type": "PrimType", "name": "Uint64" },
+        "expression": {
+          "loc": {
+            "source_file": "examples/accept_payment.scilla",
+            "line": 16,
+            "column": 18,
+            "node_type": "Location"
+          },
+          "node_type": "VarExpression",
+          "variable": {
+            "loc": {
+              "source_file": "examples/accept_payment.scilla",
+              "line": 16,
+              "column": 18,
+              "node_type": "Location"
+            },
+            "identifier": "one64",
+            "node_type": "Identifier"
+          }
+        }
+      }
+    ],
+    "node_type": "Library"
+  },
+  "external_libraries": [],
+  "contract": {
+    "name": {
+      "loc": {
+        "source_file": "examples/accept_payment.scilla",
+        "line": 22,
+        "column": 10,
+        "node_type": "Location"
+      },
+      "identifier": "Inc",
+      "node_type": "Identifier"
+    },
+    "params": [
+      {
+        "parameter_name": {
+          "loc": {
+            "source_file": "examples/accept_payment.scilla",
+            "line": 23,
+            "column": 2,
+            "node_type": "Location"
+          },
+          "identifier": "owner",
+          "node_type": "Identifier"
+        },
+        "parameter_type": { "node_type": "PrimType", "name": "ByStr20" },
+        "node_type": "Parameter"
+      },
+      {
+        "parameter_name": {
+          "loc": {
+            "source_file": "examples/accept_payment.scilla",
+            "line": 23,
+            "column": 19,
+            "node_type": "Location"
+          },
+          "identifier": "x",
+          "node_type": "Identifier"
+        },
+        "parameter_type": { "node_type": "PrimType", "name": "ByStr3" },
+        "node_type": "Parameter"
+      }
+    ],
+    "fields": [
+      {
+        "field_name": {
+          "loc": {
+            "source_file": "examples/accept_payment.scilla",
+            "line": 25,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "bal",
+          "node_type": "Identifier"
+        },
+        "field_type": { "node_type": "PrimType", "name": "Uint128" },
+        "expression": {
+          "loc": {
+            "source_file": "examples/accept_payment.scilla",
+            "line": 25,
+            "column": 23,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "0", "width": 128 }
+        },
+        "node_type": "Field"
+      }
+    ],
+    "components": [
+      {
+        "params": [],
+        "component_type": "procedure",
+        "name": {
+          "loc": {
+            "source_file": "examples/accept_payment.scilla",
+            "line": 27,
+            "column": 11,
+            "node_type": "Location"
+          },
+          "identifier": "EmitEvent",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file": "examples/accept_payment.scilla",
+              "line": 28,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/accept_payment.scilla",
+                "line": 28,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "e",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/accept_payment.scilla",
+                "line": 28,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "node_type": "MessageExpression",
+              "margs": [
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_eventname",
+                  "payload": {
+                    "node_type": "PayloadLiteral",
+                    "literal": {
+                      "node_type": "StringLiteral",
+                      "value": "accepted"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file": "examples/accept_payment.scilla",
+              "line": 29,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file": "examples/accept_payment.scilla",
+                "line": 29,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "e",
+              "node_type": "Identifier"
+            },
+            "node_type": "CreateEvntStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [],
+        "component_type": "transition",
+        "name": {
+          "loc": {
+            "source_file": "examples/accept_payment.scilla",
+            "line": 32,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "inc",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file": "examples/accept_payment.scilla",
+              "line": 33,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "AcceptPaymentStatement"
+          },
+          {
+            "loc": {
+              "source_file": "examples/accept_payment.scilla",
+              "line": 34,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "examples/accept_payment.scilla",
+                "line": 34,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "examples/accept_payment.scilla",
+                "line": 34,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "identifier": "_balance",
+              "node_type": "Identifier"
+            },
+            "node_type": "LoadStatement"
+          },
+          {
+            "loc": {
+              "source_file": "examples/accept_payment.scilla",
+              "line": 35,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "examples/accept_payment.scilla",
+                "line": 35,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "bal",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file": "examples/accept_payment.scilla",
+                "line": 35,
+                "column": 12,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "node_type": "StoreStatement"
+          }
+        ],
+        "node_type": "Component"
+      }
+    ],
+    "node_type": "Contract"
+  },
+  "node_type": "ContractModule"
+}

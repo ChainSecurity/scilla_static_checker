@@ -1,0 +1,17 @@
+scilla_version 0
+
+(* MatchStatement contract *)
+
+contract MatchStatement
+()
+
+field msg : String = ""
+
+transition test (a: Uint32, b:Uint32)
+  e = builtin eq a b;
+  m = match e with
+  | False => "asd"
+  | True => "dsa"
+  end;
+  msg := m
+end

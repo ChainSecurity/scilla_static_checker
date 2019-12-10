@@ -1,0 +1,51 @@
+
+.comp TransactionOrderDependencyPattern : Pattern {
+
+
+    NAME("Transaction Order Dependency")
+
+    DESCRIPTION(
+        "The amount sent by the contract depends on the order of transitions."
+    )
+
+	SEVERITY(CRITICAL)
+
+    applicable(unitId, "unknown_line") :-
+        transctionOrderDependency(unitId).
+
+    violation(unitId, "unknown_line", "") :-
+        applicable(unitId, _).
+// There must be two different! transactions. In one transaction the variable is saved and in the other one the variable is loaded before saved
+
+    .decl transctionOrderDependency(unitId: Unit)
+    transctionOrderDependency(saveId):-
+        save(saveId, fieldName, _),
+        plan(saveProc, saveId, _),
+        send(_, dataId),
+        follows(dataId, msgId),
+        msg(msgId, _),
+        keyArgument(msgId, _, "_amount"),
+        follows(msgId, loadId),
+        load(loadId, fieldName),
+        plan(loadProc, loadId, loadPlanIndex),
+        plan(loadProc, saveIdLoad, savePlanIndex),
+        save(saveIdLoad, fieldName, _),
+        savePlanIndex > loadPlanIndex,
+        saveProc != loadProc.
+
+    transctionOrderDependency(saveId):-
+        save(saveId, fieldName, _),
+        plan(saveProc, saveId, _),
+        send(_, dataId),
+        follows(dataId, msgId),
+        msg(msgId, _),
+        keyArgument(msgId, _, "_amount"),
+        follows(msgId, loadId),
+        load(loadId, fieldName),
+        plan(loadProc, loadId, loadPlanIndex),
+        plan(loadProc, saveIdLoad, savePlanIndex),
+        !save(saveIdLoad, fieldName, _),
+        saveProc != loadProc.
+//.output transctionOrderDependency
+
+}

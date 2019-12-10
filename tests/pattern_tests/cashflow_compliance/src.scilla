@@ -1,0 +1,47 @@
+scilla_version 0
+library ISteal
+
+let one_msg = 
+  fun (msg : Message) => 
+    let nil_msg = Nil {Message} in
+    Cons {Message} msg nil_msg
+
+let one128 = Uint128 1
+let zero128 = Uint128 0
+
+contract ISteal ()
+
+field count : Uint128 = Uint128 0
+field folks : Map ByStr20 Uint128 = Emp ByStr20 Uint128
+
+transition put()
+  accept;
+  b <- &BLOCKNUMBER;
+  f_old <- folks[_sender];
+  match f_old with
+  | Some a =>
+    f_new = builtin add a _amount;
+    folks[_sender] := f_new
+  | None =>
+    c_old <- count;
+    c_new = builtin add c_old one128;
+    count := c_new;
+    folks[_sender] := _amount
+  end
+end
+
+transition withdraw() 
+  x <- folks[_sender];
+  match x with
+  | Some a =>
+    folks[_sender] := zero128;
+    c <- count;
+    c_new = builtin sub c one128;
+    count := c_new;
+    msg = {_tag : ""; _recipient : _sender; _amount : a};
+    msgs = one_msg msg;
+    send msgs    
+  | None =>
+  end
+end
+    

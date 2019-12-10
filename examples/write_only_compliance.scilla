@@ -1,0 +1,22 @@
+scilla_version 0
+
+
+
+(***************************************************)
+(*               Associated library                *)
+(***************************************************)
+
+contract Inc()
+
+
+field bal : Uint128 = Uint128 0
+
+transition bar (a: Uint128)
+    b <- bal;
+    e = { _eventname : "test"; bal : b };
+    event e
+end
+
+transition foo (a: Uint128)
+    bal := a
+end

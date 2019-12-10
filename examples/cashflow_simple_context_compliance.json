@@ -1,0 +1,885 @@
+{
+  "scilla_major_version": 0,
+  "name": {
+    "loc": {
+      "source_file": "examples/cashflow_simple_context_compliance.scilla",
+      "line": 16,
+      "column": 10,
+      "node_type": "Location"
+    },
+    "identifier": "ISteal",
+    "node_type": "Identifier"
+  },
+  "library": {
+    "library_name": {
+      "loc": {
+        "source_file": "examples/cashflow_simple_context_compliance.scilla",
+        "line": 2,
+        "column": 1,
+        "node_type": "Location"
+      },
+      "identifier": "ISteal",
+      "node_type": "Identifier"
+    },
+    "library_entries": [
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file":
+              "examples/cashflow_simple_context_compliance.scilla",
+            "line": 4,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "one_msg",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file":
+              "examples/cashflow_simple_context_compliance.scilla",
+            "line": 5,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file":
+                "examples/cashflow_simple_context_compliance.scilla",
+              "line": 5,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "msg",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file":
+                "examples/cashflow_simple_context_compliance.scilla",
+              "line": 6,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "LetExpression",
+            "variable": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 6,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "nil_msg",
+              "node_type": "Identifier"
+            },
+            "variable_type": null,
+            "expression": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 6,
+                "column": 19,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "Nil",
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
+              "args": []
+            },
+            "body": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 7,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "node_type": "ConstrExpression",
+              "constructor_name": "Cons",
+              "types": [ { "node_type": "PrimType", "name": "Message" } ],
+              "args": [
+                {
+                  "loc": {
+                    "source_file":
+                      "examples/cashflow_simple_context_compliance.scilla",
+                    "line": 7,
+                    "column": 20,
+                    "node_type": "Location"
+                  },
+                  "identifier": "msg",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file":
+                      "examples/cashflow_simple_context_compliance.scilla",
+                    "line": 7,
+                    "column": 24,
+                    "node_type": "Location"
+                  },
+                  "identifier": "nil_msg",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Message" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file":
+              "examples/cashflow_simple_context_compliance.scilla",
+            "line": 9,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "foo",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file":
+              "examples/cashflow_simple_context_compliance.scilla",
+            "line": 10,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "node_type": "FunExpression",
+          "lhs": {
+            "loc": {
+              "source_file":
+                "examples/cashflow_simple_context_compliance.scilla",
+              "line": 10,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "identifier": "x",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file":
+                "examples/cashflow_simple_context_compliance.scilla",
+              "line": 11,
+              "column": 9,
+              "node_type": "Location"
+            },
+            "node_type": "VarExpression",
+            "variable": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 11,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "x",
+              "node_type": "Identifier"
+            }
+          },
+          "lhs_type": { "node_type": "PrimType", "name": "Uint128" }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file":
+              "examples/cashflow_simple_context_compliance.scilla",
+            "line": 13,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "one128",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file":
+              "examples/cashflow_simple_context_compliance.scilla",
+            "line": 13,
+            "column": 14,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "1", "width": 128 }
+        }
+      },
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file":
+              "examples/cashflow_simple_context_compliance.scilla",
+            "line": 14,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "zero128",
+          "node_type": "Identifier"
+        },
+        "variable_type": null,
+        "expression": {
+          "loc": {
+            "source_file":
+              "examples/cashflow_simple_context_compliance.scilla",
+            "line": 14,
+            "column": 15,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "0", "width": 128 }
+        }
+      }
+    ],
+    "node_type": "Library"
+  },
+  "external_libraries": [],
+  "contract": {
+    "name": {
+      "loc": {
+        "source_file": "examples/cashflow_simple_context_compliance.scilla",
+        "line": 16,
+        "column": 10,
+        "node_type": "Location"
+      },
+      "identifier": "ISteal",
+      "node_type": "Identifier"
+    },
+    "params": [],
+    "fields": [
+      {
+        "field_name": {
+          "loc": {
+            "source_file":
+              "examples/cashflow_simple_context_compliance.scilla",
+            "line": 18,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "count",
+          "node_type": "Identifier"
+        },
+        "field_type": { "node_type": "PrimType", "name": "Uint128" },
+        "expression": {
+          "loc": {
+            "source_file":
+              "examples/cashflow_simple_context_compliance.scilla",
+            "line": 18,
+            "column": 25,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "0", "width": 128 }
+        },
+        "node_type": "Field"
+      },
+      {
+        "field_name": {
+          "loc": {
+            "source_file":
+              "examples/cashflow_simple_context_compliance.scilla",
+            "line": 19,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "totalBalance",
+          "node_type": "Identifier"
+        },
+        "field_type": { "node_type": "PrimType", "name": "Uint128" },
+        "expression": {
+          "loc": {
+            "source_file":
+              "examples/cashflow_simple_context_compliance.scilla",
+            "line": 19,
+            "column": 32,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "0", "width": 128 }
+        },
+        "node_type": "Field"
+      }
+    ],
+    "components": [
+      {
+        "params": [],
+        "component_type": "transition",
+        "name": {
+          "loc": {
+            "source_file":
+              "examples/cashflow_simple_context_compliance.scilla",
+            "line": 21,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "put",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file":
+                "examples/cashflow_simple_context_compliance.scilla",
+              "line": 22,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "AcceptPaymentStatement"
+          },
+          {
+            "loc": {
+              "source_file":
+                "examples/cashflow_simple_context_compliance.scilla",
+              "line": 23,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 23,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "c_old",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 23,
+                "column": 12,
+                "node_type": "Location"
+              },
+              "identifier": "count",
+              "node_type": "Identifier"
+            },
+            "node_type": "LoadStatement"
+          },
+          {
+            "loc": {
+              "source_file":
+                "examples/cashflow_simple_context_compliance.scilla",
+              "line": 24,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 24,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "c_new",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 24,
+                "column": 11,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file":
+                      "examples/cashflow_simple_context_compliance.scilla",
+                    "line": 24,
+                    "column": 23,
+                    "node_type": "Location"
+                  },
+                  "identifier": "c_old",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file":
+                      "examples/cashflow_simple_context_compliance.scilla",
+                    "line": 24,
+                    "column": 29,
+                    "node_type": "Location"
+                  },
+                  "identifier": "one128",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file":
+                    "examples/cashflow_simple_context_compliance.scilla",
+                  "line": 24,
+                  "column": 19,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "add",
+                "node_type": "Builtin"
+              }
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "examples/cashflow_simple_context_compliance.scilla",
+              "line": 25,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 25,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "count",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 25,
+                "column": 12,
+                "node_type": "Location"
+              },
+              "identifier": "c_new",
+              "node_type": "Identifier"
+            },
+            "node_type": "StoreStatement"
+          },
+          {
+            "loc": {
+              "source_file":
+                "examples/cashflow_simple_context_compliance.scilla",
+              "line": 26,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 26,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 26,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "identifier": "_balance",
+              "node_type": "Identifier"
+            },
+            "node_type": "LoadStatement"
+          },
+          {
+            "loc": {
+              "source_file":
+                "examples/cashflow_simple_context_compliance.scilla",
+              "line": 27,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 27,
+                "column": 16,
+                "node_type": "Location"
+              },
+              "identifier": "totalBalance",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 27,
+                "column": 19,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "node_type": "StoreStatement"
+          }
+        ],
+        "node_type": "Component"
+      },
+      {
+        "params": [],
+        "component_type": "transition",
+        "name": {
+          "loc": {
+            "source_file":
+              "examples/cashflow_simple_context_compliance.scilla",
+            "line": 30,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "withdraw",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file":
+                "examples/cashflow_simple_context_compliance.scilla",
+              "line": 31,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 31,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "c",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 31,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "identifier": "count",
+              "node_type": "Identifier"
+            },
+            "node_type": "LoadStatement"
+          },
+          {
+            "loc": {
+              "source_file":
+                "examples/cashflow_simple_context_compliance.scilla",
+              "line": 32,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 32,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "t",
+              "node_type": "Identifier"
+            },
+            "rhs": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 32,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "identifier": "totalBalance",
+              "node_type": "Identifier"
+            },
+            "node_type": "LoadStatement"
+          },
+          {
+            "loc": {
+              "source_file":
+                "examples/cashflow_simple_context_compliance.scilla",
+              "line": 33,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 33,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "a",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 33,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file":
+                    "examples/cashflow_simple_context_compliance.scilla",
+                  "line": 33,
+                  "column": 9,
+                  "node_type": "Location"
+                },
+                "identifier": "foo",
+                "node_type": "Identifier"
+              },
+              "rhs_list": [
+                {
+                  "loc": {
+                    "source_file":
+                      "examples/cashflow_simple_context_compliance.scilla",
+                    "line": 33,
+                    "column": 13,
+                    "node_type": "Location"
+                  },
+                  "identifier": "zero128",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "examples/cashflow_simple_context_compliance.scilla",
+              "line": 34,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 34,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 34,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file":
+                    "examples/cashflow_simple_context_compliance.scilla",
+                  "line": 34,
+                  "column": 9,
+                  "node_type": "Location"
+                },
+                "identifier": "foo",
+                "node_type": "Identifier"
+              },
+              "rhs_list": [
+                {
+                  "loc": {
+                    "source_file":
+                      "examples/cashflow_simple_context_compliance.scilla",
+                    "line": 34,
+                    "column": 13,
+                    "node_type": "Location"
+                  },
+                  "identifier": "t",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "examples/cashflow_simple_context_compliance.scilla",
+              "line": 35,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 35,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "msg",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 35,
+                "column": 11,
+                "node_type": "Location"
+              },
+              "node_type": "MessageExpression",
+              "margs": [
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_tag",
+                  "payload": {
+                    "node_type": "PayloadLiteral",
+                    "literal": { "node_type": "StringLiteral", "value": "" }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_recipient",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "examples/cashflow_simple_context_compliance.scilla",
+                        "line": 35,
+                        "column": 36,
+                        "node_type": "Location"
+                      },
+                      "identifier": "_sender",
+                      "node_type": "Identifier"
+                    }
+                  }
+                },
+                {
+                  "node_type": "MessageArgument",
+                  "variable": "_amount",
+                  "payload": {
+                    "node_type": "PayloadVariable",
+                    "value": {
+                      "loc": {
+                        "source_file":
+                          "examples/cashflow_simple_context_compliance.scilla",
+                        "line": 35,
+                        "column": 55,
+                        "node_type": "Location"
+                      },
+                      "identifier": "b",
+                      "node_type": "Identifier"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "examples/cashflow_simple_context_compliance.scilla",
+              "line": 36,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 36,
+                "column": 10,
+                "node_type": "Location"
+              },
+              "identifier": "msgs",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 36,
+                "column": 12,
+                "node_type": "Location"
+              },
+              "node_type": "AppExpression",
+              "lhs": {
+                "loc": {
+                  "source_file":
+                    "examples/cashflow_simple_context_compliance.scilla",
+                  "line": 36,
+                  "column": 12,
+                  "node_type": "Location"
+                },
+                "identifier": "one_msg",
+                "node_type": "Identifier"
+              },
+              "rhs_list": [
+                {
+                  "loc": {
+                    "source_file":
+                      "examples/cashflow_simple_context_compliance.scilla",
+                    "line": 36,
+                    "column": 20,
+                    "node_type": "Location"
+                  },
+                  "identifier": "msg",
+                  "node_type": "Identifier"
+                }
+              ]
+            }
+          },
+          {
+            "loc": {
+              "source_file":
+                "examples/cashflow_simple_context_compliance.scilla",
+              "line": 37,
+              "column": 5,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file":
+                  "examples/cashflow_simple_context_compliance.scilla",
+                "line": 37,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "msgs",
+              "node_type": "Identifier"
+            },
+            "node_type": "SendMsgsStatement"
+          }
+        ],
+        "node_type": "Component"
+      }
+    ],
+    "node_type": "Contract"
+  },
+  "node_type": "ContractModule"
+}

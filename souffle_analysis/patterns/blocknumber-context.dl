@@ -1,0 +1,35 @@
+
+
+.comp BlocknumberContextPattern : Pattern{
+
+    NAME("Usage of block blocknumber (Context-sensitive)")
+
+    DESCRIPTION(
+        "Returned value relies on block blocknumber."
+    )
+
+	SEVERITY(LOW)
+
+    applicable(equalityFunUnit, "unknown_line") :-
+        builtinVar(blocknumberUnit, _, "BLOCKNUMBER"), 
+        ctxProvider.elementInContext(blocknumberUnitCtx, blocknumberUnit, _),
+        builtin(equalityFunUnit, _, "eq"), 
+        ctxProvider.elementInContext(equalityFunUnitCtx, equalityFunUnit, _),
+        sentElem(elem), 
+        ctxProvider.elementInContext(elemCtx,elem, _),
+        dataflow.mayDependOn(appDDCtx, blocknumberUnitCtx),
+        dataflow.mayDependOn(appDDCtx, equalityFunUnitCtx),
+        infoflow.instrMayDependOn(elemCtx, appDDCtx).
+
+    .decl sentElem(elem: Element)
+    sentElem(elem) :-
+        send(sendId, _),
+        follows(sendId, msgId),
+        msg(msgId, _),
+        keyArgument(msgId, elem, _).
+
+    .output sentElem
+
+    violation(equalityFunUnit, "unknown_line", "") :-
+        applicable(equalityFunUnit, _).
+}

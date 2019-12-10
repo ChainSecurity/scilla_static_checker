@@ -3,8 +3,8 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ast"
-	"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ir"
+	"github.com/ChainSecurity/scilla_static_checker/pkg/ast"
+	"github.com/ChainSecurity/scilla_static_checker/pkg/ir"
 	"io/ioutil"
 	"os"
 )
@@ -25,6 +25,7 @@ func main() {
 
 	dotPath := os.Args[2]
 	b := ir.BuildCFG(cm)
+
 	dot := ir.GetDot(b)
 	f, err := os.Create(dotPath)
 	if err != nil {

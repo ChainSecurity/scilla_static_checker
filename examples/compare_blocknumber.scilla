@@ -1,0 +1,20 @@
+scilla_version 0
+
+(* MatchStatement contract *)
+
+contract MatchStatement
+()
+
+field msg : Bool = True
+
+transition test (a: BNum, b: BNum)
+  t <- & BLOCKNUMBER;
+  e = builtin eq a t;
+  f = builtin eq a b;
+  match f with
+  | False =>
+    msg := f
+  | True =>
+    msg := f
+  end
+end

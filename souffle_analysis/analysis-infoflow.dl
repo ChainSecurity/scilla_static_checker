@@ -1,0 +1,11 @@
+.comp InfoFlowAnalysis {
+    .decl instrMayDependOn(instCtx: ctxProvider.ElementInContext, condCtx: ctxProvider.ElementInContext)
+    instrMayDependOn(instCtx, condCtx) :-
+        pickProc(pickProcId, condId),
+        ctxProvider.elementInContext(condCtx, condId, _),
+        argument(pickProcId, pickCaseId, _),
+        ctxProvider.elementInContext(pickCaseCtx, pickCaseId, _),
+        dataflow.mayDependOn(pickCaseCtx, instCtx).
+
+    .output instrMayDependOn
+}

@@ -1,0 +1,42 @@
+
+
+.comp SilentAcceptPattern : Pattern{
+
+    NAME("Silent Zillings Accept")
+
+    DESCRIPTION(
+        "The accept of Zillings wihtout emitting any event/message"
+    )
+
+	SEVERITY(LOW)
+
+    applicable(unitId, "unknown_line") :-
+        accept(unitId).
+    
+    violation(acceptID, "unknown_line", "") :-
+        accept(acceptID),
+            plan(acceptProc, acceptID, _),
+            plan(acceptProc, otherId, _),
+        !(
+            (
+                send(otherId, _);
+                event(otherId, _)
+            )
+        ).
+
+    violation(acceptID, "unknown_line", "") :-
+        accept(acceptID),
+        plan(acceptProc, acceptID, _),
+        plan(otherProc, otherId, _),
+        (
+            follows(otherProc, acceptProc);
+            follows(acceptProc, otherProc)
+        ),
+        !(
+                send(otherId, _);
+                event(otherId, _)
+            )
+        .
+
+
+}

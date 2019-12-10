@@ -1,0 +1,22 @@
+scilla_version 0
+
+library TestLib
+
+type TestType =
+| T of Uint128
+
+contract Test ()
+
+field balances : Map ByStr20 Uint128 = Emp ByStr20 Uint128
+field a : Uint128 = Uint128 0
+(* Legal *)
+transition test ()
+  b <- balances[_sender];
+  match b with
+  | Some x =>
+    a := x
+  | None =>
+    z = Uint128 100;
+    a := z
+  end
+end

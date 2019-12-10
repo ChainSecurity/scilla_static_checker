@@ -3,7 +3,7 @@ package ir_test
 import (
 	"testing"
 
-	"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ir"
+	"github.com/ChainSecurity/scilla_static_checker/pkg/ir"
 )
 
 func TestExample(t *testing.T) {

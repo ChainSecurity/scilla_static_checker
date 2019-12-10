@@ -2,7 +2,7 @@
   "scilla_major_version": 0,
   "name": {
     "loc": {
-      "source_file": "../scilla_static/examples/creationtest.scilla",
+      "source_file": "examples/creationtest.scilla",
       "line": 2,
       "column": 10,
       "node_type": "Location"
@@ -15,7 +15,7 @@
   "contract": {
     "name": {
       "loc": {
-        "source_file": "../scilla_static/examples/creationtest.scilla",
+        "source_file": "examples/creationtest.scilla",
         "line": 2,
         "column": 10,
         "node_type": "Location"
@@ -28,7 +28,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "../scilla_static/examples/creationtest.scilla",
+            "source_file": "examples/creationtest.scilla",
             "line": 3,
             "column": 7,
             "node_type": "Location"
@@ -39,7 +39,7 @@
         "field_type": { "node_type": "PrimType", "name": "ByStr20" },
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/creationtest.scilla",
+            "source_file": "examples/creationtest.scilla",
             "line": 3,
             "column": 27,
             "node_type": "Location"
@@ -55,7 +55,7 @@
       {
         "field_name": {
           "loc": {
-            "source_file": "../scilla_static/examples/creationtest.scilla",
+            "source_file": "examples/creationtest.scilla",
             "line": 3,
             "column": 76,
             "node_type": "Location"
@@ -66,7 +66,7 @@
         "field_type": { "node_type": "PrimType", "name": "BNum" },
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/creationtest.scilla",
+            "source_file": "examples/creationtest.scilla",
             "line": 3,
             "column": 86,
             "node_type": "Location"
@@ -80,9 +80,10 @@
     "components": [
       {
         "params": [],
+        "component_type": "transition",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/creationtest.scilla",
+            "source_file": "examples/creationtest.scilla",
             "line": 4,
             "column": 12,
             "node_type": "Location"

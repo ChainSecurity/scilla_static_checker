@@ -1,0 +1,327 @@
+{
+  "scilla_major_version": 0,
+  "name": {
+    "loc": {
+      "source_file": "examples/match_statement.scilla",
+      "line": 5,
+      "column": 10,
+      "node_type": "Location"
+    },
+    "identifier": "MatchStatement",
+    "node_type": "Identifier"
+  },
+  "library": null,
+  "external_libraries": [],
+  "contract": {
+    "name": {
+      "loc": {
+        "source_file": "examples/match_statement.scilla",
+        "line": 5,
+        "column": 10,
+        "node_type": "Location"
+      },
+      "identifier": "MatchStatement",
+      "node_type": "Identifier"
+    },
+    "params": [],
+    "fields": [
+      {
+        "field_name": {
+          "loc": {
+            "source_file": "examples/match_statement.scilla",
+            "line": 8,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "msg",
+          "node_type": "Identifier"
+        },
+        "field_type": { "node_type": "PrimType", "name": "String" },
+        "expression": {
+          "loc": {
+            "source_file": "examples/match_statement.scilla",
+            "line": 8,
+            "column": 23,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "StringLiteral", "value": "" }
+        },
+        "node_type": "Field"
+      }
+    ],
+    "components": [
+      {
+        "params": [
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file": "examples/match_statement.scilla",
+                "line": 10,
+                "column": 18,
+                "node_type": "Location"
+              },
+              "identifier": "a",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "Uint32" },
+            "node_type": "Parameter"
+          },
+          {
+            "parameter_name": {
+              "loc": {
+                "source_file": "examples/match_statement.scilla",
+                "line": 10,
+                "column": 29,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "parameter_type": { "node_type": "PrimType", "name": "Uint32" },
+            "node_type": "Parameter"
+          }
+        ],
+        "component_type": "transition",
+        "name": {
+          "loc": {
+            "source_file": "examples/match_statement.scilla",
+            "line": 10,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "test",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file": "examples/match_statement.scilla",
+              "line": 11,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "BindStatement",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/match_statement.scilla",
+                "line": 11,
+                "column": 5,
+                "node_type": "Location"
+              },
+              "identifier": "e",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/match_statement.scilla",
+                "line": 11,
+                "column": 7,
+                "node_type": "Location"
+              },
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/match_statement.scilla",
+                    "line": 11,
+                    "column": 18,
+                    "node_type": "Location"
+                  },
+                  "identifier": "a",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "examples/match_statement.scilla",
+                    "line": 11,
+                    "column": 20,
+                    "node_type": "Location"
+                  },
+                  "identifier": "b",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
+                "loc": {
+                  "source_file": "examples/match_statement.scilla",
+                  "line": 11,
+                  "column": 15,
+                  "node_type": "Location"
+                },
+                "builtin_operator": "eq",
+                "node_type": "Builtin"
+              }
+            }
+          },
+          {
+            "loc": {
+              "source_file": "examples/match_statement.scilla",
+              "line": 12,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file": "examples/match_statement.scilla",
+                "line": 12,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "e",
+              "node_type": "Identifier"
+            },
+            "cases": [
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file": "examples/match_statement.scilla",
+                      "line": 14,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file": "examples/match_statement.scilla",
+                        "line": 14,
+                        "column": 7,
+                        "node_type": "Location"
+                      },
+                      "identifier": "m",
+                      "node_type": "Identifier"
+                    },
+                    "rhs_expr": {
+                      "loc": {
+                        "source_file": "examples/match_statement.scilla",
+                        "line": 14,
+                        "column": 13,
+                        "node_type": "Location"
+                      },
+                      "node_type": "LiteralExpression",
+                      "value": {
+                        "node_type": "StringLiteral",
+                        "value": "asd"
+                      }
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file": "examples/match_statement.scilla",
+                      "line": 15,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "lhs": {
+                      "loc": {
+                        "source_file": "examples/match_statement.scilla",
+                        "line": 15,
+                        "column": 9,
+                        "node_type": "Location"
+                      },
+                      "identifier": "msg",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file": "examples/match_statement.scilla",
+                        "line": 15,
+                        "column": 12,
+                        "node_type": "Location"
+                      },
+                      "identifier": "m",
+                      "node_type": "Identifier"
+                    },
+                    "node_type": "StoreStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "False",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              },
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file": "examples/match_statement.scilla",
+                      "line": 17,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file": "examples/match_statement.scilla",
+                        "line": 17,
+                        "column": 7,
+                        "node_type": "Location"
+                      },
+                      "identifier": "m",
+                      "node_type": "Identifier"
+                    },
+                    "rhs_expr": {
+                      "loc": {
+                        "source_file": "examples/match_statement.scilla",
+                        "line": 17,
+                        "column": 13,
+                        "node_type": "Location"
+                      },
+                      "node_type": "LiteralExpression",
+                      "value": {
+                        "node_type": "StringLiteral",
+                        "value": "dsa"
+                      }
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file": "examples/match_statement.scilla",
+                      "line": 18,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "lhs": {
+                      "loc": {
+                        "source_file": "examples/match_statement.scilla",
+                        "line": 18,
+                        "column": 9,
+                        "node_type": "Location"
+                      },
+                      "identifier": "msg",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file": "examples/match_statement.scilla",
+                        "line": 18,
+                        "column": 12,
+                        "node_type": "Location"
+                      },
+                      "identifier": "m",
+                      "node_type": "Identifier"
+                    },
+                    "node_type": "StoreStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "True",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              }
+            ],
+            "node_type": "MatchStatement"
+          }
+        ],
+        "node_type": "Component"
+      }
+    ],
+    "node_type": "Contract"
+  },
+  "node_type": "ContractModule"
+}

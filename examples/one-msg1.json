@@ -2,7 +2,7 @@
   "scilla_major_version": 0,
   "name": {
     "loc": {
-      "source_file": "../scilla_static/examples/one-msg1.scilla",
+      "source_file": "examples/one-msg1.scilla",
       "line": 21,
       "column": 10,
       "node_type": "Location"
@@ -13,7 +13,7 @@
   "library": {
     "library_name": {
       "loc": {
-        "source_file": "../scilla_static/examples/one-msg1.scilla",
+        "source_file": "examples/one-msg1.scilla",
         "line": 10,
         "column": 1,
         "node_type": "Location"
@@ -26,7 +26,7 @@
         "node_type": "LibraryVariable",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/one-msg1.scilla",
+            "source_file": "examples/one-msg1.scilla",
             "line": 12,
             "column": 5,
             "node_type": "Location"
@@ -37,7 +37,7 @@
         "variable_type": null,
         "expression": {
           "loc": {
-            "source_file": "../scilla_static/examples/one-msg1.scilla",
+            "source_file": "examples/one-msg1.scilla",
             "line": 13,
             "column": 3,
             "node_type": "Location"
@@ -45,7 +45,7 @@
           "node_type": "FunExpression",
           "lhs": {
             "loc": {
-              "source_file": "../scilla_static/examples/one-msg1.scilla",
+              "source_file": "examples/one-msg1.scilla",
               "line": 13,
               "column": 3,
               "node_type": "Location"
@@ -55,7 +55,7 @@
           },
           "rhs_expr": {
             "loc": {
-              "source_file": "../scilla_static/examples/one-msg1.scilla",
+              "source_file": "examples/one-msg1.scilla",
               "line": 14,
               "column": 3,
               "node_type": "Location"
@@ -63,7 +63,7 @@
             "node_type": "LetExpression",
             "variable": {
               "loc": {
-                "source_file": "../scilla_static/examples/one-msg1.scilla",
+                "source_file": "examples/one-msg1.scilla",
                 "line": 14,
                 "column": 3,
                 "node_type": "Location"
@@ -74,7 +74,7 @@
             "variable_type": null,
             "expression": {
               "loc": {
-                "source_file": "../scilla_static/examples/one-msg1.scilla",
+                "source_file": "examples/one-msg1.scilla",
                 "line": 14,
                 "column": 17,
                 "node_type": "Location"
@@ -86,7 +86,7 @@
             },
             "body": {
               "loc": {
-                "source_file": "../scilla_static/examples/one-msg1.scilla",
+                "source_file": "examples/one-msg1.scilla",
                 "line": 15,
                 "column": 3,
                 "node_type": "Location"
@@ -97,8 +97,7 @@
               "args": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/one-msg1.scilla",
+                    "source_file": "examples/one-msg1.scilla",
                     "line": 15,
                     "column": 18,
                     "node_type": "Location"
@@ -108,8 +107,7 @@
                 },
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/one-msg1.scilla",
+                    "source_file": "examples/one-msg1.scilla",
                     "line": 15,
                     "column": 22,
                     "node_type": "Location"
@@ -130,7 +128,7 @@
     {
       "name": {
         "loc": {
-          "source_file": "../scilla_static/examples/one-msg1.scilla",
+          "source_file": "examples/one-msg1.scilla",
           "line": 5,
           "column": 8,
           "node_type": "Location"
@@ -145,7 +143,7 @@
   "contract": {
     "name": {
       "loc": {
-        "source_file": "../scilla_static/examples/one-msg1.scilla",
+        "source_file": "examples/one-msg1.scilla",
         "line": 21,
         "column": 10,
         "node_type": "Location"
@@ -158,9 +156,10 @@
     "components": [
       {
         "params": [],
+        "component_type": "transition",
         "name": {
           "loc": {
-            "source_file": "../scilla_static/examples/one-msg1.scilla",
+            "source_file": "examples/one-msg1.scilla",
             "line": 26,
             "column": 12,
             "node_type": "Location"
@@ -171,7 +170,7 @@
         "body": [
           {
             "loc": {
-              "source_file": "../scilla_static/examples/one-msg1.scilla",
+              "source_file": "examples/one-msg1.scilla",
               "line": 27,
               "column": 3,
               "node_type": "Location"
@@ -179,7 +178,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_static/examples/one-msg1.scilla",
+                "source_file": "examples/one-msg1.scilla",
                 "line": 27,
                 "column": 8,
                 "node_type": "Location"
@@ -189,7 +188,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_static/examples/one-msg1.scilla",
+                "source_file": "examples/one-msg1.scilla",
                 "line": 27,
                 "column": 10,
                 "node_type": "Location"
@@ -211,8 +210,7 @@
                     "node_type": "PayloadVariable",
                     "value": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/one-msg1.scilla",
+                        "source_file": "examples/one-msg1.scilla",
                         "line": 27,
                         "column": 35,
                         "node_type": "Location"
@@ -239,7 +237,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_static/examples/one-msg1.scilla",
+              "source_file": "examples/one-msg1.scilla",
               "line": 28,
               "column": 3,
               "node_type": "Location"
@@ -247,7 +245,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_static/examples/one-msg1.scilla",
+                "source_file": "examples/one-msg1.scilla",
                 "line": 28,
                 "column": 8,
                 "node_type": "Location"
@@ -257,7 +255,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_static/examples/one-msg1.scilla",
+                "source_file": "examples/one-msg1.scilla",
                 "line": 28,
                 "column": 10,
                 "node_type": "Location"
@@ -279,8 +277,7 @@
                     "node_type": "PayloadVariable",
                     "value": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/one-msg1.scilla",
+                        "source_file": "examples/one-msg1.scilla",
                         "line": 28,
                         "column": 35,
                         "node_type": "Location"
@@ -307,7 +304,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_static/examples/one-msg1.scilla",
+              "source_file": "examples/one-msg1.scilla",
               "line": 29,
               "column": 3,
               "node_type": "Location"
@@ -315,7 +312,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_static/examples/one-msg1.scilla",
+                "source_file": "examples/one-msg1.scilla",
                 "line": 29,
                 "column": 9,
                 "node_type": "Location"
@@ -325,7 +322,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_static/examples/one-msg1.scilla",
+                "source_file": "examples/one-msg1.scilla",
                 "line": 29,
                 "column": 11,
                 "node_type": "Location"
@@ -333,7 +330,7 @@
               "node_type": "AppExpression",
               "lhs": {
                 "loc": {
-                  "source_file": "../scilla_static/examples/one-msg1.scilla",
+                  "source_file": "examples/one-msg1.scilla",
                   "line": 29,
                   "column": 11,
                   "node_type": "Location"
@@ -344,8 +341,7 @@
               "rhs_list": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/one-msg1.scilla",
+                    "source_file": "examples/one-msg1.scilla",
                     "line": 29,
                     "column": 19,
                     "node_type": "Location"
@@ -358,7 +354,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_static/examples/one-msg1.scilla",
+              "source_file": "examples/one-msg1.scilla",
               "line": 30,
               "column": 3,
               "node_type": "Location"
@@ -366,7 +362,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_static/examples/one-msg1.scilla",
+                "source_file": "examples/one-msg1.scilla",
                 "line": 30,
                 "column": 9,
                 "node_type": "Location"
@@ -376,7 +372,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_static/examples/one-msg1.scilla",
+                "source_file": "examples/one-msg1.scilla",
                 "line": 30,
                 "column": 11,
                 "node_type": "Location"
@@ -384,7 +380,7 @@
               "node_type": "AppExpression",
               "lhs": {
                 "loc": {
-                  "source_file": "../scilla_static/examples/one-msg1.scilla",
+                  "source_file": "examples/one-msg1.scilla",
                   "line": 30,
                   "column": 11,
                   "node_type": "Location"
@@ -395,8 +391,7 @@
               "rhs_list": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/one-msg1.scilla",
+                    "source_file": "examples/one-msg1.scilla",
                     "line": 30,
                     "column": 19,
                     "node_type": "Location"
@@ -409,7 +404,7 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_static/examples/one-msg1.scilla",
+              "source_file": "examples/one-msg1.scilla",
               "line": 31,
               "column": 3,
               "node_type": "Location"
@@ -417,7 +412,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file": "../scilla_static/examples/one-msg1.scilla",
+                "source_file": "examples/one-msg1.scilla",
                 "line": 31,
                 "column": 9,
                 "node_type": "Location"
@@ -427,7 +422,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file": "../scilla_static/examples/one-msg1.scilla",
+                "source_file": "examples/one-msg1.scilla",
                 "line": 31,
                 "column": 11,
                 "node_type": "Location"
@@ -453,8 +448,7 @@
               "args": [
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/one-msg1.scilla",
+                    "source_file": "examples/one-msg1.scilla",
                     "line": 31,
                     "column": 48,
                     "node_type": "Location"
@@ -464,8 +458,7 @@
                 },
                 {
                   "loc": {
-                    "source_file":
-                      "../scilla_static/examples/one-msg1.scilla",
+                    "source_file": "examples/one-msg1.scilla",
                     "line": 31,
                     "column": 54,
                     "node_type": "Location"
@@ -478,14 +471,14 @@
           },
           {
             "loc": {
-              "source_file": "../scilla_static/examples/one-msg1.scilla",
+              "source_file": "examples/one-msg1.scilla",
               "line": 32,
               "column": 3,
               "node_type": "Location"
             },
             "arg": {
               "loc": {
-                "source_file": "../scilla_static/examples/one-msg1.scilla",
+                "source_file": "examples/one-msg1.scilla",
                 "line": 32,
                 "column": 9,
                 "node_type": "Location"
@@ -498,16 +491,14 @@
                 "pattern_body": [
                   {
                     "loc": {
-                      "source_file":
-                        "../scilla_static/examples/one-msg1.scilla",
+                      "source_file": "examples/one-msg1.scilla",
                       "line": 34,
                       "column": 5,
                       "node_type": "Location"
                     },
                     "arg": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/one-msg1.scilla",
+                        "source_file": "examples/one-msg1.scilla",
                         "line": 34,
                         "column": 5,
                         "node_type": "Location"
@@ -526,8 +517,7 @@
                       "node_type": "BinderPattern",
                       "variable": {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/one-msg1.scilla",
+                          "source_file": "examples/one-msg1.scilla",
                           "line": 33,
                           "column": 10,
                           "node_type": "Location"
@@ -540,8 +530,7 @@
                       "node_type": "BinderPattern",
                       "variable": {
                         "loc": {
-                          "source_file":
-                            "../scilla_static/examples/one-msg1.scilla",
+                          "source_file": "examples/one-msg1.scilla",
                           "line": 33,
                           "column": 13,
                           "node_type": "Location"

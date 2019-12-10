@@ -1,0 +1,22 @@
+scilla_version 0
+
+contract StatementXYZ
+()
+
+field s0 : Uint32 = Uint32 1
+field s1 : Uint32 = Uint32 1
+
+transition test (f : Bool)
+  x  = Uint32 1;
+  y  = Uint32 2;
+  z  = Uint32 3;
+  match f with
+  | False =>
+      x  = Uint32 5
+  | True =>
+      x  = Uint32 1;
+      y  = Uint32 3
+  end;
+  s0 := x;
+  s1 := y
+end

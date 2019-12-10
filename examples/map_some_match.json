@@ -1,0 +1,339 @@
+{
+  "scilla_major_version": 0,
+  "name": {
+    "loc": {
+      "source_file": "examples/map_some_match.scilla",
+      "line": 8,
+      "column": 10,
+      "node_type": "Location"
+    },
+    "identifier": "Test",
+    "node_type": "Identifier"
+  },
+  "library": {
+    "library_name": {
+      "loc": {
+        "source_file": "examples/map_some_match.scilla",
+        "line": 3,
+        "column": 1,
+        "node_type": "Location"
+      },
+      "identifier": "TestLib",
+      "node_type": "Identifier"
+    },
+    "library_entries": [
+      {
+        "name": {
+          "loc": {
+            "source_file": "examples/map_some_match.scilla",
+            "line": 5,
+            "column": 1,
+            "node_type": "Location"
+          },
+          "identifier": "TestType",
+          "node_type": "Identifier"
+        },
+        "node_type": "LibraryType",
+        "ctr_defs": [
+          {
+            "ctr_def_name": {
+              "loc": {
+                "source_file": "examples/map_some_match.scilla",
+                "line": 6,
+                "column": 1,
+                "node_type": "Location"
+              },
+              "identifier": "T",
+              "node_type": "Identifier"
+            },
+            "c_arg_types": [ { "node_type": "PrimType", "name": "Uint128" } ],
+            "node_type": "CtrDef"
+          }
+        ]
+      }
+    ],
+    "node_type": "Library"
+  },
+  "external_libraries": [],
+  "contract": {
+    "name": {
+      "loc": {
+        "source_file": "examples/map_some_match.scilla",
+        "line": 8,
+        "column": 10,
+        "node_type": "Location"
+      },
+      "identifier": "Test",
+      "node_type": "Identifier"
+    },
+    "params": [],
+    "fields": [
+      {
+        "field_name": {
+          "loc": {
+            "source_file": "examples/map_some_match.scilla",
+            "line": 10,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "balances",
+          "node_type": "Identifier"
+        },
+        "field_type": {
+          "node_type": "MapType",
+          "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+          "val_type": { "node_type": "PrimType", "name": "Uint128" }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/map_some_match.scilla",
+            "line": 10,
+            "column": 40,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": {
+            "key_type": { "node_type": "PrimType", "name": "ByStr20" },
+            "val_type": { "node_type": "PrimType", "name": "Uint128" },
+            "node_type": "MapLiteral",
+            "mvalues": []
+          }
+        },
+        "node_type": "Field"
+      },
+      {
+        "field_name": {
+          "loc": {
+            "source_file": "examples/map_some_match.scilla",
+            "line": 11,
+            "column": 7,
+            "node_type": "Location"
+          },
+          "identifier": "a",
+          "node_type": "Identifier"
+        },
+        "field_type": { "node_type": "PrimType", "name": "Uint128" },
+        "expression": {
+          "loc": {
+            "source_file": "examples/map_some_match.scilla",
+            "line": 11,
+            "column": 21,
+            "node_type": "Location"
+          },
+          "node_type": "LiteralExpression",
+          "value": { "node_type": "UintLiteral", "value": "0", "width": 128 }
+        },
+        "node_type": "Field"
+      }
+    ],
+    "components": [
+      {
+        "params": [],
+        "component_type": "transition",
+        "name": {
+          "loc": {
+            "source_file": "examples/map_some_match.scilla",
+            "line": 13,
+            "column": 12,
+            "node_type": "Location"
+          },
+          "identifier": "test",
+          "node_type": "Identifier"
+        },
+        "body": [
+          {
+            "loc": {
+              "source_file": "examples/map_some_match.scilla",
+              "line": 14,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "MapGetStatement",
+            "map_name": {
+              "loc": {
+                "source_file": "examples/map_some_match.scilla",
+                "line": 14,
+                "column": 8,
+                "node_type": "Location"
+              },
+              "identifier": "balances",
+              "node_type": "Identifier"
+            },
+            "lhs": {
+              "loc": {
+                "source_file": "examples/map_some_match.scilla",
+                "line": 14,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "keys": [
+              {
+                "loc": {
+                  "source_file": "examples/map_some_match.scilla",
+                  "line": 14,
+                  "column": 17,
+                  "node_type": "Location"
+                },
+                "identifier": "_sender",
+                "node_type": "Identifier"
+              }
+            ],
+            "is_value_retrieve": true
+          },
+          {
+            "loc": {
+              "source_file": "examples/map_some_match.scilla",
+              "line": 15,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "arg": {
+              "loc": {
+                "source_file": "examples/map_some_match.scilla",
+                "line": 15,
+                "column": 9,
+                "node_type": "Location"
+              },
+              "identifier": "b",
+              "node_type": "Identifier"
+            },
+            "cases": [
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file": "examples/map_some_match.scilla",
+                      "line": 17,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "lhs": {
+                      "loc": {
+                        "source_file": "examples/map_some_match.scilla",
+                        "line": 17,
+                        "column": 7,
+                        "node_type": "Location"
+                      },
+                      "identifier": "a",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file": "examples/map_some_match.scilla",
+                        "line": 17,
+                        "column": 10,
+                        "node_type": "Location"
+                      },
+                      "identifier": "x",
+                      "node_type": "Identifier"
+                    },
+                    "node_type": "StoreStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "Some",
+                  "patterns": [
+                    {
+                      "node_type": "BinderPattern",
+                      "variable": {
+                        "loc": {
+                          "source_file": "examples/map_some_match.scilla",
+                          "line": 16,
+                          "column": 10,
+                          "node_type": "Location"
+                        },
+                        "identifier": "x",
+                        "node_type": "Identifier"
+                      }
+                    }
+                  ]
+                },
+                "node_type": "MatchStatementCase"
+              },
+              {
+                "pattern_body": [
+                  {
+                    "loc": {
+                      "source_file": "examples/map_some_match.scilla",
+                      "line": 19,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "BindStatement",
+                    "lhs": {
+                      "loc": {
+                        "source_file": "examples/map_some_match.scilla",
+                        "line": 19,
+                        "column": 7,
+                        "node_type": "Location"
+                      },
+                      "identifier": "z",
+                      "node_type": "Identifier"
+                    },
+                    "rhs_expr": {
+                      "loc": {
+                        "source_file": "examples/map_some_match.scilla",
+                        "line": 19,
+                        "column": 9,
+                        "node_type": "Location"
+                      },
+                      "node_type": "LiteralExpression",
+                      "value": {
+                        "node_type": "UintLiteral",
+                        "value": "100",
+                        "width": 128
+                      }
+                    }
+                  },
+                  {
+                    "loc": {
+                      "source_file": "examples/map_some_match.scilla",
+                      "line": 20,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "lhs": {
+                      "loc": {
+                        "source_file": "examples/map_some_match.scilla",
+                        "line": 20,
+                        "column": 7,
+                        "node_type": "Location"
+                      },
+                      "identifier": "a",
+                      "node_type": "Identifier"
+                    },
+                    "rhs": {
+                      "loc": {
+                        "source_file": "examples/map_some_match.scilla",
+                        "line": 20,
+                        "column": 10,
+                        "node_type": "Location"
+                      },
+                      "identifier": "z",
+                      "node_type": "Identifier"
+                    },
+                    "node_type": "StoreStatement"
+                  }
+                ],
+                "pattern": {
+                  "node_type": "ConstructorPattern",
+                  "constructor_name": "None",
+                  "patterns": []
+                },
+                "node_type": "MatchStatementCase"
+              }
+            ],
+            "node_type": "MatchStatement"
+          }
+        ],
+        "node_type": "Component"
+      }
+    ],
+    "node_type": "Contract"
+  },
+  "node_type": "ContractModule"
+}

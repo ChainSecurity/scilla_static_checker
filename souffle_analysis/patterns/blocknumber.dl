@@ -1,0 +1,22 @@
+
+
+.comp BlocknumberPattern : Pattern{
+
+    NAME("Usage of blocknumber")
+
+    DESCRIPTION(
+        "Returned value relies on blocknumber."
+    )
+
+	SEVERITY(LOW)
+
+    applicable(equalityFunUnit, "unknown_line") :-
+        builtinVar(blocknumberUnit, _, "BLOCKNUMBER"),
+        builtin(equalityFunUnit, _, "eq"),
+        appDD(appDDUnit, _),
+        argument(appDDUnit, blocknumberUnit, _),
+        follows(appDDUnit, equalityFunUnit).
+
+    violation(equalityFunUnit, "unknown_line", "") :-
+        applicable(equalityFunUnit, _).
+}

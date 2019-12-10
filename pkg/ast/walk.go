@@ -3,7 +3,7 @@ package ast
 import (
 	"errors"
 	"fmt"
-	//"gitlab.chainsecurity.com/ChainSecurity/common/scilla_static/pkg/ast"
+	//"github.com/ChainSecurity/scilla_static_checker/pkg/ast"
 )
 
 type Visitor interface {
@@ -240,7 +240,7 @@ func Walk(v Visitor, node AstNode) {
 		for _, x := range n.ELibs {
 			Walk(v, x)
 		}
-		Walk(v, n.C)
+		Walk(v, n.Contr)
 	case *Component:
 		Walk(v, n.Name)
 		for _, x := range n.Params {

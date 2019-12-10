@@ -385,7 +385,7 @@ type ContractModule struct {
 	Name               *Identifier       `json:"name"`
 	Library            *Library          `json:"library"` // Optional
 	ELibs              []ExternalLibrary `json:"external_libraries"`
-	C                  *Contract         `json:"contract"`
+	Contr              *Contract         `json:"contract"`
 }
 
 func (*ContractModule) moduleNode() {}
@@ -403,10 +403,12 @@ type Parameter struct {
 }
 
 type Component struct {
-	Name   *Identifier  `json:"name"`
-	Params []*Parameter `json:"params"`
-	Body   []Statement  `json:"body"`
+	ComponentType string       `json:"component_type"`
+	Name          *Identifier  `json:"name"`
+	Params        []*Parameter `json:"params"`
+	Body          []Statement  `json:"body"`
 }
+
 type Contract struct {
 	Name       *Identifier  `json:"name"`
 	Params     []*Parameter `json:"params"`

@@ -1,0 +1,25 @@
+// There's only save and not load for a specific field name
+// What if the field is stored in the constructor and never used?
+.comp WriteOnlyPattern : Pattern{
+
+    NAME("Write Only Variable")
+
+    DESCRIPTION(
+        "A variable is only written but never read"
+    )
+
+	SEVERITY(LOW)
+
+    applicable(fieldName, "unknown_line") :-
+        writeOnly(fieldName).
+
+    violation(fieldName, "unknown_line", "") :-
+        applicable(fieldName, _).
+
+    .decl writeOnly(fieldName: symbol)
+    writeOnly(fieldName) :-
+        save(_, fieldName, _),
+        !load(_, fieldName).
+
+    //.output writeOnly
+}

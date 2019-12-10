@@ -2,7 +2,7 @@
   "scilla_major_version": 0,
   "name": {
     "loc": {
-      "source_file": "../scilla_static/examples/exception-example.scilla",
+      "source_file": "examples/exception-example.scilla",
       "line": 9,
       "column": 10,
       "node_type": "Location"
@@ -15,7 +15,7 @@
   "contract": {
     "name": {
       "loc": {
-        "source_file": "../scilla_static/examples/exception-example.scilla",
+        "source_file": "examples/exception-example.scilla",
         "line": 9,
         "column": 10,
         "node_type": "Location"
@@ -31,8 +31,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/exception-example.scilla",
+                "source_file": "examples/exception-example.scilla",
                 "line": 12,
                 "column": 22,
                 "node_type": "Location"
@@ -44,10 +43,10 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "transition",
         "name": {
           "loc": {
-            "source_file":
-              "../scilla_static/examples/exception-example.scilla",
+            "source_file": "examples/exception-example.scilla",
             "line": 12,
             "column": 12,
             "node_type": "Location"
@@ -58,8 +57,7 @@
         "body": [
           {
             "loc": {
-              "source_file":
-                "../scilla_static/examples/exception-example.scilla",
+              "source_file": "examples/exception-example.scilla",
               "line": 13,
               "column": 3,
               "node_type": "Location"
@@ -67,8 +65,7 @@
             "node_type": "BindStatement",
             "lhs": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/exception-example.scilla",
+                "source_file": "examples/exception-example.scilla",
                 "line": 13,
                 "column": 5,
                 "node_type": "Location"
@@ -78,8 +75,7 @@
             },
             "rhs_expr": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/exception-example.scilla",
+                "source_file": "examples/exception-example.scilla",
                 "line": 13,
                 "column": 7,
                 "node_type": "Location"
@@ -104,8 +100,7 @@
                     "node_type": "PayloadVariable",
                     "value": {
                       "loc": {
-                        "source_file":
-                          "../scilla_static/examples/exception-example.scilla",
+                        "source_file": "examples/exception-example.scilla",
                         "line": 13,
                         "column": 45,
                         "node_type": "Location"
@@ -120,8 +115,7 @@
           },
           {
             "loc": {
-              "source_file":
-                "../scilla_static/examples/exception-example.scilla",
+              "source_file": "examples/exception-example.scilla",
               "line": 14,
               "column": 3,
               "node_type": "Location"
@@ -129,8 +123,7 @@
             "node_type": "ThrowStatement",
             "arg": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/exception-example.scilla",
+                "source_file": "examples/exception-example.scilla",
                 "line": 14,
                 "column": 3,
                 "node_type": "Location"
@@ -147,8 +140,7 @@
           {
             "parameter_name": {
               "loc": {
-                "source_file":
-                  "../scilla_static/examples/exception-example.scilla",
+                "source_file": "examples/exception-example.scilla",
                 "line": 17,
                 "column": 24,
                 "node_type": "Location"
@@ -160,10 +152,10 @@
             "node_type": "Parameter"
           }
         ],
+        "component_type": "transition",
         "name": {
           "loc": {
-            "source_file":
-              "../scilla_static/examples/exception-example.scilla",
+            "source_file": "examples/exception-example.scilla",
             "line": 17,
             "column": 12,
             "node_type": "Location"
@@ -174,8 +166,7 @@
         "body": [
           {
             "loc": {
-              "source_file":
-                "../scilla_static/examples/exception-example.scilla",
+              "source_file": "examples/exception-example.scilla",
               "line": 18,
               "column": 3,
               "node_type": "Location"
