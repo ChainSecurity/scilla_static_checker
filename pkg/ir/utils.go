@@ -86,6 +86,8 @@ func (builder *CFGBuilder) TypeOf(d Data) Type {
 		return x.BindType
 	case *PickData:
 		return builder.TypeOf(x.With[0].Body)
+	case *Map:
+		return x.MapType
 	default:
 		panic(errors.New(fmt.Sprintf("builder.TypeOf not implemented %T\n", d)))
 	}
