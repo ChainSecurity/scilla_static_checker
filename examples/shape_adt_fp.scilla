@@ -1,0 +1,46 @@
+scilla_version 0
+
+library ShapeTest
+type Shape =
+| Square of Uint128 Uint128
+| Circle of Uint128 Uint128
+
+
+let one_msg =
+  fun (msg : Message) =>
+  let nil_msg = Nil {Message} in
+    Cons {Message} msg nil_msg
+
+let one128  = Uint128 1
+let zero128  = Uint128 0
+
+contract ShapeTest
+()
+
+field shape : Shape = Square one128 one128
+
+transition set ( y : Uint128)
+    s <- shape;
+    old_x  = match s with
+    | Square x _ =>
+        x
+    | Circle x _ =>
+        x
+    end;
+    t = Circle old_x y;
+    shape := t
+end
+
+
+transition check ()
+    s <- shape;
+    c  = match s with
+    | Square x _ =>
+        x
+    | Circle x _ =>
+        x
+    end;
+    msg = {_tag : ""; _recipient : _sender; _amount : c};
+    msgs = one_msg msg;
+    send msgs
+end

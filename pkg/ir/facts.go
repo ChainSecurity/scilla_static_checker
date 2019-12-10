@@ -196,7 +196,7 @@ func (fd *FactsDumper) Visit(node Node, prev Node) Visitor {
 		fact := fmt.Sprintf("%d", n.ID())
 		fd.strTypeFacts = append(fd.strTypeFacts, fact)
 	case *PickData:
-		fact := fmt.Sprintf("%d\t%d", n.ID(), n.From)
+		fact := fmt.Sprintf("%d\t%d", n.ID(), n.From.ID())
 		fd.pickDataFacts = append(fd.pickDataFacts, fact)
 		for i, u := range n.With {
 			argFact := fmt.Sprintf("%d\t%d\t%d", n.ID(), u.ID(), i)

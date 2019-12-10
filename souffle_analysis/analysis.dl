@@ -24,13 +24,12 @@ followsStep(dependent, independent) :-
         bind(dependent, _, independent);
         callProc(dependent, independent);
         condBind(dependent, independent, _);
-        dataCase(dependent, independent, _, _);
-        dataCase(dependent, _, independent, _);
-        dataCase(dependent, _, _, independent);
+        dataCase(dependent, independent, _);
+        dataCase(dependent, _, independent);
         jump(dependent, independent);
         keyArgument(dependent, independent, _);
         mapType(dependent, _, independent);
-        pickData(dependent, independent, _);
+        pickData(dependent, independent);
         pickProc(dependent, independent);
         plan(dependent, independent, _);
         procCase(dependent, independent, _);

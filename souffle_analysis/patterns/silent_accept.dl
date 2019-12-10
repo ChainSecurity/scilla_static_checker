@@ -11,22 +11,20 @@
 	SEVERITY(LOW)
 
     applicable(unitId, "unknown_line") :-
-        violation(unitId, "unknown_line", "").
+        accept(unitId).
     
-    violation("", "unknown_line", "") :-
-        !compliance(_, "unknown_line", "").
-
-
-    compliance(acceptID, "unknown_line", "") :-
+    violation(acceptID, "unknown_line", "") :-
         accept(acceptID),
-        plan(acceptProc, acceptID, _),
-        plan(acceptProc, otherId, _),
-        (
-            send(otherId, _);
-            event(otherId, _)
+            plan(acceptProc, acceptID, _),
+            plan(acceptProc, otherId, _),
+        !(
+            (
+                send(otherId, _);
+                event(otherId, _)
+            )
         ).
 
-    compliance(acceptID, "unknown_line", "") :-
+    violation(acceptID, "unknown_line", "") :-
         accept(acceptID),
         plan(acceptProc, acceptID, _),
         plan(otherProc, otherId, _),
@@ -34,10 +32,11 @@
             follows(otherProc, acceptProc);
             follows(acceptProc, otherProc)
         ),
-        (
-            send(otherId, _);
-            event(otherId, _)
-        ).
+        !(
+                send(otherId, _);
+                event(otherId, _)
+            )
+        .
 
 
 }
