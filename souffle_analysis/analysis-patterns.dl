@@ -92,7 +92,6 @@ patternTag(id, "id", id) :- patternId(id).
 #include "analysis-patterns-macros.dl"
 
 #include "patterns/blocknumber-context.dl"
-#include "patterns/blocknumber.dl"
 #include "patterns/cash-flow.dl"
 #include "patterns/locked-zillings.dl"
 #include "patterns/read-only.dl"
@@ -102,7 +101,7 @@ patternTag(id, "id", id) :- patternId(id).
 #include "patterns/write-only.dl"
 
 REGISTER_PATTERN(BlocknumberContextPattern)
-REGISTER_PATTERN(BlocknumberPattern)
+//REGISTER_PATTERN(BlocknumberPattern)
 REGISTER_PATTERN(CashFlowPattern)
 REGISTER_PATTERN(LockedZillingsPattern)
 REGISTER_PATTERN(SilentAcceptPattern)
