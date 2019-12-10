@@ -3,6 +3,7 @@
 *  `pkg/ast` Scilla AST related code
 *  `pkg/ir` IR related code
 
+
 ## Installing the static checker
 
 Requirements:
