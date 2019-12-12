@@ -44,7 +44,6 @@ func unmarshalASTType(rawMsg *json.RawMessage) (ASTType, error) {
 		}
 		return &t, err
 	case "ADT":
-		fmt.Println(string(*rawMsg))
 		var t ADT
 		err = json.Unmarshal(*rawMsg, &t)
 		if err != nil {
@@ -745,6 +744,38 @@ func (ft *FunType) UnmarshalJSON(b []byte) error {
 
 	ft.ArgType = at
 	ft.ValType = vt
+
+	return nil
+}
+
+func (pf *PolyFun) UnmarshalJSON(b []byte) error {
+	var objMap map[string]*json.RawMessage
+	err := json.Unmarshal(b, &objMap)
+	if err != nil {
+		panic(err)
+	}
+
+	type core struct {
+		TypeVal string `json:"type_val"`
+	}
+
+	var c core
+	err = json.Unmarshal(b, &c)
+	if err != nil {
+		panic(err)
+	}
+
+	rawMsg := objMap["body_type"]
+	var bd ASTType
+	if rawMsg != nil {
+		bd, err = unmarshalASTType(rawMsg)
+		if err != nil {
+			panic(err)
+		}
+	}
+
+	pf.TypeVal = c.TypeVal
+	pf.Body = bd
 
 	return nil
 }

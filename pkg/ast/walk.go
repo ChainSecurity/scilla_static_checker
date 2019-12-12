@@ -234,11 +234,11 @@ func Walk(v Visitor, node AstNode) {
 		}
 	case *ContractModule:
 		Walk(v, n.Name)
-		if n.Library != nil {
-			Walk(v, n.Library)
-		}
 		for _, x := range n.ELibs {
 			Walk(v, x)
+		}
+		if n.Library != nil {
+			Walk(v, n.Library)
 		}
 		Walk(v, n.Contr)
 	case *Component:
@@ -276,7 +276,7 @@ func Walk(v Visitor, node AstNode) {
 			Walk(v, x)
 		}
 	default:
-		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
+		panic(errors.New(fmt.Sprintf("ast.Walk unhandled type: %T", n)))
 	}
 }
 

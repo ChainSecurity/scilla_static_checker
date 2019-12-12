@@ -16,14 +16,15 @@ func main() {
 	// Handling CLI flags
 
 	var analysisDir string
+	var libDir string
 	flag.StringVar(&analysisDir, "analysis_dir", "./souffle_analysis", "folder where facts_in and facts_out will be created")
-
+	flag.StringVar(&libDir, "libdir", "", "folder with external libraries (in json format)")
 	flag.Parse()
 
 	// Reading json ast
 	astJsonPath := flag.Arg(0)
 	jsonFile, err := os.Open(astJsonPath)
-	fmt.Println(astJsonPath, analysisDir)
+	fmt.Println(astJsonPath, analysisDir, libDir)
 	if err != nil {
 		panic(err)
 	}

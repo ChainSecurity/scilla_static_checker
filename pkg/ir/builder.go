@@ -124,7 +124,6 @@ func (builder *CFGBuilder) visitPattern(p ast.Pattern, t Type, bind *Bind) ([]st
 		varBinds = append(varBinds, bind)
 
 	case *ast.ConstructorPattern:
-		fmt.Printf("ConstructorPattern %s\n", pat.ConstrName)
 		var typeList []Type
 		switch typ := t.(type) {
 		case *EnumType:
@@ -978,8 +977,11 @@ func (builder *CFGBuilder) Visit(node ast.AstNode) ast.Visitor {
 		//do nothing
 	case *ast.Location:
 		//do nothing
+	case *ast.ExternalLibrary:
+		fmt.Println("ExternalLibrary", n.Name.Id)
+		//do nothing
 	default:
-		//fmt.Printf("Unhandled type: %T\n", n)
+		//fmt.Printf("CFGBuilder Visit unhandled type: %T\n", n)
 		// do nothing
 	}
 	return builder

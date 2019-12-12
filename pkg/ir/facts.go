@@ -354,8 +354,10 @@ func DumpFacts(builder *CFGBuilder, factsInFolder string) {
 		unitFacts:        []string{},
 	}
 
-	fd.constructorFacts = append(fd.constructorFacts, fmt.Sprintf("%d", builder.Constructor.ID()))
-	Walk(&fd, builder.Constructor, nil)
+	if builder.Constructor != nil {
+		fd.constructorFacts = append(fd.constructorFacts, fmt.Sprintf("%d", builder.Constructor.ID()))
+		Walk(&fd, builder.Constructor, nil)
+	}
 
 	for fname, _ := range builder.fieldTypeMap {
 		fmt.Println("field", fname)

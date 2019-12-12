@@ -201,7 +201,7 @@ type TypeVar struct {
 	Name string `json:"name"`
 }
 type PolyFun struct {
-	TypeVal ASTType `json:"type_val"`
+	TypeVal string  `json:"type_val"`
 	Body    ASTType `json:"body_type"`
 }
 
@@ -381,11 +381,11 @@ type LibraryModule struct {
 }
 
 type ContractModule struct {
-	ScillaMajorVersion int               `json:"scilla_major_version"`
-	Name               *Identifier       `json:"name"`
-	Library            *Library          `json:"library"` // Optional
-	ELibs              []ExternalLibrary `json:"external_libraries"`
-	Contr              *Contract         `json:"contract"`
+	ScillaMajorVersion int                `json:"scilla_major_version"`
+	Name               *Identifier        `json:"name"`
+	Library            *Library           `json:"library"` // Optional
+	ELibs              []*ExternalLibrary `json:"external_libraries"`
+	Contr              *Contract          `json:"contract"`
 }
 
 func (*ContractModule) moduleNode() {}
