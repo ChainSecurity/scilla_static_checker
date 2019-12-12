@@ -627,6 +627,37 @@ func (fe *FunExpression) UnmarshalJSON(b []byte) error {
 	return nil
 }
 
+func (tfe *TFunExpression) UnmarshalJSON(b []byte) error {
+	var objMap map[string]*json.RawMessage
+	err := json.Unmarshal(b, &objMap)
+	if err != nil {
+		return err
+	}
+
+	var rawMsg *json.RawMessage
+	rawMsg = objMap["rhs_expr"]
+	e, err := unmarshalExpression(rawMsg)
+	if err != nil {
+		return err
+	}
+
+	type core struct {
+		AnnotatedNode
+		Lhs *Identifier `json:"lhs"`
+	}
+
+	var c core
+	err = json.Unmarshal(b, &c)
+	if err != nil {
+		return err
+	}
+
+	tfe.RhsExpr = e
+	tfe.AnnotatedNode = c.AnnotatedNode
+	tfe.Lhs = c.Lhs
+	return nil
+}
+
 func (ma *MessageArgument) UnmarshalJSON(b []byte) error {
 	var objMap map[string]*json.RawMessage
 	err := json.Unmarshal(b, &objMap)

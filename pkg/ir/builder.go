@@ -29,6 +29,7 @@ type CFGBuilder struct {
 	genericDataConstructors map[string]*AbsTD
 	nodeCounter             int64
 	currentProc             string
+	kind                    Kind
 }
 
 func (b *CFGBuilder) newIDNode() IDNode {
@@ -316,16 +317,37 @@ func (builder *CFGBuilder) visitASTType(e ast.ASTType) Type {
 
 		//fmt.Printf("MapType %T %T\n", keyType, valType)
 		//panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
-	//case *ast.FunType:
-	//fmt.Printf("%T", n)
-	//case *ast.TypeVar:
-	//fmt.Printf("%T", n)
-	//case *ast.PolyFun:
-	//fmt.Printf("%T", n)
+	case *ast.FunType:
+		argType := builder.visitASTType(n.ArgType)
+		valType := builder.visitASTType(n.ValType)
+		argDataVar := DataVar{
+			IDNode:   builder.newIDNode(),
+			DataType: argType,
+		}
+		valDataVar := DataVar{
+			IDNode:   builder.newIDNode(),
+			DataType: valType,
+		}
+		fmt.Println(argDataVar, valDataVar)
+		//return &AbsDD{
+		//IDNode: builder.newIDNode(),
+		//Vars:   []DataVar{argDataVar},
+		//Term:   valDataVar,
+		//}
+		panic(errors.New(fmt.Sprintf("CFGBuilder visitASTType unhandled type: %T", n)))
+	case *ast.TypeVar:
+		return &TypeVar{
+			IDNode: builder.newIDNode(),
+			Kind:   builder.kind,
+		}
+	case *ast.PolyFun:
+		t := builder.visitASTType(n.Body)
+		fmt.Println(n.TypeVal, t)
+		panic(errors.New(fmt.Sprintf("CFGBuilder visitASTType unhandled type: %T", n)))
 	//case *ast.Unit:
 	//fmt.Printf("%T", n)
 	default:
-		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
+		panic(errors.New(fmt.Sprintf("CFGBuilder visitASTType unhandled type: %T", n)))
 	}
 }
 
@@ -619,6 +641,7 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		fmt.Printf("Constructor %s\n\t%s\n\t%s\n\t%T\n\t%T\n", constrName, ts, ds, typ, constr)
 		return &appDD
 	case *ast.FunExpression:
+		fmt.Println("FunExpression", n.AnnotatedNode.Loc)
 		lhs := n.Lhs.Id
 		lhsTyp := builder.visitASTType(n.LhsType)
 		dataVar := DataVar{
@@ -719,6 +742,7 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 			panic(errors.New(fmt.Sprintf("Unhandled Builtin op type: %T\n", n)))
 		}
 	case *ast.LetExpression:
+		fmt.Println("LetExpression", n.AnnotatedNode.Loc)
 		varName := n.Var.Id
 		expr := builder.visitExpression(n.Expr)
 		stackMapPush(builder.varStack, varName, expr)
@@ -726,6 +750,7 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		body := builder.visitExpression(n.Body)
 		return body
 	case *ast.AppExpression:
+		fmt.Println("AppExpression", n.AnnotatedNode.Loc)
 		rhsData := make([]Data, len(n.RhsList))
 		for i, rhs := range n.RhsList {
 			data, ok := stackMapPeek(builder.varStack, rhs.Id)
@@ -782,6 +807,22 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 			Data:    data,
 		}
 	case *ast.TFunExpression:
+		fmt.Println("TFunExpression", n.AnnotatedNode.Loc)
+		lhs := n.Lhs.Id
+		dataVar := DataVar{
+			IDNode:   builder.newIDNode(),
+			DataType: nil,
+		}
+		stackMapPush(builder.varStack, lhs, &dataVar)
+		defer stackMapPop(builder.varStack, lhs)
+
+		rhs := builder.visitExpression(n.RhsExpr)
+
+		return &AbsDD{
+			IDNode: builder.newIDNode(),
+			Vars:   []DataVar{dataVar},
+			Term:   rhs,
+		}
 	default:
 		//fmt.Printf("Unhandled Expression type: %T\n", n)
 		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
@@ -807,7 +848,10 @@ func (builder *CFGBuilder) visitPayload(pl ast.Payload) Data {
 func (builder *CFGBuilder) visitLibEntry(le ast.LibEntry) {
 	switch n := le.(type) {
 	case *ast.LibraryVariable:
+		fmt.Println("LibraryVariable", n.Name.Loc)
 		name := n.Name.Id
+		typ := builder.visitASTType(n.VarType)
+		fmt.Printf("%T\n", typ)
 		v := builder.visitExpression(n.Expr)
 		stackMapPush(builder.varStack, name, v)
 	case *ast.LibraryType:
@@ -1008,6 +1052,7 @@ func (builder *CFGBuilder) initPrimitiveTypes() {
 	builder.constructorType["True"] = "Bool"
 	builder.constructorType["False"] = "Bool"
 	builder.definedADT["Bool"] = stdLib.Boolean
+	builder.kind = stdLib.star
 
 	sizes := []int{32, 64, 128, 256}
 	for _, s := range sizes {

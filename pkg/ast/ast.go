@@ -169,6 +169,8 @@ type BuiltinExpression struct {
 
 type TFunExpression struct {
 	AnnotatedNode
+	Lhs     *Identifier `json:"lhs"`
+	RhsExpr Expression  `json:"rhs_expr"`
 }
 
 type TAppExpression struct {

@@ -1,0 +1,7 @@
+library MinTest
+
+let id : forall 'A. ('A -> 'A ) -> 'A -> 'A =
+  tfun 'A =>
+  fun (id : 'A -> 'A) =>
+  fun (a : 'A) =>
+    a

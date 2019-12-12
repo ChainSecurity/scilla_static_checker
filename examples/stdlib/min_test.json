@@ -1,0 +1,131 @@
+{
+  "library": {
+    "library_name": {
+      "loc": {
+        "source_file": "examples/stdlib/min_test.scillib",
+        "line": 1,
+        "column": 1,
+        "node_type": "Location"
+      },
+      "identifier": "MinTest",
+      "node_type": "Identifier"
+    },
+    "library_entries": [
+      {
+        "node_type": "LibraryVariable",
+        "name": {
+          "loc": {
+            "source_file": "examples/stdlib/min_test.scillib",
+            "line": 3,
+            "column": 5,
+            "node_type": "Location"
+          },
+          "identifier": "id",
+          "node_type": "Identifier"
+        },
+        "variable_type": {
+          "node_type": "PolyFun",
+          "type_val": "'A",
+          "body_type": {
+            "node_type": "FunType",
+            "arg_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'A" },
+              "val_type": { "node_type": "TypeVar", "name": "'A" }
+            },
+            "val_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'A" },
+              "val_type": { "node_type": "TypeVar", "name": "'A" }
+            }
+          }
+        },
+        "expression": {
+          "loc": {
+            "source_file": "examples/stdlib/min_test.scillib",
+            "line": 4,
+            "column": 3,
+            "node_type": "Location"
+          },
+          "node_type": "TFunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/min_test.scillib",
+              "line": 4,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "'A",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/min_test.scillib",
+              "line": 5,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/min_test.scillib",
+                "line": 5,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "id",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/min_test.scillib",
+                "line": 6,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "node_type": "FunExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "examples/stdlib/min_test.scillib",
+                  "line": 6,
+                  "column": 3,
+                  "node_type": "Location"
+                },
+                "identifier": "a",
+                "node_type": "Identifier"
+              },
+              "rhs_expr": {
+                "loc": {
+                  "source_file": "examples/stdlib/min_test.scillib",
+                  "line": 7,
+                  "column": 5,
+                  "node_type": "Location"
+                },
+                "node_type": "VarExpression",
+                "variable": {
+                  "loc": {
+                    "source_file": "examples/stdlib/min_test.scillib",
+                    "line": 7,
+                    "column": 5,
+                    "node_type": "Location"
+                  },
+                  "identifier": "a",
+                  "node_type": "Identifier"
+                }
+              },
+              "lhs_type": { "node_type": "TypeVar", "name": "'A" }
+            },
+            "lhs_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'A" },
+              "val_type": { "node_type": "TypeVar", "name": "'A" }
+            }
+          }
+        }
+      }
+    ],
+    "node_type": "Library"
+  },
+  "external_libraries": [],
+  "node_type": "LibraryModule"
+}
