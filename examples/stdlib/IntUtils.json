@@ -63,7 +63,211 @@
             "column": 3,
             "node_type": "Location"
           },
-          "node_type": "TFunExpression"
+          "node_type": "TFunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 4,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "'A",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 5,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 5,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "eq",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 6,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "node_type": "FunExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 6,
+                  "column": 3,
+                  "node_type": "Location"
+                },
+                "identifier": "a",
+                "node_type": "Identifier"
+              },
+              "rhs_expr": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 7,
+                  "column": 3,
+                  "node_type": "Location"
+                },
+                "node_type": "FunExpression",
+                "lhs": {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 7,
+                    "column": 3,
+                    "node_type": "Location"
+                  },
+                  "identifier": "b",
+                  "node_type": "Identifier"
+                },
+                "rhs_expr": {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 8,
+                    "column": 5,
+                    "node_type": "Location"
+                  },
+                  "node_type": "LetExpression",
+                  "variable": {
+                    "loc": {
+                      "source_file": "examples/stdlib/IntUtils.scillib",
+                      "line": 8,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "identifier": "eqr",
+                    "node_type": "Identifier"
+                  },
+                  "variable_type": null,
+                  "expression": {
+                    "loc": {
+                      "source_file": "examples/stdlib/IntUtils.scillib",
+                      "line": 8,
+                      "column": 15,
+                      "node_type": "Location"
+                    },
+                    "node_type": "AppExpression",
+                    "lhs": {
+                      "loc": {
+                        "source_file": "examples/stdlib/IntUtils.scillib",
+                        "line": 8,
+                        "column": 15,
+                        "node_type": "Location"
+                      },
+                      "identifier": "eq",
+                      "node_type": "Identifier"
+                    },
+                    "rhs_list": [
+                      {
+                        "loc": {
+                          "source_file": "examples/stdlib/IntUtils.scillib",
+                          "line": 8,
+                          "column": 18,
+                          "node_type": "Location"
+                        },
+                        "identifier": "a",
+                        "node_type": "Identifier"
+                      },
+                      {
+                        "loc": {
+                          "source_file": "examples/stdlib/IntUtils.scillib",
+                          "line": 8,
+                          "column": 20,
+                          "node_type": "Location"
+                        },
+                        "identifier": "b",
+                        "node_type": "Identifier"
+                      }
+                    ]
+                  },
+                  "body": {
+                    "loc": {
+                      "source_file": "examples/stdlib/IntUtils.scillib",
+                      "line": 9,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "MatchExpression",
+                    "lhs": {
+                      "loc": {
+                        "source_file": "examples/stdlib/IntUtils.scillib",
+                        "line": 9,
+                        "column": 11,
+                        "node_type": "Location"
+                      },
+                      "identifier": "eqr",
+                      "node_type": "Identifier"
+                    },
+                    "cases": [
+                      {
+                        "node_type": "MatchExpressionCase",
+                        "pattern": {
+                          "node_type": "ConstructorPattern",
+                          "constructor_name": "True",
+                          "patterns": []
+                        },
+                        "expression": {
+                          "loc": {
+                            "source_file": "examples/stdlib/IntUtils.scillib",
+                            "line": 10,
+                            "column": 15,
+                            "node_type": "Location"
+                          },
+                          "node_type": "ConstrExpression",
+                          "constructor_name": "False",
+                          "types": [],
+                          "args": []
+                        }
+                      },
+                      {
+                        "node_type": "MatchExpressionCase",
+                        "pattern": {
+                          "node_type": "ConstructorPattern",
+                          "constructor_name": "False",
+                          "patterns": []
+                        },
+                        "expression": {
+                          "loc": {
+                            "source_file": "examples/stdlib/IntUtils.scillib",
+                            "line": 11,
+                            "column": 16,
+                            "node_type": "Location"
+                          },
+                          "node_type": "ConstrExpression",
+                          "constructor_name": "True",
+                          "types": [],
+                          "args": []
+                        }
+                      }
+                    ]
+                  }
+                },
+                "lhs_type": { "node_type": "TypeVar", "name": "'A" }
+              },
+              "lhs_type": { "node_type": "TypeVar", "name": "'A" }
+            },
+            "lhs_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'A" },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                "val_type": {
+                  "node_type": "ADT",
+                  "name": "Bool",
+                  "type_args": []
+                }
+              }
+            }
+          }
         }
       },
       {
@@ -134,7 +338,277 @@
             "column": 3,
             "node_type": "Location"
           },
-          "node_type": "TFunExpression"
+          "node_type": "TFunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 16,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "'A",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 17,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 17,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "eq",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 18,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "node_type": "FunExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 18,
+                  "column": 3,
+                  "node_type": "Location"
+                },
+                "identifier": "lt",
+                "node_type": "Identifier"
+              },
+              "rhs_expr": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 19,
+                  "column": 3,
+                  "node_type": "Location"
+                },
+                "node_type": "FunExpression",
+                "lhs": {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 19,
+                    "column": 3,
+                    "node_type": "Location"
+                  },
+                  "identifier": "a",
+                  "node_type": "Identifier"
+                },
+                "rhs_expr": {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 20,
+                    "column": 3,
+                    "node_type": "Location"
+                  },
+                  "node_type": "FunExpression",
+                  "lhs": {
+                    "loc": {
+                      "source_file": "examples/stdlib/IntUtils.scillib",
+                      "line": 20,
+                      "column": 3,
+                      "node_type": "Location"
+                    },
+                    "identifier": "b",
+                    "node_type": "Identifier"
+                  },
+                  "rhs_expr": {
+                    "loc": {
+                      "source_file": "examples/stdlib/IntUtils.scillib",
+                      "line": 21,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "LetExpression",
+                    "variable": {
+                      "loc": {
+                        "source_file": "examples/stdlib/IntUtils.scillib",
+                        "line": 21,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "ltr",
+                      "node_type": "Identifier"
+                    },
+                    "variable_type": null,
+                    "expression": {
+                      "loc": {
+                        "source_file": "examples/stdlib/IntUtils.scillib",
+                        "line": 21,
+                        "column": 15,
+                        "node_type": "Location"
+                      },
+                      "node_type": "AppExpression",
+                      "lhs": {
+                        "loc": {
+                          "source_file": "examples/stdlib/IntUtils.scillib",
+                          "line": 21,
+                          "column": 15,
+                          "node_type": "Location"
+                        },
+                        "identifier": "lt",
+                        "node_type": "Identifier"
+                      },
+                      "rhs_list": [
+                        {
+                          "loc": {
+                            "source_file": "examples/stdlib/IntUtils.scillib",
+                            "line": 21,
+                            "column": 18,
+                            "node_type": "Location"
+                          },
+                          "identifier": "a",
+                          "node_type": "Identifier"
+                        },
+                        {
+                          "loc": {
+                            "source_file": "examples/stdlib/IntUtils.scillib",
+                            "line": 21,
+                            "column": 20,
+                            "node_type": "Location"
+                          },
+                          "identifier": "b",
+                          "node_type": "Identifier"
+                        }
+                      ]
+                    },
+                    "body": {
+                      "loc": {
+                        "source_file": "examples/stdlib/IntUtils.scillib",
+                        "line": 22,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "node_type": "MatchExpression",
+                      "lhs": {
+                        "loc": {
+                          "source_file": "examples/stdlib/IntUtils.scillib",
+                          "line": 22,
+                          "column": 11,
+                          "node_type": "Location"
+                        },
+                        "identifier": "ltr",
+                        "node_type": "Identifier"
+                      },
+                      "cases": [
+                        {
+                          "node_type": "MatchExpressionCase",
+                          "pattern": {
+                            "node_type": "ConstructorPattern",
+                            "constructor_name": "True",
+                            "patterns": []
+                          },
+                          "expression": {
+                            "loc": {
+                              "source_file":
+                                "examples/stdlib/IntUtils.scillib",
+                              "line": 23,
+                              "column": 15,
+                              "node_type": "Location"
+                            },
+                            "node_type": "ConstrExpression",
+                            "constructor_name": "True",
+                            "types": [],
+                            "args": []
+                          }
+                        },
+                        {
+                          "node_type": "MatchExpressionCase",
+                          "pattern": {
+                            "node_type": "ConstructorPattern",
+                            "constructor_name": "False",
+                            "patterns": []
+                          },
+                          "expression": {
+                            "loc": {
+                              "source_file":
+                                "examples/stdlib/IntUtils.scillib",
+                              "line": 24,
+                              "column": 16,
+                              "node_type": "Location"
+                            },
+                            "node_type": "AppExpression",
+                            "lhs": {
+                              "loc": {
+                                "source_file":
+                                  "examples/stdlib/IntUtils.scillib",
+                                "line": 24,
+                                "column": 16,
+                                "node_type": "Location"
+                              },
+                              "identifier": "eq",
+                              "node_type": "Identifier"
+                            },
+                            "rhs_list": [
+                              {
+                                "loc": {
+                                  "source_file":
+                                    "examples/stdlib/IntUtils.scillib",
+                                  "line": 24,
+                                  "column": 19,
+                                  "node_type": "Location"
+                                },
+                                "identifier": "a",
+                                "node_type": "Identifier"
+                              },
+                              {
+                                "loc": {
+                                  "source_file":
+                                    "examples/stdlib/IntUtils.scillib",
+                                  "line": 24,
+                                  "column": 21,
+                                  "node_type": "Location"
+                                },
+                                "identifier": "b",
+                                "node_type": "Identifier"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "lhs_type": { "node_type": "TypeVar", "name": "'A" }
+                },
+                "lhs_type": { "node_type": "TypeVar", "name": "'A" }
+              },
+              "lhs_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                "val_type": {
+                  "node_type": "FunType",
+                  "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                  "val_type": {
+                    "node_type": "ADT",
+                    "name": "Bool",
+                    "type_args": []
+                  }
+                }
+              }
+            },
+            "lhs_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'A" },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                "val_type": {
+                  "node_type": "ADT",
+                  "name": "Bool",
+                  "type_args": []
+                }
+              }
+            }
+          }
         }
       },
       {
@@ -189,7 +663,130 @@
             "column": 3,
             "node_type": "Location"
           },
-          "node_type": "TFunExpression"
+          "node_type": "TFunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 28,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "'A",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 29,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 29,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "lt",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 30,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "node_type": "FunExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 30,
+                  "column": 3,
+                  "node_type": "Location"
+                },
+                "identifier": "a",
+                "node_type": "Identifier"
+              },
+              "rhs_expr": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 31,
+                  "column": 3,
+                  "node_type": "Location"
+                },
+                "node_type": "FunExpression",
+                "lhs": {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 31,
+                    "column": 3,
+                    "node_type": "Location"
+                  },
+                  "identifier": "b",
+                  "node_type": "Identifier"
+                },
+                "rhs_expr": {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 32,
+                    "column": 5,
+                    "node_type": "Location"
+                  },
+                  "node_type": "AppExpression",
+                  "lhs": {
+                    "loc": {
+                      "source_file": "examples/stdlib/IntUtils.scillib",
+                      "line": 32,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "identifier": "lt",
+                    "node_type": "Identifier"
+                  },
+                  "rhs_list": [
+                    {
+                      "loc": {
+                        "source_file": "examples/stdlib/IntUtils.scillib",
+                        "line": 32,
+                        "column": 8,
+                        "node_type": "Location"
+                      },
+                      "identifier": "b",
+                      "node_type": "Identifier"
+                    },
+                    {
+                      "loc": {
+                        "source_file": "examples/stdlib/IntUtils.scillib",
+                        "line": 32,
+                        "column": 10,
+                        "node_type": "Location"
+                      },
+                      "identifier": "a",
+                      "node_type": "Identifier"
+                    }
+                  ]
+                },
+                "lhs_type": { "node_type": "TypeVar", "name": "'A" }
+              },
+              "lhs_type": { "node_type": "TypeVar", "name": "'A" }
+            },
+            "lhs_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'A" },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                "val_type": {
+                  "node_type": "ADT",
+                  "name": "Bool",
+                  "type_args": []
+                }
+              }
+            }
+          }
         }
       },
       {
@@ -260,7 +857,211 @@
             "column": 3,
             "node_type": "Location"
           },
-          "node_type": "TFunExpression"
+          "node_type": "TFunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 36,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "'A",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/IntUtils.scillib",
+              "line": 37,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "FunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 37,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "eq",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/IntUtils.scillib",
+                "line": 38,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "node_type": "FunExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 38,
+                  "column": 3,
+                  "node_type": "Location"
+                },
+                "identifier": "lt",
+                "node_type": "Identifier"
+              },
+              "rhs_expr": {
+                "loc": {
+                  "source_file": "examples/stdlib/IntUtils.scillib",
+                  "line": 39,
+                  "column": 3,
+                  "node_type": "Location"
+                },
+                "node_type": "FunExpression",
+                "lhs": {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 39,
+                    "column": 3,
+                    "node_type": "Location"
+                  },
+                  "identifier": "a",
+                  "node_type": "Identifier"
+                },
+                "rhs_expr": {
+                  "loc": {
+                    "source_file": "examples/stdlib/IntUtils.scillib",
+                    "line": 40,
+                    "column": 3,
+                    "node_type": "Location"
+                  },
+                  "node_type": "FunExpression",
+                  "lhs": {
+                    "loc": {
+                      "source_file": "examples/stdlib/IntUtils.scillib",
+                      "line": 40,
+                      "column": 3,
+                      "node_type": "Location"
+                    },
+                    "identifier": "b",
+                    "node_type": "Identifier"
+                  },
+                  "rhs_expr": {
+                    "loc": {
+                      "source_file": "examples/stdlib/IntUtils.scillib",
+                      "line": 41,
+                      "column": 5,
+                      "node_type": "Location"
+                    },
+                    "node_type": "LetExpression",
+                    "variable": {
+                      "loc": {
+                        "source_file": "examples/stdlib/IntUtils.scillib",
+                        "line": 41,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "identifier": "le",
+                      "node_type": "Identifier"
+                    },
+                    "variable_type": null,
+                    "expression": {
+                      "loc": {
+                        "source_file": "examples/stdlib/IntUtils.scillib",
+                        "line": 41,
+                        "column": 14,
+                        "node_type": "Location"
+                      },
+                      "node_type": "TAppExpression"
+                    },
+                    "body": {
+                      "loc": {
+                        "source_file": "examples/stdlib/IntUtils.scillib",
+                        "line": 42,
+                        "column": 5,
+                        "node_type": "Location"
+                      },
+                      "node_type": "AppExpression",
+                      "lhs": {
+                        "loc": {
+                          "source_file": "examples/stdlib/IntUtils.scillib",
+                          "line": 42,
+                          "column": 5,
+                          "node_type": "Location"
+                        },
+                        "identifier": "le",
+                        "node_type": "Identifier"
+                      },
+                      "rhs_list": [
+                        {
+                          "loc": {
+                            "source_file": "examples/stdlib/IntUtils.scillib",
+                            "line": 42,
+                            "column": 8,
+                            "node_type": "Location"
+                          },
+                          "identifier": "eq",
+                          "node_type": "Identifier"
+                        },
+                        {
+                          "loc": {
+                            "source_file": "examples/stdlib/IntUtils.scillib",
+                            "line": 42,
+                            "column": 11,
+                            "node_type": "Location"
+                          },
+                          "identifier": "lt",
+                          "node_type": "Identifier"
+                        },
+                        {
+                          "loc": {
+                            "source_file": "examples/stdlib/IntUtils.scillib",
+                            "line": 42,
+                            "column": 14,
+                            "node_type": "Location"
+                          },
+                          "identifier": "b",
+                          "node_type": "Identifier"
+                        },
+                        {
+                          "loc": {
+                            "source_file": "examples/stdlib/IntUtils.scillib",
+                            "line": 42,
+                            "column": 16,
+                            "node_type": "Location"
+                          },
+                          "identifier": "a",
+                          "node_type": "Identifier"
+                        }
+                      ]
+                    }
+                  },
+                  "lhs_type": { "node_type": "TypeVar", "name": "'A" }
+                },
+                "lhs_type": { "node_type": "TypeVar", "name": "'A" }
+              },
+              "lhs_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                "val_type": {
+                  "node_type": "FunType",
+                  "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                  "val_type": {
+                    "node_type": "ADT",
+                    "name": "Bool",
+                    "type_args": []
+                  }
+                }
+              }
+            },
+            "lhs_type": {
+              "node_type": "FunType",
+              "arg_type": { "node_type": "TypeVar", "name": "'A" },
+              "val_type": {
+                "node_type": "FunType",
+                "arg_type": { "node_type": "TypeVar", "name": "'A" },
+                "val_type": {
+                  "node_type": "ADT",
+                  "name": "Bool",
+                  "type_args": []
+                }
+              }
+            }
+          }
         }
       },
       {

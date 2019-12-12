@@ -50,7 +50,140 @@
             "column": 3,
             "node_type": "Location"
           },
-          "node_type": "TFunExpression"
+          "node_type": "TFunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/PairUtils.scillib",
+              "line": 4,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "'A",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/PairUtils.scillib",
+              "line": 5,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "TFunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/PairUtils.scillib",
+                "line": 5,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "'B",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/PairUtils.scillib",
+                "line": 6,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "node_type": "FunExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "examples/stdlib/PairUtils.scillib",
+                  "line": 6,
+                  "column": 3,
+                  "node_type": "Location"
+                },
+                "identifier": "p",
+                "node_type": "Identifier"
+              },
+              "rhs_expr": {
+                "loc": {
+                  "source_file": "examples/stdlib/PairUtils.scillib",
+                  "line": 7,
+                  "column": 5,
+                  "node_type": "Location"
+                },
+                "node_type": "MatchExpression",
+                "lhs": {
+                  "loc": {
+                    "source_file": "examples/stdlib/PairUtils.scillib",
+                    "line": 7,
+                    "column": 11,
+                    "node_type": "Location"
+                  },
+                  "identifier": "p",
+                  "node_type": "Identifier"
+                },
+                "cases": [
+                  {
+                    "node_type": "MatchExpressionCase",
+                    "pattern": {
+                      "node_type": "ConstructorPattern",
+                      "constructor_name": "Pair",
+                      "patterns": [
+                        {
+                          "node_type": "BinderPattern",
+                          "variable": {
+                            "loc": {
+                              "source_file":
+                                "examples/stdlib/PairUtils.scillib",
+                              "line": 8,
+                              "column": 12,
+                              "node_type": "Location"
+                            },
+                            "identifier": "a",
+                            "node_type": "Identifier"
+                          }
+                        },
+                        {
+                          "node_type": "BinderPattern",
+                          "variable": {
+                            "loc": {
+                              "source_file":
+                                "examples/stdlib/PairUtils.scillib",
+                              "line": 8,
+                              "column": 14,
+                              "node_type": "Location"
+                            },
+                            "identifier": "b",
+                            "node_type": "Identifier"
+                          }
+                        }
+                      ]
+                    },
+                    "expression": {
+                      "loc": {
+                        "source_file": "examples/stdlib/PairUtils.scillib",
+                        "line": 8,
+                        "column": 19,
+                        "node_type": "Location"
+                      },
+                      "node_type": "VarExpression",
+                      "variable": {
+                        "loc": {
+                          "source_file": "examples/stdlib/PairUtils.scillib",
+                          "line": 8,
+                          "column": 19,
+                          "node_type": "Location"
+                        },
+                        "identifier": "a",
+                        "node_type": "Identifier"
+                      }
+                    }
+                  }
+                ]
+              },
+              "lhs_type": {
+                "node_type": "ADT",
+                "name": "Pair",
+                "type_args": [
+                  { "node_type": "TypeVar", "name": "'A" },
+                  { "node_type": "TypeVar", "name": "'B" }
+                ]
+              }
+            }
+          }
         }
       },
       {
@@ -92,7 +225,140 @@
             "column": 3,
             "node_type": "Location"
           },
-          "node_type": "TFunExpression"
+          "node_type": "TFunExpression",
+          "lhs": {
+            "loc": {
+              "source_file": "examples/stdlib/PairUtils.scillib",
+              "line": 12,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "identifier": "'A",
+            "node_type": "Identifier"
+          },
+          "rhs_expr": {
+            "loc": {
+              "source_file": "examples/stdlib/PairUtils.scillib",
+              "line": 13,
+              "column": 3,
+              "node_type": "Location"
+            },
+            "node_type": "TFunExpression",
+            "lhs": {
+              "loc": {
+                "source_file": "examples/stdlib/PairUtils.scillib",
+                "line": 13,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "identifier": "'B",
+              "node_type": "Identifier"
+            },
+            "rhs_expr": {
+              "loc": {
+                "source_file": "examples/stdlib/PairUtils.scillib",
+                "line": 14,
+                "column": 3,
+                "node_type": "Location"
+              },
+              "node_type": "FunExpression",
+              "lhs": {
+                "loc": {
+                  "source_file": "examples/stdlib/PairUtils.scillib",
+                  "line": 14,
+                  "column": 3,
+                  "node_type": "Location"
+                },
+                "identifier": "p",
+                "node_type": "Identifier"
+              },
+              "rhs_expr": {
+                "loc": {
+                  "source_file": "examples/stdlib/PairUtils.scillib",
+                  "line": 15,
+                  "column": 5,
+                  "node_type": "Location"
+                },
+                "node_type": "MatchExpression",
+                "lhs": {
+                  "loc": {
+                    "source_file": "examples/stdlib/PairUtils.scillib",
+                    "line": 15,
+                    "column": 11,
+                    "node_type": "Location"
+                  },
+                  "identifier": "p",
+                  "node_type": "Identifier"
+                },
+                "cases": [
+                  {
+                    "node_type": "MatchExpressionCase",
+                    "pattern": {
+                      "node_type": "ConstructorPattern",
+                      "constructor_name": "Pair",
+                      "patterns": [
+                        {
+                          "node_type": "BinderPattern",
+                          "variable": {
+                            "loc": {
+                              "source_file":
+                                "examples/stdlib/PairUtils.scillib",
+                              "line": 16,
+                              "column": 12,
+                              "node_type": "Location"
+                            },
+                            "identifier": "a",
+                            "node_type": "Identifier"
+                          }
+                        },
+                        {
+                          "node_type": "BinderPattern",
+                          "variable": {
+                            "loc": {
+                              "source_file":
+                                "examples/stdlib/PairUtils.scillib",
+                              "line": 16,
+                              "column": 14,
+                              "node_type": "Location"
+                            },
+                            "identifier": "b",
+                            "node_type": "Identifier"
+                          }
+                        }
+                      ]
+                    },
+                    "expression": {
+                      "loc": {
+                        "source_file": "examples/stdlib/PairUtils.scillib",
+                        "line": 16,
+                        "column": 19,
+                        "node_type": "Location"
+                      },
+                      "node_type": "VarExpression",
+                      "variable": {
+                        "loc": {
+                          "source_file": "examples/stdlib/PairUtils.scillib",
+                          "line": 16,
+                          "column": 19,
+                          "node_type": "Location"
+                        },
+                        "identifier": "b",
+                        "node_type": "Identifier"
+                      }
+                    }
+                  }
+                ]
+              },
+              "lhs_type": {
+                "node_type": "ADT",
+                "name": "Pair",
+                "type_args": [
+                  { "node_type": "TypeVar", "name": "'A" },
+                  { "node_type": "TypeVar", "name": "'B" }
+                ]
+              }
+            }
+          }
         }
       }
     ],

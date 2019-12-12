@@ -781,10 +781,11 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 			MsgType: msgType,
 			Data:    data,
 		}
+	case *ast.TFunExpression:
 	default:
-		fmt.Printf("Unhandled Expression type: %T\n", n)
-		//panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
-		return nil
+		//fmt.Printf("Unhandled Expression type: %T\n", n)
+		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
+		//return nil
 	}
 }
 
