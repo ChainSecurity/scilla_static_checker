@@ -18,6 +18,7 @@ type CFGBuilder struct {
 	definedADT       map[string]Type
 	builtinADT       map[string]Type
 	varStack         map[string][]Data
+	typeVarStack     map[string][]Type
 	Constructor      *Proc
 	Transitions      map[string]*Proc
 	Procedures       map[string]*Proc
@@ -324,26 +325,29 @@ func (builder *CFGBuilder) visitASTType(e ast.ASTType) Type {
 			IDNode:   builder.newIDNode(),
 			DataType: argType,
 		}
-		valDataVar := DataVar{
-			IDNode:   builder.newIDNode(),
-			DataType: valType,
+		fmt.Printf("%T %T\n", argDataVar.DataType, valType)
+		return &AllDD{
+			IDNode: builder.newIDNode(),
+			Vars:   []DataVar{argDataVar},
+			Term:   valType,
 		}
-		fmt.Println(argDataVar, valDataVar)
-		//return &AbsDD{
-		//IDNode: builder.newIDNode(),
-		//Vars:   []DataVar{argDataVar},
-		//Term:   valDataVar,
-		//}
-		panic(errors.New(fmt.Sprintf("CFGBuilder visitASTType unhandled type: %T", n)))
+		//panic(errors.New(fmt.Sprintf("CFGBuilder visitASTType unhandled type: %T", n)))
 	case *ast.TypeVar:
-		return &TypeVar{
+		fmt.Printf("TypeVar %s\n", n.Name)
+		t, ok := typeStackMapPeek(builder.typeVarStack, n.Name)
+		if !ok {
+			panic(errors.New(fmt.Sprintf("TypeVar not found: %s", n.Name)))
+		}
+		return t
+	case *ast.PolyFun:
+		fmt.Printf("PolyFun %s\n", n.TypeVal)
+		tv := &TypeVar{
 			IDNode: builder.newIDNode(),
 			Kind:   builder.kind,
 		}
-	case *ast.PolyFun:
+		typeStackMapPush(builder.typeVarStack, n.TypeVal, tv)
 		t := builder.visitASTType(n.Body)
-		fmt.Println(n.TypeVal, t)
-		panic(errors.New(fmt.Sprintf("CFGBuilder visitASTType unhandled type: %T", n)))
+		return t
 	//case *ast.Unit:
 	//fmt.Printf("%T", n)
 	default:
@@ -641,23 +645,41 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		fmt.Printf("Constructor %s\n\t%s\n\t%s\n\t%T\n\t%T\n", constrName, ts, ds, typ, constr)
 		return &appDD
 	case *ast.FunExpression:
-		fmt.Println("FunExpression", n.AnnotatedNode.Loc)
+		fmt.Println("FunExpression", n.AnnotatedNode.Loc, n.Lhs.Id)
 		lhs := n.Lhs.Id
 		lhsTyp := builder.visitASTType(n.LhsType)
+		var res Data
+
+		allDD, ok := lhsTyp.(*AllDD)
+		if !ok {
+			res = &DataVar{
+				IDNode:   builder.newIDNode(),
+				DataType: lhsTyp,
+			}
+			stackMapPush(builder.varStack, lhs, res)
+			defer stackMapPop(builder.varStack, lhs)
+			rhs := builder.visitExpression(n.RhsExpr)
+			return rhs
+		}
+		absDD := &AbsDD{
+			IDNode: builder.newIDNode(),
+			Vars:   []DataVar{},
+			Term:   nil,
+		}
+
+		varType := allDD.Vars[0].DataType
 		dataVar := DataVar{
 			IDNode:   builder.newIDNode(),
-			DataType: lhsTyp,
+			DataType: varType,
 		}
-		stackMapPush(builder.varStack, lhs, &dataVar)
+		absDD.Vars = append(absDD.Vars, dataVar)
+
+		stackMapPush(builder.varStack, lhs, res)
 		defer stackMapPop(builder.varStack, lhs)
-
 		rhs := builder.visitExpression(n.RhsExpr)
+		absDD.Term = rhs
+		return absDD
 
-		return &AbsDD{
-			IDNode: builder.newIDNode(),
-			Vars:   []DataVar{dataVar},
-			Term:   rhs,
-		}
 	case *ast.MatchExpression:
 		lhs := n.Lhs.Id
 
@@ -848,7 +870,7 @@ func (builder *CFGBuilder) visitPayload(pl ast.Payload) Data {
 func (builder *CFGBuilder) visitLibEntry(le ast.LibEntry) {
 	switch n := le.(type) {
 	case *ast.LibraryVariable:
-		fmt.Println("LibraryVariable", n.Name.Loc)
+		fmt.Println("LibraryVariable", n.Name.Loc, n.Name.Id)
 		name := n.Name.Id
 		typ := builder.visitASTType(n.VarType)
 		fmt.Printf("%T\n", typ)
@@ -1797,6 +1819,7 @@ func BuildCFG(n ast.AstNode) *CFGBuilder {
 		intWidthTypeMap:  map[int]*IntType{},
 		natWidthTypeMap:  map[int]*NatType{},
 		varStack:         map[string][]Data{},
+		typeVarStack:     map[string][]Type{},
 		Constructor:      nil,
 		Transitions:      map[string]*Proc{},
 		Procedures:       map[string]*Proc{},

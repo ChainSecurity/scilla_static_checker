@@ -1,7 +1,16 @@
 library MinTest
-
-let id : forall 'A. ('A -> 'A ) -> 'A -> 'A =
-  tfun 'A =>
-  fun (id : 'A -> 'A) =>
-  fun (a : 'A) =>
+let id128 : Uint128 -> Uint128 -> Uint128 =
+  fun (a : Uint128) =>
+  fun (b : Uint128) =>
     a
+
+let test : (Uint128 -> Bool ) -> Uint128 -> Bool =
+  fun (id : Uint128 -> Bool) =>
+  fun (a : Uint128) =>
+    id a
+
+(*let id : forall 'A. ('A -> 'A ) -> 'A -> 'A =*)
+  (*tfun 'A =>*)
+  (*fun (id : 'A -> 'A) =>*)
+  (*fun (a : 'A) =>*)
+    (*a*)

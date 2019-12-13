@@ -25,6 +25,23 @@ func stackMapCopy(s map[string][]Data) map[string][]Data {
 	return sCopy
 }
 
+func typeStackMapPush(s map[string][]Type, k string, v Type) {
+	s[k] = append(s[k], v)
+}
+
+func typeStackMapPop(s map[string][]Type, k string) {
+	n := len(s[k]) - 1
+	s[k] = s[k][:n]
+}
+
+func typeStackMapPeek(s map[string][]Type, k string) (Type, bool) {
+	l := len(s[k])
+	if l == 0 {
+		return nil, false
+	}
+	return s[k][l-1], true
+}
+
 func stackMapPush(s map[string][]Data, k string, v Data) {
 	s[k] = append(s[k], v)
 }

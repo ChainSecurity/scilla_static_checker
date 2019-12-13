@@ -698,6 +698,7 @@ func dotWalkData(b *dotBuilder, d Data) graph.Node {
 			[]string{"Term"},
 			map[string][]string{},
 		}
+		b.dataCache[d] = &m
 
 		for i, _ := range x.Vars {
 			v := &x.Vars[i]
@@ -975,9 +976,11 @@ func directedPortedAttrGraphFrom(b *dotBuilder) graph.Multigraph {
 func GetDot(b *CFGBuilder) string {
 	d := dotBuilder{0, 0, []graph.Node{}, []*dotPortedEdge{}, map[Type]graph.Node{}, map[Data]graph.Node{}, map[Kind]graph.Node{}, map[Unit]graph.Node{}}
 
-	for _, v := range b.Transitions {
-		dotWalkData(&d, v)
+	data, ok := stackMapPeek(b.varStack, "test")
+	if !ok {
+		panic(errors.New(fmt.Sprintf("variable not found: %s", "test")))
 	}
+	dotWalkData(&d, data)
 
 	g := directedPortedAttrGraphFrom(&d)
 	got, err := dot.MarshalMulti(g, "asd", "", "\t")
