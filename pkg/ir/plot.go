@@ -445,6 +445,35 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 		b.edges = append(b.edges, &e)
 		b.nodes = append(b.nodes, m)
 		n = &m
+	case *AllDD:
+
+		m := dotNode{
+			x.ID(),
+			fmt.Sprintf("AllDD %p", x),
+			[]string{"Term"},
+			map[string][]string{},
+		}
+
+		for i, _ := range x.Vars {
+			v := x.Vars[i]
+			portName := fmt.Sprintf("%s_%d", "Var", i)
+			m.portGroups["Var"] = append(m.portGroups["Var"], portName)
+			e := dotPortedEdge{
+				id:       b.getEdgeId(),
+				from:     m,
+				to:       dotWalkData(b, &v),
+				fromPort: portName}
+			b.edges = append(b.edges, &e)
+		}
+
+		e := dotPortedEdge{
+			id:       b.getEdgeId(),
+			from:     m,
+			to:       dotWalkType(b, x.Term),
+			fromPort: "Term"}
+		b.edges = append(b.edges, &e)
+		b.nodes = append(b.nodes, m)
+		n = &m
 	case *TypeVar:
 		n = &dotNode{
 			x.ID(),
@@ -977,7 +1006,7 @@ func GetDot(b *CFGBuilder) string {
 	d := dotBuilder{0, 0, []graph.Node{}, []*dotPortedEdge{}, map[Type]graph.Node{}, map[Data]graph.Node{}, map[Kind]graph.Node{}, map[Unit]graph.Node{}}
 
 	data, ok := stackMapPeek(b.varStack, "test")
-	fmt.Printf("Test type %T", data)
+	fmt.Printf("Test type %T\n", data)
 	if !ok {
 		panic(errors.New(fmt.Sprintf("variable not found: %s", "test")))
 	}

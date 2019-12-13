@@ -655,27 +655,17 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 			Vars:   make([]DataVar, 1),
 			Term:   nil,
 		}
-		allDD, ok := lhsTyp.(*AllDD)
-		if ok {
-			varType := allDD.Vars[0].DataType
-			absDD.Vars[0] = DataVar{
-				IDNode:   builder.newIDNode(),
-				DataType: varType,
-			}
-		} else {
-			absDD.Vars[0] = DataVar{
-				IDNode:   builder.newIDNode(),
-				DataType: lhsTyp,
-			}
+		absDD.Vars[0] = DataVar{
+			IDNode:   builder.newIDNode(),
+			DataType: lhsTyp,
 		}
-
 		stackMapPush(builder.varStack, lhs, &absDD.Vars[0])
+
 		defer stackMapPop(builder.varStack, lhs)
 		rhs := builder.visitExpression(n.RhsExpr)
 		absDD.Term = rhs
 		fmt.Printf("FunExpression return %T\n", absDD)
 		return absDD
-
 	case *ast.MatchExpression:
 		lhs := n.Lhs.Id
 
@@ -768,9 +758,10 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		body := builder.visitExpression(n.Body)
 		return body
 	case *ast.AppExpression:
-		fmt.Println("AppExpression", n.AnnotatedNode.Loc)
+		fmt.Println("AppExpression", n.AnnotatedNode.Loc, n.Lhs.Id)
 		rhsData := make([]Data, len(n.RhsList))
 		for i, rhs := range n.RhsList {
+			fmt.Println("\t", rhs.Id)
 			data, ok := stackMapPeek(builder.varStack, rhs.Id)
 			if !ok {
 				panic(errors.New(fmt.Sprintf("variable not found: %s", rhs.Id)))
@@ -778,6 +769,7 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 			rhsData[i] = data
 		}
 		lhs, ok := stackMapPeek(builder.varStack, n.Lhs.Id)
+		fmt.Printf("Lhs type %T\n", lhs)
 		if !ok {
 			panic(errors.New(fmt.Sprintf("variable not found: %s", n.Lhs.Id)))
 		}
@@ -785,19 +777,33 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		i := 0
 		curr := lhs
 		accum := lhs
+		var nextCurr Data
 		for i < len(rhsData) {
-			absDD, ok := curr.(*AbsDD)
-			if !ok {
+			fmt.Printf("%d %T %T\n", i, curr, rhsData[i])
+			argsCount := 0
+			switch c := curr.(type) {
+			case *AbsDD:
+				argsCount = len(c.Vars)
+				nextCurr = c.Term
+			case *DataVar:
+				t := c.DataType
+				allDD, ok := t.(*AllDD)
+				if !ok {
+					panic(errors.New(fmt.Sprintf("AppExpression DataVar wrong type: %T", t)))
+				}
+				argsCount = len(allDD.Vars)
+				nextCurr = nil
+			default:
 				panic(errors.New(fmt.Sprintf("AppExpression absDD wrong type: %T", curr)))
 			}
-			currData := rhsData[i : i+len(absDD.Vars)]
-			i = i + len(absDD.Vars)
+			currData := rhsData[i : i+argsCount]
+			i = i + argsCount
 			accum = &AppDD{
 				IDNode: builder.newIDNode(),
 				Args:   currData,
 				To:     accum,
 			}
-			curr = absDD.Term
+			curr = nextCurr
 		}
 
 		return accum
