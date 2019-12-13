@@ -474,6 +474,35 @@ func dotWalkType(b *dotBuilder, t Type) graph.Node {
 		b.edges = append(b.edges, &e)
 		b.nodes = append(b.nodes, m)
 		n = &m
+	case *AllTD:
+
+		m := dotNode{
+			x.ID(),
+			fmt.Sprintf("AllTD %p", x),
+			[]string{"Term"},
+			map[string][]string{},
+		}
+
+		for i, _ := range x.Vars {
+			v := x.Vars[i]
+			portName := fmt.Sprintf("%s_%d", "Var", i)
+			m.portGroups["Var"] = append(m.portGroups["Var"], portName)
+			e := dotPortedEdge{
+				id:       b.getEdgeId(),
+				from:     m,
+				to:       dotWalkType(b, &v),
+				fromPort: portName}
+			b.edges = append(b.edges, &e)
+		}
+
+		e := dotPortedEdge{
+			id:       b.getEdgeId(),
+			from:     m,
+			to:       dotWalkType(b, x.Term),
+			fromPort: "Term"}
+		b.edges = append(b.edges, &e)
+		b.nodes = append(b.nodes, m)
+		n = &m
 	case *TypeVar:
 		n = &dotNode{
 			x.ID(),
