@@ -283,6 +283,7 @@ func (builder *CFGBuilder) setdefaultMap(keyType Type, valType Type) *MapType {
 }
 
 func (builder *CFGBuilder) visitASTType(e ast.ASTType) Type {
+	fmt.Printf("visitASTType %T\n", e)
 
 	switch n := e.(type) {
 	case *ast.PrimType:
@@ -590,6 +591,7 @@ func (builder *CFGBuilder) visitStatement(p *Proc, s ast.Statement) *Proc {
 }
 
 func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
+	fmt.Printf("visitExpression %T\n", e)
 	switch n := e.(type) {
 	case *ast.ConstrExpression:
 		constrName := n.ConstructorName
@@ -648,36 +650,30 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		fmt.Println("FunExpression", n.AnnotatedNode.Loc, n.Lhs.Id)
 		lhs := n.Lhs.Id
 		lhsTyp := builder.visitASTType(n.LhsType)
-		var res Data
-
+		absDD := &AbsDD{
+			IDNode: builder.newIDNode(),
+			Vars:   make([]DataVar, 1),
+			Term:   nil,
+		}
 		allDD, ok := lhsTyp.(*AllDD)
-		if !ok {
-			res = &DataVar{
+		if ok {
+			varType := allDD.Vars[0].DataType
+			absDD.Vars[0] = DataVar{
+				IDNode:   builder.newIDNode(),
+				DataType: varType,
+			}
+		} else {
+			absDD.Vars[0] = DataVar{
 				IDNode:   builder.newIDNode(),
 				DataType: lhsTyp,
 			}
-			stackMapPush(builder.varStack, lhs, res)
-			defer stackMapPop(builder.varStack, lhs)
-			rhs := builder.visitExpression(n.RhsExpr)
-			return rhs
-		}
-		absDD := &AbsDD{
-			IDNode: builder.newIDNode(),
-			Vars:   []DataVar{},
-			Term:   nil,
 		}
 
-		varType := allDD.Vars[0].DataType
-		dataVar := DataVar{
-			IDNode:   builder.newIDNode(),
-			DataType: varType,
-		}
-		absDD.Vars = append(absDD.Vars, dataVar)
-
-		stackMapPush(builder.varStack, lhs, res)
+		stackMapPush(builder.varStack, lhs, &absDD.Vars[0])
 		defer stackMapPop(builder.varStack, lhs)
 		rhs := builder.visitExpression(n.RhsExpr)
 		absDD.Term = rhs
+		fmt.Printf("FunExpression return %T\n", absDD)
 		return absDD
 
 	case *ast.MatchExpression:
@@ -872,9 +868,10 @@ func (builder *CFGBuilder) visitLibEntry(le ast.LibEntry) {
 	case *ast.LibraryVariable:
 		fmt.Println("LibraryVariable", n.Name.Loc, n.Name.Id)
 		name := n.Name.Id
-		typ := builder.visitASTType(n.VarType)
-		fmt.Printf("%T\n", typ)
+		//typ := builder.visitASTType(n.VarType)
+		//fmt.Printf("%T\n", typ)
 		v := builder.visitExpression(n.Expr)
+		fmt.Printf("LibraryVariable %s %T\n", name, v)
 		stackMapPush(builder.varStack, name, v)
 	case *ast.LibraryType:
 		typeName := n.Name.Id

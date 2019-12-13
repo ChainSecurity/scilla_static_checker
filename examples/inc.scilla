@@ -7,28 +7,23 @@ scilla_version 0
 (***************************************************)
 library Inc
 
-let one = Uint32 1
-let one32 = Uint32 1
-let one64 = Uint64 1
-
 let one128 = Uint128 1
 
-let a : Uint64 = one64
-
+let test_f : Uint128 -> Uint128 -> Uint128 =
+  fun (a : Uint128) =>
+  fun (b : Uint128) =>
+    builtin add a b
 (***************************************************)
 (*             The contract definition             *)
 (***************************************************)
 
 contract Inc
-(owner : ByStr20, x : ByStr3)
+()
 
-field a : Uint64 = builtin add one64 one64
-field b : ByStr3 = x
+field a : Uint128 = one128
 
-transition inc (z : Uint64)
+transition test (z : Uint128)
     curra <- a;
-    inca = builtin add curra z; 
-    inca = builtin add inca one64; 
-    a := inca;
-    currb <- a
+    inca = test_f z curra;
+    a := inca
 end

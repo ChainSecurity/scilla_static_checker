@@ -20,7 +20,7 @@
             "column": 5,
             "node_type": "Location"
           },
-          "identifier": "id128",
+          "identifier": "test",
           "node_type": "Identifier"
         },
         "variable_type": {
@@ -75,134 +75,43 @@
                 "column": 5,
                 "node_type": "Location"
               },
-              "node_type": "VarExpression",
-              "variable": {
+              "node_type": "BuiltinExpression",
+              "arguments": [
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/min_test.scillib",
+                    "line": 5,
+                    "column": 17,
+                    "node_type": "Location"
+                  },
+                  "identifier": "a",
+                  "node_type": "Identifier"
+                },
+                {
+                  "loc": {
+                    "source_file": "examples/stdlib/min_test.scillib",
+                    "line": 5,
+                    "column": 19,
+                    "node_type": "Location"
+                  },
+                  "identifier": "b",
+                  "node_type": "Identifier"
+                }
+              ],
+              "builtin_function": {
                 "loc": {
                   "source_file": "examples/stdlib/min_test.scillib",
                   "line": 5,
-                  "column": 5,
+                  "column": 13,
                   "node_type": "Location"
                 },
-                "identifier": "a",
-                "node_type": "Identifier"
+                "builtin_operator": "add",
+                "node_type": "Builtin"
               }
             },
             "lhs_type": { "node_type": "PrimType", "name": "Uint128" }
           },
           "lhs_type": { "node_type": "PrimType", "name": "Uint128" }
-        }
-      },
-      {
-        "node_type": "LibraryVariable",
-        "name": {
-          "loc": {
-            "source_file": "examples/stdlib/min_test.scillib",
-            "line": 7,
-            "column": 5,
-            "node_type": "Location"
-          },
-          "identifier": "test",
-          "node_type": "Identifier"
-        },
-        "variable_type": {
-          "node_type": "FunType",
-          "arg_type": {
-            "node_type": "FunType",
-            "arg_type": { "node_type": "PrimType", "name": "Uint128" },
-            "val_type": {
-              "node_type": "ADT",
-              "name": "Bool",
-              "type_args": []
-            }
-          },
-          "val_type": {
-            "node_type": "FunType",
-            "arg_type": { "node_type": "PrimType", "name": "Uint128" },
-            "val_type": {
-              "node_type": "ADT",
-              "name": "Bool",
-              "type_args": []
-            }
-          }
-        },
-        "expression": {
-          "loc": {
-            "source_file": "examples/stdlib/min_test.scillib",
-            "line": 8,
-            "column": 3,
-            "node_type": "Location"
-          },
-          "node_type": "FunExpression",
-          "lhs": {
-            "loc": {
-              "source_file": "examples/stdlib/min_test.scillib",
-              "line": 8,
-              "column": 3,
-              "node_type": "Location"
-            },
-            "identifier": "id",
-            "node_type": "Identifier"
-          },
-          "rhs_expr": {
-            "loc": {
-              "source_file": "examples/stdlib/min_test.scillib",
-              "line": 9,
-              "column": 3,
-              "node_type": "Location"
-            },
-            "node_type": "FunExpression",
-            "lhs": {
-              "loc": {
-                "source_file": "examples/stdlib/min_test.scillib",
-                "line": 9,
-                "column": 3,
-                "node_type": "Location"
-              },
-              "identifier": "a",
-              "node_type": "Identifier"
-            },
-            "rhs_expr": {
-              "loc": {
-                "source_file": "examples/stdlib/min_test.scillib",
-                "line": 10,
-                "column": 5,
-                "node_type": "Location"
-              },
-              "node_type": "AppExpression",
-              "lhs": {
-                "loc": {
-                  "source_file": "examples/stdlib/min_test.scillib",
-                  "line": 10,
-                  "column": 5,
-                  "node_type": "Location"
-                },
-                "identifier": "id",
-                "node_type": "Identifier"
-              },
-              "rhs_list": [
-                {
-                  "loc": {
-                    "source_file": "examples/stdlib/min_test.scillib",
-                    "line": 10,
-                    "column": 8,
-                    "node_type": "Location"
-                  },
-                  "identifier": "a",
-                  "node_type": "Identifier"
-                }
-              ]
-            },
-            "lhs_type": { "node_type": "PrimType", "name": "Uint128" }
-          },
-          "lhs_type": {
-            "node_type": "FunType",
-            "arg_type": { "node_type": "PrimType", "name": "Uint128" },
-            "val_type": {
-              "node_type": "ADT",
-              "name": "Bool",
-              "type_args": []
-            }
-          }
         }
       }
     ],

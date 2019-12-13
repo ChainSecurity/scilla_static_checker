@@ -977,10 +977,16 @@ func GetDot(b *CFGBuilder) string {
 	d := dotBuilder{0, 0, []graph.Node{}, []*dotPortedEdge{}, map[Type]graph.Node{}, map[Data]graph.Node{}, map[Kind]graph.Node{}, map[Unit]graph.Node{}}
 
 	data, ok := stackMapPeek(b.varStack, "test")
+	fmt.Printf("Test type %T", data)
 	if !ok {
 		panic(errors.New(fmt.Sprintf("variable not found: %s", "test")))
 	}
 	dotWalkData(&d, data)
+
+	//for k, v := range b.Transitions {
+	//fmt.Println("Transition", k)
+	//dotWalkData(&d, v)
+	//}
 
 	g := directedPortedAttrGraphFrom(&d)
 	got, err := dot.MarshalMulti(g, "asd", "", "\t")
