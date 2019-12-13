@@ -337,7 +337,7 @@ func (builder *CFGBuilder) visitASTType(e ast.ASTType) Type {
 		fmt.Printf("TypeVar %s\n", n.Name)
 		t, ok := typeStackMapPeek(builder.typeVarStack, n.Name)
 		if !ok {
-			panic(errors.New(fmt.Sprintf("TypeVar not found: %s", n.Name)))
+			panic(errors.New(fmt.Sprintf("TypeVar not found: %s %s", n.Name, builder.typeVarStack)))
 		}
 		return t
 	case *ast.PolyFun:
@@ -646,26 +646,6 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 		}
 		fmt.Printf("Constructor %s\n\t%s\n\t%s\n\t%T\n\t%T\n", constrName, ts, ds, typ, constr)
 		return &appDD
-	case *ast.FunExpression:
-		fmt.Println("FunExpression", n.AnnotatedNode.Loc, n.Lhs.Id)
-		lhs := n.Lhs.Id
-		lhsTyp := builder.visitASTType(n.LhsType)
-		absDD := &AbsDD{
-			IDNode: builder.newIDNode(),
-			Vars:   make([]DataVar, 1),
-			Term:   nil,
-		}
-		absDD.Vars[0] = DataVar{
-			IDNode:   builder.newIDNode(),
-			DataType: lhsTyp,
-		}
-		stackMapPush(builder.varStack, lhs, &absDD.Vars[0])
-
-		defer stackMapPop(builder.varStack, lhs)
-		rhs := builder.visitExpression(n.RhsExpr)
-		absDD.Term = rhs
-		fmt.Printf("FunExpression return %T\n", absDD)
-		return absDD
 	case *ast.MatchExpression:
 		lhs := n.Lhs.Id
 
@@ -830,23 +810,67 @@ func (builder *CFGBuilder) visitExpression(e ast.Expression) Data {
 			MsgType: msgType,
 			Data:    data,
 		}
-	case *ast.TFunExpression:
-		fmt.Println("TFunExpression", n.AnnotatedNode.Loc)
+	case *ast.FunExpression:
+		fmt.Println("FunExpression", n.AnnotatedNode.Loc, n.Lhs.Id)
 		lhs := n.Lhs.Id
-		dataVar := DataVar{
-			IDNode:   builder.newIDNode(),
-			DataType: nil,
+		lhsTyp := builder.visitASTType(n.LhsType)
+		absDD := &AbsDD{
+			IDNode: builder.newIDNode(),
+			Vars:   make([]DataVar, 1),
+			Term:   nil,
 		}
-		stackMapPush(builder.varStack, lhs, &dataVar)
+		absDD.Vars[0] = DataVar{
+			IDNode:   builder.newIDNode(),
+			DataType: lhsTyp,
+		}
+		stackMapPush(builder.varStack, lhs, &absDD.Vars[0])
+
 		defer stackMapPop(builder.varStack, lhs)
+		rhs := builder.visitExpression(n.RhsExpr)
+		absDD.Term = rhs
+		fmt.Printf("FunExpression return %T\n", absDD)
+		return absDD
+	case *ast.TFunExpression:
+
+		fmt.Println("TFunExpression", n.AnnotatedNode.Loc, n.Lhs.Id)
+		lhs := n.Lhs.Id
+		absTD := &AbsTD{
+			IDNode: builder.newIDNode(),
+			Vars:   make([]TypeVar, 1),
+			Term:   nil,
+		}
+		absTD.Vars[0] = TypeVar{
+			IDNode: builder.newIDNode(),
+			Kind:   builder.kind,
+		}
+		typeStackMapPush(builder.typeVarStack, lhs, &absTD.Vars[0])
+		defer typeStackMapPop(builder.typeVarStack, lhs)
 
 		rhs := builder.visitExpression(n.RhsExpr)
+		absTD.Term = rhs
+		fmt.Printf("TFunExpression return %T\n", absTD)
+		return absTD
 
-		return &AbsDD{
-			IDNode: builder.newIDNode(),
-			Vars:   []DataVar{dataVar},
-			Term:   rhs,
-		}
+		//fmt.Println("TFunExpression", n.AnnotatedNode.Loc)
+		//lhs := n.Lhs.Id
+		//lhsType, ok := typeStackMapPeek(builder.typeVarStack, lhs)
+		//if !ok {
+		//panic(errors.New(fmt.Sprintf("TFun type variable not found %s", lhs)))
+		//}
+		//dataVar := DataVar{
+		//IDNode:   builder.newIDNode(),
+		//DataType: lhsType,
+		//}
+		//stackMapPush(builder.varStack, lhs, &dataVar)
+		//defer stackMapPop(builder.varStack, lhs)
+
+		//rhs := builder.visitExpression(n.RhsExpr)
+
+		//return &AbsDD{
+		//IDNode: builder.newIDNode(),
+		//Vars:   []DataVar{dataVar},
+		//Term:   rhs,
+		//}
 	default:
 		//fmt.Printf("Unhandled Expression type: %T\n", n)
 		panic(errors.New(fmt.Sprintf("Unhandled type: %T", n)))
@@ -874,8 +898,10 @@ func (builder *CFGBuilder) visitLibEntry(le ast.LibEntry) {
 	case *ast.LibraryVariable:
 		fmt.Println("LibraryVariable", n.Name.Loc, n.Name.Id)
 		name := n.Name.Id
-		//typ := builder.visitASTType(n.VarType)
-		//fmt.Printf("%T\n", typ)
+		if n.VarType != nil {
+			typ := builder.visitASTType(n.VarType)
+			fmt.Printf("%T\n", typ)
+		}
 		v := builder.visitExpression(n.Expr)
 		fmt.Printf("LibraryVariable %s %T\n", name, v)
 		stackMapPush(builder.varStack, name, v)

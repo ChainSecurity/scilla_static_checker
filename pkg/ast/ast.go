@@ -135,6 +135,11 @@ type MessageExpression struct {
 	MArgs []*MessageArgument `json:"margs"`
 }
 
+type TFunExpression struct {
+	AnnotatedNode
+	Lhs     *Identifier `json:"lhs"`
+	RhsExpr Expression  `json:"rhs_expr"`
+}
 type FunExpression struct {
 	AnnotatedNode
 	Lhs     *Identifier `json:"lhs"`
@@ -165,12 +170,6 @@ type BuiltinExpression struct {
 	AnnotatedNode
 	Args        []*Identifier `json:"arguments"`
 	BuintinFunc *Builtin      `json:"builtin_function"`
-}
-
-type TFunExpression struct {
-	AnnotatedNode
-	Lhs     *Identifier `json:"lhs"`
-	RhsExpr Expression  `json:"rhs_expr"`
 }
 
 type TAppExpression struct {

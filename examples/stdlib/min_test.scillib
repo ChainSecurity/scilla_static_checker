@@ -4,13 +4,13 @@ library MinTest
   (*fun (b : Uint128) =>*)
     (*builtin add a b*)
 
-let test : (Uint128 -> Bool ) -> Uint128 -> Bool =
-  fun (id : Uint128 -> Bool) =>
-  fun (a : Uint128) =>
-    id a
+(*let test : (Uint128 -> Bool ) -> Uint128 -> Bool =*)
+  (*fun (id : Uint128 -> Bool) =>*)
+  (*fun (a : Uint128) =>*)
+    (*id a*)
 
-(*let id : forall 'A. ('A -> 'A ) -> 'A -> 'A =*)
-  (*tfun 'A =>*)
-  (*fun (id : 'A -> 'A) =>*)
-  (*fun (a : 'A) =>*)
-    (*a*)
+let test =
+  tfun 'A =>
+  fun (id : 'A -> 'A) =>
+  fun (a : 'A) =>
+    id a
