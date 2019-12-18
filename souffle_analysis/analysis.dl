@@ -7,11 +7,13 @@
 #include "analysis-dataflow.dl"
 #include "analysis-infoflow.dl"
 #include "analysis-storage.dl"
+#include "analysis-plans.dl"
 
 .init ctxProvider = ContextProvider
 .init infoflow = InfoFlowAnalysis
 .init dataflow = MayDepOnAnalysis
 .init storage = StorageAnalysis
+.init plans = PlanAnalysis
 
 // follows: a unit depends on another one which is closer to the leaves of the tree
 .decl followsStep(element: Element, previousElement: Element)

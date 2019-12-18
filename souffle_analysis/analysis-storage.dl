@@ -6,14 +6,13 @@
     */
     .decl precedingStore(elem: ctxProvider.ElementInContext, elemStore: ctxProvider.ElementInContext)
 
-
     precedingStore(storeCtx, storeCtx) :-
         save(storeUnit, _, _),
         ctxProvider.elementInContext(storeCtx, storeUnit, _).
 
     precedingStore(storeCtx, prevStoreCtx) :-
         save(storeUnit, field, _),
-        nextPlannedElement(storeCtx, prevStoreCtx),
+        plans.nextPlannedElement(storeCtx, prevStoreCtx),
         ctxProvider.elementInContext(storeCtx, storeUnit, _),
         ctxProvider.elementInContext(prevStoreCtx, otherStoreUnit, _),
         save(otherStoreUnit, field2, _),
@@ -24,98 +23,10 @@
         !save(nextPlan, _, _),
         ctxProvider.elementInContext(nextPlanCxt, nextPlan, _),
         (
-            nextPlannedElement(nextPlanCtx, prevPlanCtx); 
-            maybeNextPlannedElement(nextPlanCtx, prevPlanCtx)
+            plans.nextPlannedElement(nextPlanCtx, prevPlanCtx); 
+            plans.maybeNextPlannedElement(nextPlanCtx, prevPlanCtx)
         ),
         precedingStore(prevPlanCtx, storeCtx).
 
-    .decl nextPlannedElement(nextElem: ctxProvider.ElementInContext, prevElem: ctxProvider.ElementInContext)
-    nextPlannedElement(nextElemCtx, prevElemCtx) :-
-        plan(procId, prevPlan, prevId),
-        plan(procId, nextPlan, nextId),
-        nextId = prevId + 1,
-        ctxProvider.elementInContext(nextElemCtx, nextPlan, ctx),
-        ctxProvider.elementInContext(prevElemCtx, prevPlan, ctx).
-
-    nextPlannedElement(nextElemCtx, prevElemCtx) :-
-        plan(procId, prevPlan, prevId),
-        lastBasicBlockPlan(procId, prevPlan, prevId),
-        jump(procId, pickProcUnit),
-        pickProc(pickProcUnit, _),
-        argument(pickProcUnit, procCaseUnit, _),
-        procCase(procCaseUnit, _, bodyId),
-        plan(bodyId, firstPlan, 0),
-        ctxProvider.elementInContext(prevElemCtx, prevPlan, _),
-        ctxProvider.elementInContext(nextElemCtx, firstPlan, _).
-
-    nextPlannedElement(nextElemCtx, prevElemCtx) :-
-        plan(procId, prevPlan, prevId),
-        lastBasicBlockPlan(procId, prevPlan, prevId),
-        jump(procId, callProcUnit),
-        callProc(callProcUnit, nextProcId),
-        plan(nextProcId, firstPlan, 0),
-        ctxProvider.elementInContext(prevElemCtx, prevElem, ctx),
-        ctxProvider.elementInContext(nextElemCtx, nextElem, [callProcUnit, ctx]).
-
-    nextPlannedElement(nextElemCtx, prevElemCtx) :-
-        plan(procId, firstPlan, 0),
-        callProc(callProc, toProc),
-        lastBasicBlockPlan(toProc, lastToProcPlan, _),
-        ctxProvider.elementInContext(nextElemCtx, firstPlan, ctx),
-        ctxProvider.elementInContext(prevElemCtx, lastToProcPlan, [callProc, ctx]).
-
-    .decl maybeNextPlannedElement(nextElemCtx: ctxProvider.ElementInContext, prevElemCtx: ctxProvider.ElementInContext)
-
-    maybeNextPlannedElement(nextElemCtx, prevElemCtx) :-
-        transition(transA),
-        transition(transB),
-        lastProcPlan(transA, lastPlan, _),
-        plan(transB, firstPlan, 0),
-        ctxProvider.elementInContext(nextElemCtx, firstPlan, _),
-        ctxProvider.elementInContext(prevElemCtx, lastPlan, _).
-
-    .decl lastBasicBlockPlan(procId: Proc, plan: Unit, index: number)
-    lastBasicBlockPlan(procId, plan, index) :-
-        plan(procId, plan, index),
-        !plan(procId, _, index + 1).
-
-    .decl lastProcPlan(procId: Proc, plan: Unit, index: number)
-    lastProcPlan(procId, plan, index) :-
-        (
-            transition(procId); 
-            procedure(procId)
-        ),
-        follows(procId, basicBlock),
-        plan(basicBlock, plan, index),
-        ctxProvider.elementInContext(planCtx, plan, _),
-        !nextPlannedElement(_, planCtx).
-
-    .decl mustPrecede(nextElemCtx: ctxProvider.ElementInContext, prevElemCtx: ctxProvider.ElementInContext)
-    mustPrecede(nextElemCtx, prevElemCtx) :-
-        nextPlannedElement(nextElemCtx, prevElemCtx).
-
-    mustPrecede(nextElemCtx, prevElemCtx) :-
-        nextPlannedElement(nextElemCtx, midElemCtx),
-        mustPrecede(midElemCtx, prevElemCtx).
-
-    .decl mayPrecede(nextElemCtx: ctxProvider.ElementInContext, prevElemCtx: ctxProvider.ElementInContext)
-    mayPrecede(nextElemCtx, prevElemCtx) :-
-        maybeNextPlannedElement(nextElemCtx, prevElemCtx);
-        nextPlannedElement(nextElemCtx, prevElemCtx).
-
-    mayPrecede(nextElemCtx, prevElemCtx) :-
-        (
-            maybeNextPlannedElement(nextElemCtx, midElemCtx);
-            nextPlannedElement(nextElemCtx, midElemCtx)
-        ),
-        mayPrecede(midElemCtx, prevElemCtx).
-
     .output precedingStore
-    .output nextPlannedElement
-    .output maybeNextPlannedElement
-    .output lastProcPlan
-    .output lastBasicBlockPlan
-
-    // TODO: Fix relations between different transitions
-
 }
