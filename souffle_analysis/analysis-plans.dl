@@ -1,5 +1,6 @@
 
 .comp PlanAnalysis {
+    // Contains analysis on how plans are related to each other
 
     .decl nextPlannedElement(nextElem: ctxProvider.ElementInContext, prevElem: ctxProvider.ElementInContext)
     nextPlannedElement(nextElemCtx, prevElemCtx) :-
